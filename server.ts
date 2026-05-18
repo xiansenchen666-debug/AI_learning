@@ -1,6 +1,6 @@
 ﻿import { getCookies, setCookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
 
-const kv = await Deno.openKv(); // Open local Deno KV database
+const kv = await Deno.openKv(Deno.env.get("DENO_KV_PATH") || undefined); // Support local or Deno Deploy KV
 
 async function getHtml(filename: string) {
   const content = await Deno.readTextFile(new URL(`./${filename}`, import.meta.url));
@@ -17,8 +17,14 @@ function json(data: unknown, init?: ResponseInit) {
   });
 }
 
-// Load static questions into memory
-const questionsData = JSON.parse(await Deno.readTextFile(new URL('./data/questions.json', import.meta.url)));
+// Load static questions into memory safely for Deno Deploy
+let questionsData = { questions: [] };
+try {
+  const questionsText = await Deno.readTextFile(new URL('./data/questions.json', import.meta.url));
+  questionsData = JSON.parse(questionsText);
+} catch (e) {
+  console.warn("Could not load questions.json, proceeding with empty data.");
+}
 
 Deno.serve({ port: 8000 }, async (request) => {
   const url = new URL(request.url);
