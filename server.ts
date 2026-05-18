@@ -31,6 +31,7 @@ Deno.serve({ port: 8000 }, async (request) => {
     '/login': 'login.html',
     '/dashboard': 'dashboard.html',
     '/subjects': 'subjects.html',
+    '/course': 'course.html',
     '/mistakes': 'mistakes.html',
     '/growth': 'growth.html',
   };
