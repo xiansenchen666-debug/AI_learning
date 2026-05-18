@@ -57,28 +57,28 @@ def replacer(match):
     
     if "数学" in title:
         color = "var(--primary)"
-        bg = "rgba(79, 70, 229, 0.08)"
-        border = "rgba(79, 70, 229, 0.2)"
+        bg = "rgba(26, 43, 60, 0.06)"
+        border = "rgba(26, 43, 60, 0.15)"
     elif "英语" in title:
         color = "var(--emerald)"
-        bg = "rgba(5, 150, 105, 0.08)"
-        border = "rgba(5, 150, 105, 0.2)"
+        bg = "rgba(74, 124, 89, 0.06)"
+        border = "rgba(74, 124, 89, 0.15)"
     elif "物理" in title:
         color = "var(--orange)"
-        bg = "rgba(217, 119, 6, 0.08)"
-        border = "rgba(217, 119, 6, 0.2)"
+        bg = "rgba(197, 160, 89, 0.06)"
+        border = "rgba(197, 160, 89, 0.15)"
     elif "语文" in title:
         color = "var(--purple)"
-        bg = "rgba(124, 58, 237, 0.08)"
-        border = "rgba(124, 58, 237, 0.2)"
+        bg = "rgba(107, 91, 149, 0.06)"
+        border = "rgba(107, 91, 149, 0.15)"
     elif "化学" in title:
         color = "var(--purple)"
-        bg = "rgba(124, 58, 237, 0.08)"
-        border = "rgba(124, 58, 237, 0.2)"
+        bg = "rgba(107, 91, 149, 0.06)"
+        border = "rgba(107, 91, 149, 0.15)"
     elif "生物" in title:
         color = "var(--emerald)"
-        bg = "rgba(5, 150, 105, 0.08)"
-        border = "rgba(5, 150, 105, 0.2)"
+        bg = "rgba(74, 124, 89, 0.06)"
+        border = "rgba(74, 124, 89, 0.15)"
     
     new_article = f'''<article class="course-card open-course" style="border: 1px solid {border};">
                   <div class="course-head">
