@@ -1,19 +1,19 @@
 :root {
-  --bg: #EAE6DB; /* 进一步压低背景亮度，偏向护眼牛皮纸/灰沙色 */
-  --panel: rgba(240, 236, 227, 0.7); /* 卡片底色也跟着压低，减少对比 */
-  --line: rgba(26, 43, 60, 0.12);
-  --text: #2A3645;
-  --muted: #78879B;
+  --bg: #F5F5F7; /* 纯净的高级冷白/浅灰，类似于 Apple 的背景底色 */
+  --panel: rgba(255, 255, 255, 0.7); /* 卡片恢复高白度和透亮感 */
+  --line: rgba(26, 43, 60, 0.08);
+  --text: #1D1D1F; /* Apple 标准深空灰字体颜色 */
+  --muted: #86868B; /* Apple 标准次级灰 */
   /* xtqihang inspired palette */
   --primary: #1A2B3C;
   --primary-hover: #C5A059;
-  --accent: #B38E48;
-  --blue: #2A4365;
-  --emerald: #406A4E;
-  --orange: #B38E48;
-  --cyan: #4F7A96;
-  --purple: #5D4E82;
-  --hairline: rgba(26, 43, 60, 0.1);
+  --accent: #C5A059; /* 恢复纯正的金色，不再暗沉 */
+  --blue: #0066CC; /* Apple 蓝 */
+  --emerald: #34C759; /* Apple 绿 */
+  --orange: #FF9500; /* Apple 橙 */
+  --cyan: #32ADE6;
+  --purple: #AF52DE;
+  --hairline: rgba(0, 0, 0, 0.05);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
