@@ -60,6 +60,7 @@
       .brand-subtitle { margin: 4px 0 0; color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
       .nav { display: flex; flex-direction: column; gap: 8px; padding: 4px; }
       .nav-btn, .ghost-btn, .primary-btn, .secondary-btn, .tag-btn {
+        text-decoration: none;
         border: 0; cursor: pointer; transition: all var(--transition);
       }
       .nav-btn {
@@ -281,12 +282,14 @@
           </div>
         </div>
 
+        
         <nav class="nav">
-          <button class="nav-btn active" data-view="dashboard"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></button>
-          <button class="nav-btn" data-view="subjects"><span class="icon-badge">课</span><span class="nav-label">同步课程</span></button>
-          <button class="nav-btn" data-view="mistakes"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></button>
-          <button class="nav-btn" data-view="growth"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></button>
+          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn "><span class="icon-badge">课</span><span class="nav-label">同步课程</span></a>
+          <a href="/mistakes" class="nav-btn "><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn active"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
         </nav>
+
 
         <div class="sidebar-footer">
           <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
@@ -311,114 +314,8 @@
         </header>
 
         <div class="page-scroll">
-          <section class="page active" id="dashboard-page">
-            <div class="grid dashboard-grid-top">
-              <div class="hero-card">
-                <div class="hero-body">
-                  <div>
-                    <div class="hero-pill">AI 深度分析完成  定制路线已生成</div>
-                    <h1 class="hero-title">Cary，今天挑战一下<span>物理力学</span>吗？</h1>
-                    <p class="hero-desc">根据你昨天的错题，AI 发现你在「受力分析」上还有提分空间。我们为你准备了 15 分钟的专项攻克包。</p>
-                  </div>
-                  <button class="primary-btn">开始专属学习</button>
-                </div>
-              </div>
+          <section class="page active" id="growth-page">
 
-              <div class="card achievement">
-                <p class="muted" style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;">学习成就</p>
-                <div class="achievement-mark">燃</div>
-                <div class="achievement-number">12<small>天</small></div>
-                <p style="margin-top:6px;color:#d97706;font-size:13px;font-weight:800;">连续学习打卡</p>
-                <div class="progress-track"><div class="progress-fill"></div></div>
-                <p class="muted" style="font-size:13px;">本周学力值 2,450 XP，距离下一等级还差 550 XP</p>
-              </div>
-            </div>
-
-            <div class="grid dashboard-grid-main" style="margin-top:24px;">
-              <div class="grid" style="gap:24px;">
-                <div class="card">
-                  <div class="section-head">
-                    <h2 class="section-title">我的课程</h2>
-                    <button class="ghost-btn">管理课程</button>
-                  </div>
-                  <div class="course-grid" style="margin-top:18px;">
-                    <article class="course-card math">
-                      <div class="course-head"><div class="course-icon">数</div><span class="course-meta">八年级上</span></div>
-                      <h3>数学</h3>
-                      <p class="muted" style="margin-top:6px;margin-bottom:14px;">进度：一元二次方程</p>
-                      <div class="micro-track"><div class="micro-fill"></div></div>
-                    </article>
-                    <article class="course-card english">
-                      <div class="course-head"><div class="course-icon">英</div><span class="course-meta">八年级上</span></div>
-                      <h3>英语</h3>
-                      <p class="muted" style="margin-top:6px;margin-bottom:14px;">进度：Unit 4 阅读</p>
-                      <div class="micro-track"><div class="micro-fill"></div></div>
-                    </article>
-                    <article class="course-card physics">
-                      <div class="course-head"><div class="course-icon">物</div><span class="course-meta" style="color:var(--orange);background:rgba(255,237,213,.95);">今日重点</span></div>
-                      <h3>物理</h3>
-                      <p class="muted" style="margin-top:6px;margin-bottom:14px;">进度：牛顿第一定律</p>
-                      <div class="micro-track"><div class="micro-fill"></div></div>
-                    </article>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="section-head">
-                    <h2 class="section-title">今日任务与课表</h2>
-                    <span class="stat-chip">2 项重点</span>
-                  </div>
-                  <div class="timeline">
-                    <div class="timeline-item">
-                      <div class="timeline-dot done">1</div>
-                      <div class="timeline-content">
-                        <div class="timeline-meta"><span style="color:var(--primary);">08:00 - 08:30</span><span class="mini-chip">已完成</span></div>
-                        <h3>英语晨读与听力</h3>
-                      </div>
-                    </div>
-                    <div class="timeline-item">
-                      <div class="timeline-dot live">2</div>
-                      <div class="timeline-content live">
-                        <div class="timeline-meta"><span style="color:var(--orange);">10:30 - 11:15</span><span class="mini-chip" style="color:var(--orange);">进行中</span></div>
-                        <h3>AI 智能错题攻克</h3>
-                        <button class="secondary-btn" style="margin-top:14px;width:100%;background:rgba(255,255,255,.88);color:var(--orange);">立即开始练习</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid" style="gap:24px;">
-                <div class="guardian-card" id="open-growth-card">
-                  <div class="row-between">
-                    <div>
-                      <p style="font-size:13px;font-weight:800;opacity:.9;">系统守护中</p>
-                      <h2 style="font-size:24px;margin-top:6px;">护眼与家长管控</h2>
-                    </div>
-                    <span class="mini-chip" style="color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18);">在线</span>
-                  </div>
-                  <div class="guardian-stats">
-                    <div class="guardian-box"><span style="font-size:12px;opacity:.9;">今日屏幕使用</span><strong>1h 24m</strong></div>
-                    <div class="guardian-box"><span style="font-size:12px;opacity:.9;">距离护眼休息</span><strong>16m</strong></div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="section-head">
-                    <h2 class="section-title">智能错题本</h2>
-                    <span class="stat-chip" style="color:#e11d48;background:rgba(255,241,242,.92);">3 待攻克</span>
-                  </div>
-                  <div class="mistake-box">
-                    <div class="row-between"><span class="mini-chip" style="background:rgba(238,242,255,.9);">数学</span><span class="muted" style="font-size:12px;">昨天的周测</span></div>
-                    <p style="margin:14px 0 18px;line-height:1.7;font-weight:700;">已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，求对称轴并分析开口方向。</p>
-                    <button class="secondary-btn" style="width:100%;">AI 举一反三</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="page" id="growth-page">
             <div class="growth-header">
               <div>
                 <h1 class="section-title" style="font-size:34px;">成长轨迹</h1>
@@ -471,6 +368,7 @@
                 </div>
               </div>
             </div>
+          
           </section>
         </div>
       </main>
@@ -491,29 +389,14 @@
     </div>
 
     <script>
-      const navButtons = Array.from(document.querySelectorAll('.nav-btn[data-view]'));
-      const pages = {
-        dashboard: document.getElementById('dashboard-page'),
-        growth: document.getElementById('growth-page')
-      };
       const parentModal = document.getElementById('parent-modal');
       const openParentModal = document.getElementById('open-parent-modal');
-      const openGrowthCard = document.getElementById('open-growth-card');
       const confirmParentModal = document.getElementById('confirm-parent-modal');
       const closeModalNodes = document.querySelectorAll('[data-close-modal="true"]');
       const clockNode = document.getElementById('clock');
 
-      function setView(view) {
-        const target = view === 'growth' ? 'growth' : 'dashboard';
-        navButtons.forEach((button) => {
-          button.classList.toggle('active', button.dataset.view === target);
-        });
-        pages.dashboard.classList.toggle('active', target === 'dashboard');
-        pages.growth.classList.toggle('active', target === 'growth');
-      }
-
-      function openModal() { parentModal.classList.add('open'); }
-      function closeModal() { parentModal.classList.remove('open'); }
+      function openModal() { if (parentModal) parentModal.classList.add('open'); }
+      function closeModal() { if (parentModal) parentModal.classList.remove('open'); }
 
       function updateClock() {
         if (!clockNode) return;
@@ -521,21 +404,9 @@
         clockNode.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
       }
 
-      navButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          if (button.dataset.view === 'growth') {
-            setView('growth');
-            return;
-          }
-          setView('dashboard');
-        });
-      });
-
       openParentModal?.addEventListener('click', openModal);
-      openGrowthCard?.addEventListener('click', () => setView('growth'));
       confirmParentModal?.addEventListener('click', () => {
         closeModal();
-        setView('growth');
       });
       closeModalNodes.forEach((node) => node.addEventListener('click', closeModal));
       document.addEventListener('keydown', (event) => {
@@ -544,7 +415,6 @@
 
       updateClock();
       setInterval(updateClock, 30000);
-      setView('dashboard');
     </script>
   </body>
 </html>
