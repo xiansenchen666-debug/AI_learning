@@ -13,6 +13,12 @@
       <div class="blob three"></div>
     </div>
 
+    
+    <div style="position: absolute; top: 32px; left: 40px; display: flex; align-items: center; gap: 12px; z-index: 10;">
+      <div class="brand-mark" style="width: 32px; height: 32px; font-size: 16px;">星</div>
+      <div style="font-weight: 800; font-size: 18px; color: var(--text); letter-spacing: 1px;">星途启航教育</div>
+    </div>
+
     <main class="login-stage">
       <section class="login-showcase">
           <div class="login-brand-area" style="max-width:400px;text-align:left;">
@@ -34,7 +40,15 @@
           <p class="login-card-subtitle">登录后继续你的个人学习空间</p>
         </div>
 
+        
         <form action="/api/login" method="POST" id="login-form">
+          <script>
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('error') === '1') {
+              document.write('<div style="color: var(--orange); font-size: 14px; margin-bottom: 16px; background: rgba(217, 119, 6, 0.1); padding: 12px; border-radius: 8px;">账号或密码不匹配，请联系老师。<br>(测试账号: Cary / 123456)</div>');
+            }
+          </script>
+
           <div class="form-group">
             <label class="form-label">学生账号</label>
             <input type="text" name="username" class="form-input" placeholder="请输入学校/机构分配的账号" required />

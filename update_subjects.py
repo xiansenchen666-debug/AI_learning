@@ -68,9 +68,9 @@ def replacer(match):
         bg = "rgba(217, 119, 6, 0.08)"
         border = "rgba(217, 119, 6, 0.2)"
     elif "语文" in title:
-        color = "var(--red)"
-        bg = "rgba(197, 48, 48, 0.08)"
-        border = "rgba(197, 48, 48, 0.2)"
+        color = "var(--purple)"
+        bg = "rgba(124, 58, 237, 0.08)"
+        border = "rgba(124, 58, 237, 0.2)"
     elif "化学" in title:
         color = "var(--purple)"
         bg = "rgba(124, 58, 237, 0.08)"
