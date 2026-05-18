@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿import { getCookies, setCookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
+﻿﻿﻿﻿import { getCookies, setCookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
 
 const kv = await Deno.openKv(Deno.env.get("DENO_KV_PATH") || undefined); // Support local or Deno Deploy KV
 
@@ -61,11 +61,19 @@ Deno.serve({ port: 8000 }, async (request) => {
 
   if (url.pathname === '/api/login' && request.method === 'POST') {
     const form = await request.formData();
-    const username = form.get('username')?.toString();
-    const password = form.get('password')?.toString();
+    const username = form.get('username')?.toString().trim();
+    const password = form.get('password')?.toString().trim();
     
-    if (!username || !password) {
-      return new Response('Missing credentials', { status: 400 });
+    // Simulate real auth validation (Only allow specific test accounts)
+    const validStudents: Record<string, string> = {
+      "Cary": "123456",
+      "Alice": "123456",
+      "Bob": "123456"
+    };
+
+    if (!username || !password || validStudents[username] !== password) {
+      // Redirect back to login with error parameter
+      return new Response('', { status: 302, headers: { 'Location': '/login?error=1' } });
     }
 
     // Auto-provision user for prototyping
