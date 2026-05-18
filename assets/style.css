@@ -258,11 +258,12 @@ button, input { font: inherit; }
 }
 .card { padding: 24px; background: var(--panel); backdrop-filter: blur(24px); }
 .hero-card {
-  padding: 32px; background: linear-gradient(120deg, rgba(26,43,60,.96), rgba(36,56,77,.94), rgba(74,61,44,.88));
-  color: #fffdf8; box-shadow: 0 24px 56px rgba(26,43,60,.16);
+  padding: 32px; background: linear-gradient(135deg, #1A2B3C, #0F172A);
+  color: #fff; box-shadow: 0 20px 40px rgba(26, 43, 60, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.2);
 }
 .hero-card::after {
-  content: ""; position: absolute; inset: auto -90px -120px auto; width: 320px; height: 320px; border-radius: 50%; background: rgba(197,160,89,.18); filter: blur(24px);
+  content: ""; position: absolute; inset: auto -90px -120px auto; width: 320px; height: 320px; border-radius: 50%; background: rgba(197, 160, 89, 0.15); filter: blur(32px);
 }
 .hero-body { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 
@@ -276,11 +277,11 @@ button, input { font: inherit; }
 /* Remove old logout-link */
 .avatar {
   width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
-  background: linear-gradient(135deg, #31485f, #1A2B3C); color: #fff; font-weight: 800; font-size: 16px; border: 2px solid rgba(255,255,255,.92);
+  background: linear-gradient(135deg, var(--accent), #9A7B3E); color: #fff; font-weight: 800; font-size: 16px; border: 2px solid #fff;
 }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--radius-pill);
-  color: #f4e5c3; font-size: 12px; font-weight: 800; letter-spacing: .05em; margin-bottom: 16px;
+  color: var(--accent); background: rgba(197, 160, 89, 0.1); border: 1px solid rgba(197, 160, 89, 0.3); font-size: 12px; font-weight: 800; letter-spacing: .05em; margin-bottom: 16px;
 }
 .mini-chip, .stat-chip { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); }
 .mini-chip { padding: 4px 10px; font-size: 11px; color: var(--primary); }
@@ -288,9 +289,9 @@ button, input { font: inherit; }
 
 /* Typography */
 h1, h2, h3, p { margin: 0; }
-.hero-title { font-size: clamp(28px, 3vw, 42px); line-height: 1.2; margin-bottom: 12px; }
-.hero-title span { color: #e7cf96; }
-.hero-desc { max-width: 620px; color: rgba(250,246,238,.82); line-height: 1.75; }
+.hero-title { font-size: clamp(28px, 3vw, 42px); line-height: 1.2; margin-bottom: 12px; font-weight: 800; }
+.hero-title span { color: var(--accent); }
+.hero-desc { max-width: 620px; color: rgba(255,255,255,.75); line-height: 1.75; font-size: 15px; }
 .section-head, .row-between { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .section-title { font-size: 22px; font-weight: 800; }
 .muted { color: var(--muted); }
