@@ -57,28 +57,28 @@ def replacer(match):
     
     if "数学" in title:
         color = "var(--primary)"
-        bg = "#e0e7ff"
-        border = "#c7d2fe"
+        bg = "rgba(79, 70, 229, 0.08)"
+        border = "rgba(79, 70, 229, 0.2)"
     elif "英语" in title:
         color = "var(--emerald)"
-        bg = "#d1fae5"
-        border = "#a7f3d0"
+        bg = "rgba(5, 150, 105, 0.08)"
+        border = "rgba(5, 150, 105, 0.2)"
     elif "物理" in title:
         color = "var(--orange)"
-        bg = "#ffedd5"
-        border = "#fed7aa"
+        bg = "rgba(217, 119, 6, 0.08)"
+        border = "rgba(217, 119, 6, 0.2)"
     elif "语文" in title:
-        color = "#e11d48"
-        bg = "#ffe4e6"
-        border = "#fbcfe8"
+        color = "var(--red)"
+        bg = "rgba(197, 48, 48, 0.08)"
+        border = "rgba(197, 48, 48, 0.2)"
     elif "化学" in title:
-        color = "#8b5cf6"
-        bg = "#ede9fe"
-        border = "#ddd6fe"
+        color = "var(--purple)"
+        bg = "rgba(124, 58, 237, 0.08)"
+        border = "rgba(124, 58, 237, 0.2)"
     elif "生物" in title:
-        color = "#10b981"
-        bg = "#d1fae5"
-        border = "#a7f3d0"
+        color = "var(--emerald)"
+        bg = "rgba(5, 150, 105, 0.08)"
+        border = "rgba(5, 150, 105, 0.2)"
     
     new_article = f'''<article class="course-card open-course" style="border: 1px solid {border};">
                   <div class="course-head">

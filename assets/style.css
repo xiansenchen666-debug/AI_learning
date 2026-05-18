@@ -4,11 +4,14 @@
   --line: rgba(255, 255, 255, 0.68);
   --text: #1e293b;
   --muted: #64748b;
-  --primary: #4f46e5;
+  /* Apple-inspired subdued color palette */
+  --primary: #4F46E5; /* Softer Indigo */
   --primary-hover: #4338ca;
   --blue: #2563eb;
-  --emerald: #10b981;
-  --orange: #f97316;
+  --emerald: #059669; /* Softer Green */
+  --orange: #D97706;  /* Muted Orange */
+  --red: #C53030;     /* Muted Red instead of hot pink/red */
+  --purple: #7C3AED;  /* Muted Purple */
   --radius-xl: 24px;
   --radius-2xl: 32px;
   --radius-pill: 999px;
