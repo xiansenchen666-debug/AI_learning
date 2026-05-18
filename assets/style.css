@@ -1,19 +1,19 @@
 :root {
-  --bg: #F4F1EA; /* 降低亮度的米色/燕麦色，更护眼 */
-  --panel: rgba(255, 255, 255, 0.45); /* 降低卡片白度，减少反光 */
-  --line: rgba(26, 43, 60, 0.1);
-  --text: #2A3645; /* 字体稍微调浅一点点，降低黑白对比度 */
+  --bg: #EAE6DB; /* 进一步压低背景亮度，偏向护眼牛皮纸/灰沙色 */
+  --panel: rgba(240, 236, 227, 0.7); /* 卡片底色也跟着压低，减少对比 */
+  --line: rgba(26, 43, 60, 0.12);
+  --text: #2A3645;
   --muted: #78879B;
   /* xtqihang inspired palette */
   --primary: #1A2B3C;
   --primary-hover: #C5A059;
-  --accent: #B38E48; /* 金色也稍微调暗一点 */
+  --accent: #B38E48;
   --blue: #2A4365;
-  --emerald: #406A4E; /* 绿色调暗 */
+  --emerald: #406A4E;
   --orange: #B38E48;
   --cyan: #4F7A96;
-  --purple: #5D4E82; /* 紫色调暗 */
-  --hairline: rgba(26, 43, 60, 0.08);
+  --purple: #5D4E82;
+  --hairline: rgba(26, 43, 60, 0.1);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
