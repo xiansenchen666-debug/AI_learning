@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -180,6 +180,15 @@
       .course-card.english .micro-fill { width: 42%; background: linear-gradient(90deg, #34d399, #10b981); }
       .course-card.physics .course-icon, .course-card.physics .micro-fill { color: var(--orange); background: rgba(255,237,213,.9); }
       .course-card.physics .micro-fill { width: 20%; background: linear-gradient(90deg, #fb923c, #f97316); }
+
+      /* Locked course styles */
+      .course-card.locked { opacity: 0.85; filter: grayscale(0.2); }
+      .course-card.locked .course-icon { background: rgba(226,232,240,.6); color: #94a3b8; border-color: rgba(226,232,240,.8); }
+      .course-card.locked .course-meta { color: #f43f5e; background: rgba(255,228,230,.8); border-color: rgba(255,228,230,.9); }
+      .unlock-overlay { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.6); }
+      .unlock-btn { padding: 6px 12px; font-size: 12px; font-weight: 800; color: #fff; background: var(--primary); border: none; border-radius: 12px; cursor: pointer; transition: all var(--transition); }
+      .unlock-btn:hover { background: #4338ca; transform: translateY(-1px); }
+
       .timeline { gap: 16px; margin-top: 18px; }
       .timeline-item { position: relative; display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
       .timeline-item::before {
@@ -318,13 +327,171 @@
 
             <div class="growth-header">
               <div>
-                <h1 class="section-title" style="font-size:34px;">同步课程</h1>
-                <p class="muted" style="margin-top:8px;">查看各科课程进度与视频</p>
+                <h1 class="section-title" style="font-size:34px;">全课程目录</h1>
+                <p class="muted" style="margin-top:8px;">涵盖小学、初中、高中各科同步课程。灰色为未解锁科目，需要单独开通。</p>
               </div>
             </div>
-            <div class="grid" style="gap:24px;">
-              <div class="card">
-                <p class="muted">暂无课程详情，请先在学习中心进行课程同步。</p>
+
+            <!-- 小学课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#fef3c7;color:#d97706;border-color:#fde68a;">小学</span> 小学阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：拼音、识字、阅读、作文</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：四则运算、几何初步、奥数</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：自然拼读、词汇、日常口语</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 初中课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#e0e7ff;color:var(--primary);border-color:#c7d2fe;">初中</span> 初中阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：文言文、现代文阅读、写作</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                
+                <article class="course-card math" style="border: 2px solid var(--primary);">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta" style="color:var(--primary);background:#e0e7ff;border-color:#c7d2fe;">✅ 已开通</span></div>
+                  <h3>初中数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：代数、几何、函数、概率</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/dashboard" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card english" style="border: 2px solid var(--emerald);">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta" style="color:var(--emerald);background:#d1fae5;border-color:#a7f3d0;">✅ 已开通</span></div>
+                  <h3>初中英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：语法、听力、阅读、写作</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/dashboard" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card physics" style="border: 2px solid var(--orange);">
+                  <div class="course-head"><div class="course-icon">物</div><span class="course-meta" style="color:var(--orange);background:#ffedd5;border-color:#fed7aa;">✅ 已开通</span></div>
+                  <h3>初中物理</h3>
+                  <p class="muted" style="margin-top:6px;">包含：力学、电学、声光热</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/dashboard" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">化</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中化学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：物质构成、化学反应</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">生</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中生物</h3>
+                  <p class="muted" style="margin-top:6px;">包含：细胞、遗传、生态系统</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 高中课程 -->
+            <div class="card">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#fce7f3;color:#e11d48;border-color:#fbcfe8;">高中</span> 高中阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：古诗词鉴赏、现代文、作文提升</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：导数、圆锥曲线、立体几何</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：长难句分析、高考词汇、写作</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">物</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中物理</h3>
+                  <p class="muted" style="margin-top:6px;">包含：力学综合、电磁学综合</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">化</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中化学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：有机化学、物质结构、化学反应原理</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">生</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中生物</h3>
+                  <p class="muted" style="margin-top:6px;">包含：分子与细胞、遗传与进化、稳态</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
               </div>
             </div>
 
