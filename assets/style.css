@@ -1,18 +1,18 @@
 :root {
-  --bg: #FDFBF7;
-  --panel: rgba(255, 255, 255, 0.65);
-  --line: rgba(26, 43, 60, 0.08);
-  --text: #1A2B3C;
-  --muted: #6B7C93;
+  --bg: #F4F1EA; /* 降低亮度的米色/燕麦色，更护眼 */
+  --panel: rgba(255, 255, 255, 0.45); /* 降低卡片白度，减少反光 */
+  --line: rgba(26, 43, 60, 0.1);
+  --text: #2A3645; /* 字体稍微调浅一点点，降低黑白对比度 */
+  --muted: #78879B;
   /* xtqihang inspired palette */
   --primary: #1A2B3C;
   --primary-hover: #C5A059;
-  --accent: #C5A059;
+  --accent: #B38E48; /* 金色也稍微调暗一点 */
   --blue: #2A4365;
-  --emerald: #4A7C59;
-  --orange: #C5A059;
-  --cyan: #5D8AA8;
-  --purple: #6B5B95;
+  --emerald: #406A4E; /* 绿色调暗 */
+  --orange: #B38E48;
+  --cyan: #4F7A96;
+  --purple: #5D4E82; /* 紫色调暗 */
   --hairline: rgba(26, 43, 60, 0.08);
   --radius-sm: 8px;
   --radius-md: 12px;
