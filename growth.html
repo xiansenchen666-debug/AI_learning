@@ -233,23 +233,7 @@
       .usage-fill.green { width: 10%; background: linear-gradient(90deg, #34d399, #10b981); }
       .summary-card { background: linear-gradient(135deg, rgba(238,242,255,.88), rgba(243,232,255,.84)); }
       .summary-ghost { position: absolute; right: 14px; top: 8px; font-size: 86px; font-weight: 900; opacity: .08; color: var(--primary); }
-      .modal { position: fixed; inset: 0; z-index: 20; display: none; align-items: center; justify-content: center; padding: 20px; }
-      .modal.open { display: flex; }
-      .modal-backdrop { position: absolute; inset: 0; background: rgba(15,23,42,.4); backdrop-filter: blur(10px); }
-      .modal-card {
-        position: relative; width: min(420px, 100%); padding: 32px; border-radius: var(--radius-2xl); background: #fff; box-shadow: var(--shadow-strong);
-      }
-      .modal-icon {
-        width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center;
-        background: rgba(16,185,129,.16); color: var(--emerald); font-size: 28px; font-weight: 900;
-      }
-      .modal-card h3, .modal-card p { text-align: center; }
-      .modal-card p { margin-top: 8px; color: var(--muted); }
-      .password-input {
-        width: 100%; margin-top: 22px; padding: 14px 16px; border-radius: 18px; border: 1px solid #e2e8f0;
-        background: #f8fafc; text-align: center; letter-spacing: .35em; outline: none;
-      }
-      .modal-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+      
 
       @media (max-width: 1180px) {
         .dashboard-grid-top, .dashboard-grid-main, .growth-layout, .course-grid { grid-template-columns: 1fr; }
@@ -317,7 +301,6 @@
                 <h1 class="section-title" style="font-size:34px;">成长轨迹</h1>
                 <p class="muted" style="margin-top:8px;">全面掌握 Cary 的学习情况与设备使用健康</p>
               </div>
-              <button class="secondary-btn" id="open-parent-modal">家长高级设置</button>
             </div>
 
             <div class="growth-layout">
@@ -370,47 +353,9 @@
       </main>
     </div>
 
-    <div class="modal" id="parent-modal">
-      <div class="modal-backdrop" data-close-modal="true"></div>
-      <div class="modal-card">
-        <div class="modal-icon">护</div>
-        <h3>请输入家长密码</h3>
-        <p>为了保护设备设置，请验证家长身份</p>
-        <input class="password-input" type="password" placeholder="输入 6 位密码" maxlength="6" />
-        <div class="modal-actions">
-          <button class="ghost-btn" data-close-modal="true">取消</button>
-          <button class="secondary-btn" id="confirm-parent-modal" style="background:var(--emerald);color:#fff;">确认</button>
-        </div>
-      </div>
+    
     </div>
 
-    <script>
-      const parentModal = document.getElementById('parent-modal');
-      const openParentModal = document.getElementById('open-parent-modal');
-      const confirmParentModal = document.getElementById('confirm-parent-modal');
-      const closeModalNodes = document.querySelectorAll('[data-close-modal="true"]');
-      const clockNode = document.getElementById('clock');
-
-      function openModal() { if (parentModal) parentModal.classList.add('open'); }
-      function closeModal() { if (parentModal) parentModal.classList.remove('open'); }
-
-      function updateClock() {
-        if (!clockNode) return;
-        const now = new Date();
-        clockNode.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-      }
-
-      openParentModal?.addEventListener('click', openModal);
-      confirmParentModal?.addEventListener('click', () => {
-        closeModal();
-      });
-      closeModalNodes.forEach((node) => node.addEventListener('click', closeModal));
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeModal();
-      });
-
-      updateClock();
-      setInterval(updateClock, 30000);
-    </script>
+    
   </body>
 </html>

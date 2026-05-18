@@ -99,14 +99,14 @@
         <p class="brand-subtitle">AI 自习室</p>
       </div>
 
-      <form action="/dashboard" method="GET" id="login-form">
+      <form action="/api/login" method="POST" id="login-form">
         <div class="form-group">
           <label class="form-label">学生账号</label>
-          <input type="text" class="form-input" placeholder="请输入学校/机构分配的账号" required />
+          <input type="text" name="username" class="form-input" placeholder="请输入学校/机构分配的账号" required />
         </div>
         <div class="form-group">
           <label class="form-label">密码</label>
-          <input type="password" class="form-input" placeholder="请输入密码" required />
+          <input type="password" name="password" class="form-input" placeholder="请输入密码" required />
         </div>
         <button type="submit" class="submit-btn">登录系统</button>
       </form>
@@ -116,12 +116,5 @@
       </div>
     </div>
     
-    <script>
-      document.getElementById('login-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Simulate login success and redirect
-        window.location.href = '/dashboard';
-      });
-    </script>
   </body>
 </html>
