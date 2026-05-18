@@ -3,187 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>???? - ???? AI ???</title>
+    <title>星途启航 AI 自习室</title>
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand">
-          <div class="brand-mark">?</div>
+          <div class="brand-mark">星</div>
           <div>
-            <p class="brand-title">????</p>
-            <p class="brand-subtitle">AI ???</p>
+            <p class="brand-title">星途启航</p>
+            <p class="brand-subtitle">AI 自习室</p>
           </div>
         </div>
 
+        
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><span class="icon-badge">?</span><span class="nav-label">????</span></a>
-          <a href="/subjects" class="nav-btn active"><span class="icon-badge">?</span><span class="nav-label">????</span></a>
-          <a href="/mistakes" class="nav-btn"><span class="icon-badge">?</span><span class="nav-label">?????</span></a>
-          <a href="/growth" class="nav-btn"><span class="icon-badge">?</span><span class="nav-label">????</span></a>
+          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn active"><span class="icon-badge">课</span><span class="nav-label">同步课程</span></a>
+          <a href="/mistakes" class="nav-btn "><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn "><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
         </nav>
 
+
         <div class="sidebar-footer">
-          <button class="nav-btn" type="button"><span class="icon-badge">?</span><span class="nav-label">????</span></button>
+          <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
         </div>
       </aside>
 
       <main class="content">
         <header class="topbar" style="justify-content: flex-end;">
           <div class="topbar-right">
-            <div class="avatar-card" id="avatar-trigger" style="cursor: pointer; position: relative;">
+            <div class="avatar-card" id="avatar-trigger" style="cursor:pointer;position:relative;">
               <div>
-                <p style="font-size: 14px; font-weight: 600;">Cary</p>
-                <p class="muted" style="font-size: 12px; margin-top: 4px;">Lv.12 ??</p>
+                <p style="font-size:14px;font-weight:800;">Cary</p>
+                <p class="muted" style="font-size:12px;margin-top:4px;">Lv.12 学霸</p>
               </div>
               <div class="avatar">CA</div>
+              
+              <!-- Apple style dropdown menu -->
               <div class="avatar-dropdown" id="avatar-dropdown">
                 <div class="dropdown-header">
-                  <div class="avatar" style="width: 36px; height: 36px; font-size: 14px;">CA</div>
+                  <div class="avatar" style="width:36px;height:36px;font-size:14px;">CA</div>
                   <div>
-                    <p style="font-size: 14px; font-weight: 600; color: var(--text); margin: 0;">Cary</p>
-                    <p style="font-size: 12px; color: var(--muted); margin: 2px 0 0;">student@school.edu</p>
+                    <p style="font-size:14px;font-weight:700;color:var(--text);margin:0;">Cary</p>
+                    <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">student@school.edu</p>
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <button class="dropdown-item" type="button"><span style="font-size: 16px; width: 20px; text-align: center;">??</span>????</button>
-                <button class="dropdown-item" type="button"><span style="font-size: 16px; width: 20px; text-align: center;">??</span>????</button>
+                <button class="dropdown-item">
+                  <span style="font-size:16px;width:20px;text-align:center;">👤</span> 个人信息
+                </button>
+                <button class="dropdown-item">
+                  <span style="font-size:16px;width:20px;text-align:center;">🔄</span> 切换账号
+                </button>
                 <div class="dropdown-divider"></div>
-                <a href="/api/logout" class="dropdown-item" style="color: #ef4444; text-decoration: none; display: flex;"><span style="font-size: 16px; width: 20px; text-align: center;">??</span>????</a>
+                <a href="/api/logout" class="dropdown-item" style="color:#ef4444;text-decoration:none;display:flex;">
+                  <span style="font-size:16px;width:20px;text-align:center;">🚪</span> 退出登录
+                </a>
               </div>
             </div>
           </div>
         </header>
 
         <div class="page-scroll">
-          <section class="page active">
-            <div class="card">
-              <div class="section-head">
-                <h1 class="section-title">??????</h1>
-                <span class="stat-chip">??? 3 ?</span>
-              </div>
-              <p class="muted" style="margin-bottom: 24px;">
-                ???????????????????????????????????????
-              </p>
+          <section class="page active" id="subjects-page">
 
-              <div class="grid" style="gap: 24px;">
-                <div class="card">
-                  <div class="section-head">
-                    <h2 style="font-size: 22px; font-weight: 600;">????</h2>
-                    <span class="mini-chip">????</span>
-                  </div>
-                  <div class="course-grid">
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">??????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">??????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">??????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="section-head">
-                    <h2 style="font-size: 22px; font-weight: 600;">????</h2>
-                    <span class="mini-chip">????</span>
-                  </div>
-                  <div class="course-grid">
-                    <article class="course-card math">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <a href="/course" class="secondary-btn">????</a>
-                    </article>
-                    <article class="course-card english">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <a href="/course" class="secondary-btn">????</a>
-                    </article>
-                    <article class="course-card physics">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">???????????</p>
-                      <a href="/course" class="secondary-btn">????</a>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="section-head">
-                    <h2 style="font-size: 22px; font-weight: 600;">????</h2>
-                    <span class="mini-chip">????</span>
-                  </div>
-                  <div class="course-grid">
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">?????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                    <article class="course-card locked">
-                      <div class="course-head"><div class="course-icon">?</div><span class="course-meta">???</span></div>
-                      <h3 style="margin-bottom: 8px;">????</h3>
-                      <p class="muted" style="font-size: 14px; margin-bottom: 14px;">??????????????</p>
-                      <div class="unlock-overlay"><span style="font-size: 12px; color: var(--muted);">?????????</span><button class="unlock-btn">????</button></div>
-                    </article>
-                  </div>
-                </div>
+            <div class="growth-header">
+              <div>
+                <h1 class="section-title" style="font-size:34px;">全课程目录</h1>
+                <p class="muted" style="margin-top:8px;">涵盖小学、初中、高中各科同步课程。灰色为未解锁科目，需要单独开通。</p>
               </div>
             </div>
+
+            <!-- 小学课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#fef3c7;color:#d97706;border-color:#fde68a;">小学</span> 小学阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：拼音、识字、阅读、作文</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：四则运算、几何初步、奥数</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>小学英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：自然拼读、词汇、日常口语</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 初中课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#e0e7ff;color:var(--primary);border-color:#c7d2fe;">初中</span> 初中阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：文言文、现代文阅读、写作</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                
+                <article class="course-card math" style="border: 2px solid var(--primary);">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta" style="color:var(--primary);background:#e0e7ff;border-color:#c7d2fe;">✅ 已开通</span></div>
+                  <h3>初中数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：代数、几何、函数、概率</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card english" style="border: 2px solid var(--emerald);">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta" style="color:var(--emerald);background:#d1fae5;border-color:#a7f3d0;">✅ 已开通</span></div>
+                  <h3>初中英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：语法、听力、阅读、写作</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card physics" style="border: 2px solid var(--orange);">
+                  <div class="course-head"><div class="course-icon">物</div><span class="course-meta" style="color:var(--orange);background:#ffedd5;border-color:#fed7aa;">✅ 已开通</span></div>
+                  <h3>初中物理</h3>
+                  <p class="muted" style="margin-top:6px;">包含：力学、电学、声光热</p>
+                  <div class="unlock-overlay" style="border-top:none;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;">去学习</a>
+                  </div>
+                </article>
+
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">化</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中化学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：物质构成、化学反应</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">生</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>初中生物</h3>
+                  <p class="muted" style="margin-top:6px;">包含：细胞、遗传、生态系统</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 高中课程 -->
+            <div class="card">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#fce7f3;color:#e11d48;border-color:#fbcfe8;">高中</span> 高中阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">语</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中语文</h3>
+                  <p class="muted" style="margin-top:6px;">包含：古诗词鉴赏、现代文、作文提升</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">数</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中数学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：导数、圆锥曲线、立体几何</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">英</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中英语</h3>
+                  <p class="muted" style="margin-top:6px;">包含：长难句分析、高考词汇、写作</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">物</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中物理</h3>
+                  <p class="muted" style="margin-top:6px;">包含：力学综合、电磁学综合</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">化</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中化学</h3>
+                  <p class="muted" style="margin-top:6px;">包含：有机化学、物质结构、化学反应原理</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+                <article class="course-card locked">
+                  <div class="course-head"><div class="course-icon">生</div><span class="course-meta">🔒 未解锁</span></div>
+                  <h3>高中生物</h3>
+                  <p class="muted" style="margin-top:6px;">包含：分子与细胞、遗传与进化、稳态</p>
+                  <div class="unlock-overlay">
+                    <span style="font-size:12px;font-weight:700;color:var(--muted);">此科目需要单独开通</span>
+                    <button class="unlock-btn">付费解锁</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
           </section>
         </div>
       </main>
     </div>
 
+    
+    </div>
+
+    
     <script>
-      const avatarTrigger = document.getElementById("avatar-trigger");
-      const avatarDropdown = document.getElementById("avatar-dropdown");
+      // Dropdown toggle logic
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      
       if (avatarTrigger && avatarDropdown) {
-        avatarTrigger.addEventListener("click", (event) => {
-          event.stopPropagation();
-          avatarDropdown.classList.toggle("active");
+        avatarTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
         });
-        document.addEventListener("click", (event) => {
-          if (!avatarTrigger.contains(event.target)) {
-            avatarDropdown.classList.remove("active");
+        
+        document.addEventListener('click', function(e) {
+          if (!avatarTrigger.contains(e.target)) {
+            avatarDropdown.classList.remove('active');
           }
         });
       }

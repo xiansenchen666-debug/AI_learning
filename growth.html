@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>成长轨迹 - 星途启航 AI 自习室</title>
+    <title>星途启航 AI 自习室</title>
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand">
@@ -17,126 +23,133 @@
           </div>
         </div>
 
+        
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">同步课程</span></a>
-          <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn "><span class="icon-badge">课</span><span class="nav-label">同步课程</span></a>
+          <a href="/mistakes" class="nav-btn "><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
           <a href="/growth" class="nav-btn active"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
         </nav>
+
+
+        <div class="sidebar-footer">
+          <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
+        </div>
       </aside>
 
       <main class="content">
         <header class="topbar" style="justify-content: flex-end;">
           <div class="topbar-right">
-            <div class="avatar-card" id="avatar-trigger" style="cursor: pointer; position: relative;">
+            <div class="avatar-card" id="avatar-trigger" style="cursor:pointer;position:relative;">
               <div>
-                <p style="font-size: 14px; font-weight: 600;">Cary</p>
-                <p class="muted" style="font-size: 12px; margin-top: 4px;">Lv.12 学霸</p>
+                <p style="font-size:14px;font-weight:800;">Cary</p>
+                <p class="muted" style="font-size:12px;margin-top:4px;">Lv.12 学霸</p>
               </div>
               <div class="avatar">CA</div>
+              
+              <!-- Apple style dropdown menu -->
               <div class="avatar-dropdown" id="avatar-dropdown">
                 <div class="dropdown-header">
-                  <div class="avatar" style="width: 36px; height: 36px; font-size: 14px;">CA</div>
+                  <div class="avatar" style="width:36px;height:36px;font-size:14px;">CA</div>
                   <div>
-                    <p style="font-size: 14px; font-weight: 600; color: var(--text); margin: 0;">Cary</p>
-                    <p style="font-size: 12px; color: var(--muted); margin: 2px 0 0;">student@school.edu</p>
+                    <p style="font-size:14px;font-weight:700;color:var(--text);margin:0;">Cary</p>
+                    <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">student@school.edu</p>
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <button class="dropdown-item" type="button"><span style="font-size: 16px; width: 20px; text-align: center;">👤</span>个人信息</button>
-                <button class="dropdown-item" type="button"><span style="font-size: 16px; width: 20px; text-align: center;">🔄</span>切换账号</button>
+                <button class="dropdown-item">
+                  <span style="font-size:16px;width:20px;text-align:center;">👤</span> 个人信息
+                </button>
+                <button class="dropdown-item">
+                  <span style="font-size:16px;width:20px;text-align:center;">🔄</span> 切换账号
+                </button>
                 <div class="dropdown-divider"></div>
-                <a href="/api/logout" class="dropdown-item" style="color: #ef4444; text-decoration: none; display: flex;"><span style="font-size: 16px; width: 20px; text-align: center;">🚪</span>退出登录</a>
+                <a href="/api/logout" class="dropdown-item" style="color:#ef4444;text-decoration:none;display:flex;">
+                  <span style="font-size:16px;width:20px;text-align:center;">🚪</span> 退出登录
+                </a>
               </div>
             </div>
           </div>
         </header>
 
         <div class="page-scroll">
-          <section class="page active">
+          <section class="page active" id="growth-page">
+
             <div class="growth-header">
               <div>
-                <h1 class="section-title" style="font-size: 34px;">成长轨迹</h1>
-                <p class="muted" style="margin-top: 8px;">记录每一次稳定进步，让学习节奏可见。</p>
+                <h1 class="section-title" style="font-size:34px;">成长轨迹</h1>
+                <p class="muted" style="margin-top:8px;">全面掌握 Cary 的学习情况与设备使用健康</p>
               </div>
             </div>
 
             <div class="growth-layout">
               <div class="card">
                 <div class="section-head">
-                  <h2 class="section-title">近 7 日学力走势</h2>
-                  <span class="mini-chip">持续上升</span>
+                  <h2 class="section-title">本周学情走势</h2>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button class="tag-btn active">数学</button>
+                    <button class="tag-btn">英语</button>
+                    <button class="tag-btn">物理</button>
+                  </div>
                 </div>
                 <div class="chart-columns">
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 42%;"></div></div><span>周一</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 50%;"></div></div><span>周二</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 58%;"></div></div><span>周三</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 66%;"></div></div><span>周四</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 72%;"></div></div><span>周五</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar best" style="--height: 84%;"></div></div><span>周六</span></div>
-                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height: 78%;"></div></div><span>周日</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:30%;"></div></div><span class="muted">周一</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:45%;"></div></div><span class="muted">周二</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:60%;"></div></div><span class="muted">周三</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:40%;"></div></div><span class="muted">周四</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:75%;"></div></div><span class="muted">周五</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar best" style="--height:85%;--bar:linear-gradient(180deg,#818cf8,#8b5cf6);"></div></div><span class="muted">周六</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:50%;"></div></div><span class="muted">周日</span></div>
                 </div>
                 <div class="stats-grid">
-                  <div class="metric"><span class="muted">累计练习</span><strong>286</strong></div>
-                  <div class="metric"><span class="muted">平均正确率</span><strong>81<small>%</small></strong></div>
-                  <div class="metric"><span class="muted">掌握知识点</span><strong>42</strong></div>
+                  <div class="metric"><span class="muted">平均正确率</span><strong>86<small>%</small></strong></div>
+                  <div class="metric"><span class="muted">学习总时长</span><strong>14<small>h</small></strong></div>
+                  <div class="metric"><span class="muted">掌握知识点</span><strong>24<small>个</small></strong></div>
                 </div>
               </div>
 
-              <div class="grid" style="gap: 24px;">
-                <div class="guardian-card">
-                  <p style="font-size: 14px; color: rgba(255,255,255,0.75);">本周关键词</p>
-                  <h2 style="margin-top: 8px; font-size: 28px; font-weight: 600; letter-spacing: -0.01em;">稳定、专注、持续复盘。</h2>
-                  <div class="guardian-stats">
-                    <div class="guardian-box">
-                      <span style="font-size: 13px; color: rgba(255,255,255,0.72);">学习时长</span>
-                      <strong>9.5h</strong>
-                    </div>
-                    <div class="guardian-box">
-                      <span style="font-size: 13px; color: rgba(255,255,255,0.72);">完成复习</span>
-                      <strong>18 次</strong>
-                    </div>
+              <div class="grid" style="gap:24px;">
+                <div class="card">
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:18px;">应用使用时长（今日）</h2>
+                  <div class="usage-list">
+                    <div><div class="usage-item-head"><span>AI 错题本</span><span>45 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill orange"></div></div></div>
+                    <div><div class="usage-item-head"><span>数学同步课</span><span>20 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill blue"></div></div></div>
+                    <div><div class="usage-item-head"><span>英汉词典</span><span>10 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill green"></div></div></div>
                   </div>
                 </div>
 
                 <div class="card summary-card">
                   <div class="summary-ghost">AI</div>
-                  <div class="section-head">
-                    <h2 class="section-title">学习画像</h2>
-                  </div>
-                  <div class="usage-list">
-                    <div>
-                      <div class="usage-item-head"><span>数学投入</span><span>60%</span></div>
-                      <div class="progress-track"><div class="progress-fill usage-fill orange"></div></div>
-                    </div>
-                    <div>
-                      <div class="usage-item-head"><span>英语投入</span><span>30%</span></div>
-                      <div class="progress-track"><div class="progress-fill usage-fill blue"></div></div>
-                    </div>
-                    <div>
-                      <div class="usage-item-head"><span>物理投入</span><span>10%</span></div>
-                      <div class="progress-track"><div class="progress-fill usage-fill green"></div></div>
-                    </div>
-                  </div>
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:14px;">AI 学情总结</h2>
+                  <p style="position:relative;z-index:1;line-height:1.8;color:#312e81;">Cary 本周在数学二次函数板块进步显著，错误率下降了 40%。但在英语阅读长难句分析上停留时间较长，建议周末进行一次英语专项阅读训练。</p>
+                  <button class="secondary-btn" style="margin-top:18px;">生成详细报告给家长</button>
                 </div>
               </div>
             </div>
+          
           </section>
         </div>
       </main>
     </div>
 
+    
+    </div>
+
+    
     <script>
-      const avatarTrigger = document.getElementById("avatar-trigger");
-      const avatarDropdown = document.getElementById("avatar-dropdown");
+      // Dropdown toggle logic
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      
       if (avatarTrigger && avatarDropdown) {
-        avatarTrigger.addEventListener("click", (event) => {
-          event.stopPropagation();
-          avatarDropdown.classList.toggle("active");
+        avatarTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
         });
-        document.addEventListener("click", (event) => {
-          if (!avatarTrigger.contains(event.target)) {
-            avatarDropdown.classList.remove("active");
+        
+        document.addEventListener('click', function(e) {
+          if (!avatarTrigger.contains(e.target)) {
+            avatarDropdown.classList.remove('active');
           }
         });
       }
