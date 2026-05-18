@@ -301,6 +301,24 @@ h1, h2, h3, p { margin: 0; }
 .course-card.locked { opacity: 0.85; filter: grayscale(0.2); }
 .course-card.locked .course-icon { background: rgba(226,232,240,.6); color: #94a3b8; border-color: rgba(226,232,240,.8); }
 .course-card.locked .course-meta { color: #f43f5e; background: rgba(255,228,230,.8); border-color: rgba(255,228,230,.9); }
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  flex-grow: 1;
+}
+.chapter-list li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--hairline);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chapter-list li:last-child {
+  border-bottom: none;
+}
 .unlock-overlay { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.6); }
 .unlock-btn { padding: 6px 12px; font-size: 12px; font-weight: 800; color: #fff; background: var(--primary); border: none; border-radius: 12px; cursor: pointer; transition: var(--transition); }
 .unlock-btn:hover { background: #4338ca; transform: translateY(-1px); }
