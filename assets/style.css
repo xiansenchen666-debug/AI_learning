@@ -125,9 +125,9 @@ button, input { font: inherit; }
    Animations
    ========================================================================== */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 4px rgba(197, 160, 89, 0.3)); }
+  50% { transform: translateY(-12px) scale(1.15); filter: drop-shadow(0 0 16px rgba(197, 160, 89, 0.8)); }
+  100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 4px rgba(197, 160, 89, 0.3)); }
 }
 
 @keyframes slideUpFade {
@@ -138,6 +138,8 @@ button, input { font: inherit; }
 .slide-up-1 { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 .slide-up-2 { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards; opacity: 0; }
 .slide-up-3 { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
+.slide-up-4 { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
+.slide-up-5 { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; opacity: 0; }
 
 .glass-card:hover {
   transform: translateY(-4px);

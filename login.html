@@ -24,7 +24,7 @@
     <main class="login-stage">
         <section class="login-showcase">
           <div class="login-brand-area" style="max-width:480px;text-align:left;">
-            <div class="sparkle-icon" style="font-size:32px;margin-bottom:24px; animation: float 3s ease-in-out infinite;">✨</div>
+            <div class="sparkle-icon" style="font-size:48px; margin-bottom:28px; animation: float 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; display: inline-block;">✨</div>
             <h1 class="login-headline slide-up-1" style="font-family: 'Playfair Display', serif; font-size:48px; line-height:1.2; margin-bottom:24px; font-weight:800; color: var(--primary); letter-spacing:-0.5px;">
               点亮你的星途<span style="color: var(--accent);">.</span>
             </h1>
@@ -66,19 +66,21 @@
           <script>
             const params = new URLSearchParams(window.location.search);
             if (params.get('error') === '1') {
-              document.write('<div style="color: var(--orange); font-size: 14px; margin-bottom: 16px; background: rgba(217, 119, 6, 0.1); padding: 12px; border-radius: 8px;">账号或密码不匹配，请联系老师。<br>(测试账号: Cary / 123456)</div>');
+              document.write('<div class="slide-up-1" style="color: var(--accent); font-size: 14px; margin-bottom: 16px; background: rgba(197, 160, 89, 0.1); padding: 12px; border-radius: 8px;">账号或密码不匹配，请联系老师。<br>(测试账号: Cary / 123456)</div>');
             }
           </script>
 
-          <div class="form-group">
+          <div class="form-group slide-up-3">
             <label class="form-label">学生账号</label>
             <input type="text" name="username" class="form-input" placeholder="请输入学校/机构分配的账号" required />
           </div>
-          <div class="form-group">
+          <div class="form-group slide-up-4">
             <label class="form-label">密码</label>
             <input type="password" name="password" class="form-input" placeholder="请输入密码" required />
           </div>
-          <button type="submit" class="submit-btn">登录系统</button>
+          <div class="slide-up-5">
+            <button type="submit" class="submit-btn">登录系统</button>
+          </div>
         </form>
 
         <div class="notice">
