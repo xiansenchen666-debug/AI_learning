@@ -173,18 +173,20 @@ button, input { font: inherit; }
   text-decoration: none; border: 0; cursor: pointer; transition: var(--transition);
 }
 .nav-btn {
-  position: relative; display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px;
-  color: var(--muted); background: transparent; border-radius: 20px; text-align: left;
+  position: relative; display: flex; align-items: center; gap: 14px; width: 100%; padding: 16px 18px;
+  color: var(--text); background: transparent; border-radius: 16px; text-align: left;
+  font-weight: 600; font-size: 15px; opacity: 0.85;
 }
-.nav-btn:hover { color: var(--primary); transform: translateX(6px); background: rgba(255,255,255,0.5); }
+.nav-btn:hover { opacity: 1; transform: translateX(4px); background: rgba(26, 43, 60, 0.05); }
 .nav-btn.active {
-  background: rgba(255,255,255,.78); border: 1px solid rgba(255,255,255,.82); box-shadow: 0 10px 24px rgba(26,43,60,.08);
+  background: #fff; border: 1px solid rgba(26, 43, 60, 0.08); box-shadow: 0 4px 12px rgba(26, 43, 60, 0.05);
+  font-weight: 800; color: var(--primary); opacity: 1;
 }
 .nav-btn.active::before {
-  content: ""; position: absolute; left: -4px; top: 50%; width: 6px; height: 26px; border-radius: 0 999px 999px 0;
-  background: var(--accent); transform: translateY(-50%); box-shadow: 0 0 12px rgba(197,160,89,.22);
+  content: ""; position: absolute; left: -4px; top: 50%; width: 4px; height: 20px; border-radius: 0 4px 4px 0;
+  background: var(--accent); transform: translateY(-50%); box-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
 }
-.nav-label { font-weight: 700; }
+.nav-label { font-weight: inherit; }
 .icon-badge {
   width: 36px; height: 36px; border-radius: 14px; background: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.7);
   font-size: 14px; font-weight: 800;
