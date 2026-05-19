@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Minds - AI答疑</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body {
+            font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden; /* App-like feel */
+        }
+        .apple-tight { letter-spacing: -0.02em; }
+        .nav-glass {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .panel-glass {
+            background: rgba(39, 39, 41, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+        /* Apple Intelligence / Siri Glow */
+        .siri-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.2), 
+                        inset 0 0 10px rgba(0, 102, 204, 0.1);
+        }
+        .siri-active {
+            box-shadow: 0 0 40px rgba(0, 102, 204, 0.6), 
+                        inset 0 0 20px rgba(0, 102, 204, 0.3),
+                        0 0 80px rgba(138, 43, 226, 0.4); /* Purple hint */
+            border-color: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+    <!-- Global Nav -->
+    <nav class="h-[44px] nav-glass flex items-center justify-between px-6 border-b border-white/10 shrink-0 z-50">
+        <div class="text-[12px] font-semibold tracking-wide text-white">ELITE MINDS | AI LAB</div>
+        <div class="flex space-x-6 text-[12px] text-gray-300">
+            <a href="/dashboard" class="hover:text-white transition-colors">概览</a>
+            <a href="/ai" class="text-white">AI答疑</a>
+        </div>
+    </nav>
+
+    <main class="flex-1 flex overflow-hidden relative">
+        <!-- Atmospheric background -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0066cc]/10 via-black to-black z-0 pointer-events-none"></div>
+
+        <!-- Left: Review Lab / Mistake Book -->
+        <aside class="w-[320px] panel-glass border-r border-white/10 p-6 hidden md:flex flex-col z-10">
+            <h3 class="text-[21px] font-semibold apple-tight mb-6">Review Lab / 错题本</h3>
+            <div class="space-y-4 overflow-y-auto flex-1 pr-2">
+                <div class="bg-[#272729] rounded-[18px] p-5 cursor-pointer hover:border-[#0071e3] border border-transparent transition-colors" onclick="showSource('hm2')">
+                    <div class="text-[12px] text-gray-400 mb-2 tracking-wide">数学 · 导数</div>
+                    <div class="text-[14px] font-medium mb-3">求极值时正负号判定错误</div>
+                    <div class="text-[12px] text-[#2997ff]">› 点击复习知识点</div>
+                </div>
+                <div class="bg-[#272729] rounded-[18px] p-5 cursor-pointer hover:border-[#0071e3] border border-transparent transition-colors" onclick="showSource('hp1')">
+                    <div class="text-[12px] text-gray-400 mb-2 tracking-wide">物理 · 万有引力</div>
+                    <div class="text-[14px] font-medium mb-3">忘记乘以引力常数G</div>
+                    <div class="text-[12px] text-[#2997ff]">› 点击复习知识点</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right: AI Chat Interface -->
+        <div class="flex-1 flex flex-col z-10">
+            
+            <!-- Chat History -->
+            <div class="flex-1 overflow-y-auto p-8 space-y-8" id="chat-history">
+                <!-- AI Greeting -->
+                <div class="flex items-start max-w-3xl mx-auto w-full">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#0066cc] to-purple-600 flex items-center justify-center shrink-0">✨</div>
+                    <div class="ml-4">
+                        <div class="text-[12px] text-[#cccccc] mb-1">Elite AI</div>
+                        <div class="text-[17px] text-[#ffffff] leading-[1.47]">
+                            你好！我是你的专属智能导师。无论是解答左侧的错题，还是探索新知识，我都在这里。今天想学点什么？
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-6 shrink-0 max-w-4xl mx-auto w-full relative">
+                <!-- Input Container -->
+                <div class="relative flex items-center bg-[#1d1d1f] rounded-[9999px] border border-white/10 px-[24px] py-[12px] transition-all duration-500 siri-glow" id="input-container">
+                    <input type="text" id="ai-input" placeholder="输入你想问的问题..." class="w-full bg-transparent text-[17px] text-white focus:outline-none placeholder-gray-500" autocomplete="off">
+                    <button class="ml-4 text-[#0066cc] hover:text-[#0071e3] transition-colors" onclick="sendMessage()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    </button>
+                </div>
+                <div class="text-center mt-3 text-[12px] text-[#7a7a7a]">AI 生成的内容可能不完全准确，请结合课本复习。</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Source Modal (hidden by default) -->
+    <div id="source-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-[100] hidden flex items-center justify-center transition-opacity duration-300 opacity-0">
+        <div class="bg-[#272729] rounded-[18px] p-[40px] max-w-md w-full mx-4 border border-white/10 transform scale-95 transition-transform duration-300" id="modal-content">
+            <h3 class="text-[28px] font-semibold apple-tight mb-2">知识点追溯</h3>
+            <p class="text-[17px] text-[#cccccc] mb-[32px] leading-[1.47]">即将跳转至包含此考点的系统课程，以进行针对性复习。</p>
+            <div class="flex space-x-4">
+                <button onclick="closeModal()" class="flex-1 bg-[#1d1d1f] text-white py-[11px] rounded-[9999px] text-[17px] font-medium transition-transform active:scale-95">取消</button>
+                <button id="go-course-btn" class="flex-1 bg-[#0066cc] text-white py-[11px] rounded-[9999px] text-[17px] font-medium transition-transform active:scale-95">前往课舱</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputEl = document.getElementById('ai-input');
+        const containerEl = document.getElementById('input-container');
+
+        inputEl.addEventListener('focus', () => {
+            containerEl.classList.add('siri-active');
+        });
+        inputEl.addEventListener('blur', () => {
+            containerEl.classList.remove('siri-active');
+        });
+        inputEl.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const text = inputEl.value.trim();
+            if (!text) return;
+            
+            const history = document.getElementById('chat-history');
+            
+            // User message
+            history.innerHTML += `
+                <div class="flex items-start max-w-3xl mx-auto w-full justify-end animate-fade-in">
+                    <div class="mr-4 text-right">
+                        <div class="text-[12px] text-[#cccccc] mb-1">You</div>
+                        <div class="text-[17px] leading-[1.47] bg-[#272729] px-[20px] py-[12px] rounded-[24px] rounded-tr-[4px] inline-block text-white border border-white/5 max-w-xl text-left">${text}</div>
+                    </div>
+                </div>
+            `;
+            
+            inputEl.value = '';
+            history.scrollTop = history.scrollHeight;
+
+            // AI mock response
+            setTimeout(() => {
+                history.innerHTML += `
+                    <div class="flex items-start max-w-3xl mx-auto w-full animate-fade-in">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#0066cc] to-purple-600 flex items-center justify-center shrink-0">✨</div>
+                        <div class="ml-4">
+                            <div class="text-[12px] text-[#cccccc] mb-1">Elite AI</div>
+                            <div class="text-[17px] leading-[1.47] text-white max-w-xl">
+                                这是一个非常好的问题！根据知识图谱分析，这部分涉及到了<strong>高阶抽象思维</strong>。建议你先回到课舱复习相关基础。<br><br>
+                                <a href="javascript:showSource('hm1')" class="text-[#2997ff] hover:underline text-[14px] inline-flex items-center mt-2">
+                                    <span>› 点击这里进行精准复习</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                history.scrollTop = history.scrollHeight;
+            }, 1000);
+        }
+
+        let targetCourseId = '';
+        function showSource(id) {
+            targetCourseId = id;
+            const modal = document.getElementById('source-modal');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.remove('hidden');
+            // trigger reflow
+            void modal.offsetWidth;
+            
+            modal.classList.remove('opacity-0');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+            
+            document.getElementById('go-course-btn').onclick = () => {
+                window.location.href = '/course?id=' + targetCourseId;
+            };
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('source-modal');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+    </style>
+</body>
+</html>

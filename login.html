@@ -1,92 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>登录 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="/assets/style.css" />
-  </head>
-  <body class="login-page">
-    <div class="ambient">
-      <div class="blob one"></div>
-      <div class="blob two"></div>
-      <div class="blob three"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Minds - 登录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body {
+            font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .apple-tight { letter-spacing: -0.02em; }
+        .action-blue { background-color: #0066cc; }
+        .action-blue-text { color: #0066cc; }
+        .glass { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen relative overflow-hidden">
+    <!-- Atmospheric background mimicking Apple's environment pages -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#0066cc]/10 rounded-full blur-[120px] pointer-events-none"></div>
     </div>
-
     
-    <div style="position: absolute; top: 32px; left: 40px; display: flex; align-items: center; gap: 12px; z-index: 10;">
-      <div style="position: relative; display: inline-block; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); letter-spacing: -0.5px;">
-  <span style="position: absolute; top: -14px; left: -6px; font-size: 14px; color: var(--accent); line-height: 1;">星途</span>
-  <span style="font-size: 32px; line-height: 1;">启航教育</span>
-</div>
-    </div>
-
-    <main class="login-stage">
-        <section class="login-showcase">
-          <div class="login-brand-area" style="max-width:480px;text-align:left;">
-            <div class="sparkle-icon" style="font-size:48px; margin-bottom:28px; animation: float 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; display: inline-block;">✨</div>
-            <h1 class="login-headline slide-up-1" style="font-family: 'Playfair Display', serif; font-size:48px; line-height:1.2; margin-bottom:24px; font-weight:800; color: var(--primary); letter-spacing:-0.5px;">
-              点亮你的星途<span style="color: var(--accent);">.</span>
-            </h1>
-            <p class="login-copy slide-up-2" style="font-size:18px; line-height:1.8; color:var(--muted); font-weight:400; margin-bottom:48px;">
-              每一次解题，都是对未知的跨越。<br>
-              在这里，AI 与你并肩，将复杂的知识化作清晰的轨迹。<br><br>
-              <span style="color:var(--primary); font-weight:600; letter-spacing:1px;">保持专注，保持好奇。</span>
-            </p>
-
-            <div class="premium-tsinghua-card slide-up-3" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 32px 36px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.9); position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); transition: all 0.5s ease; cursor: default;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 30px 60px rgba(0, 0, 0, 0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.04)';">
-              <div style="position: absolute; right: -5%; top: -15%; font-size: 180px; opacity: 0.03; color: var(--primary); pointer-events: none;">🏛️</div>
-              
-              <div style="display: flex; align-items: flex-start; gap: 20px; position: relative; z-index: 1;">
-                <div style="background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), rgba(197, 160, 89, 0.02)); padding: 14px; border-radius: 18px; border: 1px solid rgba(197, 160, 89, 0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 16px rgba(197, 160, 89, 0.08);">
-                  <span style="font-size: 28px; display: block; line-height: 1;">🎓</span>
-                </div>
-                <div>
-                  <div style="font-size: 12px; color: var(--accent); font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase;">Academic Excellence</div>
-                  <h2 style="font-size: 19px; color: var(--primary); font-weight: 800; margin: 0 0 10px 0; letter-spacing: 0.5px; line-height: 1.4;">
-                    <span style="color: var(--accent); font-size: 21px;">联合清华</span>等顶尖名师团队倾力打造
-                  </h2>
-                  <p style="font-size: 14px; color: var(--muted); margin: 0; line-height: 1.7; font-weight: 500;">
-                    深度拆解核心考点，重塑底层逻辑，构建国际化标准的高效学习链路。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      <section class="login-container">
-        <div class="login-card-header">
-          <h2 class="login-card-title">学生登录</h2>
-          <p class="login-card-subtitle">登录后继续你的个人学习空间</p>
-        </div>
-
+    <div class="z-10 text-center w-full max-w-md px-6">
+        <p class="text-[12px] tracking-widest text-gray-400 uppercase mb-4 font-semibold">DESIGNED BY ELITE MINDS</p>
+        <h1 class="text-[40px] md:text-[56px] font-semibold apple-tight mb-4 text-white leading-[1.07]">由清华等名校名师团队<br>联合打造。</h1>
+        <p class="text-[21px] text-gray-400 mb-12 font-medium">汇聚全球卓越教育资源，智启未来学习新时代。</p>
         
-        <form action="/api/login" method="POST" id="login-form">
-          <script>
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('error') === '1') {
-              document.write('<div class="slide-up-1" style="color: var(--accent); font-size: 14px; margin-bottom: 16px; background: rgba(197, 160, 89, 0.1); padding: 12px; border-radius: 8px;">账号或密码不匹配，请联系老师。<br>(测试账号: Cary / 123456)</div>');
-            }
-          </script>
-
-          <div class="form-group slide-up-3">
-            <label class="form-label">学生账号</label>
-            <input type="text" name="username" class="form-input" placeholder="请输入学校/机构分配的账号" required />
-          </div>
-          <div class="form-group slide-up-4">
-            <label class="form-label">密码</label>
-            <input type="password" name="password" class="form-input" placeholder="请输入密码" required />
-          </div>
-          <div class="slide-up-5">
-            <button type="submit" class="submit-btn">登录系统</button>
-          </div>
-        </form>
-
-        <div class="notice">
-          <p><strong>提示</strong><br />系统账号由学校或培训机构统一分配，不支持学生自行注册。<br />如需获取账号或密码遗失，请联系您的带班老师。</p>
+        <div class="glass rounded-[18px] p-10 text-left relative z-20">
+            <h2 class="text-[24px] font-semibold mb-6 apple-tight">登录学习空间</h2>
+            <div class="space-y-4">
+                <input type="text" placeholder="Apple ID 或手机号" class="w-full bg-transparent border border-white/20 rounded-[8px] px-4 py-3 text-[17px] text-white focus:outline-none focus:border-[#0071e3] transition-colors">
+                <input type="password" placeholder="密码" class="w-full bg-transparent border border-white/20 rounded-[8px] px-4 py-3 text-[17px] text-white focus:outline-none focus:border-[#0071e3] transition-colors">
+            </div>
+            <button onclick="window.location.href='/dashboard'" class="w-full action-blue text-white rounded-[9999px] py-[11px] mt-8 text-[17px] font-medium transition-transform active:scale-95">
+                登录
+            </button>
+            <div class="text-center mt-6">
+                <a href="#" class="action-blue-text text-[14px] hover:underline">忘记密码或 Apple ID？</a>
+            </div>
         </div>
-      </section>
-    </main>
-  </body>
+    </div>
+</body>
 </html>
