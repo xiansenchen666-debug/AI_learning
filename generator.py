@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>星途启航 AI 自习室</title>
-    <style>
+import os
+
+css_content = """<style>
 :root {
   --bg: #F5F5F7;
   --panel: rgba(255, 255, 255, 0.7);
@@ -209,7 +205,28 @@ h1, h2, h3, p { margin: 0; }
 .notice p strong { color: var(--text); }
 @media (max-width: 1180px) { .dashboard-grid-top, .dashboard-grid-main, .growth-layout, .course-grid { grid-template-columns: 1fr; } .hero-body, .growth-header, .section-head, .row-between, .topbar { flex-direction: column; align-items: stretch; } .login-stage { grid-template-columns: 1fr; justify-items: center; gap: 36px; } .login-showcase { max-width: 680px; padding: 0; text-align: center; } .login-headline, .login-copy, .login-feature-list { max-width: none; } .login-feature { justify-content: center; } }
 @media (max-width: 900px) { .app-shell { flex-direction: column; } .sidebar { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); } .nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .page-scroll, .topbar { padding-left: 18px; padding-right: 18px; } .stats-grid, .guardian-stats { grid-template-columns: 1fr; } .chart-columns { gap: 8px; height: 240px; } .login-page { padding: 18px; } .login-stage { min-height: calc(100vh - 36px); gap: 18px; } .login-showcase { display: none; } .login-container { max-width: 100%; padding: 30px 22px 24px; border-radius: 24px; } .login-card-title { font-size: 24px; } }
-</style>
+</style>"""
+
+def get_base_html(active_nav, content_body):
+    nav_links = {
+        'dashboard': '学习中心',
+        'subjects': '同步课程',
+        'mistakes': '智能错题本',
+        'growth': '成长轨迹'
+    }
+    nav_html = ''
+    for key, label in nav_links.items():
+        active_class = ' active' if key == active_nav else ' '
+        icon_char = label[0]
+        nav_html += f'<a href="/{key}" class="nav-btn{active_class}"><span class="icon-badge">{icon_char}</span><span class="nav-label">{label}</span></a>\\n          '
+    
+    return f'''<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星途启航 AI 自习室</title>
+    {css_content}
   </head>
   <body>
     <div class="ambient">
@@ -230,7 +247,7 @@ h1, h2, h3, p { margin: 0; }
           </div>
         </div>
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>\n          <a href="/subjects" class="nav-btn "><span class="icon-badge">同</span><span class="nav-label">同步课程</span></a>\n          <a href="/mistakes" class="nav-btn "><span class="icon-badge">智</span><span class="nav-label">智能错题本</span></a>\n          <a href="/growth" class="nav-btn "><span class="icon-badge">成</span><span class="nav-label">成长轨迹</span></a>\n
+          {nav_html.strip()}
         </nav>
         <div class="sidebar-footer">
           <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
@@ -262,7 +279,292 @@ h1, h2, h3, p { margin: 0; }
           </div>
         </header>
         <div class="page-scroll">
-          <div style="padding: 0 32px; max-width: 1440px; margin: 24px auto 0;">
+{content_body}
+        </div>
+      </main>
+    </div>
+    <script>
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      if (avatarTrigger && avatarDropdown) {{
+        avatarTrigger.addEventListener('click', function(e) {{
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
+        }});
+        document.addEventListener('click', function(e) {{
+          if (!avatarTrigger.contains(e.target)) {{
+            avatarDropdown.classList.remove('active');
+          }}
+        }});
+      }}
+    </script>
+  </body>
+</html>'''
+
+dashboard_body = '''          <section class="page active" id="dashboard-page">
+            <div class="grid dashboard-grid-top">
+              <div class="hero-card">
+                <div class="hero-body">
+                  <div>
+                    <div class="hero-pill">AI 深度分析完成  定制路线已生成</div>
+                    <h1 class="hero-title">Cary，今天有 <span>12个知识点</span> 需要巩固</h1>
+                    <p class="hero-desc">系统已根据艾宾浩斯遗忘曲线为你排好复习计划。我们将通过“先讲解、后刷题”的模式，帮你把知识点从小学到高中彻底串联打通。</p>
+                  </div>
+                  <button class="primary-btn">开始专属学习</button>
+                </div>
+              </div>
+              <div class="card achievement">
+                <p class="muted" style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;">学习成就</p>
+                <div class="achievement-mark">燃</div>
+                <div class="achievement-number">12<small>天</small></div>
+                <p style="margin-top:6px;color:var(--accent);font-size:13px;font-weight:800;">连续学习打卡</p>
+                <div class="progress-track"><div class="progress-fill"></div></div>
+                <p class="muted" style="font-size:13px;">本周学力值 2,450 XP，距离下一等级还差 550 XP</p>
+              </div>
+            </div>
+            <div class="grid dashboard-grid-main" style="margin-top:24px;">
+              <div class="grid" style="gap:24px;">
+                <div class="card">
+                  <div class="section-head">
+                    <h2 class="section-title">艾宾浩斯智能刷题 (抗遗忘)</h2>
+                    <span class="stat-chip" style="color:var(--emerald);background:rgba(74, 124, 89, 0.15);">临界遗忘点：2</span>
+                  </div>
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-dot" style="background:var(--orange);color:#fff;border-color:rgba(197, 160, 89, 0.2);font-size:14px;">急</div>
+                      <div class="timeline-content" style="border-color:rgba(197, 160, 89, 0.2);background:rgba(197, 160, 89, 0.05);">
+                        <div class="timeline-meta"><span style="color:var(--orange);">距离上次学习：2天</span><span class="mini-chip" style="color:var(--orange);background:rgba(255,255,255,.5);">记忆保留率 30%</span></div>
+                        <h3 style="margin-bottom:6px;">受力分析 (物理)</h3>
+                        <p class="muted" style="font-size:13px;margin-bottom:12px;">系统已为你生成 5 道变式题进行强化记忆</p>
+                        <button class="secondary-btn" style="padding:8px 16px;font-size:12px;background:var(--orange);color:#fff;border:none;">立即刷题巩固</button>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-dot" style="background:var(--accent);color:#fff;border-color:rgba(197, 160, 89, 0.2);font-size:14px;">中</div>
+                      <div class="timeline-content">
+                        <div class="timeline-meta"><span style="color:var(--accent);">距离上次学习：7天</span><span class="mini-chip" style="color:var(--accent);background:rgba(255,255,255,.5);">记忆保留率 55%</span></div>
+                        <h3 style="margin-bottom:6px;">现在完成时 (英语)</h3>
+                        <p class="muted" style="font-size:13px;margin-bottom:12px;">即将到达下一个遗忘节点，需完成 10 道语法题</p>
+                        <button class="ghost-btn" style="padding:8px 16px;font-size:12px;">开始刷题</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid" style="gap:24px;">
+                <div class="card">
+                  <div class="section-head">
+                    <h2 class="section-title">智能错题本</h2>
+                    <span class="stat-chip" style="color:var(--orange);background:rgba(107, 91, 149, 0.15);">3 待攻克</span>
+                  </div>
+                  <div class="mistake-box">
+                    <div class="row-between"><span class="mini-chip" style="background:rgba(26, 43, 60, 0.08);">数学</span><span class="muted" style="font-size:12px;">昨天的刷题测试</span></div>
+                    <p style="margin:14px 0 18px;line-height:1.7;font-weight:700;">已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，求对称轴并分析开口方向。</p>
+                    <button class="secondary-btn" style="width:100%;">AI 举一反三重刷</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>'''
+
+mistakes_body = '''          <section class="page active" id="mistakes-page">
+            <div class="growth-header">
+              <div>
+                <h1 class="section-title" style="font-size:34px;">智能错题本</h1>
+                <p class="muted" style="margin-top:8px;">攻克错题，举一反三</p>
+              </div>
+            </div>
+            <div class="grid" style="gap:24px;">
+              <div class="card">
+                <div class="mistake-box">
+                  <div class="row-between"><span class="mini-chip" style="background:rgba(26, 43, 60, 0.08);">数学</span><span class="muted" style="font-size:12px;">昨天的周测</span></div>
+                  <p style="margin:14px 0 18px;line-height:1.7;font-weight:700;">已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，求对称轴并分析开口方向。</p>
+                  <button class="secondary-btn" style="width:100%;">AI 举一反三</button>
+                </div>
+              </div>
+            </div>
+          </section>'''
+
+growth_body = '''          <section class="page active" id="growth-page">
+            <div class="growth-header">
+              <div>
+                <h1 class="section-title" style="font-size:34px;">成长轨迹</h1>
+                <p class="muted" style="margin-top:8px;">全面掌握 Cary 的学习情况与设备使用健康</p>
+              </div>
+            </div>
+            <div class="growth-layout">
+              <div class="card">
+                <div class="section-head">
+                  <h2 class="section-title">本周学情走势</h2>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button class="tag-btn active">数学</button>
+                    <button class="tag-btn">英语</button>
+                    <button class="tag-btn">物理</button>
+                  </div>
+                </div>
+                <div class="chart-columns">
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:30%;"></div></div><span class="muted">周一</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:45%;"></div></div><span class="muted">周二</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:60%;"></div></div><span class="muted">周三</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:40%;"></div></div><span class="muted">周四</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:75%;"></div></div><span class="muted">周五</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar best" style="--height:85%;--bar:linear-gradient(180deg,#818cf8,#8b5cf6);"></div></div><span class="muted">周六</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:50%;"></div></div><span class="muted">周日</span></div>
+                </div>
+                <div class="stats-grid">
+                  <div class="metric"><span class="muted">平均正确率</span><strong>86<small>%</small></strong></div>
+                  <div class="metric"><span class="muted">学习总时长</span><strong>14<small>h</small></strong></div>
+                  <div class="metric"><span class="muted">掌握知识点</span><strong>24<small>个</small></strong></div>
+                </div>
+              </div>
+              <div class="grid" style="gap:24px;">
+                <div class="card">
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:18px;">应用使用时长（今日）</h2>
+                  <div class="usage-list">
+                    <div><div class="usage-item-head"><span>AI 错题本</span><span>45 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill orange"></div></div></div>
+                    <div><div class="usage-item-head"><span>数学同步课</span><span>20 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill blue"></div></div></div>
+                    <div><div class="usage-item-head"><span>英汉词典</span><span>10 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill green"></div></div></div>
+                  </div>
+                </div>
+                <div class="card summary-card">
+                  <div class="summary-ghost">AI</div>
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:14px;">AI 学情总结</h2>
+                  <p style="position:relative;z-index:1;line-height:1.8;color:#312e81;">Cary 本周在数学二次函数板块进步显著，错误率下降了 40%。但在英语阅读长难句分析上停留时间较长，建议周末进行一次英语专项阅读训练。</p>
+                  <button class="secondary-btn" style="margin-top:18px;">生成详细报告给家长</button>
+                </div>
+              </div>
+            </div>
+          </section>'''
+
+subjects_body = '''          <section class="page active" id="subjects-page">
+            <div class="growth-header">
+              <div>
+                <h1 class="section-title" style="font-size:34px;">全课程目录</h1>
+                <p class="muted" style="margin-top:8px;">涵盖小学、初中、高中各科同步课程，已为您全部开放。</p>
+            <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(124, 58, 237, 0.04)); padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px; margin-top: 16px; border: 1px solid rgba(79, 70, 229, 0.15);">
+              <div style="font-size: 28px; background: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">🎓</div>
+              <div>
+                <p style="font-weight: 800; font-size: 16px; color: var(--primary); margin: 0; letter-spacing: 0.5px;">联合清华等顶尖名师团队倾力打造</p>
+                <p style="font-size: 13px; color: var(--muted); margin: 4px 0 0 0;">深度拆解核心考点，重塑底层逻辑，构建国际化标准的高效学习链路。</p>
+              </div>
+            </div>
+              </div>
+            </div>
+            <!-- 小学课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:rgba(197, 160, 89, 0.2);color:var(--accent);border-color:#fde68a;">小学</span> 小学阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card open-course" style="border: 1px solid rgba(107, 91, 149, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(107, 91, 149, 0.06);color:var(--purple);">课</div>
+                    <span class="course-meta" style="color:var(--purple);background:rgba(107, 91, 149, 0.06);border-color:rgba(107, 91, 149, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>小学语文</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 拼音基础</li>
+                    <li>第二章 汉字书写</li>
+                    <li>第三章 基础阅读</li>
+                    <li>第四章 看图写话</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--purple);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+                <article class="course-card open-course" style="border: 1px solid rgba(26, 43, 60, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(26, 43, 60, 0.06);color:var(--primary);">课</div>
+                    <span class="course-meta" style="color:var(--primary);background:rgba(26, 43, 60, 0.06);border-color:rgba(26, 43, 60, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>小学数学</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 数的认识</li>
+                    <li>第二章 四则运算</li>
+                    <li>第三章 几何初步</li>
+                    <li>第四章 基础应用</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--primary);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+                <article class="course-card open-course" style="border: 1px solid rgba(74, 124, 89, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(74, 124, 89, 0.06);color:var(--emerald);">课</div>
+                    <span class="course-meta" style="color:var(--emerald);background:rgba(74, 124, 89, 0.06);border-color:rgba(74, 124, 89, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>小学英语</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 字母发音</li>
+                    <li>第二章 基础词汇</li>
+                    <li>第三章 简单句型</li>
+                    <li>第四章 日常交际</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--emerald);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 初中课程 -->
+            <div class="card" style="margin-bottom: 24px;">
+              <h2 class="section-title" style="font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+                <span class="mini-chip" style="background:#e0e7ff;color:var(--primary);border-color:#c7d2fe;">初中</span> 初中阶段课程
+              </h2>
+              <div class="course-grid">
+                <article class="course-card open-course" style="border: 1px solid rgba(107, 91, 149, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(107, 91, 149, 0.06);color:var(--purple);">课</div>
+                    <span class="course-meta" style="color:var(--purple);background:rgba(107, 91, 149, 0.06);border-color:rgba(107, 91, 149, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>初中语文</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 现代文阅读</li>
+                    <li>第二章 文言文基础</li>
+                    <li>第三章 诗词鉴赏</li>
+                    <li>第四章 命题作文</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--purple);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+                <article class="course-card open-course" style="border: 1px solid rgba(26, 43, 60, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(26, 43, 60, 0.06);color:var(--primary);">课</div>
+                    <span class="course-meta" style="color:var(--primary);background:rgba(26, 43, 60, 0.06);border-color:rgba(26, 43, 60, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>初中数学</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 一元二次方程</li>
+                    <li>第二章 几何证明</li>
+                    <li>第三章 函数基础</li>
+                    <li>第四章 概率初步</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--primary);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+                <article class="course-card open-course" style="border: 1px solid rgba(74, 124, 89, 0.15);">
+                  <div class="course-head">
+                    <div class="course-icon" style="background:rgba(74, 124, 89, 0.06);color:var(--emerald);">课</div>
+                    <span class="course-meta" style="color:var(--emerald);background:rgba(74, 124, 89, 0.06);border-color:rgba(74, 124, 89, 0.15);">✅ 已开通</span>
+                  </div>
+                  <h3>初中英语</h3>
+                  <ul class="chapter-list">
+                    <li>第一章 核心语法</li>
+                    <li>第二章 完形填空</li>
+                    <li>第三章 阅读理解</li>
+                    <li>第四章 英语写作</li>
+                  </ul>
+                  <div class="unlock-overlay" style="border-top:none; margin-top:16px;">
+                    <a href="/course" class="secondary-btn" style="width:100%;text-align:center;text-decoration:none;background:var(--emerald);color:#fff;border:none;">进入学习</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>'''
+
+course_body = '''          <div style="padding: 0 32px; max-width: 1440px; margin: 24px auto 0;">
             <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(124, 58, 237, 0.04)); padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px; margin-top: 16px; border: 1px solid rgba(79, 70, 229, 0.15);">
               <div style="font-size: 28px; background: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">🎓</div>
               <div>
@@ -388,24 +690,101 @@ h1, h2, h3, p { margin: 0; }
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-      </main>
+          </section>'''
+
+login_html = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 - 星途启航 AI 自习室</title>
+    {css_content}
+  </head>
+  <body class="login-page">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
     </div>
-    <script>
-      const avatarTrigger = document.getElementById('avatar-trigger');
-      const avatarDropdown = document.getElementById('avatar-dropdown');
-      if (avatarTrigger && avatarDropdown) {
-        avatarTrigger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          avatarDropdown.classList.toggle('active');
-        });
-        document.addEventListener('click', function(e) {
-          if (!avatarTrigger.contains(e.target)) {
-            avatarDropdown.classList.remove('active');
-          }
-        });
-      }
-    </script>
+    <div style="position: absolute; top: 32px; left: 40px; display: flex; align-items: center; gap: 12px; z-index: 10;">
+      <div style="position: relative; display: inline-block; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); letter-spacing: -0.5px;">
+        <span style="position: absolute; top: -14px; left: -6px; font-size: 14px; color: var(--accent); line-height: 1;">星途</span>
+        <span style="font-size: 32px; line-height: 1;">启航教育</span>
+      </div>
+    </div>
+    <main class="login-stage">
+        <section class="login-showcase">
+          <div class="login-brand-area" style="max-width:480px;text-align:left;">
+            <div class="sparkle-icon" style="font-size:48px; margin-bottom:28px; animation: float 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; display: inline-block;">✨</div>
+            <h1 class="login-headline slide-up-1" style="font-family: 'Playfair Display', serif; font-size:48px; line-height:1.2; margin-bottom:24px; font-weight:800; color: var(--primary); letter-spacing:-0.5px;">
+              点亮你的星途<span style="color: var(--accent);">.</span>
+            </h1>
+            <p class="login-copy slide-up-2" style="font-size:18px; line-height:1.8; color:var(--muted); font-weight:400; margin-bottom:48px;">
+              每一次解题，都是对未知的跨越。<br>
+              在这里，AI 与你并肩，将复杂的知识化作清晰的轨迹。<br><br>
+              <span style="color:var(--primary); font-weight:600; letter-spacing:1px;">保持专注，保持好奇。</span>
+            </p>
+            <div class="premium-tsinghua-card slide-up-3" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 32px 36px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.9); position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); transition: all 0.5s ease; cursor: default;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 30px 60px rgba(0, 0, 0, 0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.04)';">
+              <div style="position: absolute; right: -5%; top: -15%; font-size: 180px; opacity: 0.03; color: var(--primary); pointer-events: none;">🏛️</div>
+              <div style="display: flex; align-items: flex-start; gap: 20px; position: relative; z-index: 1;">
+                <div style="background: linear-gradient(135deg, rgba(197, 160, 89, 0.1), rgba(197, 160, 89, 0.02)); padding: 14px; border-radius: 18px; border: 1px solid rgba(197, 160, 89, 0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 16px rgba(197, 160, 89, 0.08);">
+                  <span style="font-size: 28px; display: block; line-height: 1;">🎓</span>
+                </div>
+                <div>
+                  <div style="font-size: 12px; color: var(--accent); font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase;">Academic Excellence</div>
+                  <h2 style="font-size: 19px; color: var(--primary); font-weight: 800; margin: 0 0 10px 0; letter-spacing: 0.5px; line-height: 1.4;">
+                    <span style="color: var(--accent); font-size: 21px;">联合清华</span>等顶尖名师团队倾力打造
+                  </h2>
+                  <p style="font-size: 14px; color: var(--muted); margin: 0; line-height: 1.7; font-weight: 500;">
+                    深度拆解核心考点，重塑底层逻辑，构建国际化标准的高效学习链路。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <section class="login-container">
+        <div class="login-card-header">
+          <h2 class="login-card-title">学生登录</h2>
+          <p class="login-card-subtitle">登录后继续你的个人学习空间</p>
+        </div>
+        <form action="/api/login" method="POST" id="login-form">
+          <script>
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('error') === '1') {{
+              document.write('<div class="slide-up-1" style="color: var(--accent); font-size: 14px; margin-bottom: 16px; background: rgba(197, 160, 89, 0.1); padding: 12px; border-radius: 8px;">账号或密码不匹配，请联系老师。<br>(测试账号: Cary / 123456)</div>');
+            }}
+          </script>
+          <div class="form-group slide-up-3">
+            <label class="form-label">学生账号</label>
+            <input type="text" name="username" class="form-input" placeholder="请输入学校/机构分配的账号" required />
+          </div>
+          <div class="form-group slide-up-4">
+            <label class="form-label">密码</label>
+            <input type="password" name="password" class="form-input" placeholder="请输入密码" required />
+          </div>
+          <div class="slide-up-5">
+            <button type="submit" class="submit-btn">登录系统</button>
+          </div>
+        </form>
+        <div class="notice">
+          <p><strong>提示</strong><br />系统账号由学校或培训机构统一分配，不支持学生自行注册。<br />如需获取账号或密码遗失，请联系您的带班老师。</p>
+        </div>
+      </section>
+    </main>
   </body>
-</html>
+</html>'''
+
+files = {
+    'dashboard.html': get_base_html('dashboard', dashboard_body),
+    'mistakes.html': get_base_html('mistakes', mistakes_body),
+    'growth.html': get_base_html('growth', growth_body),
+    'subjects.html': get_base_html('subjects', subjects_body),
+    'course.html': get_base_html('course', course_body),
+    'login.html': login_html
+}
+
+for filename, content in files.items():
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"Generated {filename}")

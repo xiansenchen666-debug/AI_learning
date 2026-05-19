@@ -230,7 +230,7 @@ h1, h2, h3, p { margin: 0; }
           </div>
         </div>
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>\n          <a href="/subjects" class="nav-btn "><span class="icon-badge">同</span><span class="nav-label">同步课程</span></a>\n          <a href="/mistakes" class="nav-btn "><span class="icon-badge">智</span><span class="nav-label">智能错题本</span></a>\n          <a href="/growth" class="nav-btn "><span class="icon-badge">成</span><span class="nav-label">成长轨迹</span></a>\n
+          <a href="/dashboard" class="nav-btn "><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>\n          <a href="/subjects" class="nav-btn "><span class="icon-badge">同</span><span class="nav-label">同步课程</span></a>\n          <a href="/mistakes" class="nav-btn "><span class="icon-badge">智</span><span class="nav-label">智能错题本</span></a>\n          <a href="/growth" class="nav-btn active"><span class="icon-badge">成</span><span class="nav-label">成长轨迹</span></a>\n
         </nav>
         <div class="sidebar-footer">
           <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
@@ -262,129 +262,52 @@ h1, h2, h3, p { margin: 0; }
           </div>
         </header>
         <div class="page-scroll">
-          <div style="padding: 0 32px; max-width: 1440px; margin: 24px auto 0;">
-            <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(124, 58, 237, 0.04)); padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px; margin-top: 16px; border: 1px solid rgba(79, 70, 229, 0.15);">
-              <div style="font-size: 28px; background: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">🎓</div>
+          <section class="page active" id="growth-page">
+            <div class="growth-header">
               <div>
-                <p style="font-weight: 800; font-size: 16px; color: var(--primary); margin: 0; letter-spacing: 0.5px;">联合清华等顶尖名师团队倾力打造</p>
-                <p style="font-size: 13px; color: var(--muted); margin: 4px 0 0 0;">深度拆解核心考点，重塑底层逻辑，构建国际化标准的高效学习链路。</p>
+                <h1 class="section-title" style="font-size:34px;">成长轨迹</h1>
+                <p class="muted" style="margin-top:8px;">全面掌握 Cary 的学习情况与设备使用健康</p>
               </div>
             </div>
-          </div>
-          <section class="page active" id="course-page">
-            <div class="growth-header" style="margin-bottom: 24px;">
-              <div>
-                <a href="/subjects" style="display:inline-flex; align-items:center; gap:8px; margin-bottom:16px; color:var(--text); text-decoration:none; font-size:15px; font-weight:700; transition: all 0.3s ease; padding: 8px 16px; background: #fff; border-radius: 999px; box-shadow: 0 2px 8px rgba(26,43,60,0.06); border: 1px solid rgba(26,43,60,0.08);" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(-4px)';" onmouseout="this.style.color='var(--text)'; this.style.transform='translateX(0)';">
-                  <span style="font-size: 18px;">&larr;</span> 返回全学科目录
-                </a>
-                <h1 class="section-title" style="font-size:34px;">初中数学 <span style="font-size:16px;color:var(--muted);font-weight:400;margin-left:8px;">八年级上</span></h1>
-                <p class="muted" style="margin-top:8px;">知识有前置和进阶，学完了前置的技能才可以学后面的分支。</p>
-              </div>
-            </div>
-            <div class="card" style="margin-bottom: 24px; padding: 20px 24px;">
-              <div class="row-between" style="margin-bottom: 16px;">
-                <h3 style="font-size: 16px; font-weight: 800;">勋章等级标识</h3>
-                <div style="display:flex; gap:12px;">
-                  <button class="secondary-btn" style="padding: 8px 16px; font-size: 13px; border-radius: 999px;">本书学习计划</button>
-                  <button class="primary-btn" style="padding: 8px 16px; font-size: 13px; border-radius: 999px;">查看图谱</button>
+            <div class="growth-layout">
+              <div class="card">
+                <div class="section-head">
+                  <h2 class="section-title">本周学情走势</h2>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button class="tag-btn active">数学</button>
+                    <button class="tag-btn">英语</button>
+                    <button class="tag-btn">物理</button>
+                  </div>
+                </div>
+                <div class="chart-columns">
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:30%;"></div></div><span class="muted">周一</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:45%;"></div></div><span class="muted">周二</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:60%;"></div></div><span class="muted">周三</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:40%;"></div></div><span class="muted">周四</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:75%;"></div></div><span class="muted">周五</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar best" style="--height:85%;--bar:linear-gradient(180deg,#818cf8,#8b5cf6);"></div></div><span class="muted">周六</span></div>
+                  <div class="chart-item"><div class="chart-track"><div class="chart-bar" style="--height:50%;"></div></div><span class="muted">周日</span></div>
+                </div>
+                <div class="stats-grid">
+                  <div class="metric"><span class="muted">平均正确率</span><strong>86<small>%</small></strong></div>
+                  <div class="metric"><span class="muted">学习总时长</span><strong>14<small>h</small></strong></div>
+                  <div class="metric"><span class="muted">掌握知识点</span><strong>24<small>个</small></strong></div>
                 </div>
               </div>
-              <div style="display:flex; justify-content:space-between; align-items:center; text-align:center;">
-                <div><div style="font-size:32px; filter:grayscale(1); opacity:0.5;">🛡️</div><div style="font-size:12px; font-weight:700; color:var(--muted); margin-top:4px;">未学 12</div></div>
-                <div><div style="font-size:32px; color:#38bdf8;">🔰</div><div style="font-size:12px; font-weight:700; color:var(--muted); margin-top:4px;">入门 1</div></div>
-                <div><div style="font-size:32px; color:#4ade80;">🍀</div><div style="font-size:12px; font-weight:700; color:var(--muted); margin-top:4px;">及格 0</div></div>
-                <div><div style="font-size:32px; color:#22c55e;">🌿</div><div style="font-size:12px; font-weight:700; color:var(--muted); margin-top:4px;">掌握 0</div></div>
-                <div><div style="font-size:32px; color:var(--accent);">⭐</div><div style="font-size:12px; font-weight:700; color:var(--orange); margin-top:4px;">熟练 28</div></div>
-                <div><div style="font-size:32px; color:#8b5cf6;">💠</div><div style="font-size:12px; font-weight:700; color:#8b5cf6; margin-top:4px;">精通 26</div></div>
-                <div><div style="font-size:32px; color:var(--text);">💎</div><div style="font-size:12px; font-weight:700; color:var(--text); margin-top:4px;">优秀 0</div></div>
-              </div>
-            </div>
-            <div class="grid" style="grid-template-columns: 260px 1fr; gap: 24px; align-items: start;">
-              <div class="card" style="padding: 16px;">
-                <div class="row-between" style="margin-bottom: 16px; padding: 0 8px;">
-                  <span style="font-size:14px; font-weight:800;">选择章节</span>
-                  <span style="font-size:12px; color:var(--primary); cursor:pointer;">展开</span>
+              <div class="grid" style="gap:24px;">
+                <div class="card">
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:18px;">应用使用时长（今日）</h2>
+                  <div class="usage-list">
+                    <div><div class="usage-item-head"><span>AI 错题本</span><span>45 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill orange"></div></div></div>
+                    <div><div class="usage-item-head"><span>数学同步课</span><span>20 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill blue"></div></div></div>
+                    <div><div class="usage-item-head"><span>英汉词典</span><span>10 分钟</span></div><div class="micro-track"><div class="micro-fill usage-fill green"></div></div></div>
+                  </div>
                 </div>
-                <div style="display:flex; flex-direction:column; gap:8px;">
-                  <div style="font-size:14px; font-weight:700; padding:8px; cursor:pointer; color:var(--text);">▾ 第一章 一元二次方程</div>
-                  <div style="font-size:13px; font-weight:500; padding:8px 8px 8px 24px; cursor:pointer; color:var(--primary); background:rgba(79,70,229,.1); border-radius:8px;">1.1 认识一元二次方程</div>
-                  <div style="font-size:13px; font-weight:500; padding:8px 8px 8px 24px; cursor:pointer; color:var(--muted);">1.2 配方法</div>
-                  <div style="font-size:13px; font-weight:500; padding:8px 8px 8px 24px; cursor:pointer; color:var(--muted);">1.3 公式法</div>
-                  <div style="font-size:14px; font-weight:700; padding:8px; cursor:pointer; color:var(--text); margin-top:8px;">▾ 第二章 二次函数</div>
-                  <div style="font-size:13px; font-weight:500; padding:8px 8px 8px 24px; cursor:pointer; color:var(--muted);">2.1 二次函数的图像</div>
-                  <div style="font-size:13px; font-weight:500; padding:8px 8px 8px 24px; cursor:pointer; color:var(--muted);">2.2 二次函数的性质</div>
-                </div>
-              </div>
-              <div class="card" style="padding: 0;">
-                <div style="display:flex; flex-direction:column;">
-                  <div style="display:flex; align-items:center; justify-content:space-between; padding: 20px 24px; border-bottom: 1px solid var(--line);">
-                    <div style="display:flex; align-items:center; gap: 16px;">
-                      <div style="font-size:32px; color:var(--accent);">⭐</div>
-                      <div>
-                        <h3 style="font-size:16px; margin-bottom:6px;">生活中的一元二次方程现象</h3>
-                        <div style="color:var(--accent); font-size:12px;">★ ★ ★ ☆ ☆</div>
-                      </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap: 24px;">
-                      <div style="text-align:right;">
-                        <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">正确率: 8/12 = 67%</div>
-                        <div style="width:120px; height:4px; background:#e2e8f0; border-radius:2px;"><div style="width:67%; height:100%; background:#f97316; border-radius:2px;"></div></div>
-                      </div>
-                      <div style="display:flex; gap:8px;">
-                        <button class="ghost-btn" style="padding:6px 12px; font-size:13px; color:var(--text); background:rgba(239,68,68,.1); border:none;">查看错题</button>
-                        <button class="secondary-btn" style="padding:6px 12px; font-size:13px;">进入学习</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; padding: 20px 24px; border-bottom: 1px solid var(--line);">
-                    <div style="display:flex; align-items:center; gap: 16px;">
-                      <div style="font-size:32px; color:#8b5cf6;">💠</div>
-                      <div>
-                        <h3 style="font-size:16px; margin-bottom:6px;">一元二次方程的一般形式</h3>
-                        <div style="color:#8b5cf6; font-size:12px;">★ ★ ★ ★ ☆</div>
-                      </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap: 24px;">
-                      <div style="text-align:right;">
-                        <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">正确率: 18/20 = 90%</div>
-                        <div style="width:120px; height:4px; background:#e2e8f0; border-radius:2px;"><div style="width:90%; height:100%; background:#8b5cf6; border-radius:2px;"></div></div>
-                      </div>
-                      <div style="display:flex; gap:8px;">
-                        <button class="ghost-btn" style="padding:6px 12px; font-size:13px; color:var(--text); background:rgba(239,68,68,.1); border:none;">查看错题</button>
-                        <button class="secondary-btn" style="padding:6px 12px; font-size:13px;">进入学习</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); background: rgba(79,70,229,.05);">
-                    <div style="display:flex; align-items:center; gap: 16px;">
-                      <div style="font-size:32px; filter:grayscale(1); opacity:0.5;">🛡️</div>
-                      <div>
-                        <h3 style="font-size:16px; margin-bottom:6px; color:var(--primary);">一元二次方程的根 (当前目标)</h3>
-                        <div style="color:var(--muted); font-size:12px;">☆ ☆ ☆ ☆ ☆</div>
-                      </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap: 24px;">
-                      <div style="text-align:right;">
-                        <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">正确率: 0/0 = 0%</div>
-                        <div style="width:120px; height:4px; background:#e2e8f0; border-radius:2px;"><div style="width:0%; height:100%; background:#e2e8f0; border-radius:2px;"></div></div>
-                      </div>
-                      <div style="display:flex; gap:8px;">
-                        <button class="primary-btn" style="padding:6px 20px; font-size:13px;">进入学习</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); opacity: 0.6;">
-                    <div style="display:flex; align-items:center; gap: 16px;">
-                      <div style="font-size:32px; filter:grayscale(1); opacity:0.5;">🔒</div>
-                      <div>
-                        <h3 style="font-size:16px; margin-bottom:6px; color:var(--muted);">因式分解法</h3>
-                        <div style="color:var(--muted); font-size:12px;">前置条件未满足</div>
-                      </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap: 24px;">
-                      <button class="ghost-btn" style="padding:6px 20px; font-size:13px;" disabled>锁定</button>
-                    </div>
-                  </div>
+                <div class="card summary-card">
+                  <div class="summary-ghost">AI</div>
+                  <h2 class="section-title" style="font-size:20px;margin-bottom:14px;">AI 学情总结</h2>
+                  <p style="position:relative;z-index:1;line-height:1.8;color:#312e81;">Cary 本周在数学二次函数板块进步显著，错误率下降了 40%。但在英语阅读长难句分析上停留时间较长，建议周末进行一次英语专项阅读训练。</p>
+                  <button class="secondary-btn" style="margin-top:18px;">生成详细报告给家长</button>
                 </div>
               </div>
             </div>
