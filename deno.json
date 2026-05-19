@@ -1,6 +1,19 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-read server.ts",
-    "dev": "deno run --watch --allow-net --allow-read server.ts"
+    "start": "deno run --allow-net --allow-read --allow-write --unstable-kv server.ts"
+  },
+  "deploy": {
+    "project": "ai-learning-system",
+    "exclude": [
+      ".git",
+      ".vscode"
+    ],
+    "include": [
+      "server.ts",
+      "*.html",
+      "assets/**/*",
+      "data/**/*"
+    ],
+    "entrypoint": "server.ts"
   }
 }

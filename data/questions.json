@@ -1,9 +1,54 @@
-[
-  {
-    "id": 1,
-    "subject": "数学",
-    "topic": "二次函数",
-    "question": "已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，求对称轴并分析开口方向。",
-    "difficulty": "medium"
-  }
-]
+{
+  "questions": [
+    {
+      "id": "q_math_001",
+      "subject": "math",
+      "grade": "middle",
+      "topic": "一元二次方程",
+      "content": "已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，且 a>0，则其开口方向是？",
+      "options": ["向上", "向下", "向左", "向右"],
+      "correctAnswer": 0,
+      "explanation": "二次函数的开口方向由二次项系数 a 决定。当 a > 0 时，开口向上。"
+    },
+    {
+      "id": "q_math_002",
+      "subject": "math",
+      "grade": "middle",
+      "topic": "一元二次方程",
+      "content": "方程 x^2 - 4x + 4 = 0 的根的情况是？",
+      "options": ["有两个不相等的实数根", "有两个相等的实数根", "没有实数根", "无法确定"],
+      "correctAnswer": 1,
+      "explanation": "判别式 Δ = b^2 - 4ac = (-4)^2 - 4(1)(4) = 16 - 16 = 0，所以有两个相等的实数根。"
+    },
+    {
+      "id": "q_physics_001",
+      "subject": "physics",
+      "grade": "middle",
+      "topic": "牛顿第一定律",
+      "content": "关于惯性，下列说法正确的是？",
+      "options": ["速度越大的物体惯性越大", "质量越大的物体惯性越大", "受力越大的物体惯性越大", "静止的物体没有惯性"],
+      "correctAnswer": 1,
+      "explanation": "惯性是物体保持原来运动状态的性质，它只与物体的质量有关，质量越大，惯性越大。"
+    },
+    {
+      "id": "q_physics_002",
+      "subject": "physics",
+      "grade": "middle",
+      "topic": "受力分析",
+      "content": "一个重 10N 的木块放在水平桌面上，受到 2N 的水平推力但未推动。此时木块受到的摩擦力是？",
+      "options": ["10N", "2N", "12N", "0N"],
+      "correctAnswer": 1,
+      "explanation": "木块未推动，处于静止状态，水平方向受力平衡。推力为 2N，所以静摩擦力也为 2N。"
+    },
+    {
+      "id": "q_english_001",
+      "subject": "english",
+      "grade": "middle",
+      "topic": "定语从句",
+      "content": "The book _______ you lent me is very interesting.",
+      "options": ["who", "whom", "which", "whose"],
+      "correctAnswer": 2,
+      "explanation": "先行词是物 (book)，在从句中作宾语，所以用 which 或 that。"
+    }
+  ]
+}
