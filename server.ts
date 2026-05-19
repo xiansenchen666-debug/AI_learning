@@ -1,7 +1,3 @@
-import { serve } from "https://deno.land/std@0.181.0/http/server.ts";
-
-const port = 8000;
-
 async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
   let filepath = url.pathname;
@@ -38,22 +34,25 @@ async function handler(req: Request): Promise<Response> {
   }
 
   try {
-    // Serve static files
-    const file = await Deno.readFile(`.${filepath}`);
+    // Serve static files relative to the current module's URL (more robust for Deno Deploy)
+    const fileUrl = new URL(`.${filepath}`, import.meta.url);
+    const file = await Deno.readFile(fileUrl);
+    
     const headers = new Headers();
     if (filepath.endsWith(".html")) headers.set("Content-Type", "text/html; charset=utf-8");
-    if (filepath.endsWith(".css")) headers.set("Content-Type", "text/css; charset=utf-8");
-    if (filepath.endsWith(".js")) headers.set("Content-Type", "application/javascript; charset=utf-8");
-    if (filepath.endsWith(".json")) headers.set("Content-Type", "application/json; charset=utf-8");
+    else if (filepath.endsWith(".css")) headers.set("Content-Type", "text/css; charset=utf-8");
+    else if (filepath.endsWith(".js")) headers.set("Content-Type", "application/javascript; charset=utf-8");
+    else if (filepath.endsWith(".json")) headers.set("Content-Type", "application/json; charset=utf-8");
 
     return new Response(file, { headers });
   } catch (e) {
     if (e instanceof Deno.errors.NotFound) {
       return new Response("404 Not Found", { status: 404 });
     }
+    console.error("Server error:", e);
     return new Response("500 Internal Server Error", { status: 500 });
   }
 }
 
-console.log(`Server running on http://localhost:${port}/`);
-serve(handler, { port });
+// Modern Deno API, automatically handles port assignment on Deno Deploy
+Deno.serve(handler);
