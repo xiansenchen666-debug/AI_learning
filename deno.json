@@ -1,8 +1,12 @@
 {
+  "imports": {
+    "pg": "npm:pg@^8"
+  },
   "tasks": {
     "export": "python -X utf8 tools/export_catalog.py",
+    "migrate": "deno run --allow-net --allow-read --allow-env migrate.ts",
     "start": "deno run --allow-net --allow-read --allow-env --allow-sys server.ts",
-    "check": "deno check server.ts"
+    "check": "deno check server.ts migrate.ts"
   },
   "deploy": {
     "project": "ai-learning-deno-cloud",
@@ -13,8 +17,9 @@
     ],
     "include": [
       "server.ts",
+      "migrate.ts",
       "deno.json",
-      "schema.mysql.sql",
+      "schema.postgres.sql",
       "*.html",
       "assets/**/*",
       "data/catalog.json"

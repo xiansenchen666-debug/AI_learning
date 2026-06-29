@@ -428,6 +428,7 @@ function wireInlineChoiceOptions(root = document) {
 }
 
 function createLessonStudyTimer() {
+  const flushIntervalMs = 5 * 60 * 1000;
   let activeLessonId = null;
   let lastTickAt = 0;
   let pendingSeconds = 0;
@@ -443,7 +444,7 @@ function createLessonStudyTimer() {
     if (elapsed <= 0) {
       return;
     }
-    pendingSeconds += Math.min(elapsed, 60);
+    pendingSeconds += Math.min(elapsed, flushIntervalMs / 1000);
     lastTickAt = now;
   };
 
@@ -476,7 +477,7 @@ function createLessonStudyTimer() {
     });
   };
 
-  const intervalId = window.setInterval(() => flush(false), 30000);
+  const intervalId = window.setInterval(() => flush(false), flushIntervalMs);
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
       flush(true);
@@ -2068,6 +2069,7 @@ async function initCoursePage() {
     }
     lectureContent.dataset.questionResultBound = "1";
     lectureContent.addEventListener("question-submitted", (event) => {
+      studyTimer.flush(false);
       const detail = event.detail || {};
       if (detail.question_kind !== "textbook") {
         return;
