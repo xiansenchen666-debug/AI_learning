@@ -1,6 +1,8 @@
 const USER_CACHE_KEY = "stq-user-profile";
 const LAST_SUBJECT_LOCATION_KEY = "stq-last-subject-location";
 const ROUTE_LOADING_LABEL_KEY = "stq-route-loading-label";
+const API_PREFETCH_CACHE_PREFIX = "stq-api-prefetch:";
+const API_PREFETCH_CACHE_TTL_MS = 15 * 1000;
 
 function readLastSubjectLocation() {
   try {
@@ -114,10 +116,26 @@ function renderMistakeReviewAction(item, className = "secondary-btn full-width-b
 }
 
 async function apiFetch(url, options = {}) {
+  const method = String(options.method || "GET").toUpperCase();
+  if (method !== "GET") {
+    clearApiPrefetchCache();
+  }
+  const cacheTtlMs = Number(options.cacheTtlMs || 0);
+  const shouldUseCache = cacheTtlMs > 0 && method === "GET" && typeof url === "string";
+  const cacheKey = shouldUseCache ? `${API_PREFETCH_CACHE_PREFIX}${url}` : "";
+  if (shouldUseCache) {
+    const cached = readApiCache(cacheKey, cacheTtlMs);
+    if (cached) {
+      refreshApiCache(url, cacheKey);
+      return cached;
+    }
+  }
+  const fetchOptions = { ...options };
+  delete fetchOptions.cacheTtlMs;
   const response = await fetch(url, {
     headers: { "Content-Type": "application/json" },
     credentials: "same-origin",
-    ...options,
+    ...fetchOptions,
   });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
@@ -129,7 +147,60 @@ async function apiFetch(url, options = {}) {
     }
     throw new Error(data.message || "请求失败");
   }
+  if (shouldUseCache) {
+    writeApiCache(cacheKey, data);
+  }
   return data;
+}
+
+function clearApiPrefetchCache() {
+  try {
+    const keys = [];
+    for (let index = 0; index < sessionStorage.length; index += 1) {
+      const key = sessionStorage.key(index);
+      if (key?.startsWith(API_PREFETCH_CACHE_PREFIX)) {
+        keys.push(key);
+      }
+    }
+    keys.forEach((key) => sessionStorage.removeItem(key));
+  } catch {
+    // Ignore cache errors silently.
+  }
+}
+
+function readApiCache(cacheKey, ttlMs) {
+  try {
+    const cached = JSON.parse(sessionStorage.getItem(cacheKey) || "null");
+    if (cached && Date.now() - Number(cached.savedAt || 0) <= ttlMs) {
+      return cached.data;
+    }
+  } catch {
+    // Ignore cache errors silently.
+  }
+  return null;
+}
+
+function writeApiCache(cacheKey, data) {
+  try {
+    sessionStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data }));
+  } catch {
+    // Ignore cache errors silently.
+  }
+}
+
+async function refreshApiCache(url, cacheKey) {
+  try {
+    const response = await fetch(url, {
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+    });
+    const data = await response.json().catch(() => ({}));
+    if (response.ok) {
+      writeApiCache(cacheKey, data);
+    }
+  } catch {
+    // Ignore background refresh errors silently.
+  }
 }
 
 function keepStaticPage(error) {
@@ -686,6 +757,25 @@ function prefetchPage(url) {
   });
 }
 
+function apiUrlForPage(url) {
+  const map = {
+    "/dashboard.html": "/api/dashboard",
+    "/subjects.html": "/api/subjects",
+    "/grade.html": "/api/subjects",
+    "/mistakes.html": "/api/mistakes",
+    "/growth.html": "/api/growth",
+  };
+  return map[url.pathname] || "";
+}
+
+function prefetchApiForPage(url) {
+  const apiUrl = apiUrlForPage(url);
+  if (!apiUrl) {
+    return;
+  }
+  apiFetch(apiUrl, { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {});
+}
+
 function navigationLabel(node, url) {
   const text = node.querySelector(".nav-label")?.textContent?.trim() ||
     node.textContent?.trim();
@@ -751,6 +841,7 @@ function wireNavigationTransitions() {
       }
       const url = new URL(rawHref, window.location.href);
       prefetchPage(url);
+      prefetchApiForPage(url);
     };
     node.addEventListener("mouseenter", prefetchTarget, { once: true });
     node.addEventListener("touchstart", prefetchTarget, { once: true, passive: true });
@@ -1059,7 +1150,7 @@ async function initDashboardPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/dashboard");
+    result = await apiFetch("/api/dashboard", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -2403,7 +2494,7 @@ async function initMistakesPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/mistakes");
+    result = await apiFetch("/api/mistakes", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -2713,7 +2804,7 @@ async function initSubjectsPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/subjects");
+    result = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -2772,7 +2863,7 @@ async function initGradePage() {
 
   let result;
   try {
-    result = await apiFetch("/api/subjects");
+    result = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
   } catch (error) {
     keepStaticPage(error);
     (subjectBoard || root).innerHTML = `<div class="subject-empty"><p>${escapeHtml(error.message)}</p></div>`;
@@ -3228,7 +3319,7 @@ async function initGrowthPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/growth");
+    result = await apiFetch("/api/growth", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
