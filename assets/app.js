@@ -120,6 +120,12 @@ async function apiFetch(url, options = {}) {
   });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
+    if (response.status === 401 && !String(url).includes("/api/login")) {
+      clearUserProfile();
+      if (window.location.protocol !== "file:" && window.location.pathname !== "/login.html") {
+        window.location.replace("/login.html");
+      }
+    }
     throw new Error(data.message || "请求失败");
   }
   return data;
@@ -511,6 +517,10 @@ function createLessonStudyTimer() {
 }
 
 async function requireSession() {
+  const cached = readCachedUserProfile();
+  if (cached) {
+    return cached;
+  }
   let result;
   try {
     result = await apiFetch("/api/session");
@@ -850,6 +860,9 @@ async function initLoginPage() {
         method: "POST",
         body: JSON.stringify(payload),
       });
+      if (result.user) {
+        cacheUserProfile(result.user);
+      }
       window.location.href = result.redirect;
     } catch (error) {
       errorBox.textContent = error.message;

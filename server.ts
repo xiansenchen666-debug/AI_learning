@@ -702,9 +702,9 @@ async function mistakePayload(userId: number) {
 }
 
 async function growthPayload(user: User) {
-  const progress = await listProgress(user.id);
-  const mistakes = await listMistakes(user.id);
-  const study = await listStudyTime(user.id);
+  const snapshot = await loadDashboardData(user.id);
+  const progress = snapshot.progress;
+  const mistakes = snapshot.mistakes;
   const attemptedCount = progress.length;
   const completedCount =
     progress.filter((item) => item.status === "completed").length;
@@ -716,9 +716,7 @@ async function growthPayload(user: User) {
         attemptedCount,
     )
     : 0;
-  const studyMinutes = Math.round(
-    study.reduce((sum, item) => sum + Number(item.seconds || 0), 0) / 60,
-  );
+  const studyMinutes = Math.round(Number(snapshot.study_seconds || 0) / 60);
   const masteryRate = attemptedCount
     ? Math.round((completedCount / attemptedCount) * 100)
     : 0;
@@ -836,9 +834,14 @@ async function api(request: Request, user: User | null, pathname: string) {
       (request.headers.get("content-type") || "").includes("application/json")
     ) {
       headers.set("content-type", "application/json; charset=utf-8");
-      return new Response(JSON.stringify({ ok: true, redirect: target }), {
-        headers,
-      });
+      return new Response(
+        JSON.stringify({
+          ok: true,
+          redirect: target,
+          user: userPayload(found),
+        }),
+        { headers },
+      );
     }
     return redirect(target, headers);
   }
@@ -1180,27 +1183,8 @@ async function api(request: Request, user: User | null, pathname: string) {
 Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
   const url = new URL(request.url);
   const pathname = normalizePathname(url.pathname);
-  const user = await currentUser(request);
-
-  if (pathname.startsWith("/api/")) return await api(request, user, pathname);
-
-  const pages = new Set([
-    "/login.html",
-    "/dashboard.html",
-    "/course.html",
-    "/grade.html",
-    "/question-bank.html",
-    "/mistakes.html",
-    "/subjects.html",
-    "/growth.html",
-    "/teacher.html",
-  ]);
-
-  if (pages.has(pathname)) {
-    if (pathname !== "/login.html" && !user) return redirect("/login.html");
-    if (pathname === "/login.html" && user) {
-      return redirect(isTeacher(user) ? "/teacher.html" : "/dashboard.html");
-    }
+  if (pathname.startsWith("/api/")) {
+    return await api(request, await currentUser(request), pathname);
   }
 
   try {
@@ -1209,7 +1193,7 @@ Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
       headers: {
         "content-type": contentType(pathname),
         "cache-control": pathname.startsWith("/assets/")
-          ? "public, max-age=31536000"
+          ? "public, max-age=300, stale-while-revalidate=86400"
           : "no-store",
       },
     });
