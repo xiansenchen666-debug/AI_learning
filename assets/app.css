@@ -903,10 +903,10 @@ body.is-data-loading .page {
 
 .page-transition {
   position: fixed;
-  top: 24px;
-  right: 28px;
+  top: 92px;
+  right: 32px;
   z-index: 80;
-  width: min(320px, calc(100vw - 40px));
+  width: min(340px, calc(100vw - 40px));
   opacity: 0;
   pointer-events: none;
   transform: translateX(12px);
@@ -926,12 +926,12 @@ body.is-data-loading .page {
   gap: 14px;
   min-height: 58px;
   padding: 10px 14px;
-  border: 1px solid rgba(26, 54, 93, 0.08);
+  border: 1px solid rgba(26, 54, 93, 0.14);
   border-radius: 16px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76)),
     radial-gradient(circle at 16% 50%, rgba(232, 168, 56, 0.12), transparent 34%);
-  box-shadow: 0 16px 36px rgba(28, 30, 38, 0.10);
+  box-shadow: 0 18px 42px rgba(28, 30, 38, 0.14);
   backdrop-filter: blur(18px);
 }
 
@@ -980,7 +980,7 @@ body.is-route-transitioning .page-scroll {
 
 @media (max-width: 760px) {
   .page-transition {
-    top: 14px;
+    top: 72px;
     right: 14px;
     width: min(300px, calc(100vw - 28px));
   }

@@ -1,5 +1,6 @@
 const USER_CACHE_KEY = "stq-user-profile";
 const LAST_SUBJECT_LOCATION_KEY = "stq-last-subject-location";
+const ROUTE_LOADING_LABEL_KEY = "stq-route-loading-label";
 
 function readLastSubjectLocation() {
   try {
@@ -713,7 +714,7 @@ function ensurePageTransition() {
     <div class="page-transition-panel">
       <div class="page-transition-mark"></div>
       <div>
-        <p class="page-transition-kicker">正在进入</p>
+        <p class="page-transition-kicker">内容加载中</p>
         <h2 class="page-transition-title" data-transition-title>学习空间</h2>
       </div>
     </div>
@@ -727,6 +728,11 @@ function startPageTransition(label) {
   const title = transition.querySelector("[data-transition-title]");
   if (title) {
     title.textContent = label;
+  }
+  try {
+    sessionStorage.setItem(ROUTE_LOADING_LABEL_KEY, label);
+  } catch {
+    // Ignore storage errors silently.
   }
   document.body.classList.add("is-route-transitioning");
   requestAnimationFrame(() => {
@@ -979,8 +985,46 @@ async function initWelcomePage() {
     .join("");
 }
 
-function setPageLoading(isLoading) {
+function currentLoadingLabel() {
+  try {
+    const nextLabel = sessionStorage.getItem(ROUTE_LOADING_LABEL_KEY);
+    if (nextLabel) {
+      return nextLabel;
+    }
+  } catch {
+    // Ignore storage errors silently.
+  }
+  const labels = {
+    dashboard: "学习中心",
+    subjects: "全部课程",
+    mistakes: "智能错题本",
+    growth: "成长轨迹",
+    teacher: "老师管理",
+    grade: "年级课程",
+    course: "课程内容",
+    "question-bank": "智能练习",
+  };
+  return labels[document.body.dataset.page] || "当前页面";
+}
+
+function setPageLoading(isLoading, label = "") {
   document.body.classList.toggle("is-data-loading", Boolean(isLoading));
+  const transition = ensurePageTransition();
+  const title = transition.querySelector("[data-transition-title]");
+  if (isLoading) {
+    if (title) {
+      title.textContent = label || currentLoadingLabel();
+    }
+    transition.classList.add("is-active");
+    return;
+  }
+  transition.classList.remove("is-active");
+  document.body.classList.remove("is-route-transitioning");
+  try {
+    sessionStorage.removeItem(ROUTE_LOADING_LABEL_KEY);
+  } catch {
+    // Ignore storage errors silently.
+  }
 }
 
 function wirePasswordToggles(root = document) {
