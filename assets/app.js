@@ -724,20 +724,11 @@ function ensurePageTransition() {
 }
 
 function startPageTransition(label) {
-  const transition = ensurePageTransition();
-  const title = transition.querySelector("[data-transition-title]");
-  if (title) {
-    title.textContent = label;
-  }
   try {
     sessionStorage.setItem(ROUTE_LOADING_LABEL_KEY, label);
   } catch {
     // Ignore storage errors silently.
   }
-  document.body.classList.add("is-route-transitioning");
-  requestAnimationFrame(() => {
-    transition.classList.add("is-active");
-  });
 }
 
 function wireNavigationTransitions() {
@@ -1007,15 +998,21 @@ function currentLoadingLabel() {
   return labels[document.body.dataset.page] || "当前页面";
 }
 
+let pageLoadingTimer = 0;
+
 function setPageLoading(isLoading, label = "") {
   document.body.classList.toggle("is-data-loading", Boolean(isLoading));
   const transition = ensurePageTransition();
   const title = transition.querySelector("[data-transition-title]");
+  window.clearTimeout(pageLoadingTimer);
   if (isLoading) {
     if (title) {
       title.textContent = label || currentLoadingLabel();
     }
-    transition.classList.add("is-active");
+    pageLoadingTimer = window.setTimeout(() => {
+      document.body.classList.add("is-route-transitioning");
+      transition.classList.add("is-active");
+    }, 100);
     return;
   }
   transition.classList.remove("is-active");
