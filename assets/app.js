@@ -662,6 +662,29 @@ function normalizeNavigationPath(pathname) {
   return pathname.endsWith(".html") ? pathname.slice(0, -5) : pathname;
 }
 
+const prefetchedPages = new Set();
+
+function shouldPrefetchPage(url) {
+  return url.origin === window.location.origin &&
+    url.pathname.endsWith(".html") &&
+    !url.pathname.startsWith("/api/") &&
+    !prefetchedPages.has(url.href);
+}
+
+function prefetchPage(url) {
+  if (!shouldPrefetchPage(url)) {
+    return;
+  }
+  prefetchedPages.add(url.href);
+  fetch(url.href, {
+    credentials: "same-origin",
+    cache: "force-cache",
+    priority: "low",
+  }).catch(() => {
+    prefetchedPages.delete(url.href);
+  });
+}
+
 function wireNavigationTransitions() {
   if (window.location.protocol === "file:") {
     return;
@@ -675,6 +698,17 @@ function wireNavigationTransitions() {
       return;
     }
     node.dataset.navTransitionBound = "1";
+    const prefetchTarget = () => {
+      const rawHref = node.getAttribute("href");
+      if (!rawHref || rawHref.startsWith("#")) {
+        return;
+      }
+      const url = new URL(rawHref, window.location.href);
+      prefetchPage(url);
+    };
+    node.addEventListener("mouseenter", prefetchTarget, { once: true });
+    node.addEventListener("touchstart", prefetchTarget, { once: true, passive: true });
+    node.addEventListener("focus", prefetchTarget, { once: true });
     node.addEventListener("click", (event) => {
       if (
         event.defaultPrevented ||

@@ -195,6 +195,16 @@ function contentType(pathname: string) {
   return "application/octet-stream";
 }
 
+function staticCacheControl(pathname: string) {
+  if (pathname.startsWith("/assets/")) {
+    return "public, max-age=300, stale-while-revalidate=86400";
+  }
+  if (pathname.endsWith(".html")) {
+    return "public, max-age=60, stale-while-revalidate=300";
+  }
+  return "public, max-age=300, stale-while-revalidate=86400";
+}
+
 async function readStatic(pathname: string) {
   const target = new URL(`.${pathname}`, import.meta.url);
   return await Deno.readFile(target);
@@ -1192,9 +1202,7 @@ Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
     return new Response(file, {
       headers: {
         "content-type": contentType(pathname),
-        "cache-control": pathname.startsWith("/assets/")
-          ? "public, max-age=300, stale-while-revalidate=86400"
-          : "no-store",
+        "cache-control": staticCacheControl(pathname),
       },
     });
   } catch {
