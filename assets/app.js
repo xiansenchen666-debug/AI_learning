@@ -929,92 +929,15 @@ async function initWelcomePage() {
     .join("");
 }
 
-function loadingLine(className = "is-long") {
-  return `<div class="loading-skeleton loading-line ${className}"></div>`;
-}
-
-function loadingCard(lines = ["is-mid", "is-long", "is-short"]) {
-  return `
-    <div class="loading-card loading-fade">
-      <div class="loading-row">
-        <div class="loading-skeleton loading-dot"></div>
-        <div class="loading-stack" style="flex: 1">
-          ${lines.map((item) => loadingLine(item)).join("")}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function showDashboardSkeleton() {
-  const courses = document.getElementById("dashboard-courses");
-  const timeline = document.getElementById("dashboard-timeline");
-  const mistakes = document.getElementById("dashboard-mistake");
-  const studyDays = document.getElementById("dashboard-study-days");
-  const xpSummary = document.getElementById("dashboard-xp-summary");
-  const mistakeCount = document.getElementById("dashboard-mistake-count");
-
-  if (studyDays && !studyDays.textContent.trim()) {
-    studyDays.innerHTML = `<span class="loading-skeleton loading-line is-short" style="display:block;width:88px;height:40px"></span>`;
-  }
-  if (xpSummary && !xpSummary.textContent.trim()) {
-    xpSummary.innerHTML = loadingLine("is-mid");
-  }
-  if (mistakeCount && !mistakeCount.textContent.trim()) {
-    mistakeCount.innerHTML = `<span class="loading-skeleton loading-line is-short" style="display:block;width:72px"></span>`;
-  }
-  if (courses && !courses.children.length) {
-    courses.innerHTML = [loadingCard(), loadingCard(), loadingCard()].join("");
-  }
-  if (timeline && !timeline.children.length) {
-    timeline.innerHTML = [loadingCard(), loadingCard(["is-short", "is-long"])].join("");
-  }
-  if (mistakes && !mistakes.children.length) {
-    mistakes.innerHTML = loadingCard(["is-short", "is-long", "is-mid"]);
-  }
-}
-
-function showListSkeleton(root, count = 4) {
-  if (!root || root.children.length) {
-    return;
-  }
-  root.innerHTML = Array.from({ length: count }, () => loadingCard()).join("");
-}
-
-function showSubjectsSkeleton() {
-  let root = document.getElementById("subjects-loading");
-  if (root) {
-    return;
-  }
-  const subjectsPage = document.getElementById("subjects-page");
-  const subjectsRoot = document.getElementById("subjects-root");
-  if (!subjectsPage || !subjectsRoot) {
-    return;
-  }
-  root = document.createElement("div");
-  root.id = "subjects-loading";
-  root.className = "loading-page-shell loading-fade";
-  root.innerHTML = `
-    <div class="loading-card loading-page-hero">
-      ${loadingLine("is-short")}
-      ${loadingLine("is-long")}
-      ${loadingLine("is-mid")}
-    </div>
-    <div class="loading-grid">
-      ${[loadingCard(), loadingCard(), loadingCard()].join("")}
-    </div>
-  `;
-  subjectsRoot.before(root);
-}
-
-function clearSkeleton(id) {
-  document.getElementById(id)?.remove();
+function setPageLoading(isLoading) {
+  document.body.classList.toggle("is-data-loading", Boolean(isLoading));
 }
 
 async function initDashboardPage() {
-  showDashboardSkeleton();
+  setPageLoading(true);
   const user = await requireSession();
   if (!user) {
+    setPageLoading(false);
     return;
   }
   setUserProfile(user);
@@ -1024,6 +947,7 @@ async function initDashboardPage() {
   try {
     result = await apiFetch("/api/dashboard");
   } catch (error) {
+    setPageLoading(false);
     keepStaticPage(error);
     return;
   }
@@ -1166,6 +1090,7 @@ async function initDashboardPage() {
         `).join("");
     wireNavigationTransitions();
   }
+  setPageLoading(false);
 }
 
 function renderLessonContent(lesson) {
@@ -2353,9 +2278,12 @@ async function initCoursePage() {
 }
 
 async function initMistakesPage() {
-  showListSkeleton(document.getElementById("mistakes-root"), 4);
+  setPageLoading(true);
   const user = await requireSession();
-  if (!user) return;
+  if (!user) {
+    setPageLoading(false);
+    return;
+  }
   setUserProfile(user);
   wireLogoutButton();
 
@@ -2363,15 +2291,20 @@ async function initMistakesPage() {
   try {
     result = await apiFetch("/api/mistakes");
   } catch (error) {
+    setPageLoading(false);
     keepStaticPage(error);
     return;
   }
   const mistakes = result.data;
   const root = document.getElementById("mistakes-root");
-  if (!root) return;
+  if (!root) {
+    setPageLoading(false);
+    return;
+  }
   
   if (mistakes.length === 0) {
     root.innerHTML = '<div class="card"><p class="muted mistakes-empty-text">当前账号暂无错题记录。</p></div>';
+    setPageLoading(false);
     return;
   }
   
@@ -2396,6 +2329,7 @@ async function initMistakesPage() {
       : ""}
   `;
   wireNavigationTransitions();
+  setPageLoading(false);
 }
 
 async function initQuestionBankPage() {
@@ -2649,10 +2583,14 @@ function renderGradeDetail(group) {
 }
 
 async function initSubjectsPage() {
-  showSubjectsSkeleton();
+  setPageLoading(true);
   const user = await requireSession();
-  if (!user) return;
+  if (!user) {
+    setPageLoading(false);
+    return;
+  }
   if (isTeacherUser(user) && window.location.protocol !== "file:") {
+    setPageLoading(false);
     window.location.href = "/teacher.html";
     return;
   }
@@ -2663,11 +2601,15 @@ async function initSubjectsPage() {
   try {
     result = await apiFetch("/api/subjects");
   } catch (error) {
+    setPageLoading(false);
     keepStaticPage(error);
     return;
   }
   const subjectsRoot = document.getElementById("subjects-root");
-  if (!subjectsRoot) return;
+  if (!subjectsRoot) {
+    setPageLoading(false);
+    return;
+  }
 
   const model = buildSubjectCatalogModel(result.data?.stages || []);
   saveSubjectOverviewLocation();
@@ -2692,9 +2634,9 @@ async function initSubjectsPage() {
   if (gradeGrid) {
     gradeGrid.innerHTML = renderGradePicker(model);
   }
-  clearSkeleton("subjects-loading");
   subjectsRoot.classList.remove("is-hidden");
   wireNavigationTransitions();
+  setPageLoading(false);
 }
 
 async function initGradePage() {
@@ -3110,27 +3052,12 @@ async function initTeacherEnrollmentPanel(user) {
 }
 
 async function initGrowthPage() {
-  const growthRoot = document.getElementById("growth-root");
-  if (growthRoot && !growthRoot.children.length) {
-    growthRoot.innerHTML = `
-      <div class="loading-page-shell loading-fade">
-        <div class="loading-card loading-page-hero">
-          ${loadingLine("is-short")}
-          ${loadingLine("is-long")}
-          ${loadingLine("is-mid")}
-        </div>
-        <div class="loading-grid">
-          ${[loadingCard(), loadingCard(), loadingCard()].join("")}
-        </div>
-        <div class="loading-page-body">
-          ${loadingCard(["is-short", "is-long", "is-mid"])}
-          ${loadingCard(["is-mid", "is-long", "is-short"])}
-        </div>
-      </div>
-    `;
-  }
+  setPageLoading(true);
   const user = await requireSession();
-  if (!user) return;
+  if (!user) {
+    setPageLoading(false);
+    return;
+  }
   setUserProfile(user);
   wireLogoutButton();
 
@@ -3138,12 +3065,16 @@ async function initGrowthPage() {
   try {
     result = await apiFetch("/api/growth");
   } catch (error) {
+    setPageLoading(false);
     keepStaticPage(error);
     return;
   }
   const data = result.data;
   const root = document.getElementById("growth-root");
-  if (!root) return;
+  if (!root) {
+    setPageLoading(false);
+    return;
+  }
 
   const studyHours = `${Math.floor((data.metrics.study_minutes || 0) / 60)}h ${String((data.metrics.study_minutes || 0) % 60).padStart(2, "0")}m`;
   const radarLabelMap = ["l1", "l2", "l3", "l4", "l5"];
@@ -3241,4 +3172,5 @@ async function initGrowthPage() {
   if (radarPolygon) {
     radarPolygon.style.setProperty("--radar-polygon", `polygon(${polygonStyle})`);
   }
+  setPageLoading(false);
 }

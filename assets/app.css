@@ -874,102 +874,36 @@ button {
   display: none !important;
 }
 
-.loading-skeleton {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: linear-gradient(90deg, rgba(226, 232, 240, 0.55), rgba(248, 250, 252, 0.92), rgba(226, 232, 240, 0.55));
-  background-size: 220% 100%;
-  animation: skeletonShimmer 1.35s ease-in-out infinite;
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(26, 54, 93, 0.22), rgba(232, 168, 56, 0.34), transparent);
+  background-size: 45% 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 5;
 }
 
-.loading-card {
-  min-height: 150px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
-  padding: 20px;
-  box-shadow: var(--shadow-soft);
+body.is-data-loading .content::before {
+  opacity: 1;
+  transform: translateY(0);
+  animation: loadingRail 1.1s ease-in-out infinite;
 }
 
-.loading-line {
-  height: 12px;
-  margin-top: 12px;
+body.is-data-loading .page {
+  filter: saturate(0.98);
 }
 
-.loading-line:first-child {
-  margin-top: 0;
-}
-
-.loading-line.is-short {
-  width: 42%;
-}
-
-.loading-line.is-mid {
-  width: 68%;
-}
-
-.loading-line.is-long {
-  width: 88%;
-}
-
-.loading-dot {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-}
-
-.loading-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.loading-stack {
-  display: grid;
-  gap: 14px;
-}
-
-.loading-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.loading-page-shell {
-  display: grid;
-  gap: 24px;
-}
-
-.loading-page-hero {
-  min-height: 210px;
-}
-
-.loading-page-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
-  gap: 24px;
-}
-
-.loading-fade {
-  animation: fadeInSoft 0.22s ease both;
-}
-
-@keyframes skeletonShimmer {
-  0% { background-position: 120% 0; }
-  100% { background-position: -120% 0; }
-}
-
-@keyframes fadeInSoft {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 980px) {
-  .loading-grid,
-  .loading-page-body {
-    grid-template-columns: 1fr;
-  }
+@keyframes loadingRail {
+  0% { background-position: -40vw 0; }
+  100% { background-position: 40vw 0; }
 }
 
 .mt-24 {
