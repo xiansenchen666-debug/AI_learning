@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260629-4" />
+    <link rel="stylesheet" href="assets/app.css?v=20260629-5" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -68,10 +68,15 @@
                   <span class="form-label">账号</span>
                   <input class="form-input" name="username" autocomplete="off" required />
                 </label>
-                <label class="form-group form-group-compact">
+                <div class="form-group form-group-compact">
                   <span class="form-label">密码</span>
-                  <input class="form-input" name="password" type="password" autocomplete="new-password" required />
-                </label>
+                  <div class="password-field">
+                    <input class="form-input" name="password" type="password" autocomplete="new-password" required />
+                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
+                      <span aria-hidden="true">👁</span>
+                    </button>
+                  </div>
+                </div>
                 <label class="form-group form-group-compact">
                   <span class="form-label">姓名</span>
                   <input class="form-input" name="full_name" autocomplete="off" required />
@@ -128,7 +133,7 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260629-4"></script>
+    <script src="assets/app.js?v=20260629-5"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initTeacherPage().catch((error) => console.warn(error));

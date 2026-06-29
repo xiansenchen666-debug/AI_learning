@@ -933,6 +933,29 @@ function setPageLoading(isLoading) {
   document.body.classList.toggle("is-data-loading", Boolean(isLoading));
 }
 
+function wirePasswordToggles(root = document) {
+  root.querySelectorAll("[data-toggle-password]").forEach((button) => {
+    if (button.dataset.passwordToggleBound === "1") {
+      return;
+    }
+    button.dataset.passwordToggleBound = "1";
+    button.addEventListener("click", () => {
+      const field = button.closest(".password-field");
+      const input = field?.querySelector('input[type="password"], input[type="text"]');
+      if (!input) {
+        return;
+      }
+      const shouldShow = input.type === "password";
+      input.type = shouldShow ? "text" : "password";
+      button.setAttribute("aria-label", shouldShow ? "隐藏密码" : "显示密码");
+      const icon = button.querySelector("[aria-hidden='true']");
+      if (icon) {
+        icon.textContent = shouldShow ? "◎" : "👁";
+      }
+    });
+  });
+}
+
 async function initDashboardPage() {
   setPageLoading(true);
   const user = await requireSession();
@@ -2709,6 +2732,7 @@ async function initTeacherPage() {
   }
   setUserProfile(user);
   wireLogoutButton();
+  wirePasswordToggles();
   wireStudentCreateForm(user);
   await initTeacherEnrollmentPanel(user);
 }
@@ -2852,10 +2876,15 @@ async function initTeacherEnrollmentPanel(user) {
                   <span class="form-label">账号</span>
                   <input class="form-input" name="username" value="${escapeHtml(student.username || "")}" required>
                 </label>
-                <label class="form-group form-group-compact">
+                <div class="form-group form-group-compact">
                   <span class="form-label">新密码</span>
-                  <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改">
-                </label>
+                  <div class="password-field">
+                    <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改">
+                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
+                      <span aria-hidden="true">👁</span>
+                    </button>
+                  </div>
+                </div>
                 <label class="form-group form-group-compact">
                   <span class="form-label">姓名</span>
                   <input class="form-input" name="full_name" value="${escapeHtml(student.full_name || "")}" required>
@@ -2878,6 +2907,10 @@ async function initTeacherEnrollmentPanel(user) {
                   <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
                 </div>
               </form>
+              <div class="admin-enrollment-toolbar">
+                <button class="ghost-btn" type="button" data-select-all-enrollments>全选课程</button>
+                <button class="ghost-btn" type="button" data-clear-enrollments>清空选择</button>
+              </div>
               <div class="admin-subject-grid">
                 ${subjectOptions}
               </div>
@@ -2893,6 +2926,46 @@ async function initTeacherEnrollmentPanel(user) {
 
   root.querySelectorAll("[data-subject-partial='true']").forEach((input) => {
     input.indeterminate = true;
+  });
+  wirePasswordToggles(root);
+
+  root.querySelectorAll("[data-select-all-enrollments]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest("[data-admin-student-id]");
+      card?.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
+        input.checked = true;
+        input.indeterminate = false;
+      });
+      const status = card?.querySelector("[data-save-status]");
+      if (status) {
+        status.textContent = "已全选，点击“保存购课”后生效";
+      }
+    });
+  });
+
+  root.querySelectorAll("[data-clear-enrollments]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest("[data-admin-student-id]");
+      card?.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
+        input.checked = false;
+        input.indeterminate = false;
+      });
+      const status = card?.querySelector("[data-save-status]");
+      if (status) {
+        status.textContent = "已清空，点击“保存购课”后生效";
+      }
+    });
+  });
+
+  root.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
+    input.addEventListener("change", () => {
+      input.indeterminate = false;
+      const card = input.closest("[data-admin-student-id]");
+      const status = card?.querySelector("[data-save-status]");
+      if (status) {
+        status.textContent = "购课选择已变更，记得保存";
+      }
+    });
   });
 
   root.querySelectorAll("[data-student-edit-form]").forEach((form) => {
