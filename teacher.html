@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>老师管理 - 星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css" />
+</head>
+  <body class="profile-ready" data-page="teacher">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
+    <div class="app-shell">
+                  <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+            <div class="brand-lockup">
+  <span class="brand-kicker">星途</span>
+  <span class="brand-title">启航教育</span>
+</div>
+          </div>
+            
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="teacher.html" class="nav-btn active"><span class="icon-badge">管</span><span class="nav-label">老师管理</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
+              <p class="sidebar-user-name" data-user-name></p>
+              <p class="muted sidebar-user-level" data-user-level></p>
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
+              <div class="dropdown-header">
+                <div class="avatar avatar-sm" data-avatar-text></div>
+                <div>
+                  <p class="dropdown-user-name" data-user-name></p>
+                  <p class="dropdown-user-email" data-user-email></p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+<div class="page-scroll">
+          <section class="page active" id="teacher-page">
+            <div class="growth-header"><div><h1 class="section-title page-title-lg">老师管理</h1></div></div>
+            <section class="card mt-24">
+              <div class="section-head">
+                <h2 class="section-title">创建学生账号</h2>
+              </div>
+              <form id="student-create-form" class="student-create-form">
+                <label class="form-group form-group-compact">
+                  <span class="form-label">账号</span>
+                  <input class="form-input" name="username" autocomplete="off" required />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">密码</span>
+                  <input class="form-input" name="password" type="password" autocomplete="new-password" required />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">姓名</span>
+                  <input class="form-input" name="full_name" autocomplete="off" required />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">阶段</span>
+                  <select class="form-input" name="stage">
+                    <option value="小学">小学</option>
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                  </select>
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">年级</span>
+                  <input class="form-input" name="grade" autocomplete="off" />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">邮箱</span>
+                  <input class="form-input" name="email" type="email" autocomplete="off" />
+                </label>
+                <div class="student-create-actions">
+                  <button class="primary-btn" type="submit" data-create-student>创建学生</button>
+                  <span class="muted text-sm" id="student-create-status"></span>
+                </div>
+              </form>
+            </section>
+            <section class="card teacher-admin-panel is-hidden" id="teacher-admin-panel">
+              <div class="section-head">
+                <h2 class="section-title">学生购课管理</h2>
+              </div>
+              <div id="teacher-admin-root"></div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    
+    <script>
+      // Dropdown toggle logic
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      
+      if (avatarTrigger && avatarDropdown) {
+        avatarTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!avatarTrigger.contains(e.target)) {
+            avatarDropdown.classList.remove('active');
+          }
+        });
+      }
+    </script>
+    <script src="assets/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initTeacherPage().catch((error) => console.warn(error));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body class="profile-ready" data-page="question-bank">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+              <div class="brand-lockup">
+                <span class="brand-kicker">星途</span>
+                <span class="brand-title">启航教育</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="dashboard.html" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="subjects.html" class="nav-btn active"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="mistakes.html" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="growth.html" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
+              <p class="sidebar-user-name" data-user-name></p>
+              <p class="muted sidebar-user-level" data-user-level></p>
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
+              <div class="dropdown-header">
+                <div class="avatar avatar-sm" data-avatar-text></div>
+                <div>
+                  <p class="dropdown-user-name" data-user-name></p>
+                  <p class="dropdown-user-email" data-user-email></p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content course-content-shell question-bank-content">
+        <section class="course-workspace question-bank-workspace page active">
+          <header class="workspace-mini-header">
+            <div class="workspace-title-zone">
+              <a href="course.html" class="nav-back-link workspace-back-link" id="question-bank-back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>返回本节</span>
+              </a>
+              <div class="workspace-title-copy">
+                <h1 id="question-bank-title"></h1>
+                <p id="question-bank-subtitle"></p>
+              </div>
+            </div>
+            <div id="question-bank-summary" class="workspace-badges"></div>
+          </header>
+
+          <div id="question-bank-root" class="question-bank-page-root is-hidden">
+            <section class="question-bank-toolbar">
+              <div>
+                <p class="practice-kicker">QUESTION BANK</p>
+                <h2>本年级题库</h2>
+                <p class="question-bank-grade-lock" data-question-bank-grade-lock></p>
+              </div>
+              <span data-question-bank-count></span>
+            </section>
+            <div class="question-bank-list" data-question-bank-list></div>
+            <section class="question-bank-empty is-hidden" data-question-bank-empty>
+              <h2>本节题库还没有导入</h2>
+              <p>后续把本知识点的大量刷题内容放入 lesson 目录的 question_bank.json、题库.json 或 刷题题库.json，这里会集中展示。</p>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="/assets/style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="assets/app.css" />
+</head>
+  <body class="profile-ready" data-page="dashboard">
     <div class="ambient">
       <div class="blob one"></div>
       <div class="blob two"></div>
@@ -17,130 +17,99 @@
       <aside class="sidebar">
         <div class="brand">
           <div>
-            <div style="display: flex; flex-direction: column; justify-content: center;">
-            <div style="position: relative; display: inline-block; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); letter-spacing: -0.5px;">
-  <span style="position: absolute; top: -14px; left: -6px; font-size: 14px; color: var(--accent); line-height: 1;">星途</span>
-  <span style="font-size: 32px; line-height: 1;">启航教育</span>
-</div>
-          </div>
-            
+            <div class="brand-stack">
+              <div class="brand-lockup">
+                <span class="brand-kicker">星途</span>
+                <span class="brand-title">启航教育</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn active"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn "><span class="icon-badge">课</span><span class="nav-label">同步课程</span></a>
-          <a href="/mistakes" class="nav-btn "><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn "><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="dashboard.html" class="nav-btn active"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="subjects.html" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="mistakes.html" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="growth.html" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
         </nav>
 
-
         <div class="sidebar-footer">
-          <button class="nav-btn"><span class="icon-badge">设</span><span class="nav-label">系统设置</span></button>
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
+              <p class="sidebar-user-name" data-user-name></p>
+              <p class="muted sidebar-user-level" data-user-level></p>
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
+              <div class="dropdown-header">
+                <div class="avatar avatar-sm" data-avatar-text></div>
+                <div>
+                  <p class="dropdown-user-name" data-user-name></p>
+                  <p class="dropdown-user-email" data-user-email></p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a href="login.html" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
+            </div>
+          </div>
         </div>
       </aside>
 
       <main class="content">
-        <header class="topbar" style="justify-content: flex-end;">
-          <div class="topbar-right">
-            <div class="avatar-card" id="avatar-trigger" style="cursor:pointer;position:relative;">
-              <div>
-                <p style="font-size:14px;font-weight:800;">Cary</p>
-                <p class="muted" style="font-size:12px;margin-top:4px;">Lv.12 学霸</p>
-              </div>
-              <div class="avatar">CA</div>
-              
-              <!-- Apple style dropdown menu -->
-              <div class="avatar-dropdown" id="avatar-dropdown">
-                <div class="dropdown-header">
-                  <div class="avatar" style="width:36px;height:36px;font-size:14px;">CA</div>
-                  <div>
-                    <p style="font-size:14px;font-weight:700;color:var(--text);margin:0;">Cary</p>
-                    <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">student@school.edu</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                
-                
-                <a href="/api/logout" class="dropdown-item" style="color:var(--text);text-decoration:none;display:flex;">
-                  <span style="font-size:16px;width:20px;text-align:center;">🚪</span> 退出登录
-                </a>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div class="page-scroll">
           <section class="page active" id="dashboard-page">
-
             <div class="grid dashboard-grid-top">
               <div class="hero-card">
                 <div class="hero-body">
                   <div>
-                    <div class="hero-pill">AI 深度分析完成  定制路线已生成</div>
-                    <h1 class="hero-title">Cary，今天有 <span>12个知识点</span> 需要巩固</h1>
-                    <p class="hero-desc">系统已根据艾宾浩斯遗忘曲线为你排好复习计划。我们将通过“先讲解、后刷题”的模式，帮你把知识点从小学到高中彻底串联打通。</p>
+                    <div class="hero-pill" id="dashboard-hero-pill"></div>
+                    <h1 class="hero-title" id="dashboard-hero-title">学习中心</h1>
+                    <p class="hero-desc" id="dashboard-hero-desc">这里只展示当前学生已经购买并由老师开通的课程，以及这些课程产生的学习记录。</p>
                   </div>
-                  <button class="primary-btn">开始专属学习</button>
+                  <a href="subjects.html" class="primary-btn">查看全部课程</a>
                 </div>
               </div>
 
               <div class="card achievement">
-                <p class="muted" style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;">学习成就</p>
-                <div class="achievement-mark">燃</div>
-                <div class="achievement-number">12<small>天</small></div>
-                <p style="margin-top:6px;color:var(--accent);font-size:13px;font-weight:800;">连续学习打卡</p>
-                <div class="progress-track"><div class="progress-fill"></div></div>
-                <p class="muted" style="font-size:13px;">本周学力值 2,450 XP，距离下一等级还差 550 XP</p>
+                <p class="muted achievement-kicker">学习成就</p>
+                <div class="achievement-mark"></div>
+                <div class="achievement-number" id="dashboard-study-days"></div>
+                <p class="achievement-label" id="dashboard-achievement-label"></p>
+                <div class="progress-track"><div class="progress-fill progress-fill-zero" id="dashboard-level-progress"></div></div>
+                <p class="muted text-sm" id="dashboard-xp-summary"></p>
               </div>
             </div>
 
-            <div class="grid dashboard-grid-main" style="margin-top:24px;">
-              <!-- Left Column (Main Focus) -->
-              <div class="grid" style="gap:24px;">
-                <!-- 2. 艾宾浩斯智能复习 -->
+            <div class="card mt-24">
+              <div class="section-head">
+                <h2 class="section-title">我的已购课程</h2>
+                <span class="stat-chip stat-chip-primary"></span>
+              </div>
+              <div class="course-grid" id="dashboard-courses">
+                
+              </div>
+            </div>
+
+            <div class="grid dashboard-grid-main mt-24">
+              <div class="grid gap-24">
                 <div class="card">
                   <div class="section-head">
-                    <h2 class="section-title">艾宾浩斯智能刷题 (抗遗忘)</h2>
-                    <span class="stat-chip" style="color:var(--emerald);background:rgba(74, 124, 89, 0.15);">临界遗忘点：2</span>
+                    <h2 class="section-title">智能刷题</h2>
+                    <span class="stat-chip stat-chip-emerald"></span>
                   </div>
-                  <div class="timeline">
-                    <div class="timeline-item">
-                      <div class="timeline-dot" style="background:var(--orange);color:#fff;border-color:rgba(197, 160, 89, 0.2);font-size:14px;">急</div>
-                      <div class="timeline-content" style="border-color:rgba(197, 160, 89, 0.2);background:rgba(197, 160, 89, 0.05);">
-                        <div class="timeline-meta"><span style="color:var(--orange);">距离上次学习：2天</span><span class="mini-chip" style="color:var(--orange);background:rgba(255,255,255,.5);">记忆保留率 30%</span></div>
-                        <h3 style="margin-bottom:6px;">受力分析 (物理)</h3>
-                        <p class="muted" style="font-size:13px;margin-bottom:12px;">系统已为你生成 5 道变式题进行强化记忆</p>
-                        <button class="secondary-btn" style="padding:8px 16px;font-size:12px;background:var(--orange);color:#fff;border:none;">立即刷题巩固</button>
-                      </div>
-                    </div>
-                    <div class="timeline-item">
-                      <div class="timeline-dot" style="background:var(--accent);color:#fff;border-color:rgba(197, 160, 89, 0.2);font-size:14px;">中</div>
-                      <div class="timeline-content">
-                        <div class="timeline-meta"><span style="color:var(--accent);">距离上次学习：7天</span><span class="mini-chip" style="color:var(--accent);background:rgba(255,255,255,.5);">记忆保留率 55%</span></div>
-                        <h3 style="margin-bottom:6px;">现在完成时 (英语)</h3>
-                        <p class="muted" style="font-size:13px;margin-bottom:12px;">即将到达下一个遗忘节点，需完成 10 道语法题</p>
-                        <button class="ghost-btn" style="padding:8px 16px;font-size:12px;">开始刷题</button>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="timeline" id="dashboard-timeline"></div>
                 </div>
               </div>
 
-              <!-- Right Column -->
-              <div class="grid" style="gap:24px;">
-                <!-- 4. 智能错题本 -->
+              <div class="grid gap-24">
                 <div class="card">
                   <div class="section-head">
                     <h2 class="section-title">智能错题本</h2>
-                    <span class="stat-chip" style="color:var(--orange);background:rgba(107, 91, 149, 0.15);">3 待攻克</span>
+                    <span class="stat-chip stat-chip-orange" id="dashboard-mistake-count"></span>
                   </div>
-                  <div class="mistake-box">
-                    <div class="row-between"><span class="mini-chip" style="background:rgba(26, 43, 60, 0.08);">数学</span><span class="muted" style="font-size:12px;">昨天的刷题测试</span></div>
-                    <p style="margin:14px 0 18px;line-height:1.7;font-weight:700;">已知二次函数 y=ax^2+bx+c 的图象经过点(1,0)，求对称轴并分析开口方向。</p>
-                    <button class="secondary-btn" style="width:100%;">AI 举一反三重刷</button>
-                  </div>
+                  <div class="mistake-box" id="dashboard-mistake"></div>
                 </div>
               </div>
             </div>
@@ -149,27 +118,11 @@
       </main>
     </div>
 
-    
-    </div>
-
-    
+    <script src="assets/app.js"></script>
     <script>
-      // Dropdown toggle logic
-      const avatarTrigger = document.getElementById('avatar-trigger');
-      const avatarDropdown = document.getElementById('avatar-dropdown');
-      
-      if (avatarTrigger && avatarDropdown) {
-        avatarTrigger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          avatarDropdown.classList.toggle('active');
-        });
-        
-        document.addEventListener('click', function(e) {
-          if (!avatarTrigger.contains(e.target)) {
-            avatarDropdown.classList.remove('active');
-          }
-        });
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        initDashboardPage().catch((error) => console.warn(error));
+      });
     </script>
   </body>
 </html>

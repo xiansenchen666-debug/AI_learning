@@ -1,18 +1,23 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-read --allow-write --unstable-kv server.ts"
+    "export": "python -X utf8 tools/export_catalog.py",
+    "start": "deno run --allow-net --allow-read --allow-env --allow-sys server.ts",
+    "check": "deno check server.ts"
   },
   "deploy": {
-    "project": "ai-learning-system",
+    "project": "ai-learning-deno-cloud",
     "exclude": [
       ".git",
-      ".vscode"
+      ".vscode",
+      "tools"
     ],
     "include": [
       "server.ts",
+      "deno.json",
+      "schema.mysql.sql",
       "*.html",
       "assets/**/*",
-      "data/**/*"
+      "data/catalog.json"
     ],
     "entrypoint": "server.ts"
   }
