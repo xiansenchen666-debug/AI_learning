@@ -901,6 +901,88 @@ body.is-data-loading .page {
   filter: saturate(0.98);
 }
 
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 38% 35%, rgba(232, 168, 56, 0.10), transparent 30%),
+    rgba(246, 247, 251, 0.78);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.page-transition.is-active {
+  opacity: 1;
+}
+
+.page-transition-panel {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: min(360px, calc(100vw - 48px));
+  padding: 22px 24px;
+  border: 1px solid rgba(26, 54, 93, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(28, 30, 38, 0.10);
+  transform: translateY(10px) scale(0.98);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-transition.is-active .page-transition-panel {
+  transform: translateY(0) scale(1);
+}
+
+.page-transition-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), #315f8f);
+  position: relative;
+  box-shadow: 0 14px 34px rgba(26, 54, 93, 0.22);
+}
+
+.page-transition-mark::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-top-color: var(--accent);
+  animation: routeSpin 850ms linear infinite;
+}
+
+.page-transition-kicker {
+  margin: 0 0 4px;
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.page-transition-title {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+body.is-route-transitioning .page-scroll {
+  opacity: 0.52;
+  transform: translateY(8px);
+  filter: blur(1px) saturate(0.95);
+}
+
+@keyframes routeSpin {
+  to { transform: rotate(360deg); }
+}
+
 @keyframes loadingRail {
   0% { background-position: -40vw 0; }
   100% { background-position: 40vw 0; }
@@ -3240,6 +3322,12 @@ a.full-width-button {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-main);
+}
+
+.form-help {
+  color: var(--text-subtle);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .form-input {

@@ -685,6 +685,55 @@ function prefetchPage(url) {
   });
 }
 
+function navigationLabel(node, url) {
+  const text = node.querySelector(".nav-label")?.textContent?.trim() ||
+    node.textContent?.trim();
+  if (text) {
+    return text;
+  }
+  const fallback = {
+    "/dashboard.html": "学习中心",
+    "/subjects.html": "全部课程",
+    "/mistakes.html": "智能错题本",
+    "/growth.html": "成长轨迹",
+    "/teacher.html": "老师管理",
+  };
+  return fallback[url.pathname] || "新页面";
+}
+
+function ensurePageTransition() {
+  let transition = document.getElementById("page-transition");
+  if (transition) {
+    return transition;
+  }
+  transition = document.createElement("div");
+  transition.id = "page-transition";
+  transition.className = "page-transition";
+  transition.innerHTML = `
+    <div class="page-transition-panel">
+      <div class="page-transition-mark"></div>
+      <div>
+        <p class="page-transition-kicker">正在进入</p>
+        <h2 class="page-transition-title" data-transition-title>学习空间</h2>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(transition);
+  return transition;
+}
+
+function startPageTransition(label) {
+  const transition = ensurePageTransition();
+  const title = transition.querySelector("[data-transition-title]");
+  if (title) {
+    title.textContent = label;
+  }
+  document.body.classList.add("is-route-transitioning");
+  requestAnimationFrame(() => {
+    transition.classList.add("is-active");
+  });
+}
+
 function wireNavigationTransitions() {
   if (window.location.protocol === "file:") {
     return;
@@ -739,7 +788,10 @@ function wireNavigationTransitions() {
         return;
       }
       document.body.dataset.navigating = "1";
-      window.location.href = `${url.pathname}${url.search}${url.hash}`;
+      startPageTransition(navigationLabel(node, url));
+      window.setTimeout(() => {
+        window.location.href = `${url.pathname}${url.search}${url.hash}`;
+      }, 180);
     });
   });
 }
@@ -2877,13 +2929,14 @@ async function initTeacherEnrollmentPanel(user) {
                   <input class="form-input" name="username" value="${escapeHtml(student.username || "")}" required>
                 </label>
                 <div class="form-group form-group-compact">
-                  <span class="form-label">新密码</span>
+                  <span class="form-label">重置密码</span>
                   <div class="password-field">
-                    <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改">
+                    <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改，输入后可查看">
                     <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
                       <span aria-hidden="true">👁</span>
                     </button>
                   </div>
+                  <span class="form-help">旧密码已加密保存，不能反查；输入新密码后可点眼睛查看。</span>
                 </div>
                 <label class="form-group form-group-compact">
                   <span class="form-label">姓名</span>
