@@ -929,7 +929,90 @@ async function initWelcomePage() {
     .join("");
 }
 
+function loadingLine(className = "is-long") {
+  return `<div class="loading-skeleton loading-line ${className}"></div>`;
+}
+
+function loadingCard(lines = ["is-mid", "is-long", "is-short"]) {
+  return `
+    <div class="loading-card loading-fade">
+      <div class="loading-row">
+        <div class="loading-skeleton loading-dot"></div>
+        <div class="loading-stack" style="flex: 1">
+          ${lines.map((item) => loadingLine(item)).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function showDashboardSkeleton() {
+  const courses = document.getElementById("dashboard-courses");
+  const timeline = document.getElementById("dashboard-timeline");
+  const mistakes = document.getElementById("dashboard-mistake");
+  const studyDays = document.getElementById("dashboard-study-days");
+  const xpSummary = document.getElementById("dashboard-xp-summary");
+  const mistakeCount = document.getElementById("dashboard-mistake-count");
+
+  if (studyDays && !studyDays.textContent.trim()) {
+    studyDays.innerHTML = `<span class="loading-skeleton loading-line is-short" style="display:block;width:88px;height:40px"></span>`;
+  }
+  if (xpSummary && !xpSummary.textContent.trim()) {
+    xpSummary.innerHTML = loadingLine("is-mid");
+  }
+  if (mistakeCount && !mistakeCount.textContent.trim()) {
+    mistakeCount.innerHTML = `<span class="loading-skeleton loading-line is-short" style="display:block;width:72px"></span>`;
+  }
+  if (courses && !courses.children.length) {
+    courses.innerHTML = [loadingCard(), loadingCard(), loadingCard()].join("");
+  }
+  if (timeline && !timeline.children.length) {
+    timeline.innerHTML = [loadingCard(), loadingCard(["is-short", "is-long"])].join("");
+  }
+  if (mistakes && !mistakes.children.length) {
+    mistakes.innerHTML = loadingCard(["is-short", "is-long", "is-mid"]);
+  }
+}
+
+function showListSkeleton(root, count = 4) {
+  if (!root || root.children.length) {
+    return;
+  }
+  root.innerHTML = Array.from({ length: count }, () => loadingCard()).join("");
+}
+
+function showSubjectsSkeleton() {
+  let root = document.getElementById("subjects-loading");
+  if (root) {
+    return;
+  }
+  const subjectsPage = document.getElementById("subjects-page");
+  const subjectsRoot = document.getElementById("subjects-root");
+  if (!subjectsPage || !subjectsRoot) {
+    return;
+  }
+  root = document.createElement("div");
+  root.id = "subjects-loading";
+  root.className = "loading-page-shell loading-fade";
+  root.innerHTML = `
+    <div class="loading-card loading-page-hero">
+      ${loadingLine("is-short")}
+      ${loadingLine("is-long")}
+      ${loadingLine("is-mid")}
+    </div>
+    <div class="loading-grid">
+      ${[loadingCard(), loadingCard(), loadingCard()].join("")}
+    </div>
+  `;
+  subjectsRoot.before(root);
+}
+
+function clearSkeleton(id) {
+  document.getElementById(id)?.remove();
+}
+
 async function initDashboardPage() {
+  showDashboardSkeleton();
   const user = await requireSession();
   if (!user) {
     return;
@@ -2270,6 +2353,7 @@ async function initCoursePage() {
 }
 
 async function initMistakesPage() {
+  showListSkeleton(document.getElementById("mistakes-root"), 4);
   const user = await requireSession();
   if (!user) return;
   setUserProfile(user);
@@ -2565,6 +2649,7 @@ function renderGradeDetail(group) {
 }
 
 async function initSubjectsPage() {
+  showSubjectsSkeleton();
   const user = await requireSession();
   if (!user) return;
   if (isTeacherUser(user) && window.location.protocol !== "file:") {
@@ -2607,6 +2692,7 @@ async function initSubjectsPage() {
   if (gradeGrid) {
     gradeGrid.innerHTML = renderGradePicker(model);
   }
+  clearSkeleton("subjects-loading");
   subjectsRoot.classList.remove("is-hidden");
   wireNavigationTransitions();
 }
@@ -3024,6 +3110,25 @@ async function initTeacherEnrollmentPanel(user) {
 }
 
 async function initGrowthPage() {
+  const growthRoot = document.getElementById("growth-root");
+  if (growthRoot && !growthRoot.children.length) {
+    growthRoot.innerHTML = `
+      <div class="loading-page-shell loading-fade">
+        <div class="loading-card loading-page-hero">
+          ${loadingLine("is-short")}
+          ${loadingLine("is-long")}
+          ${loadingLine("is-mid")}
+        </div>
+        <div class="loading-grid">
+          ${[loadingCard(), loadingCard(), loadingCard()].join("")}
+        </div>
+        <div class="loading-page-body">
+          ${loadingCard(["is-short", "is-long", "is-mid"])}
+          ${loadingCard(["is-mid", "is-long", "is-short"])}
+        </div>
+      </div>
+    `;
+  }
   const user = await requireSession();
   if (!user) return;
   setUserProfile(user);
