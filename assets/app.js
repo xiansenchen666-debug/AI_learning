@@ -706,7 +706,6 @@ function ensurePageTransition() {
   if (transition) {
     return transition;
   }
-  const pageScroll = document.querySelector(".page-scroll");
   transition = document.createElement("div");
   transition.id = "page-transition";
   transition.className = "page-transition";
@@ -719,11 +718,7 @@ function ensurePageTransition() {
       </div>
     </div>
   `;
-  if (pageScroll) {
-    pageScroll.prepend(transition);
-  } else {
-    document.body.appendChild(transition);
-  }
+  document.body.appendChild(transition);
   return transition;
 }
 
@@ -794,9 +789,7 @@ function wireNavigationTransitions() {
       }
       document.body.dataset.navigating = "1";
       startPageTransition(navigationLabel(node, url));
-      window.setTimeout(() => {
-        window.location.href = `${url.pathname}${url.search}${url.hash}`;
-      }, 240);
+      window.location.href = `${url.pathname}${url.search}${url.hash}`;
     });
   });
 }
