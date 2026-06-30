@@ -2,11 +2,14 @@ const USER_CACHE_KEY = "stq-user-profile";
 const LAST_SUBJECT_LOCATION_KEY = "stq-last-subject-location";
 const ROUTE_LOADING_LABEL_KEY = "stq-route-loading-label";
 const API_PREFETCH_CACHE_PREFIX = "stq-api-prefetch:";
-const API_PREFETCH_CACHE_TTL_MS = 15 * 1000;
+const API_PREFETCH_CACHE_TTL_MS = 10 * 60 * 1000;
+const API_COURSE_CACHE_TTL_MS = 30 * 60 * 1000;
 
 function readLastSubjectLocation() {
   try {
-    return JSON.parse(localStorage.getItem(LAST_SUBJECT_LOCATION_KEY) || "null");
+    return JSON.parse(
+      localStorage.getItem(LAST_SUBJECT_LOCATION_KEY) || "null",
+    );
   } catch {
     return null;
   }
@@ -19,7 +22,10 @@ function saveLastSubjectLocation(stage, grade) {
     return;
   }
   try {
-    localStorage.setItem(LAST_SUBJECT_LOCATION_KEY, JSON.stringify({ view: "grade", stage: nextStage, grade: nextGrade }));
+    localStorage.setItem(
+      LAST_SUBJECT_LOCATION_KEY,
+      JSON.stringify({ view: "grade", stage: nextStage, grade: nextGrade }),
+    );
   } catch {
     // Ignore storage errors silently.
   }
@@ -27,7 +33,10 @@ function saveLastSubjectLocation(stage, grade) {
 
 function saveSubjectOverviewLocation() {
   try {
-    localStorage.setItem(LAST_SUBJECT_LOCATION_KEY, JSON.stringify({ view: "grades" }));
+    localStorage.setItem(
+      LAST_SUBJECT_LOCATION_KEY,
+      JSON.stringify({ view: "grades" }),
+    );
   } catch {
     // Ignore storage errors silently.
   }
@@ -66,23 +75,32 @@ function buildLessonHref(courseId, lessonId, extra = {}) {
 function hydrateSubjectNavLinks() {
   const lastLocation = readLastSubjectLocation();
   if (lastLocation?.view === "grades") {
-    document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]').forEach((node) => {
-      if (node.id !== "course-back-link" && node.id !== "lesson-back-link" && !node.hasAttribute("data-subject-overview-link")) {
-        node.setAttribute("href", "/subjects");
-      }
-    });
+    document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]')
+      .forEach((node) => {
+        if (
+          node.id !== "course-back-link" && node.id !== "lesson-back-link" &&
+          !node.hasAttribute("data-subject-overview-link")
+        ) {
+          node.setAttribute("href", "/subjects");
+        }
+      });
     return;
   }
   if (!lastLocation?.stage || !lastLocation?.grade) {
     return;
   }
   const href = buildSubjectsHref(lastLocation.stage, lastLocation.grade);
-  document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]').forEach((node) => {
-    if (node.id === "course-back-link" || node.id === "lesson-back-link" || node.hasAttribute("data-subject-overview-link")) {
-      return;
-    }
-    node.setAttribute("href", href);
-  });
+  document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]').forEach(
+    (node) => {
+      if (
+        node.id === "course-back-link" || node.id === "lesson-back-link" ||
+        node.hasAttribute("data-subject-overview-link")
+      ) {
+        return;
+      }
+      node.setAttribute("href", href);
+    },
+  );
 }
 
 function escapeHtml(text) {
@@ -95,19 +113,27 @@ function escapeHtml(text) {
 }
 
 function cleanCourseDisplayTitle(title) {
-  return String(title || "").replace(/^\s*(?:普通高中教科书|义务教育教科书)\s*(?:[·・]\s*)?/, "").trim();
+  return String(title || "").replace(
+    /^\s*(?:普通高中教科书|义务教育教科书)\s*(?:[·・]\s*)?/,
+    "",
+  ).trim();
 }
 
 function buildLessonReviewHref(item) {
   if (!item?.course_id || !item?.lesson_id) {
     return "";
   }
-  return buildLessonHref(item.course_id, item.lesson_id, item.question_id
-    ? { review: "mistake", question: item.question_id }
-    : {});
+  return buildLessonHref(
+    item.course_id,
+    item.lesson_id,
+    item.question_id ? { review: "mistake", question: item.question_id } : {},
+  );
 }
 
-function renderMistakeReviewAction(item, className = "secondary-btn full-width-button") {
+function renderMistakeReviewAction(
+  item,
+  className = "secondary-btn full-width-button",
+) {
   const href = buildLessonReviewHref(item);
   if (!href) {
     return `<button class="${className}" type="button" disabled>AI 举一反三重刷</button>`;
@@ -120,13 +146,16 @@ async function apiFetch(url, options = {}) {
   if (method !== "GET") {
     clearApiPrefetchCache();
   }
-  const cacheTtlMs = Number(options.cacheTtlMs || 0);
-  const shouldUseCache = cacheTtlMs > 0 && method === "GET" && typeof url === "string";
+  const cacheTtlMs = Number(
+    options.cacheTtlMs ??
+      (method === "GET" ? defaultApiCacheTtl(url) : 0),
+  );
+  const shouldUseCache = cacheTtlMs > 0 && method === "GET" &&
+    typeof url === "string";
   const cacheKey = shouldUseCache ? `${API_PREFETCH_CACHE_PREFIX}${url}` : "";
   if (shouldUseCache) {
     const cached = readApiCache(cacheKey, cacheTtlMs);
     if (cached) {
-      refreshApiCache(url, cacheKey);
       return cached;
     }
   }
@@ -141,7 +170,10 @@ async function apiFetch(url, options = {}) {
   if (!response.ok) {
     if (response.status === 401 && !String(url).includes("/api/login")) {
       clearUserProfile();
-      if (window.location.protocol !== "file:" && window.location.pathname !== "/login") {
+      if (
+        window.location.protocol !== "file:" &&
+        window.location.pathname !== "/login"
+      ) {
         window.location.replace("/login");
       }
     }
@@ -151,6 +183,29 @@ async function apiFetch(url, options = {}) {
     writeApiCache(cacheKey, data);
   }
   return data;
+}
+
+function defaultApiCacheTtl(url) {
+  const path = String(url || "");
+  if (!path.startsWith("/api/")) {
+    return 0;
+  }
+  if (
+    /^\/api\/course\/\d+/.test(path) ||
+    /^\/api\/lessons\/\d+\/question-bank/.test(path)
+  ) {
+    return API_COURSE_CACHE_TTL_MS;
+  }
+  if (
+    path === "/api/dashboard" ||
+    path === "/api/subjects" ||
+    path === "/api/mistakes" ||
+    path === "/api/growth" ||
+    path === "/api/session"
+  ) {
+    return API_PREFETCH_CACHE_TTL_MS;
+  }
+  return 0;
 }
 
 function clearApiPrefetchCache() {
@@ -182,24 +237,12 @@ function readApiCache(cacheKey, ttlMs) {
 
 function writeApiCache(cacheKey, data) {
   try {
-    sessionStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data }));
+    sessionStorage.setItem(
+      cacheKey,
+      JSON.stringify({ savedAt: Date.now(), data }),
+    );
   } catch {
     // Ignore cache errors silently.
-  }
-}
-
-async function refreshApiCache(url, cacheKey) {
-  try {
-    const response = await fetch(url, {
-      headers: { "Content-Type": "application/json" },
-      credentials: "same-origin",
-    });
-    const data = await response.json().catch(() => ({}));
-    if (response.ok) {
-      writeApiCache(cacheKey, data);
-    }
-  } catch {
-    // Ignore background refresh errors silently.
   }
 }
 
@@ -257,10 +300,12 @@ function wireLessonStartButtons(root = document) {
       node.textContent = "正在进入";
       try {
         await apiFetch(`/api/lessons/${lessonId}/start`, { method: "POST" });
-        node.dispatchEvent(new CustomEvent("lesson-started", {
-          bubbles: true,
-          detail: { lessonId },
-        }));
+        node.dispatchEvent(
+          new CustomEvent("lesson-started", {
+            bubbles: true,
+            detail: { lessonId },
+          }),
+        );
         if (node.isConnected) {
           node.textContent = "继续学习";
           node.disabled = false;
@@ -280,17 +325,22 @@ function syncQuestionOptionState(card) {
   }
   const selected = card.querySelector("input[type='radio']:checked");
   const selectedValue = selected?.value || "";
-  const isLocked = card.dataset.submitted === "1" || card.dataset.reviewed === "1";
+  const isLocked = card.dataset.submitted === "1" ||
+    card.dataset.reviewed === "1";
   const correctAnswer = card.dataset.correctAnswer || "";
   card.querySelectorAll(".question-option").forEach((label) => {
     const input = label.querySelector("input[type='radio']");
     const value = input?.value || "";
     label.classList.toggle("is-selected", value === selectedValue);
     label.classList.toggle("is-locked", isLocked);
-    label.classList.toggle("is-correct", card.dataset.reviewed === "1" && value === correctAnswer);
+    label.classList.toggle(
+      "is-correct",
+      card.dataset.reviewed === "1" && value === correctAnswer,
+    );
     label.classList.toggle(
       "is-wrong",
-      card.dataset.reviewed === "1" && value === selectedValue && selectedValue !== correctAnswer
+      card.dataset.reviewed === "1" && value === selectedValue &&
+        selectedValue !== correctAnswer,
     );
     if (input) {
       input.disabled = isLocked;
@@ -320,7 +370,10 @@ function updatePracticeSessionState(session) {
     meter.textContent = `已提交 ${submittedCards.length}/${total}`;
   }
   if (fill) {
-    fill.style.setProperty("--practice-progress", `${total ? Math.round((submittedCards.length / total) * 100) : 0}%`);
+    fill.style.setProperty(
+      "--practice-progress",
+      `${total ? Math.round((submittedCards.length / total) * 100) : 0}%`,
+    );
   }
   if (reviewButton) {
     reviewButton.disabled = submittedCards.length === 0 || reviewed;
@@ -384,9 +437,7 @@ function revealPracticeAnswers(session) {
     const submittedCount = submittedCards.length;
     const accuracy = submittedCount ? Math.round((correctCount / submittedCount) * 100) : 0;
     const wrongCount = Math.max(0, submittedCount - correctCount);
-    const reviewAdvice = wrongCount
-      ? `有 ${wrongCount} 题需要订正，先看红色题目，再回到正文补概念。`
-      : "本次提交题目全部正确，可以继续完成剩余题或进入本年级题库。";
+    const reviewAdvice = wrongCount ? `有 ${wrongCount} 题需要订正，先看红色题目，再回到正文补概念。` : "本次提交题目全部正确，可以继续完成剩余题或进入本年级题库。";
     summary.classList.remove("is-hidden");
     summary.innerHTML = `
       <strong>${accuracy}分</strong>
@@ -455,25 +506,30 @@ function wireQuestionSubmitButtons(root = document) {
         card.dataset.submitted = "1";
         card.dataset.submittedAnswer = selected.value;
         card.dataset.correct = result.data.correct ? "1" : "0";
-        card.dataset.correctAnswer = result.data.answer || card.dataset.correctAnswer || "";
-        card.dataset.explanation = result.data.explanation || card.dataset.explanation || "";
+        card.dataset.correctAnswer = result.data.answer ||
+          card.dataset.correctAnswer || "";
+        card.dataset.explanation = result.data.explanation ||
+          card.dataset.explanation || "";
         const answerNode = card.querySelector("[data-review-answer]");
         const explanationNode = card.querySelector("[data-review-explanation]");
         if (answerNode) {
           answerNode.textContent = card.dataset.correctAnswer || "暂无答案";
         }
         if (explanationNode) {
-          explanationNode.textContent = card.dataset.explanation || "暂无解析。";
+          explanationNode.textContent = card.dataset.explanation ||
+            "暂无解析。";
         }
         resultNode.textContent = "已提交。先继续下一题，最后点“对答案”统一看结果。";
         resultNode.className = "question-result is-info";
         submitButton.textContent = "已提交";
         syncQuestionOptionState(card);
         updatePracticeSessionState(session);
-        submitButton.dispatchEvent(new CustomEvent("question-submitted", {
-          bubbles: true,
-          detail: result.data,
-        }));
+        submitButton.dispatchEvent(
+          new CustomEvent("question-submitted", {
+            bubbles: true,
+            detail: result.data,
+          }),
+        );
       } catch (error) {
         resultNode.textContent = error.message;
         resultNode.className = "question-result is-error";
@@ -537,7 +593,10 @@ function createLessonStudyTimer() {
     const url = `/api/lessons/${lessonId}/study-time`;
     const body = JSON.stringify({ seconds });
     if (useBeacon && navigator.sendBeacon) {
-      const sent = navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));
+      const sent = navigator.sendBeacon(
+        url,
+        new Blob([body], { type: "application/json" }),
+      );
       if (sent) {
         return;
       }
@@ -605,6 +664,7 @@ async function requireSession() {
     return null;
   }
   cacheUserProfile(result.user);
+  warmStudentApiCache(result.user);
   return result.user;
 }
 
@@ -629,12 +689,10 @@ function applyUserProfile(user) {
     node.textContent = user.username;
   });
   document.querySelectorAll("[data-user-level]").forEach((node) => {
-    const accessLabel = isTeacherUser(user)
-      ? ""
-      : user.access_expires_on
-      ? `剩余 ${Number(user.access_remaining_days || 0)} 天`
-      : "长期有效";
-    node.textContent = [user.level_label, accessLabel].filter(Boolean).join(" · ");
+    const accessLabel = isTeacherUser(user) ? "" : user.access_expires_on ? `剩余 ${Number(user.access_remaining_days || 0)} 天` : "长期有效";
+    node.textContent = [user.level_label, accessLabel].filter(Boolean).join(
+      " · ",
+    );
   });
   document.querySelectorAll("[data-user-stage]").forEach((node) => {
     node.textContent = `${user.stage} · ${user.grade}`;
@@ -643,7 +701,8 @@ function applyUserProfile(user) {
     node.textContent = user.email || `${user.username}@school.edu`;
   });
   document.querySelectorAll("[data-avatar-text]").forEach((node) => {
-    node.textContent = user.avatar_text || user.username.substring(0, 2).toUpperCase();
+    node.textContent = user.avatar_text ||
+      user.username.substring(0, 2).toUpperCase();
   });
 }
 
@@ -664,7 +723,9 @@ function setUserProfile(user) {
 }
 
 function clearUserProfile() {
-  document.querySelectorAll("[data-user-name], [data-user-level], [data-user-stage], [data-user-email], [data-avatar-text]").forEach((node) => {
+  document.querySelectorAll(
+    "[data-user-name], [data-user-level], [data-user-stage], [data-user-email], [data-avatar-text]",
+  ).forEach((node) => {
     node.textContent = "";
   });
   try {
@@ -693,7 +754,9 @@ async function logout() {
 
 function wireLogoutButton() {
   document
-    .querySelectorAll('#logout-button, [data-action="logout"], a[href="/api/logout"]')
+    .querySelectorAll(
+      '#logout-button, [data-action="logout"], a[href="/api/logout"]',
+    )
     .forEach((node) => {
       if (node.dataset.logoutBound === "1") {
         return;
@@ -710,7 +773,10 @@ function wireLogoutButton() {
 function wireAvatarDropdown() {
   const avatarTrigger = document.getElementById("avatar-trigger");
   const avatarDropdown = document.getElementById("avatar-dropdown");
-  if (!avatarTrigger || !avatarDropdown || avatarTrigger.dataset.dropdownBound === "1") {
+  if (
+    !avatarTrigger || !avatarDropdown ||
+    avatarTrigger.dataset.dropdownBound === "1"
+  ) {
     return;
   }
   avatarTrigger.dataset.dropdownBound = "1";
@@ -779,6 +845,65 @@ function prefetchApiForPage(url) {
   apiFetch(apiUrl, { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {});
 }
 
+function scheduleBackgroundTask(task, delayMs = 0) {
+  window.setTimeout(() => {
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(() => task(), { timeout: 2000 });
+      return;
+    }
+    task();
+  }, delayMs);
+}
+
+function studentCourseIds(subjectsResult) {
+  return (subjectsResult?.data?.stages || []).flatMap((stage) => (stage.subjects || []).flatMap((subject) => (subject.courses || []).map((course) => course.id).filter(Boolean)));
+}
+
+function warmStudentApiCache(user) {
+  if (!user || isTeacherUser(user)) {
+    return;
+  }
+  ["/api/dashboard", "/api/mistakes", "/api/growth"].forEach((url, index) => {
+    scheduleBackgroundTask(
+      () =>
+        apiFetch(url, { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(
+          () => {},
+        ),
+      150 + index * 180,
+    );
+  });
+  scheduleBackgroundTask(() => {
+    apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS })
+      .then((result) => {
+        studentCourseIds(result).forEach((courseId, index) => {
+          scheduleBackgroundTask(
+            () =>
+              apiFetch(`/api/course/${courseId}`, {
+                cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+              }).catch(() => {}),
+            300 + Math.floor(index / 2) * 350,
+          );
+        });
+      })
+      .catch(() => {});
+  }, 250);
+}
+
+function prefetchCourseQuestionBanks(lessons = []) {
+  lessons.forEach((lesson, index) => {
+    if (!lesson?.id) {
+      return;
+    }
+    scheduleBackgroundTask(
+      () =>
+        apiFetch(`/api/lessons/${lesson.id}/question-bank`, {
+          cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+        }).catch(() => {}),
+      250 + index * 250,
+    );
+  });
+}
+
 function navigationLabel(node, url) {
   const text = node.querySelector(".nav-label")?.textContent?.trim() ||
     node.textContent?.trim();
@@ -828,7 +953,7 @@ function wireNavigationTransitions() {
   if (window.location.protocol === "file:") {
     return;
   }
-  document.querySelectorAll('a[href]').forEach((node) => {
+  document.querySelectorAll("a[href]").forEach((node) => {
     if (
       node.dataset.navTransitionBound === "1" ||
       node.dataset.action === "logout" ||
@@ -847,7 +972,10 @@ function wireNavigationTransitions() {
       prefetchApiForPage(url);
     };
     node.addEventListener("mouseenter", prefetchTarget, { once: true });
-    node.addEventListener("touchstart", prefetchTarget, { once: true, passive: true });
+    node.addEventListener("touchstart", prefetchTarget, {
+      once: true,
+      passive: true,
+    });
     node.addEventListener("focus", prefetchTarget, { once: true });
     node.addEventListener("click", (event) => {
       if (
@@ -865,7 +993,10 @@ function wireNavigationTransitions() {
         return;
       }
       const url = new URL(rawHref, window.location.href);
-      if (url.origin !== window.location.origin || url.pathname.startsWith("/api/")) {
+      if (
+        url.origin !== window.location.origin ||
+        url.pathname.startsWith("/api/")
+      ) {
         return;
       }
       const targetIdentity = `${normalizeNavigationPath(url.pathname)}${url.search}${url.hash}`;
@@ -937,7 +1068,7 @@ function setupMotionSystem() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -36px" }
+    { threshold: 0.12, rootMargin: "0px 0px -36px" },
   );
 
   const collectMotionNodes = (root = document) => {
@@ -993,7 +1124,10 @@ function setupMotionSystem() {
       });
     });
   });
-  mutationObserver.observe(document.querySelector(".content") || document.body, { childList: true, subtree: true });
+  mutationObserver.observe(
+    document.querySelector(".content") || document.body,
+    { childList: true, subtree: true },
+  );
 
   let pointerFrame = 0;
   let pointerX = window.innerWidth / 2;
@@ -1007,12 +1141,18 @@ function setupMotionSystem() {
         return;
       }
       pointerFrame = window.requestAnimationFrame(() => {
-        document.documentElement.style.setProperty("--pointer-x", `${pointerX}px`);
-        document.documentElement.style.setProperty("--pointer-y", `${pointerY}px`);
+        document.documentElement.style.setProperty(
+          "--pointer-x",
+          `${pointerX}px`,
+        );
+        document.documentElement.style.setProperty(
+          "--pointer-y",
+          `${pointerY}px`,
+        );
         pointerFrame = 0;
       });
     },
-    { passive: true }
+    { passive: true },
   );
 }
 
@@ -1065,7 +1205,7 @@ async function initWelcomePage() {
           <p class="stat-label">${item.label}</p>
           <p class="stat-value">${item.value}</p>
         </article>
-      `
+      `,
     )
     .join("");
 }
@@ -1126,7 +1266,9 @@ function wirePasswordToggles(root = document) {
     button.dataset.passwordToggleBound = "1";
     button.addEventListener("click", () => {
       const field = button.closest(".password-field");
-      const input = field?.querySelector('input[type="password"], input[type="text"]');
+      const input = field?.querySelector(
+        'input[type="password"], input[type="text"]',
+      );
       if (!input) {
         return;
       }
@@ -1153,7 +1295,9 @@ async function initDashboardPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/dashboard", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+    result = await apiFetch("/api/dashboard", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -1168,14 +1312,17 @@ async function initDashboardPage() {
   const studyDays = document.getElementById("dashboard-study-days");
   const levelProgress = document.getElementById("dashboard-level-progress");
   const xpSummary = document.getElementById("dashboard-xp-summary");
-  const achievementLabel = document.getElementById("dashboard-achievement-label");
+  const achievementLabel = document.getElementById(
+    "dashboard-achievement-label",
+  );
 
   if (summary) {
     if (heroPill) {
       heroPill.textContent = summary.hero_pill;
     }
     if (heroTitle) {
-      const focusCount = (summary.review_count || 0) + (summary.mistake_count || 0);
+      const focusCount = (summary.review_count || 0) +
+        (summary.mistake_count || 0);
       if (focusCount > 0) {
         heroTitle.innerHTML = `今天有 <span>${escapeHtml(summary.hero_highlight)}</span> ${escapeHtml(summary.hero_suffix)}`;
       } else if (summary.completed_count > 0) {
@@ -1201,34 +1348,28 @@ async function initDashboardPage() {
     }
   }
   if (accessStatus) {
-    accessStatus.textContent = user.access_expires_on
-      ? `账号有效至 ${user.access_expires_on}，剩余 ${Number(user.access_remaining_days || 0)} 个自然日`
-      : "账号使用期限：长期有效";
+    accessStatus.textContent = user.access_expires_on ? `账号有效至 ${user.access_expires_on}，剩余 ${Number(user.access_remaining_days || 0)} 个自然日` : "账号使用期限：长期有效";
   }
 
   const timelineRoot = document.getElementById("dashboard-timeline");
   if (timelineRoot) {
-    timelineRoot.innerHTML = progress.length === 0 
-      ? '<div class="timeline-item"><div class="timeline-content"><p class="muted compact-empty-text">今天没有到期重刷的知识点。系统会按记忆曲线安排复习，不会把所有题目一次性推给学生。</p></div></div>'
-      : progress.map((item, index) => {
-          const isUrgent = index === 0;
-          const dotLabel = isUrgent ? '急' : '中';
-          const toneClass = isUrgent ? 'is-urgent' : 'is-normal';
-          return `
+    timelineRoot.innerHTML = progress.length === 0 ? '<div class="timeline-item"><div class="timeline-content"><p class="muted compact-empty-text">今天没有到期重刷的知识点。系统会按记忆曲线安排复习，不会把所有题目一次性推给学生。</p></div></div>' : progress.map((item, index) => {
+      const isUrgent = index === 0;
+      const dotLabel = isUrgent ? "急" : "中";
+      const toneClass = isUrgent ? "is-urgent" : "is-normal";
+      return `
             <div class="timeline-item">
               <div class="timeline-dot ${toneClass}">${dotLabel}</div>
-              <div class="timeline-content ${isUrgent ? 'is-urgent' : ''}">
+              <div class="timeline-content ${isUrgent ? "is-urgent" : ""}">
                 <div class="timeline-meta"><span class="timeline-status ${toneClass}">状态：${escapeHtml(item.status)}</span><span class="mini-chip timeline-score-chip ${toneClass}">得分 ${item.score}</span></div>
                 <h3 class="timeline-title">${escapeHtml(item.lesson_title)} (${escapeHtml(item.course_title)})</h3>
                 <p class="muted timeline-reason">${escapeHtml(item.review_reason || "按记忆曲线安排复习。")}</p>
                 <p class="muted timeline-date">最后学习：${escapeHtml(item.updated_at)}</p>
-                ${item.course_id && item.lesson_id
-                  ? `<a class="${isUrgent ? 'secondary-btn' : 'ghost-btn'} timeline-review-button ${isUrgent ? 'is-urgent' : ''}" href="${escapeHtml(buildLessonHref(item.course_id, item.lesson_id))}">立即复习</a>`
-                  : `<button class="${isUrgent ? 'secondary-btn' : 'ghost-btn'} timeline-review-button ${isUrgent ? 'is-urgent' : ''}" type="button" disabled>立即复习</button>`}
+                ${item.course_id && item.lesson_id ? `<a class="${isUrgent ? "secondary-btn" : "ghost-btn"} timeline-review-button ${isUrgent ? "is-urgent" : ""}" href="${escapeHtml(buildLessonHref(item.course_id, item.lesson_id))}">立即复习</a>` : `<button class="${isUrgent ? "secondary-btn" : "ghost-btn"} timeline-review-button ${isUrgent ? "is-urgent" : ""}" type="button" disabled>立即复习</button>`}
               </div>
             </div>
           `;
-      }).join("");
+    }).join("");
   }
 
   const mistakeRoot = document.getElementById("dashboard-mistake");
@@ -1251,13 +1392,13 @@ async function initDashboardPage() {
           ${renderMistakeReviewAction(item)}
         </div>
       `;
-      const visibleMistakes = mistakes.slice(0, 3).map(renderMistakeItem).join("");
+      const visibleMistakes = mistakes.slice(0, 3).map(renderMistakeItem).join(
+        "",
+      );
       const hiddenMistakes = mistakes.slice(3).map(renderMistakeItem).join("");
       mistakeRoot.innerHTML = `
         <div class="dashboard-mistake-list">${visibleMistakes}</div>
-        ${mistakes.length > 3
-          ? `<details class="dashboard-mistake-more"><summary>展开其余 ${mistakes.length - 3} 道错题</summary>${hiddenMistakes}</details>`
-          : ""}
+        ${mistakes.length > 3 ? `<details class="dashboard-mistake-more"><summary>展开其余 ${mistakes.length - 3} 道错题</summary>${hiddenMistakes}</details>` : ""}
       `;
       wireNavigationTransitions();
     }
@@ -1265,9 +1406,7 @@ async function initDashboardPage() {
 
   const courseRoot = document.getElementById("dashboard-courses");
   if (courseRoot) {
-    const purchasedCourses = stages.flatMap((stage) =>
-      (stage.courses || []).map((course) => ({ ...course, stage: stage.stage }))
-    );
+    const purchasedCourses = stages.flatMap((stage) => (stage.courses || []).map((course) => ({ ...course, stage: stage.stage })));
     const purchasedSubjects = [
       ...purchasedCourses
         .reduce((groups, course) => {
@@ -1327,23 +1466,25 @@ function renderLessonContent(lesson) {
         <article class="question-card" data-question-id="${question.id}">
           <h4>${escapeHtml(question.question)}</h4>
           <div class="question-options">
-            ${question.options
-              .map(
-                (option) => `
+            ${
+        question.options
+          .map(
+            (option) => `
                   <label class="question-option">
                     <input type="radio" name="question-${question.id}" value="${escapeHtml(option)}">
                     <span>${escapeHtml(option)}</span>
                   </label>
-                `
-              )
-              .join("")}
+                `,
+          )
+          .join("")
+      }
           </div>
           <div class="question-action-row">
             <button class="primary-button submit-question" type="button">提交答案</button>
           </div>
           <div class="question-result"></div>
         </article>
-      `
+      `,
     )
     .join("");
 }
@@ -1605,10 +1746,17 @@ function renderQuestionSourceFigure(question) {
   `;
 }
 
-function renderPracticeQuestionCard(question, index, scopeId, sourcePrefix = "第", cardClass = "") {
+function renderPracticeQuestionCard(
+  question,
+  index,
+  scopeId,
+  sourcePrefix = "第",
+  cardClass = "",
+) {
   const options = Array.isArray(question.options) ? question.options : [];
   const questionName = `${scopeId}-question-${question.id}`;
-  const sourceLabel = question.source_label || `${sourcePrefix} ${index + 1} 题`;
+  const sourceLabel = question.source_label ||
+    `${sourcePrefix} ${index + 1} 题`;
   return `
     <article
       class="practice-question-card ${cardClass}"
@@ -1624,13 +1772,15 @@ function renderPracticeQuestionCard(question, index, scopeId, sourcePrefix = "�
       <h4 class="lesson-question-title">${escapeHtml(question.question)}</h4>
       ${renderQuestionSourceFigure(question)}
       <div class="question-options" role="radiogroup" aria-label="${escapeHtml(sourceLabel)}">
-        ${options.map((option, optionIndex) => `
+        ${
+    options.map((option, optionIndex) => `
           <label class="question-option">
             <input type="radio" name="${escapeHtml(questionName)}" value="${escapeHtml(option)}">
             <span class="question-option-mark">${String.fromCharCode(65 + optionIndex)}</span>
             <span class="question-option-text">${escapeHtml(option)}</span>
           </label>
-        `).join("")}
+        `).join("")
+  }
       </div>
       <div class="lesson-question-actions">
         <button class="primary-button submit-question" type="button" data-action="submit-question" disabled>提交本题</button>
@@ -1672,7 +1822,17 @@ function renderPracticeSession({
       </div>
       <div class="practice-session-summary is-hidden" data-practice-summary></div>
       <div class="lesson-practice-list">
-        ${questions.map((question, index) => renderPracticeQuestionCard(question, index, scopeId, sourcePrefix, cardClass)).join("")}
+        ${
+    questions.map((question, index) =>
+      renderPracticeQuestionCard(
+        question,
+        index,
+        scopeId,
+        sourcePrefix,
+        cardClass,
+      )
+    ).join("")
+  }
       </div>
       <div class="practice-session-footer">
         <span data-practice-hint>先选择答案并提交，解析会在对答案后出现。</span>
@@ -1758,7 +1918,9 @@ function renderLearningLineWithMedia(cleaned, lesson) {
   matches.forEach((match) => {
     const textPart = cleaned.slice(lastIndex, match.index).trim();
     if (textPart) {
-      parts.push(`<span class="lesson-media-text">${escapeHtml(textPart)}</span>`);
+      parts.push(
+        `<span class="lesson-media-text">${escapeHtml(textPart)}</span>`,
+      );
     }
     const src = lessonResourceUrl(lesson, match[2]);
     if (src) {
@@ -1770,20 +1932,28 @@ function renderLearningLineWithMedia(cleaned, lesson) {
         </figure>
       `);
     } else {
-      parts.push(`<span class="lesson-media-text">${escapeHtml(match[0])}</span>`);
+      parts.push(
+        `<span class="lesson-media-text">${escapeHtml(match[0])}</span>`,
+      );
     }
     lastIndex = Number(match.index) + match[0].length;
   });
 
   const trailingText = cleaned.slice(lastIndex).trim();
   if (trailingText) {
-    parts.push(`<span class="lesson-media-text">${escapeHtml(trailingText)}</span>`);
+    parts.push(
+      `<span class="lesson-media-text">${escapeHtml(trailingText)}</span>`,
+    );
   }
   return `<div class="lesson-media-line">${parts.join("")}</div>`;
 }
 
 function isMaterialSectionHeading(line) {
-  return /^[一二三四五六七八九十]+[\.．、]\s*\S+/.test(line);
+  return /^[一二三四五六七八九十]+[\.．、]\s*\S+/.test(line) ||
+    /^(核心知识点|能力\/方法|实验\/探究|题库样例|来源|题库安排|本节资料|学习目标|重点难点)$/
+      .test(
+        String(line || "").trim(),
+      );
 }
 
 function isQuestionStart(line) {
@@ -1824,11 +1994,17 @@ function renderMaterialTable(rows) {
     <div class="material-table-wrap">
       <table class="material-table">
         <tbody>
-          ${rows.map((row) => `
+          ${
+    rows.map((row) => `
             <tr>
-              ${row.split("|").map((cell) => `<td>${escapeHtml(cell.trim())}</td>`).join("")}
+              ${
+      row.split("|").map((cell) => `<td>${escapeHtml(cell.trim())}</td>`).join(
+        "",
+      )
+    }
             </tr>
-          `).join("")}
+          `).join("")
+  }
         </tbody>
       </table>
     </div>
@@ -1927,6 +2103,14 @@ function renderLearningContent(lesson, course) {
   const sections = parseLearningSections(lesson.content);
   const sourceLines = sectionLines(sections, ["来源"]);
   const materialLines = sectionLines(sections, ["资料正文"]);
+  const fallbackLines = String(lesson.content || "")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((line) => !/^#\s+/.test(line))
+    .map((line) => line.replace(/^#{2,6}\s+/, ""))
+    .filter(Boolean);
+  const visibleLines = materialLines.length ? materialLines : fallbackLines;
   const bankLines = sectionLines(sections, ["题库安排"]);
 
   return `
@@ -1939,7 +2123,7 @@ function renderLearningContent(lesson, course) {
         ${sourceLines.slice(0, 1).map((line) => `<span>${escapeHtml(line.replace(/^[-*]\s*/, ""))}</span>`).join("")}
       </div>
       <div class="study-material-body">
-        ${renderMaterialBlocks(materialLines, lesson)}
+        ${renderMaterialBlocks(visibleLines, lesson)}
       </div>
       ${renderLessonPracticeQuestions(lesson)}
       <div class="study-footnote">
@@ -1950,9 +2134,7 @@ function renderLearningContent(lesson, course) {
 }
 
 function formatStudyDuration(secondsOrMinutes, unit = "seconds") {
-  const minutes = unit === "minutes"
-    ? Math.max(0, Math.round(Number(secondsOrMinutes || 0)))
-    : Math.max(0, Math.round(Number(secondsOrMinutes || 0) / 60));
+  const minutes = unit === "minutes" ? Math.max(0, Math.round(Number(secondsOrMinutes || 0))) : Math.max(0, Math.round(Number(secondsOrMinutes || 0) / 60));
   if (minutes <= 0 && Number(secondsOrMinutes || 0) > 0) {
     return "<1 分钟";
   }
@@ -1966,9 +2148,10 @@ function formatStudyDuration(secondsOrMinutes, unit = "seconds") {
 
 function lessonBankCount(lesson) {
   if (typeof lesson?.bank_question_count === "number") {
-    return lesson.bank_question_count;
+    return lesson.bank_question_count || lessonTextbookCount(lesson);
   }
-  return (lesson?.questions || []).filter((question) => question.kind === "bank").length;
+  const bankQuestions = (lesson?.questions || []).filter((question) => question.kind === "bank");
+  return bankQuestions.length || lessonTextbookCount(lesson);
 }
 
 function lessonTextbookCount(lesson) {
@@ -1996,11 +2179,16 @@ function buildLessonCoachAdvice(data, lesson) {
     advice.push("按导学、正文、随堂题、题库的顺序推进，避免只看不练。");
   }
 
-  if (profile.weak_subject && profile.weak_subject !== "暂无" && profile.weak_subject === course.subject) {
+  if (
+    profile.weak_subject && profile.weak_subject !== "暂无" &&
+    profile.weak_subject === course.subject
+  ) {
     advice.push(`${course.subject}是当前重点关注学科，本节要把过程写完整。`);
   }
   if (bankCount > 0) {
-    advice.push(`题库已锁定${course.grade || "当前年级"}，只练本节对应年级的 ${bankCount} 道题。`);
+    advice.push(
+      `题库已锁定${course.grade || "当前年级"}，只练本节对应年级的 ${bankCount} 道题。`,
+    );
   } else {
     advice.push("本节暂未导入主书题库，先把随堂题和教材正文吃透。");
   }
@@ -2010,7 +2198,8 @@ function buildLessonCoachAdvice(data, lesson) {
 
   return uniqueLearningItems(advice).slice(0, 4).map((item) => ({
     text: item,
-    active: item.includes("错题") || item.includes("低分") || item.includes("锁定"),
+    active: item.includes("错题") || item.includes("低分") ||
+      item.includes("锁定"),
   }));
 }
 
@@ -2049,7 +2238,7 @@ function buildLessonPlanItems(lesson) {
 function renderCoachList(items) {
   const cleanItems = (items || []).map((item) => typeof item === "string" ? { text: item } : item).filter((item) => item.text);
   if (!cleanItems.length) {
-    return '<li>完成本节学习后，这里会刷新下一步建议。</li>';
+    return "<li>完成本节学习后，这里会刷新下一步建议。</li>";
   }
   return cleanItems.map((item) => `<li class="${item.active ? "is-active" : ""}">${escapeHtml(item.text)}</li>`).join("");
 }
@@ -2067,14 +2256,26 @@ function renderLessonPlan(items) {
 }
 
 function renderLearnerSignals(profile, lesson) {
-  const totalQuestions = Math.max(lessonTextbookCount(lesson) + lessonBankCount(lesson), lesson.attempted_count || 0);
+  const totalQuestions = Math.max(
+    lessonTextbookCount(lesson) + lessonBankCount(lesson),
+    lesson.attempted_count || 0,
+  );
   const signals = [
     { label: "本节掌握", value: `${Math.round(lesson.score || 0)}分` },
-    { label: "已答题", value: `${lesson.attempted_count || 0}/${totalQuestions || 0}` },
-    { label: "本节停留", value: formatStudyDuration(lesson.study_seconds || 0) },
+    {
+      label: "已答题",
+      value: `${lesson.attempted_count || 0}/${totalQuestions || 0}`,
+    },
+    {
+      label: "本节停留",
+      value: formatStudyDuration(lesson.study_seconds || 0),
+    },
     { label: "当前错题", value: `${lesson.mistake_count || 0}道` },
     { label: "近期正确率", value: `${profile.accuracy || 0}%` },
-    { label: "累计学习", value: formatStudyDuration(profile.study_minutes || 0, "minutes") },
+    {
+      label: "累计学习",
+      value: formatStudyDuration(profile.study_minutes || 0, "minutes"),
+    },
   ];
   return signals.map((item) => `
     <div class="coach-signal">
@@ -2093,9 +2294,7 @@ function updateStudyCoachPanel(root, data, lesson, courseId) {
   const gradeLock = data.grade_lock || {};
   const status = lessonStatus(lesson.status);
   const bankCount = lessonBankCount(lesson);
-  const summary = profile.attempt_count
-    ? `近期答题 ${profile.attempt_count} 次，正确率 ${profile.accuracy || 0}%。`
-    : "先完成本节随堂题，再进入对答案和题库巩固。";
+  const summary = profile.attempt_count ? `近期答题 ${profile.attempt_count} 次，正确率 ${profile.accuracy || 0}%。` : "先完成本节随堂题，再进入对答案和题库巩固。";
   const taskLabel = bankCount > 0 ? "题库可练" : "先做随堂";
 
   const setText = (selector, value) => {
@@ -2114,10 +2313,20 @@ function updateStudyCoachPanel(root, data, lesson, courseId) {
   setText("[data-coach-task-label]", taskLabel);
   setText("[data-coach-summary]", summary);
   setText("[data-coach-status]", status.label);
-  setText("[data-coach-grade-lock-title]", gradeLock.label || `${course.grade || "当前年级"}题库`);
-  setText("[data-coach-grade-lock-desc]", gradeLock.message || `本节只调用${course.grade || "当前年级"}范围内的题目。`);
+  setText(
+    "[data-coach-grade-lock-title]",
+    gradeLock.label || `${course.grade || "当前年级"}题库`,
+  );
+  setText(
+    "[data-coach-grade-lock-desc]",
+    gradeLock.message ||
+      `本节只调用${course.grade || "当前年级"}范围内的题目。`,
+  );
   setText("[data-coach-bank-count]", `${bankCount} 道`);
-  setHtml("[data-coach-advice]", renderCoachList(buildLessonCoachAdvice(data, lesson)));
+  setHtml(
+    "[data-coach-advice]",
+    renderCoachList(buildLessonCoachAdvice(data, lesson)),
+  );
   setHtml("[data-coach-next-steps]", renderCoachList(profile.next_steps || []));
   setHtml("[data-lesson-plan]", renderLessonPlan(buildLessonPlanItems(lesson)));
   setHtml("[data-learner-signals]", renderLearnerSignals(profile, lesson));
@@ -2190,6 +2399,7 @@ async function initCoursePage() {
     return;
   }
   const data = result.data;
+  prefetchCourseQuestionBanks(data.lessons);
   hydrateSubjectNavLinks();
   if (!root) return;
 
@@ -2235,10 +2445,11 @@ async function initCoursePage() {
 
   const studyTimer = createLessonStudyTimer();
 
-  const renderTree = () => data.lessons
-    .map((item, index) => {
-      const status = lessonStatus(item.status);
-      return `
+  const renderTree = () =>
+    data.lessons
+      .map((item, index) => {
+        const status = lessonStatus(item.status);
+        return `
         <a
           class="chapter-node-card ${index === activeIndex ? "is-active" : ""}"
           href="${escapeHtml(buildLessonHref(courseId, item.id))}"
@@ -2252,8 +2463,8 @@ async function initCoursePage() {
           </div>
         </a>
       `;
-    })
-    .join("");
+      })
+      .join("");
 
   const renderCoachPanel = () => updateStudyCoachPanel(root, data, lesson, courseId);
 
@@ -2283,7 +2494,10 @@ async function initCoursePage() {
 
   const markLessonInProgress = () => {
     const targetLesson = lesson;
-    if (!targetLesson || targetLesson.status !== "not_started" || targetLesson.startQueued) {
+    if (
+      !targetLesson || targetLesson.status !== "not_started" ||
+      targetLesson.startQueued
+    ) {
       return;
     }
     targetLesson.startQueued = true;
@@ -2344,7 +2558,8 @@ async function initCoursePage() {
         return;
       }
       const questionCard = event.target instanceof Element ? event.target.closest("[data-question-id]") : null;
-      const questionKey = questionCard?.dataset.questionId || `${detail.lesson_id}-${Date.now()}`;
+      const questionKey = questionCard?.dataset.questionId ||
+        `${detail.lesson_id}-${Date.now()}`;
       data.learner_profile = data.learner_profile || {};
       data.learner_profile._answered_question_ids = data.learner_profile._answered_question_ids || {};
       if (!data.learner_profile._answered_question_ids[questionKey]) {
@@ -2352,7 +2567,8 @@ async function initCoursePage() {
         data.learner_profile.attempt_count = (data.learner_profile.attempt_count || 0) + 1;
         data.learner_profile.correct_count = (data.learner_profile.correct_count || 0) + (detail.correct ? 1 : 0);
         data.learner_profile.accuracy = Math.round(
-          (data.learner_profile.correct_count / Math.max(1, data.learner_profile.attempt_count)) * 100
+          (data.learner_profile.correct_count /
+            Math.max(1, data.learner_profile.attempt_count)) * 100,
         );
       }
       const targetLesson = data.lessons.find((item) => String(item.id) === String(detail.lesson_id));
@@ -2366,12 +2582,18 @@ async function initCoursePage() {
         targetLesson.score = detail.score;
       }
       if (typeof detail.attempted_count === "number") {
-        targetLesson.attempted_count = Math.max(targetLesson.attempted_count || 0, detail.attempted_count);
+        targetLesson.attempted_count = Math.max(
+          targetLesson.attempted_count || 0,
+          detail.attempted_count,
+        );
       }
-      if (typeof detail.total_questions === "number" && typeof detail.score === "number") {
+      if (
+        typeof detail.total_questions === "number" &&
+        typeof detail.score === "number"
+      ) {
         targetLesson.correct_count = Math.max(
           targetLesson.correct_count || 0,
-          Math.round((detail.score / 100) * detail.total_questions)
+          Math.round((detail.score / 100) * detail.total_questions),
         );
       }
       if (detail.correct === false) {
@@ -2383,7 +2605,9 @@ async function initCoursePage() {
     });
   };
 
-  const renderCourseLesson = ({ contentHtml = "", scrollToTop = false } = {}) => {
+  const renderCourseLesson = (
+    { contentHtml = "", scrollToTop = false } = {},
+  ) => {
     renderCourseMeta();
     markLessonInProgress();
     studyTimer.setLesson(lesson.id);
@@ -2424,7 +2648,8 @@ async function initCoursePage() {
       progressFill.style.setProperty("--progress-width", `${progressWidth}%`);
     }
     if (lectureContent) {
-      lectureContent.innerHTML = contentHtml || renderLearningContent(lesson, data.course);
+      lectureContent.innerHTML = contentHtml ||
+        renderLearningContent(lesson, data.course);
       wireInlineChoiceOptions(lectureContent);
       wireQuestionSubmitButtons(lectureContent);
       wireCourseQuestionResults();
@@ -2440,7 +2665,10 @@ async function initCoursePage() {
     }
     renderCoachPanel();
     if (scrollToTop) {
-      root.querySelector(".lecture-pane")?.scrollTo({ top: 0, behavior: "auto" });
+      root.querySelector(".lecture-pane")?.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
     }
     wireCourseLessonTree();
     wireNavigationTransitions();
@@ -2468,7 +2696,7 @@ async function initCoursePage() {
       window.history.pushState(
         { courseId: String(courseId), lessonId: String(lesson.id) },
         "",
-        buildLessonHref(courseId, lesson.id)
+        buildLessonHref(courseId, lesson.id),
       );
     }
   };
@@ -2503,7 +2731,9 @@ async function initMistakesPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/mistakes", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+    result = await apiFetch("/api/mistakes", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -2515,13 +2745,13 @@ async function initMistakesPage() {
     setPageLoading(false);
     return;
   }
-  
+
   if (mistakes.length === 0) {
     root.innerHTML = '<div class="card"><p class="muted mistakes-empty-text">当前账号暂无错题记录。</p></div>';
     setPageLoading(false);
     return;
   }
-  
+
   const renderMistakeCard = (item) => `
     <div class="card">
       <div class="mistake-box">
@@ -2538,9 +2768,7 @@ async function initMistakesPage() {
   `;
   root.innerHTML = `
     ${mistakes.slice(0, 8).map(renderMistakeCard).join("")}
-    ${mistakes.length > 8
-      ? `<details class="mistakes-more"><summary>展开其余 ${mistakes.length - 8} 道错题</summary>${mistakes.slice(8).map(renderMistakeCard).join("")}</details>`
-      : ""}
+    ${mistakes.length > 8 ? `<details class="mistakes-more"><summary>展开其余 ${mistakes.length - 8} 道错题</summary>${mistakes.slice(8).map(renderMistakeCard).join("")}</details>` : ""}
   `;
   wireNavigationTransitions();
   setPageLoading(false);
@@ -2584,7 +2812,9 @@ async function initQuestionBankPage() {
   const subtitle = document.getElementById("question-bank-subtitle");
   const backLink = document.getElementById("question-bank-back-link");
   const summary = document.getElementById("question-bank-summary");
-  const gradeLockNode = document.querySelector("[data-question-bank-grade-lock]");
+  const gradeLockNode = document.querySelector(
+    "[data-question-bank-grade-lock]",
+  );
   if (title) {
     title.textContent = `${data.lesson.order}. ${data.lesson.title}`;
   }
@@ -2602,7 +2832,8 @@ async function initQuestionBankPage() {
     `;
   }
   if (gradeLockNode) {
-    gradeLockNode.textContent = data.grade_lock?.message || `本页只展示${data.course.grade}范围内的题目。`;
+    gradeLockNode.textContent = data.grade_lock?.message ||
+      `本页只展示${data.course.grade}范围内的题目。`;
   }
   if (countNode) {
     countNode.textContent = `${data.questions.length} 道`;
@@ -2684,12 +2915,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const SUBJECT_STAGE_CONFIGS = {
-  "小学": { label: "小学", en: "PRIMARY", index: "01", className: "stage-primary" },
-  "初中": { label: "初中", en: "JUNIOR", index: "02", className: "stage-junior" },
-  "高中": { label: "高中", en: "SENIOR", index: "03", className: "stage-senior" },
+  "小学": {
+    label: "小学",
+    en: "PRIMARY",
+    index: "01",
+    className: "stage-primary",
+  },
+  "初中": {
+    label: "初中",
+    en: "JUNIOR",
+    index: "02",
+    className: "stage-junior",
+  },
+  "高中": {
+    label: "高中",
+    en: "SENIOR",
+    index: "03",
+    className: "stage-senior",
+  },
 };
 
-const SUBJECT_GRADE_ORDER = ["一年级", "二年级", "三年级", "四年级", "五年级", "六年级", "初一", "初二", "初三", "高一", "高二", "高三"];
+const SUBJECT_GRADE_ORDER = [
+  "一年级",
+  "二年级",
+  "三年级",
+  "四年级",
+  "五年级",
+  "六年级",
+  "初一",
+  "初二",
+  "初三",
+  "高一",
+  "高二",
+  "高三",
+];
 
 function subjectGradeIndex(grade) {
   const index = SUBJECT_GRADE_ORDER.indexOf(grade);
@@ -2733,7 +2992,8 @@ function buildSubjectCatalogModel(stages = []) {
     allCourses,
     gradeGroups,
     totalStages: stages.length,
-    totalSubjects: new Set(allCourses.map((course) => `${course.stage}/${course.subject}`)).size,
+    totalSubjects: new Set(allCourses.map((course) => `${course.stage}/${course.subject}`))
+      .size,
     totalCourses: allCourses.length,
     purchasedCount: allCourses.filter((course) => course.purchased).length,
   };
@@ -2756,7 +3016,8 @@ function renderSubjectCourseItem(course) {
 
 function renderGradePicker(model) {
   return model.gradeGroups.map((group) => {
-    const config = SUBJECT_STAGE_CONFIGS[group.stage] || SUBJECT_STAGE_CONFIGS["小学"];
+    const config = SUBJECT_STAGE_CONFIGS[group.stage] ||
+      SUBJECT_STAGE_CONFIGS["小学"];
     const subjects = new Set(group.courses.map((course) => course.subject));
     const unlocked = group.courses.filter((course) => course.purchased).length;
     return `
@@ -2767,7 +3028,8 @@ function renderGradePicker(model) {
         <em>${unlocked}/${group.courses.length} 已开通</em>
       </a>
     `;
-  }).join("") || '<div class="subject-empty"><p>当前还没有可学习的课程。请先把课本放入 resources 后重新生成课程。</p></div>';
+  }).join("") ||
+    '<div class="subject-empty"><p>当前还没有可学习的课程。请先把课本放入 resources 后重新生成课程。</p></div>';
 }
 
 function renderGradeDetail(group) {
@@ -2793,7 +3055,8 @@ function renderGradeDetail(group) {
         ${subjectCourses.map(renderSubjectCourseItem).join("")}
       </div>
     </section>
-  `).join("") || '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
+  `).join("") ||
+    '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
 }
 
 async function initSubjectsPage() {
@@ -2813,7 +3076,9 @@ async function initSubjectsPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+    result = await apiFetch("/api/subjects", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -2828,10 +3093,18 @@ async function initSubjectsPage() {
   const model = buildSubjectCatalogModel(result.data?.stages || []);
   saveSubjectOverviewLocation();
   hydrateSubjectNavLinks();
-  const totalStagesNode = subjectsRoot.querySelector("[data-subject-total-stages]");
-  const totalSubjectsNode = subjectsRoot.querySelector("[data-subject-total-subjects]");
-  const purchasedTotalNode = subjectsRoot.querySelector("[data-subject-purchased-total]");
-  const gradeSummaryNode = subjectsRoot.querySelector("[data-grade-total-summary]");
+  const totalStagesNode = subjectsRoot.querySelector(
+    "[data-subject-total-stages]",
+  );
+  const totalSubjectsNode = subjectsRoot.querySelector(
+    "[data-subject-total-subjects]",
+  );
+  const purchasedTotalNode = subjectsRoot.querySelector(
+    "[data-subject-purchased-total]",
+  );
+  const gradeSummaryNode = subjectsRoot.querySelector(
+    "[data-grade-total-summary]",
+  );
   const gradeGrid = subjectsRoot.querySelector("[data-grade-grid]");
   if (totalStagesNode) {
     totalStagesNode.textContent = model.totalStages;
@@ -2872,7 +3145,9 @@ async function initGradePage() {
 
   let result;
   try {
-    result = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+    result = await apiFetch("/api/subjects", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    });
   } catch (error) {
     keepStaticPage(error);
     (subjectBoard || root).innerHTML = `<div class="subject-empty"><p>${escapeHtml(error.message)}</p></div>`;
@@ -2946,7 +3221,8 @@ function wireStudentCreateForm(user) {
       stage: String(formData.get("stage") || "").trim(),
       grade: String(formData.get("grade") || "").trim(),
       email: String(formData.get("email") || "").trim(),
-      access_duration_days: String(formData.get("access_duration_days") || "").trim(),
+      access_duration_days: String(formData.get("access_duration_days") || "")
+        .trim(),
     };
     if (!payload.username || !payload.password || !payload.full_name) {
       if (status) {
@@ -3034,18 +3310,21 @@ async function initTeacherEnrollmentPanel(user) {
     }
     const aName = a.full_name || a.username || "";
     const bName = b.full_name || b.username || "";
-    return String(aName).localeCompare(String(bName), "zh-CN", { numeric: true, sensitivity: "base" });
+    return String(aName).localeCompare(String(bName), "zh-CN", {
+      numeric: true,
+      sensitivity: "base",
+    });
   });
 
-  root.innerHTML = students.length === 0
-    ? ""
-    : sortedStudents.map((student) => {
-        const selected = new Set(student.course_ids || []);
-        const subjectOptions = subjectGroups.map((group) => {
-          const selectedCount = group.courseIds.filter((courseId) => selected.has(courseId)).length;
-          const checked = group.courseIds.length > 0 && selectedCount === group.courseIds.length;
-          const partial = selectedCount > 0 && selectedCount < group.courseIds.length;
-          return `
+  root.innerHTML = students.length === 0 ? "" : sortedStudents.map((student) => {
+    const selected = new Set(student.course_ids || []);
+    const subjectOptions = subjectGroups.map((group) => {
+      const selectedCount = group.courseIds.filter((courseId) => selected.has(courseId)).length;
+      const checked = group.courseIds.length > 0 &&
+        selectedCount === group.courseIds.length;
+      const partial = selectedCount > 0 &&
+        selectedCount < group.courseIds.length;
+      return `
             <label class="subject-course-item admin-subject-option">
               <input
                 type="checkbox"
@@ -3060,9 +3339,9 @@ async function initTeacherEnrollmentPanel(user) {
               </span>
             </label>
           `;
-        }).join("");
-        const studentName = student.full_name || student.username || "";
-        return `
+    }).join("");
+    const studentName = student.full_name || student.username || "";
+    return `
           <article class="subject-column subject-directory-card admin-student-card" data-admin-student-id="${student.id}">
             <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student aria-expanded="false">
               <span class="subject-mark">${escapeHtml(studentName.slice(0, 1))}</span>
@@ -3156,7 +3435,7 @@ async function initTeacherEnrollmentPanel(user) {
             </div>
           </article>
         `;
-      }).join("");
+  }).join("");
 
   root.querySelectorAll("[data-subject-partial='true']").forEach((input) => {
     input.indeterminate = true;
@@ -3166,10 +3445,12 @@ async function initTeacherEnrollmentPanel(user) {
   root.querySelectorAll("[data-select-all-enrollments]").forEach((button) => {
     button.addEventListener("click", () => {
       const card = button.closest("[data-admin-student-id]");
-      card?.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
-        input.checked = true;
-        input.indeterminate = false;
-      });
+      card?.querySelectorAll("input[data-subject-course-ids]").forEach(
+        (input) => {
+          input.checked = true;
+          input.indeterminate = false;
+        },
+      );
       const status = card?.querySelector("[data-save-status]");
       if (status) {
         status.textContent = "已全选，点击“保存购课”后生效";
@@ -3180,10 +3461,12 @@ async function initTeacherEnrollmentPanel(user) {
   root.querySelectorAll("[data-clear-enrollments]").forEach((button) => {
     button.addEventListener("click", () => {
       const card = button.closest("[data-admin-student-id]");
-      card?.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
-        input.checked = false;
-        input.indeterminate = false;
-      });
+      card?.querySelectorAll("input[data-subject-course-ids]").forEach(
+        (input) => {
+          input.checked = false;
+          input.indeterminate = false;
+        },
+      );
       const status = card?.querySelector("[data-save-status]");
       if (status) {
         status.textContent = "已清空，点击“保存购课”后生效";
@@ -3223,7 +3506,8 @@ async function initTeacherEnrollmentPanel(user) {
         stage: String(formData.get("stage") || "").trim(),
         grade: String(formData.get("grade") || "").trim(),
         email: String(formData.get("email") || "").trim(),
-        access_duration_days: String(formData.get("access_duration_days") || "").trim(),
+        access_duration_days: String(formData.get("access_duration_days") || "")
+          .trim(),
       };
       if (!payload.username || !payload.full_name) {
         if (status) {
@@ -3250,12 +3534,16 @@ async function initTeacherEnrollmentPanel(user) {
           title.textContent = `${saved.full_name || payload.full_name}（${saved.username || payload.username}）`;
         }
         if (summary) {
-          const openText = summary.textContent.match(/已开通 \d+ 个科目$/)?.[0] || `已开通 ${selectedSubjectCount(student.course_ids)} 个科目`;
+          const openText = summary.textContent.match(/已开通 \d+ 个科目$/)?.[0] ||
+            `已开通 ${selectedSubjectCount(student.course_ids)} 个科目`;
           summary.textContent = `${saved.stage || payload.stage} · ${saved.grade || payload.grade} · ${openText}`;
         }
         const mark = card.querySelector(".subject-mark");
         if (mark) {
-          mark.textContent = String(saved.full_name || payload.full_name).slice(0, 1);
+          mark.textContent = String(saved.full_name || payload.full_name).slice(
+            0,
+            1,
+          );
         }
         form.querySelector('input[name="password"]').value = "";
         if (status) {
@@ -3305,7 +3593,9 @@ async function initTeacherEnrollmentPanel(user) {
       if (!card || !studentId) {
         return;
       }
-      const checkedSubjects = [...card.querySelectorAll("input[data-subject-course-ids]:checked")];
+      const checkedSubjects = [
+        ...card.querySelectorAll("input[data-subject-course-ids]:checked"),
+      ];
       const courseIds = [
         ...new Set(
           checkedSubjects.flatMap((input) =>
@@ -3313,7 +3603,7 @@ async function initTeacherEnrollmentPanel(user) {
               .split(",")
               .filter(Boolean)
               .map((courseId) => Number(courseId))
-          )
+          ),
         ),
       ].sort((a, b) => a - b);
       button.disabled = true;
@@ -3326,7 +3616,10 @@ async function initTeacherEnrollmentPanel(user) {
       try {
         await apiFetch("/api/admin/enrollments", {
           method: "POST",
-          body: JSON.stringify({ student_id: studentId, course_ids: courseIds }),
+          body: JSON.stringify({
+            student_id: studentId,
+            course_ids: courseIds,
+          }),
         });
         if (status) {
           status.className = "save-feedback is-success";
@@ -3334,7 +3627,10 @@ async function initTeacherEnrollmentPanel(user) {
         }
         const summary = card.querySelector("[data-student-enrollment-summary]");
         if (summary) {
-          summary.textContent = summary.textContent.replace(/已开通 \d+ 个科目$/, `已开通 ${checkedSubjects.length} 个科目`);
+          summary.textContent = summary.textContent.replace(
+            /已开通 \d+ 个科目$/,
+            `已开通 ${checkedSubjects.length} 个科目`,
+          );
         }
       } catch (error) {
         if (status) {
@@ -3358,7 +3654,11 @@ async function initTeacherEnrollmentPanel(user) {
       if (!card || !studentId) {
         return;
       }
-      if (!window.confirm(`确定删除 ${studentName} 吗？删除后该学生账号、购课记录和学习记录都会被移除。`)) {
+      if (
+        !window.confirm(
+          `确定删除 ${studentName} 吗？删除后该学生账号、购课记录和学习记录都会被移除。`,
+        )
+      ) {
         return;
       }
       button.disabled = true;
@@ -3366,7 +3666,9 @@ async function initTeacherEnrollmentPanel(user) {
         status.textContent = "删除中...";
       }
       try {
-        await apiFetch(`/api/admin/students/${studentId}`, { method: "DELETE" });
+        await apiFetch(`/api/admin/students/${studentId}`, {
+          method: "DELETE",
+        });
         card.remove();
       } catch (error) {
         if (status) {
@@ -3390,7 +3692,9 @@ async function initGrowthPage() {
 
   let result;
   try {
-    result = await apiFetch("/api/growth", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+    result = await apiFetch("/api/growth", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    });
   } catch (error) {
     setPageLoading(false);
     keepStaticPage(error);
@@ -3407,8 +3711,7 @@ async function initGrowthPage() {
   const radarLabelMap = ["l1", "l2", "l3", "l4", "l5"];
   const radarLabels = data.radar
     .map(
-      (item, index) =>
-        `<div class="radar-label ${radarLabelMap[index] || ""}">${escapeHtml(item.label)} ${item.value}%</div>`
+      (item, index) => `<div class="radar-label ${radarLabelMap[index] || ""}">${escapeHtml(item.label)} ${item.value}%</div>`,
     )
     .join("");
   const polygonStyle = data.radar
@@ -3475,10 +3778,11 @@ async function initGrowthPage() {
           <span class="stat-chip">学习记录</span>
         </div>
         <div class="growth-activity-list">
-          ${data.recent_actions.length
-            ? data.recent_actions
-                .map(
-                  (item) => `
+          ${
+    data.recent_actions.length
+      ? data.recent_actions
+        .map(
+          (item) => `
                     <div class="growth-activity-item">
                       <div class="growth-activity-dot"></div>
                       <div>
@@ -3487,17 +3791,21 @@ async function initGrowthPage() {
                         <span>${escapeHtml(item.time)}</span>
                       </div>
                     </div>
-                  `
-                )
-                .join("")
-            : '<p class="muted compact-empty-text">暂无最近学习行为。</p>'}
+                  `,
+        )
+        .join("")
+      : '<p class="muted compact-empty-text">暂无最近学习行为。</p>'
+  }
         </div>
       </article>
     </div>
   `;
   const radarPolygon = root.querySelector(".radar-polygon");
   if (radarPolygon) {
-    radarPolygon.style.setProperty("--radar-polygon", `polygon(${polygonStyle})`);
+    radarPolygon.style.setProperty(
+      "--radar-polygon",
+      `polygon(${polygonStyle})`,
+    );
   }
   setPageLoading(false);
 }

@@ -752,6 +752,10 @@ async function questionBankPayload(user: User, lessonId: number) {
   if (!course) return null;
   const enrollments = new Set(await getEnrollments(user));
   if (!isTeacher(user) && !enrollments.has(course.id)) return null;
+  const lessonQuestions = questionsByLesson.get(lessonId) || [];
+  const bankQuestions = lessonQuestions.filter((item) =>
+    item.question_kind === "bank"
+  );
   return {
     course: {
       id: course.id,
@@ -765,9 +769,9 @@ async function questionBankPayload(user: User, lessonId: number) {
       title: lesson.title,
       order: lesson.lesson_order,
     },
-    questions: (questionsByLesson.get(lessonId) || [])
-      .filter((item) => item.question_kind === "bank")
-      .map((question) => questionPayload(question, course.id)),
+    questions: (bankQuestions.length ? bankQuestions : lessonQuestions).map((
+      question,
+    ) => questionPayload(question, course.id)),
     grade_lock: gradeLock(course),
     learner_profile: await learnerProfile(user.id, course.id),
   };
