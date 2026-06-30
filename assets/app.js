@@ -37,10 +37,10 @@ function buildGradeHref(stage, grade) {
   const nextStage = String(stage || "").trim();
   const nextGrade = String(grade || "").trim();
   if (!nextStage || !nextGrade) {
-    return "subjects.html";
+    return "/subjects";
   }
   const params = new URLSearchParams({ stage: nextStage, grade: nextGrade });
-  return `grade.html?${params.toString()}`;
+  return `/grade?${params.toString()}`;
 }
 
 function buildSubjectsHref(stage, grade) {
@@ -49,7 +49,7 @@ function buildSubjectsHref(stage, grade) {
 
 function buildLessonHref(courseId, lessonId, extra = {}) {
   if (!courseId || !lessonId) {
-    return courseId ? `course.html?id=${encodeURIComponent(courseId)}` : "course.html";
+    return courseId ? `/course?id=${encodeURIComponent(courseId)}` : "/course";
   }
   const params = new URLSearchParams({
     id: courseId,
@@ -60,15 +60,15 @@ function buildLessonHref(courseId, lessonId, extra = {}) {
       params.set(key, value);
     }
   });
-  return `course.html?${params.toString()}`;
+  return `/course?${params.toString()}`;
 }
 
 function hydrateSubjectNavLinks() {
   const lastLocation = readLastSubjectLocation();
   if (lastLocation?.view === "grades") {
-    document.querySelectorAll('a[href^="subjects.html"], a[href^="grade.html"]').forEach((node) => {
+    document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]').forEach((node) => {
       if (node.id !== "course-back-link" && node.id !== "lesson-back-link" && !node.hasAttribute("data-subject-overview-link")) {
-        node.setAttribute("href", "subjects.html");
+        node.setAttribute("href", "/subjects");
       }
     });
     return;
@@ -77,7 +77,7 @@ function hydrateSubjectNavLinks() {
     return;
   }
   const href = buildSubjectsHref(lastLocation.stage, lastLocation.grade);
-  document.querySelectorAll('a[href^="subjects.html"], a[href^="grade.html"]').forEach((node) => {
+  document.querySelectorAll('a[href^="/subjects"], a[href^="/grade"]').forEach((node) => {
     if (node.id === "course-back-link" || node.id === "lesson-back-link" || node.hasAttribute("data-subject-overview-link")) {
       return;
     }
@@ -141,8 +141,8 @@ async function apiFetch(url, options = {}) {
   if (!response.ok) {
     if (response.status === 401 && !String(url).includes("/api/login")) {
       clearUserProfile();
-      if (window.location.protocol !== "file:" && window.location.pathname !== "/login.html") {
-        window.location.replace("/login.html");
+      if (window.location.protocol !== "file:" && window.location.pathname !== "/login") {
+        window.location.replace("/login");
       }
     }
     throw new Error(data.message || "请求失败");
@@ -603,7 +603,7 @@ async function requireSession() {
   }
   if (!result.logged_in) {
     if (window.location.protocol !== "file:") {
-      window.location.href = "/login.html";
+      window.location.href = "/login";
     }
     return null;
   }
@@ -673,7 +673,7 @@ function clearUserProfile() {
 }
 
 async function logout() {
-  let redirect = "/login.html";
+  let redirect = "/login";
   try {
     const result = await apiFetch("/api/logout", { method: "POST" });
     redirect = result.redirect || redirect;
@@ -738,7 +738,7 @@ const prefetchedPages = new Set();
 
 function shouldPrefetchPage(url) {
   return url.origin === window.location.origin &&
-    url.pathname.endsWith(".html") &&
+    !url.pathname.includes(".") &&
     !url.pathname.startsWith("/api/") &&
     !prefetchedPages.has(url.href);
 }
@@ -759,11 +759,11 @@ function prefetchPage(url) {
 
 function apiUrlForPage(url) {
   const map = {
-    "/dashboard.html": "/api/dashboard",
-    "/subjects.html": "/api/subjects",
-    "/grade.html": "/api/subjects",
-    "/mistakes.html": "/api/mistakes",
-    "/growth.html": "/api/growth",
+    "/dashboard": "/api/dashboard",
+    "/subjects": "/api/subjects",
+    "/grade": "/api/subjects",
+    "/mistakes": "/api/mistakes",
+    "/growth": "/api/growth",
   };
   return map[url.pathname] || "";
 }
@@ -783,11 +783,11 @@ function navigationLabel(node, url) {
     return text;
   }
   const fallback = {
-    "/dashboard.html": "学习中心",
-    "/subjects.html": "全部课程",
-    "/mistakes.html": "智能错题本",
-    "/growth.html": "成长轨迹",
-    "/teacher.html": "老师管理",
+    "/dashboard": "学习中心",
+    "/subjects": "全部课程",
+    "/mistakes": "智能错题本",
+    "/growth": "成长轨迹",
+    "/teacher": "老师管理",
   };
   return fallback[url.pathname] || "新页面";
 }
@@ -1282,7 +1282,7 @@ async function initDashboardPage() {
           </div>
         `
       : purchasedSubjects.map((subject) => `
-          <a class="course-card open-course dashboard-course-card" href="course.html?id=${subject.entryCourseId}">
+          <a class="course-card open-course dashboard-course-card" href="/course?id=${subject.entryCourseId}">
             <div class="course-head">
               <div class="course-icon dashboard-course-icon">${escapeHtml(subject.subject.slice(0, 1))}</div>
               <div>
@@ -2115,7 +2115,7 @@ function updateStudyCoachPanel(root, data, lesson, courseId) {
 
   const bankLink = root.querySelector("[data-coach-bank-link]");
   if (bankLink) {
-    bankLink.href = `question-bank.html?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
+    bankLink.href = `/question-bank?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
     bankLink.classList.toggle("is-disabled", bankCount <= 0);
     bankLink.setAttribute("aria-disabled", bankCount <= 0 ? "true" : "false");
   }
@@ -2427,7 +2427,7 @@ async function initCoursePage() {
       bankDescNode.textContent = `${bankQuestionCount} 道练习 · 完成后复盘`;
     }
     if (bankLink) {
-      bankLink.href = `question-bank.html?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
+      bankLink.href = `/question-bank?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
     }
     renderCoachPanel();
     if (scrollToTop) {
@@ -2733,7 +2733,7 @@ function buildSubjectCatalogModel(stages = []) {
 function renderSubjectCourseItem(course) {
   const isUnlocked = Boolean(course.purchased);
   const tag = isUnlocked ? "a" : "article";
-  const href = isUnlocked ? ` href="course.html?id=${course.id}"` : "";
+  const href = isUnlocked ? ` href="/course?id=${course.id}"` : "";
   return `
     <${tag} class="subject-course-item ${isUnlocked ? "subject-course-link is-unlocked" : "is-locked"}"${href}>
       <span class="subject-course-copy">
@@ -2796,7 +2796,7 @@ async function initSubjectsPage() {
   }
   if (isTeacherUser(user) && window.location.protocol !== "file:") {
     setPageLoading(false);
-    window.location.href = "/teacher.html";
+    window.location.href = "/teacher";
     return;
   }
   setUserProfile(user);
@@ -2848,7 +2848,7 @@ async function initGradePage() {
   const user = await requireSession();
   if (!user) return;
   if (isTeacherUser(user) && window.location.protocol !== "file:") {
-    window.location.href = "/teacher.html";
+    window.location.href = "/teacher";
     return;
   }
   setUserProfile(user);
@@ -2908,7 +2908,7 @@ async function initTeacherPage() {
   if (!user) return;
   if (!isTeacherUser(user)) {
     if (window.location.protocol !== "file:") {
-      window.location.href = "/dashboard.html";
+      window.location.href = "/dashboard";
     }
     return;
   }

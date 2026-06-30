@@ -19,7 +19,7 @@ deno task start
 打开：
 
 ```text
-http://127.0.0.1:8000/login.html
+http://127.0.0.1:8000/login
 ```
 
 默认账号：

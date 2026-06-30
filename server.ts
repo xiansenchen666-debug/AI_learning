@@ -124,6 +124,13 @@ function redirect(location: string, headers: Headers = new Headers()) {
   return new Response("", { status: 302, headers });
 }
 
+function permanentRedirect(location: string) {
+  return new Response("", {
+    status: 308,
+    headers: { location },
+  });
+}
+
 function parseCookies(headers: Headers): Record<string, string> {
   const raw = headers.get("cookie") || "";
   return Object.fromEntries(
@@ -829,7 +836,7 @@ async function api(request: Request, user: User | null, pathname: string) {
           status: 401,
         });
       }
-      return redirect("/login.html?error=1");
+      return redirect("/login?error=1");
     }
     const sessionId = crypto.randomUUID();
     await dbExec("DELETE FROM ai_sessions WHERE expires_at <= NOW()");
@@ -839,7 +846,7 @@ async function api(request: Request, user: User | null, pathname: string) {
     );
     const headers = new Headers();
     setCookie(headers, "sessionId", sessionId, 60 * 60 * 24 * 7);
-    const target = isTeacher(found) ? "/teacher.html" : "/dashboard.html";
+    const target = isTeacher(found) ? "/teacher" : "/dashboard";
     if (
       (request.headers.get("content-type") || "").includes("application/json")
     ) {
@@ -863,7 +870,7 @@ async function api(request: Request, user: User | null, pathname: string) {
     }
     const headers = new Headers();
     setCookie(headers, "sessionId", "", 0);
-    return json({ ok: true, redirect: "/login.html" }, { headers });
+    return json({ ok: true, redirect: "/login" }, { headers });
   }
 
   if (pathname === "/api/session") {
@@ -1192,6 +1199,10 @@ async function api(request: Request, user: User | null, pathname: string) {
 
 Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
   const url = new URL(request.url);
+  if (url.pathname.endsWith(".html")) {
+    const cleanPathname = url.pathname.slice(0, -5) || "/";
+    return permanentRedirect(`${cleanPathname}${url.search}`);
+  }
   const pathname = normalizePathname(url.pathname);
   if (pathname.startsWith("/api/")) {
     return await api(request, await currentUser(request), pathname);
