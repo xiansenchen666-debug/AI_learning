@@ -3255,24 +3255,6 @@ a.full-width-button {
   align-items: end;
 }
 
-.student-password-reset-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.temporary-password {
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: rgba(16, 185, 129, 0.10);
-  color: #047857;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
 .password-field {
   position: relative;
 }
