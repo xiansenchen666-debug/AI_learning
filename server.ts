@@ -188,7 +188,9 @@ function chinaToday() {
     month: "2-digit",
     day: "2-digit",
   }).formatToParts(new Date());
-  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const values = Object.fromEntries(
+    parts.map((part) => [part.type, part.value]),
+  );
   return `${values.year}-${values.month}-${values.day}`;
 }
 
@@ -973,19 +975,53 @@ async function api(request: Request, user: User | null, pathname: string) {
   ) {
     const body = await request.json();
     const studentId = Number(body.student_id);
+    const validCourseIds = new Set(courses.map((course) => Number(course.id)));
     const courseIds = [
-      ...new Set((body.course_ids || []).map(Number).filter(Boolean)),
+      ...new Set(
+        (body.course_ids || []).map(Number).filter((courseId: number) =>
+          validCourseIds.has(courseId)
+        ),
+      ),
     ];
-    await dbExec("DELETE FROM ai_course_enrollments WHERE user_id = ?", [
-      studentId,
-    ]);
-    for (const courseId of courseIds) {
-      await dbExec(
-        "INSERT INTO ai_course_enrollments (user_id, course_id, purchased_at) VALUES (?, ?, NOW())",
-        [studentId, courseId],
-      );
+    if (!studentId) {
+      return json({ ok: false, message: "学生不存在。" }, { status: 400 });
     }
-    return json({ ok: true });
+
+    const result = await dbRows<{
+      selected_count: number;
+      inserted_count: number;
+      removed_count: number;
+    }>(
+      `
+      WITH selected AS (
+        SELECT DISTINCT UNNEST(?::bigint[]) AS course_id
+      ),
+      removed AS (
+        DELETE FROM ai_course_enrollments AS e
+        WHERE e.user_id = ?
+          AND NOT EXISTS (
+            SELECT 1 FROM selected AS s WHERE s.course_id = e.course_id
+          )
+        RETURNING e.course_id
+      ),
+      inserted AS (
+        INSERT INTO ai_course_enrollments (user_id, course_id, purchased_at)
+        SELECT ?, selected.course_id, NOW()
+        FROM selected
+        ON CONFLICT DO NOTHING
+        RETURNING course_id
+      )
+      SELECT
+        (SELECT COUNT(*) FROM selected)::int AS selected_count,
+        (SELECT COUNT(*) FROM inserted)::int AS inserted_count,
+        (SELECT COUNT(*) FROM removed)::int AS removed_count
+      `,
+      [courseIds, studentId, studentId],
+    );
+    return json({
+      ok: true,
+      data: result[0] || { selected_count: courseIds.length },
+    });
   }
   if (
     pathname === "/api/admin/students" && request.method === "POST" &&
