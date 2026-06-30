@@ -3314,7 +3314,7 @@ a.full-width-button {
 }
 
 .admin-student-section {
-  padding: 16px;
+  padding: 14px;
   border: 1px solid rgba(26, 54, 93, 0.10);
   border-radius: 18px;
   min-width: 0;
@@ -3377,7 +3377,7 @@ a.full-width-button {
 .student-edit-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px 10px;
   margin-bottom: 0;
 }
 
@@ -3386,9 +3386,29 @@ a.full-width-button {
   font-size: 12px;
 }
 
+.form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-inline-help {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .student-edit-form .form-input {
-  min-height: 42px;
-  padding: 10px 12px;
+  min-height: 40px;
+  padding: 9px 12px;
 }
 
 .student-edit-actions {
@@ -3412,8 +3432,8 @@ a.full-width-button {
   position: absolute;
   top: 50%;
   right: 10px;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

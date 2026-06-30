@@ -3090,14 +3090,16 @@ async function initTeacherEnrollmentPanel(user) {
                   <input class="form-input" name="username" value="${escapeHtml(student.username || "")}" required>
                 </label>
                 <div class="form-group form-group-compact">
-                  <span class="form-label">重置密码</span>
+                  <span class="form-label-row">
+                    <span class="form-label">重置密码</span>
+                    <span class="form-inline-help">旧密码不可反查，新密码可点眼睛查看</span>
+                  </span>
                   <div class="password-field">
                     <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改，输入后可查看">
                     <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
                       <span aria-hidden="true">👁</span>
                     </button>
                   </div>
-                  <span class="form-help">旧密码已加密保存，不能反查；输入新密码后可点眼睛查看。</span>
                 </div>
                 <label class="form-group form-group-compact">
                   <span class="form-label">姓名</span>
@@ -3118,9 +3120,11 @@ async function initTeacherEnrollmentPanel(user) {
                   <input class="form-input" name="email" type="email" value="${escapeHtml(student.email || "")}">
                 </label>
                 <label class="form-group form-group-compact">
-                  <span class="form-label">可使用天数</span>
+                  <span class="form-label-row">
+                    <span class="form-label">可使用天数</span>
+                    <span class="form-inline-help">今天算第 1 天，留空=长期</span>
+                  </span>
                   <input class="form-input" name="access_duration_days" type="number" min="1" max="36500" step="1" value="${student.access_expires_on ? Number(student.access_remaining_days || 0) : ""}" placeholder="留空表示长期有效">
-                  <span class="form-help">从今天开始按自然日计算，今天算第 1 天；留空表示长期有效。</span>
                 </label>
                 <div class="student-edit-actions">
                   <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
