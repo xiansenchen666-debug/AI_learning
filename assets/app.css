@@ -364,6 +364,17 @@ button {
   margin-bottom: 16px;
 }
 
+.account-access-status {
+  display: inline-flex;
+  margin: 14px 0 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.10);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .hero-title {
   margin: 0;
   font-size: 36px;

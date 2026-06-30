@@ -49,6 +49,9 @@ async function insertBatch(
 
 try {
   await pool.query(schema);
+  await pool.query(
+    "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
+  );
 
   const defaultPasswords: Record<string, string> = catalog.default_passwords ||
     {};

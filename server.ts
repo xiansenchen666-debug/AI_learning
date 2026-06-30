@@ -14,6 +14,7 @@ type User = {
   bio?: string;
   role: string;
   password_hash?: string;
+  access_expires_on?: string | Date | null;
 };
 
 type Course = {
@@ -180,6 +181,41 @@ async function hashPassword(password: string) {
   ).join("");
 }
 
+function chinaToday() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function accessDateString(value: string | Date | null | undefined) {
+  if (!value) return "";
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  return String(value).slice(0, 10);
+}
+
+function normalizeAccessDate(value: unknown) {
+  const date = String(value || "").trim();
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null;
+}
+
+function accessRemainingDays(user: User) {
+  const expiresOn = accessDateString(user.access_expires_on);
+  if (!expiresOn) return null;
+  const todayTime = Date.parse(`${chinaToday()}T00:00:00Z`);
+  const expiryTime = Date.parse(`${expiresOn}T00:00:00Z`);
+  return Math.max(0, Math.round((expiryTime - todayTime) / 86_400_000) + 1);
+}
+
+function isAccessExpired(user: User) {
+  const expiresOn = accessDateString(user.access_expires_on);
+  return Boolean(expiresOn && expiresOn < chinaToday());
+}
+
 function normalizePathname(pathname: string) {
   if (pathname === "/") return "/dashboard.html";
   if (!pathname.includes(".") && !pathname.startsWith("/api/")) {
@@ -221,7 +257,7 @@ async function loadUserById(userId: number): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT id, username, password_hash, full_name, stage, grade, level_label,
-           email, school, bio, role
+           email, school, bio, role, access_expires_on
     FROM ai_users
     WHERE id = ? AND deleted_at IS NULL
     LIMIT 1
@@ -236,7 +272,7 @@ async function loadUserByUsername(username: string): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT id, username, password_hash, full_name, stage, grade, level_label,
-           email, school, bio, role
+           email, school, bio, role, access_expires_on
     FROM ai_users
     WHERE LOWER(username) = ? AND deleted_at IS NULL
     LIMIT 1
@@ -259,6 +295,8 @@ function userPayload(user: User) {
     email: user.email || "",
     school: user.school || "",
     bio: user.bio || "",
+    access_expires_on: accessDateString(user.access_expires_on),
+    access_remaining_days: accessRemainingDays(user),
     avatar_text: fullName.slice(0, 2).toUpperCase(),
   };
 }
@@ -269,7 +307,8 @@ async function currentUser(request: Request): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT u.id, u.username, u.password_hash, u.full_name, u.stage, u.grade,
-           u.level_label, u.email, u.school, u.bio, u.role
+           u.level_label, u.email, u.school, u.bio, u.role,
+           u.access_expires_on
     FROM ai_sessions AS s
     JOIN ai_users AS u ON u.id = s.user_id
     WHERE s.session_id = ? AND s.expires_at > NOW() AND u.deleted_at IS NULL
@@ -277,7 +316,12 @@ async function currentUser(request: Request): Promise<User | null> {
     `,
     [sessionId],
   );
-  return rows[0] || null;
+  const user = rows[0] || null;
+  if (user && !isTeacher(user) && isAccessExpired(user)) {
+    await dbExec("DELETE FROM ai_sessions WHERE session_id = ?", [sessionId]);
+    return null;
+  }
+  return user;
 }
 
 function isTeacher(user: User | null) {
@@ -784,6 +828,7 @@ async function adminPayload() {
   const users = await dbRows<User>(
     `
     SELECT id, username, full_name, stage, grade, level_label, email, school, bio, role
+           , access_expires_on
     FROM ai_users
     WHERE deleted_at IS NULL AND role NOT IN ('teacher', 'admin')
     ORDER BY id
@@ -837,6 +882,17 @@ async function api(request: Request, user: User | null, pathname: string) {
         });
       }
       return redirect("/login?error=1");
+    }
+    if (!isTeacher(found) && isAccessExpired(found)) {
+      if (
+        (request.headers.get("content-type") || "").includes("application/json")
+      ) {
+        return json({
+          ok: false,
+          message: "账号使用期限已结束，请联系老师续期。",
+        }, { status: 403 });
+      }
+      return redirect("/login?expired=1");
     }
     const sessionId = crypto.randomUUID();
     await dbExec("DELETE FROM ai_sessions WHERE expires_at <= NOW()");
@@ -929,8 +985,8 @@ async function api(request: Request, user: User | null, pathname: string) {
       `
       INSERT INTO ai_users (
         username, password_hash, full_name, stage, grade,
-        level_label, email, school, bio, role
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'student')
+        level_label, email, school, bio, role, access_expires_on
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'student', ?)
       RETURNING id
       `,
       [
@@ -943,6 +999,7 @@ async function api(request: Request, user: User | null, pathname: string) {
         String(body.email || ""),
         user.school || "",
         "",
+        normalizeAccessDate(body.access_expires_on),
       ],
     );
     const created = await loadUserById(Number(result.rows[0]?.id));
@@ -967,7 +1024,7 @@ async function api(request: Request, user: User | null, pathname: string) {
         `
         UPDATE ai_users
         SET username = ?, password_hash = ?, full_name = ?, stage = ?, grade = ?,
-            email = ?, updated_at = NOW()
+            email = ?, access_expires_on = ?, updated_at = NOW()
         WHERE id = ? AND deleted_at IS NULL
         `,
         [
@@ -977,6 +1034,7 @@ async function api(request: Request, user: User | null, pathname: string) {
           String(body.stage || existing.stage),
           String(body.grade || existing.grade),
           String(body.email || existing.email),
+          normalizeAccessDate(body.access_expires_on),
           studentId,
         ],
       );
@@ -1196,6 +1254,10 @@ async function api(request: Request, user: User | null, pathname: string) {
 
   return json({ ok: false, message: "Not Found" }, { status: 404 });
 }
+
+await dbExec(
+  "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
+);
 
 Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
   const url = new URL(request.url);

@@ -589,10 +589,6 @@ function createLessonStudyTimer() {
 }
 
 async function requireSession() {
-  const cached = readCachedUserProfile();
-  if (cached) {
-    return cached;
-  }
   let result;
   try {
     result = await apiFetch("/api/session");
@@ -602,11 +598,13 @@ async function requireSession() {
     return null;
   }
   if (!result.logged_in) {
+    clearUserProfile();
     if (window.location.protocol !== "file:") {
       window.location.href = "/login";
     }
     return null;
   }
+  cacheUserProfile(result.user);
   return result.user;
 }
 
@@ -631,7 +629,12 @@ function applyUserProfile(user) {
     node.textContent = user.username;
   });
   document.querySelectorAll("[data-user-level]").forEach((node) => {
-    node.textContent = user.level_label;
+    const accessLabel = isTeacherUser(user)
+      ? ""
+      : user.access_expires_on
+      ? `剩余 ${Number(user.access_remaining_days || 0)} 天`
+      : "长期有效";
+    node.textContent = [user.level_label, accessLabel].filter(Boolean).join(" · ");
   });
   document.querySelectorAll("[data-user-stage]").forEach((node) => {
     node.textContent = `${user.stage} · ${user.grade}`;
@@ -1161,6 +1164,7 @@ async function initDashboardPage() {
   const heroPill = document.getElementById("dashboard-hero-pill");
   const heroTitle = document.getElementById("dashboard-hero-title");
   const heroDesc = document.getElementById("dashboard-hero-desc");
+  const accessStatus = document.getElementById("dashboard-access-status");
   const studyDays = document.getElementById("dashboard-study-days");
   const levelProgress = document.getElementById("dashboard-level-progress");
   const xpSummary = document.getElementById("dashboard-xp-summary");
@@ -1195,6 +1199,11 @@ async function initDashboardPage() {
     if (xpSummary) {
       xpSummary.textContent = `当前账号学力值 ${summary.xp || 0} XP，距离下一个等级还差 ${summary.next_level_gap || 0} XP`;
     }
+  }
+  if (accessStatus) {
+    accessStatus.textContent = user.access_expires_on
+      ? `账号有效至 ${user.access_expires_on}，剩余 ${Number(user.access_remaining_days || 0)} 个自然日`
+      : "账号使用期限：长期有效";
   }
 
   const timelineRoot = document.getElementById("dashboard-timeline");
@@ -2937,6 +2946,7 @@ function wireStudentCreateForm(user) {
       stage: String(formData.get("stage") || "").trim(),
       grade: String(formData.get("grade") || "").trim(),
       email: String(formData.get("email") || "").trim(),
+      access_expires_on: String(formData.get("access_expires_on") || "").trim(),
     };
     if (!payload.username || !payload.password || !payload.full_name) {
       if (status) {
@@ -3086,6 +3096,11 @@ async function initTeacherEnrollmentPanel(user) {
                   <span class="form-label">邮箱</span>
                   <input class="form-input" name="email" type="email" value="${escapeHtml(student.email || "")}">
                 </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">账号有效期至</span>
+                  <input class="form-input" name="access_expires_on" type="date" value="${escapeHtml(student.access_expires_on || "")}">
+                  <span class="form-help">按自然日计算，到期当天仍可使用；留空表示长期有效。</span>
+                </label>
                 <div class="student-edit-actions">
                   <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
                 </div>
@@ -3171,6 +3186,7 @@ async function initTeacherEnrollmentPanel(user) {
         stage: String(formData.get("stage") || "").trim(),
         grade: String(formData.get("grade") || "").trim(),
         email: String(formData.get("email") || "").trim(),
+        access_expires_on: String(formData.get("access_expires_on") || "").trim(),
       };
       if (!payload.username || !payload.full_name) {
         if (status) {
