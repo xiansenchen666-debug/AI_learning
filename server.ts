@@ -1255,10 +1255,6 @@ async function api(request: Request, user: User | null, pathname: string) {
   return json({ ok: false, message: "Not Found" }, { status: 404 });
 }
 
-await dbExec(
-  "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
-);
-
 Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
   const url = new URL(request.url);
   if (url.pathname.endsWith(".html")) {
