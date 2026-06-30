@@ -3254,16 +3254,80 @@ a.full-width-button {
   border-top: 1px solid rgba(26, 54, 93, 0.08);
 }
 
+.admin-student-section {
+  padding: 20px;
+  border: 1px solid rgba(26, 54, 93, 0.10);
+  border-radius: 20px;
+}
+
+.admin-student-section + .admin-student-section {
+  margin-top: 18px;
+}
+
+.admin-profile-section {
+  background: rgba(37, 99, 235, 0.035);
+  border-left: 4px solid #2563eb;
+}
+
+.admin-enrollment-section {
+  background: rgba(16, 185, 129, 0.04);
+  border-left: 4px solid #10b981;
+}
+
+.admin-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.admin-section-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-enrollment-section .admin-section-index {
+  background: #059669;
+}
+
+.admin-section-heading h3,
+.admin-section-heading p {
+  margin: 0;
+}
+
+.admin-section-heading h3 {
+  color: var(--text-main);
+  font-size: 18px;
+}
+
+.admin-section-heading p {
+  margin-top: 3px;
+  color: var(--text-subtle);
+  font-size: 13px;
+}
+
 .student-edit-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .student-edit-actions {
   display: flex;
-  align-items: end;
+  grid-column: 1 / -1;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .password-field {
@@ -3322,8 +3386,53 @@ a.full-width-button {
 .admin-actions {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 14px;
+}
+
+.save-feedback {
+  min-height: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.save-feedback.is-saving-text {
+  color: #1d4ed8;
+}
+
+.save-feedback.is-success {
+  color: #047857;
+}
+
+.save-feedback.is-error {
+  color: var(--danger);
+}
+
+.primary-btn.is-saving,
+.secondary-btn.is-saving {
+  opacity: 0.82;
+  cursor: wait;
+}
+
+.primary-btn.is-saving::before,
+.secondary-btn.is-saving::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: admin-save-spin 0.7s linear infinite;
+}
+
+@keyframes admin-save-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .danger-soft-btn {

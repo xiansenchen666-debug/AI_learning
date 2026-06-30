@@ -3063,7 +3063,15 @@ async function initTeacherEnrollmentPanel(user) {
               <span class="subject-enter-chip" data-student-toggle-chip>展开</span>
             </button>
             <div class="admin-student-body is-hidden" data-admin-student-body>
-              <form class="student-edit-form" data-student-edit-form>
+              <section class="admin-student-section admin-profile-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">01</span>
+                  <div>
+                    <h3>学生资料</h3>
+                    <p>修改这个学生的账号、年级和可使用天数。</p>
+                  </div>
+                </div>
+                <form class="student-edit-form" data-student-edit-form>
                 <label class="form-group form-group-compact">
                   <span class="form-label">账号</span>
                   <input class="form-input" name="username" value="${escapeHtml(student.username || "")}" required>
@@ -3103,20 +3111,31 @@ async function initTeacherEnrollmentPanel(user) {
                 </label>
                 <div class="student-edit-actions">
                   <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
+                  <button class="secondary-btn danger-soft-btn" type="button" data-delete-student>删除学生</button>
+                  <span class="save-feedback" data-profile-save-status aria-live="polite"></span>
                 </div>
-              </form>
-              <div class="admin-enrollment-toolbar">
-                <button class="ghost-btn" type="button" data-select-all-enrollments>全选课程</button>
-                <button class="ghost-btn" type="button" data-clear-enrollments>清空选择</button>
-              </div>
-              <div class="admin-subject-grid">
-                ${subjectOptions}
-              </div>
-              <div class="admin-actions">
-                <button class="primary-btn" type="button" data-save-enrollment>保存购课</button>
-                <button class="secondary-btn danger-soft-btn" type="button" data-delete-student>删除学生</button>
-                <span class="muted text-sm" data-save-status></span>
-              </div>
+                </form>
+              </section>
+              <section class="admin-student-section admin-enrollment-section">
+                <div class="admin-section-heading">
+                  <span class="admin-section-index">02</span>
+                  <div>
+                    <h3>购课选择</h3>
+                    <p>下面所有课程都属于当前学生：${escapeHtml(studentName)}。</p>
+                  </div>
+                </div>
+                <div class="admin-enrollment-toolbar">
+                  <button class="ghost-btn" type="button" data-select-all-enrollments>全选课程</button>
+                  <button class="ghost-btn" type="button" data-clear-enrollments>清空选择</button>
+                </div>
+                <div class="admin-subject-grid">
+                  ${subjectOptions}
+                </div>
+                <div class="admin-actions">
+                  <button class="primary-btn" type="button" data-save-enrollment>保存购课</button>
+                  <span class="save-feedback" data-save-status aria-live="polite"></span>
+                </div>
+              </section>
             </div>
           </article>
         `;
@@ -3170,8 +3189,9 @@ async function initTeacherEnrollmentPanel(user) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const card = form.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-save-status]");
+      const status = card?.querySelector("[data-profile-save-status]");
       const button = form.querySelector("[data-save-student-info]");
+      const buttonLabel = button?.textContent || "保存资料";
       const title = card?.querySelector(".subject-title");
       const summary = card?.querySelector("[data-student-enrollment-summary]");
       const studentId = Number(card?.dataset.adminStudentId);
@@ -3196,9 +3216,12 @@ async function initTeacherEnrollmentPanel(user) {
       }
       if (button) {
         button.disabled = true;
+        button.classList.add("is-saving");
+        button.textContent = "正在保存资料...";
       }
       if (status) {
-        status.textContent = "保存资料中...";
+        status.className = "save-feedback is-saving-text";
+        status.textContent = "正在保存学生资料，请稍候…";
       }
       try {
         const result = await apiFetch(`/api/admin/students/${studentId}`, {
@@ -3219,15 +3242,19 @@ async function initTeacherEnrollmentPanel(user) {
         }
         form.querySelector('input[name="password"]').value = "";
         if (status) {
-          status.textContent = "资料已保存";
+          status.className = "save-feedback is-success";
+          status.textContent = "✓ 学生资料已保存";
         }
       } catch (error) {
         if (status) {
-          status.textContent = error.message;
+          status.className = "save-feedback is-error";
+          status.textContent = `保存失败：${error.message}`;
         }
       } finally {
         if (button) {
           button.disabled = false;
+          button.classList.remove("is-saving");
+          button.textContent = buttonLabel;
         }
       }
     });
@@ -3253,6 +3280,7 @@ async function initTeacherEnrollmentPanel(user) {
     button.addEventListener("click", async () => {
       const card = button.closest("[data-admin-student-id]");
       const status = card?.querySelector("[data-save-status]");
+      const buttonLabel = button.textContent || "保存购课";
       const studentId = Number(card?.dataset.adminStudentId);
       if (!card || !studentId) {
         return;
@@ -3269,8 +3297,11 @@ async function initTeacherEnrollmentPanel(user) {
         ),
       ].sort((a, b) => a - b);
       button.disabled = true;
+      button.classList.add("is-saving");
+      button.textContent = "正在保存购课...";
       if (status) {
-        status.textContent = "保存中...";
+        status.className = "save-feedback is-saving-text";
+        status.textContent = "正在保存当前学生的购课选择，请稍候…";
       }
       try {
         await apiFetch("/api/admin/enrollments", {
@@ -3278,7 +3309,8 @@ async function initTeacherEnrollmentPanel(user) {
           body: JSON.stringify({ student_id: studentId, course_ids: courseIds }),
         });
         if (status) {
-          status.textContent = `已保存 ${checkedSubjects.length} 个科目`;
+          status.className = "save-feedback is-success";
+          status.textContent = `✓ 已保存 ${checkedSubjects.length} 个科目`;
         }
         const summary = card.querySelector("[data-student-enrollment-summary]");
         if (summary) {
@@ -3286,10 +3318,13 @@ async function initTeacherEnrollmentPanel(user) {
         }
       } catch (error) {
         if (status) {
-          status.textContent = error.message;
+          status.className = "save-feedback is-error";
+          status.textContent = `保存失败：${error.message}`;
         }
       } finally {
         button.disabled = false;
+        button.classList.remove("is-saving");
+        button.textContent = buttonLabel;
       }
     });
   });
@@ -3297,7 +3332,7 @@ async function initTeacherEnrollmentPanel(user) {
   root.querySelectorAll("[data-delete-student]").forEach((button) => {
     button.addEventListener("click", async () => {
       const card = button.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-save-status]");
+      const status = card?.querySelector("[data-profile-save-status]");
       const studentId = Number(card?.dataset.adminStudentId);
       const studentName = card?.querySelector(".subject-title")?.textContent?.trim() || "该学生";
       if (!card || !studentId) {
