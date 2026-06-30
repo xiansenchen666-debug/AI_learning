@@ -2946,7 +2946,7 @@ function wireStudentCreateForm(user) {
       stage: String(formData.get("stage") || "").trim(),
       grade: String(formData.get("grade") || "").trim(),
       email: String(formData.get("email") || "").trim(),
-      access_expires_on: String(formData.get("access_expires_on") || "").trim(),
+      access_duration_days: String(formData.get("access_duration_days") || "").trim(),
     };
     if (!payload.username || !payload.password || !payload.full_name) {
       if (status) {
@@ -3097,9 +3097,9 @@ async function initTeacherEnrollmentPanel(user) {
                   <input class="form-input" name="email" type="email" value="${escapeHtml(student.email || "")}">
                 </label>
                 <label class="form-group form-group-compact">
-                  <span class="form-label">账号有效期至</span>
-                  <input class="form-input" name="access_expires_on" type="date" value="${escapeHtml(student.access_expires_on || "")}">
-                  <span class="form-help">按自然日计算，到期当天仍可使用；留空表示长期有效。</span>
+                  <span class="form-label">可使用天数</span>
+                  <input class="form-input" name="access_duration_days" type="number" min="1" max="36500" step="1" value="${student.access_expires_on ? Number(student.access_remaining_days || 0) : ""}" placeholder="留空表示长期有效">
+                  <span class="form-help">从今天开始按自然日计算，今天算第 1 天；留空表示长期有效。</span>
                 </label>
                 <div class="student-edit-actions">
                   <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
@@ -3186,7 +3186,7 @@ async function initTeacherEnrollmentPanel(user) {
         stage: String(formData.get("stage") || "").trim(),
         grade: String(formData.get("grade") || "").trim(),
         email: String(formData.get("email") || "").trim(),
-        access_expires_on: String(formData.get("access_expires_on") || "").trim(),
+        access_duration_days: String(formData.get("access_duration_days") || "").trim(),
       };
       if (!payload.username || !payload.full_name) {
         if (status) {

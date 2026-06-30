@@ -203,6 +203,19 @@ function normalizeAccessDate(value: unknown) {
   return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null;
 }
 
+function accessExpiryFromDuration(value: unknown) {
+  const raw = String(value ?? "").trim();
+  if (!raw) return null;
+  const days = Number(raw);
+  if (!Number.isInteger(days) || days < 1 || days > 36_500) {
+    throw new Error("可使用天数必须是 1 到 36500 之间的整数。");
+  }
+  const todayTime = Date.parse(`${chinaToday()}T00:00:00Z`);
+  return new Date(todayTime + (days - 1) * 86_400_000)
+    .toISOString()
+    .slice(0, 10);
+}
+
 function accessRemainingDays(user: User) {
   const expiresOn = accessDateString(user.access_expires_on);
   if (!expiresOn) return null;
@@ -999,7 +1012,9 @@ async function api(request: Request, user: User | null, pathname: string) {
         String(body.email || ""),
         user.school || "",
         "",
-        normalizeAccessDate(body.access_expires_on),
+        body.access_duration_days !== undefined
+          ? accessExpiryFromDuration(body.access_duration_days)
+          : normalizeAccessDate(body.access_expires_on),
       ],
     );
     const created = await loadUserById(Number(result.rows[0]?.id));
@@ -1034,7 +1049,9 @@ async function api(request: Request, user: User | null, pathname: string) {
           String(body.stage || existing.stage),
           String(body.grade || existing.grade),
           String(body.email || existing.email),
-          normalizeAccessDate(body.access_expires_on),
+          body.access_duration_days !== undefined
+            ? accessExpiryFromDuration(body.access_duration_days)
+            : normalizeAccessDate(body.access_expires_on),
           studentId,
         ],
       );

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260630-12" />
+    <link rel="stylesheet" href="assets/app.css?v=20260630-13" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -98,9 +98,9 @@
                   <input class="form-input" name="email" type="email" autocomplete="off" />
                 </label>
                 <label class="form-group form-group-compact">
-                  <span class="form-label">账号有效期至</span>
-                  <input class="form-input" name="access_expires_on" type="date" />
-                  <span class="form-help">按自然日计算，到期当天仍可使用；留空表示长期有效。</span>
+                  <span class="form-label">可使用天数</span>
+                  <input class="form-input" name="access_duration_days" type="number" min="1" max="36500" step="1" placeholder="留空表示长期有效" />
+                  <span class="form-help">从创建当天开始按自然日计算，当天算第 1 天；留空表示长期有效。</span>
                 </label>
                 <div class="student-create-actions">
                   <button class="primary-btn" type="submit" data-create-student>创建学生</button>
@@ -138,7 +138,7 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260630-12"></script>
+    <script src="assets/app.js?v=20260630-13"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initTeacherPage().catch((error) => console.warn(error));
