@@ -5745,6 +5745,551 @@ body[data-page="course"] .lesson-inline-media figcaption {
   display: none;
 }
 
+/* Premium student experience: refined SaaS-style visual system */
+body.profile-ready:not([data-page="teacher"]) {
+  --bg-app: #f3f6fb;
+  --bg-sidebar: rgba(7, 17, 31, 0.96);
+  --bg-card: rgba(255, 255, 255, 0.86);
+  --bg-card-soft: rgba(244, 248, 252, 0.78);
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --text-main: #0b1220;
+  --text-subtle: #667085;
+  --text-sidebar: rgba(236, 245, 255, 0.92);
+  --text-sidebar-soft: rgba(203, 213, 225, 0.70);
+  --line: rgba(11, 18, 32, 0.08);
+  --primary: #0b1b33;
+  --primary-strong: #155eef;
+  --accent: #d9aa5f;
+  --sky: #12b6ea;
+  --purple: #6d5dfc;
+  --shadow-card: 0 24px 70px rgba(15, 23, 42, 0.10);
+  --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.07);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(18, 182, 234, 0.16), transparent 32%),
+    radial-gradient(circle at 92% 7%, rgba(217, 170, 95, 0.14), transparent 28%),
+    linear-gradient(135deg, #f8fbff 0%, #eef4fb 44%, #f7f9fc 100%);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body.profile-ready:not([data-page="teacher"]) .ambient {
+  background:
+    linear-gradient(90deg, rgba(11, 27, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(11, 27, 51, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.82;
+}
+
+body.profile-ready:not([data-page="teacher"]) .blob {
+  filter: blur(28px);
+  opacity: 0.18;
+}
+
+body.profile-ready:not([data-page="teacher"]) .blob.one {
+  top: -12rem;
+  left: 12rem;
+  width: 34rem;
+  height: 34rem;
+  background: rgba(18, 182, 234, 0.32);
+}
+
+body.profile-ready:not([data-page="teacher"]) .blob.two {
+  top: 8rem;
+  right: -14rem;
+  width: 38rem;
+  height: 38rem;
+  background: rgba(109, 93, 252, 0.22);
+}
+
+body.profile-ready:not([data-page="teacher"]) .blob.three {
+  left: 34%;
+  bottom: -18rem;
+  width: 42rem;
+  height: 42rem;
+  background: rgba(217, 170, 95, 0.18);
+}
+
+body.profile-ready:not([data-page="teacher"]) .sidebar {
+  padding: 30px 18px 22px;
+  background:
+    linear-gradient(180deg, rgba(9, 22, 42, 0.98), rgba(6, 14, 27, 0.98)),
+    radial-gradient(circle at 30% 0%, rgba(18, 182, 234, 0.20), transparent 28%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 18px 0 60px rgba(7, 17, 31, 0.18);
+}
+
+body.profile-ready:not([data-page="teacher"]) .brand {
+  padding: 18px 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.03)),
+    radial-gradient(circle at 15% 0%, rgba(217, 170, 95, 0.20), transparent 36%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.profile-ready:not([data-page="teacher"]) .brand-lockup {
+  color: #f8fafc;
+  font-family: var(--font-ui);
+}
+
+body.profile-ready:not([data-page="teacher"]) .brand-kicker {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body.profile-ready:not([data-page="teacher"]) .brand-title {
+  font-size: 28px;
+  letter-spacing: 0.02em;
+}
+
+body.profile-ready:not([data-page="teacher"]) .nav {
+  gap: 10px;
+}
+
+body.profile-ready:not([data-page="teacher"]) .nav-btn {
+  min-height: 52px;
+  padding: 12px 13px;
+  color: rgba(226, 232, 240, 0.76);
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: transparent;
+}
+
+body.profile-ready:not([data-page="teacher"]) .nav-btn:hover,
+body.profile-ready:not([data-page="teacher"]) .nav-btn.active {
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(18, 182, 234, 0.24), rgba(21, 94, 239, 0.18)),
+    rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  transform: translateX(2px);
+}
+
+body.profile-ready:not([data-page="teacher"]) .nav-btn.active::before {
+  background: linear-gradient(180deg, var(--accent), var(--sky));
+  box-shadow: 0 0 24px rgba(18, 182, 234, 0.45);
+}
+
+body.profile-ready:not([data-page="teacher"]) .icon-badge {
+  color: #07111f;
+  background: linear-gradient(135deg, #ffffff, #dbeafe);
+  box-shadow: 0 10px 24px rgba(18, 182, 234, 0.18);
+}
+
+body.profile-ready:not([data-page="teacher"]) .nav-btn.active .icon-badge {
+  color: #07111f;
+  background: linear-gradient(135deg, #f9d992, #7dd3fc);
+}
+
+body.profile-ready:not([data-page="teacher"]) .sidebar-footer .avatar-card {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+body.profile-ready:not([data-page="teacher"]) .sidebar-footer [data-user-name] {
+  color: #ffffff;
+}
+
+body.profile-ready:not([data-page="teacher"]) .sidebar-footer [data-user-level],
+body.profile-ready:not([data-page="teacher"]) .sidebar-user-level {
+  color: rgba(203, 213, 225, 0.72);
+}
+
+body.profile-ready:not([data-page="teacher"]) .avatar {
+  color: #07111f;
+  background: linear-gradient(135deg, #f9d992, #7dd3fc);
+  box-shadow: 0 16px 30px rgba(18, 182, 234, 0.18);
+}
+
+body.profile-ready:not([data-page="teacher"]) .content {
+  background:
+    radial-gradient(circle at 0 0, rgba(18, 182, 234, 0.10), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0));
+}
+
+body.profile-ready:not([data-page="teacher"]) .page-scroll {
+  padding: 34px 38px 46px;
+}
+
+body.profile-ready:not([data-page="teacher"]) .page {
+  max-width: 1480px;
+}
+
+body.profile-ready:not([data-page="teacher"]) .card,
+body.profile-ready:not([data-page="teacher"]) .subject-column,
+body.profile-ready:not([data-page="teacher"]) .course-summary-card,
+body.profile-ready:not([data-page="teacher"]) .course-outline-card,
+body.profile-ready:not([data-page="teacher"]) .knowledge-map-card,
+body.profile-ready:not([data-page="teacher"]) .growth-stat-card,
+body.profile-ready:not([data-page="teacher"]) .timeline-content,
+body.profile-ready:not([data-page="teacher"]) .question-card,
+body.profile-ready:not([data-page="teacher"]) .premium-tsinghua-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 255, 0.78));
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+body.profile-ready:not([data-page="teacher"]) .card::before,
+body.profile-ready:not([data-page="teacher"]) .subject-column::before,
+body.profile-ready:not([data-page="teacher"]) .course-summary-card::before,
+body.profile-ready:not([data-page="teacher"]) .growth-stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217, 170, 95, 0.62), rgba(18, 182, 234, 0.48), transparent);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-card,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-card,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-hero,
+body.profile-ready:not([data-page="teacher"]) .course-summary-hero {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(18, 182, 234, 0.28), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(217, 170, 95, 0.25), transparent 26%),
+    linear-gradient(135deg, #07111f 0%, #0b1b33 52%, #10345b 100%);
+  box-shadow:
+    0 30px 90px rgba(7, 17, 31, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-card::before,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-card::before,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-card::after,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-card::after,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 0 28%, rgba(255, 255, 255, 0.10) 42%, transparent 58%),
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 18px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-body,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-copy,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-stats,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-text {
+  position: relative;
+  z-index: 1;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-title,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-title,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-title,
+body.profile-ready:not([data-page="teacher"]) .course-summary-title {
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-title span,
+body.profile-ready:not([data-page="teacher"]) .text-accent {
+  color: #f6d58a;
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-desc,
+body.profile-ready:not([data-page="teacher"]) .hero-copy,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-desc,
+body.profile-ready:not([data-page="teacher"]) .growth-ai-desc,
+body.profile-ready:not([data-page="teacher"]) .course-summary-desc {
+  color: rgba(226, 232, 240, 0.82);
+}
+
+body.profile-ready:not([data-page="teacher"]) .hero-pill,
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-kicker,
+body.profile-ready:not([data-page="teacher"]) .knowledge-map-kicker {
+  color: #f6d58a;
+  border-color: rgba(246, 213, 138, 0.28);
+  background: rgba(246, 213, 138, 0.10);
+}
+
+body.profile-ready:not([data-page="teacher"]) .account-access-status {
+  color: #b7f7d8;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+body.profile-ready:not([data-page="teacher"]) .primary-btn,
+body.profile-ready:not([data-page="teacher"]) .primary-button {
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, #155eef, #0f9fd5),
+    var(--primary-strong);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 34px rgba(21, 94, 239, 0.24);
+}
+
+body.profile-ready:not([data-page="teacher"]) .primary-btn:hover,
+body.profile-ready:not([data-page="teacher"]) .primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(21, 94, 239, 0.30);
+}
+
+body.profile-ready:not([data-page="teacher"]) .secondary-btn,
+body.profile-ready:not([data-page="teacher"]) .secondary-button,
+body.profile-ready:not([data-page="teacher"]) .ghost-btn,
+body.profile-ready:not([data-page="teacher"]) .ghost-button {
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(11, 27, 51, 0.10);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+body.profile-ready:not([data-page="teacher"]) .secondary-btn:hover,
+body.profile-ready:not([data-page="teacher"]) .secondary-button:hover,
+body.profile-ready:not([data-page="teacher"]) .ghost-btn:hover,
+body.profile-ready:not([data-page="teacher"]) .ghost-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(21, 94, 239, 0.18);
+}
+
+body.profile-ready:not([data-page="teacher"]) .section-title,
+body.profile-ready:not([data-page="teacher"]) .page-title,
+body.profile-ready:not([data-page="teacher"]) .page-title-lg,
+body.profile-ready:not([data-page="teacher"]) .subject-title,
+body.profile-ready:not([data-page="teacher"]) .course-summary-value,
+body.profile-ready:not([data-page="teacher"]) .growth-stat-value {
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+body.profile-ready:not([data-page="teacher"]) .stat-chip,
+body.profile-ready:not([data-page="teacher"]) .mini-chip,
+body.profile-ready:not([data-page="teacher"]) .chip,
+body.profile-ready:not([data-page="teacher"]) .subject-enter-chip {
+  border: 1px solid rgba(21, 94, 239, 0.10);
+  background: rgba(21, 94, 239, 0.08);
+  color: #155eef;
+}
+
+body.profile-ready:not([data-page="teacher"]) .achievement {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(217, 170, 95, 0.20), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 255, 0.82));
+}
+
+body.profile-ready:not([data-page="teacher"]) .achievement-mark {
+  color: #07111f;
+  background: linear-gradient(135deg, #f9d992, #7dd3fc);
+  filter: drop-shadow(0 16px 24px rgba(217, 170, 95, 0.26));
+}
+
+body.profile-ready:not([data-page="teacher"]) .progress-track {
+  background: rgba(11, 27, 51, 0.06);
+  border-color: rgba(11, 27, 51, 0.05);
+}
+
+body.profile-ready:not([data-page="teacher"]) .progress-fill {
+  background: linear-gradient(90deg, #155eef, #12b6ea, #d9aa5f);
+}
+
+body.profile-ready:not([data-page="teacher"]) .course-card,
+body.profile-ready:not([data-page="teacher"]) .grade-entry-card,
+body.profile-ready:not([data-page="teacher"]) .subject-course-item,
+body.profile-ready:not([data-page="teacher"]) .course-outline-item,
+body.profile-ready:not([data-page="teacher"]) .chapter-node-card,
+body.profile-ready:not([data-page="teacher"]) .question-option,
+body.profile-ready:not([data-page="teacher"]) .dashboard-mistake-item,
+body.profile-ready:not([data-page="teacher"]) .growth-rule-item,
+body.profile-ready:not([data-page="teacher"]) .growth-activity-item {
+  border-color: rgba(11, 27, 51, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+}
+
+body.profile-ready:not([data-page="teacher"]) .course-card:hover,
+body.profile-ready:not([data-page="teacher"]) .grade-entry-card:hover,
+body.profile-ready:not([data-page="teacher"]) .subject-course-link:hover,
+body.profile-ready:not([data-page="teacher"]) .course-outline-item:hover,
+body.profile-ready:not([data-page="teacher"]) .chapter-node-card:hover,
+body.profile-ready:not([data-page="teacher"]) .question-option:hover {
+  transform: translateY(-3px);
+  border-color: rgba(21, 94, 239, 0.20);
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.11);
+}
+
+body.profile-ready:not([data-page="teacher"]) .dashboard-course-card {
+  min-height: 158px;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(18, 182, 234, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 248, 252, 0.82));
+  border-color: rgba(21, 94, 239, 0.10);
+}
+
+body.profile-ready:not([data-page="teacher"]) .course-icon,
+body.profile-ready:not([data-page="teacher"]) .dashboard-course-icon,
+body.profile-ready:not([data-page="teacher"]) .subject-mark,
+body.profile-ready:not([data-page="teacher"]) .stage-index,
+body.profile-ready:not([data-page="teacher"]) .course-outline-order,
+body.profile-ready:not([data-page="teacher"]) .chapter-node-order {
+  color: #07111f;
+  background: linear-gradient(135deg, #e0f2fe, #f9d992);
+  box-shadow: 0 12px 26px rgba(18, 182, 234, 0.14);
+}
+
+body.profile-ready:not([data-page="teacher"]) .subject-column {
+  padding: 22px;
+  border-radius: 28px;
+}
+
+body.profile-ready:not([data-page="teacher"]) .subject-course-item.is-unlocked {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(248, 250, 252, 0.82));
+}
+
+body.profile-ready:not([data-page="teacher"]) .subject-course-item.is-locked {
+  background: rgba(241, 245, 249, 0.66);
+}
+
+body.profile-ready:not([data-page="teacher"]) .subjects-hero-stat {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+body.profile-ready:not([data-page="teacher"]) .timeline {
+  border-left-color: rgba(21, 94, 239, 0.16);
+}
+
+body.profile-ready:not([data-page="teacher"]) .timeline-dot {
+  border-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.10);
+}
+
+body.profile-ready:not([data-page="teacher"]) .timeline-dot.is-urgent {
+  background: linear-gradient(135deg, #d9aa5f, #f59e0b);
+}
+
+body.profile-ready:not([data-page="teacher"]) .timeline-dot.is-normal {
+  background: linear-gradient(135deg, #155eef, #12b6ea);
+}
+
+body.profile-ready:not([data-page="teacher"]) .dashboard-mistake-item + .dashboard-mistake-item {
+  border-top-color: rgba(11, 27, 51, 0.08);
+}
+
+body.profile-ready:not([data-page="teacher"]) .growth-stat-card,
+body.profile-ready:not([data-page="teacher"]) .growth-rule-item,
+body.profile-ready:not([data-page="teacher"]) .growth-activity-item {
+  border-radius: 22px;
+}
+
+body.profile-ready:not([data-page="teacher"]) .growth-activity-dot {
+  background: linear-gradient(135deg, #155eef, #12b6ea);
+  box-shadow: 0 0 0 6px rgba(18, 182, 234, 0.12);
+}
+
+body.profile-ready:not([data-page="teacher"]) .course-sticky-header {
+  background: rgba(243, 246, 251, 0.86);
+  border-bottom: 1px solid rgba(11, 27, 51, 0.06);
+}
+
+body.profile-ready:not([data-page="teacher"]) .workspace-mini-header,
+body.profile-ready:not([data-page="teacher"]) .chapter-tree-panel,
+body.profile-ready:not([data-page="teacher"]) .lecture-pane,
+body.profile-ready:not([data-page="teacher"]) .study-coach-panel,
+body.profile-ready:not([data-page="teacher"]) .question-bank-workspace {
+  border-color: rgba(255, 255, 255, 0.68);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(247, 250, 255, 0.78));
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+body.profile-ready:not([data-page="teacher"]) .workspace-badge {
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(11, 27, 51, 0.08);
+}
+
+body.profile-ready:not([data-page="teacher"]) .lecture-document h2,
+body.profile-ready:not([data-page="teacher"]) .workspace-title-copy h1 {
+  color: var(--primary);
+  letter-spacing: -0.03em;
+}
+
+body.profile-ready:not([data-page="teacher"]) .learning-flow-strip strong {
+  background: linear-gradient(135deg, #155eef, #12b6ea);
+}
+
+body.profile-ready:not([data-page="teacher"]) .learning-brief-card,
+body.profile-ready:not([data-page="teacher"]) .kuangk-textbook-panel {
+  border-color: rgba(11, 27, 51, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+}
+
+body.profile-ready:not([data-page="teacher"]) .question-option.is-selected,
+body.profile-ready:not([data-page="teacher"]) .course-outline-item.is-active,
+body.profile-ready:not([data-page="teacher"]) .chapter-node-card.is-active {
+  border-color: rgba(21, 94, 239, 0.34);
+  background: rgba(21, 94, 239, 0.08);
+  box-shadow: 0 18px 38px rgba(21, 94, 239, 0.12);
+}
+
+body.profile-ready:not([data-page="teacher"]) .question-option-mark {
+  color: #155eef;
+  background: rgba(21, 94, 239, 0.09);
+}
+
+body.profile-ready:not([data-page="teacher"]) .form-input,
+body.profile-ready:not([data-page="teacher"]) .field input {
+  border-color: rgba(11, 27, 51, 0.10);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 1024px) {
+  body.profile-ready:not([data-page="teacher"]) .page-scroll {
+    padding: 24px 20px 36px;
+  }
+
+  body.profile-ready:not([data-page="teacher"]) .sidebar {
+    background: rgba(7, 17, 31, 0.98);
+  }
+}
+
+@media (max-width: 720px) {
+  body.profile-ready:not([data-page="teacher"]) .hero-card,
+  body.profile-ready:not([data-page="teacher"]) .subjects-hero-card,
+  body.profile-ready:not([data-page="teacher"]) .growth-ai-hero {
+    border-radius: 24px;
+  }
+
+  body.profile-ready:not([data-page="teacher"]) .card,
+  body.profile-ready:not([data-page="teacher"]) .subject-column,
+  body.profile-ready:not([data-page="teacher"]) .course-card {
+    border-radius: 20px;
+  }
+}
+
 @media (max-width: 1180px) {
   .learning-desk-sandbox {
     grid-template-columns: 260px minmax(0, 1fr);
