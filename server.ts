@@ -180,6 +180,12 @@ async function hashPassword(password: string) {
   ).join("");
 }
 
+function generateTemporaryPassword() {
+  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
+  const bytes = crypto.getRandomValues(new Uint8Array(12));
+  return [...bytes].map((byte) => alphabet[byte % alphabet.length]).join("");
+}
+
 function normalizePathname(pathname: string) {
   if (pathname === "/") return "/dashboard.html";
   if (!pathname.includes(".") && !pathname.startsWith("/api/")) {
@@ -950,6 +956,31 @@ async function api(request: Request, user: User | null, pathname: string) {
       return json({ ok: false, message: "学生创建失败。" }, { status: 500 });
     }
     return json({ ok: true, data: userPayload(created) });
+  }
+  const passwordResetMatch = pathname.match(
+    /^\/api\/admin\/students\/(\d+)\/reset-password$/,
+  );
+  if (
+    passwordResetMatch && request.method === "POST" && isTeacher(user)
+  ) {
+    const studentId = Number(passwordResetMatch[1]);
+    const existing = await loadUserById(studentId);
+    if (!existing || isTeacher(existing)) {
+      return json({ ok: false, message: "未找到学生。" }, { status: 404 });
+    }
+    const temporaryPassword = generateTemporaryPassword();
+    await dbExec(
+      "UPDATE ai_users SET password_hash = ?, updated_at = NOW() WHERE id = ?",
+      [await hashPassword(temporaryPassword), studentId],
+    );
+    await dbExec("DELETE FROM ai_sessions WHERE user_id = ?", [studentId]);
+    return json({
+      ok: true,
+      data: {
+        temporary_password: temporaryPassword,
+        message: "密码已重置。临时密码仅在本次操作中显示。",
+      },
+    });
   }
   const studentMatch = pathname.match(/^\/api\/admin\/students\/(\d+)$/);
   if (studentMatch && isTeacher(user)) {

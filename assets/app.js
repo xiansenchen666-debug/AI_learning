@@ -3067,6 +3067,10 @@ async function initTeacherEnrollmentPanel(user) {
                     </button>
                   </div>
                   <span class="form-help">旧密码已加密保存，不能反查；输入新密码后可点眼睛查看。</span>
+                  <div class="student-password-reset-actions">
+                    <button class="ghost-btn" type="button" data-reset-student-password>生成并重置临时密码</button>
+                    <code class="temporary-password is-hidden" data-temporary-password aria-live="polite"></code>
+                  </div>
                 </div>
                 <label class="form-group form-group-compact">
                   <span class="form-label">姓名</span>
@@ -3213,6 +3217,45 @@ async function initTeacherEnrollmentPanel(user) {
         if (button) {
           button.disabled = false;
         }
+      }
+    });
+  });
+
+  root.querySelectorAll("[data-reset-student-password]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const card = button.closest("[data-admin-student-id]");
+      const studentId = Number(card?.dataset.adminStudentId);
+      const studentName = card?.querySelector(".subject-title")?.textContent?.trim() || "该学生";
+      const output = card?.querySelector("[data-temporary-password]");
+      const status = card?.querySelector("[data-save-status]");
+      if (!card || !studentId || !output) {
+        return;
+      }
+      if (!window.confirm(`确定重置 ${studentName} 的密码吗？重置后旧密码立即失效。`)) {
+        return;
+      }
+      button.disabled = true;
+      output.classList.add("is-hidden");
+      output.textContent = "";
+      if (status) {
+        status.textContent = "正在重置密码...";
+      }
+      try {
+        const result = await apiFetch(`/api/admin/students/${studentId}/reset-password`, {
+          method: "POST",
+        });
+        const temporaryPassword = String(result.data?.temporary_password || "");
+        output.textContent = `临时密码：${temporaryPassword}`;
+        output.classList.remove("is-hidden");
+        if (status) {
+          status.textContent = "密码已重置，请立即记录临时密码；刷新页面后不再显示。";
+        }
+      } catch (error) {
+        if (status) {
+          status.textContent = error.message;
+        }
+      } finally {
+        button.disabled = false;
       }
     });
   });
