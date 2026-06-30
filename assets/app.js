@@ -2369,8 +2369,12 @@ function pickLessonIndex(lessons, lessonId) {
 }
 
 async function initCoursePage() {
+  setPageLoading(true, "正在加载知识点，请稍候");
   const user = await requireSession();
-  if (!user) return;
+  if (!user) {
+    setPageLoading(false);
+    return;
+  }
   setUserProfile(user);
   wireLogoutButton();
 
@@ -2384,6 +2388,7 @@ async function initCoursePage() {
       root.innerHTML = '<div class="course-empty-state">未找到要学习的课程。</div>';
       root.classList.remove("is-hidden");
     }
+    setPageLoading(false);
     return;
   }
 
@@ -2396,18 +2401,23 @@ async function initCoursePage() {
       root.innerHTML = `<div class="course-empty-state">${escapeHtml(error.message)}</div>`;
       root.classList.remove("is-hidden");
     }
+    setPageLoading(false);
     return;
   }
   const data = result.data;
   prefetchCourseQuestionBanks(data.lessons);
   hydrateSubjectNavLinks();
-  if (!root) return;
+  if (!root) {
+    setPageLoading(false);
+    return;
+  }
 
   let activeIndex = pickLessonIndex(data.lessons, lessonParam);
   let lesson = data.lessons[activeIndex];
   if (!lesson) {
     root.innerHTML = '<div class="course-empty-state">当前课程还没有可学习的知识节点。</div>';
     root.classList.remove("is-hidden");
+    setPageLoading(false);
     return;
   }
 
@@ -2717,6 +2727,7 @@ async function initCoursePage() {
   renderCourseLesson();
   root.classList.remove("is-hidden");
   wireNavigationTransitions();
+  setPageLoading(false);
 }
 
 async function initMistakesPage() {
@@ -2775,8 +2786,12 @@ async function initMistakesPage() {
 }
 
 async function initQuestionBankPage() {
+  setPageLoading(true, "正在加载知识点题库，请稍候");
   const user = await requireSession();
-  if (!user) return;
+  if (!user) {
+    setPageLoading(false);
+    return;
+  }
   setUserProfile(user);
   wireLogoutButton();
 
@@ -2792,6 +2807,7 @@ async function initQuestionBankPage() {
       listRoot.innerHTML = '<div class="card"><p class="muted mistakes-empty-text">未找到要练习的知识点。</p></div>';
       root.classList.remove("is-hidden");
     }
+    setPageLoading(false);
     return;
   }
 
@@ -2804,6 +2820,7 @@ async function initQuestionBankPage() {
       listRoot.innerHTML = `<div class="card"><p class="muted mistakes-empty-text">${escapeHtml(error.message)}</p></div>`;
       root.classList.remove("is-hidden");
     }
+    setPageLoading(false);
     return;
   }
 
@@ -2845,6 +2862,7 @@ async function initQuestionBankPage() {
     }
     emptyRoot?.classList.remove("is-hidden");
     root.classList.remove("is-hidden");
+    setPageLoading(false);
     return;
   }
 
@@ -2863,6 +2881,7 @@ async function initQuestionBankPage() {
   }
   root.classList.remove("is-hidden");
   wireQuestionSubmitButtons(root);
+  setPageLoading(false);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
