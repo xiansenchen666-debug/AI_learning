@@ -3232,6 +3232,12 @@ a.full-width-button {
 
 .admin-student-card {
   margin-bottom: 18px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.admin-student-card.is-open {
+  border-color: rgba(37, 99, 235, 0.28);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
 }
 
 .admin-student-toggle {
@@ -3243,9 +3249,59 @@ a.full-width-button {
   border: 0;
 }
 
+.admin-student-toggle:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 8px;
+  border-radius: 22px;
+}
+
+.admin-student-toggle .subject-directory-copy {
+  flex: 1 1 auto;
+}
+
 .admin-student-title,
 .admin-student-summary {
   display: block;
+}
+
+.admin-student-toggle-chip {
+  min-width: 118px;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.24);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-student-toggle:hover .admin-student-toggle-chip {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.30);
+}
+
+.admin-student-card.is-open .admin-student-toggle-chip {
+  background: linear-gradient(135deg, #0f172a, #334155);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.20);
+}
+
+.admin-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 0.18s ease;
+}
+
+.admin-student-card.is-open .admin-toggle-icon {
+  transform: rotate(180deg);
 }
 
 .admin-student-body {

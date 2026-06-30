@@ -3026,10 +3026,20 @@ async function initTeacherEnrollmentPanel(user) {
     const selected = new Set(courseIds || []);
     return subjectGroups.filter((group) => group.courseIds.every((courseId) => selected.has(courseId))).length;
   };
+  const sortedStudents = [...students].sort((a, b) => {
+    const aId = Number(a.id) || 0;
+    const bId = Number(b.id) || 0;
+    if (aId !== bId) {
+      return bId - aId;
+    }
+    const aName = a.full_name || a.username || "";
+    const bName = b.full_name || b.username || "";
+    return String(aName).localeCompare(String(bName), "zh-CN", { numeric: true, sensitivity: "base" });
+  });
 
   root.innerHTML = students.length === 0
     ? ""
-    : students.map((student) => {
+    : sortedStudents.map((student) => {
         const selected = new Set(student.course_ids || []);
         const subjectOptions = subjectGroups.map((group) => {
           const selectedCount = group.courseIds.filter((courseId) => selected.has(courseId)).length;
@@ -3054,13 +3064,16 @@ async function initTeacherEnrollmentPanel(user) {
         const studentName = student.full_name || student.username || "";
         return `
           <article class="subject-column subject-directory-card admin-student-card" data-admin-student-id="${student.id}">
-            <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student>
+            <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student aria-expanded="false">
               <span class="subject-mark">${escapeHtml(studentName.slice(0, 1))}</span>
               <span class="subject-directory-copy">
                 <span class="subject-title admin-student-title">${escapeHtml(studentName)}（${escapeHtml(student.username || "")}）</span>
                 <span class="subject-course-meta admin-student-summary" data-student-enrollment-summary>${escapeHtml(student.stage || "")} · ${escapeHtml(student.grade || "")} · 已开通 ${selectedSubjectCount(student.course_ids)} 个科目</span>
               </span>
-              <span class="subject-enter-chip" data-student-toggle-chip>展开</span>
+              <span class="subject-enter-chip admin-student-toggle-chip" data-student-toggle-chip>
+                <span class="admin-toggle-icon" aria-hidden="true">⌄</span>
+                <span data-student-toggle-text>展开管理</span>
+              </span>
             </button>
             <div class="admin-student-body is-hidden" data-admin-student-body>
               <section class="admin-student-section admin-profile-section">
@@ -3265,13 +3278,16 @@ async function initTeacherEnrollmentPanel(user) {
       const card = button.closest("[data-admin-student-id]");
       const body = card?.querySelector("[data-admin-student-body]");
       const chip = card?.querySelector("[data-student-toggle-chip]");
+      const text = chip?.querySelector("[data-student-toggle-text]");
       if (!body) {
         return;
       }
       const shouldOpen = body.classList.contains("is-hidden");
       body.classList.toggle("is-hidden", !shouldOpen);
-      if (chip) {
-        chip.textContent = shouldOpen ? "收起" : "展开";
+      card?.classList.toggle("is-open", shouldOpen);
+      button.setAttribute("aria-expanded", String(shouldOpen));
+      if (text) {
+        text.textContent = shouldOpen ? "收起管理" : "展开管理";
       }
     });
   });
