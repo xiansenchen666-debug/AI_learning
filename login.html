@@ -63,13 +63,17 @@
 
         
         <form action="/api/login" method="POST" id="login-form">
+          <div id="login-error" class="feedback-box" role="alert"></div>
           <script>
             const params = new URLSearchParams(window.location.search);
+            const loginError = document.getElementById('login-error');
             if (params.get('error') === '1') {
-              document.write('<div class="slide-up-1 login-error-message">账号或密码不匹配，请联系老师。</div>');
+              loginError.textContent = '账号或密码不匹配，请联系老师。';
+              loginError.className = 'feedback-box is-error';
             }
             if (params.get('expired') === '1') {
-              document.write('<div class="slide-up-1 login-error-message">账号使用期限已结束，请联系老师续期。</div>');
+              loginError.textContent = '账号使用期限已结束，请联系老师续期。';
+              loginError.className = 'feedback-box is-error';
             }
           </script>
 
