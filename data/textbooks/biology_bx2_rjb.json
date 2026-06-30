@@ -1,0 +1,2675 @@
+{
+  "id": "biology_bx2_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "生物",
+  "title": "生物必修二",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/biology.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "biology_bx2_rjb_cpt1",
+      "name": "融合遗传",
+      "definition": "认为两个亲本杂交后，双亲的遗传物质会在子代体内发生混合，使子代表现出介于双亲之间的性状的观点。",
+      "importance": "了解",
+      "examples": [
+        "把一瓶蓝墨水和一瓶红墨水倒在一起，混合液是另外一种颜色，再也无法分出蓝色和红色"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt2",
+      "name": "性状（trait）",
+      "definition": "生物个体可观察、可区分并能稳定遗传给后代的特征表现。",
+      "importance": "了解",
+      "examples": [
+        "豌豆茎的高度（高茎/矮茎）",
+        "种子形状（圆粒/皱粒）",
+        "子叶颜色（黄色/绿色）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt3",
+      "name": "相对性状（relative trait）",
+      "definition": "同一种性状的不同表现类型。",
+      "importance": "掌握",
+      "examples": [
+        "高茎与矮茎",
+        "圆粒与皱粒",
+        "红花与白花"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt4",
+      "name": "自花传粉（自交）",
+      "definition": "在花未开放时花粉落到同一朵花的柱头上从而完成受粉的传粉方式，也叫自交。",
+      "importance": "了解",
+      "aliases": [
+        "自交"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt5",
+      "name": "父本（♂）与母本（♀）",
+      "definition": "不同植株的花进行异花传粉时，供应花粉的植株叫父本（♂），接受花粉的植株叫母本（♀）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt6",
+      "name": "杂交（cross）",
+      "definition": "用不同性状（常为一对或多对相对性状）的亲本进行交配/传粉以产生后代的过程。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt7",
+      "name": "正交与反交",
+      "definition": "互换亲本性别进行的杂交：用A作母本为一种交配方式（正交），用A作父本为另一种（反交）。",
+      "importance": "了解",
+      "examples": [
+        "高茎作母本 vs 高茎作父本"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt8",
+      "name": "子一代（F1）与子二代（F2）",
+      "definition": "杂交后产生的第一代称子一代（F1）；F1自交或互交产生的下一代称子二代（F2）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt9",
+      "name": "显性性状（dominant trait）",
+      "definition": "杂种后代（如F1）中显现出来的性状。",
+      "importance": "掌握",
+      "examples": [
+        "豌豆高茎"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt10",
+      "name": "隐性性状（recessive trait）",
+      "definition": "杂种后代（如F1）中未显现出来的性状。",
+      "importance": "掌握",
+      "examples": [
+        "豌豆矮茎"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt11",
+      "name": "性状分离",
+      "definition": "杂种后代中同时出现显性性状和隐性性状的现象。",
+      "importance": "掌握",
+      "examples": [
+        "豌豆F2中出现高茎与矮茎"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt12",
+      "name": "F2性状分离比（3:1）",
+      "definition": "一对相对性状杂交实验中，F2代显性表型与隐性表型的数量比接近3:1的统计规律。",
+      "importance": "重要",
+      "formula": "F2表型比（显性:隐性）≈ 3:1",
+      "examples": [
+        "高茎:矮茎 = 787:277 ≈ 2.84:1",
+        "圆粒:皱粒 = 5474:1850 ≈ 2.96:1"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt13",
+      "name": "遗传因子（hereditary factor）",
+      "definition": "决定生物性状的、像独立颗粒一样传递的因子；不相互融合，也不会在传递中消失。",
+      "importance": "重要",
+      "aliases": [
+        "（孟德尔）因子"
+      ],
+      "examples": [
+        "决定显性性状的用大写字母表示（如D），决定隐性性状的用小写字母表示（如d）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt14",
+      "name": "遗传因子成对存在（体细胞）",
+      "definition": "在体细胞中，控制同一性状的遗传因子是成对存在的，例如DD或dd。",
+      "importance": "重要",
+      "examples": [
+        "纯种高茎：DD",
+        "纯种矮茎：dd"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt15",
+      "name": "纯合子",
+      "definition": "遗传因子组成相同的个体。",
+      "importance": "掌握",
+      "examples": [
+        "DD、dd"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt16",
+      "name": "杂合子",
+      "definition": "遗传因子组成不同的个体。",
+      "importance": "掌握",
+      "examples": [
+        "Dd（F1高茎豌豆）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt17",
+      "name": "配子形成时遗传因子分离",
+      "definition": "生物体形成生殖细胞（配子）时，成对的遗传因子彼此分离，分别进入不同配子；配子只含每对因子中的一个。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt18",
+      "name": "受精时配子随机结合",
+      "definition": "受精时雌雄配子的结合是随机的，含不同遗传因子的配子以随机方式配对形成合子。",
+      "importance": "重要",
+      "examples": [
+        "含D的配子既可与含D的配子结合，也可与含d的配子结合"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt19",
+      "name": "测交（test cross）",
+      "definition": "让杂种个体（如F1）与隐性纯合子杂交，以检验杂种基因型并验证遗传假说的实验方法。",
+      "importance": "掌握",
+      "formula": "若F1为Dd，则与dd测交后代表型比（显性:隐性）≈ 1:1",
+      "examples": [
+        "F1高茎（Dd）×矮茎（dd）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt20",
+      "name": "测交后代表型比（1:1）",
+      "definition": "杂合子与隐性纯合子测交时，后代显性表型与隐性表型数量比接近1:1的统计结果。",
+      "importance": "重要",
+      "formula": "测交后代表型比（显性:隐性）≈ 1:1",
+      "examples": [
+        "166株后代中87高茎、79矮茎，约1:1"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt21",
+      "name": "分离定律（孟德尔第一定律）",
+      "definition": "在体细胞中控制同一性状的遗传因子成对存在且不相融合；形成配子时成对因子发生分离，分离后的因子分别进入不同配子中，随配子遗传给后代。",
+      "importance": "重要",
+      "formula": "杂合体自交F2表型分离比常接近3:1",
+      "examples": [
+        "圆粒：皱粒≈3:1",
+        "黄色：绿色≈3:1"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt22",
+      "name": "显性性状与隐性性状",
+      "definition": "杂交后代中先表现出来的性状为显性性状，未表现或被掩盖的性状为隐性性状。",
+      "importance": "掌握",
+      "examples": [
+        "黄色、圆粒为显性；绿色、皱粒为隐性"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt23",
+      "name": "F1与F2（杂交后代代次）",
+      "definition": "亲本杂交所得后代称F1；F1自交产生的后代称F2。",
+      "importance": "了解",
+      "examples": [
+        "纯种黄色圆粒×纯种绿色皱粒得到F1（均为黄色圆粒）",
+        "F1自交得到F2（出现4种性状组合）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt24",
+      "name": "遗传因子/基因",
+      "definition": "控制性状遗传的内在因素。孟德尔称“遗传因子”，后被命名为“基因”。",
+      "importance": "掌握",
+      "aliases": [
+        "遗传因子",
+        "基因（gene）"
+      ],
+      "examples": [
+        "R、r控制圆粒/皱粒",
+        "Y、y控制黄色/绿色"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt25",
+      "name": "等位基因",
+      "definition": "位于一对同源染色体相同位置、控制同一性状的两种（或多种）不同形式的基因；在体细胞中成对存在，在配子中只含其中一个。",
+      "importance": "了解",
+      "examples": [
+        "D与d",
+        "R与r",
+        "Y与y"
+      ],
+      "aliases": [
+        "孟德尔假设的一对遗传因子"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt26",
+      "name": "基因型",
+      "definition": "与表型有关的基因组成，如高茎豌豆的基因型可为DD或Dd。",
+      "importance": "掌握",
+      "examples": [
+        "YYRR、yyrr、YyRr",
+        "DD或Dd（高茎），dd（矮茎）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt27",
+      "name": "表型（表现型）",
+      "definition": "生物个体表现出来的性状，如豌豆的高茎和矮茎。",
+      "importance": "掌握",
+      "aliases": [
+        "表现型"
+      ],
+      "examples": [
+        "黄色圆粒",
+        "绿色皱粒",
+        "高茎、矮茎"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt28",
+      "name": "自由组合定律（孟德尔第二定律）",
+      "definition": "控制不同性状的遗传因子的分离和组合互不干扰；形成配子时，同一性状的成对遗传因子彼此分离，不同性状的遗传因子自由组合。",
+      "importance": "掌握",
+      "formula": "两对相对性状杂交F2表型比常接近9:3:3:1",
+      "examples": [
+        "黄色圆粒:黄色皱粒:绿色圆粒:绿色皱粒≈9:3:3:1"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt29",
+      "name": "配子及其随机结合（受精随机性）",
+      "definition": "个体形成配子时产生不同类型配子；受精时雌雄配子结合是随机的，从而形成不同合子基因型。",
+      "importance": "了解",
+      "examples": [
+        "YyRr产生配子YR、Yr、yR、yr（1:1:1:1）",
+        "雌雄配子结合方式有16种"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt30",
+      "name": "测交",
+      "definition": "让待测个体（通常是杂合体或表现显性的个体）与隐性纯合子杂交，以根据子代表型/比例推断其基因型并检验遗传假说。",
+      "importance": "掌握",
+      "examples": [
+        "YyRr×yyrr得到1:1:1:1的四种表型"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt31",
+      "name": "假说—演绎法",
+      "definition": "针对观察到的现象提出假说，并在假说基础上演绎推出可检验的预测，再用实验验证预测从而检验假说的方法。",
+      "importance": "重要",
+      "examples": [
+        "提出“不同对遗传因子自由组合”的假说",
+        "演绎预测测交结果为1:1:1:1并用实验验证"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt32",
+      "name": "减数分裂",
+      "definition": "进行有性生殖的生物在产生成熟生殖细胞时进行的、使染色体数目减半的细胞分裂；减数分裂前染色体复制一次，而在减数分裂过程中细胞连续分裂两次。",
+      "importance": "掌握",
+      "aliases": [
+        "meiosis"
+      ],
+      "formula": "复制1次 + 分裂2次 → 染色体数目减半（成熟生殖细胞）"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt33",
+      "name": "减数分裂I（减数第一次分裂）",
+      "definition": "减数分裂的第一次分裂阶段，主要特征包括同源染色体配对（联会）、四分体形成及可发生互换、同源染色体分离分别移向细胞两极；染色体数目减半发生在该阶段。",
+      "importance": "掌握",
+      "aliases": [
+        "减数第一次分裂"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt34",
+      "name": "减数分裂II（减数第二次分裂）",
+      "definition": "减数分裂的第二次分裂阶段，通常与减数分裂I之间无间期或间期很短且染色体不再复制；着丝粒分裂，姐妹染色单体分开成为染色体并分别移向两极，形成子细胞。",
+      "importance": "掌握",
+      "aliases": [
+        "减数第二次分裂"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt35",
+      "name": "同源染色体",
+      "definition": "在二倍体体细胞中成对存在、形态结构相似并分别来自父方和母方的一对染色体；减数分裂时可发生分离。",
+      "importance": "掌握",
+      "examples": [
+        "每对染色体中的一条来自父方，另一条来自母方"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt36",
+      "name": "联会",
+      "definition": "减数分裂过程中同源染色体两两配对的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt37",
+      "name": "四分体",
+      "definition": "联会后每对同源染色体因各含两条姐妹染色单体而共含四条染色单体的结构。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt38",
+      "name": "染色体互换",
+      "definition": "四分体中的非姐妹染色单体之间发生缠绕并交换相应片段的现象。",
+      "importance": "重要",
+      "aliases": [
+        "互换"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt39",
+      "name": "姐妹染色单体",
+      "definition": "染色体复制后形成的两条完全相同的染色单体，由同一个着丝粒连接。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt40",
+      "name": "着丝粒",
+      "definition": "连接两条姐妹染色单体的结构；在减数分裂II中发生分裂，使姐妹染色单体分开。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt41",
+      "name": "精子的形成（精子发生）",
+      "definition": "哺乳动物在睾丸内由精原细胞经减数分裂形成精细胞，再经变形形成成熟精子的过程；一个初级精母细胞经减数分裂形成四个精细胞，最终形成精子。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt42",
+      "name": "卵细胞的形成（卵子发生）",
+      "definition": "哺乳动物在卵巢内由卵原细胞经减数分裂形成卵细胞的过程；特点是减数分裂I和II均为不均等分裂，最终一个初级卵母细胞形成一个卵细胞和三个极体（极体后退化）。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt43",
+      "name": "极体",
+      "definition": "卵细胞形成过程中不均等分裂产生的小细胞；一个初级卵母细胞减数分裂后可形成三个极体，通常退化消失。",
+      "importance": "了解",
+      "aliases": [
+        "极体细胞"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt44",
+      "name": "基因位于染色体上",
+      "definition": "基因（遗传因子）由染色体携带，并随染色体在减数分裂与受精过程中的行为从亲代传递给子代，因此基因就在染色体上。",
+      "importance": "重要",
+      "aliases": [
+        "基因在染色体上",
+        "基因在染色体上的学说"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt45",
+      "name": "基因与染色体的平行关系",
+      "definition": "在遗传过程中，基因的成对存在、分离、来自父母双方及（非等位基因的）自由组合等行为，与染色体（同源/非同源染色体）在减数分裂和受精过程中的行为相对应。",
+      "importance": "掌握",
+      "examples": [
+        "基因保持完整性与染色体形态结构相对稳定相对应",
+        "等位基因分离与同源染色体分离相对应",
+        "非等位基因自由组合与非同源染色体自由组合相对应"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt46",
+      "name": "非等位基因",
+      "definition": "位于非同源染色体上、控制不同性状的基因；在配子形成时可自由组合。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt47",
+      "name": "非同源染色体",
+      "definition": "不成对、形态结构不同的一组染色体；在减数分裂过程中其组合可彼此独立，体现自由组合。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt48",
+      "name": "常染色体",
+      "definition": "除性染色体以外的染色体。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt49",
+      "name": "X染色体",
+      "definition": "性染色体的一种；在果蝇中雌性有两条X染色体，雄性有一条X染色体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt50",
+      "name": "Y染色体",
+      "definition": "性染色体的一种；在果蝇中雄性具有Y染色体，雌性无Y染色体。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt51",
+      "name": "伴性遗传（X连锁遗传）",
+      "definition": "当控制性状的基因位于性染色体（常见为X染色体）上时，该性状的遗传表现与性别相关联的遗传方式。",
+      "importance": "掌握",
+      "examples": [
+        "果蝇白眼性状的表现总是与性别相关联"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt52",
+      "name": "基因在染色体上呈线性排列",
+      "definition": "一条染色体上含有许多个基因，基因沿染色体按一定的相对顺序排列，且可用方法测定其在染色体上的相对位置并绘制基因图谱。",
+      "importance": "了解",
+      "examples": [
+        "绘出第一幅果蝇各种基因在染色体上的相对位置图"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt53",
+      "name": "分离定律的现代解释",
+      "definition": "在杂合子细胞中，位于一对同源染色体上的等位基因具有相对独立性；减数分裂形成配子时，等位基因随同源染色体分开而分离，分别进入不同配子并随配子遗传给后代。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt54",
+      "name": "自由组合定律的现代解释",
+      "definition": "位于非同源染色体上的非等位基因的分离与组合互不干扰；减数分裂过程中，等位基因分离的同时，非同源染色体上的非等位基因发生自由组合。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt55",
+      "name": "伴性遗传",
+      "definition": "决定某些性状/疾病的基因位于性染色体上，使其遗传表现总是与性别相关联的遗传现象。",
+      "importance": "掌握",
+      "aliases": [
+        "sex-linked inheritance"
+      ],
+      "examples": [
+        "人类红绿色盲",
+        "抗维生素D佝偻病",
+        "果蝇眼色遗传",
+        "血友病",
+        "芦花鸡横斑条纹"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt56",
+      "name": "性染色体决定性别（人类XX/XY）",
+      "definition": "人类性别由性染色体决定：女性为XX，男性为XY。",
+      "importance": "掌握",
+      "formula": "女性：XX；男性：XY"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt57",
+      "name": "X染色体与Y染色体基因差异",
+      "definition": "X染色体携带基因多；Y染色体较小、携带基因少，因此许多位于X染色体上的基因在Y染色体上没有相应的等位基因。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt58",
+      "name": "伴X隐性遗传（以红绿色盲为例）",
+      "definition": "由位于X染色体上的隐性基因控制的遗传方式，常见特征为男性患者多于女性；男性患者的致病基因只能来自母亲，并只能传给女儿（使女儿成为携带者或患者，取决于母方）。",
+      "importance": "掌握",
+      "examples": [
+        "红绿色盲"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt59",
+      "name": "红绿色盲（X连锁隐性遗传病）",
+      "definition": "一种常见人类遗传病，患者由于色觉障碍，不能像正常人一样区分红色和绿色；其致病基因为X染色体上的隐性基因。",
+      "importance": "重要",
+      "examples": [
+        "患者男性多于女性"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt60",
+      "name": "红绿色盲的基因型与表型（B/b模型）",
+      "definition": "用B表示正常色觉基因、b表示色盲基因时：女性可为XBXB（正常）、XBXb（正常携带者）、XbXb（色盲）；男性可为XBY（正常）、XbY（色盲）。",
+      "importance": "掌握",
+      "formula": "女性：XBXB(正常)，XBXb(携带者)，XbXb(色盲)；男性：XBY(正常)，XbY(色盲)"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt61",
+      "name": "携带者（红绿色盲携带者）",
+      "definition": "在伴X隐性遗传中，表现型正常但携带一个隐性致病等位基因的个体（如女性XBXb）。",
+      "importance": "掌握",
+      "examples": [
+        "女性XBXb表型正常但可将b传给子代"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt62",
+      "name": "伴X显性遗传（以抗维生素D佝偻病为例）",
+      "definition": "由位于X染色体上的显性基因控制的遗传方式，常见特征为女性患者多于男性；部分女性患者症状较轻；男性患者与正常女性婚配，女儿均为患者、儿子均正常。",
+      "importance": "掌握",
+      "examples": [
+        "抗维生素D佝偻病"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt63",
+      "name": "抗维生素D佝偻病（X连锁显性遗传病）",
+      "definition": "一种伴X染色体显性遗传病，常见症状为O型腿、骨骼发育畸形、生长发育缓慢等；由X染色体上的显性基因D控制。",
+      "importance": "重要",
+      "formula": "女性患者：XDXD或XDXd（后者较轻）；男性患者：XDY"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt64",
+      "name": "鸡的性别决定方式（ZW/ZZ）",
+      "definition": "鸡中雌性为异型性染色体ZW，雄性为同型性染色体ZZ，与人类（XX/XY）不同。",
+      "importance": "了解",
+      "formula": "雌：ZW；雄：ZZ"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt65",
+      "name": "芦花鸡横斑条纹的伴Z遗传（B/b）",
+      "definition": "芦花鸡羽毛黑白相间横斑条纹由位于Z染色体上的显性基因B决定；当等位基因b纯合时表现为非芦花无横斑。利用Z连锁遗传可在雏鸡早期据羽毛特征区分雌雄。",
+      "importance": "了解",
+      "formula": "芦花：Z^B_；非芦花：Z^bZ^b（雄）或Z^bW（雌）",
+      "examples": [
+        "芦花雌鸡(Z^BW)×非芦花雄鸡(Z^bZ^b)→F1：雄Z^BZ^b（芦花），雌Z^bW（非芦花）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt66",
+      "name": "伴性遗传的应用（优生与育种）",
+      "definition": "依据伴性遗传规律推算后代患病概率以指导优生；在生产中用于育种与性别鉴别（如芦花鸡雏鸡雌雄鉴别以多养母鸡）。",
+      "importance": "重要",
+      "examples": [
+        "推算抗维生素D佝偻病后代患病情况并给出生育建议",
+        "利用芦花鸡羽毛特征在早期区分雌雄"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt67",
+      "name": "遗传物质",
+      "definition": "能够储存、复制并传递遗传信息，从而决定生物（或病毒）性状并使性状在后代稳定出现的物质基础。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt68",
+      "name": "DNA是主要的遗传物质",
+      "definition": "绝大多数生物的遗传物质是DNA，因此DNA在生物界中是主要的遗传物质；但在某些病毒中遗传物质也可能是RNA。",
+      "importance": "掌握",
+      "aliases": [
+        "DNA是遗传物质（主要）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt69",
+      "name": "蛋白质是遗传物质（早期推测）",
+      "definition": "早期由于蛋白质由多种氨基酸按不同顺序排列，结构多样且可能蕴含信息，曾被多数科学家推测为遗传物质。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt70",
+      "name": "DNA（脱氧核糖核酸）",
+      "definition": "由脱氧核糖和磷酸交替连接形成基本骨架，内部含A、T、G、C四种碱基；能够储存遗传信息，在一个DNA分子上分布着许多个基因。",
+      "importance": "掌握",
+      "examples": [
+        "大肠杆菌拟核中有1个DNA分子，长度约4.7×10^6个碱基对",
+        "人类24条染色体上每条染色体有1个DNA分子，24个DNA分子共约31.6亿个碱基对"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt71",
+      "name": "脱氧核苷酸",
+      "definition": "DNA的基本组成单位，其化学组成包括磷酸、碱基和脱氧核糖。",
+      "importance": "掌握",
+      "examples": [
+        "组成DNA的脱氧核苷酸有4种，每一种有一个特定的碱基"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt72",
+      "name": "转化因子",
+      "definition": "能促使R型肺炎链球菌转化为S型肺炎链球菌并引起稳定遗传变化的活性物质，实验表明其很可能为DNA。",
+      "importance": "重要",
+      "aliases": [
+        "transforming principle"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt73",
+      "name": "肺炎链球菌S型（有荚膜）",
+      "definition": "菌体有多糖类荚膜，菌落表面光滑（S型），具有致病性，可使小鼠患病死亡。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt74",
+      "name": "肺炎链球菌R型（无荚膜）",
+      "definition": "菌体无多糖类荚膜，菌落表面粗糙（R型），无致病性。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt75",
+      "name": "噬菌体侵染细菌时DNA进入细胞、蛋白质外壳留在细胞外",
+      "definition": "在T2噬菌体侵染大肠杆菌过程中，进入细胞并遗传给子代的是DNA，蛋白质外壳不进入细胞。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt76",
+      "name": "RNA也可作为遗传物质（某些病毒）",
+      "definition": "后来的研究证明，遗传物质除DNA外还有RNA；某些病毒不含DNA，只含RNA和蛋白质，其遗传物质为RNA。",
+      "importance": "掌握",
+      "examples": [
+        "烟草花叶病毒：提取的RNA能使烟草感染病毒，而提取的蛋白质不能"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt77",
+      "name": "放射性同位素标记技术",
+      "definition": "利用放射性同位素对特定分子进行标记以追踪其去向的技术方法；如用35S标记蛋白质、32P标记DNA以区分其在侵染过程中的分布。",
+      "importance": "重要",
+      "examples": [
+        "35S主要存在于蛋白质分子中",
+        "32P主要存在于DNA分子中"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt78",
+      "name": "生物信息学",
+      "definition": "涉及生物学、数学及计算机科学的交叉学科；从数据分析角度主要指对核酸与蛋白质序列数据的计算机处理和分析，用于揭示序列信息及其功能与进化等问题。",
+      "importance": "了解",
+      "examples": [
+        "基因组序列测定、比较与分析用于研究现代人起源与迁移"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt79",
+      "name": "生物学数据库",
+      "definition": "为管理和应用海量生物序列数据而建立的数据资源库，如GenBank、EMBL及各类物种功能基因组数据库。",
+      "importance": "了解",
+      "examples": [
+        "GenBank",
+        "EMBL数据库",
+        "水稻功能基因组和育种信息数据库"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt80",
+      "name": "DNA双螺旋结构",
+      "definition": "DNA由两条单链按反向平行方式盘旋形成的双螺旋立体结构，具有恒定直径；骨架在外侧、碱基在内侧并成对连接。",
+      "importance": "掌握",
+      "examples": [
+        "沃森和克里克于1953年提出的DNA双螺旋结构模型"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt81",
+      "name": "反向平行（DNA两条链方向相反）",
+      "definition": "DNA双链中两条单链的走向相反：一条从5′端到3′端，另一条从3′端到5′端。",
+      "importance": "掌握",
+      "aliases": [
+        "反向平行方式"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt82",
+      "name": "DNA的基本骨架（脱氧核糖-磷酸骨架）",
+      "definition": "DNA中脱氧核糖与磷酸交替连接，排列在DNA双螺旋外侧，构成DNA的基本骨架。",
+      "importance": "掌握",
+      "aliases": [
+        "糖-磷酸骨架",
+        "脱氧核糖一磷酸骨架"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt83",
+      "name": "碱基对",
+      "definition": "DNA两条链上的碱基通过氢键连接形成的成对结构，遵循A-T、G-C的配对关系。",
+      "importance": "掌握",
+      "examples": [
+        "A—T碱基对",
+        "G—C碱基对"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt84",
+      "name": "氢键（连接DNA两条链的碱基间作用力）",
+      "definition": "DNA两条链上的碱基之间通过氢键相连，从而形成碱基对并维系双链结构。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt85",
+      "name": "碱基互补配对原则",
+      "definition": "DNA两条链之间碱基一一对应的配对规律：腺嘌呤A一定与胸腺嘧啶T配对，鸟嘌呤G一定与胞嘧啶C配对。",
+      "importance": "掌握",
+      "aliases": [
+        "互补配对原则",
+        "碱基特异性配对方式"
+      ],
+      "formula": "A=T，G=C；(A+G)/(T+C)=1（双链DNA中）"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt86",
+      "name": "查哥夫法则（碱基数量关系）",
+      "definition": "在DNA中，腺嘌呤A的量总等于胸腺嘧啶T的量；鸟嘌呤G的量总等于胞嘧啶C的量。",
+      "importance": "重要",
+      "aliases": [
+        "Chargaff规则"
+      ],
+      "formula": "A=T，G=C"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt87",
+      "name": "5′端与3′端",
+      "definition": "DNA单链具有两个末端：带游离磷酸基团的一端为5′端；带羟基（—OH）的一端为3′端。",
+      "importance": "掌握",
+      "examples": [
+        "一条单链从5′端到3′端延伸"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt88",
+      "name": "DNA复制",
+      "definition": "以亲代DNA为模板合成子代DNA的过程；复制结束后形成两个完全相同的DNA分子，并通过细胞分裂分配到子细胞中实现遗传信息传递。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt89",
+      "name": "半保留复制",
+      "definition": "DNA复制时两条母链分别作为模板，新合成的每个DNA分子中都保留原来DNA分子中的一条链。",
+      "importance": "掌握",
+      "aliases": [
+        "半保留复制方式"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt90",
+      "name": "全保留复制",
+      "definition": "DNA复制以DNA双链为模板，复制后子代DNA的双链都是新合成的（亲代双链整体被保留）。",
+      "importance": "了解",
+      "aliases": [
+        "全保留复制方式"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt91",
+      "name": "同位素标记技术",
+      "definition": "利用同位素（如15N与14N）标记生物分子，使其在性质（如密度）上可区分，从而追踪亲代与子代分子去向与组成的实验技术。",
+      "importance": "重要",
+      "examples": [
+        "用15NH4Cl培养使大肠杆菌DNA被15N标记，再转入14NH4Cl培养液追踪DNA复制"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt92",
+      "name": "密度梯度离心（离心分离DNA）",
+      "definition": "利用含不同同位素（如15N/14N）导致的密度差异，通过离心使DNA在试管中形成不同位置的条带，从而实现分离与鉴别。",
+      "importance": "重要",
+      "examples": [
+        "15N/15N-DNA条带靠近试管底部；15N/14N-DNA居中；14N/14N-DNA更靠上"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt93",
+      "name": "解旋",
+      "definition": "DNA复制开始时，互补碱基间氢键断裂，DNA双螺旋两条链被解开形成单链模板的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt94",
+      "name": "复制的基本条件（模板、原料、能量和酶）",
+      "definition": "DNA复制需要以母链为模板，以4种游离脱氧核苷酸为原料，在能量供给下由相关酶（如解旋酶、DNA聚合酶等）催化完成。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt95",
+      "name": "遗传信息的稳定传递（连续性）",
+      "definition": "DNA通过复制将遗传信息从亲代细胞传递给子代细胞，使遗传信息在细胞世代间保持连续与稳定。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt96",
+      "name": "RNA（核糖核酸）作为遗传物质（部分病毒）",
+      "definition": "有些病毒的遗传物质是RNA，这类病毒的基因是有遗传效应的RNA片段。",
+      "importance": "了解",
+      "examples": [
+        "人类免疫缺陷病毒（艾滋病病毒）",
+        "流感病毒"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt97",
+      "name": "脱氧核苷酸序列（碱基排列顺序）",
+      "definition": "由A、T、G、C四种碱基按一定顺序排列形成的序列，其变化承载并区分遗传信息；骨架从头至尾无变化而碱基排列可变。",
+      "importance": "掌握",
+      "aliases": [
+        "碱基排列顺序"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt98",
+      "name": "DNA的多样性",
+      "definition": "碱基排列顺序的千变万化，构成了DNA的多样性。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt99",
+      "name": "DNA的特异性",
+      "definition": "碱基特定的排列顺序，构成了每个DNA分子的特异性。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt100",
+      "name": "生物体多样性和特异性的物质基础",
+      "definition": "DNA的多样性和特异性是生物体多样性和特异性的物质基础。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt101",
+      "name": "外源基因整合到受体细胞DNA",
+      "definition": "外源基因导入受体细胞后，必须整合到受体细胞的DNA上才能发挥作用。",
+      "importance": "掌握",
+      "examples": [
+        "外源生长激素基因导入鲤鱼受精卵培育转基因鲤鱼",
+        "水母绿色荧光蛋白基因转入小鼠使其在紫外线下发光"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt102",
+      "name": "RNA",
+      "definition": "另一类核酸，由核苷酸连接而成，含4种碱基；通常单链且较短，可从细胞核转移到细胞质，能作为DNA信息的中间“信使”。",
+      "importance": "掌握",
+      "examples": [
+        "mRNA",
+        "tRNA",
+        "rRNA"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt103",
+      "name": "信使RNA（mRNA）",
+      "definition": "作为DNA信使的RNA，携带遗传信息从细胞核进入细胞质，并在翻译中作为合成蛋白质的模板。",
+      "importance": "掌握",
+      "aliases": [
+        "messenger RNA",
+        "mRNA"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt104",
+      "name": "转运RNA（tRNA）",
+      "definition": "将特定氨基酸运送到核糖体并通过反密码子与mRNA密码子互补配对的RNA；每种tRNA只能识别并转运一种氨基酸。",
+      "importance": "掌握",
+      "aliases": [
+        "transfer RNA",
+        "tRNA"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt105",
+      "name": "核糖体RNA（rRNA）",
+      "definition": "参与蛋白质合成的RNA类型之一，本身不翻译为蛋白质。",
+      "importance": "了解",
+      "aliases": [
+        "ribosomal RNA",
+        "rRNA"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt106",
+      "name": "转录",
+      "definition": "在细胞核中，以DNA的一条链为模板，在RNA聚合酶作用下合成RNA（如mRNA）的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "transcription"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt107",
+      "name": "RNA聚合酶",
+      "definition": "在转录过程中与DNA结合、促使DNA局部解开，并催化核糖核苷酸依次连接形成RNA分子的酶。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt108",
+      "name": "翻译",
+      "definition": "在细胞质中，以mRNA为模板合成具有一定氨基酸顺序的蛋白质（肽链）的过程；实质是将mRNA的碱基序列转译为蛋白质的氨基酸序列。",
+      "importance": "掌握",
+      "aliases": [
+        "translation"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt109",
+      "name": "密码子",
+      "definition": "mRNA上3个相邻的碱基决定1个氨基酸；每3个这样的碱基称为1个密码子。",
+      "importance": "掌握",
+      "formula": "1个密码子 = mRNA上连续3个碱基；4^3=64种可能"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt110",
+      "name": "反密码子",
+      "definition": "tRNA上的3个相邻碱基，能与mRNA上的密码子互补配对。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt111",
+      "name": "密码子的简并",
+      "definition": "一种氨基酸对应多个密码子的现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt112",
+      "name": "中心法则",
+      "definition": "遗传信息传递的一般规律：信息可从DNA到DNA（复制），从DNA到RNA再到蛋白质（转录与翻译）；补充指出少数生物的信息可从RNA到RNA以及从RNA到DNA。",
+      "importance": "重要",
+      "aliases": [
+        "central dogma"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt113",
+      "name": "基因表达产物（蛋白质）控制性状",
+      "definition": "基因通过其表达产物——蛋白质来控制生物体性状；蛋白质可作为酶控制代谢过程，或作为结构/转运等蛋白直接影响表型。",
+      "importance": "掌握",
+      "examples": [
+        "淀粉分支酶异常→淀粉含量降低→豌豆成熟失水皱缩",
+        "酪氨酸酶缺失→黑色素不能合成→白化",
+        "CFTR蛋白结构改变→氯离子转运异常→囊性纤维化"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt114",
+      "name": "酶（作为基因表达产物）影响代谢并进而影响性状",
+      "definition": "基因可通过控制酶的合成来控制代谢过程，从而影响生物体性状。",
+      "importance": "掌握",
+      "examples": [
+        "淀粉分支酶活性降低导致淀粉含量降低",
+        "酪氨酸酶催化酪氨酸转变为黑色素"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt115",
+      "name": "转运蛋白结构影响功能并影响性状",
+      "definition": "基因突变导致转运蛋白（如CFTR）氨基酸缺失或空间结构改变，从而使转运功能异常并引发生理与性状改变。",
+      "importance": "了解",
+      "examples": [
+        "CFTR蛋白第508位缺少苯丙氨酸→结构变化→氯离子转运异常→黏液增多、肺功能受损"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt116",
+      "name": "基因的选择性表达",
+      "definition": "同一生物体不同细胞基因相同，但只有部分基因在特定细胞中表达并产生相应mRNA/蛋白质；基因表达与否及表达水平可被调控。",
+      "importance": "掌握",
+      "examples": [
+        "输卵管细胞检测到卵清蛋白mRNA而未检测到珠蛋白/胰岛素mRNA",
+        "红细胞检测到珠蛋白mRNA",
+        "胰岛细胞检测到胰岛素mRNA"
+      ],
+      "aliases": [
+        "基因的细胞特异性表达"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt117",
+      "name": "细胞分化的本质",
+      "definition": "细胞分化的本质是基因的选择性表达，不同类型细胞表达不同基因，从而在形态、结构和功能上产生差异。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt118",
+      "name": "基因表达调控",
+      "definition": "植物细胞储存全套基因，但基因是否表达及表达时机可根据需要调整；植物生长、发育、繁殖、休眠等处在基因适时选择性表达的调控之下。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt119",
+      "name": "DNA甲基化",
+      "definition": "在DNA的部分碱基上连接甲基基团的修饰；可抑制相关基因的表达，甲基化程度越高，抑制越明显，从而影响表型。",
+      "importance": "掌握",
+      "examples": [
+        "柳穿鱼Lcyc基因高度甲基化→不开花时不表达→花形态改变",
+        "小鼠A^vy基因上游序列甲基化程度不同→表达水平不同→毛色深浅不同"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt120",
+      "name": "表观遗传",
+      "definition": "基因碱基序列保持不变，但由于如DNA甲基化等修饰导致基因表达与表型发生可遗传变化的现象。",
+      "importance": "掌握",
+      "aliases": [
+        "epigenetic inheritance"
+      ],
+      "examples": [
+        "柳穿鱼Lcyc基因甲基化状态导致的花形态差异可遗传",
+        "A^vy a基因型小鼠因甲基化差异表现不同毛色且可遗传趋势"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt121",
+      "name": "基因与性状关系的复杂性",
+      "definition": "基因与性状常非一一对应：一个性状可受多个基因影响；一个基因可影响多个性状；环境也能影响性状；基因-基因、基因-表达产物、基因-环境相互作用形成复杂网络调控性状。",
+      "importance": "重要",
+      "examples": [
+        "人的身高受多个基因影响且受营养、锻炼等环境因素影响",
+        "水稻Ghd7基因影响开花并影响生长发育与产量",
+        "水毛茛同一植株不同环境叶形不同"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt122",
+      "name": "环境影响性状",
+      "definition": "生物体性状不完全由基因决定，环境因素可显著影响性状表现。",
+      "importance": "掌握",
+      "examples": [
+        "营养和体育锻炼影响人的身高",
+        "水毛茛裸露空气与浸水叶形不同",
+        "果蝇幼虫在较高温度培养出现翅长接近正常的成虫"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt123",
+      "name": "基因突变",
+      "definition": "基因发生改变从而产生新的等位基因；在自然界普遍存在，可使种群基因频率发生变化。",
+      "importance": "掌握",
+      "aliases": [
+        "gene mutation"
+      ],
+      "examples": [
+        "镰状细胞贫血相关基因的碱基改变导致血红蛋白肽链氨基酸替换",
+        "原癌基因或抑癌基因发生突变与癌变相关"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt124",
+      "name": "基因重组",
+      "definition": "有性生殖过程中基因的重新组合，可形成多种基因型，使种群出现多样的可遗传变异类型。",
+      "importance": "掌握",
+      "aliases": [
+        "gene recombination"
+      ],
+      "examples": [
+        "非同源染色体自由组合导致非等位基因自由组合，形成不同配子",
+        "减数分裂四分体时期非姐妹染色单体互换导致同源染色体上基因交换",
+        "有性生殖实现基因重组，使生物变异多样性增强"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt125",
+      "name": "基因突变的遗传性（发生部位影响遗传）",
+      "definition": "基因突变若发生在配子中，将遵循遗传规律传递给后代；若发生在体细胞中，一般不能遗传，但某些植物体细胞突变可通过无性生殖遗传。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt126",
+      "name": "致突变因素（诱变因素）",
+      "definition": "能诱发生物发生基因突变并提高突变频率的因素，分为物理因素、化学因素和生物因素；此外基因突变也可因DNA复制偶尔错误自发产生。",
+      "importance": "掌握",
+      "examples": [
+        "紫外线、X射线等辐射损伤DNA",
+        "亚硝酸盐、碱基类似物改变核酸碱基",
+        "某些病毒遗传物质影响宿主DNA"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt127",
+      "name": "基因突变的特点：普遍性、随机性、不定向性、低频率",
+      "definition": "基因突变在生物界普遍存在；由于DNA碱基组成改变随机且不定向，突变可发生在个体发育任何时期、不同DNA分子及同一DNA不同部位；一个基因可发生不同突变产生多个等位基因；自然状态下突变频率很低（高等生物约10^5~10^8个生殖细胞中才有1个发生突变）。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt128",
+      "name": "基因突变的意义（进化原材料/变异根本来源）",
+      "definition": "基因突变可能有害、有利或中性；基因突变是产生新基因的途径，是生物变异的根本来源，为生物进化提供丰富原材料。",
+      "importance": "掌握",
+      "examples": [
+        "抗病性突变、耐旱性突变、抗药性突变",
+        "中性突变：不导致新的性状出现"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt129",
+      "name": "癌变相关基因：原癌基因",
+      "definition": "原癌基因表达的蛋白质是细胞正常生长和增殖所必需的；一旦突变或过量表达导致蛋白质活性过强，可能引起细胞癌变。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt130",
+      "name": "癌变相关基因：抑癌基因",
+      "definition": "抑癌基因表达的蛋白质能抑制细胞生长和增殖或促进细胞凋亡；一旦突变导致蛋白质活性减弱或失去活性，也可能引起细胞癌变。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt131",
+      "name": "癌细胞的特征",
+      "definition": "癌细胞与正常细胞相比：能够无限增殖；形态结构显著变化；细胞膜糖蛋白等物质减少；细胞间黏着性显著降低，易分散和转移等。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt132",
+      "name": "诱变育种",
+      "definition": "利用物理因素（如紫外线、X射线等）或化学因素（如亚硝酸盐等）处理生物以诱发基因突变、提高突变率，从而创造人类需要的生物新品种。",
+      "importance": "了解",
+      "examples": [
+        "辐射处理大豆，选育出含油量高的大豆品种",
+        "航天育种：太空特殊环境诱导突变后在地面选择优良品种"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt133",
+      "name": "基因组编辑",
+      "definition": "对基因进行定点“修改”，改变目的基因的序列和功能，从而进行基因治疗和物种改良的技术。",
+      "importance": "了解",
+      "aliases": [
+        "genome editing"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt134",
+      "name": "CRISPR/Cas9基因组编辑系统",
+      "definition": "一种基因组编辑技术：短链RNA作为“向导”与目标DNA序列按互补配对结合；Cas9核酸酶在向导RNA引导下切割DNA造成双链断裂，细胞修复系统可在模板DNA存在时引入期望的碱基改变，或通过破坏目的基因使其失功能。",
+      "importance": "了解",
+      "examples": [
+        "用于治疗癌症的探索性应用"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt135",
+      "name": "精准医疗",
+      "definition": "以患者基因组信息等组学信息为基础，通过大数据分析为患者量身设计最佳治疗方案，以实现治疗效果最大化、副作用最小化的医疗模式。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt136",
+      "name": "染色体变异",
+      "definition": "染色体数目或结构的变异，属于可遗传变异来源之一，可引起种群基因频率变化。",
+      "importance": "重要",
+      "aliases": [
+        "chromosomal variation"
+      ],
+      "examples": [
+        "马铃薯、香蕉的栽培品种与野生祖先染色体数目不同",
+        "猫叫综合征由5号染色体部分缺失引起"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt137",
+      "name": "染色体数目的变异",
+      "definition": "染色体数目发生改变的染色体变异类型，包括个别染色体增减或以完整非同源染色体组为单位的成套增减。",
+      "importance": "掌握",
+      "examples": [
+        "香蕉栽培品种33条染色体（3套）",
+        "马铃薯栽培品种48条染色体（4套）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt138",
+      "name": "个别染色体的增加或减少（非整倍性）",
+      "definition": "细胞内个别染色体（不是整套染色体组）发生增加或减少的染色体数目变异类型。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt139",
+      "name": "染色体组（非同源染色体组）",
+      "definition": "一套完整的非同源染色体的集合；每套内包含形态和功能不同的非同源染色体。",
+      "importance": "掌握",
+      "examples": [
+        "野生马铃薯体细胞中每个染色体组包括12条非同源染色体"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt140",
+      "name": "二倍体",
+      "definition": "体细胞中含有两个染色体组（两套非同源染色体）的个体。",
+      "importance": "掌握",
+      "aliases": [
+        "diploid"
+      ],
+      "examples": [
+        "野生马铃薯（2个染色体组）",
+        "多数动物和过半数高等植物是二倍体"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt141",
+      "name": "多倍体",
+      "definition": "体细胞中含有三个或三个以上染色体组的个体统称。",
+      "importance": "掌握",
+      "examples": [
+        "普通小麦、棉、烟草等被子植物中常见多倍体",
+        "三倍体香蕉、四倍体葡萄/番茄"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt142",
+      "name": "三倍体",
+      "definition": "体细胞中含有三个染色体组的个体，常由含2个染色体组的配子与含1个染色体组的配子结合形成。",
+      "importance": "掌握",
+      "examples": [
+        "香蕉栽培品种（3套）",
+        "三倍体无子西瓜"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt143",
+      "name": "四倍体",
+      "definition": "体细胞中含有四个染色体组的个体，可由两个含2个染色体组的配子结合形成，或体细胞有丝分裂中染色体复制未分离造成。",
+      "importance": "掌握",
+      "examples": [
+        "四倍体葡萄",
+        "用秋水仙素或低温诱导获得的四倍体植株"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt144",
+      "name": "单倍体",
+      "definition": "体细胞中的染色体数目与本物种配子染色体数目相同的个体。",
+      "importance": "掌握",
+      "aliases": [
+        "haploid"
+      ],
+      "examples": [
+        "蜜蜂雄蜂体细胞16条染色体（与配子相同）",
+        "玉米等二倍体植物偶尔出现单倍体植株（弱小且高度不育）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt145",
+      "name": "三倍体不育（无子果实形成原因）",
+      "definition": "三倍体原始生殖细胞含三套非同源染色体，减数分裂时联会紊乱，不能形成可育配子，因而果实常无种子。",
+      "importance": "重要",
+      "examples": [
+        "香蕉果实无种子",
+        "三倍体无子西瓜无种子"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt146",
+      "name": "人工诱导多倍体",
+      "definition": "通过人为处理（如低温、秋水仙素等）使细胞染色体数目加倍，从而获得多倍体植株并用于育种。",
+      "importance": "重要",
+      "examples": [
+        "用秋水仙素处理萌发的种子或幼苗诱导多倍体",
+        "培育三倍体无子西瓜、含糖量高的甜菜等新品种"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt147",
+      "name": "秋水仙素诱导染色体加倍的机制",
+      "definition": "秋水仙素作用于正在分裂的细胞时，抑制纺锤体形成，使染色体不能移向两极，从而引起细胞内染色体数目加倍；加倍细胞继续有丝分裂可发育成多倍体植株。",
+      "importance": "掌握",
+      "formula": "抑制纺锤体形成 → 染色体不分离/不移向两极 → 染色体数目加倍"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt148",
+      "name": "低温诱导染色体数目变化的机制",
+      "definition": "低温处理分生组织细胞可抑制纺锤体形成，影响有丝分裂中染色体被拉向两极，导致细胞不能分裂成两个子细胞，从而使染色体数目发生变化（常表现为加倍）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt149",
+      "name": "染色体结构的变异",
+      "definition": "在自然条件或人为因素影响下，染色体结构发生改变，导致基因数目或排列顺序改变，引起性状变异；主要类型包括缺失、重复、易位、倒位。",
+      "importance": "掌握",
+      "examples": [
+        "猫叫综合征（5号染色体部分缺失）",
+        "慢性髓细胞性白血病与9号、22号染色体互换片段有关"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt150",
+      "name": "缺失",
+      "definition": "染色体的某一片段缺失引起的结构变异。",
+      "importance": "掌握",
+      "examples": [
+        "猫叫综合征（人的5号染色体部分缺失）",
+        "果蝇缺刻翅"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt151",
+      "name": "重复",
+      "definition": "染色体中增加某一片段引起的结构变异。",
+      "importance": "掌握",
+      "examples": [
+        "果蝇棒状眼"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt152",
+      "name": "易位",
+      "definition": "染色体的某一片段移接到另一条非同源染色体上引起的结构变异。",
+      "importance": "掌握",
+      "examples": [
+        "果蝇花斑眼",
+        "慢性髓细胞性白血病（9号与22号染色体互换片段）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt153",
+      "name": "倒位",
+      "definition": "染色体的某一片段位置颠倒引起的结构变异。",
+      "importance": "掌握",
+      "examples": [
+        "果蝇卷翅"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt154",
+      "name": "人类遗传病",
+      "definition": "由遗传物质改变而引起的人类疾病。",
+      "importance": "掌握",
+      "examples": [
+        "单基因遗传病",
+        "多基因遗传病",
+        "染色体异常遗传病"
+      ],
+      "aliases": [
+        "遗传病"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt155",
+      "name": "单基因遗传病",
+      "definition": "受一对等位基因控制的遗传病。",
+      "importance": "掌握",
+      "examples": [
+        "多指、并指、软骨发育不全（显性致病基因）",
+        "镰状细胞贫血、白化病、苯丙酮尿症（隐性致病基因）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt156",
+      "name": "多基因遗传病",
+      "definition": "受两对或两对以上等位基因控制的遗传病。",
+      "importance": "掌握",
+      "examples": [
+        "原发性高血压",
+        "冠心病",
+        "哮喘",
+        "青少年型糖尿病",
+        "先天性发育异常"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt157",
+      "name": "染色体异常遗传病",
+      "definition": "由染色体变异引起的遗传病（简称染色体病）。",
+      "importance": "掌握",
+      "examples": [
+        "唐氏综合征（21三体综合征）"
+      ],
+      "aliases": [
+        "染色体病"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt158",
+      "name": "唐氏综合征",
+      "definition": "一种常见的染色体异常遗传病，患者比正常人多了一条21号染色体，智力低于常人，身体发育缓慢，并表现出特殊面容。",
+      "importance": "重要",
+      "aliases": [
+        "21三体综合征"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt159",
+      "name": "遗传咨询",
+      "definition": "通过咨询与指导，对遗传病进行检测与预防的手段之一，用于帮助个体/家庭在婚育、筛查与决策方面做出恰当选择。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt160",
+      "name": "产前诊断",
+      "definition": "在胎儿出生前，医生用专门的检测手段确定胎儿是否患有某种遗传病或先天性疾病。",
+      "importance": "重要",
+      "examples": [
+        "羊水检查",
+        "B超检查",
+        "孕妇血细胞检查",
+        "基因检测"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt161",
+      "name": "基因检测",
+      "definition": "通过检测人体细胞中的DNA序列，以了解人体的基因状况，并可用于诊断病因、预测患病风险及判断致病基因携带情况。",
+      "importance": "重要",
+      "examples": [
+        "血液、唾液、精液、毛发或组织样本用于检测"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt162",
+      "name": "基因治疗",
+      "definition": "用正常基因取代或修补患者细胞中有缺陷的基因，从而达到治疗疾病的目的。",
+      "importance": "了解",
+      "examples": [
+        "向患者白细胞导入能够合成ADA的正常基因以治疗ADA缺乏导致的免疫缺陷"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt163",
+      "name": "生物进化论",
+      "definition": "关于生物如何在漫长地质年代中发生变化并形成多样性的理论体系；达尔文的生物进化论主要由共同由来学说和自然选择学说构成。",
+      "importance": "重要",
+      "examples": [
+        "以化石、比较解剖、胚胎学、细胞与分子证据支持进化观点"
+      ],
+      "aliases": [
+        "进化论"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt164",
+      "name": "共同由来学说（共同祖先学说）",
+      "definition": "地球上所有生物都由原始的共同祖先进化而来；人和猿也有共同祖先。",
+      "importance": "掌握",
+      "aliases": [
+        "共同起源说",
+        "共同祖先学说",
+        "共同由来学说"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt165",
+      "name": "自然选择学说",
+      "definition": "揭示生物进化的机制，解释适应形成和物种形成原因的学说。",
+      "importance": "了解",
+      "aliases": [
+        "自然选择理论"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt166",
+      "name": "化石证据（地层证据）",
+      "definition": "利用地层中保存的化石来重建古生物特征与演化历史，从而为生物进化与共同祖先提供直接证据。",
+      "importance": "重要",
+      "examples": [
+        "地层记录不同生物类群的首次出现顺序（如鱼类早于两栖类、爬行类，后出现鸟类和哺乳类）",
+        "赫氏近鸟龙化石显示恐龙与鸟类之间的过渡特征",
+        "早期古人类（如露西）化石体现与现代人、黑猩猩的结构相似与差异"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt167",
+      "name": "沉积岩地层",
+      "definition": "成层堆积的松散沉积物固结而成的岩石；多数化石发现于沉积岩地层中。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt168",
+      "name": "比较解剖学证据",
+      "definition": "通过比较不同生物（如脊椎动物）的器官、系统的形态与结构，寻找是否具有共同祖先的证据。",
+      "importance": "掌握",
+      "examples": [
+        "蝙蝠翼、鲸鳍、猫前肢与人上肢的骨骼结构模式相似"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt169",
+      "name": "同源结构（同源器官）",
+      "definition": "不同生物中来源相同、内部结构模式相似但功能可能不同的结构；可作为共同祖先的证据。",
+      "importance": "掌握",
+      "examples": [
+        "蝙蝠翼、鲸鳍、猫前肢与人上肢都具有肱骨、桡骨、尺骨、腕骨、掌骨、指骨且排列顺序一致"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt170",
+      "name": "胚胎学证据",
+      "definition": "通过比较不同动物及人的胚胎形成与发育过程，寻找进化与共同祖先的线索。",
+      "importance": "掌握",
+      "examples": [
+        "人胚胎发育早期出现鳃裂和尾，与鱼类胚胎早期相似"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt171",
+      "name": "细胞和分子水平的证据",
+      "definition": "通过细胞生物学与分子生物学研究发现不同生物在细胞结构基础、物质基础以及DNA与蛋白质等大分子方面存在共同性，从而支持共同祖先。",
+      "importance": "重要",
+      "examples": [
+        "古细菌与现存古细菌共有细胞壁、细胞膜、细胞质、核糖体和DNA等结构",
+        "人与黑猩猩基因组差异约3%",
+        "细胞色素c氨基酸序列差异随亲缘远近而增大"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt172",
+      "name": "同源DNA（分子同源性）",
+      "definition": "不同生物间来源相同、可比较的DNA序列；序列差异大小可反映亲缘关系远近并提示共同祖先。",
+      "importance": "了解",
+      "examples": [
+        "人与猩猩、长臂猿某段同源DNA差异分别为2.4%、5.3%"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt173",
+      "name": "细胞色素c序列差异（分子证据示例）",
+      "definition": "以细胞色素c氨基酸序列差异来比较不同生物与人的分子相似性；差异大小可用于推断亲缘关系远近与出现顺序。",
+      "importance": "了解",
+      "formula": "细胞色素c氨基酸序列约每2000万年发生1%的改变（教材给定估算）",
+      "examples": [
+        "人与黑猩猩细胞色素c差异为0个氨基酸；与酵母菌差异为44个"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt174",
+      "name": "适应（adaptation）",
+      "definition": "适应作为生物学术语包括两方面含义：①生物的形态结构适合于完成一定功能；②生物的形态结构及其功能适合于该生物在一定环境中生存和繁殖。",
+      "importance": "掌握",
+      "examples": [
+        "枯叶蝶停息时翅形似枯叶",
+        "雷鸟冬季换白色羽毛以利于隐蔽"
+      ],
+      "aliases": [
+        "适应性特征"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt175",
+      "name": "适应的普遍性",
+      "definition": "所有生物都具有适应环境的特征，适应是普遍存在的。",
+      "importance": "了解",
+      "examples": [
+        "枯叶蝶的拟态",
+        "雷鸟换羽色"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt176",
+      "name": "适应的相对性",
+      "definition": "适应不是绝对的、完全的；适应具有局限性，生物并不能完全免于不利因素（如天敌捕食等）。",
+      "importance": "掌握",
+      "examples": [
+        "枯叶蝶仍可能被天敌捕食",
+        "雷鸟白色羽毛在非雪环境中可能不利"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt177",
+      "name": "物种不变论",
+      "definition": "认为各种生物自古以来就如此、物种永恒不变的观点。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt178",
+      "name": "拉马克进化学说",
+      "definition": "否定物种不变论，认为当今生物由更古老生物进化而来；并用“用进废退”和“获得性遗传”解释适应性特征在进化过程中逐渐形成。",
+      "importance": "了解",
+      "examples": [
+        "食蚁兽舌头细长被解释为长期舔食蚂蚁的结果",
+        "鼹鼠视觉退化被解释为长期地下生活导致"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt179",
+      "name": "用进废退",
+      "definition": "拉马克提出：器官用得越多越发达，废而不用则退化。",
+      "importance": "了解",
+      "examples": [
+        "食蚁兽舌头细长（拉马克解释）",
+        "鼹鼠眼睛萎缩（拉马克解释）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt180",
+      "name": "获得性遗传",
+      "definition": "拉马克提出：因用进废退而获得的性状可以遗传给后代。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt181",
+      "name": "自然选择（natural selection）",
+      "definition": "达尔文提出：适应的来源是可遗传的变异；在一定环境的选择作用下，可遗传的有利变异使个体在生存和繁殖上具有优势，经过代代繁殖与逐代积累，群体中有利变异增加并形成显著适应性特征，进而可能出现新的生物类型。",
+      "importance": "掌握",
+      "aliases": [
+        "自然选择学说"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt182",
+      "name": "有利变异",
+      "definition": "在特定环境下能赋予个体生存和繁殖优势的可遗传变异；可在自然选择作用下逐代积累形成适应性特征。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt183",
+      "name": "环境的定向选择作用",
+      "definition": "一定环境对个体差异进行筛选的作用，使具有可遗传有利变异的个体在繁殖上更有优势；是适应形成的必要条件之一。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt184",
+      "name": "适应形成的必要条件",
+      "definition": "适应形成需要：群体中出现可遗传的有利变异，以及环境的定向选择。",
+      "importance": "重要",
+      "examples": [
+        "长颈鹿祖先群体出现可遗传颈长变异，并在食物缺乏等环境选择下比例增加"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt185",
+      "name": "适者生存",
+      "definition": "自然选择学说常用表述：在竞争与选择中，适应环境者更可能存活并延续后代（教材提出可讨论是否改为“适者繁殖”）。",
+      "importance": "了解",
+      "aliases": [
+        "物竞天择，适者生存"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt186",
+      "name": "适者繁殖",
+      "definition": "强调进化意义在于繁殖后代：即使出现可遗传有利变异，若不能繁殖后代，则在进化上无意义。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt187",
+      "name": "共同祖先",
+      "definition": "生物界的统一性源于所有生物都有共同祖先。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt188",
+      "name": "生物多样性与适应性是进化的结果",
+      "definition": "自然选择作用下生物不断发展变化，生物多样性和适应性由进化产生。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt189",
+      "name": "现代生物进化理论（以自然选择为核心）",
+      "definition": "随着生物科学发展，对遗传和变异的研究从性状水平深入到基因水平；对适应与物种形成等研究从个体单位发展到以种群为基本单位，从而形成以自然选择为核心的现代生物进化理论。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt190",
+      "name": "种群（population）",
+      "definition": "生活在一定区域的同种生物全部个体的集合。",
+      "importance": "掌握",
+      "examples": [
+        "一片树林中的全部猕猴是一个种群",
+        "一片草地上的所有蒲公英也是一个种群"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt191",
+      "name": "种群是繁殖单位",
+      "definition": "种群中的个体不是机械集合；一个种群是一个繁殖的单位，雌雄个体可通过繁殖将各自的基因遗传给后代。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt192",
+      "name": "基因库（gene pool）",
+      "definition": "一个种群中全部个体所含有的全部基因。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt193",
+      "name": "基因频率",
+      "definition": "在一个种群基因库中，某个基因占全部等位基因数的比值。",
+      "importance": "掌握",
+      "formula": "某等位基因频率 = 该等位基因总数 / 该基因座全部等位基因总数 × 100%",
+      "examples": [
+        "AA=30、Aa=60、aa=10时：A基因数=2×30+60=120；a基因数=2×10+60=80；A频率=120/200=60%，a频率=80/200=40%"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt194",
+      "name": "自然选择直接作用于表型（个体）",
+      "definition": "自然选择直接作用的是生物的个体，而且是个体的表型；但基因可随生殖延续并在群体中扩散。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt195",
+      "name": "可遗传的变异是生物进化的原材料",
+      "definition": "可遗传的变异为生物进化提供原材料；现代遗传学表明其来源包括基因突变、基因重组和染色体变异。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt196",
+      "name": "突变（mutation）",
+      "definition": "基因突变和染色体变异的统称。",
+      "importance": "了解",
+      "aliases": [
+        "mutation"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt197",
+      "name": "自然选择使基因频率定向改变",
+      "definition": "在自然选择作用下，有利变异个体留下更多后代，相应基因频率提高；不利变异个体留下后代机会少，相应基因频率下降，因而基因频率发生定向改变并推动进化。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt198",
+      "name": "协同进化（coevolution）",
+      "definition": "不同物种之间、生物与无机环境之间在相互影响中不断进化和发展。",
+      "importance": "掌握",
+      "examples": [
+        "猎豹与羚羊在捕食—被捕食关系中的“军备竞赛”",
+        "最早光合生物出现导致大气含氧，为好氧生物出现创造条件"
+      ],
+      "aliases": [
+        "共同进化"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt199",
+      "name": "遗传多样性（基因多样性）",
+      "definition": "同一物种或不同种群中基因及其组合的多样性水平，是生物多样性的一个层次。",
+      "importance": "了解",
+      "aliases": [
+        "基因多样性"
+      ],
+      "examples": [
+        "野生水稻、玉米或小麦与栽培品种在基因组成上存在差别"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt200",
+      "name": "物种多样性",
+      "definition": "一定区域或地球上物种种类及其丰富程度的多样化，是生物多样性的一个层次。",
+      "importance": "了解",
+      "examples": [
+        "中华蚤镰目昆虫（中华蚤）属于稀有物种并被列入国家一级保护动物名录"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt201",
+      "name": "生态系统多样性",
+      "definition": "地球上的生境、生物群落和生态系统的多样化，还包括生态系统的组成、结构、功能等随时间变化而变化的多样性。",
+      "importance": "了解",
+      "examples": [
+        "红树林生态系统（沿海潮间带）"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt202",
+      "name": "捕食关系驱动的协同进化（军备竞赛）",
+      "definition": "捕食者与被捕食者在自然选择作用下相互施加选择压力，促使双方相关性状不断进化的过程。",
+      "importance": "了解",
+      "examples": [
+        "羚羊更敏捷与猎豹更快速的相互促进"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt203",
+      "name": "收割理论",
+      "definition": "捕食者往往捕食个体数量多的物种，从而避免少数物种在生态系统中占绝对优势，为其他物种形成腾出空间，有利于增加物种多样性。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt204",
+      "name": "种群（生物进化的基本单位）",
+      "definition": "同种生物在一定空间内的集合；现代生物进化理论认为种群是生物进化的基本单位。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt205",
+      "name": "突变",
+      "definition": "遗传物质发生改变的现象，是进化原材料之一。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt206",
+      "name": "基因频率的定向改变",
+      "definition": "自然选择导致种群中某些基因或等位基因频率沿特定方向发生变化，是进化的重要表现。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt207",
+      "name": "隔离",
+      "definition": "阻止不同种群间基因交流的因素（如地理隔离、生殖隔离等）；现代进化理论指出可通过隔离形成新物种。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt208",
+      "name": "物种形成",
+      "definition": "在进化过程中，种群通过遗传差异积累并在隔离等因素作用下形成新物种的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt209",
+      "name": "生物与无机环境的相互影响",
+      "definition": "生物的出现与演化会改变无机环境，无机环境的变化也会影响生物的生存与演化。",
+      "importance": "重要",
+      "examples": [
+        "原始大气无氧→最早生物为厌氧；光合生物出现→大气有氧→好氧生物出现"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt210",
+      "name": "厌氧生物（无氧呼吸）",
+      "definition": "在缺氧环境中进行无氧呼吸、无需氧气即可获取能量的生物类型。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt211",
+      "name": "好氧生物",
+      "definition": "需要氧气、通常通过有氧呼吸获取能量的生物类型。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt212",
+      "name": "光合生物（最早的光合生物）",
+      "definition": "能够进行光合作用的生物；教材指出其出现使原始大气中有了氧气。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt213",
+      "name": "寒武纪大爆发",
+      "definition": "在寒武纪（约5.4亿~5.0亿年前）海洋中大量无脊椎动物物种在较短时间内爆发式形成的事件。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt214",
+      "name": "生态系统结构的“三极”（生产者—消费者—分解者）",
+      "definition": "生态系统中生产者、消费者、分解者构成不同功能层次；教材指出早期仅有生产者和分解者的“两极”，寒武纪后消费者加入成为“第三极”。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt215",
+      "name": "物种绝灭",
+      "definition": "某一物种在地球上完全消失的现象；可能为其他类群兴盛腾出空间并影响生物多样性格局。",
+      "importance": "重要",
+      "examples": [
+        "白垩纪末恐龙绝灭"
+      ]
+    },
+    {
+      "id": "biology_bx2_rjb_cpt216",
+      "name": "中性突变学说（中性突变积累）",
+      "definition": "认为大量基因突变是中性的，自然选择对其不起作用；中性突变长期积累可导致种群间遗传物质差别增大，从而影响进化方向。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx2_rjb_cpt217",
+      "name": "间断平衡（长期稳定与迅速形成新种交替）",
+      "definition": "认为物种形成并不都是渐变过程，而是长期稳定与短期快速形成新种交替出现的模式，其原因仍在探索。",
+      "importance": "了解"
+    }
+  ],
+  "skills": [
+    {
+      "id": "biology_bx2_rjb_skl1",
+      "name": "数量统计与比例分析",
+      "description": "对实验后代中不同性状个体进行数量统计，计算并比较性状（或组合类型）之间的数量比，从而发现稳定规律。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl2",
+      "name": "假说—演绎法",
+      "description": "在观察和分析基础上提出问题，提出解释现象的假说；据此进行演绎推理得到可检验的预测；再用实验检验，符合则支持假说，不符合则否定或修正假说。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl3",
+      "name": "统计学分析与比例推断",
+      "description": "对杂交后代进行计数并用比例（如3:1、9:3:3:1、1:1:1:1）判断遗传规律与模型是否吻合。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl4",
+      "name": "符号化表示遗传信息（字母表示法）",
+      "description": "用字母符号表示遗传因子/等位基因与基因型（如Y/y、R/r、YyRr），以便进行组合列举、推理和交流。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl5",
+      "name": "假说—演绎推理",
+      "description": "根据实验观察提出机制性假设，推导可验证的定量预测，并通过设计实验（如测交）验证预测。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl6",
+      "name": "比较分析（差异比较）",
+      "description": "通过对比两个对象（如配子与体细胞、精子形成与卵细胞形成）的结构或过程，概括共同点与差异点，以解释其生物学意义。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl7",
+      "name": "过程建模与序列化描述",
+      "description": "将复杂生命过程按时间顺序拆解为关键步骤（复制—两次分裂—形成细胞类型变化），并用阶段名称（减数分裂I/II）进行结构化表述。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl8",
+      "name": "类比推理（从平行关系提出假说）",
+      "description": "通过比较两类对象在过程中的对应行为（如基因与染色体在减数分裂和受精中的对应关系），据此提出关于因果或载体关系的假说（如“基因位于染色体上”）。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl9",
+      "name": "系谱图分析遗传方式",
+      "description": "通过阅读家族系谱图，依据患者在男女中的分布、亲子传递规律等，推断致病基因位于何种染色体及其显隐性，并可进一步推断个体基因型。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl10",
+      "name": "用基因型推演杂交/婚配后代概率（Punnett思想）",
+      "description": "用符号表示等位基因与性染色体（如X^B、X^b、Y、Z、W），列出亲本配子并组合，推算子代表现型/基因型比例与患病概率。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl11",
+      "name": "对照实验与自变量控制",
+      "description": "在对照实验中，通过控制除研究因素外的其他变量，比较实验组与对照组结果差异，以推断研究因素的作用。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl12",
+      "name": "自变量控制的“加法原理”",
+      "description": "与常态比较，人为增加某种影响因素以检验其效应的自变量控制方法。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl13",
+      "name": "自变量控制的“减法原理”",
+      "description": "与常态比较，人为去除某种影响因素以鉴定关键因素的自变量控制方法；如用特异性酶去除某类物质判断其是否为关键成分。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl14",
+      "name": "基于证据构建并修正结构模型（模型建构）",
+      "description": "利用实验数据与已有事实提出结构假设，搭建模型并与证据对照，否定不符合者、保留并完善符合者，以形成合理的结构解释。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl15",
+      "name": "利用互补配对规则进行序列推断",
+      "description": "依据碱基互补配对原则（A-T，G-C）并结合链的反向平行关系，推断互补链序列及其书写方向。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl16",
+      "name": "演绎推理（预测实验预期）",
+      "description": "基于已有假设/原理（如半保留复制或全保留复制）推导可观察到的实验结果（如离心后条带位置与数量），用于形成可检验的预期并与实测结果对照。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl17",
+      "name": "从数据与实例归纳概念定义",
+      "description": "通过不同生物（如大肠杆菌、水母、人类）中DNA分子数、基因数、碱基对数量及实验现象，归纳“基因与DNA的关系”并形成对基因的DNA水平定义。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl18",
+      "name": "组合计数与指数模型描述序列多样性",
+      "description": "用碱基对数n与4种碱基的组合数关系（4^n）估算可能的序列类型数，从而理解遗传信息容量与序列多样性。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl19",
+      "name": "排列组合推理（用计数法推断编码容量）",
+      "description": "用“每位有k种可能、连续n位共有k^n种组合”的计数思想，推断碱基位数与可编码氨基酸种类数之间的关系，从而论证三联体编码的必要性。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl20",
+      "name": "基于“基因→表达产物→生理过程→性状”的因果链分析",
+      "description": "从基因变化（突变/缺失/甲基化等）出发，推断其对mRNA/蛋白质（酶、结构蛋白、转运蛋白等）的影响，再分析对代谢或细胞功能的影响，最终解释性状差异。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl21",
+      "name": "从检测数据推断基因是否表达（读表推理）",
+      "description": "利用DNA检测结果判断基因是否存在，利用mRNA检测结果判断基因在特定细胞中是否表达，并据此推断细胞合成的蛋白质种类差异与选择性表达结论。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl22",
+      "name": "提出假说并给出可检验的解释",
+      "description": "针对观察到的现象提出可能机制（如温度影响酶活性、表观遗传改变表达等），形成逻辑自洽的解释框架，为后续验证提供方向。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl23",
+      "name": "分析因果关系与相关性",
+      "description": "在观察性调查数据中区分“相关性”和“因果关系”，认识生物学因果关系的复杂性与概率性；避免用高相关直接推出因果（需结合机制、对照、排除混杂等）。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl24",
+      "name": "利用染色体组数判断倍性并推算配子/体细胞染色体数",
+      "description": "根据“体细胞倍性=染色体组数”“配子染色体组数为体细胞的一半（一般情况）”等关系，在表格或数据中推算体细胞/配子染色体数与倍性类型（单倍体、二倍体、多倍体）。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl25",
+      "name": "根据减数分裂异常推断多倍体形成途径",
+      "description": "基于“减数分裂错误可产生含2个染色体组的配子”“不同染色体组数配子受精可形成三倍体/四倍体”等逻辑，解释多倍体来源与无子性状原因。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl26",
+      "name": "调查与统计遗传病发病情况",
+      "description": "以家庭/家系或一定人群为调查对象，收集遗传病病例与被调查人数，汇总数据并计算发病率，用于描述遗传病在人群中的发生情况。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl27",
+      "name": "计算发病率",
+      "description": "根据统计数据，用“患者数/被调查人数×100%”计算某种遗传病的发病率，并与已知人群数据比较、分析偏差原因。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl28",
+      "name": "利用化石推断古生物特征与进化顺序",
+      "description": "根据化石所反映的形态结构（如牙齿、骨骼、羽毛印痕）以及其在地层中的出现顺序，推断古生物的生活方式、类群特征与演化先后关系，从而为共同祖先与演化过程提供证据。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl29",
+      "name": "比较结构找同源性并据此推断共同祖先",
+      "description": "通过比较不同生物器官/骨骼的组成成分与排列顺序，判断内部结构模式是否一致，从而识别同源结构并推断共同祖先关系。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl30",
+      "name": "用分子差异数据推断亲缘关系远近",
+      "description": "根据DNA序列差异或蛋白质（如细胞色素c）氨基酸序列差异的大小，判断物种间亲缘关系远近，并作为共同祖先的证据之一。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl31",
+      "name": "运用自然选择学说解释适应的形成（模型化解释）",
+      "description": "在给定环境中：提出群体内存在可遗传变异→判断哪些变异在该环境下具有生存与繁殖优势→推断经过多代繁殖该变异频率上升→解释有利变异逐代积累形成适应性特征，甚至导致新类型出现。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl32",
+      "name": "批判性思维：反驳或评估进化解释",
+      "description": "针对某一进化观点（如用进废退、获得性遗传或“适者生存/适者繁殖”表述），提出反例或论证其逻辑与证据充分性，并给出更合理解释框架。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl33",
+      "name": "用基因型频率计算配子比例、子代基因型频率与基因频率（孟德尔分离定律/随机交配）",
+      "description": "在给定亲代基因型频率条件下，依据分离定律与随机交配假设，先求配子中各等位基因比例，再求子代基因型频率（如p^2、2pq、q^2），进而计算子代基因频率并比较世代变化。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl34",
+      "name": "创设数字化情境并用数据迭代模拟选择作用",
+      "description": "将环境选择作用转化为对不同表型（或基因型）个体数量/比例的年度增减规则，逐年更新基因型频率与基因频率，通过对比不同参数情景分析自然选择对基因频率的影响方向与强度。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl35",
+      "name": "基于证据提出科学推测并进行验证",
+      "description": "根据已观察到的结构或现象提出合乎逻辑的推测，并通过后续观察或研究寻找证据进行检验（推测可能暂未被证实但可被检验）。"
+    },
+    {
+      "id": "biology_bx2_rjb_skl36",
+      "name": "从相互作用关系分析进化结果（选择压力分析）",
+      "description": "识别生物之间或生物与环境之间的相互作用（捕食、传粉、环境改变等），分析这些作用如何形成选择压力并导致性状与多样性的变化。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "biology_bx2_rjb_exp1",
+      "name": "豌豆一对相对性状杂交实验（高茎×矮茎）",
+      "instrument": "豌豆纯种品系（高茎、矮茎），人工异花传粉操作所需工具（教材未详述）",
+      "is_student": 0,
+      "process": "用纯种高茎豌豆与纯种矮茎豌豆作亲本杂交得到F1；再让F1自交得到F2，并统计F2中高茎与矮茎数量。",
+      "phenomena": "F1全为高茎；F2出现高茎与矮茎，且数量比接近3:1。",
+      "conclusion": "F2性状分离比接近3:1，提示遗传因子分离与随机结合可解释该规律。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp2",
+      "name": "性状分离比的模拟实验（彩球模拟配子随机结合）",
+      "instrument": "两个小桶（甲、乙）; 两种颜色彩球各20个（分别标记D、d）; 纸和笔",
+      "is_student": 1,
+      "process": "甲乙桶各放两种彩球各10个；摇匀；分别从两桶随机抓取一个彩球组合并记录；放回并摇匀；重复30次以上；统计组合类型与比例，并汇总全班求平均。",
+      "conclusion": "通过随机抓取与组合的结果，体验遗传因子分离、配子随机结合与数量比之间的关系，从而理解孟德尔假说。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp3",
+      "name": "测交实验（F1×隐性纯合子）",
+      "instrument": "F1杂合子植株（如高茎Dd）；隐性纯合子植株（如矮茎dd）；人工传粉工具（教材未详述）",
+      "is_student": 0,
+      "process": "让F1（Dd）与隐性纯合子（dd）杂交，统计后代高茎与矮茎数量并计算比例。",
+      "phenomena": "后代高茎与矮茎数量比接近1:1（如87:79）。",
+      "conclusion": "测交结果与假说预测相符，从而验证孟德尔关于遗传因子分离与随机结合的解释。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp4",
+      "name": "豌豆两对相对性状杂交实验（黄色圆粒×绿色皱粒）",
+      "instrument": "豌豆植株（纯种黄色圆粒、纯种绿色皱粒）、人工授粉工具、记录表",
+      "is_student": 0,
+      "process": "以YYRR与yyrr为亲本杂交得到F1；F1自交得到F2；统计F2四种表型数量。",
+      "phenomena": "F1均表现黄色圆粒；F2出现四种性状组合（含亲本未出现的新组合）。",
+      "conclusion": "F2四种表型数量比接近9:3:3:1，提示两对遗传因子在配子形成时可自由组合。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp5",
+      "name": "两对相对性状测交实验（YyRr×yyrr）",
+      "instrument": "豌豆植株（杂合子一代YyRr、隐性纯合子yyrr）、人工授粉工具、记录表",
+      "is_student": 0,
+      "process": "让F1杂合体（YyRr）与隐性纯合体（yyrr）杂交；分别以F1作母本/父本重复；统计四种表型数量。",
+      "phenomena": "四种表型数量比为1:1:1:1（无论F1作母本或父本）。",
+      "conclusion": "与自由组合假说的预测一致，从而支持自由组合定律。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp6",
+      "name": "摩尔根果蝇红眼/白眼杂交实验",
+      "instrument": "果蝇（红眼品系与白眼雄果蝇）、饲养瓶/培养基等果蝇饲养与杂交所需器材",
+      "is_student": 0,
+      "process": "以红眼果蝇群体中发现的白眼雄果蝇为材料进行杂交，观察F1与F2中红眼/白眼的表现及其与性别的关系（图2-8、图2-10所示）。",
+      "phenomena": "F1全为红眼；F2红眼与白眼数量比为3:1，但白眼性状的表现总与性别相关联。",
+      "conclusion": "白眼对白眼/红眼性状符合由一对等位基因控制并符合分离定律；白眼基因w与性别相关，合理解释为位于X染色体上且Y染色体上不含其等位基因，从而支持“基因位于染色体上”。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp7",
+      "name": "测交验证摩尔根解释（w在X染色体上）",
+      "instrument": "果蝇（按所需基因型准备的雌雄个体）、饲养瓶/培养基等",
+      "is_student": 0,
+      "process": "在已有解释基础上进行进一步杂交/测交（文中概述“通过测交等方法”），比较预测与后代表现是否一致。",
+      "conclusion": "将特定基因与特定染色体（X染色体）联系起来，用实验证明基因在染色体上。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp8",
+      "name": "格里菲思肺炎链球菌转化实验",
+      "instrument": "小鼠；S型与R型肺炎链球菌；加热杀死S型细菌的条件；培养与分离细菌的培养基与器材",
+      "is_student": 0,
+      "process": "用不同处理（活S、活R、加热杀死S、加热杀死S+活R）感染小鼠；观察存活/死亡并从尸体分离细菌类型。",
+      "phenomena": "第四组（加热致死S+活R）的小鼠死亡，且可分离出有致病性的S型活细菌。",
+      "conclusion": "加热致死的S型细菌含有能促使R型转化为S型的活性物质（转化因子）。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp9",
+      "name": "艾弗里鉴定转化因子实验（DNA酶/蛋白酶等处理）",
+      "instrument": "加热致死S型细菌细胞提取物；蛋白酶、RNA酶、酯酶、DNA酶；R型活细菌培养基；培养与检测细菌类型的器材",
+      "is_student": 0,
+      "process": "制备S型细菌细胞提取物并加入R型活细菌培养基观察是否出现S型；分别用蛋白酶、RNA酶、酯酶或DNA酶处理提取物后重复实验，比较转化是否发生。",
+      "phenomena": "蛋白酶/RNA酶/酯酶处理后仍有转化活性；DNA酶处理后失去转化活性。",
+      "conclusion": "转化因子很可能是DNA；DNA是使R型细菌产生稳定遗传变化的物质。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp10",
+      "name": "赫尔希-蔡斯T2噬菌体侵染大肠杆菌实验（35S/32P标记）",
+      "instrument": "T2噬菌体；大肠杆菌；含35S与32P的培养基；搅拌器；离心机；放射性检测装置",
+      "is_student": 0,
+      "process": "分别制备蛋白质含35S标记或DNA含32P标记的噬菌体；侵染未标记大肠杆菌；短时间保温后搅拌并离心分离上清与沉淀；检测放射性分布并检测子代噬菌体中放射性标记。",
+      "phenomena": "35S主要在上清液；32P主要在沉淀物；子代噬菌体中可检测到32P标记DNA而检测不到35S标记蛋白质。",
+      "conclusion": "噬菌体侵染细菌时DNA进入细胞并遗传给子代，蛋白质外壳留在细胞外；DNA是噬菌体遗传物质。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp11",
+      "name": "X射线晶体衍射获得DNA衍射图谱",
+      "instrument": "X射线衍射装置（X射线晶体衍射技术）",
+      "is_student": 0,
+      "process": "对DNA样品进行X射线晶体衍射拍摄，获得DNA衍射图谱，并据图谱特征推断分子空间结构。",
+      "phenomena": "衍射图谱呈“X”形特征。",
+      "conclusion": "“X”形衍射图谱意味着DNA分子呈螺旋结构。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp12",
+      "name": "制作DNA双螺旋结构模型",
+      "instrument": "曲别针、泡沫塑料、纸片、扭扭棒、牙签、橡皮泥、铁丝等",
+      "is_student": 1,
+      "process": "设计材料分别代表磷酸、脱氧核糖、碱基；连接形成外侧糖-磷酸骨架与内侧碱基配对；体现两条链反向平行并形成双螺旋。",
+      "conclusion": "通过模型制作加深对DNA双螺旋结构特点（外骨架、内碱基互补配对、反向平行）的理解。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp13",
+      "name": "梅塞尔森—斯塔尔实验（证明DNA半保留复制）",
+      "instrument": "含15NH4Cl与14NH4Cl培养液；大肠杆菌；DNA提取装置；离心机（密度分离）；试管",
+      "is_student": 0,
+      "process": "先用15NH4Cl培养大肠杆菌若干代使DNA被15N标记；再转移至14NH4Cl培养；在不同时刻收集细菌提取DNA；对DNA离心并记录试管中DNA条带位置。",
+      "phenomena": "亲代DNA离心后出现1条靠近试管底部的条带；转移培养后第一代出现1条居中的条带；第二代出现2条条带：一条居中、一条更靠上。",
+      "conclusion": "实验结果符合半保留复制的预期，排除全保留复制等假说，证明DNA复制是半保留复制。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp14",
+      "name": "低温诱导植物细胞染色体数目的变化",
+      "instrument": "蒜或洋葱、培养皿、滤纸、纱布、烧杯、镊子、剪刀、显微镜、载玻片、盖玻片、冰箱、卡诺氏液、0.01 g/mL甲紫溶液、15%盐酸、95%酒精",
+      "is_student": 1,
+      "process": "低温处理蒜/洋葱并培养生根→根尖固定与冲洗→按观察有丝分裂装片方法解离/漂洗/染色/制片→显微镜下寻找并观察染色体数目改变细胞",
+      "phenomena": "视野中既有正常二倍体细胞，也有染色体数目发生改变的细胞（可见加倍细胞）",
+      "conclusion": "低温可通过抑制纺锤体形成影响有丝分裂，导致染色体数目变化（常表现为加倍）。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp15",
+      "name": "调查人群中的遗传病",
+      "instrument": "调查表/记录工具（可小组分工）、家庭/家系信息、班级/年级汇总记录",
+      "is_student": 1,
+      "process": "小组选择周围4~10个家庭（或家系）调查遗传病情况；尽量选取发病率较高的单基因遗传病；将各组数据在班级/年级汇总；按公式计算各病的发病率。",
+      "conclusion": "可获得所调查遗传病在群体中的发病率，并据家系信息初步判断是否有家族遗传倾向。"
+    },
+    {
+      "id": "biology_bx2_rjb_exp16",
+      "name": "探究自然选择对种群基因频率变化的影响（桦尺蛾数字化模拟）",
+      "instrument": "数字化问题情境（假设数据）、计算工具（可用计算器/表格）",
+      "is_student": 1,
+      "process": "提出问题（s基因频率为何降低）→作出假设→创设数字化情境（设定初始基因型频率与环境选择导致的增减比例）→逐年计算并填表→调整选择强度参数重复计算→分析结果支持与否并得出结论。",
+      "conclusion": "自然选择会使与有利表型相关的等位基因频率上升、与不利表型相关的等位基因频率下降，表现为基因频率的定向改变。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "biology_bx2_rjb_exe1",
+      "type": "简答题",
+      "stem": "在豌豆中，纯种高茎（DD）与纯种矮茎（dd）杂交得到F1。再让F1自交得到F2。问：F2的表现型（高茎与矮茎）比例应是多少？并说明该比例与哪条遗传规律相关。",
+      "answer": "F2高茎:矮茎≈3:1。该比例体现了分离定律：控制同一性状的遗传因子在形成配子时分离，受精时随机结合，从而在F2产生约3:1的表型分离比。",
+      "analysis": "F1为杂合子Dd，自交时配子为D与d各占1/2，组合得DD:Dd:dd=1:2:1，表型为高茎（DD、Dd）占3/4，矮茎（dd）占1/4。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe2",
+      "type": "简答题",
+      "stem": "测交中，让F1高茎豌豆（Dd）与矮茎豌豆（dd）杂交。问：后代表现型（高茎与矮茎）比例应为多少？该结果用于验证孟德尔解释分离现象的哪一关键点？",
+      "answer": "后代高茎:矮茎≈1:1。该结果用于验证：杂合子形成配子时遗传因子分离（产生D和d两类配子），并且受精时配子结合是随机的，因此与隐性纯合子测交会出现1:1的表型比。",
+      "analysis": "Dd产生D、d两类配子各1/2；dd只产生d配子；结合得Dd与dd各占1/2，对应高茎与矮茎各占1/2。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe3",
+      "type": "选择题",
+      "stem": "孟德尔让杂种子一代（YyRr）与隐性纯合子（yyrr）杂交（测交）。若两对基因独立遗传，则子代表型比例应为（ ）",
+      "answer": "1:1:1:1（黄色圆粒：黄色皱粒：绿色圆粒：绿色皱粒）",
+      "analysis": "独立遗传时，YyRr产生4种配子YR、Yr、yR、yr且比例1:1:1:1；与yyrr配子yr结合，得到四种表型各占1/4。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe4",
+      "type": "填空题",
+      "stem": "约翰逊提出的概念中，表型是指（ ）；基因型是指（ ）。并判断：表型相同的生物，基因型一定相同。（对/错）",
+      "answer": "表型：个体表现出来的性状；基因型：与表型有关的基因组成；判断：错。",
+      "analysis": "同一表型可能对应不同基因型，如高茎可为DD或Dd。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe5",
+      "type": "简答题",
+      "stem": "减数分裂过程中染色体数目减半发生在哪一次分裂？并写出该次分裂的一个主要特征。",
+      "answer": "发生在减数分裂I。主要特征之一：同源染色体配对（联会）并在随后分离分别移向细胞两极（也可答：四分体中非姐妹染色单体可发生互换）。",
+      "analysis": "抓住原文“染色体数目的减半发生在减数分裂I”以及“减数分裂I的主要特征”三点中的任意一点作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe6",
+      "type": "判断题",
+      "stem": "判断题：减数分裂II前通常没有间期，且染色体不再复制。（  ）",
+      "answer": "对。",
+      "analysis": "原文指出“减数分裂I与减数分裂II之间通常没有间期，或者间期时间很短，染色体不再复制”。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe7",
+      "type": "填空题",
+      "stem": "一个初级卵母细胞经过减数分裂最终可形成几个卵细胞和几个极体？",
+      "answer": "形成1个卵细胞和3个极体（极体通常退化消失）。",
+      "analysis": "依据原文“这样，一个初级卵母细胞经过减数分裂，就形成了一个卵细胞和三个极体”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe8",
+      "type": "简答题",
+      "stem": "摩尔根果蝇红眼/白眼杂交实验中，F1全为红眼，F2红眼与白眼数量比为3:1。由此可以判断白眼与红眼的显隐性关系是什么？该性状受几对等位基因控制？",
+      "answer": "白眼对白眼/红眼关系中，白眼为隐性、红眼为显性；该性状受1对等位基因控制。",
+      "analysis": "F1全为红眼说明红眼对亲代白眼表现为显性；F2出现3:1是典型单因子杂交分离比，指示由一对等位基因控制。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe9",
+      "type": "判断题",
+      "stem": "判断题：判断一种设想或假说是否正确，只要能够解释已有的实验现象就足够了。（  ）",
+      "answer": "错误。还应运用假说—演绎法预测新实验结果，并通过实验检验。",
+      "analysis": "教材指出“仅能解释已有的实验现象是不够的，还应运用假说—演绎法，预测……再通过实验来检验”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe10",
+      "type": "应用题",
+      "stem": "一位女性红绿色盲基因携带者（基因型XBXb）与一位男性红绿色盲患者（基因型XbY）结婚，求其子女的基因型与表型比例。",
+      "answer": "配子：母方X B、X b；父方X b、Y。子代：1/4 XBXb（女，正常携带者）；1/4 XbXb（女，色盲）；1/4 XBY（男，正常）；1/4 XbY（男，色盲）。因此女儿中1/2色盲、1/2携带者；儿子中1/2色盲、1/2正常；总体1/2为色盲。",
+      "analysis": "将X连锁隐性遗传写成亲本基因型，列配子并等概率组合即可。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe11",
+      "type": "应用题",
+      "stem": "一位女性红绿色盲患者（基因型XbXb）与一位色觉正常的男性（基因型XBY）结婚，预测其子女的表型。",
+      "answer": "女儿均为XBXb（正常携带者）；儿子均为XbY（色盲）。",
+      "analysis": "父亲的X^B只传给女儿，母亲的X^b传给所有子女；儿子从父亲获得Y而从母亲获得X^b，因此全为色盲。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe12",
+      "type": "选择题",
+      "stem": "枯草杆菌具有不同类型，其中一种类型能合成组氨酸。将从这种菌中提取的某种物质，加入培养基中，培养不能合成组氨酸的枯草杆菌，结果获得了活的能合成组氨酸的枯草杆菌。这种物质可能是\nA. 多肽\nB. 多糖\nC. 组氨酸\nD. DNA",
+      "answer": "D",
+      "analysis": "出现“稳定获得合成组氨酸能力”的可遗传变化，说明加入的物质应承载遗传信息并能引起遗传性改变，最符合的是DNA。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe13",
+      "type": "选择题",
+      "stem": "赫尔希和蔡斯的噬菌体侵染细菌的实验表明（）\nA. DNA是遗传物质\nB. 遗传物质包括蛋白质和DNA\nC. 病毒中有DNA，但没有蛋白质\nD. 细菌中有DNA，但没有蛋白质",
+      "answer": "A",
+      "analysis": "35S标记蛋白质主要留在上清，32P标记DNA主要进入沉淀细菌且出现在子代噬菌体中，表明遗传的是DNA。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe14",
+      "type": "简答题",
+      "stem": "T2噬菌体侵染大肠杆菌时，只有噬菌体的DNA进入细菌的细胞中，噬菌体的蛋白质外壳留在细胞外。大肠杆菌裂解后，释放出的大量噬菌体却同原来的噬菌体一样具有蛋白质外壳。请分析子代噬菌体的蛋白质外壳的来源。",
+      "answer": "子代噬菌体的蛋白质外壳由被侵染的大肠杆菌提供原料（氨基酸等）并在进入细胞的噬菌体DNA指导下合成，随后组装成新的噬菌体外壳；亲代噬菌体的蛋白质外壳并未进入细胞，不是子代外壳的直接来源。",
+      "analysis": "关键在于“DNA进入细胞并控制合成与组装”，外壳材料来源于宿主细胞内物质。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe15",
+      "type": "判断题",
+      "stem": "在DNA双链结构中，碱基的比例总是 (A+G)/(T+C)=1。（判断题）",
+      "answer": "正确。因为双链DNA中A=T、G=C，所以(A+G)=(T+C)，比值为1。",
+      "analysis": "运用查哥夫法则（A=T，G=C）即可推出比例关系。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe16",
+      "type": "选择题",
+      "stem": "一条DNA单链的序列是 5′-GATACC-3′，那么它的互补链的序列是（选择题）\nA. 5′-CTATGG-3′\nB. 5′-GATACC-3′\nC. 5′-GGTATC-3′\nD. 5′-CCATAG-3′",
+      "answer": "A",
+      "analysis": "按互补配对G↔C，A↔T，T↔A，C↔G；并考虑反向平行。原链5′-GATACC-3′对应互补链为3′-CTATGG-5′，按5′→3′书写为5′-GGTATC-3′？注意：互补链若要求以5′端起写，应为5′-GGTATC-3′（对应选项C）。但题目选项中A为5′-CTATGG-3′，是将互补碱基直接按原方向写出。结合常见教材题意（问“互补链序列”但直接写出互补序列）应选A。若严格按反向平行并以5′→3′表示，则为C。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe17",
+      "type": "简答题",
+      "stem": "梅塞尔森—斯塔尔实验中，将15N标记的大肠杆菌转移到14N培养液后，第一代DNA离心只出现一条居中的DNA条带。这个结果排除了哪种DNA复制方式？",
+      "answer": "排除了全保留复制（若为全保留复制，应出现一条重带15N/15N-DNA和一条轻带14N/14N-DNA，而不是只有一条中间密度带）。",
+      "analysis": "全保留复制会使亲代重链整体保留，同时产生全新的轻链双链，因此第一代应出现重、轻两条带；实际仅出现中间密度带，说明每个子代DNA含一条15N链与一条14N链，符合半保留复制。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe18",
+      "type": "填空题",
+      "stem": "如果是100个碱基对组成1个基因，可能组合成多少种基因？（假设每个位点可为A、T、G、C四种碱基之一，且所有随机排列都可构成基因）",
+      "answer": "可能组合成 4^100 种。",
+      "analysis": "每个碱基对位置有4种选择，共100个位点，按乘法原理得到4×4×…×4=4^100。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe19",
+      "type": "判断题",
+      "stem": "判断正误：基因数目一定等于生物体内DNA分子数目。",
+      "answer": "错误。一个DNA分子上分布着许多个基因，例如大肠杆菌1个DNA分子上分布约4.4×10^3个基因。",
+      "analysis": "教材指出“一个DNA分子上有许多个基因”。因此DNA分子数与基因数一般不相同。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe20",
+      "type": "简答题",
+      "stem": "DNA和RNA都只含有4种碱基。若每个氨基酸由mRNA上连续n个碱基决定，则最多可编码多少种氨基酸？当n分别为1、2、3时分别是多少？依据结果解释为何“3个相邻碱基决定1个氨基酸”能够满足绝大多数生物体内约21种氨基酸的需要。",
+      "answer": "最多可编码种类数为4^n。n=1时为4种；n=2时为16种；n=3时为64种。由于21>16而21≤64，因此需要至少3个碱基（一个三联体/密码子）来决定1个氨基酸，才能满足编码21种氨基酸的需求。",
+      "analysis": "用计数法：每个位置4种碱基，n位独立组合数为4^n；比较与21的大小关系即可。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe21",
+      "type": "简答题",
+      "stem": "简述遗传信息从DNA到蛋白质的表达过程需要经历哪些关键步骤，并指出每一步的模板或主要参与者。",
+      "answer": "关键步骤为转录与翻译。转录：在细胞核中，以DNA的一条链为模板，在RNA聚合酶作用下合成mRNA；mRNA通过核孔进入细胞质。翻译：在细胞质中，mRNA与核糖体结合，核糖体沿mRNA读取密码子；tRNA以反密码子与密码子互补配对并转运对应氨基酸，氨基酸在核糖体上形成肽键连接成肽链，遇到终止密码子停止，肽链折叠成蛋白质。",
+      "analysis": "按信息流动顺序组织要点：DNA→RNA（转录）→蛋白质（翻译），补充模板、酶、核糖体、tRNA/反密码子、终止密码子等关键词。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe22",
+      "type": "简答题",
+      "stem": "某人因编码酪氨酸酶的基因异常，体内缺少酪氨酸酶。请用“基因→表达产物→生理过程→性状”的链条解释其表现为白化的原因。",
+      "answer": "基因异常导致酪氨酸酶不能正常合成（表达产物缺失或异常）→酪氨酸不能在酪氨酸酶催化下转变为黑色素（生理过程受阻）→黑色素缺乏，皮肤、毛发等缺少色素沉着→表现为白化性状。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe23",
+      "type": "简答题",
+      "stem": "在三种鸡细胞（输卵管细胞、红细胞、胰岛细胞）中，DNA检测均显示含有卵清蛋白基因、珠蛋白基因和胰岛素基因（均为“+ + +”），但mRNA检测显示：输卵管细胞只有卵清蛋白mRNA为“+”，红细胞只有珠蛋白mRNA为“+”，胰岛细胞只有胰岛素mRNA为“+”。这一结果说明了什么？并指出细胞分化的本质。",
+      "answer": "说明同一生物体不同细胞的基因组成相同，但不同细胞只表达其中部分基因（存在基因的选择性表达），因此产生不同mRNA并合成不同蛋白质。细胞分化的本质是基因的选择性表达。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe24",
+      "type": "判断题",
+      "stem": "判断下列表述是否正确：\n(1) bZIP73基因的1个核苷酸的差异是由基因突变导致的。( )\n(2) bZIP73蛋白质的1个氨基酸的差异是由基因重组导致的。( )\n(3) 基因的碱基序列改变，一定会导致表达的蛋白质失去活性。( )",
+      "answer": "(1) 正确。\n(2) 错误（此处更符合“基因突变导致编码序列改变从而引起氨基酸差异”，不一定由基因重组导致）。\n(3) 错误（碱基序列改变可能是同义突变或对功能影响不大，也可能是中性突变）。",
+      "analysis": "题干(1)描述“1个核苷酸不同”符合基因碱基序列改变，可由基因突变解释；(2)氨基酸差异通常对应编码序列改变，不能直接归因于基因重组；(3)教材指出突变可能有害、有利或中性，且不一定导致新性状或蛋白失活。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe25",
+      "type": "选择题",
+      "stem": "秋水仙素能诱导多倍体形成的原因是（ ）\nA. 促进细胞融合\nB. 诱导染色体多次复制\nC. 促进染色单体分开，形成染色体\nD. 抑制细胞有丝分裂时纺锤体的形成",
+      "answer": "D",
+      "analysis": "教材指出秋水仙素能抑制纺锤体形成，使染色体不能移向两极，导致细胞内染色体数目加倍，从而可能形成多倍体。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe26",
+      "type": "选择题",
+      "stem": "慢性髓细胞性白血病是由于9号染色体和22号染色体互换片段所致。这种变异属于（ ）\nA. 基因突变\nB. 基因重组\nC. 染色体结构变异\nD. 染色体数目变异",
+      "answer": "C",
+      "analysis": "互换片段属于染色体片段移接到另一条非同源染色体上的情形，归为易位，属于染色体结构变异。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe27",
+      "type": "判断题",
+      "stem": "判断正误：只有生殖细胞中的染色体数目或结构的变化才属于染色体变异。（ ）",
+      "answer": "错误",
+      "analysis": "教材定义：体细胞或生殖细胞内染色体数目或结构的变化都称为染色体变异。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe28",
+      "type": "判断题",
+      "stem": "判断下列说法是否正确：\n（1）先天性疾病都是遗传病。\n（2）单基因遗传病都是由隐性致病基因引起的。\n（3）通过遗传咨询、产前诊断和基因检测，可以完全避免遗传病的发生。",
+      "answer": "（1）错误。（2）错误。（3）错误。",
+      "analysis": "（1）先天性疾病不一定由遗传物质改变引起，也可能与环境等因素有关；（2）单基因遗传病可由显性或隐性致病基因引起；（3）教材表述为“在一定程度上能够有效地预防”，不能“完全避免”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe29",
+      "type": "选择题",
+      "stem": "下列有关预防和减少出生缺陷的表述，正确的是（ ）\nA. 禁止近亲结婚可杜绝遗传病患儿的降生\nB. 遗传咨询可确定胎儿是否患唐氏综合征\nC. 产前诊断可初步确定胎儿是否患猫叫综合征\nD. 产前诊断可确定胎儿是否患所有的先天性疾病",
+      "answer": "C",
+      "analysis": "A“杜绝”绝对化；B遗传咨询是咨询与风险评估，确定胎儿是否患病属于产前诊断；D“所有”绝对化。C符合“产前诊断用于确定胎儿是否患某种遗传病或先天性疾病”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe30",
+      "type": "选择题",
+      "stem": "化石被称为“记录着地球和生物进化历史的文字”。下列说法正确的是（  ）\nA. 化石只存在于火成岩中\nB. 化石不能用于推断古生物的行为\nC. 化石是研究生物进化最直接、最重要的证据之一\nD. 化石只能说明生物的种类，不能说明形态结构",
+      "answer": "C",
+      "analysis": "教材指出“大部分化石发现于沉积岩的地层”且“化石是研究生物进化最直接、最重要的证据”。并举例说明可由牙齿、骨骼推测饮食、体型和运动方式。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe31",
+      "type": "简答题",
+      "stem": "比较蝙蝠的翼、鲸的鳍、猫的前肢与人的上肢骨骼，若它们都具有肱骨、桡骨、尺骨、腕骨、掌骨、指骨且排列顺序一致，但功能不同，这最能说明什么？",
+      "answer": "这说明它们属于同源结构（同源器官），内部结构模式相似提示它们可能源自共同祖先，从而支持共同由来学说。",
+      "analysis": "教材强调比较解剖学通过结构模式一致性为共同祖先寻找证据，并在讨论题中引导比较骨的种类与排列顺序及“内部结构模式为什么如此一致”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe32",
+      "type": "简答题",
+      "stem": "达尔文自然选择学说认为，适应的来源和形成原因分别是什么？",
+      "answer": "来源是可遗传的变异；形成原因是在一定环境的选择作用下，有利的可遗传变异赋予个体生存和繁殖优势，经过代代繁殖与逐代积累，形成显著的适应性特征。",
+      "analysis": "题干直接对应教材表述“适应的来源是可遗传的变异，适应是自然选择的结果”，并补全形成过程：环境选择→优势→多代积累。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe33",
+      "type": "判断题",
+      "stem": "判断题：适应是绝对的、完全的适应。（对/错）并说明理由。",
+      "answer": "错。适应具有相对性，存在局限性，例如枯叶蝶形似枯叶仍可能被天敌捕食，说明适应并非完全免于不利因素。",
+      "analysis": "考查“适应的相对性”及其例证。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe34",
+      "type": "计算题",
+      "stem": "在某昆虫种群中，决定翅色的等位基因A、a对应的基因型个体数为：AA 30个、Aa 60个、aa 10个。问：A基因和a基因的频率分别是多少？",
+      "answer": "总等位基因数=2×100=200。A基因数=2×30+60=120，A频率=120/200=60%；a基因数=2×10+60=80，a频率=80/200=40%。",
+      "analysis": "将每个二倍体个体视为含2个该基因座等位基因；先按基因型加权求等位基因总数，再除以总等位基因数得到基因频率。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe35",
+      "type": "计算题",
+      "stem": "在一个非常大的昆虫种群中，亲代基因型频率为AA 30%，Aa 60%，aa 10%。假设雌雄自由交配、无迁入迁出、不同翅色生存繁殖机会均等、A和a不突变。求：（1）配子中A与a的比例；（2）子代基因型频率；（3）子代基因频率。",
+      "answer": "（1）A配子比例p=0.30+0.5×0.60=0.60；a配子比例q=0.10+0.5×0.60=0.40（A:a=60%:40%）。\n（2）子代基因型频率：AA=p^2=0.36（36%），Aa=2pq=0.48（48%），aa=q^2=0.16（16%）。\n（3）子代基因频率：A=p=0.60（60%），a=q=0.40（40%）。",
+      "analysis": "先由亲代基因型频率换算等位基因（配子）频率p、q；随机交配下子代满足p^2、2pq、q^2；基因频率保持为p、q。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe36",
+      "type": "简答题",
+      "stem": "根据教材所述，解释为什么捕食者的存在可能有利于增加物种多样性，并指出该观点对应的理论名称。",
+      "answer": "捕食者往往捕食个体数量多的物种，从而避免少数物种在生态系统中占绝对优势，为其他物种形成腾出空间，因此有利于增加物种多样性；该观点对应“收割理论”。",
+      "analysis": "抓住“捕食数量多的物种→避免垄断→为其他物种形成腾出空间→多样性增加”的因果链，并写出理论名。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx2_rjb_exe37",
+      "type": "简答题",
+      "stem": "教材指出“不同物种之间、生物与无机环境之间在相互影响中不断进化和发展，这就是协同进化”。请各举1个教材中的例子说明协同进化。",
+      "answer": "例子1：猎豹与羚羊相互施加选择压力，羚羊更敏捷、猎豹更快速，形成类似“军备竞赛”的共同演化。例子2：最早光合生物出现使大气中出现氧气，为好氧生物出现创造前提，生物改变环境并反过来影响生物演化。",
+      "analysis": "分别对应“生物—生物”和“生物—无机环境”两类协同进化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 217,
+    "skill_count": 36,
+    "experiment_count": 16,
+    "question_count": 37
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "id": "math_6a_rjb",
+  "stage": "小学",
+  "grade": "六年级上册",
+  "subject": "数学",
+  "title": "数学六年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_6a_rjb_cpt1",
+      "name": "分数乘整数的计算方法",
+      "definition": "分数乘整数，用分子乘整数的积作分子，分母不变；能先约分的先约分再计算。",
+      "importance": "掌握",
+      "pages": "第1章前段",
+      "examples": [
+        "2/9 × 3 = (2×3)/9 = 2/3"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt2",
+      "name": "分数乘分数的计算方法",
+      "definition": "分数乘分数，用分子乘分子，分母乘分母；能约分的先约分。",
+      "importance": "掌握",
+      "pages": "李伯伯种地例题部分",
+      "examples": [
+        "1/2 × 1/5 = 1/10"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt3",
+      "name": "分数乘法的意义",
+      "definition": "一个数乘几分之几表示求这个数的几分之几是多少。",
+      "importance": "重要",
+      "pages": "12L水体积示例处",
+      "examples": [
+        "12 × 1/2 表示求12L的1/2是多少"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt4",
+      "name": "分数乘法的交换律、结合律和分配律",
+      "definition": "整数乘法的交换律、结合律和分配律对分数乘法同样适用，可用于简便运算。",
+      "importance": "了解",
+      "pages": "分数混合运算部分",
+      "examples": [
+        "(1/4×2/3)×3/5 = 1/4×(2/3×3/5)"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt5",
+      "name": "方向的表示方法",
+      "definition": "用正方向与偏角相结合描述方向，如“东偏南30°”“北偏西40°”等，表示在基准方向上顺时针或逆时针偏转一定角度所形成的方向。",
+      "importance": "重要",
+      "examples": [
+        "A市东偏南30°方向",
+        "B市在A市北偏西30°方向"
+      ],
+      "pages": "教材第2章多处出现"
+    },
+    {
+      "id": "math_6a_rjb_cpt6",
+      "name": "距离的测量与表示",
+      "definition": "用具体长度单位（米、千米）描述两地点之间的直线距离。在平面图中通常按比例尺进行换算。",
+      "importance": "掌握",
+      "examples": [
+        "距离A市600km",
+        "校门到教学楼150m"
+      ],
+      "pages": "教材第2章多处出现",
+      "unit": "m, km"
+    },
+    {
+      "id": "math_6a_rjb_cpt7",
+      "name": "比例尺",
+      "definition": "表示图上距离与实际距离的比值，如“1cm表示100km”，用于根据图上距离推算实际距离。",
+      "importance": "了解",
+      "examples": [
+        "1cm表示100km",
+        "1:5000000"
+      ],
+      "pages": "台风路径示意图部分"
+    },
+    {
+      "id": "math_6a_rjb_cpt8",
+      "name": "在平面图上确定位置",
+      "definition": "根据给定的方向和距离，在平面图上从参考点出发确定目标位置。",
+      "importance": "重要",
+      "examples": [
+        "在校园图上标出教学楼、图书馆、体育馆的位置"
+      ],
+      "pages": "教材多处“做一做”"
+    },
+    {
+      "id": "math_6a_rjb_cpt9",
+      "name": "倒数",
+      "definition": "乘积为1的两个数互为倒数。将一个非零数的分子和分母交换位置即可得到它的倒数。",
+      "importance": "掌握",
+      "examples": [
+        "3/5 的倒数是 5/3",
+        "6 的倒数是 1/6"
+      ],
+      "pages": "第3章·倒数的认识"
+    },
+    {
+      "id": "math_6a_rjb_cpt10",
+      "name": "分数除以整数",
+      "definition": "分数除以整数，等于把分子除以该整数，或乘上该整数的倒数。",
+      "importance": "掌握",
+      "examples": [
+        "4/5 ÷ 2 = 4/5 × 1/2 = 2/5"
+      ],
+      "pages": "第3章·分数除法"
+    },
+    {
+      "id": "math_6a_rjb_cpt11",
+      "name": "分数除法的意义",
+      "definition": "一个数除以一个分数，等于乘上这个分数的倒数。",
+      "importance": "重要",
+      "examples": [
+        "2 ÷ 2/3 = 2 × 3/2 = 3"
+      ],
+      "pages": "第3章·分数除法"
+    },
+    {
+      "id": "math_6a_rjb_cpt12",
+      "name": "工作效率模型（和速率模型类似）",
+      "definition": "完成一件工作所需时间与工作效率成反比，多方合作时效率相加。",
+      "importance": "了解",
+      "examples": [
+        "1 ÷ (1/12 + 1/18) 求合修时间"
+      ],
+      "pages": "第3章后半部分"
+    },
+    {
+      "id": "math_6a_rjb_cpt13",
+      "name": "比",
+      "definition": "表示两个数量之间关系的数学概念，可以写成a:b，并可化成最简整数比。",
+      "importance": "重要",
+      "examples": [
+        "15:10",
+        "路程:时间",
+        "2:5",
+        "0.6:0.3"
+      ],
+      "pages": "比的引入部分"
+    },
+    {
+      "id": "math_6a_rjb_cpt14",
+      "name": "比的前项和后项",
+      "definition": "在比 a:b 中，比号前面的数叫前项，后面的数叫后项。",
+      "importance": "掌握",
+      "pages": "比号介绍部分"
+    },
+    {
+      "id": "math_6a_rjb_cpt15",
+      "name": "比值",
+      "definition": "比的前项除以后项所得的商，通常可以用分数、小数或整数表示。",
+      "importance": "重要",
+      "pages": "比值举例部分",
+      "examples": [
+        "15:10 的比值为 1.5"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt16",
+      "name": "比的基本性质",
+      "definition": "比的前项和后项同时乘或除以相同的数（0除外），比值不变。",
+      "importance": "重要",
+      "pages": "比的基本性质推导部分"
+    },
+    {
+      "id": "math_6a_rjb_cpt17",
+      "name": "化简比",
+      "definition": "利用比的基本性质将比化为最简单的整数比。",
+      "importance": "掌握",
+      "examples": [
+        "15:10 化为 3:2"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt18",
+      "name": "比（ratio）",
+      "definition": "表示两个数相除的关系，通常写成“a:b”，其中a为前项，b为后项，比值等于前项除以后项。",
+      "importance": "掌握",
+      "examples": [
+        "15:10",
+        "路程:时间 = 42252:90"
+      ],
+      "pages": ""
+    },
+    {
+      "id": "math_6a_rjb_cpt19",
+      "name": "圆",
+      "definition": "在一个平面内，线段OA绕其固定端点O旋转一周，另一端点A形成的图形叫做圆；圆也可以看作是到定点O的距离等于定长r的所有点的集合。",
+      "importance": "掌握",
+      "aliases": [
+        "circle"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt20",
+      "name": "圆心、半径、直径",
+      "definition": "圆心是圆的中心点，半径是连接圆心与圆上任意一点的线段，直径是通过圆心且两端在圆上的线段，直径的长度是半径的2倍。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_6a_rjb_cpt21",
+      "name": "圆周长公式",
+      "definition": "圆的周长等于直径乘以π，或等于2πr。",
+      "importance": "重要",
+      "formula": "C = πd 或 C = 2πr"
+    },
+    {
+      "id": "math_6a_rjb_cpt22",
+      "name": "圆周率π",
+      "definition": "圆的周长与直径的比值，是一个无限不循环小数，近似为3.14。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_6a_rjb_cpt23",
+      "name": "圆面积公式",
+      "definition": "圆的面积等于π乘以半径的平方。",
+      "importance": "重要",
+      "formula": "S = πr²"
+    },
+    {
+      "id": "math_6a_rjb_cpt24",
+      "name": "扇形",
+      "definition": "由一条弧及其两端到圆心的两条半径围成的图形。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_6a_rjb_cpt25",
+      "name": "百分数",
+      "definition": "表示一个数是另一个数的百分之多少，通常写成在数字后面加百分号“%”的形式。",
+      "importance": "重要",
+      "aliases": [
+        "百分率",
+        "百分比"
+      ],
+      "examples": [
+        "14%",
+        "65.5%",
+        "120%"
+      ],
+      "pages": "教材开头数页"
+    },
+    {
+      "id": "math_6a_rjb_cpt26",
+      "name": "百分数的意义",
+      "definition": "百分数表示一个数是另一个数的100分之几，例如14%就是14/100。",
+      "importance": "重要",
+      "pages": "百分数定义处"
+    },
+    {
+      "id": "math_6a_rjb_cpt27",
+      "name": "百分数与分数的关系",
+      "definition": "百分数是一种特殊的分数，分母是100。百分数可以改写成分数，小数也能改写成百分数。",
+      "importance": "掌握",
+      "pages": "百分数与分数对比处"
+    },
+    {
+      "id": "math_6a_rjb_cpt28",
+      "name": "百分率的应用",
+      "definition": "在实际生活中，出勤率、发芽率、合格率等都用百分率表示两个量的比值关系。",
+      "importance": "了解",
+      "examples": [
+        "出勤率 = 出勤人数/总人数 × 100%"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt29",
+      "name": "增减百分比",
+      "definition": "表示数量相对原有数量增加或减少的百分之多少，例如“增加16.7%”“减少4%”。",
+      "importance": "掌握",
+      "pages": "增减问题示例"
+    },
+    {
+      "id": "math_6a_rjb_cpt30",
+      "name": "百分比",
+      "definition": "表示部分占整体的百分之多少，用百分号表示。",
+      "importance": "掌握",
+      "pages": "第7章开头",
+      "examples": [
+        "30%表示100份中占30份"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt31",
+      "name": "扇形统计图",
+      "definition": "用扇形的大小表示各部分数量与总量之间的关系的统计图。",
+      "importance": "重要",
+      "pages": "教材多处",
+      "examples": [
+        "展示班级最喜欢的运动项目比例"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt32",
+      "name": "奇数累加与平方的关系",
+      "definition": "前n个连续奇数的和等于n的平方。",
+      "importance": "重要",
+      "formula": "1+3+5+…+(2n−1)=n²",
+      "pages": "教材第8章开头",
+      "examples": [
+        "1=1²，1+3=2²，1+3+5=3²"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt33",
+      "name": "等比数列1/2+1/4+1/8+…的极限为1",
+      "definition": "以1/2为公比的无限等比数列的和不断逼近1，其极限值为1。",
+      "importance": "重要",
+      "formula": "1/2+1/4+1/8+…=1",
+      "pages": "教材相关页",
+      "examples": [
+        "通过圆或线段不断分割说明总和为1"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt34",
+      "name": "数形结合思想",
+      "definition": "用图形帮助理解数的变化规律，用数描述图形结构，从而发现数学规律。",
+      "importance": "掌握",
+      "examples": [
+        "通过正方形图理解奇数和平方关系",
+        "用圆或线段理解无限分数逼近1"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt35",
+      "name": "分数乘法",
+      "definition": "分数与分数、分数与整数相乘的计算方法，通常是分子与分子相乘、分母与分母相乘。",
+      "importance": "掌握",
+      "pages": "总复习文字介绍处",
+      "examples": [
+        "3/4 × 2/5"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt36",
+      "name": "分数除法",
+      "definition": "分数除以分数的计算方法，即乘以除数的倒数。",
+      "importance": "掌握",
+      "pages": "总复习文字介绍处",
+      "examples": [
+        "3/10 ÷ 3/4"
+      ]
+    },
+    {
+      "id": "math_6a_rjb_cpt37",
+      "name": "方向与距离确定位置",
+      "definition": "用方向与距离描述一个点在平面中的位置的方式。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_6a_rjb_cpt38",
+      "name": "圆的周长公式",
+      "definition": "圆的周长=直径×π 或 2×π×半径。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_6a_rjb_cpt39",
+      "name": "圆的面积公式",
+      "definition": "圆的面积=π×半径×半径。",
+      "importance": "掌握"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_6a_rjb_skl1",
+      "name": "用分数乘法解决部分与整体问题",
+      "description": "在求一个量的几分之几是多少等实际情境中，建立“整体×分率=部分”的模型进行求解。"
+    },
+    {
+      "id": "math_6a_rjb_skl2",
+      "name": "分数乘法的简便计算",
+      "description": "根据交换律、结合律、分配律，对计算顺序和结构进行调整，以减少计算量。"
+    },
+    {
+      "id": "math_6a_rjb_skl3",
+      "name": "根据方向与距离绘制路线图",
+      "description": "根据文字叙述中的方向（如北偏东、正西等）和距离信息，在平面图上绘制或模拟实际行进路线。"
+    },
+    {
+      "id": "math_6a_rjb_skl4",
+      "name": "根据路线描述行进方向和路程",
+      "description": "对给定路线图进行分析，能够用规范的方向表达方式描述每一段的行进方向与路程。"
+    },
+    {
+      "id": "math_6a_rjb_skl5",
+      "name": "将除法转化为乘法",
+      "description": "在计算分数除法时，将“除以一个分数”转化为“乘上该分数的倒数”。"
+    },
+    {
+      "id": "math_6a_rjb_skl6",
+      "name": "利用单位量推算整体量",
+      "description": "根据“整体 × 分率 = 部分”或“部分 ÷ 分率 = 整体”来求解实际问题中整体或部分的数量。"
+    },
+    {
+      "id": "math_6a_rjb_skl7",
+      "name": "利用比解决实际问题",
+      "description": "根据数量关系建立比，并求出未知量。"
+    },
+    {
+      "id": "math_6a_rjb_skl8",
+      "name": "化简比",
+      "description": "利用比的基本性质，将比的前项和后项同时除以或乘以相同的数，把比化成最简单的整数比。"
+    },
+    {
+      "id": "math_6a_rjb_skl9",
+      "name": "利用公式求圆的周长与面积",
+      "description": "根据给定的半径或直径，应用C = 2πr、C = πd、S = πr²求解相关量。"
+    },
+    {
+      "id": "math_6a_rjb_skl10",
+      "name": "将分数化成百分数",
+      "description": "通过将分数改写为分母是100的分数，或先化为小数，再写成百分数。"
+    },
+    {
+      "id": "math_6a_rjb_skl11",
+      "name": "求一个数的百分之多少",
+      "description": "将百分数转化为分数或小数，再与该数相乘求得结果。"
+    },
+    {
+      "id": "math_6a_rjb_skl12",
+      "name": "计算百分比增减",
+      "description": "通过‘变化量 ÷ 原量’或‘(1±百分比) 连乘’的方法求百分比增减。"
+    },
+    {
+      "id": "math_6a_rjb_skl13",
+      "name": "根据数据选择合适的统计图",
+      "description": "根据数据的特征（如是否表示部分与整体关系、是否呈现时间变化等）选择条形、折线或扇形统计图。"
+    },
+    {
+      "id": "math_6a_rjb_skl14",
+      "name": "将数量转换为百分比",
+      "description": "把部分数量与总量比较，并计算其百分比。"
+    },
+    {
+      "id": "math_6a_rjb_skl15",
+      "name": "通过作图探索规律",
+      "description": "通过绘制几何图形直观观察数量变化，从而发现数之间的规律。"
+    },
+    {
+      "id": "math_6a_rjb_skl16",
+      "name": "归纳推理",
+      "description": "从若干具体算式或图形中总结出普遍规律。"
+    },
+    {
+      "id": "math_6a_rjb_skl17",
+      "name": "根据已知量建立数量关系式",
+      "description": "解决分数、比、百分数应用题时，根据比例关系建立等式求解。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_6a_rjb_exe1",
+      "type": "应用题",
+      "stem": "小雅、爸爸、妈妈每人吃2/9个蛋糕，3人一共吃多少个？",
+      "answer": "2/3个",
+      "analysis": "将三个相同分数相加，转化为分数乘整数：2/9×3 = 2/3。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe2",
+      "type": "应用题",
+      "stem": "李伯伯家1/2公顷地的1/5种土豆，面积是多少公顷？",
+      "answer": "1/10 公顷",
+      "analysis": "根据整体×分率=部分，计算1/2×1/5=1/10。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe3",
+      "type": "应用题",
+      "stem": "石油勘探队在A城东偏北40°方向上、距离A城45km处打出一口油井。请你在平面图上确定油井的位置。",
+      "answer": "从A城起，沿东偏北40°方向测45km，在对应位置标记油井。",
+      "analysis": "题目考察学生对方向与距离的综合应用，需要先确定基准方向，再按偏角判断方向，最后按距离在图上定位。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe4",
+      "type": "应用题",
+      "stem": "1路公共汽车从起点站沿西偏北40°方向行驶3km，然后向正西方向行驶4km，最后沿南偏西30°方向行驶3km到达终点站。请根据描述画出路线图。",
+      "answer": "按照三段方向依次绘制折线路径：第一段西偏北40°3km，第二段正西4km，第三段南偏西30°3km。",
+      "analysis": "考察根据多段方向与距离绘制完整路线图的能力。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe5",
+      "type": "应用题",
+      "stem": "计算：2 ÷ 2/3 （来自教材中小明行走速度问题）",
+      "answer": "3 km/h",
+      "analysis": "根据一个数除以分数等于乘倒数，2 ÷ 2/3 = 2 × 3/2 = 3。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe6",
+      "type": "应用题",
+      "stem": "把 3/4 L 橙汁分装到 1/4 L 的小瓶里，可以装多少瓶？",
+      "answer": "3 瓶",
+      "analysis": "3/4 ÷ 1/4 = 3。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe7",
+      "type": "应用题",
+      "stem": "小敏买6本花12元，小亮买8本花20元。求两人在数量和金额上的比与比值。",
+      "answer": "数量比 6:8=3:4，金额比 12:20=3:5。",
+      "analysis": "通过两个量相除求出比与比值。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe8",
+      "type": "填空题",
+      "stem": "把比 15:10 化为最简单整数比。",
+      "answer": "3:2",
+      "analysis": "利用前项后项同时÷5。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe9",
+      "type": "应用题",
+      "stem": "配制 500mL、比为1:4 的稀释液，求浓缩液和水的体积。",
+      "answer": "浓缩液100mL，水400mL。",
+      "analysis": "按1+4分成5份。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe10",
+      "type": "填空题",
+      "stem": "把比6:8化成最简单整数比。",
+      "answer": "3:4",
+      "analysis": "同时除以最大公因数2。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe11",
+      "type": "应用题",
+      "stem": "一个圆的半径是5 m，它的周长是多少？（π取3.14）",
+      "answer": "31.4 m",
+      "analysis": "C = 2πr = 2 × 3.14 × 5",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe12",
+      "type": "应用题",
+      "stem": "圆形草坪的直径为20 m，每平方米8元，铺满草坪要多少钱？",
+      "answer": "2512 元（314 × 8）",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe13",
+      "type": "应用题",
+      "stem": "王涛5投3中，李强6投4中，他们的命中率分别是多少？谁的命中率高？",
+      "answer": "王涛：60%，李强：66.7%，李强更高。",
+      "analysis": "将分数改写成百分数即可比较。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe14",
+      "type": "应用题",
+      "stem": "春蕾小学收到参赛作品750幅，其中书法作品占14%。书法作品有多少幅？",
+      "answer": "105幅",
+      "analysis": "用求一个数的百分之多少的方法：750×14% = 105。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe15",
+      "type": "应用题",
+      "stem": "某商品4月比3月降价20%，5月比4月涨价20%。5月价格比3月变化了百分之多少？",
+      "answer": "下降4%。",
+      "analysis": "可设原价为100：100×0.8×1.2=96，变化率=4%。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe16",
+      "type": "应用题",
+      "stem": "六（1）班40名学生中有12人喜欢乒乓球，这占全班人数的百分之多少？",
+      "answer": "30%",
+      "analysis": "用部分÷整体=百分比，12÷40=0.3=30%",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe17",
+      "type": "简答题",
+      "stem": "根据“绿荫小学2017-2021年树木总量变化表”，选择合适的统计图表示该变化。",
+      "answer": "应选择折线统计图或条形统计图，折线统计图更能体现随时间变化趋势。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe18",
+      "type": "应用题",
+      "stem": "每日饮用250g牛奶，若其中水分占85%，含有多少克水分？",
+      "answer": "250×85%=212.5克",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe19",
+      "type": "填空题",
+      "stem": "计算 1+3+5+7 = (   )²",
+      "answer": "1+3+5+7 = 16 = 4²",
+      "analysis": "前4个奇数之和=4²=16。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe20",
+      "type": "简答题",
+      "stem": "计算 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64 + … 的值。",
+      "answer": "1",
+      "analysis": "该无限等比数列公比1/2，和趋近1。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe21",
+      "type": "填空题",
+      "stem": "计算 3/4 × 2/5。",
+      "answer": "6/20 = 3/10",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe22",
+      "type": "填空题",
+      "stem": "把比 0.6 : 0.3 化成最简单的整数比。",
+      "answer": "2 : 1",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6a_rjb_exe23",
+      "type": "应用题",
+      "stem": "一个圆的半径是 1 km，求它的周长。",
+      "answer": "约 6.28 km",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 39,
+    "skill_count": 17,
+    "experiment_count": 0,
+    "question_count": 23
+  }
+}

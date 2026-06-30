@@ -1,0 +1,1784 @@
+{
+  "id": "physics_8a_rjb",
+  "stage": "初中",
+  "grade": "八年级上册",
+  "subject": "物理",
+  "title": "物理八年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_8a_rjb_cpt1",
+      "name": "长度",
+      "definition": "描述物体空间延伸程度的物理量，需要通过测量工具获得。",
+      "importance": "重要",
+      "examples": [
+        "帽檐直径",
+        "课桌高度"
+      ],
+      "unit": "m"
+    },
+    {
+      "id": "physics_8a_rjb_cpt2",
+      "name": "长度单位（米及其倍数、子倍数）",
+      "definition": "国际单位制中长度的单位包括米及其倍数和子倍数，如km、dm、cm、mm等。",
+      "importance": "掌握",
+      "formula": "1 km = 1000 m；1 cm = 0.01 m 等"
+    },
+    {
+      "id": "physics_8a_rjb_cpt3",
+      "name": "时间",
+      "definition": "物体做功过程所持续的时长，是功率定义中的分母量。",
+      "importance": "重要",
+      "unit": "s"
+    },
+    {
+      "id": "physics_8a_rjb_cpt4",
+      "name": "时间单位（秒及其换算）",
+      "definition": "国际单位制中时间的基本单位是秒，小时、分钟等与秒之间存在换算关系。",
+      "importance": "掌握",
+      "formula": "1 h = 60 min；1 min = 60 s"
+    },
+    {
+      "id": "physics_8a_rjb_cpt5",
+      "name": "误差",
+      "definition": "测量值与真实值之间的差别，由于仪器和方法的限制导致，无法完全消除。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt6",
+      "name": "测量错误",
+      "definition": "由于操作不当造成的偏差，如读数不准，与误差不同，可以避免。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt7",
+      "name": "国际单位制（SI）",
+      "definition": "一套国际统一的物理量单位体系，包括基本单位米、秒等。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt8",
+      "name": "机械运动",
+      "definition": "物体的位置随时间不断地发生变化的运动形式。",
+      "importance": "重要",
+      "examples": [
+        "彗星运动",
+        "猎豹奔跑",
+        "蜗牛爬行",
+        "江河奔流",
+        "天体运动",
+        "地壳运动"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt9",
+      "name": "运动与静止的相对性",
+      "definition": "一个物体是运动还是静止取决于所选参照物，不同参照物下的判断可能不同。",
+      "importance": "掌握",
+      "examples": [
+        "两列火车并排时的错觉",
+        "地面看车辆在运动，而车辆之间可能相对静止"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt10",
+      "name": "参照物",
+      "definition": "判断物体运动或静止时所选取的标准物体。",
+      "importance": "重要",
+      "examples": [
+        "地面",
+        "旁边的列车",
+        "树木",
+        "房屋"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt11",
+      "name": "速度",
+      "definition": "表示物体运动快慢和方向的物理量，定义为位移与发生该位移所用时间之比。",
+      "importance": "重要",
+      "formula": "v = s / t",
+      "unit": "m/s, km/h",
+      "examples": [
+        "汽车速度表上的读数",
+        "刘翔跨栏的平均速度"
+      ],
+      "aliases": [
+        "velocity"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt12",
+      "name": "平均速度",
+      "definition": "在变速运动中，用物体通过的路程除以所用的时间来描述运动快慢的物理量，公式为 v = s / t。",
+      "importance": "重要",
+      "formula": "v_avg = s_total / t_total",
+      "examples": [
+        "刘翔110 m跨栏的平均速度"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt13",
+      "name": "匀速直线运动",
+      "definition": "速度大小和方向都保持不变的直线运动。",
+      "importance": "重要",
+      "examples": [
+        "平直轨道上平稳行驶的列车"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt14",
+      "name": "变速直线运动",
+      "definition": "物体沿直线但速度随时间变化的运动。",
+      "importance": "了解",
+      "examples": [
+        "汽车在不同时间段内速度不同的行驶"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt15",
+      "name": "超声波测距",
+      "definition": "利用超声波传播、反射并计时来测量距离的技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt16",
+      "name": "声音的产生",
+      "definition": "声音是由物体的振动产生的。",
+      "importance": "重要",
+      "aliases": [
+        "发声原理"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt17",
+      "name": "振动",
+      "definition": "物体做周期性往复运动的现象，发声体在发声时都在振动。",
+      "importance": "重要",
+      "aliases": [
+        "vibration"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt18",
+      "name": "声波",
+      "definition": "声音以波的形式在介质中传播，属于疏密相间的纵波。",
+      "importance": "重要",
+      "aliases": [
+        "sound wave"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt19",
+      "name": "介质",
+      "definition": "能够传递声音的物质，包括气体、液体和固体，真空不能传声。",
+      "importance": "重要",
+      "aliases": [
+        "medium"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt20",
+      "name": "声速",
+      "definition": "声音在介质中传播的速度，等于声音每秒传播的距离。",
+      "importance": "掌握",
+      "unit": "m/s",
+      "formula": "v = s / t"
+    },
+    {
+      "id": "physics_8a_rjb_cpt21",
+      "name": "回声",
+      "definition": "声波遇到障碍物反射后返回，人耳能与原声区分的反射声。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt22",
+      "name": "骨传导",
+      "definition": "声音通过头骨、颌骨等固体传到听觉神经，引起听觉的过程。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt23",
+      "name": "音调",
+      "definition": "声音听起来高低不同的属性称为音调。物体振动得快，音调高；振动得慢，音调低。",
+      "importance": "重要",
+      "aliases": [
+        "pitch"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt24",
+      "name": "频率",
+      "definition": "交变电流在单位时间内完成周期性变化的次数，常用 f 表示，单位是赫兹。",
+      "importance": "重要",
+      "unit": "Hz",
+      "formula": "f = 振动次数 / 时间",
+      "aliases": [
+        "频率 f"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt25",
+      "name": "响度",
+      "definition": "声音强弱的属性称为响度。",
+      "importance": "重要",
+      "aliases": [
+        "loudness"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt26",
+      "name": "振幅",
+      "definition": "物体振动的幅度称为振幅。振幅越大，声音的响度越大。",
+      "importance": "掌握",
+      "unit": "m"
+    },
+    {
+      "id": "physics_8a_rjb_cpt27",
+      "name": "音色",
+      "definition": "不同发声体即使音调和响度相同，听起来仍不同，这种区别称为音色。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt28",
+      "name": "声波波形",
+      "definition": "声音在示波器或计算机呈现出的波形，可用于比较音调、响度、音色等特性。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt29",
+      "name": "可听声、超声波、次声波",
+      "definition": "20–20000 Hz 为可听声，高于20000 Hz为超声波，低于20 Hz为次声波。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt30",
+      "name": "次声波",
+      "definition": "频率低于人耳可听下限（约20 Hz）的声波，能传播很远并携带信息。",
+      "importance": "掌握",
+      "examples": [
+        "地震、火山爆发、台风、海啸产生的次声波",
+        "大象交流使用次声波"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt31",
+      "name": "超声波",
+      "definition": "频率高于人耳可听上限（约20 kHz）的声波，具有方向性强、能量集中等特点。",
+      "importance": "掌握",
+      "examples": [
+        "蝙蝠发超声波定位昆虫",
+        "B超医疗成像",
+        "超声清洗",
+        "超声碎石"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt32",
+      "name": "回声定位",
+      "definition": "通过发射声波并接收其反射回声来判断物体位置的方法。",
+      "importance": "重要",
+      "examples": [
+        "蝙蝠利用回声定位寻找昆虫",
+        "倒车雷达",
+        "声呐测深"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt33",
+      "name": "声传递信息",
+      "definition": "声音可作为信息的载体，被动物、人类或仪器接收并解读。",
+      "importance": "重要",
+      "examples": [
+        "听诊器诊病",
+        "利用次声波判断地震方位和强度"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt34",
+      "name": "声传递能量",
+      "definition": "声波传播能携带能量并对物体做功，使其发生振动或改变状态。",
+      "importance": "重要",
+      "examples": [
+        "超声清洗",
+        "超声碎石",
+        "扬声器对烛焰产生影响"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt35",
+      "name": "噪声",
+      "definition": "由发声体无规则振动产生，或妨碍人们正常休息、学习、工作并对所需声音造成干扰的声音。",
+      "importance": "重要",
+      "aliases": [
+        "noise"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt36",
+      "name": "分贝",
+      "definition": "表示声音强弱等级的单位，符号为dB。",
+      "importance": "掌握",
+      "unit": "dB"
+    },
+    {
+      "id": "physics_8a_rjb_cpt37",
+      "name": "噪声的危害",
+      "definition": "噪声可干扰谈话、降低工作效率，长期暴露会损伤听力并导致神经衰弱等疾病，极强噪声可导致鼓膜破裂。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt38",
+      "name": "噪声控制方法",
+      "definition": "从声源、传播途径和接收者三个方面采取的控制噪声的措施，包括防止噪声产生、阻断噪声传播、防止噪声进入耳朵。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt39",
+      "name": "声音的传播",
+      "definition": "声音传播需要介质，真空不能传声。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt40",
+      "name": "温度",
+      "definition": "表征系统热平衡性质的物理量，达到热平衡的系统具有相同的温度。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt41",
+      "name": "温度计",
+      "definition": "测量温度的工具，常利用液体的热胀冷缩原理制成。",
+      "importance": "重要",
+      "examples": [
+        "水银温度计、气体温度计、双金属温度计、热电偶温度计"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt42",
+      "name": "液体的热胀冷缩",
+      "definition": "液体受热体积增大，冷却体积缩小的规律。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt43",
+      "name": "摄氏温度",
+      "definition": "以0℃为冰水混合物温度、100℃为沸水温度并分成100等份的温度制。",
+      "importance": "重要",
+      "unit": "℃"
+    },
+    {
+      "id": "physics_8a_rjb_cpt44",
+      "name": "量程",
+      "definition": "温度计可以测量的温度范围。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt45",
+      "name": "分度值",
+      "definition": "温度计上每小格所表示的温度值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt46",
+      "name": "体温计工作原理",
+      "definition": "利用细管狭道使水银上升后不回落，从而保持体温读数。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt47",
+      "name": "热电偶原理",
+      "definition": "两种不同金属构成回路，若接头温度不同，将产生电流。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt48",
+      "name": "物态变化",
+      "definition": "固态、液态和气态之间的相互转变，包括熔化、凝固、汽化、液化、升华和凝华。",
+      "importance": "掌握",
+      "examples": [
+        "冰变成水，水变成水蒸气"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt49",
+      "name": "熔化",
+      "definition": "物质从固态变成液态的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt50",
+      "name": "凝固",
+      "definition": "物质从液态变成固态的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt51",
+      "name": "晶体",
+      "definition": "内部微粒按一定规则排列，具有空间周期性，通常具有规则的几何外形，并在一定压强下有确定熔点。",
+      "importance": "重要",
+      "examples": [
+        "冰、海波、金属",
+        "石英",
+        "云母",
+        "明矾",
+        "食盐",
+        "硫酸铜",
+        "味精",
+        "雪花"
+      ],
+      "aliases": [
+        "crystal"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt52",
+      "name": "非晶体",
+      "definition": "内部微粒排列无规则，没有确定的几何外形，物理性质在各个方向相同，没有确定熔点。",
+      "importance": "重要",
+      "examples": [
+        "蜡、松香、玻璃",
+        "玻璃",
+        "蜂蜡",
+        "松香",
+        "橡胶",
+        "沥青"
+      ],
+      "aliases": [
+        "amorphous solid"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt53",
+      "name": "熔点",
+      "definition": "晶体熔化时的固定温度。",
+      "importance": "重要",
+      "unit": "℃"
+    },
+    {
+      "id": "physics_8a_rjb_cpt54",
+      "name": "凝固点",
+      "definition": "液体凝固成晶体时的固定温度，与其熔点相同。",
+      "importance": "重要",
+      "unit": "℃"
+    },
+    {
+      "id": "physics_8a_rjb_cpt55",
+      "name": "熔化吸热",
+      "definition": "晶体在熔化过程中需要吸收热量，即使温度不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt56",
+      "name": "凝固放热",
+      "definition": "液体在凝固成晶体时放出热量，温度保持不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt57",
+      "name": "汽化",
+      "definition": "物质从液态变为气态的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "vaporization"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt58",
+      "name": "液化",
+      "definition": "物质从气态变为液态的过程，液化时要放热。",
+      "importance": "掌握",
+      "aliases": [
+        "liquefaction"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt59",
+      "name": "沸腾",
+      "definition": "液体内部和表面同时发生的剧烈汽化现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt60",
+      "name": "沸点",
+      "definition": "液体沸腾时所具有的确定温度。",
+      "importance": "重要",
+      "unit": "℃"
+    },
+    {
+      "id": "physics_8a_rjb_cpt61",
+      "name": "蒸发",
+      "definition": "在任何温度下都能发生的汽化现象，只发生在液体表面。",
+      "importance": "掌握",
+      "aliases": [
+        "evaporation"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt62",
+      "name": "汽化吸热",
+      "definition": "液体在汽化过程中需要吸收热量，使液体及接触物体温度下降。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt63",
+      "name": "液化放热",
+      "definition": "气体在液化过程中要放出热量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt64",
+      "name": "升华",
+      "definition": "物质从固态直接变为气态的过程，升华需要吸热。",
+      "importance": "重要",
+      "examples": [
+        "樟脑片变小消失",
+        "干冰直接变成气体",
+        "冰在寒冷环境中慢慢变干"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt65",
+      "name": "凝华",
+      "definition": "物质从气态直接变为固态的过程，凝华会放热。",
+      "importance": "重要",
+      "examples": [
+        "霜的形成",
+        "玻璃上的冰花",
+        "树枝上的雾凇"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt66",
+      "name": "吸热与放热",
+      "definition": "物态变化过程中，熔化、汽化、升华要吸热；凝固、液化、凝华要放热。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt67",
+      "name": "光源",
+      "definition": "能够发光的物体叫做光源，包括太阳、恒星、萤火虫等自然光源以及LED等人造光源。",
+      "importance": "掌握",
+      "examples": [
+        "太阳",
+        "恒星",
+        "LED灯",
+        "萤火虫"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt68",
+      "name": "光的直线传播",
+      "definition": "光在同种均匀介质中沿直线传播，如空气、水、玻璃中。",
+      "importance": "重要",
+      "examples": [
+        "汽车前灯光束直射",
+        "雾中看到的直光束"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt69",
+      "name": "透明介质",
+      "definition": "能够让光通过的物质，如空气、水和玻璃，可作为光的传播介质。",
+      "importance": "了解",
+      "examples": [
+        "空气",
+        "水",
+        "玻璃"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt70",
+      "name": "光线",
+      "definition": "表示光传播径迹和方向的带箭头直线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt71",
+      "name": "光速",
+      "definition": "光的传播速度，真空中光速为2.99792×10^8 m/s，通常近似取3×10^8 m/s。",
+      "importance": "重要",
+      "formula": "c = 3×10^8 m/s"
+    },
+    {
+      "id": "physics_8a_rjb_cpt72",
+      "name": "光年",
+      "definition": "光在真空中传播一年的距离，是天文学中常用的大距离单位。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt73",
+      "name": "光的反射",
+      "definition": "光遇到物体表面会改变传播方向，这一现象称为光的反射。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt74",
+      "name": "法线",
+      "definition": "在入射点处垂直于反射面的直线叫做法线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt75",
+      "name": "入射角",
+      "definition": "入射光线与过入射点并垂直于介质分界面的法线之间的夹角。",
+      "importance": "掌握",
+      "unit": "度"
+    },
+    {
+      "id": "physics_8a_rjb_cpt76",
+      "name": "反射角",
+      "definition": "反射光线与法线的夹角叫做反射角 r。",
+      "importance": "掌握",
+      "unit": "度"
+    },
+    {
+      "id": "physics_8a_rjb_cpt77",
+      "name": "光的反射定律",
+      "definition": "反射光线、入射光线和法线都在同一平面内；反射光线、入射光线分居法线两侧；反射角等于入射角。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt78",
+      "name": "光路可逆性",
+      "definition": "在反射现象中，如果光沿反射光方向射向反射面，它将沿原入射方向反射回去。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt79",
+      "name": "镜面反射",
+      "definition": "光射到非常光滑的表面（如镜子）上，被平行地反射的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt80",
+      "name": "漫反射",
+      "definition": "光射到凹凸不平的表面上，被向四面八方反射的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt81",
+      "name": "平面镜成像",
+      "definition": "平面镜形成的像与物体关于镜面对称，像与物体大小相等，到镜面的距离相等，像与物体的连线垂直镜面。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt82",
+      "name": "虚像",
+      "definition": "光线通过透镜后并未真正会聚，人眼倒推光线形成的像，不能被光屏承接，物体与像在透镜同侧。",
+      "importance": "掌握",
+      "examples": [
+        "放大镜成像"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt83",
+      "name": "对称成像规律",
+      "definition": "平面镜成像可视为物体与像关于镜面对称。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt84",
+      "name": "凸面镜",
+      "definition": "球面镜的一种，反射后能扩大视野，常用于后视镜等。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt85",
+      "name": "凹面镜",
+      "definition": "球面镜的一种，能会聚光线，常用于反光装置、太阳灶等。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt86",
+      "name": "光的折射",
+      "definition": "光从一种介质斜射入另一种介质时，传播方向发生偏折的现象。",
+      "importance": "重要",
+      "examples": [
+        "空气斜射入水时折射角小于入射角",
+        "筷子在水中看起来“折断”"
+      ],
+      "aliases": [
+        "refraction"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt87",
+      "name": "折射角",
+      "definition": "折射光线与过入射点并垂直于介质分界面的法线之间的夹角。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt88",
+      "name": "光路可逆",
+      "definition": "折射现象中，光逆着折射光的方向射入，会沿着原来入射光的方向射出。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt89",
+      "name": "光的色散",
+      "definition": "白光通过三棱镜或其他装置可以分解为红、橙、黄、绿、蓝、靛、紫等色光的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt90",
+      "name": "白光",
+      "definition": "由各种色光混合而成的光。太阳光是一种白光。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt91",
+      "name": "可见光谱",
+      "definition": "由红至紫依次排列的各种色光组成的光谱。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt92",
+      "name": "色光三原色",
+      "definition": "红、绿、蓝三种色光，按不同比例混合可以产生各种颜色的光。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt93",
+      "name": "红外线",
+      "definition": "波长比无线电波短、比可见光长的电磁波，所有物体都能发射，热物体发射更强。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt94",
+      "name": "紫外线",
+      "definition": "波长范围为5~370 nm，能量较高，可用于消毒，也可能对人体造成伤害。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt95",
+      "name": "凸透镜",
+      "definition": "一种中间厚、边缘薄的透镜，可使光线会聚或发散，常用于照相机、投影仪和放大镜等光学仪器中。",
+      "importance": "掌握",
+      "aliases": [
+        "会聚透镜",
+        "convex lens"
+      ],
+      "examples": [
+        "照相机镜头",
+        "投影仪镜头",
+        "放大镜"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt96",
+      "name": "凹透镜",
+      "definition": "中间薄、边缘厚的透镜，对光有发散作用，又称发散透镜。",
+      "importance": "掌握",
+      "aliases": [
+        "发散透镜",
+        "concave lens"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt97",
+      "name": "薄透镜",
+      "definition": "厚度远小于球面半径的透镜，可以近似认为光心在透镜中心。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt98",
+      "name": "主光轴",
+      "definition": "通过透镜两个球面球心的直线，简称主轴。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt99",
+      "name": "光心",
+      "definition": "通过该点的光传播方向不变，可认为位于薄透镜中心。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt100",
+      "name": "焦点",
+      "definition": "平行于主光轴的光通过凸透镜后会聚到主轴上的一点。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt101",
+      "name": "焦距",
+      "definition": "凸透镜主光轴上焦点到透镜中心的距离，决定凸透镜对光的偏折能力。",
+      "importance": "掌握",
+      "formula": "f = 光心到焦点的距离",
+      "unit": "cm"
+    },
+    {
+      "id": "physics_8a_rjb_cpt102",
+      "name": "实像",
+      "definition": "光线通过凸透镜后实际会聚在一点形成的像，可被光屏承接，物体和像分居透镜两侧。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt103",
+      "name": "照相机成像",
+      "definition": "物体远离凸透镜时，凸透镜在底片或感光元件上形成缩小、倒立的实像。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt104",
+      "name": "投影仪成像",
+      "definition": "物体靠近凸透镜时，透镜在投影屏幕上形成放大、倒立的实像。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt105",
+      "name": "放大镜成像",
+      "definition": "物体位于焦点以内时，凸透镜形成放大、正立的虚像。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt106",
+      "name": "凸透镜成像规律",
+      "definition": "凸透镜所成的像的虚实、大小、正倒与物体到凸透镜的距离之间存在规律性关系。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt107",
+      "name": "物距",
+      "definition": "物体到凸透镜的距离，用u表示。",
+      "importance": "掌握",
+      "unit": "cm"
+    },
+    {
+      "id": "physics_8a_rjb_cpt108",
+      "name": "像距",
+      "definition": "像到凸透镜的距离，用v表示。",
+      "importance": "掌握",
+      "unit": "cm"
+    },
+    {
+      "id": "physics_8a_rjb_cpt109",
+      "name": "实像与虚像",
+      "definition": "实像可由光屏承接，虚像不能由光屏承接，需要从透镜方向观察。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt110",
+      "name": "像的正倒与大小",
+      "definition": "像可分为正立或倒立，放大或缩小，取决于物距与焦距的关系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt111",
+      "name": "眼睛成像原理",
+      "definition": "晶状体和角膜共同作用相当于凸透镜，把来自物体的光会聚在视网膜上形成像。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt112",
+      "name": "眼睛调节",
+      "definition": "通过睫状体改变晶状体形状，使不同距离物体成像在视网膜上。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt113",
+      "name": "远点",
+      "definition": "眼睛依靠调节能看清的最远点。正常眼的远点在无限远。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt114",
+      "name": "近点",
+      "definition": "眼睛依靠调节能看清的最近点。正常眼近点约为10 cm。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt115",
+      "name": "明视距离",
+      "definition": "正常眼观察近处物体最清晰而不疲劳的距离，约25 cm。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt116",
+      "name": "近视眼及矫正",
+      "definition": "由于折光过强或眼球过长，远处物体成像在视网膜前；用凹透镜矫正。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt117",
+      "name": "远视眼及矫正",
+      "definition": "由于折光不足或眼球过短，近处物体成像在视网膜后；用凸透镜矫正。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt118",
+      "name": "透镜焦度",
+      "definition": "透镜焦距的倒数，用Φ表示，反映透镜折光本领。",
+      "formula": "Φ = 1 / f",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt119",
+      "name": "显微镜",
+      "definition": "由物镜和目镜两组凸透镜构成，用两次放大作用观察肉眼看不见的微小物体。",
+      "importance": "重要",
+      "examples": "观察植物细胞"
+    },
+    {
+      "id": "physics_8a_rjb_cpt120",
+      "name": "望远镜",
+      "definition": "由物镜和目镜组成，物镜成实像，目镜对实像进行放大，使远处物体成大的视角。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_8a_rjb_cpt121",
+      "name": "物镜",
+      "definition": "显微镜或望远镜中靠近被观察物体的凸透镜，用于成实像。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt122",
+      "name": "目镜",
+      "definition": "显微镜或望远镜中靠近眼睛的凸透镜，用来对实像进行放大。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt123",
+      "name": "视角",
+      "definition": "物体对眼睛形成的角度大小，影响人眼观察物体清晰程度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt124",
+      "name": "质量",
+      "definition": "物体所含物质多少的量度，质量大的物体运动状态不容易改变。",
+      "importance": "重要",
+      "unit": "kg, g, mg, t",
+      "formula": ""
+    },
+    {
+      "id": "physics_8a_rjb_cpt125",
+      "name": "质量单位",
+      "definition": "质量的基本单位是千克，常用单位还有克、毫克、吨。",
+      "importance": "掌握",
+      "examples": [
+        "1 g = 10^-3 kg",
+        "1 mg = 10^-6 kg",
+        "1 t = 10^3 kg"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt126",
+      "name": "质量守恒",
+      "definition": "物体的质量不随形状、物态和位置改变而改变。",
+      "importance": "重要",
+      "examples": [
+        "冰熔化成水质量不变",
+        "铁块压成铁片质量不变"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt127",
+      "name": "天平",
+      "definition": "用来测量质量的仪器，通过两盘平衡判断质量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt128",
+      "name": "质量与体积的比例关系",
+      "definition": "同一种物质的质量与其体积成正比，比值保持不变。",
+      "importance": "掌握",
+      "examples": [
+        "不同大小的铝块，质量与体积的比值相同。"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt129",
+      "name": "密度",
+      "definition": "物质的质量与体积之比，通常用公式 ρ = m / V 表示。",
+      "importance": "重要",
+      "formula": "ρ = m / V",
+      "unit": "kg/m3, g/cm3",
+      "examples": [
+        "花岗岩的密度约为2.6~2.8×10^3 kg/m3。",
+        "铅球是否为纯铅可通过密度判断",
+        "酒精与煤油密度相同但可用气味区分"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt130",
+      "name": "密度单位换算",
+      "definition": "常用的密度单位有kg/m3、g/cm3，两者关系为1 g/cm3 = 1000 kg/m3。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_8a_rjb_cpt131",
+      "name": "体积",
+      "definition": "物体占有空间的大小，可用量筒测量液体和不规则固体的体积。",
+      "importance": "掌握",
+      "unit": "cm3 或 mL"
+    },
+    {
+      "id": "physics_8a_rjb_cpt132",
+      "name": "量筒",
+      "definition": "用于测量液体或不规则固体体积的仪器，有刻度、量程和分度值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_8a_rjb_cpt133",
+      "name": "热胀冷缩",
+      "definition": "物质受热体积增大、受冷体积缩小的现象。",
+      "importance": "掌握",
+      "examples": [
+        "空气受热上升",
+        "气体在热水中膨胀使橡皮膜鼓起"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt134",
+      "name": "密度随温度变化",
+      "definition": "温度升高时物质密度通常减小，温度降低时密度增大。",
+      "importance": "掌握",
+      "examples": [
+        "气体密度随温度变化最明显"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt135",
+      "name": "水的异常膨胀",
+      "definition": "水在4°C密度最大，温度高于或低于4°C时密度都变小。",
+      "importance": "重要",
+      "examples": [
+        "湖底保持4°C使鱼能在寒冬生存",
+        "水结冰体积变大导致水管冻裂"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt136",
+      "name": "物质的鉴别",
+      "definition": "根据密度或其他物理性质判断物质种类的方法。",
+      "importance": "掌握",
+      "examples": [
+        "用密度判断银饰是否为纯银"
+      ]
+    },
+    {
+      "id": "physics_8a_rjb_cpt137",
+      "name": "质量测量",
+      "definition": "使用天平或台秤测量物体质量的方法。",
+      "importance": "了解",
+      "examples": [
+        "托盘天平使用步骤"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_8a_rjb_skl1",
+      "name": "使用刻度尺的方法",
+      "description": "包括零刻度线对准、尺紧靠物体且平行、视线垂直读数、记录单位等操作规范。"
+    },
+    {
+      "id": "physics_8a_rjb_skl2",
+      "name": "使用停表的方法",
+      "description": "正确操作停表按钮、读数并记录时间。"
+    },
+    {
+      "id": "physics_8a_rjb_skl3",
+      "name": "选择参照物的方法",
+      "description": "根据需要选择适当的参照物，用于判断物体的运动或静止状态。"
+    },
+    {
+      "id": "physics_8a_rjb_skl4",
+      "name": "根据路程与时间判断运动快慢",
+      "description": "通过比较相同时间内的路程或相同路程所用的时间来判断物体运动的快慢。"
+    },
+    {
+      "id": "physics_8a_rjb_skl5",
+      "name": "使用刻度尺测量长度",
+      "description": "观察零刻度线、量程、分度值；测量时尺紧贴物体，读数视线垂直刻度线。"
+    },
+    {
+      "id": "physics_8a_rjb_skl6",
+      "name": "使用停表测量时间",
+      "description": "用停表测量物体通过某段路程所用的时间，以便进一步计算速度。"
+    },
+    {
+      "id": "physics_8a_rjb_skl7",
+      "name": "通过现象判断振动",
+      "description": "通过观察物体形状变化或触觉感受判断物体是否在振动。"
+    },
+    {
+      "id": "physics_8a_rjb_skl8",
+      "name": "通过波形分析声音特性",
+      "description": "通过观察波形的疏密、幅度、形状来判断声音的频率、振幅和音色。"
+    },
+    {
+      "id": "physics_8a_rjb_skl9",
+      "name": "利用回声测距方法",
+      "description": "通过测量声波发出与回声返回所需的时间，结合声速计算距离。"
+    },
+    {
+      "id": "physics_8a_rjb_skl10",
+      "name": "基于传播链分析控制噪声",
+      "description": "依据声音传播的三个阶段（声源振动、介质传播、耳朵接收）分析并选择适当的噪声控制措施。"
+    },
+    {
+      "id": "physics_8a_rjb_skl11",
+      "name": "正确使用温度计的方法",
+      "description": "包括玻璃泡浸入液体、等待示数稳定、视线与液面相平等操作步骤。"
+    },
+    {
+      "id": "physics_8a_rjb_skl12",
+      "name": "绘制物理量随时间变化的图象",
+      "description": "根据实验数据在坐标系中描点并连接，得到物理量随时间变化的曲线。"
+    },
+    {
+      "id": "physics_8a_rjb_skl13",
+      "name": "绘制温度-时间图象",
+      "description": "根据实验记录的温度随时间变化的数据，绘制温度-时间图象以分析物理过程。"
+    },
+    {
+      "id": "physics_8a_rjb_skl14",
+      "name": "观察物态变化现象",
+      "description": "通过观察物质外观、温度变化和环境条件，判断发生的物态变化类型。"
+    },
+    {
+      "id": "physics_8a_rjb_skl15",
+      "name": "用光线表示光的传播路径",
+      "description": "使用带箭头的直线表示光的传播方向，以分析成像和影子形成等光学问题。"
+    },
+    {
+      "id": "physics_8a_rjb_skl16",
+      "name": "设计并进行实验",
+      "description": "根据问题与猜想，提出可行的实验方案，并如实记录数据，用实验验证物理结论。"
+    },
+    {
+      "id": "physics_8a_rjb_skl17",
+      "name": "绘制折射光路图",
+      "description": "根据入射光、法线以及折射规律，画出光从一种介质进入另一种介质时的折射方向。"
+    },
+    {
+      "id": "physics_8a_rjb_skl18",
+      "name": "调节像距以成清晰像",
+      "description": "通过移动凸透镜与成像屏（如底片、薄膜、投影屏）之间的距离，使像成得清晰。"
+    },
+    {
+      "id": "physics_8a_rjb_skl19",
+      "name": "使用天平测量质量",
+      "description": "调平天平、使横梁平衡、将物体和砝码分别放置并调节游码，使横梁再次平衡，从而读出物体质量。"
+    },
+    {
+      "id": "physics_8a_rjb_skl20",
+      "name": "利用密度公式求质量或体积",
+      "description": "在已知密度和体积（或质量）时，使用公式 m=ρV 或 V=m/ρ 计算相应物理量。"
+    },
+    {
+      "id": "physics_8a_rjb_skl21",
+      "name": "使用量筒读数的方法",
+      "description": "读数时视线要与液面凹液面的最低处保持水平，注意刻度单位、量程和分度值。"
+    },
+    {
+      "id": "physics_8a_rjb_skl22",
+      "name": "用排水法测量不规则固体体积",
+      "description": "将物体完全浸没于量筒中的液体，比较前后液面高度差，得到物体体积。"
+    },
+    {
+      "id": "physics_8a_rjb_skl23",
+      "name": "通过密度鉴别物质",
+      "description": "测量物体的质量和体积，求出密度并与密度表对比以判断物质种类。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_8a_rjb_exp1",
+      "name": "用刻度尺测量长度",
+      "instrument": [
+        "刻度尺"
+      ],
+      "is_student": 1,
+      "process": "使用刻度尺测量铅笔等物体长度，注意零刻度线、视线及记录单位。",
+      "phenomena": "得到物体长度的读数。",
+      "conclusion": "正确方法能提高测量准确性。"
+    },
+    {
+      "id": "physics_8a_rjb_exp2",
+      "name": "用停表测量时间",
+      "instrument": [
+        "停表"
+      ],
+      "is_student": 1,
+      "process": "按动停表按钮，测量脉搏跳动10次所用时间。",
+      "phenomena": "停表读数变化。",
+      "conclusion": "能获得一定精度的时间测量值。"
+    },
+    {
+      "id": "physics_8a_rjb_exp3",
+      "name": "测量物体运动的平均速度",
+      "instrument": "斜面、小车、金属片、刻度尺、停表",
+      "is_student": 1,
+      "process": "测量路程 s1、s2；用停表测时间 t1、t2；计算 v1=s1/t1，v2=s2/t2。",
+      "conclusion": "可通过测量路程和时间求出小车的平均速度。"
+    },
+    {
+      "id": "physics_8a_rjb_exp4",
+      "name": "利用超声波位置传感器测速度",
+      "instrument": "小车、斜面、超声波位置传感器、计算机",
+      "is_student": 1,
+      "process": "传感器测距并记录不同时间的位置，由计算机计算速度并显示速度—时间图像。",
+      "conclusion": "可即时看到运动速度随时间变化的情况。"
+    },
+    {
+      "id": "physics_8a_rjb_exp5",
+      "name": "抽气玻璃罩中的闹钟实验",
+      "instrument": "玻璃罩、闹钟、抽气设备",
+      "is_student": 0,
+      "process": "将闹钟放入玻璃罩，逐渐抽出空气再再让空气进入，观察声音变化。",
+      "phenomena": "抽气后声音变弱甚至消失；重新进气后声音恢复。",
+      "conclusion": "声音需要介质传播。"
+    },
+    {
+      "id": "physics_8a_rjb_exp6",
+      "name": "桌面传声实验",
+      "instrument": "桌子、敲击物",
+      "is_student": 1,
+      "process": "一人敲桌子，另一人将耳朵贴在桌面上聆听。",
+      "phenomena": "贴耳能听到声音，空气中听不到。",
+      "conclusion": "固体可以传声。"
+    },
+    {
+      "id": "physics_8a_rjb_exp7",
+      "name": "钢尺振动实验",
+      "instrument": "钢尺、桌面",
+      "is_student": 1,
+      "process": "改变钢尺伸出桌边的长度，比较振动快慢和音调变化。",
+      "conclusion": "振动得越快，音调越高；频率决定音调。"
+    },
+    {
+      "id": "physics_8a_rjb_exp8",
+      "name": "音叉与乒乓球实验",
+      "instrument": "音叉、乒乓球、细绳",
+      "is_student": 1,
+      "process": "用不同力度敲击音叉，观察乒乓球弹开幅度。",
+      "conclusion": "振幅越大，声音越响。"
+    },
+    {
+      "id": "physics_8a_rjb_exp9",
+      "name": "扬声器对烛焰的演示",
+      "instrument": "扬声器、蜡烛、音源",
+      "is_student": 0,
+      "process": "将扬声器对准烛焰播放声音，观察烛焰的变化",
+      "phenomena": "烛焰随声音振动而摆动",
+      "conclusion": "声波能传递能量"
+    },
+    {
+      "id": "physics_8a_rjb_exp10",
+      "name": "噪声波形观察实验",
+      "instrument": "泡沫塑料块、玻璃、示波器（或波形图）、音叉",
+      "is_student": 0,
+      "process": "观察泡沫塑料块刮玻璃时产生噪声的波形，并与音叉发出的声音波形比较。",
+      "phenomena": "噪声波形杂乱无规则，而音叉波形规则。",
+      "conclusion": "噪声由无规则振动产生。"
+    },
+    {
+      "id": "physics_8a_rjb_exp11",
+      "name": "自制温度计实验",
+      "instrument": "小瓶、带颜色的水、橡皮塞、细玻璃管",
+      "is_student": 1,
+      "process": "将装有有色水的小瓶通过橡皮塞与细玻璃管密封，放入热水和冷水中观察水柱变化。",
+      "phenomena": "水柱随温度升高上升，随温度降低下降。",
+      "conclusion": "自制温度计依据液体的热胀冷缩原理测温。"
+    },
+    {
+      "id": "physics_8a_rjb_exp12",
+      "name": "用温度计测量水的温度",
+      "instrument": "温度计、烧杯、不同温度的水",
+      "is_student": 1,
+      "process": "将温度计玻璃泡浸入液体，等待稳定后读数。",
+      "conclusion": "掌握正确使用温度计的要点。"
+    },
+    {
+      "id": "physics_8a_rjb_exp13",
+      "name": "探究固体熔化时温度的变化规律",
+      "instrument": [
+        "试管",
+        "海波或石蜡",
+        "温度计",
+        "加热装置"
+      ],
+      "is_student": 1,
+      "process": "加热固体，每隔1 min记录温度，绘制温度-时间图象。",
+      "phenomena": "海波熔化时温度保持不变，石蜡熔化时温度持续上升。",
+      "conclusion": "晶体具有固定熔点，非晶体没有固定熔点。"
+    },
+    {
+      "id": "physics_8a_rjb_exp14",
+      "name": "酒精在塑料袋中加热与冷却实验",
+      "instrument": "透明塑料袋、酒精、热水",
+      "is_student": 1,
+      "process": "塑料袋中加入几滴酒精，挤瘪扎紧后放入热水中观察变化，再取出冷却观察变化。",
+      "phenomena": "加热后液态酒精变成气体；冷却后气态酒精重新变成液体。",
+      "conclusion": "液态与气态可以相互转化，涉及汽化和液化。"
+    },
+    {
+      "id": "physics_8a_rjb_exp15",
+      "name": "探究水沸腾时温度变化的实验",
+      "instrument": "烧杯、水、温度计、酒精灯、铁架台",
+      "is_student": 1,
+      "process": "加热水至沸腾并每隔0.5 min记录温度，绘制温度-时间图象。",
+      "phenomena": "沸腾时水温保持不变但持续吸热。",
+      "conclusion": "水的沸点稳定，沸腾是剧烈汽化过程，并伴随持续吸热。"
+    },
+    {
+      "id": "physics_8a_rjb_exp16",
+      "name": "碘的升华和凝华实验",
+      "instrument": [
+        "试管",
+        "碘",
+        "塞子",
+        "热水",
+        "凉水"
+      ],
+      "is_student": 1,
+      "process": "先用热水加热试管使固态碘变为紫色碘蒸气，再放入凉水使碘蒸气重新凝华为固态碘。",
+      "phenomena": "碘升华产生紫色蒸气，冷却后紫色蒸气重新变为固体碘。",
+      "conclusion": "碘可发生升华和凝华。"
+    },
+    {
+      "id": "physics_8a_rjb_exp17",
+      "name": "光在水中的传播",
+      "instrument": [
+        "玻璃水槽",
+        "水",
+        "牛奶",
+        "激光笔"
+      ],
+      "is_student": 0,
+      "process": "向水中滴入少量牛奶，用激光照射水，观察光的传播路径。",
+      "phenomena": "可看到光在水中的传播径迹为直线。",
+      "conclusion": "光在水中沿直线传播。"
+    },
+    {
+      "id": "physics_8a_rjb_exp18",
+      "name": "探究光反射时的规律",
+      "instrument": "平面镜、纸板、量角器、光源、彩笔",
+      "is_student": 1,
+      "process": "改变入射光线方向，多次记录入射光与反射光径迹并测量入射角与反射角。",
+      "conclusion": "反射角等于入射角；入射光、反射光和法线在同一平面内。"
+    },
+    {
+      "id": "physics_8a_rjb_exp19",
+      "name": "探究平面镜成像特点",
+      "instrument": "平面镜（玻璃板）、蜡烛、纸、刻度尺",
+      "is_student": 1,
+      "process": "在纸上画镜面位置，放置点燃的蜡烛，通过移动不点燃蜡烛找到与像重合的位置；多次改变位置并记录。",
+      "phenomena": "像与蜡烛大小相同，到镜面的距离相等。",
+      "conclusion": "平面镜成像与物体大小相等，距离相等，关于镜面对称。"
+    },
+    {
+      "id": "physics_8a_rjb_exp20",
+      "name": "探究光折射时的特点",
+      "instrument": [
+        "激光光源或光束盒",
+        "水槽",
+        "水",
+        "量角器"
+      ],
+      "is_student": 1,
+      "process": "改变入射角，让光从空气以不同角度射入水中，观察折射光线的变化。",
+      "phenomena": "折射光线向法线方向偏折，且折射角小于入射角。",
+      "conclusion": "光从空气斜射入水中会发生折射，且入射角越大折射角越大。"
+    },
+    {
+      "id": "physics_8a_rjb_exp21",
+      "name": "三棱镜色散演示实验",
+      "instrument": "太阳光、三棱镜、白屏",
+      "is_student": 0,
+      "process": "让太阳光照射到三棱镜上，观察在白屏上形成的彩色光带。",
+      "phenomena": "白光分解成红、橙、黄、绿、蓝、靛、紫色光。",
+      "conclusion": "白光由各种色光组成，可以发生色散。"
+    },
+    {
+      "id": "physics_8a_rjb_exp22",
+      "name": "水与平面镜的色散实验",
+      "instrument": "盛水的深盘、平面镜、白纸或白墙",
+      "is_student": 1,
+      "process": "将平面镜斜放并部分浸入水中，让阳光照射并反射到白纸上。",
+      "phenomena": "反射光呈现彩色。",
+      "conclusion": "水和镜子组合也能使白光发生色散。"
+    },
+    {
+      "id": "physics_8a_rjb_exp23",
+      "name": "凸透镜对光的偏折演示",
+      "instrument": "凸透镜、平行光束",
+      "is_student": 0,
+      "phenomena": "平行光经凸透镜后会聚。",
+      "conclusion": "凸透镜对光具有会聚作用。"
+    },
+    {
+      "id": "physics_8a_rjb_exp24",
+      "name": "凹透镜对光的偏折演示",
+      "instrument": "凹透镜、平行光束",
+      "is_student": 0,
+      "phenomena": "平行光经凹透镜后发散。",
+      "conclusion": "凹透镜对光具有发散作用。"
+    },
+    {
+      "id": "physics_8a_rjb_exp25",
+      "name": "自制模型照相机实验",
+      "instrument": [
+        "两个纸筒",
+        "焦距5~10cm凸透镜",
+        "半透明薄膜"
+      ],
+      "is_student": 1,
+      "process": "将纸筒前后滑动改变透镜与薄膜间距离，在薄膜上观察成像。",
+      "phenomena": "可看到倒立的室外景物像。",
+      "conclusion": "凸透镜可成倒立的实像。"
+    },
+    {
+      "id": "physics_8a_rjb_exp26",
+      "name": "投影仪演示实验",
+      "instrument": [
+        "投影仪",
+        "投影片",
+        "平面镜",
+        "天花板或投影屏"
+      ],
+      "is_student": 0,
+      "process": "调节投影仪镜头，使投影片图案成像在天花板上。",
+      "phenomena": "形成清晰、放大、倒立的像。",
+      "conclusion": "投影仪利用凸透镜形成放大倒立的实像。"
+    },
+    {
+      "id": "physics_8a_rjb_exp27",
+      "name": "探究凸透镜成像的规律",
+      "instrument": "蜡烛、白色硬纸板（光屏）、凸透镜、透镜支架",
+      "is_student": 1,
+      "process": "改变物距u，调节光屏位置观察像的性质并记录u、v及像的特点。",
+      "phenomena": "物距不同导致像的虚实、大小、正倒发生变化。",
+      "conclusion": "凸透镜成像规律取决于物距与焦距之间的关系。"
+    },
+    {
+      "id": "physics_8a_rjb_exp28",
+      "name": "模拟望远镜实验",
+      "instrument": "两个焦距不同的放大镜",
+      "is_student": 1,
+      "process": "调整两个放大镜的距离直到看到清晰的像，观察像的大小变化。"
+    },
+    {
+      "id": "physics_8a_rjb_exp29",
+      "name": "自制显微镜实验",
+      "instrument": "水滴、玻璃板、放大镜",
+      "is_student": 1,
+      "process": "将水滴置于玻璃板上方，再在其上方放置放大镜并调节距离以观察微小物体。"
+    },
+    {
+      "id": "physics_8a_rjb_exp30",
+      "name": "形状变化前后物体质量的比较实验",
+      "instrument": "天平、塑料瓶",
+      "is_student": 1,
+      "process": "称量一个塑料瓶质量，将其剪碎后再次称量并比较。",
+      "conclusion": "物体形状改变但质量不变。"
+    },
+    {
+      "id": "physics_8a_rjb_exp31",
+      "name": "溶解前后质量比较实验",
+      "instrument": "天平、水、白糖",
+      "is_student": 1,
+      "process": "称量水和白糖的总质量，使其溶解后再称量。",
+      "conclusion": "物态改变但质量不变，验证质量守恒。"
+    },
+    {
+      "id": "physics_8a_rjb_exp32",
+      "name": "探究同种物质的质量与体积的关系",
+      "instrument": [
+        "天平",
+        "直尺",
+        "不同大小的铝块",
+        "坐标纸"
+      ],
+      "is_student": 1,
+      "process": "测量不同铝块的质量和体积，绘制m-V图像，观察是否成正比关系。",
+      "phenomena": "描点后连线大致呈直线且过原点。",
+      "conclusion": "铝块质量与体积的比值保持不变。"
+    },
+    {
+      "id": "physics_8a_rjb_exp33",
+      "name": "测量盐水密度",
+      "instrument": "天平、量筒、盐水、杯子",
+      "is_student": 1,
+      "process": "测出量筒中盐水实际质量和体积，代入公式 ρ = m/V 计算。",
+      "conclusion": "盐溶质量不同会使盐水密度不同。"
+    },
+    {
+      "id": "physics_8a_rjb_exp34",
+      "name": "测量小石块密度",
+      "instrument": "天平、量筒、小石块",
+      "is_student": 1,
+      "process": "用天平测质量，用排水法测体积，计算密度。",
+      "conclusion": "可利用排水法求不规则固体密度。"
+    },
+    {
+      "id": "physics_8a_rjb_exp35",
+      "name": "气体受热膨胀演示",
+      "instrument": [
+        "锥形瓶",
+        "橡皮膜",
+        "热水",
+        "冰水"
+      ],
+      "is_student": 1,
+      "process": "用橡皮膜封口，将瓶子放入热水和冰水中观察膜的变化。",
+      "phenomena": "热水中膜鼓起；冰水中膜凹陷。",
+      "conclusion": "气体受热膨胀、密度变小。"
+    },
+    {
+      "id": "physics_8a_rjb_exp36",
+      "name": "热空气推动纸风车实验",
+      "instrument": [
+        "纸风车",
+        "酒精灯"
+      ],
+      "is_student": 1,
+      "process": "纸风车置于点燃酒精灯上方。",
+      "phenomena": "风车转动。",
+      "conclusion": "热空气上升、冷空气流动形成气流。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_8a_rjb_exe1",
+      "type": "选择题",
+      "stem": "鲁迅《社戏》中写道：“淡黑的起伏的连山……都远远地向船尾跑去了。”其中“山……向船尾跑去了”所选的参照物是（A. 山  B. 船  C. 流水  D. 河岸）。",
+      "answer": "B",
+      "analysis": "判断运动需明确参照物，此处是站在船上看到山向后移动，因此参照物是船。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe2",
+      "type": "应用题",
+      "stem": "刘翔在2004雅典奥运会上完成110 m跨栏的时间为12.91 s，求他的平均速度。",
+      "answer": "v = 110 / 12.91 ≈ 8.52 m/s",
+      "analysis": "利用平均速度定义，代入总路程与总时间计算。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe3",
+      "type": "填空题",
+      "stem": "在测量平均速度的实验中，应该用什么测量路程，用什么测量时间，并用什么公式求出平均速度？",
+      "answer": "用刻度尺测量路程，用停表测量时间，用公式 v = s / t 求平均速度。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe4",
+      "type": "应用题",
+      "stem": "一个同学向远处的山崖大喊一声，约1.5 s后听到回声，问该同学距山崖大约多少米？",
+      "answer": "约255 m（声速≈340 m/s，往返时间1.5 s，距离=340×1.5÷2≈255 m）。",
+      "analysis": "利用回声原理和声速公式 s = v t / 2 计算距离。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe5",
+      "type": "应用题",
+      "stem": "某种昆虫的翅在2 s内做了700次振动，频率是多少？人类能听到吗？",
+      "answer": "频率为350 Hz，处于可听范围内，人类能听到。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe6",
+      "type": "应用题",
+      "stem": "用超声测位仪向海底垂直发射声波，经过4 s后收到回波。若海水中声音传播速度为1500 m/s，求海水深度。",
+      "answer": "海水深度=1500×4÷2=3000 米",
+      "analysis": "利用回声测距公式：距离=声速×时间÷2",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe7",
+      "type": "简答题",
+      "stem": "图2.4-3中的（甲）摩托车消声器、（乙）隔音蛟龙、（丙）防噪声耳罩，分别属于哪种噪声控制方法？",
+      "answer": "甲：防止噪声产生；乙：阻断噪声传播；丙：防止噪声进入耳朵。",
+      "analysis": "依据声音传播链条选择对应的控制方式。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe8",
+      "type": "简答题",
+      "stem": "“光年”是什么物理量的单位？",
+      "answer": "光年是距离单位，表示光在真空中一年内传播的距离。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe9",
+      "type": "应用题",
+      "stem": "光与镜面成30°角射在平面镜上，反射角是多大？",
+      "answer": "入射角 = 60°，反射角 = 60°。",
+      "analysis": "光与镜面夹角为30°，则光与法线夹角为60°，根据反射定律反射角=入射角。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe10",
+      "type": "选择题",
+      "stem": "图4.4-7中，哪一幅图正确地表示了光从空气进入玻璃中的光路？",
+      "answer": "应选择折射光线向法线方向偏折的那一幅图。",
+      "analysis": "光从空气进入玻璃，速度减小，折射光应向法线方向偏折。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe11",
+      "type": "简答题",
+      "stem": "为什么太阳光经过三棱镜后会出现彩色光带？",
+      "answer": "因为白光由各种色光组成，通过三棱镜后不同色光发生不同程度的折射，从而分解形成彩色光带。",
+      "analysis": "考察光的色散原理。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe12",
+      "type": "简答题",
+      "stem": "太阳光可视为平行光。如何利用阳光测量凸透镜的焦距？",
+      "answer": "将凸透镜对准太阳光，在另一侧寻找纸上成最小、最亮光斑的位置，测量光心到该光斑的距离，即为焦距。",
+      "analysis": "基于凸透镜会聚平行光于焦点的原理。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe13",
+      "type": "简答题",
+      "stem": "照相机成像时，物体较远，照相机底片上形成的像是什么性质？",
+      "answer": "缩小、倒立的实像。",
+      "analysis": "物距较大时，凸透镜成缩小、倒立的实像。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe14",
+      "type": "选择题",
+      "stem": "一块质量为100 g的冰熔化成水后，质量（ ）。A.仍是100 g B.大于100 g C.小于100 g",
+      "answer": "A",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe15",
+      "type": "应用题",
+      "stem": "人民英雄纪念碑碑心石加工成长14.7 m、宽2.9 m、厚1.0 m的花岗岩巨石，质量约为多少？",
+      "answer": "约1.19×10^5 kg（约119 t）",
+      "analysis": "先算体积，再查密度，使用m = ρV。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe16",
+      "type": "应用题",
+      "stem": "用天平和量筒测得某盐水质量为 20 g，体积为 15 cm3，求这杯盐水的密度。",
+      "answer": "ρ = 20 / 15 = 1.33 g/cm3",
+      "analysis": "依据密度公式计算即可。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_8a_rjb_exe17",
+      "type": "应用题",
+      "stem": "一个实心球体质量为4kg，体积为0.57dm³，判断其是否为密度为11.3×10³ kg/m³的纯铅制成。",
+      "answer": "计算密度为7.0×10³ kg/m³，低于铅的密度，不是纯铅制成。",
+      "analysis": "利用ρ=m/V公式求密度，再与已知密度比较。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 137,
+    "skill_count": 23,
+    "experiment_count": 36,
+    "question_count": 17
+  }
+}

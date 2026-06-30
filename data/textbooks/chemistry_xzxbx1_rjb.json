@@ -1,0 +1,4763 @@
+{
+  "id": "chemistry_xzxbx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "化学",
+  "title": "化学选择性必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/chemistry.json"
+    },
+    {
+      "id": "k12_kgraph_afterclass",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/afterclass_exercises/chemistry_highschool_rjb_xzxbx1.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt1",
+      "name": "体系",
+      "definition": "在热化学研究中，将试管中的反应物、发生的化学反应等看作一个整体，称为反应体系，简称体系（又称系统）。",
+      "importance": "掌握",
+      "aliases": [
+        "系统",
+        "reaction system",
+        "system"
+      ],
+      "examples": [
+        "盐酸、NaOH 溶液及其中发生的中和反应构成一个体系。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt2",
+      "name": "环境",
+      "definition": "与体系相互影响的其他部分，如盛溶液的容器和周围空气等，称为环境。",
+      "importance": "掌握",
+      "aliases": [
+        "surrounding",
+        "外界"
+      ],
+      "examples": [
+        "研究盐酸与 NaOH 溶液反应时，试管和溶液外的空气是环境。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt3",
+      "name": "热量",
+      "definition": "因温度不同而在体系与环境之间交换或传递的能量。",
+      "importance": "掌握",
+      "aliases": [
+        "heat"
+      ],
+      "unit": "J 或 kJ"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt4",
+      "name": "反应热",
+      "definition": "在能量—反应坐标图中，活化能 E1 与活化分子变成生成物分子放出的能量 E2 之差 E1 − E2 表示该反应的反应热。",
+      "importance": "重要",
+      "aliases": [
+        "热效应",
+        "heat of reaction",
+        "ΔH",
+        "反应焓变"
+      ],
+      "unit": "kJ 或 kJ·mol⁻¹",
+      "examples": [
+        "强酸与强碱稀溶液中和生成 1 mol H₂O 放出 57.3 kJ 热量。",
+        "C(s)+O2(g)=CO2(g)  ΔH1 = -393.5 kJ/mol",
+        "FeS2(s)+11/4 O2(g)=1/2 Fe2O3(s)+2 SO2(g)  ΔH = -853 kJ/mol"
+      ],
+      "formula": "ΔH = E_1 - E_2"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt5",
+      "name": "内能",
+      "definition": "体系内物质的各种能量的总和，用符号 U 表示，受温度、压强和物质聚集状态等影响。",
+      "importance": "掌握",
+      "aliases": [
+        "U"
+      ],
+      "unit": "kJ（常用）"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt6",
+      "name": "焓",
+      "definition": "为了描述等压条件下的反应热而引入的、与内能有关的物理量，用符号 H 表示。",
+      "importance": "重要",
+      "aliases": [
+        "H",
+        "enthalpy"
+      ],
+      "unit": "kJ"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt7",
+      "name": "焓变",
+      "definition": "在一定条件下，化学反应或过程进行时体系焓的变化量，通常用ΔH表示，用于描述反应的吸热或放热性质。",
+      "importance": "重要",
+      "aliases": [
+        "ΔH",
+        "反应焓变"
+      ],
+      "unit": "kJ·mol⁻¹",
+      "examples": [
+        "H₂(g)+Cl₂(g)=2HCl(g) 时 ΔH=-184.6 kJ/mol",
+        "C(s)+H₂O(g)=CO(g)+H₂(g) 时 ΔH=+131.5 kJ/mol"
+      ],
+      "formula": "ΔH<0 放热；ΔH>0 吸热"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt8",
+      "name": "ΔH 正负号的意义",
+      "definition": "当反应体系放热时其焓减小，ΔH<0；当反应体系吸热时其焓增大，ΔH>0。",
+      "importance": "重要",
+      "examples": [
+        "H₂+Cl₂→2HCl 放出 184.6 kJ，ΔH=-184.6 kJ/mol（放热）",
+        "C+H₂O(g)→CO+H₂ 吸收 131.5 kJ，ΔH=+131.5 kJ/mol（吸热）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt9",
+      "name": "ΔH 单位中 mol⁻¹ 的含义",
+      "definition": "对反应 aA+bB=cC+dD，ΔH 的单位中“mol⁻¹”指“每摩尔反应”的热效应，而不是指每摩尔某一种物质。",
+      "importance": "重要",
+      "examples": [
+        "H₂(g)+Cl₂(g)=2HCl(g), ΔH=-184.6 kJ/mol 表示每 1 mol H₂ 与 1 mol Cl₂ 反应放出 184.6 kJ",
+        "½H₂+½Cl₂=HCl, ΔH=-92.3 kJ/mol 表示每摩尔该反应放出 92.3 kJ"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt10",
+      "name": "化学键能量变化与反应热",
+      "definition": "化学反应中，化学键断裂需要吸收能量，化学键形成释放能量；生成物分子中化学键形成释放的总能量与反应物分子中化学键断裂吸收的总能量之差，体现了反应热。",
+      "importance": "掌握",
+      "examples": [
+        "H₂(g)+Cl₂(g)→2HCl(g) 中断裂 H–H 和 Cl–Cl 各吸收 436 kJ、243 kJ，形成 2 mol H–Cl 键释放 862 kJ，净放热约 183 kJ。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt11",
+      "name": "热化学方程式",
+      "definition": "在化学方程式后标明反应热（ΔH）的化学方程式，既表示反应物和生成物的物质的量关系，又同时给出反应的热效应。",
+      "importance": "重要",
+      "aliases": [
+        "thermochemical equation"
+      ],
+      "examples": [
+        "H₂(g)+Cl₂(g)=2HCl(g)  ΔH=-184.6 kJ/mol",
+        "H₂(g)+½O₂(g)=H₂O(l)  ΔH=-285.8 kJ/mol",
+        "FeS2(s)+11/4 O2(g)=1/2 Fe2O3(s)+2 SO2(g)  ΔH = -853 kJ/mol",
+        "C6H12O6(s)+6O2(g)=6CO2(g)+6H2O(l)  ΔH = -2800 kJ/mol"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt12",
+      "name": "热化学方程式书写规则",
+      "definition": "书写热化学方程式时应注明（通常条件下可略）反应的温度和压强、反应物和生成物的聚集状态，化学计量数可为整数或分数，且 ΔH 必须与所写方程式一一对应。",
+      "importance": "重要",
+      "examples": [
+        "H₂(g)+½O₂(g)=H₂O(g)  ΔH=-241.8 kJ/mol 与 H₂(g)+½O₂(g)=H₂O(l)  ΔH=-285.8 kJ/mol 因聚集状态不同而 ΔH 不同。",
+        "H₂(g)+Cl₂(g)=2HCl(g)  ΔH=-184.6 kJ/mol 与 ½H₂+½Cl₂=HCl(g)  ΔH=-92.3 kJ/mol。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt13",
+      "name": "物质的聚集状态与焓",
+      "definition": "物质处于不同聚集状态（固、液、气）时，其内能和焓不同；聚集状态变化伴随焓变，通常需要吸收或放出热量。",
+      "importance": "掌握",
+      "examples": [
+        "冰熔化为水需要吸热；水蒸发为水蒸气需要吸热；H₂ 与 O₂ 生成液态水与生成水蒸气放热不同。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt14",
+      "name": "燃烧热",
+      "definition": "在 101 kPa 时，1 mol 纯物质完全燃烧生成指定产物所放出的热量，叫做该物质的燃烧热。",
+      "importance": "重要",
+      "aliases": [
+        "heat of combustion"
+      ],
+      "unit": "kJ·mol⁻¹",
+      "examples": [
+        "H₂(g)+½O₂(g)=H₂O(l), ΔH=-285.8 kJ/mol 是 H₂ 的燃烧热。",
+        "CH₄(g)+2O₂(g)=CO₂(g)+2H₂O(l), ΔH=-890.3 kJ/mol 是甲烷的燃烧热。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt15",
+      "name": "化石燃料及其燃烧热",
+      "definition": "煤、石油、天然气等化石燃料及其典型成分（如 C、C₈H₁₈、CH₄）完全燃烧时所放出的热量，用燃烧热表征其燃料品质。",
+      "importance": "了解",
+      "examples": [
+        "C(s)+O₂(g)=CO₂(g), ΔH=-393.5 kJ/mol",
+        "C₈H₁₈(l)+25/2 O₂(g)=8CO₂(g)+9H₂O(l), ΔH=-5518 kJ/mol",
+        "CH₄(g)+2O₂(g)=CO₂(g)+2H₂O(l), ΔH=-890.3 kJ/mol"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt16",
+      "name": "中和反应的反应热",
+      "definition": "在 25 ℃ 和 101 kPa 下，强酸稀溶液与强碱稀溶液发生中和反应生成 1 mol H₂O 时放出的热量，实验测得为 57.3 kJ。",
+      "importance": "掌握",
+      "unit": "kJ·mol⁻¹",
+      "examples": [
+        "HCl(aq)+NaOH(aq)=NaCl(aq)+H₂O(l)，生成 1 mol H₂O 时放出 57.3 kJ。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt17",
+      "name": "简化热量计算近似",
+      "definition": "在溶液热效应实验中，为计算简便，可以近似认为稀酸、稀碱溶液的密度、比热容与水相同，并忽略量热计的比热容，使溶液吸收热量 Q≈(m₁+m₂)c(t₂−t₁)。",
+      "importance": "了解",
+      "formula": "Q = (m₁ + m₂) · c · (t₂ - t₁)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt18",
+      "name": "人体脂肪的能量来源本质",
+      "definition": "人体内脂肪水解生成高级脂肪酸和甘油，高级脂肪酸进一步氧化生成 CO₂ 和 H₂O，同时放出能量，本质上是类似于脂肪酸燃烧的放热反应。",
+      "importance": "了解",
+      "examples": [
+        "软脂酸 CH₃(CH₂)₁₄COOH(s)+23O₂(g)=16CO₂(g)+16H₂O(l), ΔH=-9977 kJ/mol。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt19",
+      "name": "氢能的热化学特征",
+      "definition": "氢气作为能源，其完全燃烧生成水时放出的热量大、产物清洁，体现为较高的燃烧热和绿色能源特征。",
+      "importance": "了解",
+      "examples": [
+        "H₂(g)+½O₂(g)=H₂O(l), ΔH=-285.8 kJ/mol；产物仅为水。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt20",
+      "name": "盖斯定律",
+      "definition": "一个化学反应，不管是一步完成的还是分几步完成的，其反应热是相同的。反应热只与反应体系的始态和终态有关，而与反应的途径无关。",
+      "importance": "重要",
+      "aliases": [
+        "赫斯定律",
+        "Hess law"
+      ],
+      "examples": [
+        "ΔH1 = ΔH2 + ΔH3，用已知ΔH1和ΔH2推算ΔH3。",
+        "某个反应的化学方程式可由另外几个反应的化学方程式相加减而得到，则该反应的反应热也可以由这几个反应的反应热相加减而得到。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt21",
+      "name": "反应热的间接计算",
+      "definition": "利用盖斯定律，通过若干个已知反应的热化学方程式及其ΔH值，经方程式的加减、反应逆转和倍数放缩等运算，推算目标反应的反应热。",
+      "importance": "重要",
+      "examples": [
+        "由C(s)+O2(g)=CO2(g)和CO(g)+1/2O2(g)=CO2(g)推算C(s)+1/2O2(g)=CO(g)的ΔH3。",
+        "在例题3中，将反应①的逆反应与反应②相加，计算CH4(g)=C(s)+2H2(g)的ΔH。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt22",
+      "name": "反应热的正负号与逆反应",
+      "definition": "若某个化学反应的ΔH为+a kJ/mol，则其逆反应的ΔH为-a kJ/mol；反应方向相反时，反应热数值相同，符号相反。",
+      "importance": "掌握",
+      "formula": "若 正反应: ΔH = +a，则 逆反应: ΔH = -a。",
+      "examples": [
+        "ΔH3 = -ΔH1 = -131.5 kJ/mol（例题3中反应①逆反应的反应热）。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt23",
+      "name": "反应热的加成性",
+      "definition": "若某个反应的化学方程式可由若干个已知反应的化学方程式相加减而得到，则该反应的反应热等于这些已知反应反应热的代数和。",
+      "importance": "掌握",
+      "formula": "若 R = R1 + R2 + …，则 ΔH(R) = ΔH1 + ΔH2 + …",
+      "examples": [
+        "ΔH1 = ΔH2 + ΔH3 → ΔH3 = ΔH1 - ΔH2。",
+        "例题3中：ΔH = ΔH3 + ΔH2 = ΔH2 - ΔH1。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt24",
+      "name": "物质的量与反应热的比例关系",
+      "definition": "在热化学方程式既定时，反应热与实际参加反应或生成的物质的量成正比，可通过物质的量或质量换算对应的热量。",
+      "importance": "掌握",
+      "examples": [
+        "FeS2：1 mol完全燃烧放出853 kJ，则7.5 mol放出7.5×853 kJ。",
+        "1 mol C6H12O6完全氧化放出2800 kJ，则0.556 mol放出0.556×2800 kJ。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt25",
+      "name": "热量单位及“废热”",
+      "definition": "本节中反应热多用kJ/mol表示；工业中把反应过程产生的、不是直接用于反应目的的热量称为“废热”，可被回收利用。",
+      "importance": "了解",
+      "aliases": [
+        "kJ",
+        "kJ·mol^-1"
+      ],
+      "examples": [
+        "在25℃和101 kPa时，1 mol FeS2完全燃烧放出853 kJ的热量，这些热量在生产过程中得到了充分利用，工业中叫做“废热”。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt26",
+      "name": "燃烧热与放热反应",
+      "definition": "某物质在一定条件下完全燃烧时所放出的反应热称为燃烧热，是放热反应的一种典型形式。",
+      "importance": "掌握",
+      "examples": [
+        "1 mol FeS2完全燃烧生成Fe2O3和SO2时放出853 kJ热量。",
+        "10 kg丁烷完全燃烧生成CO2和液态水时放出5×10^5 kJ的热量。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt27",
+      "name": "反应速率的平均表示式",
+      "definition": "在反应体系体积恒定时，化学反应速率可用单位时间内反应物浓度的减小或生成物浓度的增大来定量表示。",
+      "importance": "掌握",
+      "formula": "v = \\frac{\\Delta c}{\\Delta t}",
+      "unit": "mol·L^{-1}·s^{-1} 等"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt28",
+      "name": "化学反应速率与化学计量数的关系",
+      "definition": "对反应 mA + nB = pC + qD，用任一种物质的浓度随时间的变化表示速率时，各物质的速率与其化学计量数成正比，其比值相等。",
+      "importance": "掌握",
+      "formula": "v(A) = -\\frac{\\Delta c(A)}{\\Delta t},\\ v(B) = -\\frac{\\Delta c(B)}{\\Delta t},\\ v(C) = \\frac{\\Delta c(C)}{\\Delta t},\\ v(D) = \\frac{\\Delta c(D)}{\\Delta t};\\\\ \\frac{v(A)}{m} = \\frac{v(B)}{n} = \\frac{v(C)}{p} = \\frac{v(D)}{q}"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt29",
+      "name": "反应速率的实验测定",
+      "definition": "通过实验测定不同反应时刻反应物或生成物的浓度，或其他与浓度有关的可观测量（如气体体积、压强、颜色深浅、光的吸收、导电能力等）来求得化学反应速率。",
+      "importance": "重要",
+      "examples": [
+        "测定锌与稀硫酸反应中生成 10 mL H2 所用时间，计算反应速率。",
+        "在有明显颜色变化的溶液反应中，利用颜色变化与浓度的比例关系测速率。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt30",
+      "name": "催化剂对反应速率的影响",
+      "definition": "催化剂可以改变化学反应速率，在参加反应并改变反应途径的同时显著加快或减慢反应速率，反应前后自身的化学性质基本不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt31",
+      "name": "压强对气体反应速率的影响",
+      "definition": "对于有气体参加的化学反应，改变压强会改变单位体积内气体分子数，从而改变化学反应速率。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt32",
+      "name": "基元反应",
+      "definition": "不能再分解为更简单反应步骤的单一步反应称为基元反应，是复杂反应机理中的基本组成步骤。",
+      "importance": "掌握",
+      "aliases": [
+        "elementary reaction"
+      ],
+      "examples": [
+        "2HI → H2 + 2I· 和 2I· → I2 是 2HI = H2 + I2 的两个基元反应。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt33",
+      "name": "反应历程与反应机理",
+      "definition": "由一系列先后进行的基元反应所组成的、反应从反应物到生成物的全过程称为反应历程，又称反应机理。",
+      "importance": "了解",
+      "aliases": [
+        "反应机理"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt34",
+      "name": "有效碰撞",
+      "definition": "能够发生化学反应的碰撞叫做有效碰撞。发生有效碰撞的分子必须具有足够的能量并在碰撞时有合适的取向，才能使化学键断裂发生反应。",
+      "importance": "重要",
+      "aliases": [
+        "effective collision"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt35",
+      "name": "活化分子",
+      "definition": "在化学反应过程中，具有足够能量、能够通过有效碰撞发生化学反应的分子称为活化分子。",
+      "importance": "掌握",
+      "aliases": [
+        "activated molecule"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt36",
+      "name": "活化能",
+      "definition": "活化分子具有的平均能量与反应物分子具有的平均能量之差，叫做反应的活化能，是发生反应所需克服的能量障碍。",
+      "importance": "重要",
+      "aliases": [
+        "activation energy"
+      ],
+      "formula": "E_a = E_{活化分子平均能量} - E_{反应物分子平均能量}"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt37",
+      "name": "飞秒化学",
+      "definition": "利用时间分辨在 10^{-15}～10^{-12} s 范围内的技术，跟踪和检测化学反应中寿命极短的中间体或过渡态，对超快速化学反应进行研究的化学分支。",
+      "importance": "了解",
+      "aliases": [
+        "fs 化学"
+      ],
+      "examples": [
+        "测定 ICN → I· + ·CN 的反应时间为 (205 ± 30)×10^{-15} s。",
+        "跟踪 H· + CO2 → ·OH + CO 反应的始态、过渡态和终态。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt38",
+      "name": "正反应速率",
+      "definition": "在可逆反应中，反应物转化为生成物的反应方向上的速率。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt39",
+      "name": "逆反应速率",
+      "definition": "在可逆反应中，生成物重新转化为反应物的反应方向上的速率。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt40",
+      "name": "动态平衡",
+      "definition": "表面上性质不随时间变化，但内部存在两个相反过程同时进行且速率相等的平衡状态。",
+      "importance": "掌握",
+      "examples": [
+        "可逆反应达到化学平衡时的状态"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt41",
+      "name": "浓度",
+      "definition": "溶液或气体混合物中某物质的量与总体积的比值，常用单位 mol·L⁻¹。",
+      "importance": "掌握",
+      "unit": "mol·L⁻¹"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt42",
+      "name": "浓度商",
+      "definition": "对于一般可逆反应 mA(g)+nB(g)⇌pC(g)+qD(g)，在任意时刻的 c^p(C)·c^q(D)/[c^m(A)·c^n(B)]，常用Q表示。",
+      "importance": "掌握",
+      "formula": "Q = c^p(C)·c^q(D) / (c^m(A)·c^n(B))"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt43",
+      "name": "化学平衡常数",
+      "definition": "在一定温度下，可逆反应达到化学平衡时由各参与物浓度按化学计量数幂次构成的比值，数值为常数K，表明化学反应限度的特征值，通常只受温度影响。",
+      "importance": "重要",
+      "aliases": [
+        "平衡常数"
+      ],
+      "formula": "K = c^p(C)·c^q(D) / (c^m(A)·c^n(B))（仅气体或溶质，固体或液体纯物质一般不列入）",
+      "examples": [
+        "H2(g)+I2(g)⇌2HI(g) 在457.6℃时 c²(HI)/[c(H2)c(I2)]≈48.7"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt44",
+      "name": "反应限度",
+      "definition": "在一定条件下，化学反应进行到化学平衡时物质转化所能达到的程度，常用平衡常数等描述。",
+      "importance": "掌握",
+      "examples": [
+        "“这表明该反应中物质的转化达到了‘限度’”"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt45",
+      "name": "转化率",
+      "definition": "某反应物在化学反应中被转化的量与其初始量的百分比，常用来描述反应物在平衡时的转化程度。",
+      "importance": "掌握",
+      "examples": [
+        "CO 转化为 CO2 的转化率为 83%"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt46",
+      "name": "压强",
+      "definition": "单位面积上所受的垂直作用力，在恒温恒体积的气体体系中与气体浓度成正比。",
+      "importance": "掌握",
+      "unit": "Pa"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt47",
+      "name": "温度",
+      "definition": "表征体系冷热程度的物理量，影响反应速率和化学平衡常数。",
+      "importance": "掌握",
+      "unit": "K"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt48",
+      "name": "勒夏特列原理",
+      "definition": "如果改变影响平衡的一个因素(如温度、压强及参加反应的物质的浓度)，平衡就向着能够减弱这种改变的方向移动，也称化学平衡移动原理。",
+      "importance": "重要",
+      "aliases": [
+        "化学平衡移动原理",
+        "Le Chatelier principle"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt49",
+      "name": "化学平衡移动",
+      "definition": "当外界条件（如浓度、温度等）发生改变时，化学平衡所对应的反应方向发生改变，使新的平衡建立在新的条件下的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "平衡移动",
+        "平衡的移动"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt50",
+      "name": "催化剂对化学平衡的影响",
+      "definition": "催化剂能够同等程度地改变正反应速率和逆反应速率，不改变化学平衡混合物的组成，只能改变反应达到平衡所需的时间，对平衡位置无影响。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt51",
+      "name": "工业合成氨反应",
+      "definition": "在高温、高压和催化剂存在下进行的可逆反应 N2 + 3H2 ⇌ 2NH3(g)，典型的工业化学平衡体系。",
+      "importance": "了解",
+      "formula": "N2 + 3H2 ⇌ 2NH3"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt52",
+      "name": "H2与I2生成HI的平衡体系",
+      "definition": "在一定温度下 H2(g)+I2(g) ⇌ 2HI(g) 建立的化学平衡体系，可用于研究平衡常数与浓度关系。",
+      "importance": "了解",
+      "formula": "H2(g)+I2(g) ⇌ 2HI(g)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt53",
+      "name": "CO与H2O平衡体系",
+      "definition": "在高温下 CO(g)+H2O(g) ⇌ CO2(g)+H2(g) 的可逆反应体系，用于平衡常数与转化率计算。",
+      "importance": "了解",
+      "formula": "CO(g)+H2O(g) ⇌ CO2(g)+H2(g)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt54",
+      "name": "NO2与N2O4平衡体系",
+      "definition": "2NO2(g) ⇌ N2O4(g)，ΔH=-56.9 kJ·mol⁻¹ 的可逆反应体系，颜色随压强和温度改变，是研究平衡移动的典型体系。",
+      "importance": "掌握",
+      "formula": "2NO2(g) ⇌ N2O4(g)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt55",
+      "name": "Fe3+与SCN-配位平衡",
+      "definition": "Fe³⁺ 与 SCN⁻ 在溶液中发生的配位反应平衡：Fe³⁺ + 3SCN⁻ ⇌ Fe(SCN)3，伴随颜色由浅黄色、无色变为红色。",
+      "importance": "了解",
+      "formula": "Fe³⁺ + 3SCN⁻ ⇌ Fe(SCN)3"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt56",
+      "name": "反应物",
+      "definition": "化学反应开始时存在并在反应中被消耗的物质。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt57",
+      "name": "生成物",
+      "definition": "化学反应过程中生成的新物质。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt58",
+      "name": "化学平衡与K大小的关系",
+      "definition": "通常K越大，平衡体系中生成物所占比例越大，正反应进行程度越大、反应物转化率越大；K越小，反应越不完全。一般K>10^5时反应基本完全。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt59",
+      "name": "化学反应的自发方向",
+      "definition": "指在一定条件下，化学反应在无需外界持续做功的情况下，实际进行的方向。自发方向由体系的焓变和熵变综合决定，而不是单独由放热/吸热或熵增/熵减决定。",
+      "importance": "重要",
+      "examples": [
+        "H2(g)+1/2O2(g)=H2O(l) 可自发进行",
+        "NaHCO3(s)+HCl(aq)=NaCl(aq)+CO2(g)+H2O(l) 为吸热反应但仍可自发进行"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt60",
+      "name": "熵",
+      "definition": "用来度量体系“混乱程度”的状态函数，符号为S。熵值越大，体系的微观排列越无序、混乱度越大。",
+      "importance": "重要",
+      "aliases": [
+        "entropy"
+      ],
+      "examples": [
+        "对于同一种物质，气态时的熵值最大、液态次之、固态最小"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt61",
+      "name": "熵变",
+      "definition": "过程前后体系熵的变化量，通常用ΔS表示。ΔS>0为熵增、ΔS<0为熵减。",
+      "importance": "掌握",
+      "formula": "ΔS = S_最终 − S_初始",
+      "examples": [
+        "2KClO3(s)=2KCl(s)+3O2(g) 为熵增过程（ΔS>0）",
+        "乙烯聚合为聚乙烯为熵减过程（ΔS<0）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt62",
+      "name": "自发过程",
+      "definition": "在给定条件下，不需要外界持续作用就可以按某一方向进行的过程，包括物理过程和化学反应，具有明显的方向性。",
+      "importance": "重要",
+      "examples": [
+        "水从高处自发流向低处",
+        "气体通过分子的扩散自发混合均匀",
+        "硝酸铵溶于水的过程可以自发进行",
+        "水从高处流向低处",
+        "熔融态SiO2缓慢冷却形成水晶"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt63",
+      "name": "混乱度（有序与无序）",
+      "definition": "对体系微观粒子排列有序程度的定性描述。有序时混乱度小，无序时混乱度大；熵用来定量度量混乱度。",
+      "importance": "掌握",
+      "examples": [
+        "NH4+和NO3−在硝酸铵晶体中有序排列，溶解后在溶液中自由移动，混乱度增大",
+        "隔开的氯气和氢气抽掉玻璃片后自发混合，混乱度增大"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt64",
+      "name": "孤立体系",
+      "definition": "既不与环境交换物质，也不与环境交换能量的体系。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt65",
+      "name": "绝热体系",
+      "definition": "与环境既没有物质交换，也没有热量交换的体系（允许体积功等形式的能量交换，但不交换热量）。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt66",
+      "name": "熵增原理（中学表述）",
+      "definition": "对于孤立体系或绝热体系，自发过程总是向着熵增加（混乱度增大）的方向进行。",
+      "importance": "掌握",
+      "formula": "孤立/绝热体系自发过程：ΔS>0"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt67",
+      "name": "自由能",
+      "definition": "在等温、等压条件下的封闭体系中（只考虑体积功），综合反映焓变和熵变对自发过程影响的状态函数，符号为G，单位kJ/mol。",
+      "importance": "了解",
+      "aliases": [
+        "吉布斯自由能",
+        "Gibbs free energy"
+      ],
+      "unit": "kJ/mol"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt68",
+      "name": "自由能变化与自发性判据",
+      "definition": "在等温等压封闭体系中，化学反应总是向着自由能减小的方向进行：ΔG<0反应能自发进行，ΔG=0反应处于平衡，ΔG>0反应不能自发进行。",
+      "importance": "重要",
+      "formula": "ΔG = ΔH − TΔS",
+      "examples": [
+        "当ΔG<0时，反应能自发进行；当ΔG=0时，反应处于平衡状态；当ΔG>0时，反应不能自发进行。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt69",
+      "name": "焓变与熵变对自发性的综合影响",
+      "definition": "在等温等压条件下，反应是否自发不仅与ΔH、ΔS各自符号有关，还与温度T及ΔH、ΔS的大小有关。需要综合判断。",
+      "importance": "重要",
+      "examples": [
+        "ΔH<0、ΔS>0时，反应能自发进行；",
+        "ΔH>0、ΔS<0时，反应不能自发进行；",
+        "ΔH>0、ΔS>0或ΔH<0、ΔS<0时，自发性与温度有关。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt70",
+      "name": "温度对自发性的影响",
+      "definition": "在等温等压条件下，当ΔH与ΔS符号相同（均大于0或均小于0）时，温度高低会改变ΔG的符号，从而影响反应是否自发进行。一般低温时焓变的影响为主，高温时熵变的影响为主。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt71",
+      "name": "化学反应方向判断的重要性",
+      "definition": "在工业生产中，只有对能够发生的化学反应研究和选择合适的反应条件才有实际意义，因此正确判断化学反应自发进行的方向在生产实践中非常重要。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt72",
+      "name": "化学反应的调控",
+      "definition": "通过改变温度、压强、浓度、催化剂等反应条件，使一个可能发生的化学反应按照预期方向进行，并在安全、经济、环保等约束下寻找适宜生产条件的过程。",
+      "importance": "重要",
+      "examples": [
+        "通过升高温度、增大压强、增大反应物浓度及使用催化剂等，使合成氨的反应速率增大",
+        "通过降低温度、增大压强、增大反应物浓度等，提高平衡混合物中氨的含量"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt73",
+      "name": "化学平衡与平衡混合物组成",
+      "definition": "在可逆反应中，正、逆反应速率相等、各物质的宏观性质保持不变的状态称为化学平衡，这时体系中各组分的浓度或体积分数构成平衡混合物的组成，受温度、压强、浓度等条件影响。",
+      "importance": "重要",
+      "examples": [
+        "表2-2中在不同温度、压强下，平衡混合物中氨的体积分数的变化",
+        "降低温度、增大压强、增大反应物浓度等有利于提高平衡混合物中氨的含量"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt74",
+      "name": "平衡移动原理",
+      "definition": "当处于平衡状态的化学体系的温度、压强或组成发生改变时，平衡将向减弱这种改变的方向移动，以恢复新的平衡的规律。",
+      "importance": "重要",
+      "examples": [
+        "根据平衡移动原理，合成氨应该采用低温以提高平衡转化率"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt75",
+      "name": "合成氨反应",
+      "definition": "氮气和氢气在一定条件下反应生成氨的可逆放热反应：N₂(g)+3H₂(g)⇌2NH₃(g)，ΔH＝−92.4 kJ/mol，是合成氨工业的核心反应。",
+      "importance": "重要",
+      "formula": "N2(g) + 3H2(g) ⇌ 2NH3(g), ΔH = -92.4 kJ/mol",
+      "examples": [
+        "在400~500 ℃、10 MPa~30 MPa以及铁触媒存在下进行合成氨"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt76",
+      "name": "温度对化学反应的影响",
+      "definition": "温度升高通常可以增大化学反应速率；对放热或吸热反应，还会通过平衡移动改变平衡混合物的组成。",
+      "importance": "重要",
+      "examples": [
+        "升高温度可以使合成氨的反应速率增大",
+        "降低温度有利于提高平衡混合物中氨的含量"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt77",
+      "name": "压强对气相平衡的影响",
+      "definition": "对总气体物质的量发生变化的气相可逆反应，增大压强有利于平衡向气体总物质的量较少的一侧移动，同时也通常能增大气相反应速率。",
+      "importance": "重要",
+      "examples": [
+        "合成氨时压强越大，平衡混合物中氨的含量越高",
+        "表2-2中相同温度下压强增大时氨的体积分数增大"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt78",
+      "name": "浓度对化学平衡和速率的影响",
+      "definition": "增大反应物的浓度（或分压）通常能提高化学反应速率，对于可逆反应，改变某组分浓度会使平衡按照平衡移动原理向消耗该组分的方向移动。",
+      "importance": "重要",
+      "examples": [
+        "增大反应物浓度可以使合成氨的反应速率增大",
+        "增大反应物浓度有利于提高平衡混合物中氨的含量"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt79",
+      "name": "催化剂的作用",
+      "definition": "催化剂通过改变反应历程、降低反应的活化能来加快达到平衡的速率，但在使用量较小且不参与总体反应的情况下，不改变化学平衡的位置和平衡混合物的组成。",
+      "importance": "重要",
+      "examples": [
+        "催化剂可以增大合成氨反应速率，但不改变平衡混合物的组成"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt80",
+      "name": "工业生产条件的优化与折中",
+      "definition": "在工业化学过程中，需要在反应速率、平衡转化率、设备条件、安全操作、经济成本、环境与社会效益等多方面因素之间进行折中，选取综合效益最优的反应条件。",
+      "importance": "重要",
+      "examples": [
+        "合成氨工业中选择400~500 ℃、10~30 MPa而不是极低温或极高压",
+        "硫酸工业中选择400~500 ℃、常压进行SO₂转化"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt81",
+      "name": "哈伯-博施工业合成氨法",
+      "definition": "以氮气和氢气在高温、高压下，在铁系催化剂存在时直接合成氨，并通过循环操作、冷却除氨、热交换等流程实现工业化连续生产的方法。",
+      "importance": "了解",
+      "aliases": [
+        "哈伯-博施法",
+        "Haber-Bosch法"
+      ],
+      "examples": [
+        "气体通过高温催化剂，低温除氨后再次循环，并在一定压强下进行"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt82",
+      "name": "循环操作与原料气循环使用",
+      "definition": "在工业反应装置中，将未反应的原料气在除去产品后重新送回反应区，以提高原料的利用率和整体转化率的操作方式。",
+      "importance": "掌握",
+      "examples": [
+        "合成氨工业中将NH₃分离后的原料气循环使用，并补充N₂和H₂",
+        "哈伯专利中的循环法合成氨"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt83",
+      "name": "催化剂中毒",
+      "definition": "催化剂在使用过程中，由于与原料气中的某些杂质反应或发生强吸附，导致其活性降低甚至失去催化作用的现象。",
+      "importance": "了解",
+      "examples": [
+        "为了防止混有的杂质使催化剂“中毒”，原料气必须经过净化"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt84",
+      "name": "气体吸收-再生过程中的平衡控制",
+      "definition": "利用可逆吸收反应在一定条件下吸收目标气体，再通过改变温度、压强或组成等条件使平衡移动，从而解吸再生吸收剂并循环使用的过程。",
+      "importance": "掌握",
+      "examples": [
+        "铜氨液吸收CO并在适当条件下再生以恢复吸收能力"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt85",
+      "name": "放热可逆反应的条件选择",
+      "definition": "对ΔH<0的可逆反应，从平衡转化率角度宜采用低温高压；但在工业实际中需兼顾反应速率和经济性，往往选择中等温度、适当压强。",
+      "importance": "掌握",
+      "examples": [
+        "合成氨反应和SO₂转化为SO₃反应均为放热可逆反应"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt86",
+      "name": "硫酸工业中SO₂氧化为SO₃反应",
+      "definition": "硫酸生产中关键的气相放热可逆反应：2SO₂(g)+O₂(g)⇌2SO₃(g)，ΔH＝−196.6 kJ/mol，其平衡受温度、压强和组分浓度影响。",
+      "importance": "掌握",
+      "formula": "2SO2(g) + O2(g) ⇌ 2SO3(g), ΔH = -196.6 kJ/mol",
+      "examples": [
+        "在450 ℃、不同压强下SO₂的转化率变化如表中数据所示"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt87",
+      "name": "气-固反应中固体吸收剂对平衡的影响",
+      "definition": "当气相可逆反应体系中加入能与其中某种气体反应或强吸附该气体的固体吸收剂时，通过消耗或固定该气体，使平衡向生成该气体一侧移动，从而改变其他气体的平衡含量。",
+      "importance": "掌握",
+      "examples": [
+        "在CO与H₂O生成CO₂和H₂的反应体系中投入CaO使H₂体积分数增大"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt88",
+      "name": "水煤气变换反应",
+      "definition": "一氧化碳与水蒸气在催化剂存在下平衡生成二氧化碳和氢气的放热可逆反应：CO(g)+H₂O(g)⇌CO₂(g)+H₂(g)，ΔH＝−41.2 kJ/mol，是制取氢气的工业重要方法之一。",
+      "importance": "掌握",
+      "formula": "CO(g) + H2O(g) ⇌ CO2(g) + H2(g), ΔH = -41.2 kJ/mol"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt89",
+      "name": "合成氨工业条件的典型取值",
+      "definition": "现代合成氨工业通常在铁系催化剂存在下，选用约400~500 ℃、10~30 MPa，并采取冷却除氨和循环原料气的操作条件，以实现较高转化率和经济性。",
+      "importance": "了解",
+      "examples": [
+        "我国的合成氨厂一般采用的压强为10 MPa~30 MPa",
+        "在实际生产中一般采用的温度为400~500 ℃",
+        "工业上通常采用铁触媒、在400~500 ℃和10~30 MPa的条件下合成氨"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt90",
+      "name": "化学平衡",
+      "definition": "在可逆反应中，正反应速率与逆反应速率相等，各物质的宏观性质（如颜色、浓度）保持恒定的状态。",
+      "importance": "重要",
+      "aliases": [
+        "化学反应平衡"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt91",
+      "name": "浓度对化学平衡的影响",
+      "definition": "在可逆反应中，若增大或减小某一反应物或生成物的浓度，化学平衡会向着消耗被增加物质或补充被减少物质的一侧移动。",
+      "importance": "重要",
+      "examples": [
+        "向含有Fe3+与SCN−平衡体系的溶液中继续加入FeCl3或KSCN溶液，溶液颜色加深，表明平衡移动。",
+        "向重铬酸钾溶液中加入NaOH或H2SO4，溶液在橙色和黄色之间变化，表明平衡移动。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt92",
+      "name": "温度对化学平衡的影响",
+      "definition": "在可逆反应中，升高或降低温度会改变反应的进行方向：升高温度有利于吸热方向，降低温度有利于放热方向，从而使化学平衡发生移动。",
+      "importance": "重要",
+      "examples": [
+        "加热CuCl2溶液时平衡向吸热的黄色[CuCl4]2−方向移动，冷却时向蓝色[Cu(H2O)4]2+方向移动。",
+        "将NO2和N2O4混合气体的烧瓶置于热水或冷水中，气体颜色发生可逆变化。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt93",
+      "name": "Fe3+与SCN−平衡体系",
+      "definition": "Fe3+与SCN−在溶液中发生可逆反应生成有颜色的配离子（如[FeSCN]2+）的平衡体系，体系颜色深浅随平衡移动而变化。",
+      "importance": "掌握",
+      "examples": [
+        "在FeCl3与KSCN混合溶液中，通过继续加入FeCl3、KSCN或加入铁粉改变溶液颜色，用以观察平衡移动。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt94",
+      "name": "Cr2O7²−/CrO4²−平衡体系",
+      "definition": "在重铬酸根Cr2O7²−与水、铬酸根CrO4²−及H+之间建立的可逆平衡，表现为橙色和黄色两种颜色之间的可逆转化。",
+      "importance": "掌握",
+      "formula": "Cr2O7²− + H2O ⇌ 2CrO4²− + 2H+",
+      "examples": [
+        "向K2Cr2O7溶液中加入NaOH，溶液由橙色向黄色转变；再加入H2SO4，颜色再由黄色向橙色转变。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt95",
+      "name": "Cu2+与Cl−配位平衡体系",
+      "definition": "在CuCl2溶液中，水合铜离子[Cu(H2O)4]2+与氯离子Cl−发生可逆配位反应生成[CuCl4]2−，二者之间存在与颜色和温度相关的平衡。",
+      "importance": "掌握",
+      "formula": "[Cu(H2O)4]2+ + 4Cl− ⇌ [CuCl4]2− + 4H2O，ΔH > 0",
+      "examples": [
+        "在CuCl2溶液中存在平衡：[Cu(H2O)4]2+ (蓝色) ⇌ [CuCl4]2− (黄色)，加热或冷却可引起颜色变化。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt96",
+      "name": "NO2/N2O4气相平衡体系",
+      "definition": "在气相中，二氧化氮NO2与四氧化二氮N2O4之间的可逆反应形成的平衡体系，体系颜色随温度变化而改变。",
+      "importance": "掌握",
+      "examples": [
+        "将封装有NO2和N2O4混合气体的圆底烧瓶分别放入热水和冷水中，比较气体颜色，并互换烧瓶位置后再比较颜色。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt97",
+      "name": "Le Châtelier原理（勒夏特列原理）",
+      "definition": "当处于平衡状态的体系受到外界条件（如浓度、温度等）改变的扰动时，体系总是趋向于部分抵消这种改变的方向发生平衡移动。",
+      "importance": "重要",
+      "aliases": [
+        "勒夏特列原理",
+        "平衡移动原理"
+      ],
+      "examples": [
+        "增加Fe3+或SCN−浓度，平衡向生成配离子方向移动以消耗增加的物质。",
+        "升高CuCl2平衡体系温度，平衡向吸热生成[CuCl4]2−的方向移动。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt98",
+      "name": "控制变量法",
+      "definition": "在科学实验中，只改变一个自变量，其余条件保持不变，通过前后或对比组的结果差异来分析该变量对实验结果的影响的方法。",
+      "importance": "重要",
+      "examples": [
+        "研究温度对CuCl2溶液平衡的影响时，两支试管中CuCl2溶液浓度相同，只改变加热或冷却条件进行比较。",
+        "研究浓度对Fe3+与SCN−平衡体系的影响时，a、b、c三支试管其他条件相同，只改变加入FeCl3或KSCN的量。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt99",
+      "name": "对比实验",
+      "definition": "在基本条件相同的情况下设置实验组和对照组，或设置多组实验，通过不同实验结果之间的比较来判断某因素作用的实验方法。",
+      "importance": "掌握",
+      "examples": [
+        "将加热并冷却后的CuCl2溶液与另一支未处理的CuCl2溶液进行对比观察颜色。",
+        "两个NO2/N2O4烧瓶分别置于热水和冷水中，并互换位置后进行比较。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt100",
+      "name": "强电解质",
+      "definition": "在水溶液中能够全部电离成离子的电解质。",
+      "importance": "掌握",
+      "examples": [
+        "强酸（如 H2SO4）",
+        "强碱（如 NaOH）",
+        "大部分盐（如 NaCl）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt101",
+      "name": "弱电解质",
+      "definition": "在水溶液中只能部分电离成离子的电解质。",
+      "importance": "掌握",
+      "examples": [
+        "弱酸 CH3COOH",
+        "弱碱 NH3·H2O"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt102",
+      "name": "电离程度",
+      "definition": "在一定条件下，电解质在水溶液中电离成离子的程度，通常可理解为已电离粒子与总溶质粒子的比例大小。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt103",
+      "name": "强酸",
+      "definition": "在水溶液中能几乎全部电离成 H⁺ 的酸，属于强电解质。",
+      "importance": "了解",
+      "examples": [
+        "H2SO4",
+        "HCl（本节中默认为强酸）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt104",
+      "name": "弱酸",
+      "definition": "在水溶液中只能部分电离成 H⁺ 的酸，属于弱电解质。",
+      "importance": "掌握",
+      "examples": [
+        "CH3COOH",
+        "HCN",
+        "H2CO3"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt105",
+      "name": "强碱",
+      "definition": "在水溶液中几乎能全部电离成 OH⁻ 的碱，属于强电解质。",
+      "importance": "了解",
+      "examples": [
+        "NaOH"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt106",
+      "name": "弱碱",
+      "definition": "在水溶液中只能部分电离成 OH⁻ 的碱，属于弱电解质。",
+      "importance": "掌握",
+      "examples": [
+        "NH3·H2O"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt107",
+      "name": "溶液导电能力",
+      "definition": "溶液传导电流的能力，主要由溶液中离子的种类、浓度及迁移速率等决定。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt108",
+      "name": "电离平衡",
+      "definition": "弱电解质在水中电离生成离子与离子重新结合成分子的可逆过程在一定条件下达到正、逆反应速率相等的状态。",
+      "importance": "重要",
+      "aliases": [
+        "ionization equilibrium"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt109",
+      "name": "电离平衡的移动",
+      "definition": "当浓度、温度等外界条件改变时，弱电解质的电离平衡向生成物或反应物一方偏移的现象。",
+      "importance": "重要",
+      "examples": [
+        "在 NH3·H2O 溶液中加入 NH4Cl，电离平衡向左移动",
+        "在 CH3COOH 溶液中加入 CH3COONa，电离平衡向左移动"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt110",
+      "name": "电离平衡常数",
+      "definition": "在一定温度下，弱电解质电离达到平衡时，溶液中生成离子浓度的乘积与未电离分子浓度之比为常数，称为电离平衡常数。",
+      "importance": "重要",
+      "aliases": [
+        "电离常数",
+        "ionization constant"
+      ],
+      "formula": "对一元弱酸 HA：Ka = c(H⁺)·c(A⁻) / c(HA)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt111",
+      "name": "酸的电离常数 Ka",
+      "definition": "弱酸在一定温度下电离达到平衡时，溶液中 H⁺ 与其共轭碱的浓度乘积与未电离弱酸浓度之比的常数，用 Ka 表示。",
+      "importance": "重要",
+      "formula": "Ka = c(共轭碱)·c(H⁺) / c(弱酸)",
+      "examples": [
+        "CH3COOH 在 25℃ 时 Ka = 1.75×10⁻⁵",
+        "HCN 在 25℃ 时 Ka = 6.2×10⁻¹⁰"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt112",
+      "name": "碱的电离常数 Kb",
+      "definition": "弱碱在一定温度下电离达到平衡时，溶液中 OH⁻ 与其共轭酸的浓度乘积与未电离弱碱浓度之比的常数，用 Kb 表示。",
+      "importance": "重要",
+      "formula": "Kb = c(共轭酸)·c(OH⁻) / c(弱碱)",
+      "examples": [
+        "NH3·H2O 在某温度下 Kb ≈ 1.4×10⁻⁵（例题计算）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt113",
+      "name": "电离常数与温度的关系",
+      "definition": "电离常数随温度变化而变化，但对许多弱电解质在室温附近变化不大，通常计算时可忽略温度对其影响。",
+      "importance": "了解",
+      "examples": [
+        "CH3COOH：25℃ 时 Ka=1.75×10⁻⁵，0℃ 时 Ka=1.65×10⁻⁵"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt114",
+      "name": "电离常数与酸碱强弱",
+      "definition": "在同一温度下，弱电解质的电离常数越大，越易电离，酸（或碱）越“强”；电离常数越小，酸（或碱）越“弱”。",
+      "importance": "重要",
+      "examples": [
+        "Ka(CH3COOH)=1.75×10⁻⁵ > Ka(HCN)=6.2×10⁻¹⁰，所以 HCN 比 CH3COOH 更弱"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt115",
+      "name": "一元弱酸",
+      "definition": "分子中只含有一个可以电离的 H⁺，且在水中只能部分电离的酸。",
+      "importance": "了解",
+      "examples": [
+        "CH3COOH",
+        "HCN"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt116",
+      "name": "一元弱碱",
+      "definition": "在水中只能部分电离、每个分子仅能提供一个 OH⁻ 的弱碱。",
+      "importance": "了解",
+      "examples": [
+        "NH3·H2O（视作一元弱碱）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt117",
+      "name": "多元弱酸",
+      "definition": "分子中含有多个可以电离的 H⁺，且在水中各步电离都不完全的酸。",
+      "importance": "掌握",
+      "examples": [
+        "H2CO3"
+      ],
+      "formula": "以 H2CO3 为例：第一步 H2CO3 ⇌ H⁺ + HCO3⁻；第二步 HCO3⁻ ⇌ H⁺ + CO3²⁻"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt118",
+      "name": "多元弱碱",
+      "definition": "在溶液中可以分步接受多个 H⁺ 或对应可以分步提供多个 OH⁻ 的弱碱，各步电离均不完全。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt119",
+      "name": "多步电离常数",
+      "definition": "多元弱酸或多元弱碱每一步电离对应的电离常数，通常用 Ka1、Ka2 或 Kb1、Kb2 等表示，且各步数值一般依次减小。",
+      "importance": "重要",
+      "examples": [
+        "H2CO3 在 25℃ 时：Ka1 = 4.5×10⁻⁷，Ka2 = 4.7×10⁻¹¹",
+        "一般规律：Ka1 > Ka2 > Ka3 > …"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt120",
+      "name": "相同物质的量浓度溶液的比较",
+      "definition": "在相同 c(溶质) 条件下，通过 pH、导电能力、与金属反应剧烈程度等差异，反映不同电解质电离程度和 H⁺ 浓度的差异。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt121",
+      "name": "同离子效应对电离平衡的影响",
+      "definition": "在弱电解质溶液中加入含有与其电离产生的离子相同的强电解质，使溶液中该离子浓度增大，从而使弱电解质的电离平衡向未电离一侧移动的现象。",
+      "importance": "重要",
+      "examples": [
+        "在 NH3·H2O 中加入 NH4Cl，使 NH3·H2O 的电离平衡向左移动",
+        "在 CH3COOH 中加入 CH3COONa，使 CH3COOH 的电离平衡向左移动"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt122",
+      "name": "浓度对电离平衡的影响",
+      "definition": "改变溶液中参与电离平衡的粒子浓度，会引起电离平衡向减少该变化所引起影响的方向移动。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt123",
+      "name": "弱电解质的相对强弱比较",
+      "definition": "在同一温度下，通过比较弱电解质的电离常数大小来判断其相对强弱，电离常数越大，酸（或碱）越“强”。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt124",
+      "name": "多元弱酸只考虑第一步电离的近似",
+      "definition": "当多元弱酸的第一步电离常数远大于后续各步电离常数时，计算 c(H⁺) 或比较酸性强弱通常只考虑第一步电离。",
+      "importance": "掌握",
+      "examples": [
+        "对 H2CO3，Ka1 ≫ Ka2 时，只考虑 H2CO3 ⇌ H⁺ + HCO3⁻ 贡献的 H⁺"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt125",
+      "name": "水的电离",
+      "definition": "纯水中极少量水分子发生电离，生成 H3O+ 和 OH−，表现为水是一种极弱的电解质，可以用电离方程式 H2O ⇌ H+ + OH− 描述。",
+      "importance": "重要",
+      "formula": "H2O(l) ⇌ H+(aq) + OH−(aq)",
+      "examples": [
+        "纯水绝大部分以 H2O 的形式存在，但其中也存在着极少量的 H3O+ 和 OH− 。这表明水是一种极弱的电解质，能发生微弱的电离。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt126",
+      "name": "水的离子积",
+      "definition": "水的电离达到平衡时，水中 H+ 和 OH− 的浓度之积为常数，记作 Kw，称为水的离子积常数，简称水的离子积。",
+      "importance": "重要",
+      "formula": "Kw = c(H+)·c(OH−)",
+      "examples": [
+        "当水的电离达到平衡时，电离产物 H+ 和 OH− 浓度之积是一个常数，记作 Kw。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt127",
+      "name": "水的离子积与温度的关系",
+      "definition": "水的离子积 Kw 的数值随温度升高而增大，不同温度下 Kw 可由实验测得。",
+      "importance": "掌握",
+      "examples": [
+        "由表3-1可以看出，随着温度的升高，水的离子积增大。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt128",
+      "name": "稀溶液中的水的离子积适用性",
+      "definition": "水的离子积表达式 Kw = c(H+)·c(OH−) 不仅适用于纯水，也适用于稀的电解质溶液。",
+      "importance": "掌握",
+      "examples": [
+        "水的离子积不仅适用于纯水，也适用于稀的电解质溶液。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt129",
+      "name": "溶液的酸碱性与pH",
+      "definition": "用pH定量描述溶液的酸碱性，pH值不同的溶液酸碱性不同，pH与水的离子积和溶液中 H+、OH− 的浓度密切相关。",
+      "importance": "重要",
+      "examples": [
+        "水的电离和溶液的 pH。",
+        "工农业生产和科学实验中常常涉及溶液的酸碱性，人们的生活和健康也与溶液的酸碱性有密切关系。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt130",
+      "name": "pH试纸的量程与分辨率",
+      "definition": "广泛pH试纸通常 pH 范围为 1~14 或 0~10，可识别约 1 个 pH 单位的差别；精密pH试纸的 pH 范围较窄，可判别 0.2 或 0.3 的 pH 差。",
+      "importance": "了解",
+      "examples": [
+        "广泛 pH 试纸的 pH 范围是 1~14（最常用）或 0~10，可以识别的 pH 差约为1；精密 pH 试纸的 pH 范围较窄，可以判别0.2或0.3的 pH 差。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt131",
+      "name": "溶液pH的实际应用意义",
+      "definition": "测试和调控溶液 pH 对工农业生产、科学研究以及日常生活和医疗保健具有重要意义。",
+      "importance": "掌握",
+      "examples": [
+        "因此，测试和调控溶液的 pH ，对工农业生产、科学研究，以及日常生活和医疗保健等都具有重要意义。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt132",
+      "name": "体液pH及酸碱平衡",
+      "definition": "人体各种体液的 pH 要保持在一定范围内，血液的正常 pH 范围为 7.35~7.45，偏离该范围会引起酸中毒或碱中毒，甚至危及生命。",
+      "importance": "掌握",
+      "examples": [
+        "例如，血液的正常 pH 范围是 7.35~7.45 。",
+        "当血浆的 pH 降到7.2以下会引起酸中毒，升到7.5以上会引起碱中毒，降到6.8以下或升到7.8以上，会危及生命安全。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt133",
+      "name": "H2CO3/HCO3−缓冲体系",
+      "definition": "血浆中的 H2CO3/HCO3− 构成缓冲体系，通过平衡移动消耗加入的少量强酸或强碱，在较大浓度范围内稳定体液的 pH。",
+      "importance": "重要",
+      "formula": "H+(aq) + HCO3−(aq) ⇌ H2CO3(aq) ⇌ CO2(g) + H2O(l)",
+      "examples": [
+        "血浆中 H2CO3 / HCO3− 缓冲体系对稳定体系的酸碱度发挥着重要作用。",
+        "当体系中增加少量强酸时，平衡向正反应方向移动而消耗 H+；当增加少量强碱时，平衡向逆反应方向移动而消耗 OH−。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt134",
+      "name": "土壤pH与作物生长",
+      "definition": "土壤的 pH 影响植物对养分形态和有效性的吸收，不同作物对土壤 pH 范围有不同要求，如水稻适宜 pH 6~7、小麦 6.3~7.5 等。",
+      "importance": "了解",
+      "examples": [
+        "在农业生产中，因土壤的 pH 影响植物对不同形态养分的吸收及养分的有效性（如图3-9），不同作物生长对土壤的 pH 范围有不同的要求（如表3-2）。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt135",
+      "name": "酸碱中和滴定",
+      "definition": "依据酸碱中和反应，用已知浓度的酸（或碱）来测定未知浓度的碱（或酸）的一种定量分析方法，操作简便、快速且具有足够准确度。",
+      "importance": "重要",
+      "examples": [
+        "酸碱中和滴定是依据中和反应，用已知浓度的酸（或碱）来测定未知浓度的碱（或酸）的方法。",
+        "酸碱中和滴定操作简便、快速，而且具有足够的准确度，因此，在工农业生产和科学研究中具有广泛的应用。"
+      ],
+      "aliases": [
+        "中和滴定",
+        "酸碱滴定"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt136",
+      "name": "滴定终点与pH突变",
+      "definition": "在强酸强碱中和滴定中，接近滴定终点时，加入极少量酸或碱就会引起溶液 pH 的突变，此时指示剂发生明显颜色变化，用以判断反应达到终点。",
+      "importance": "掌握",
+      "examples": [
+        "当接近滴定终点时，极少量的碱或酸就会引起溶液的 pH 突变（如图3-11）。此时指示剂明显的颜色变化表示反应已完全，即反应到达终点。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt137",
+      "name": "滴定用体积与浓度的计量关系",
+      "definition": "在酸碱中和滴定中，根据酸碱的化学计量关系，有 c(酸)·V(酸) = c(碱)·V(碱)，可用来计算未知溶液的物质的量浓度。",
+      "importance": "重要",
+      "formula": "c(HCl)·V[HCl(aq)] = c(NaOH)·V[NaOH(aq)]",
+      "examples": [
+        "滴定中HCl与NaOH有如下物质的量的关系： c(HCl)·V[HCl(aq)]  =  c(NaOH)·V[NaOH(aq)] 。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt138",
+      "name": "酸碱指示剂及变色范围",
+      "definition": "酸碱指示剂是一些有机弱酸或弱碱，在溶液中存在电离平衡，其分子与电离出的离子呈现不同的颜色，在一定 pH 范围内随 pH 改变而变色，各指示剂的变色范围由实验测定。",
+      "importance": "重要",
+      "examples": [
+        "酸碱指示剂是一些有机弱酸或弱碱，它们在溶液中存在电离平衡，其分子与电离出的离子呈现不同的颜色。",
+        "指示剂的颜色变化是在一定的 pH 范围内发生的。各种指示剂的变色范围是由实验测得的。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt139",
+      "name": "定性分析",
+      "definition": "确定物质的成分，包括元素、无机物所含的离子和有机物所含的官能团等的化学分析过程，通常包括外观观察、初步试验、阳离子和阴离子分析等。",
+      "importance": "掌握",
+      "examples": [
+        "确定物质的成分，包括元素、无机物所含的离子和有机物所含的官能团等，在化学上叫做定性分析。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt140",
+      "name": "定量分析",
+      "definition": "测定物质中各成分含量的化学分析过程，包括化学分析法和仪器分析法，按取样量又可分为常量分析、半微量分析、微量分析和超微量分析等。",
+      "importance": "重要",
+      "examples": [
+        "测定物质中元素、离子、官能团等各成分的含量，在化学上叫做定量分析。",
+        "酸碱中和滴定就是一种重要的定量分析。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt141",
+      "name": "化学分析法",
+      "definition": "依特定的化学反应及其计量关系对物质进行定量分析的方法，如酸碱中和滴定等体积分析方法。",
+      "importance": "掌握",
+      "examples": [
+        "化学分析法是指依特定的化学反应及其计量关系对物质进行分析的方法。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt142",
+      "name": "仪器分析法",
+      "definition": "利用特定的仪器对物质进行定量分析的方法，是定量分析的重要组成部分。",
+      "importance": "了解",
+      "examples": [
+        "仪器分析法是指利用特定的仪器对物质进行定量分析的方法。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt143",
+      "name": "定量分析中的数据处理与误差",
+      "definition": "定量分析实验中存在客观实验误差，需要对数据进行处理与评价，如舍弃误差较大的数据并计算多次实验结果的平均值。",
+      "importance": "掌握",
+      "examples": [
+        "在定量分析中，实验误差是客观存在的，所以需要对所得的数据进行处理和评价。",
+        "在几次实验结果相近的情况下，可计算它们的平均值。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt144",
+      "name": "盐类的水解",
+      "definition": "盐在水溶液中生成其对应酸或碱（或两者）的过程，导致溶液中c(H⁺)和c(OH⁻)发生变化，从而使溶液呈现一定酸碱性，是一种可逆反应，可视为酸碱中和反应的逆反应。",
+      "importance": "重要",
+      "examples": [
+        "CO₃²⁻ + H₂O ⇌ HCO₃⁻ + OH⁻",
+        "Fe³⁺ + 3H₂O ⇌ Fe(OH)₃↓ + 3H⁺",
+        "Al³⁺ + 3H₂O ⇌ Al(OH)₃↓ + 3H⁺"
+      ],
+      "aliases": [
+        "盐的水解"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt145",
+      "name": "盐溶液的酸碱性",
+      "definition": "由盐溶于水形成的溶液表现出的酸性、碱性或中性，其本质取决于溶液中c(H⁺)和c(OH⁻)的相对大小，受盐的类型及水解程度等因素影响。",
+      "importance": "重要",
+      "examples": [
+        "NaCl 溶液呈中性",
+        "NH₄Cl 溶液呈酸性",
+        "CH₃COONa 溶液呈碱性",
+        "Na₂CO₃ 溶液呈碱性"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt146",
+      "name": "盐的类型",
+      "definition": "按构成盐的酸和碱的强弱分类，可分为强酸强碱盐、强酸弱碱盐、强碱弱酸盐等，不同类型盐的水溶液酸碱性不同。",
+      "importance": "重要",
+      "examples": [
+        "强酸强碱盐：NaCl、KNO₃",
+        "强酸弱碱盐：NH₄Cl、(NH₄)₂SO₄、FeCl₃、AlCl₃",
+        "强碱弱酸盐：Na₂CO₃、CH₃COONa"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt147",
+      "name": "强酸强碱盐",
+      "definition": "由强酸和强碱生成的盐，其水溶液中，阴阳离子一般不发生显著水解，溶液通常呈中性。",
+      "importance": "掌握",
+      "examples": [
+        "NaCl",
+        "KNO₃"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt148",
+      "name": "强酸弱碱盐",
+      "definition": "由强酸和弱碱生成的盐，其阳离子易水解生成弱碱和H⁺，使溶液呈酸性，水解程度受弱碱碱性强弱和条件影响。",
+      "importance": "掌握",
+      "examples": [
+        "NH₄Cl",
+        "(NH₄)₂SO₄",
+        "FeCl₃",
+        "AlCl₃"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt149",
+      "name": "强碱弱酸盐",
+      "definition": "由强碱和弱酸生成的盐，其阴离子易水解生成弱酸和OH⁻，使溶液呈碱性，水解程度受弱酸酸性强弱和条件影响。",
+      "importance": "掌握",
+      "examples": [
+        "Na₂CO₃",
+        "CH₃COONa"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt150",
+      "name": "溶液酸碱性的判定原理",
+      "definition": "溶液呈酸性、碱性还是中性，取决于溶液中c(H⁺)和c(OH⁻)的相对大小：c(H⁺)＞c(OH⁻)为酸性，c(H⁺)＜c(OH⁻)为碱性，二者相等时为中性。",
+      "importance": "掌握",
+      "formula": "若c(H⁺) > c(OH⁻)：酸性；c(H⁺) = c(OH⁻)：中性；c(H⁺) < c(OH⁻)：碱性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt151",
+      "name": "电解质溶液的电荷守恒",
+      "definition": "在电解质溶液中，所有阳离子所带电荷总数与所有阴离子所带电荷总数相等，溶液总体上呈电中性。",
+      "importance": "重要",
+      "examples": [
+        "在 Na₂CO₃ 溶液中：c(Na⁺)+c(H⁺)=c(OH⁻)+c(HCO₃⁻)+2c(CO₃²⁻)"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt152",
+      "name": "电解质溶液中的元素质量守恒",
+      "definition": "在电解质溶液中，同一种元素在不同离子或分子形式之间转化时，其总物质的量（或质量）保持不变。",
+      "importance": "重要",
+      "examples": [
+        "0.1 mol/L Na₂CO₃ 溶液中：c(CO₃²⁻)+c(HCO₃⁻)+c(H₂CO₃)=0.1 mol/L"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt153",
+      "name": "盐类水解程度",
+      "definition": "某盐在水溶液中发生水解反应的进行程度，决定于该盐本身的性质以及温度、浓度等条件，常用水解常数或水解度定量描述。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt154",
+      "name": "反应物性质对盐类水解的影响",
+      "definition": "对强碱弱酸盐而言，生成盐的弱酸酸性越弱（Ka越小），该盐的水解程度越大；对强酸弱碱盐而言，生成盐的弱碱碱性越弱（Kb越小），该盐的水解程度越大。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt155",
+      "name": "反应条件对盐类水解的影响",
+      "definition": "盐类水解是可逆反应，其平衡受温度、溶液浓度、加入酸或碱等条件影响，条件变化会引起水解平衡的移动，从而改变水解程度。",
+      "importance": "重要",
+      "examples": [
+        "加热使吸热的水解反应的平衡向水解方向移动",
+        "稀释促进水解进行",
+        "加入酸或碱改变H⁺或OH⁻浓度，引起水解平衡移动"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt156",
+      "name": "盐类水解的吸热性",
+      "definition": "盐类水解可看作放热的酸碱中和反应的逆反应，因此水解是吸热反应，升高温度有利于水解平衡向正反应方向移动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt157",
+      "name": "平衡移动原理在水解中的应用",
+      "definition": "根据化学平衡移动原理，改变温度、溶液浓度或反应物/生成物浓度，可以预测并解释盐类水解平衡的移动方向及水解程度变化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt158",
+      "name": "盐的水解常数",
+      "definition": "描述盐类水解平衡程度的平衡常数，记为Kh，对强碱弱酸盐和强酸弱碱盐，可与对应弱酸或弱碱的电离常数建立定量关系。",
+      "importance": "重要",
+      "formula": "强碱弱酸盐：A⁻ + H₂O ⇌ HA + OH⁻，Kh = c(HA)·c(OH⁻)/c(A⁻) = Kw/Ka；强酸弱碱盐：Kh = Kw/Kb"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt159",
+      "name": "弱酸电离常数与盐水解常数的关系",
+      "definition": "强碱弱酸盐的水解常数Kh与其对应弱酸的电离常数Ka的关系为 Kh = Kw/Ka，弱酸越弱（Ka越小），盐的水解程度越大。",
+      "importance": "掌握",
+      "formula": "Kh = Kw / Ka"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt160",
+      "name": "弱碱电离常数与盐水解常数的关系",
+      "definition": "强酸弱碱盐的水解常数Kh与其对应弱碱的电离常数Kb满足 Kh = Kw/Kb，弱碱越弱（Kb越小），盐的水解程度越大。",
+      "importance": "掌握",
+      "formula": "Kh = Kw / Kb"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt161",
+      "name": "Na₂CO₃ 溶液的碱性",
+      "definition": "Na₂CO₃是强碱弱酸盐，其溶液中CO₃²⁻发生水解，生成OH⁻，使溶液呈碱性，因此Na₂CO₃在生活中可作为“碱”使用。",
+      "importance": "掌握",
+      "examples": [
+        "Na₂CO₃溶液常用于清洗油污、面点加工中中和酸",
+        "加热Na₂CO₃溶液可增强水解，提高去污效果"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt162",
+      "name": "FeCl₃ 溶液的酸性与水解",
+      "definition": "FeCl₃是强酸弱碱盐，Fe³⁺在水溶液中发生水解，生成Fe(OH)₃和H⁺，导致溶液呈酸性，其水解平衡受温度、浓度及H⁺浓度变化影响。",
+      "importance": "掌握",
+      "examples": [
+        "配制FeCl₃溶液时往往先溶于浓盐酸以抑制水解",
+        "Fe³⁺水解：Fe³⁺ + 3H₂O ⇌ Fe(OH)₃↓ + 3H⁺"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt163",
+      "name": "Al³⁺和Fe³⁺水解的净水作用",
+      "definition": "Al³⁺和Fe³⁺在水中水解生成的Al(OH)₃胶体和Fe(OH)₃胶体能吸附并絮凝水中细小悬浮颗粒，使之聚集成较大颗粒沉降，从而达到净水的目的。",
+      "importance": "掌握",
+      "examples": [
+        "可溶性铝盐、铁盐作为净水剂用于自来水处理和污水净化"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt164",
+      "name": "盐类水解在无机化合物制备中的应用",
+      "definition": "利用某些盐在水中水解程度较大的特性，通过控制水量和温度，可使水解趋于完全，从而制备难溶或稳定的无机化合物。",
+      "importance": "了解",
+      "examples": [
+        "TiCl₄ + (x + 2)H₂O = TiO₂·xH₂O↓ + 4HCl，经焙烧得到TiO₂",
+        "类似方法可用于制备SnO、SnO₂等"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt165",
+      "name": "TiCl₄水解制TiO₂",
+      "definition": "TiCl₄在大量水和加热条件下发生强烈水解，生成TiO₂·xH₂O沉淀和HCl，经焙烧可得到化学性质稳定的白色颜料TiO₂。",
+      "importance": "了解",
+      "formula": "TiCl₄ + (x + 2)H₂O = TiO₂·xH₂O↓ + 4HCl"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt166",
+      "name": "酸碱中和反应与盐类水解的关系",
+      "definition": "中和反应是酸与碱生成盐和水的放热反应，盐类水解是其中部分或全部逆过程，是吸热反应，两者在方向和热效应上相反。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt167",
+      "name": "难溶电解质",
+      "definition": "溶解度小于 0.01 g 的电解质称为难溶电解质，虽然溶解度很小，但在水中并不是绝对不溶，可与其饱和溶液及沉淀之间建立沉淀溶解平衡。",
+      "importance": "重要",
+      "examples": [
+        "AgCl",
+        "AgBr",
+        "Ag2S",
+        "BaSO4",
+        "Fe(OH)3"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt168",
+      "name": "沉淀溶解平衡",
+      "definition": "难溶电解质在水中，固体溶解为离子和溶液中离子在固体表面沉淀的速率在一定温度下相等时建立的动态平衡，对应一饱和溶液。",
+      "importance": "重要",
+      "examples": [
+        "AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq)",
+        "CaCO3(s) ⇌ Ca²⁺(aq) + CO3²⁻(aq)"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt169",
+      "name": "饱和溶液（难溶电解质）",
+      "definition": "在一定温度下，难溶电解质与其溶液达到沉淀溶解平衡时所得的溶液，溶质的溶解量达到该条件下的最大值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt170",
+      "name": "溶度积常数 Ksp",
+      "definition": "难溶电解质在某温度下达到沉淀溶解平衡时，其在溶液中各离子平衡浓度按化学计量数幂次乘积所得的常数，反映该物质在水中的溶解能力。",
+      "importance": "重要",
+      "aliases": [
+        "溶度积",
+        "溶解度积"
+      ],
+      "formula": "AgCl(s)⇌Ag⁺+Cl⁻, Ksp=c(Ag⁺)·c(Cl⁻); Ag2S(s)⇌2Ag⁺+S²⁻, Ksp=c(Ag⁺)²·c(S²⁻)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt171",
+      "name": "离子积 Q",
+      "definition": "在任意时刻溶液中各相关离子的实际浓度按化学计量数幂次乘积所得的值，用于与同一温度下的溶度积 Ksp 比较，判断沉淀的生成或溶解趋势。",
+      "importance": "重要",
+      "formula": "如 Ag2S: Q = c(Ag⁺)²·c(S²⁻)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt172",
+      "name": "Q 与 Ksp 的比较规则",
+      "definition": "在给定温度下，若 Q>Ksp，溶液中有沉淀析出；若 Q=Ksp，沉淀与溶解处于平衡；若 Q<Ksp，溶液中无沉淀析出。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt173",
+      "name": "沉淀生成条件（“反应完全”的近似）",
+      "definition": "在一般情况下，当生成沉淀后溶液中剩余离子的浓度小于 1×10⁻⁵ mol·L⁻¹ 时，化学上通常认为生成沉淀的离子反应已进行完全。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt174",
+      "name": "平衡移动原理在沉淀溶解平衡中的应用",
+      "definition": "通过改变离子浓度、加入酸碱或其它试剂等方式，改变离子积 Q 的大小，使沉淀溶解平衡向生成沉淀或溶解沉淀的方向移动，以达到分离、除杂或溶解难溶物质的目的。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt175",
+      "name": "沉淀的生成（分离与除杂）",
+      "definition": "利用难溶电解质沉淀的生成将某些离子从溶液中转化为难溶固体，从而实现分离或除去这些离子的过程。",
+      "importance": "掌握",
+      "examples": [
+        "用 NH3·H2O 调节 pH，使 Fe³⁺ 生成 Fe(OH)3 沉淀，从 NH4Cl 溶液中除去",
+        "用 Na2S 使 Cu²⁺、Hg²⁺ 生成极难溶的 CuS、HgS 沉淀以处理废水"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt176",
+      "name": "沉淀的溶解",
+      "definition": "对于难溶电解质，通过不断移去平衡体系中的某种离子（如与强酸反应生成挥发性或弱电解质）使离子积 Q 降低到 Ksp 以下，从而促使沉淀持续溶解的过程。",
+      "importance": "掌握",
+      "examples": [
+        "CaCO3(s) 在盐酸中溶解：生成 CO2↑ 使 CO3²⁻ 浓度减小，Q(CaCO3)<Ksp(CaCO3)"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt177",
+      "name": "沉淀的转化",
+      "definition": "在同一体系中，原有沉淀部分或全部溶解，同时生成另一种溶解度更小的沉淀的过程，本质是原沉淀的沉淀溶解平衡在新离子存在下发生移动。",
+      "importance": "重要",
+      "examples": [
+        "AgCl(s) + I⁻(aq) ⇌ AgI(s) + Cl⁻(aq)",
+        "CaSO4(s) + CO3²⁻(aq) ⇌ CaCO3(s) + SO4²⁻(aq)"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt178",
+      "name": "溶解度大小与沉淀转化方向",
+      "definition": "一般来说，溶解度较大的沉淀更容易转化为溶解度更小的沉淀；两者溶解度差别越大，在适当条件下转化越容易实现。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt179",
+      "name": "沉淀溶解平衡在污水治理中的应用",
+      "definition": "通过控制溶度积关系和加入适当沉淀剂（例如 Na2S），把废水中的有毒金属离子转化为极难溶硫化物沉淀，以降低其浓度达到排放或回收的目的。",
+      "importance": "掌握",
+      "examples": [
+        "用 Na2S 处理含 Cu²⁺、Hg²⁺ 的工业废水生成 CuS、HgS 沉淀"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt180",
+      "name": "沉淀溶解平衡在锅炉除垢中的应用",
+      "definition": "利用溶解度和溶度积差异，通过沉淀转化，例如将难溶且致密的 CaSO4 转化为更疏松且易溶于酸的 CaCO3，再用酸溶解除去，以实现工业锅炉水垢的处理。",
+      "importance": "掌握",
+      "examples": [
+        "CaSO4(s)+CO3²⁻(aq)⇌CaCO3(s)+SO4²⁻(aq)，之后用酸溶解 CaCO3"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt181",
+      "name": "牙釉质的主要成分——羟基磷灰石",
+      "definition": "牙齿表面釉质层的主要成分，是难溶的羟基磷灰石 Ca5(PO4)3OH，可与 H⁺ 作用而逐渐溶解，造成牙釉质破坏。",
+      "importance": "掌握",
+      "formula": "Ca5(PO4)3OH + 4H⁺ = 5Ca²⁺ + 3HPO4²⁻ + H2O"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt182",
+      "name": "氟磷灰石及其防龋机理",
+      "definition": "氟离子与羟基磷灰石反应生成 Ca5(PO4)3F 的过程及结果；氟磷灰石的溶解度比羟基磷灰石小，更能抵抗酸侵蚀，从而增强牙釉质抗龋能力，且 F⁻ 还能抑制口腔细菌产酸。",
+      "importance": "掌握",
+      "formula": "Ca5(PO4)3OH(s)+F⁻(aq) ⇌ Ca5(PO4)3F(s)+OH⁻(aq)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt183",
+      "name": "电离平衡与水解平衡",
+      "definition": "溶液体系中弱电解质的电离与其反应产物之间形成的可逆平衡，如弱酸、弱碱电离平衡及盐的水解平衡，与沉淀溶解平衡同属化学平衡范畴。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt184",
+      "name": "水处理中的化学平衡原理",
+      "definition": "在软化硬水、清除锅炉水垢、污水处理等水处理过程中，利用溶解平衡、沉淀平衡、酸碱平衡等原理，通过调节 pH、加入沉淀剂或络合剂等改变平衡状态，以改善水质。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt185",
+      "name": "中和滴定",
+      "definition": "利用已知物质的量浓度的酸或碱溶液，逐滴加入与其发生定量中和反应的待测溶液，依据指示剂变色等确定滴定终点，从而计算待测溶液物质的量浓度的一种定量分析方法。",
+      "importance": "重要",
+      "examples": [
+        "用0.1000 mol/L HCl溶液滴定未知浓度的NaOH溶液",
+        "用0.1000 mol/L NaOH溶液滴定约0.1000 mol/L的HCl溶液"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt186",
+      "name": "强酸与强碱的中和反应",
+      "definition": "强酸与强碱在水溶液中按照1:1等物质的量比发生定量反应，主要过程为H+与OH−生成水，生成溶液在当量点附近通常接近中性。",
+      "importance": "重要",
+      "formula": "HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l)"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt187",
+      "name": "滴定管",
+      "definition": "内径均匀、带有刻度的细长玻璃管，下端有用于控制液体流量的阀，用来精确地放出一定体积的溶液。",
+      "importance": "掌握",
+      "examples": [
+        "酸式滴定管",
+        "碱式滴定管"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt188",
+      "name": "酸式滴定管",
+      "definition": "专门用于盛装酸性溶液的滴定管，一般配有玻璃活塞，不能盛装碱性溶液。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt189",
+      "name": "碱式滴定管",
+      "definition": "专门用于盛装碱性溶液的滴定管，一般配有乳胶管和玻璃球组成的阀，不能盛装酸性溶液。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt190",
+      "name": "滴定终点",
+      "definition": "在滴定过程中，指示剂颜色发生永久性、明显变化并在一定时间内不再恢复，实验上认为此时滴定反应达到化学计量比的状态。",
+      "importance": "重要",
+      "examples": [
+        "用酚酞指示时，溶液颜色从粉红色刚好变为无色且半分钟内不变色。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt191",
+      "name": "等当点（当量点）",
+      "definition": "中和滴定过程中，滴入的滴定剂物质的量与被滴定物质的量正好按照化学方程式的计量数比相等的点。",
+      "importance": "重要",
+      "examples": [
+        "0.1000 mol/L NaOH滴定0.1000 mol/L HCl，理论上20.00 mL NaOH对应20.00 mL HCl即为等当点。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt192",
+      "name": "滴定曲线",
+      "definition": "在酸碱滴定中，以滴定剂加入体积为横坐标、溶液pH为纵坐标绘制得到的曲线，用于描述滴定过程中pH随滴定剂体积变化的规律。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt193",
+      "name": "pH的变化特点（强酸强碱滴定）",
+      "definition": "强酸被强碱滴定时，起始pH较低，接近当量点前pH缓慢上升，在当量点附近pH发生突跃式快速上升，超过当量点后pH逐渐接近强碱的pH；反之亦然。",
+      "importance": "掌握",
+      "examples": [
+        "从pH=1.00随NaOH体积增加缓慢到约pH≈4，20.00 mL处上升至pH=7.00，再略过当量点后迅速上升到约pH≈10以上。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt194",
+      "name": "指示剂（酚酞）",
+      "definition": "在一定pH范围内能发生颜色变化，用于指示滴定终点的有机弱酸或弱碱。酚酞在碱性溶液中呈红色，在酸性及近中性溶液中无色。",
+      "importance": "掌握",
+      "examples": [
+        "向含NaOH的溶液中滴加酚酞呈红色，加入足量HCl中和后变为无色。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt195",
+      "name": "体积读数与体积差",
+      "definition": "滴定中通过读取滴定管滴定前后的刻度，利用两次读数之差计算实际放出的溶液体积。",
+      "importance": "掌握",
+      "examples": [
+        "HCl滴定前刻度0.00 mL，滴定后19.98 mL，则HCl体积为19.98 mL。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt196",
+      "name": "定量实验在化学研究中的作用",
+      "definition": "通过精确测量物理量（体积、浓度、pH等）并进行数据分析，定量地描述化学变化和物质性质，是化学研究的重要方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt197",
+      "name": "仪器润洗",
+      "definition": "在使用滴定管等容器前，先用即将装入的溶液反复冲洗容器内壁，使其充分湿润，以避免水或其他溶液残留影响溶液浓度或体积。",
+      "importance": "掌握",
+      "examples": [
+        "用所装HCl溶液润洗酸式滴定管2~3次；用所装NaOH溶液润洗碱式滴定管2~3次。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt198",
+      "name": "气泡对滴定体积的影响",
+      "definition": "滴定管中残留气泡会占据一定体积，导致放出溶液的实际体积与读数不符，引入系统误差，必须在滴定前将气泡完全排出。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt199",
+      "name": "滴定终点pH与指示剂选择",
+      "definition": "不同类型的酸碱滴定在当量点附近pH范围不同，应选择在终点pH附近变色范围的指示剂；强酸强碱滴定的当量点pH约为7，酚酞或甲基橙均可使用。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt200",
+      "name": "锥形瓶的使用要求",
+      "definition": "滴定时用于盛装待测溶液的容器，应洁净但不必用待测溶液润洗，也不要求完全干燥，瓶中少量蒸馏水不改变待测溶质的物质的量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt201",
+      "name": "盐类水解",
+      "definition": "盐溶于水时，其所含的阳离子或阴离子与水反应生成少量弱电解质或改变溶液中 H⁺、OH⁻浓度的过程，导致溶液显酸性或碱性。",
+      "importance": "重要",
+      "examples": [
+        "FeCl₃ 溶于水时发生水解生成 Fe(OH)₃ 和 H⁺ 使溶液呈酸性",
+        "Al₂(SO₄)₃ 溶于水发生水解生成 Al(OH)₃ 和 H⁺"
+      ],
+      "aliases": [
+        "盐的水解"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt202",
+      "name": "盐类水解原理",
+      "definition": "根据弱酸或弱碱的电离平衡和水的电离平衡，分析盐溶液中离子与水反应的方向和程度，从而预测溶液酸碱性和水解产物的原理。",
+      "importance": "重要",
+      "examples": [
+        "由 Fe³⁺ + 3H₂O ⇌ Fe(OH)₃↓ + 3H⁺ 推出 FeCl₃ 溶液显酸性并可与碳酸根反应生成 Fe(OH)₃ 絮状沉淀"
+      ],
+      "aliases": [
+        "盐类水解的原理"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt203",
+      "name": "氯化铁溶液的配制",
+      "definition": "在实验室配制 FeCl₃ 溶液时，应先将 FeCl₃ 晶体溶于少量浓盐酸，再用水稀释，以抑制 Fe³⁺ 的水解得到澄清稳定的溶液。",
+      "importance": "掌握",
+      "examples": [
+        "向试管中加入少量 FeCl₃ 晶体和蒸馏水出现浑浊，再加入浓盐酸振荡后变澄清，据此推得配制方法。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt204",
+      "name": "Fe(OH)₃ 胶体",
+      "definition": "由 Fe³⁺ 在适当条件下水解生成的分散在水中的 Fe(OH)₃ 微粒，粒径介于真溶液与粗分散体系之间，具有明显的丁达尔效应等特征。",
+      "importance": "掌握",
+      "examples": [
+        "向沸水中逐滴加入饱和 FeCl₃ 溶液继续煮沸，液体呈红褐色，形成 Fe(OH)₃ 胶体。"
+      ],
+      "aliases": [
+        "氢氧化铁胶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt205",
+      "name": "絮凝与混凝沉降",
+      "definition": "向浑浊水中加入能发生水解生成氢氧化物胶体的物质，使胶体颗粒和水中悬浮杂质聚集成较大絮状物并沉降，从而澄清水的过程。",
+      "importance": "重要",
+      "examples": [
+        "向混有泥土的浑浊水中加入饱和 FeCl₃ 或 Al₂(SO₄)₃ 溶液，静置后泥土随生成的 Fe(OH)₃ 或 Al(OH)₃ 絮状沉淀下沉，水变清。"
+      ],
+      "aliases": [
+        "混凝",
+        "絮凝沉淀"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt206",
+      "name": "净水剂（混凝剂）的作用",
+      "definition": "如 FeCl₃、Al₂(SO₄)₃ 等盐类在水中的水解生成 Fe(OH)₃ 或 Al(OH)₃ 絮状沉淀，可吸附、卷带水中的悬浮杂质，使浑浊水变清，用于自来水处理等净水过程。",
+      "importance": "重要",
+      "examples": [
+        "向浑浊水中分别加入饱和 FeCl₃ 溶液和 1 mol/L Al₂(SO₄)₃ 溶液，静置后上层清水与未加试剂的对照管进行比较。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt207",
+      "name": "硬水中碳酸钙的生成",
+      "definition": "加热含有可水解碳酸盐如 Na₂CO₃ 的溶液时，CO₃²⁻ 与 Ca²⁺ 等金属离子可生成难溶的 CaCO₃ 沉淀，从而改变溶液组成和性质。",
+      "importance": "了解",
+      "examples": [
+        "饱和 Na₂CO₃ 溶液在加热时与水中的 Ca²⁺ 生成 CaCO₃ 沉淀，类似于生活中水垢的生成。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt208",
+      "name": "皂化与去污作用",
+      "definition": "油脂在碱性条件下发生水解（皂化反应）生成脂肪酸盐和甘油，脂肪酸盐具有表面活性，能乳化油污，从而使器具变得干净。",
+      "importance": "掌握",
+      "examples": [
+        "向饱和 Na₂CO₃ 溶液中滴入植物油，加热煮沸后振荡，试管内壁比未加热的更干净，说明在碱性溶液中油脂部分皂化生成具有去污能力的物质。"
+      ],
+      "aliases": [
+        "皂化作用",
+        "皂化反应",
+        "肥皂的去污机理"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt209",
+      "name": "盐类水解的应用",
+      "definition": "利用盐类在水中的水解现象，在实验室溶液配制、饮用水净化、胶体制备、去污清洗等方面进行的实际应用。",
+      "importance": "重要",
+      "examples": [
+        "用浓盐酸配制稳定的 FeCl₃ 溶液",
+        "用 FeCl₃ 或 Al₂(SO₄)₃ 净化浑浊水",
+        "通过盐类水解制备 Fe(OH)₃ 胶体",
+        "利用 Na₂CO₃ 溶液的碱性促进油脂皂化以便清洗。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt210",
+      "name": "锌铜原电池",
+      "definition": "以锌片和铜片分别浸在各自的电解质溶液中，通过盐桥和外电路连接构成的原电池，锌为负极、铜为正极。",
+      "importance": "重要",
+      "examples": [
+        "图4-1所示装置：锌片插入ZnSO₄溶液、铜片插入CuSO₄溶液，中间用盐桥连接"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt211",
+      "name": "盐桥",
+      "definition": "连接两个电解质溶液、保持溶液电荷中性从而维持原电池持续工作的装置。",
+      "importance": "掌握",
+      "examples": [
+        "实验4-1中连接ZnSO₄溶液和CuSO₄溶液的盐桥"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt212",
+      "name": "化学电源",
+      "definition": "以化学能和电能之间相互转化为基础，把储存在其中的化学能转化为电能输出的装置总称。",
+      "importance": "重要",
+      "aliases": [
+        "化学电池"
+      ],
+      "examples": [
+        "一次电池、二次电池、燃料电池、锂离子电池、铅酸蓄电池"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt213",
+      "name": "碱性锌锰电池",
+      "definition": "以锌为负极、二氧化锰为正极、KOH为电解质的碱性一次电池，相比普通锌锰电池比能量和可储存时间更高。",
+      "importance": "掌握",
+      "examples": [
+        "图4-3所示碱性锌锰电池"
+      ],
+      "formula": {
+        "负极": "Zn + 2OH⁻ - 2e⁻ = Zn(OH)₂",
+        "正极": "2MnO₂ + 2H₂O + 2e⁻ = 2MnO(OH) + 2OH⁻",
+        "总反应": "Zn + 2MnO₂ + 2H₂O = 2MnO(OH) + Zn(OH)₂"
+      }
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt214",
+      "name": "比能量",
+      "definition": "单位质量或单位体积的电池在放电过程中所能输出的电能多少，用以评价电池能量密度高低。",
+      "importance": "掌握",
+      "aliases": [
+        "能量密度"
+      ],
+      "unit": [
+        "Wh·kg⁻¹",
+        "Wh·L⁻¹"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt215",
+      "name": "比功率",
+      "definition": "单位质量或单位体积的电池可输出的功率大小，用以衡量电池输出功率的能力。",
+      "importance": "了解",
+      "unit": [
+        "W·kg⁻¹",
+        "W·L⁻¹"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt216",
+      "name": "电池储存时间",
+      "definition": "电池在不用时能够保持性能、储存电能而不过度自放电的时间长短，是评价电池性能的指标之一。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt217",
+      "name": "电极反应",
+      "definition": "在原电池或电解池中发生在电极表面的氧化反应或还原反应，通常写成电极反应式并满足电荷守恒与电子守恒。",
+      "importance": "掌握",
+      "aliases": [
+        "电极反应式"
+      ],
+      "examples": [
+        "Zn + 2OH⁻ - 2e⁻ = Zn(OH)₂",
+        "Pb + SO₄²⁻ - 2e⁻ = PbSO₄"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt218",
+      "name": "化学方程式中的变化与守恒",
+      "definition": "在化学方程式表达化学反应时，要体现组成、结构的变化，同时遵守质量守恒、能量守恒（在热化学方程式中）以及电荷、电子数等的守恒。",
+      "importance": "重要",
+      "examples": [
+        "离子方程式中离子电荷守恒，氧化还原反应中电子转移与守恒"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt219",
+      "name": "干电池",
+      "definition": "电解质溶液被制成胶状、不流动的一次电池的统称。",
+      "importance": "了解",
+      "aliases": [
+        "胶状电解质电池"
+      ],
+      "examples": [
+        "普通锌锰干电池",
+        "碱性锌锰干电池"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt220",
+      "name": "电池极板与极性",
+      "definition": "电池中导电的固体部分称为极板，发生氧化反应的一极为负极，发生还原反应的一极为正极；在电路中分别为电子流出的端和电子流入的端。",
+      "importance": "掌握",
+      "examples": [
+        "锌铜原电池中锌片为负极、铜片为正极",
+        "铅酸蓄电池中Pb为负极、PbO₂为正极"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt221",
+      "name": "金属活动性顺序（起电序列）",
+      "definition": "按金属在电化学反应中失电子能力强弱排列的顺序，序列前面的金属更易失电子带负电，后面的相对较弱。",
+      "importance": "了解",
+      "examples": [
+        "伏打通过实验找到的起电序列：锌、铅、锡、铁、铜、银和金"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt222",
+      "name": "电池环境污染与回收",
+      "definition": "废旧电池中含有重金属、酸碱等有害物，随意丢弃会污染环境和危害健康，因此需要进行分类收集和回收利用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt223",
+      "name": "电能储能与调峰",
+      "definition": "通过电池等储能装置在用电低谷时储存电能、在用电高峰时释放电能，实现电能在时间上的转移和电网负荷的调节。",
+      "importance": "了解",
+      "examples": [
+        "锂离子电池储能电站在低谷充电、高峰放电"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt224",
+      "name": "电解池",
+      "definition": "将电能直接转化为化学能的装置，也称电解槽，电流通过电解质溶液或熔融电解质，在阳极和阴极引起氧化还原反应。",
+      "importance": "重要",
+      "aliases": [
+        "电解槽",
+        "electrolytic cell"
+      ],
+      "examples": [
+        "U形管中电解CuCl2溶液的装置",
+        "离子交换膜电解槽",
+        "电解熔融NaCl装置"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt225",
+      "name": "电解",
+      "definition": "利用直流电使电解质溶液或熔融物发生氧化还原反应，从而在电极上产生新的物质的过程。",
+      "importance": "重要",
+      "aliases": [
+        "electrolysis",
+        "电解过程"
+      ],
+      "formula": "电解质 ⇌ 阳离子 + 阴离子；阳极发生氧化，阴极发生还原",
+      "examples": [
+        "在CuSO4溶液中通直流电，使铜离子在电极上得到电子析出金属铜。",
+        "本实验中的电镀过程本质上是一次电解过程。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt226",
+      "name": "阴极",
+      "definition": "在电解池中与直流电源负极相连的电极，电解时阳离子向此迁移并在此得到电子，发生还原反应。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt227",
+      "name": "阳极",
+      "definition": "在电解池中与直流电源正极相连的电极，电解时阴离子向此迁移并在此失去电子，发生氧化反应。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt228",
+      "name": "阴离子定向迁移",
+      "definition": "电解时溶液或熔融态中的阴离子在电场作用下由溶液各处定向向阳极迁移的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt229",
+      "name": "阳离子定向迁移",
+      "definition": "电解时溶液或熔融态中的阳离子在电场作用下由溶液各处定向向阴极迁移的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt230",
+      "name": "放电（电极反应）",
+      "definition": "在电解过程中，电极表面离子得失电子转变为原子或分子，发生氧化或还原反应的过程，统称为放电。",
+      "importance": "掌握",
+      "aliases": [
+        "电极反应"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt231",
+      "name": "氧化反应（电解情境）",
+      "definition": "在电解池阳极上发生的失电子过程，例如2Cl⁻ − 2e⁻ = Cl₂↑。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt232",
+      "name": "还原反应（电解情境）",
+      "definition": "在电解池阴极上发生的得电子过程，例如Cu²⁺ + 2e⁻ = Cu。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt233",
+      "name": "CuCl₂水溶液的电解",
+      "definition": "在含Cu²⁺和Cl⁻的CuCl₂溶液中通直流电，阴极上Cu²⁺得电子生成金属铜，阳极上Cl⁻失电子生成氯气的电解过程。",
+      "importance": "重要",
+      "formula": "阳极：2Cl⁻ − 2e⁻ = Cl₂↑；阴极：Cu²⁺ + 2e⁻ = Cu；总反应：Cu²⁺ + 2Cl⁻ → Cu + Cl₂↑"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt234",
+      "name": "电解质溶液中的离子电离与自由运动",
+      "definition": "电解前电解质在水溶液中电离为可自由运动的阳离子和阴离子，如CuCl₂ → Cu²⁺ + 2Cl⁻；NaCl和H₂O电离生成Na⁺、Cl⁻、H⁺、OH⁻等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt235",
+      "name": "电解饱和食盐水（氯碱工业）",
+      "definition": "在离子交换膜电解槽中电解含Na⁺、Cl⁻、H⁺、OH⁻的饱和食盐水，阳极生成Cl₂，阴极生成H₂并在溶液中生成OH⁻的工业过程，又称氯碱工业的核心反应。",
+      "importance": "重要",
+      "formula": "阳极：2Cl⁻ − 2e⁻ = Cl₂↑；阴极：2H₂O + 2e⁻ = H₂↑ + 2OH⁻；总反应：2Cl⁻ + 2H₂O → Cl₂↑ + H₂↑ + 2OH⁻"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt236",
+      "name": "离子交换膜电解槽",
+      "definition": "用于电解饱和食盐水等的工业电解池，由多个单元槽组成，单元之间用离子交换膜隔开，以控制离子选择性迁移，提高氯碱工业效率和产品分离度。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt237",
+      "name": "电镀",
+      "definition": "利用电解原理在某些金属表面镀上一薄层其他金属或合金的加工工艺，主要为了增强抗腐蚀能力、增加表面硬度和美观。",
+      "importance": "重要",
+      "aliases": [
+        "electroplating"
+      ],
+      "examples": [
+        "在铁制品表面电镀镍",
+        "镀铬、镀银",
+        "用铜在铁制镀件表面进行镀层实验。",
+        "工业生产中的镀铬、镀镍、镀锌等都是电镀。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt238",
+      "name": "电解精炼铜",
+      "definition": "以粗铜作阳极、纯铜作阴极，用硫酸铜溶液作电解质，通过电解使阳极铜溶解为Cu²⁺并在阴极析出纯铜，从而除去杂质的精炼过程。",
+      "importance": "掌握",
+      "examples": [
+        "得到含铜量为99.95%～99.98%的电解铜"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt239",
+      "name": "阳极泥",
+      "definition": "电解精炼过程中不易溶解于电解液的阳极杂质沉积在电解槽底部形成的固体混合物，常含金、银等贵金属，可作为提炼它们的重要原料。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt240",
+      "name": "电冶金",
+      "definition": "利用电解方法从矿石或化合物中冶炼金属的一类冶金方法，尤其适用于Na、Ca、Mg、Al等活泼金属的制备。",
+      "importance": "重要",
+      "aliases": [
+        "electrometallurgy"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt241",
+      "name": "熔融NaCl的电解制钠",
+      "definition": "在高温下使NaCl熔融并电离为Na⁺和Cl⁻，通直流电，在阴极获得液态钠，在阳极析出氯气的电冶金过程。",
+      "importance": "掌握",
+      "formula": "NaCl(熔融) → Na⁺ + Cl⁻；阳极：2Cl⁻ − 2e⁻ = Cl₂↑；阴极：Na⁺ + e⁻ = Na；总反应：2NaCl(熔融) → 2Na + Cl₂↑"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt242",
+      "name": "金属冶炼的本质反应",
+      "definition": "金属冶炼本质上是使矿石中的金属离子获得电子变成金属单质的过程，其一般形式为Mⁿ⁺ + n e⁻ = M。",
+      "importance": "掌握",
+      "formula": "Mⁿ⁺ + n e⁻ = M"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt243",
+      "name": "电有机合成",
+      "definition": "许多有机反应包含电子转移，将这些反应放在电解池中，通过电流驱动进行的合成方法称为电有机合成，具有反应条件温和、试剂纯净和生产效率高等优点。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt244",
+      "name": "己二腈的电合成",
+      "definition": "以丙烯腈为原料，在电解池中通过阴极加成和阳极水氧化反应，将两分子丙烯腈电合成己二腈的过程。",
+      "importance": "了解",
+      "formula": "阴极：2CH₂=CHCN + 2H⁺ + 2e⁻ = NC(CH₂)₄CN；阳极：H₂O − 2e⁻ = 1/2 O₂↑ + 2H⁺；总反应：2CH₂=CHCN + H₂O → NC(CH₂)₄CN + 1/2 O₂↑"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt245",
+      "name": "电化学系统观",
+      "definition": "把原电池、电解池等看作由相互联系、相互作用的若干部分组成并具有一定功能的整体，重点分析装置构成、局部与整体、结构与功能、系统与环境及它们之间联系的思想。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt246",
+      "name": "化学腐蚀",
+      "definition": "金属与其表面接触的气体或液体中的某些物质（如O2、Cl2、SO2等）直接发生化学反应而引起的腐蚀。",
+      "importance": "掌握",
+      "examples": [
+        "铁与氯气直接反应而腐蚀",
+        "钢材在高温下被氧化生成FeO、Fe2O3、Fe3O4等氧化物",
+        "输油、输气的钢管被原油、天然气中的含硫化合物腐蚀"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt247",
+      "name": "电化学腐蚀",
+      "definition": "当不纯的金属与电解质溶液接触时，形成原电池，比较活泼的金属在电化学反应中作为阳极发生氧化而被腐蚀的过程。",
+      "importance": "重要",
+      "examples": [
+        "钢铁制品在潮湿空气中的锈蚀",
+        "钢铁在酸性溶液中的析氢腐蚀",
+        "钢铁在中性溶液含氧条件下的吸氧腐蚀"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt248",
+      "name": "析氢腐蚀",
+      "definition": "在酸性环境中，金属发生电化学腐蚀时，阳极金属被氧化，阴极上有氢气放出的电化学腐蚀类型。",
+      "importance": "掌握",
+      "formula": "负极: Fe - 2e⁻ = Fe²⁺；正极: 2H⁺ + 2e⁻ = H₂↑；总反应: Fe + 2H⁺ = Fe²⁺ + H₂↑"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt249",
+      "name": "吸氧腐蚀",
+      "definition": "在金属表面吸附的水膜呈中性或弱酸性并溶有一定量氧气时发生的电化学腐蚀，阴极反应为溶解氧被还原生成OH⁻。",
+      "importance": "掌握",
+      "formula": "负极: Fe - 2e⁻ = Fe²⁺；正极: 2H₂O + O₂ + 4e⁻ = 4OH⁻；总反应: 2Fe + O₂ + 2H₂O = 2Fe(OH)₂"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt250",
+      "name": "铁锈的成分及性质",
+      "definition": "钢铁吸氧腐蚀生成的Fe(OH)₂在空气中进一步被氧化为Fe(OH)₃，失水生成Fe₂O₃·xH₂O，这是一种疏松覆盖在钢铁表面的水合氧化铁，不具有保护性。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt251",
+      "name": "金属腐蚀的危害",
+      "definition": "金属被腐蚀后外形、色泽及机械性能等发生变化，导致机器设备、仪器、仪表精度和灵敏度降低直至报废，并可引起桥梁、建筑物坍塌、地下管道泄漏、船体损坏等安全事故。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt252",
+      "name": "合金提高抗腐蚀性",
+      "definition": "通过在金属中添加其他金属或非金属制成合金，以改善金属的抗腐蚀性能等综合性能。",
+      "importance": "掌握",
+      "examples": [
+        "在普通钢中加入铬、镍制成不锈钢",
+        "钛合金具有优异的抗腐蚀性和良好的生物相容性"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt253",
+      "name": "金属表面保护层",
+      "definition": "覆盖在金属表面的一层致密物质（如涂层、镀层、氧化膜等），将金属与周围腐蚀介质隔开，从而减缓或防止金属腐蚀。",
+      "importance": "重要",
+      "examples": [
+        "钢铁表面喷涂油漆、矿物性油脂",
+        "覆盖搪瓷、塑料层",
+        "钢铁表面电镀锌、锡、铬、镍",
+        "发蓝处理生成Fe3O4薄膜",
+        "铝制品阳极氧化形成致密氧化膜",
+        "离子注入、表面渗镀形成稳定钝化膜"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt254",
+      "name": "钝化膜",
+      "definition": "金属表面形成的一层致密、稳定的氧化膜或类似膜层，使金属电极电位正移、反应变慢，从而显著降低其电化学腐蚀速率。",
+      "importance": "了解",
+      "examples": [
+        "铝制品阳极氧化形成的致密氧化膜",
+        "表面渗镀、离子注入形成的稳定钝化膜"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt255",
+      "name": "电化学保护法",
+      "definition": "利用原电池原理，通过改变金属在电化学体系中的电极性质（使其成为阴极）来保护金属不被腐蚀的方法。",
+      "importance": "重要",
+      "examples": [
+        "牺牲阳极法",
+        "外加电流法"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt256",
+      "name": "阴极保护",
+      "definition": "通过电化学手段使被保护金属在腐蚀体系中成为阴极，从而基本不发生金属溶解反应的一类保护方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt257",
+      "name": "牺牲阳极法",
+      "definition": "将比被保护金属更活泼的金属块（如镁、锌）与之构成原电池，使活泼金属作为阳极优先溶解，从而保护作为阴极的被保护金属的一种阴极保护方法。",
+      "importance": "重要",
+      "examples": [
+        "在锅炉内壁焊上锌片",
+        "在船体外壳上安装镁合金或锌块"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt258",
+      "name": "外加电流法",
+      "definition": "在电解质溶液中，将被保护金属接直流电源负极，惰性电极接正极，通过外加电流强制电子流向被保护金属，使其成为阴极，从而减小或消除腐蚀电流的阴极保护方法。",
+      "importance": "重要",
+      "examples": [
+        "钢闸门在海水中的外加电流保护",
+        "海港钢制管桩的外加电流保护"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt259",
+      "name": "惰性阳极材料",
+      "definition": "在外加电流阴极保护系统中用作阳极的材料，本身基本不被消耗，仅起导电和提供电流路径的作用，如高硅铸铁。",
+      "importance": "了解",
+      "examples": [
+        "海港钢制管桩保护中使用的高硅铸铁辅助阳极"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt260",
+      "name": "Fe²⁺的检验",
+      "definition": "利用Fe²⁺与K₃[Fe(CN)₆]溶液反应生成带特征蓝色的KFe[Fe(CN)₆]沉淀来检验溶液中Fe²⁺存在的常用方法。",
+      "importance": "掌握",
+      "formula": "Fe²⁺ + K₃[Fe(CN)₆] → KFe[Fe(CN)₆]↓（蓝色沉淀）"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt261",
+      "name": "暖贴的电化学发热原理",
+      "definition": "暖贴利用金属的电化学腐蚀过程，金属在氧化反应中放出的化学能以热能形式释放，从而实现发热的一种应用。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt262",
+      "name": "电镀液",
+      "definition": "用于电镀过程的电解质溶液，通常含有将要镀上的金属离子以及辅助成分，以保证电镀均匀进行。",
+      "importance": "掌握",
+      "examples": [
+        "以CuSO4溶液为主配制的电镀液，用于在铁制镀件上镀铜。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt263",
+      "name": "阴极与阳极",
+      "definition": "在电解过程中，外电源负极相连的电极为阴极，发生还原反应；外电源正极相连的电极为阳极，发生氧化反应。",
+      "importance": "重要",
+      "examples": [
+        "本实验中铁制镀件接直流电源负极为阴极，铜片接正极为阳极。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt264",
+      "name": "阴极析出金属",
+      "definition": "在电解过程中，金属阳离子在阴极得到电子还原为金属原子，并沉积在阴极表面的现象。",
+      "importance": "掌握",
+      "examples": [
+        "Cu2+在阴极得到电子，在铁制镀件表面析出形成铜层。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt265",
+      "name": "阳极溶解",
+      "definition": "在电解过程中，阳极金属失去电子形成金属离子进入溶液的过程。",
+      "importance": "掌握",
+      "examples": [
+        "铜片在阳极失去电子，形成Cu2+进入CuSO4溶液。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt266",
+      "name": "电镀前处理",
+      "definition": "在电镀前对被镀件进行除油、除锈、清洗等表面处理，以保证镀层结合牢固、均匀。",
+      "importance": "掌握",
+      "examples": [
+        "用砂纸打磨、NaOH溶液除油、盐酸除锈、蒸馏水洗净等步骤。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt267",
+      "name": "电镀质量",
+      "definition": "对电镀层结合牢固程度、厚度均匀性、光洁度、耐腐蚀性等方面综合表现的评价。",
+      "importance": "了解",
+      "examples": [
+        "工业生产中通过控制电流密度、温度、溶液成分等提高电镀质量。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt268",
+      "name": "直流电源在电解中的作用",
+      "definition": "为电解过程提供稳定方向的电压，使溶液中的离子定向移动，在电极上发生氧化还原反应。",
+      "importance": "掌握",
+      "examples": [
+        "本实验中使用2～3V的直流电源进行电镀。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt269",
+      "name": "氢氧燃料电池",
+      "definition": "以氢气和氧气为燃料和氧化剂，通过电极上的电化学反应直接把化学能转化为电能的装置，在本实验中由电解产生的氢、氧在石墨电极上重新发生反应而产生电流。",
+      "importance": "重要",
+      "aliases": [
+        "燃料电池",
+        "氢氧燃料电池装置"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt270",
+      "name": "燃料电池的工作原理",
+      "definition": "燃料（如氢气）和氧化剂（如氧气）分别通入两电极，在电解质溶液中发生氧化还原反应，电子通过外电路定向移动形成电流，实现化学能向电能的转换。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt271",
+      "name": "电解原理",
+      "definition": "在外加电场作用下，电解质溶液中的离子定向移动，在电极上发生氧化还原反应，使外电源的电能转化为化学能的过程和规律。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt272",
+      "name": "化学能与电能的相互转化",
+      "definition": "化学反应可以在电化学装置中转化为电能（如燃料电池），电能也可以通过电解反应转化为化学能（如电解水）。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt273",
+      "name": "氢氧燃料电池与电解水的关系",
+      "definition": "氢氧燃料电池和电解水过程互为逆过程：电解水利用电能分解水得到氢气和氧气，燃料电池再利用氢气和氧气的反应产生电能。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt274",
+      "name": "电解质溶液",
+      "definition": "$1\\ \\mathrm{mol}/\\mathrm{L}\\ \\mathrm{Na}_2\\mathrm{SO}_4$ 等能导电的溶液，提供离子以完成电路并参与电极反应，是电解和燃料电池工作的必要条件之一。",
+      "importance": "掌握",
+      "examples": [
+        "1 mol/L Na2SO4 溶液"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt275",
+      "name": "石墨电极",
+      "definition": "在本实验中插入 U 形管两端、与外电路连接的石墨棒，作为电解水和构成燃料电池时的电极材料。",
+      "importance": "了解",
+      "aliases": [
+        "石墨棒"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_cpt276",
+      "name": "指示剂酚酞",
+      "definition": "加入电解质溶液中，用于通过颜色变化指示溶液酸碱性变化，从而帮助观察电解水过程中电极附近的变化情况。",
+      "importance": "了解",
+      "aliases": [
+        "酚酞溶液"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "chemistry_xzxbx1_rjb_skl1",
+      "name": "用量热计测定反应热的方法",
+      "description": "在等温或近似等温条件下，利用量热计测定溶液反应前后温度变化，结合溶液质量和比热容，通过 Q=mcΔt 计算化学反应放出或吸收的热量，并折算成每摩尔反应的反应热。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl2",
+      "name": "根据键能估算反应热",
+      "description": "列出化学反应中所有将要断裂和形成的化学键，利用已知的平均键能数据，计算反应物中断键吸收的总能量和生成物中成键释放的总能量，将两者相减得到反应热的估算值。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl3",
+      "name": "书写热化学方程式",
+      "description": "在配平普通化学方程式的基础上，标明反应物和生成物的聚集状态，注明反应条件（必要时），并根据实验或计算得到的反应热在方程式右侧写出 ΔH，注意化学计量数变化时 ΔH 要成比例变化，一一对应。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl4",
+      "name": "由实验数据求反应热并单位换算为 kJ·mol⁻¹",
+      "description": "通过测得的温度差、溶液质量和比热容计算总放热 Q，然后除以对应的“摩尔反应数”，将单位从 kJ 转换为 kJ·mol⁻¹，理解“每摩尔反应”的含义。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl5",
+      "name": "根据文字条件书写热化学方程式",
+      "description": "根据题目给出的反应物、生成物、反应条件和释放或吸收的热量，先写出配平的化学方程式，再在方程式右侧标注ΔH值，注意与物质的量基准相对应。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl6",
+      "name": "利用物质的量（或质量）计算反应热",
+      "description": "利用热化学方程式中给出的每1 mol反应对应的热效应，先由质量求物质的量，再按比例计算总体放出或吸收的热量。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl7",
+      "name": "分析方程式关系并应用盖斯定律推算ΔH",
+      "description": "通过观察多个热化学方程式之间的关系（相加、相减、倍数变化、逆反应等），构造出目标反应的方程式，并据此对各ΔH进行同样的代数运算，从而求出未知ΔH。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl8",
+      "name": "利用能量守恒思想类比理解盖斯定律",
+      "description": "通过与重力势能变化等物理情境类比，理解“状态函数只与始态和终态有关，与途径无关”的思想，从而在热化学问题中正确使用盖斯定律。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl9",
+      "name": "用浓度随时间变化定量表示反应速率",
+      "description": "在反应体系体积恒定的条件下，根据测得的反应物或生成物浓度随时间的变化，运用 v = Δc/Δt 计算平均反应速率。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl10",
+      "name": "利用与浓度相关的可观测量测定反应速率",
+      "description": "选取与物质浓度有关的可观测量（如气体体积、压强、颜色深浅、光吸收、导电能力等），通过测定其随时间的变化来间接求得反应速率。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl11",
+      "name": "定性比较化学反应速率的大小",
+      "description": "在控制除某一因素外其他条件相同的前提下，通过观察现象（如气泡生成快慢、颜色变化快慢等）来定性比较化学反应速率，并归纳该因素的影响规律。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl12",
+      "name": "控制变量法研究影响反应速率的因素",
+      "description": "在实验探究中，只改变一个自变量（如浓度、温度或催化剂），保持其他条件相同，通过现象或测量差异分析该因素对反应速率的影响。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl13",
+      "name": "基于时间分辨技术研究反应机理",
+      "description": "利用高时间分辨技术跟踪化学反应中中间体或过渡态的形成和消失，从而分析反应的历程与机理。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl14",
+      "name": "化学图像分析",
+      "description": "在分析化学问题时，运用反映相关量变化关系的图像（如溶解度曲线、物质浓度随时间变化曲线）进行推理。应明确横纵坐标含义、曲线斜率或趋势、起点终点交点拐点等特殊点，并根据需要画等温线、等压线等辅助线。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl15",
+      "name": "建立并应用平衡浓度表",
+      "description": "对给定化学方程式，列出起始浓度、变化浓度（用未知数表示）和平衡浓度的关系表，再结合平衡常数表达式求解未知数和各物质平衡浓度。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl16",
+      "name": "利用平衡常数判断反应程度与转化率",
+      "description": "根据已知平衡常数K及起始物质的量，通过代数方程求得平衡时各物质浓度或物质的量，从而计算某反应物的转化率或判断反应是否“基本完全”。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl17",
+      "name": "用勒夏特列原理预测平衡移动方向",
+      "description": "在其他条件不变的前提下，分析浓度、压强、温度等因素改变时，按照“平衡朝减弱这种改变的方向移动”的经验规律，判断平衡将向正反应或逆反应方向移动，并预测组成或颜色等可观测变化。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl18",
+      "name": "从实验现象归纳影响平衡的因素",
+      "description": "通过观察颜色、沉淀、体积变化等实验现象，对比不同实验条件，归纳浓度、压强、温度、催化剂等因素对化学平衡组成和移动的影响。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl19",
+      "name": "根据焓变和熵变判断反应自发性",
+      "description": "识别给定反应的ΔH和ΔS符号及大小，在等温等压条件下依据ΔG=ΔH−TΔS和四种基本情形（ΔH<0且ΔS>0、ΔH>0且ΔS<0、同号时看温度）判断反应在某一温度下能否自发进行。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl20",
+      "name": "比较过程前后混乱度判断熵变方向",
+      "description": "通过比较化学或物理过程前后物质的聚集状态、粒子数目、相别等，定性判断体系混乱度变化，从而判断熵是增加还是减小。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl21",
+      "name": "基于平衡移动原理选择最有利的反应条件",
+      "description": "识别反应的放热或吸热性质、气体物质的量变化，以及参与平衡的物质种类，综合判断改变温度、压强和浓度对平衡位置的影响，从理论上确定提高目标产物含量或反应物转化率的最优条件。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl22",
+      "name": "综合速率与平衡及经济性确定工业操作条件",
+      "description": "在理论上最有利的平衡条件与实际生产对反应速率、设备强度、安全性和成本要求之间进行权衡，选择在转化率、速率和经济效益之间取得折中的工业操作条件。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl23",
+      "name": "利用实验与表格数据分析反应条件的影响",
+      "description": "根据给出的实验表格或图像数据，识别自变量（温度、压强等）与平衡组成或转化率之间的定性与定量关系，从而判断不同条件下的最优操作方案。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl24",
+      "name": "用物质的量与转化率描述平衡状态",
+      "description": "在密闭容器和固定反应方程下，根据已知初始物质的量、转化率或平衡时剩余量，推导平衡时各物质的量，并据此计算转化率、平衡常数等量。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl25",
+      "name": "通过移除生成物或加入吸收剂推动平衡",
+      "description": "根据平衡移动原理，认识在开放或半开放体系中通过及时移走生成物（如冷凝、吸收、循环）或加入能与生成物反应或吸附生成物的物质，可以促使平衡持续向生成物方向移动，从而提高目标产物的产率。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl26",
+      "name": "设计化学平衡影响因素的实验",
+      "description": "根据研究目标，选择合适的平衡体系，通过改变单一外界条件（如浓度、温度等），利用颜色或其他可观测性质的变化，判断化学平衡是否发生移动及移动方向。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl27",
+      "name": "从实验现象归纳影响化学平衡的因素",
+      "description": "通过系统记录不同条件下实验现象的变化，比较并分析其与条件变化之间的对应关系，从而总结出影响化学平衡移动的主要因素及规律。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl28",
+      "name": "根据 pH、导电性和反应剧烈程度判断电离程度",
+      "description": "在相同物质的量浓度条件下，通过比较溶液的 pH 值、导电能力，以及与活泼金属反应的剧烈程度，分析溶液中 H⁺ 或其他离子的浓度，从而判断不同电解质电离程度的大小。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl29",
+      "name": "书写弱电解质的电离方程式",
+      "description": "根据弱酸或弱碱的化学式，写出其在水溶液中的可逆电离方程式，包括反应物、生成物和电荷守恒。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl30",
+      "name": "利用平衡浓度计算电离常数",
+      "description": "依据弱电解质的电离方程式，列出起始浓度、变化浓度和平衡浓度，代入电离常数表达式，计算 Ka 或 Kb 的数值。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl31",
+      "name": "用电离常数比较弱电解质强弱",
+      "description": "在同一温度下，根据弱酸或弱碱的电离常数 Ka 或 Kb 的大小来比较其相对酸性或碱性强弱。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl32",
+      "name": "根据同离子效应分析电离平衡移动方向",
+      "description": "根据加入溶液的电解质中是否含有与弱电解质电离产生的同种离子，判断该离子浓度的变化，并据此判断电离平衡向哪一侧移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl33",
+      "name": "多元弱酸电离的简化处理",
+      "description": "根据多元弱酸各步电离常数的大小关系，在 Ka1≫Ka2 的情况下，计算溶液中 H⁺ 浓度或比较酸性强弱时只考虑第一步电离，忽略后续电离的贡献。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl34",
+      "name": "建立电离平衡关系并应用平衡常数",
+      "description": "根据弱电解质（如水、指示剂）的电离过程写出电离方程式，建立 H+、OH− 等离子浓度之间的平衡关系，并利用水的离子积 Kw 等常数求解离子浓度、判断溶液酸碱性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl35",
+      "name": "使用pH试纸和pH计测定溶液pH",
+      "description": "根据待测溶液酸碱性和精度要求，选择合适量程和分辨率的广泛或精密 pH 试纸，或使用 pH 计进行测量，并通过颜色对比或仪表读数得到溶液的 pH。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl36",
+      "name": "设计和实施酸碱中和滴定",
+      "description": "根据待测溶液的酸碱性选择适当的标准溶液、指示剂和滴定仪器，按中和计量关系控制滴定过程，通过观察 pH 突变或指示剂变色判断终点，并用 c(酸)V(酸)=c(碱)V(碱) 计算未知浓度。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl37",
+      "name": "选择和使用酸碱指示剂",
+      "description": "理解酸碱指示剂是有机弱酸/弱碱，在一定 pH 范围变色；根据预期滴定终点附近的 pH，选择合适变色范围的指示剂，并通过颜色变化判断终点。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl38",
+      "name": "定量分析数据处理",
+      "description": "在多次平行实验中识别异常数据，舍弃误差明显偏大的结果，对数值接近的有效数据求平均值以提高结果的可靠性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl39",
+      "name": "根据酸碱强弱判断盐溶液酸碱性",
+      "description": "通过分析构成盐的酸和碱的强弱，将盐划分为强酸强碱盐、强酸弱碱盐、强碱弱酸盐，从而判断其水溶液一般呈中性、酸性或碱性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl40",
+      "name": "运用电荷守恒和元素质量守恒分析离子浓度",
+      "description": "在电解质溶液中列写电荷守恒方程和元素质量守恒方程，结合电离、水解等平衡关系，定性或定量比较溶液中各种离子浓度大小。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl41",
+      "name": "应用平衡移动原理分析盐类水解",
+      "description": "将盐类水解看作可逆平衡，利用平衡移动原理分析温度、溶液稀释、加入酸或碱等因素对水解平衡方向和水解程度的影响，并能据此设计或解释实验现象。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl42",
+      "name": "利用水解常数和电离常数建立定量关系",
+      "description": "根据Kh = Kw/Ka或Kh = Kw/Kb，把盐的水解常数与对应弱酸或弱碱的电离常数联系起来，用来比较不同盐的水解倾向或进行相关计算。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl43",
+      "name": "根据 Ksp 与离子浓度计算或判断沉淀生成与否",
+      "description": "先写出难溶电解质的沉淀溶解平衡及 Ksp 表达式，再根据溶液配制和混合情况计算各离子浓度，求出 Q，与 Ksp 比较：Q>Ksp 判定有沉淀析出，Q=Ksp 为平衡状态，Q<Ksp 判定无沉淀。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl44",
+      "name": "利用溶解度和 Ksp 比较沉淀溶解能力和稳定性",
+      "description": "通过查表获得各难溶电解质的溶度积 Ksp 或溶解度，定性或定量比较其溶解能力，推断哪种沉淀更“难溶”、在竞争沉淀或沉淀转化中更易生成或保留。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl45",
+      "name": "从离子平衡角度分析沉淀溶解与平衡移动",
+      "description": "将沉淀溶解看作涉及同一离子的多个平衡叠加，分析加入强酸、络合剂或额外同/异离子时对某一离子浓度的影响，进而判断离子积 Q 的变化方向，解释沉淀生成、溶解或转化的原因。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl46",
+      "name": "基于沉淀溶解平衡设计分离和除杂方案",
+      "description": "根据不同离子的难溶盐 Ksp 差异，选择合适沉淀剂、pH 条件及添加顺序，使目标离子或杂质形成难溶沉淀而被分离或除去，同时尽量减少主组分的损失。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl47",
+      "name": "将真实情境转化为沉淀溶解平衡模型",
+      "description": "对实际问题（如龋齿、防龋、锅炉结垢、水处理）识别其中的固-液平衡本质，抽象出相关难溶电解质及其平衡式，然后用溶解度、Ksp 和 Q 的概念定性解释或定量分析现象。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl48",
+      "name": "正确使用滴定管",
+      "description": "包括检查活塞是否漏水、用待盛溶液润洗滴定管、装液并排尽气泡、调节液面到起始刻度、垂直读数以及按需要逐滴放出溶液的操作技能。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl49",
+      "name": "中和滴定实验操作",
+      "description": "按步骤完成强酸强碱中和滴定：准确量取待测溶液体积，加入适量指示剂，用滴定管缓慢滴加标准溶液，边滴边摇动锥形瓶，接近终点时半滴操作，准确判断和记录终点。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl50",
+      "name": "用中和滴定计算未知溶液的物质的量浓度",
+      "description": "根据滴定反应的化学方程式建立n(酸)=n(碱)等量关系，利用c₁V₁ = c₂V₂等公式由标准溶液的体积和浓度计算待测溶液的物质的量浓度。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl51",
+      "name": "绘制并分析滴定曲线",
+      "description": "以滴定剂体积为横坐标、pH为纵坐标，将实验测得的数据点描在坐标纸上并连线，观察等当点附近的pH突跃和曲线形状，分析强酸强碱中和过程的pH变化规律。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl52",
+      "name": "实验数据记录与处理",
+      "description": "规范记录滴定前后滴定管读数、试液体积和pH等数据，填写数据表，重复实验取平均值，分析误差并用数据支持结论。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl53",
+      "name": "根据现象分析盐类水解及溶液酸碱性",
+      "description": "通过观察溶液是否浑浊、产生沉淀或胶体颜色变化等现象，结合离子方程式，判断盐在水中是否发生水解以及水解后的溶液酸碱性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl54",
+      "name": "书写盐类水解相关的离子方程式",
+      "description": "根据参与反应的离子及弱电解质的形成，正确写出盐类水解、混凝沉降和胶体制备等过程的完整离子方程式。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl55",
+      "name": "设计和对照实验验证化学原理",
+      "description": "通过设置对照组和实验组，在相同条件下改变关键变量（如是否加入 FeCl₃、Al₂(SO₄)₃ 或是否加热），比较实验现象，以验证盐类水解和其应用效果。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl56",
+      "name": "书写和配平电极反应与总反应",
+      "description": "根据氧化还原反应中电子得失的关系，分别写出负极的氧化反应和正极的还原反应，保证电子数、电荷数守恒后相加得到总反应方程式。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl57",
+      "name": "从电池结构分析正负极和电解质",
+      "description": "根据电池构造示意图或文字描述，判定哪一电极材料易失电子为负极、哪一电极发生还原为正极，并识别电解质及其状态（溶液或胶状）。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl58",
+      "name": "依据性能指标比较电池优劣与适用场合",
+      "description": "通过比较电池的比能量、比功率、储存时间以及安全性等参数，判断其是否适合某种具体用途。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl59",
+      "name": "运用系统思想分析电化学过程",
+      "description": "将原电池或电解池视为系统，识别其组成部分（电极、电解质、电源、隔膜等）及与环境的物质和能量交换，比较其在结构、离子迁移、电极反应、能量转化方式等方面的异同，从整体上理解电化学过程。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl60",
+      "name": "书写电解过程的电极反应和总反应",
+      "description": "根据溶液或熔融物中存在的离子种类和放电先后顺序，判断阴、阳极上优先放电的离子，分别写出对应的氧化还原半反应，并进行电子守恒配平，合并得到电解的总反应。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl61",
+      "name": "基于电解原理分析工业过程",
+      "description": "以电解原理为基础，分析电镀、电解精炼、电冶金、电有机合成等工业过程的装置构成、电极材料选择、产物分布和能量转化，解释其工艺目的和优点。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl62",
+      "name": "从电极反应写出总反应",
+      "description": "根据阳极和阴极的电极反应方程式，配平电子得失数并相加，写出总体氧化还原反应方程式。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl63",
+      "name": "通过原电池原理分析金属的腐蚀与保护",
+      "description": "以原电池模型分析金属在电解质环境中的电极角色（阳极/阴极），判断哪种金属被腐蚀，以及如何通过改变电极材料或施加电流实现阴极保护。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl64",
+      "name": "根据环境判别腐蚀类型",
+      "description": "根据溶液酸碱性、是否含氧、是否为电解质等条件，判断金属发生的是化学腐蚀、电化学腐蚀以及电化学腐蚀中的析氢腐蚀或吸氧腐蚀。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl65",
+      "name": "根据电极连接判断阴极和阳极",
+      "description": "在电解装置中，根据电极与电源正负极的连接确定阴极和阳极：接电源负极的一侧是阴极，接电源正极的一侧是阳极，再结合离子性质判断各自发生的氧化还原反应。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl66",
+      "name": "设计简单电镀实验",
+      "description": "根据电镀原理，合理选择被镀金属、电镀金属、电镀液成分、电极连接方式、电源电压与电极间距，完成简单电镀实验的搭建与实施。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl67",
+      "name": "设计和搭建简单电化学实验装置",
+      "description": "根据实验目的选择并组装电源、电极、电解质溶液、导线、开关、电流表等器材，搭建用于电解或燃料电池等电化学实验的基本电路与装置。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_skl68",
+      "name": "对比分析电化学过程",
+      "description": "通过列表或其他方式比较不同电化学过程（如燃料电池与电解）的能量转化方向、电极反应特点和实验装置异同，理解它们之间的联系与区别。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "chemistry_xzxbx1_rjb_exp1",
+      "name": "中和反应反应热的测定",
+      "instrument": [
+        "简易量热计（泡沫塑料杯、内筒、杯盖）",
+        "温度计",
+        "搅拌器",
+        "量筒",
+        "0.50 mol/L 盐酸溶液",
+        "0.55 mol/L NaOH 溶液"
+      ],
+      "is_student": 1,
+      "process": "（1）用量筒量取 50 mL 0.50 mol/L 盐酸，倒入量热计内筒，盖上杯盖，插入温度计，测量并记录盐酸温度，冲洗并擦干温度计；用另一量筒量取 50 mL 0.55 mol/L NaOH 溶液，用温度计测量并记录其温度。\n（2）打开杯盖，将 NaOH 溶液迅速倒入量热计内筒，立即盖上杯盖，插入温度计，匀速搅拌，密切关注温度变化，记录最高温度 t₂ 作为反应后体系温度。\n（3）重复上述步骤三次，记录并处理数据：取盐酸和 NaOH 溶液温度平均值为 t₁，求温度差 t₂−t₁，求三次平均值。\n（4）根据温度差和比热容等计算反应热，近似认为溶液的密度和比热容与水相同，忽略量热计的比热容，计算放热 Q=(m₁+m₂)c(t₂−t₁)，并折算为生成 1 mol H₂O 时的反应热。",
+      "phenomena": "混合后溶液温度升高，温度计读数在搅拌过程中上升到一个最高值后略有下降。",
+      "conclusion": "盐酸与 NaOH 溶液的中和反应是放热反应；在 25 ℃ 和 101 kPa 下，强酸稀溶液与强碱稀溶液中和生成 1 mol H₂O 时放出约 57.3 kJ 热量。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp2",
+      "name": "定性与定量研究影响化学反应速率的因素（实验探究Ⅰ）",
+      "instrument": [
+        "烧杯",
+        "试管",
+        "量筒",
+        "试管架",
+        "胶头滴管",
+        "温度计",
+        "秒表"
+      ],
+      "is_student": 1,
+      "process": "选择 0.1 mol/L Na2S2O3 溶液、不同浓度 H2SO4 溶液、5% H2O2 溶液、1 mol/L FeCl3 溶液、蒸馏水和热水等，设计对比实验。分别在只改变浓度、只改变温度、加入或不加入催化剂的条件下进行反应，记录现象和时间，在表格中填写实验步骤、实验现象比较和结论。",
+      "phenomena": "浓度较大、温度较高、有催化剂存在时，溶液变浑或产气等反应现象更快、更明显。",
+      "conclusion": "在一般情况下，增大反应物浓度、升高温度或加入适当催化剂，化学反应速率增大。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp3",
+      "name": "测定锌与稀硫酸反应速率（实验探究Ⅱ）",
+      "instrument": [
+        "锥形瓶",
+        "分液漏斗",
+        "量筒",
+        "气体收集装置",
+        "秒表"
+      ],
+      "is_student": 1,
+      "process": "(1) 按图 2-1 组装装置，在锥形瓶内放入 2 g 锌粒，经分液漏斗加入 40 mL 1 mol/L H2SO4 溶液，测量并记录收集 10 mL H2 所用时间；(2) 用 4 mol/L H2SO4 溶液代替 1 mol/L H2SO4 溶液重复实验，记录收集 10 mL H2 所用时间，计算两种条件下的反应速率并比较。",
+      "phenomena": "加入酸后产生气泡并放出 H2，浓度较高的酸通常放气更剧烈、产同体积 H2 所用时间更短。",
+      "conclusion": "在其他条件相同时，增大 H2SO4 浓度，锌与稀硫酸反应速率增大。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp4",
+      "name": "Fe3+与SCN-溶液中浓度对化学平衡的影响（实验2-1）",
+      "instrument": "0.005 mol·L⁻¹ FeCl3 溶液、0.015 mol·L⁻¹ KSCN 溶液、试管、铁粉、1 mol·L⁻¹ KSCN 溶液滴管",
+      "is_student": 1,
+      "process": "向盛有5 mL 0.005 mol·L⁻¹ FeCl3 溶液的试管中加入5 mL 0.015 mol·L⁻¹ KSCN 溶液，溶液呈红色。将该溶液平均分装在a、b、c三支试管中；向b中加入少量铁粉，向c中滴加4滴1 mol·L⁻¹ KSCN溶液，分别与a对比颜色变化。",
+      "phenomena": "原溶液呈红色；加入铁粉的试管颜色变浅；加入KSCN溶液的试管红色加深。",
+      "conclusion": "改变 Fe³⁺ 或 SCN⁻ 的浓度会引起 Fe³⁺ + 3SCN⁻ ⇌ Fe(SCN)3 平衡移动，平衡混合物的组成发生改变。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp5",
+      "name": "压强对 NO2/N2O4 化学平衡的影响（实验2-2）",
+      "instrument": "50 mL 注射器、含 NO2 和 N2O4 的混合气体、细管、橡胶塞",
+      "is_student": 0,
+      "process": "用注射器吸入约20 mL NO2 和 N2O4 的混合气体（活塞在I处），封闭细管端。将活塞从I处拉到II处再推回，多次往复，并观察混合气体颜色变化。",
+      "phenomena": "拉出活塞：容积增大、压强和浓度减小，混合气体颜色先变浅后又逐渐变深，说明生成了更多 NO2；推入活塞：容积减小、压强和浓度增大，混合气体颜色先变深后逐渐变浅，说明消耗了更多 NO2。",
+      "conclusion": "在 2NO2(g) ⇌ N2O4(g) 平衡体系中，减小压强（浓度）使平衡向气体物质的量较多的一方（NO2）移动；增大压强使平衡向气体物质的量较少的一方（N2O4）移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp6",
+      "name": "温度对 NO2/N2O4 化学平衡的影响（实验2-3）",
+      "instrument": "两只连通烧瓶、乳胶管、弹簧夹、混合 NO2 和 N2O4 气体、热水、冰水",
+      "is_student": 0,
+      "process": "将 NO2 和 N2O4 的混合气体通入两只连通烧瓶，用弹簧夹夹住乳胶管；把一只烧瓶浸入热水中，另一只浸入冰水中，观察两瓶中混合气体颜色变化。",
+      "phenomena": "浸泡在热水中的烧瓶内红棕色加深，说明 NO2 浓度增大；浸泡在冰水中的烧瓶内红棕色变浅，说明 NO2 浓度减小。",
+      "conclusion": "对于放热平衡 2NO2(g) ⇌ N2O4(g)，ΔH=-56.9 kJ·mol⁻¹，升高温度平衡向吸热方向（NO2）移动，降低温度平衡向放热方向（N2O4）移动。一般来说，升高温度使化学平衡向吸热反应方向移动，降低温度使化学平衡向放热反应方向移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp7",
+      "name": "NO2/N2O4 体系压强和温度综合示意实验",
+      "instrument": "NO2 和 N2O4 混合气体、注射器或烧瓶、水浴装置",
+      "is_student": 0,
+      "process": "通过改变注射器活塞位置或改变烧瓶所处水浴温度，观察红棕色深浅变化，归纳压强与温度对平衡的影响。",
+      "phenomena": "压强变化导致颜色先迅速变化后逐渐恢复到新的深浅；温度变化导致热水瓶颜色加深、冰水瓶颜色变浅。",
+      "conclusion": "化学平衡能够对外界压强和温度改变作出响应，向减弱这种改变的方向移动，符合勒夏特列原理。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp8",
+      "name": "氯气与氢气的自发扩散混合",
+      "instrument": "两个盛有氯气和氢气的集气瓶、玻璃片",
+      "is_student": 0,
+      "process": "两个集气瓶分别盛有氯气和氢气，开始时用玻璃片隔开。抽掉玻璃片后，两种气体通过分子扩散自发混合。",
+      "phenomena": "盛放氯气的瓶内气体颜色逐渐变浅，盛放氢气的瓶内显现浅黄绿色，最终两瓶中气体颜色相同。",
+      "conclusion": "在没有外界作用下，气体会自发从分隔状态向混合均匀、高混乱度方向变化，体系熵增加。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp9",
+      "name": "硝酸铵溶于水的自发过程",
+      "instrument": "硝酸铵晶体、蒸馏水、烧杯、搅拌棒",
+      "is_student": 1,
+      "process": "将硝酸铵晶体加入水中，搅拌观察溶解过程。",
+      "phenomena": "硝酸铵晶体逐渐消失，形成均一溶液，过程中可感到吸热而温度下降。",
+      "conclusion": "NH4+和NO3−由晶体中有序排列变为溶液中自由移动，体系混乱度增大、熵增加，即使为吸热过程也能自发进行。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp10",
+      "name": "不同温度和压强下合成氨平衡组成的测定",
+      "instrument": "高压反应容器、氮气和氢气气源、温度控制装置、压强控制系统、气体分析仪器",
+      "is_student": 0,
+      "process": "在密闭高压反应器中按体积比1:3充入氮气和氢气，在不同设定温度和压强下保温至达平衡，取样分析平衡混合物中NH₃的体积分数，记录成表格数据。",
+      "phenomena": "在较低温度和较高压强下，平衡混合物中氨的体积分数显著增大。",
+      "conclusion": "降低温度和增大压强有利于提高合成氨反应的平衡转化率，增大平衡混合物中氨的含量。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp11",
+      "name": "不同温度与压强下SO₂转化为SO₃的平衡转化率测定",
+      "instrument": "耐腐蚀反应器、SO₂和O₂气源、温度与压强控制系统、气体分析装置",
+      "is_student": 0,
+      "process": "在一定配比的SO₂和O₂混合气体条件下，调节温度与压强，待反应达到平衡后测定SO₂的平衡转化率并制成表格。",
+      "phenomena": "在较低温度和较高压强下，SO₂的平衡转化率更高。",
+      "conclusion": "SO₂氧化为SO₃是放热气相可逆反应，降低温度、适当增大压强有利于SO₂的转化。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp12",
+      "name": "CaO对水煤气变换反应平衡的影响",
+      "instrument": "恒容反应器、CO和H₂O蒸汽源、CaO（微米级与纳米级）、温度控制和取样分析装置",
+      "is_student": 0,
+      "process": "在一定温度和总体条件下，将CO与H₂O混合进行水煤气变换反应，对比不加CaO、加入微米CaO、加入纳米CaO三种情况下同一时间体系中H₂体积分数的变化。",
+      "phenomena": "加入CaO时，体系中H₂的体积分数增大；纳米CaO的作用比微米CaO更明显。",
+      "conclusion": "CaO与生成的CO₂反应或吸附，使CO₂浓度降低，平衡向生成CO₂和H₂方向移动，H₂含量增大；纳米CaO比微米CaO比表面积更大，吸收CO₂能力更强，对平衡影响更大。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp13",
+      "name": "浓度对Fe3+与SCN−平衡的影响实验",
+      "instrument": [
+        "小烧杯",
+        "试管及试管架",
+        "量筒",
+        "玻璃棒",
+        "胶头滴管",
+        "0.05 mol/L FeCl3溶液",
+        "0.15 mol/L KSCN溶液",
+        "铁粉",
+        "蒸馏水"
+      ],
+      "is_student": 1,
+      "process": "在小烧杯中加入10 mL蒸馏水，滴入5滴0.05 mol/L FeCl3溶液和5滴0.15 mol/L KSCN溶液，搅拌均匀后平均分装入a、b、c三支试管；向a中再滴入5滴FeCl3溶液，向b中再滴入5滴KSCN溶液，与c对比观察颜色变化；随后分别向a、b中加入少量铁粉，继续观察颜色变化。",
+      "phenomena": "加入FeCl3或KSCN后溶液颜色加深或改变，加入铁粉后颜色减浅或改变，用以判断平衡移动方向。",
+      "conclusion": "改变Fe3+、SCN−的浓度会引起平衡移动，平衡朝着消耗被增加组分、补充被减少组分的方向移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp14",
+      "name": "NaOH和H2SO4对Cr2O7²−/CrO4²−平衡的影响实验",
+      "instrument": [
+        "试管",
+        "胶头滴管",
+        "0.1 mol/L K2Cr2O7溶液",
+        "6 mol/L NaOH溶液",
+        "6 mol/L H2SO4溶液"
+      ],
+      "is_student": 1,
+      "process": "取一支试管，加入2 mL 0.1 mol/L K2Cr2O7溶液，观察橙色；向试管中滴加5~10滴6 mol/L NaOH溶液，观察颜色变化并判断平衡移动方向；再向同一试管中继续滴加5~10滴6 mol/L H2SO4溶液，观察颜色变化并判断平衡是否发生移动及移动方向。",
+      "phenomena": "加入NaOH后溶液由橙色逐渐转为黄色；再加入H2SO4后，溶液由黄色再变为橙色。",
+      "conclusion": "加入NaOH降低H+浓度，平衡向生成CrO4²−（黄色）方向移动；加入H2SO4增大H+浓度，平衡向生成Cr2O7²−（橙色）方向移动，说明改变浓度会引起化学平衡移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp15",
+      "name": "温度对CuCl2溶液配位平衡的影响实验",
+      "instrument": [
+        "两支试管及试管架",
+        "0.5 mol/L CuCl2溶液",
+        "酒精灯",
+        "火柴",
+        "冷水",
+        "热水或加热器具"
+      ],
+      "is_student": 1,
+      "process": "取两支试管，分别加入2 mL 0.5 mol/L CuCl2溶液；将其中一支试管先加热，再置于冷水中，观察并记录溶液颜色变化；将该试管与另一支未处理的试管进行对比，完成记录表格。",
+      "phenomena": "加热时溶液由偏蓝色向偏黄色方向变化，冷却后颜色向原来的蓝色方向恢复。",
+      "conclusion": "该平衡为吸热反应方向生成黄色[CuCl4]2−，加热时平衡向吸热（黄色）方向移动，冷却时平衡向放热（蓝色）方向移动，表明温度改变会引起化学平衡移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp16",
+      "name": "温度对NO2/N2O4气相平衡的影响实验",
+      "instrument": [
+        "两个封装有NO2和N2O4混合气体的圆底烧瓶（1号和2号）",
+        "热水",
+        "冷水",
+        "烧杯或水槽"
+      ],
+      "is_student": 0,
+      "process": "取两个封装有NO2和N2O4混合气体的圆底烧瓶（编号1和2），将1号烧瓶浸泡在热水中，2号烧瓶浸泡在冷水中，比较两烧瓶里的气体颜色；然后互换位置，将1号放入冷水、2号放入热水，稍等片刻后再比较气体颜色；根据颜色变化填写实验记录表中的现象和结论。",
+      "phenomena": "浸入热水的烧瓶内气体颜色加深呈较深棕色，浸入冷水的烧瓶内气体颜色变浅呈较淡色；互换位置后，两烧瓶颜色对调。",
+      "conclusion": "升高温度有利于NO2（有色气体）的生成，使颜色加深；降低温度有利于N2O4（较浅色）的生成，使颜色变浅，说明温度会影响气相平衡的移动方向。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp17",
+      "name": "实验3-1 比较盐酸和醋酸的电离程度",
+      "instrument": [
+        "0.1 mol/L 盐酸溶液",
+        "0.1 mol/L 醋酸溶液",
+        "pH 试纸或 pH 计",
+        "导电装置（电源、电极、小灯泡或电流表）",
+        "镁条若干",
+        "试管若干"
+      ],
+      "is_student": 1,
+      "process": "取相同体积、0.1 mol/L 的盐酸和醋酸，分别测定它们的 pH；用导电装置分别测试两种溶液的导电能力；再分别加入等量镁条，观察与镁条反应的剧烈程度，并记录现象。",
+      "phenomena": "0.1 mol/L 盐酸的 pH 较小、导电能力较强，与镁条反应更剧烈；0.1 mol/L 醋酸的 pH 较大、导电能力较弱，与镁条反应不如盐酸剧烈。",
+      "conclusion": "在相同物质的量浓度下，盐酸中 H⁺ 浓度较大，电离程度高，属于强电解质；醋酸中 H⁺ 浓度较小，电离程度低，属于弱电解质。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp18",
+      "name": "实验3-2 醋酸与碳酸钠溶液反应的现象与 Ka 大小推测",
+      "instrument": [
+        "1 mol/L 醋酸溶液 2 mL",
+        "1 mol/L Na2CO3 溶液",
+        "滴管",
+        "试管",
+        "试管架"
+      ],
+      "is_student": 1,
+      "process": "向盛有 2 mL 1 mol/L 醋酸的试管中，逐滴加入 1 mol/L Na2CO3 溶液，边滴加边观察产生的现象。",
+      "phenomena": "滴加 Na2CO3 溶液时产生明显气泡，有 CO2 放出。",
+      "conclusion": "醋酸能够与碳酸根反应生成 CO2，说明 CH3COOH 的 Ka 与 H2CO3 的 Ka1 具有可比性，从反应进行的程度可以进一步推测 CH3COOH 的 Ka 大小相对于 H2CO3 的 Ka1 的大小关系。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp19",
+      "name": "纯水导电性实验",
+      "instrument": [
+        "电导装置（电源、电极、电流表或电导率仪）",
+        "高纯水",
+        "盛水容器"
+      ],
+      "is_student": 0,
+      "process": "将高纯水装入洁净容器，将电导装置的电极插入水中，接通电路观察电流或电导率的变化。",
+      "phenomena": "纯水只能微弱导电，电流极小，表明仅有极少量离子存在。",
+      "conclusion": "纯水中极少量水分子电离成 H3O+ 和 OH−，水是一种极弱的电解质。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp20",
+      "name": "强酸强碱中和滴定实验",
+      "instrument": [
+        "滴定管",
+        "锥形瓶",
+        "已知浓度的 HCl 或 NaOH 溶液",
+        "待测 NaOH 或 HCl 溶液",
+        "酸碱指示剂（酚酞或甲基橙）",
+        "pH 计（或 pH 电极）"
+      ],
+      "is_student": 1,
+      "process": "用滴定管装入标准酸或碱溶液，在锥形瓶中量取一定体积的待测溶液，加入几滴指示剂。缓慢滴加滴定管中的溶液，边滴边摇，接近终点时改为逐滴滴加，观察指示剂颜色变化或 pH 的突变，记录终点时消耗的标准溶液体积。",
+      "phenomena": "开始时溶液 pH 变化缓慢，接近等当点时，加入极少量滴定剂 pH 突变，指示剂颜色发生明显变化。",
+      "conclusion": "滴定终点可通过 pH 突变和指示剂颜色变化判断，利用消耗体积和计量关系可以计算未知溶液的物质的量浓度。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp21",
+      "name": "不同盐溶液酸碱性的测试与分类",
+      "instrument": [
+        "试管",
+        "试管架",
+        "滴管",
+        "pH计或指示剂",
+        "NaCl溶液",
+        "Na₂CO₃溶液",
+        "NH₄Cl溶液",
+        "KNO₃溶液",
+        "CH₃COONa溶液",
+        "(NH₄)₂SO₄溶液"
+      ],
+      "is_student": 1,
+      "process": "（1）分别取少量NaCl、Na₂CO₃、NH₄Cl、KNO₃、CH₃COONa、(NH₄)₂SO₄的溶液于试管中；（2）用pH计或适当指示剂测定每种溶液的pH或颜色变化，判断酸碱性；（3）根据这些盐由强酸、弱酸、强碱、弱碱组合的情况，将它们分类为强酸强碱盐、强酸弱碱盐、强碱弱酸盐；（4）归纳不同类型盐溶液酸碱性的规律。",
+      "phenomena": "NaCl、KNO₃溶液pH接近7，为中性；NH₄Cl、(NH₄)₂SO₄溶液pH小于7，呈酸性；Na₂CO₃、CH₃COONa溶液pH大于7，呈碱性。",
+      "conclusion": "强酸强碱盐溶液一般呈中性，强酸弱碱盐溶液呈酸性，强碱弱酸盐溶液呈碱性。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp22",
+      "name": "反应条件对FeCl₃水解平衡的影响",
+      "instrument": [
+        "试管",
+        "试管夹",
+        "试管架",
+        "胶头滴管",
+        "pH计",
+        "酒精灯",
+        "火柴",
+        "0.01 mol/L FeCl₃溶液",
+        "FeCl₃晶体",
+        "浓盐酸",
+        "浓氢氧化钠溶液",
+        "水"
+      ],
+      "is_student": 1,
+      "process": "（1）取0.01 mol/L FeCl₃溶液于数支试管中，用pH计测pH，观察颜色和是否有Fe(OH)₃胶体或沉淀形成；（2）对其中一支加热，观察pH及溶液混浊程度变化，分析温度对水解的影响；（3）向另一支加入少量水稀释，观察pH及胶体变化，分析浓度变化对水解的影响；（4）向第三支溶液中加入适量浓盐酸，观察水解产物是否减少，溶液是否变澄清，解释H⁺浓度增大对水解平衡的抑制作用；（5）可向另一支加入少量NaOH溶液，观察Fe(OH)₃沉淀大量生成的现象，分析生成物浓度变化对平衡的影响。",
+      "phenomena": "加热或稀释后FeCl₃溶液pH降低或出现更多Fe(OH)₃胶体，水解程度增大；加入浓盐酸后溶液中Fe(OH)₃胶体减少甚至消失，溶液变澄清，水解受抑制；加入NaOH后立即大量生成Fe(OH)₃沉淀。",
+      "conclusion": "盐类水解是吸热反应，加热和稀释均促使水解平衡向生成水解产物方向移动，使水解程度增大；增大H⁺浓度（如加入盐酸）可以抑制FeCl₃的水解，改变反应物或生成物浓度均可引起水解平衡移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp23",
+      "name": "Mg(OH)2 在水和盐酸中的溶解对比",
+      "instrument": [
+        "试管两支",
+        "Mg(OH)2 固体",
+        "滴管",
+        "蒸馏水",
+        "稀盐酸"
+      ],
+      "is_student": 1,
+      "process": "向两支盛有少量 Mg(OH)2 固体的试管中分别滴加适量蒸馏水和盐酸，振荡并观察 Mg(OH)2 的溶解情况。",
+      "phenomena": "滴加蒸馏水时 Mg(OH)2 基本不溶；滴加盐酸时 Mg(OH)2 逐渐溶解，可能伴随微弱放热和浑浊消失。",
+      "conclusion": "在纯水中 Mg(OH)2 与其饱和溶液间存在沉淀溶解平衡；加入酸后，H⁺ 与 OH⁻ 反应使 Mg(OH)2 的离子积 Q 降低，平衡向溶解方向移动，使沉淀溶解。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp24",
+      "name": "AgCl 沉淀依次转化为 AgI 和 Ag2S",
+      "instrument": [
+        "试管",
+        "0.1 mol/L NaCl 溶液",
+        "0.1 mol/L AgNO3 溶液",
+        "0.1 mol/L KI 溶液",
+        "0.1 mol/L Na2S 溶液",
+        "滴管"
+      ],
+      "is_student": 1,
+      "process": "（1）向 2 mL 0.1 mol/L NaCl 溶液中滴加 2 滴 0.1 mol/L AgNO3 溶液，观察白色 AgCl 沉淀生成；（2）振荡后滴加 4 滴 0.1 mol/L KI 溶液，观察沉淀颜色由白色变为浅黄色 AgI；（3）再次振荡后滴加 8 滴 0.1 mol/L Na2S 溶液，观察沉淀进一步转化为深色 Ag2S。",
+      "phenomena": "先生成白色沉淀（AgCl），加入 KI 后沉淀转为黄色（AgI），再加入 Na2S 后逐渐变为黑色（Ag2S）。",
+      "conclusion": "AgCl 与 AgI、Ag2S 的沉淀溶解平衡在 I⁻、S²⁻ 存在下依次向生成溶解度更小的沉淀方向移动，表明沉淀转化本质是溶解度差异驱动下的平衡移动。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp25",
+      "name": "Mg(OH)2 沉淀向 Fe(OH)3 沉淀的转化",
+      "instrument": [
+        "试管",
+        "0.1 mol/L MgCl2 溶液",
+        "2 mol/L NaOH 溶液",
+        "0.1 mol/L FeCl3 溶液",
+        "滴管"
+      ],
+      "is_student": 1,
+      "process": "（1）向盛有 2 mL 0.1 mol/L MgCl2 溶液的试管中滴加 2~4 滴 2 mol/L NaOH 溶液，生成 Mg(OH)2 沉淀；（2）向上述试管中滴加 4 滴 0.1 mol/L FeCl3 溶液，静置，观察沉淀变化。",
+      "phenomena": "初始出现白色 Mg(OH)2 沉淀；加入 FeCl3 后逐渐出现棕红色 Fe(OH)3 沉淀，Mg(OH)2 部分或全部消失。",
+      "conclusion": "在 Fe³⁺ 存在下，系统更倾向于生成溶解度更小的 Fe(OH)3 沉淀，Mg(OH)2 部分转化为 Fe(OH)3，表明沉淀转化由不同氢氧化物的 Ksp 大小控制。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp26",
+      "name": "练习使用滴定管",
+      "instrument": [
+        "酸式滴定管",
+        "碱式滴定管",
+        "滴定管夹",
+        "烧杯",
+        "铁架台"
+      ],
+      "is_student": 1,
+      "process": "（1）检查滴定管活塞是否漏水；（2）用将要盛装的酸或碱溶液润洗滴定管2~3次；（3）装入酸或碱，使液面高于“0”刻度，垂直固定在滴定管夹上；（4）在滴定管下放烧杯，排尽尖嘴部分和乳胶管中的气泡，并调节液面至“0”刻度，准确记录起始读数；（5）根据需要逐滴放出溶液。",
+      "phenomena": "排尽气泡后液柱连续，活塞打开时溶液能均匀滴下。",
+      "conclusion": "掌握滴定管的结构和正确使用方法是进行滴定实验的前提，可以保证体积读数准确。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp27",
+      "name": "用已知浓度的强酸滴定未知浓度的强碱",
+      "instrument": [
+        "酸式滴定管",
+        "碱式滴定管",
+        "滴定管夹",
+        "锥形瓶",
+        "烧杯",
+        "铁架台",
+        "白纸"
+      ],
+      "is_student": 1,
+      "process": "（1）用待装溶液润洗酸式和碱式滴定管，装入0.1000 mol/L HCl和待测NaOH溶液，排尽气泡并调节液面到“0”刻度；（2）用碱式滴定管量取25.00 mL待测NaOH于锥形瓶中，加入2滴酚酞，溶液呈红色；（3）将锥形瓶置于酸式滴定管下方，垫白纸，边摇动锥形瓶边缓慢滴加HCl，接近终点时改为半滴操作；（4）当加入半滴酸后溶液颜色从粉红色刚好变为无色且半分钟内不返色，认为到达滴定终点，记录滴定前后刻度并计算HCl体积；（5）重复2次并用数据计算NaOH溶液的物质的量浓度。",
+      "phenomena": "开始时溶液呈红色，滴加HCl后颜色逐渐变浅，在终点时粉红色刚好消失并保持无色。",
+      "conclusion": "根据强酸强碱中和反应的定量关系，通过测定HCl消耗的体积可以准确计算出未知NaOH溶液的物质的量浓度。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp28",
+      "name": "强酸被强碱滴定的pH随体积变化的测定",
+      "instrument": [
+        "酸式滴定管或移液管",
+        "碱式滴定管",
+        "锥形瓶或烧杯",
+        "pH计或pH试纸",
+        "0.1000 mol/L NaOH溶液",
+        "约0.1000 mol/L HCl溶液"
+      ],
+      "is_student": 1,
+      "process": "取20.00 mL约0.1000 mol/L的HCl溶液于容器中，用0.1000 mol/L NaOH溶液逐步滴定，每加入一组体积（如5.00 mL、10.00 mL、15.00 mL等）时测量并记录溶液pH，直至NaOH体积达到或超过35.00 mL；以NaOH体积为横坐标、pH为纵坐标绘制滴定曲线。",
+      "phenomena": "起始pH约为1.00，NaOH逐渐加入时pH缓慢上升，接近20.00 mL时pH快速变化，在20.00 mL附近从酸性跳变到碱性，随后pH缓慢接近强碱的pH值。",
+      "conclusion": "强酸强碱滴定中在当量点附近存在明显的pH突跃，等当点pH约为7，可用于合理选择指示剂并理解滴定原理。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp29",
+      "name": "FeCl₃ 溶液配制与水解现象观察",
+      "instrument": [
+        "试管",
+        "试管夹",
+        "试管架",
+        "胶头滴管"
+      ],
+      "is_student": 1,
+      "process": "向一支试管中加入少量 FeCl₃ 晶体，然后加入 5 mL 蒸馏水，振荡，观察并记录现象。再向试管中加入 2 mL 浓盐酸，振荡，观察并记录现象。",
+      "phenomena": "加入水后溶液出现黄褐色浑浊或沉淀，表明 Fe³⁺ 发生水解生成 Fe(OH)₃；加入浓盐酸后溶液变澄清，水解释放的 H⁺ 被大量 H⁺ 抑制，Fe(OH)₃ 溶解。",
+      "conclusion": "FeCl₃ 溶于水发生水解，溶液显酸性；配制 FeCl₃ 溶液时应先用浓盐酸溶解再稀释。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp30",
+      "name": "FeCl₃ 和 Al₂(SO₄)₃ 净化浑浊水实验",
+      "instrument": [
+        "试管",
+        "试管架",
+        "胶头滴管"
+      ],
+      "is_student": 1,
+      "process": "向三支试管中分别加入 5 mL 混有少量泥土的浑浊水，然后向其中两支试管中分别加入 2 mL 饱和 FeCl₃ 溶液、2 mL 1 mol/L Al₂(SO₄)₃ 溶液，振荡。把三支试管放在试管架上，静置 5 min，观察并记录现象，同时进行比较。",
+      "phenomena": "加入 FeCl₃ 或 Al₂(SO₄)₃ 的试管中出现絮状沉淀，静置后泥土随絮状沉淀下沉，上层水变清；未加药剂的对照试管仍较浑浊。",
+      "conclusion": "FeCl₃ 和 Al₂(SO₄)₃ 在水中水解生成 Fe(OH)₃ 和 Al(OH)₃ 絮状沉淀，能吸附泥土并沉降，可用作净水剂。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp31",
+      "name": "Fe(OH)₃ 胶体的制备",
+      "instrument": [
+        "烧杯",
+        "量筒",
+        "铁架台（带铁圈）",
+        "陶土网",
+        "酒精灯",
+        "火柴",
+        "胶头滴管"
+      ],
+      "is_student": 1,
+      "process": "向一个烧杯中加入 40 mL 蒸馏水，加热至水沸腾，然后向沸水中逐滴加入 5~6 滴饱和 FeCl₃ 溶液。继续煮沸至液体呈红褐色，停止加热，观察制得的 Fe(OH)₃ 胶体。",
+      "phenomena": "溶液由无色逐渐变成均一的红褐色胶状体系，有明显丁达尔效应，说明形成了 Fe(OH)₃ 胶体。",
+      "conclusion": "在沸水中缓慢加入 FeCl₃ 溶液并继续煮沸，可通过盐类水解制得 Fe(OH)₃ 胶体。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp32",
+      "name": "Na₂CO₃ 溶液与植物油的去污效果比较",
+      "instrument": [
+        "试管",
+        "试管夹",
+        "试管架",
+        "胶头滴管",
+        "酒精灯",
+        "火柴"
+      ],
+      "is_student": 1,
+      "process": "向两支试管中分别加入 5 mL 饱和 Na₂CO₃ 溶液，然后各滴入 2~3 滴植物油，振荡。将其中的一支试管加热煮沸一会儿，然后再振荡。把两支试管中的液体倒掉，并用水冲洗试管，比较哪支试管的内壁更干净。",
+      "phenomena": "加热过的试管内壁明显比未加热的更干净，油迹较少，说明在加热条件下油脂与碱性溶液发生更充分的反应。",
+      "conclusion": "在碱性溶液中加热可促进油脂皂化，生成具有去污能力的物质，体现盐类水解在去污中的应用。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp33",
+      "name": "实验4-1 锌铜原电池中盐桥作用的探究",
+      "instrument": [
+        "锌片",
+        "铜片",
+        "ZnSO₄溶液",
+        "CuSO₄溶液",
+        "盐桥",
+        "导线",
+        "电流表"
+      ],
+      "is_student": 1,
+      "process": "将置有锌片的ZnSO₄溶液和置有铜片的CuSO₄溶液用盐桥连接，再将锌片和铜片用导线连接并串联电流表，观察电流表指针偏转情况；随后取出盐桥，观察电流表指针变化。",
+      "phenomena": "接通电路且有盐桥时，电流表指针发生偏转；取出盐桥后，电流表指针回到零点。",
+      "conclusion": "盐桥是原电池持续输出电流的必要组成部分，能维持溶液中的电荷平衡。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp34",
+      "name": "CuCl₂溶液的电解实验（实验4-2）",
+      "instrument": "U形管、质量分数为25%的CuCl₂溶液、两根石墨棒、电源、导线、碘化钾淀粉试纸",
+      "is_student": 1,
+      "process": "在U形管中注入25% CuCl₂溶液，插入两根石墨棒作电极，将湿润的碘化钾淀粉试纸放在与直流电源正极相连的石墨棒附近。接通直流电源，观察电极附近的现象和试纸颜色变化。",
+      "phenomena": "与负极相连的石墨棒表面逐渐覆盖一层红色铜；与正极相连的石墨棒上有气泡产生；碘化钾淀粉试纸变蓝，有刺激性气味的气体产生。",
+      "conclusion": "CuCl₂溶液在通电条件下被电解生成金属铜和氯气，表明电流通过电解质溶液在电极上引起氧化还原反应。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp35",
+      "name": "铁钉的吸氧腐蚀实验（实验4-3 部分）",
+      "instrument": "经过酸洗除锈的铁钉、饱和食盐水、具支试管、导管、水柱",
+      "is_student": 1,
+      "process": "将除锈铁钉用饱和食盐水浸泡后放入具支试管中，观察几分钟后导管中水柱的变化，并分析其原因。",
+      "phenomena": "导管中水柱高度发生变化，表明试管内气体组分和压强发生变化。",
+      "conclusion": "铁钉在含电解质的水膜和空气环境中发生吸氧腐蚀，消耗氧气，导致气体压强变化。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp36",
+      "name": "Zn与稀盐酸及Cu²⁺的电化学腐蚀实验（实验4-3 部分）",
+      "instrument": "锌粒、两支试管、等体积等浓度稀盐酸、滴管、硫酸铜溶液",
+      "is_student": 1,
+      "process": "将两颗锌粒分别放入盛有等量稀盐酸的试管中，观察现象；随后向其中一支试管中滴加1~2滴硫酸铜溶液，再次观察并比较两管现象。",
+      "phenomena": "加入CuSO₄的试管中气泡增多、反应加剧，锌表面析出铜。",
+      "conclusion": "Cu²⁺参与形成原电池，加快Zn的电化学腐蚀，说明电极材料和氧化剂影响腐蚀速率。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp37",
+      "name": "牺牲阳极法电解实验（实验4-4 部分）",
+      "instrument": "Fe电极、Zn电极、酸化的3% NaCl溶液、烧杯、电流表、导线、胶头滴管、试管、K₃[Fe(CN)₆]溶液",
+      "is_student": 1,
+      "process": "以Fe作保护电极、Zn作辅助电极，将二者浸入酸化3% NaCl溶液中并按图连接电路，观察电流表读数及电极附近现象。一定时间后取Fe电极区域溶液，加入K₃[Fe(CN)₆]溶液，观察颜色变化。",
+      "phenomena": "电流表有指针偏转；Zn电极附近有气泡或溶解现象；Fe电极附近溶液与K₃[Fe(CN)₆]不显明显蓝色沉淀。",
+      "conclusion": "Zn作为阳极优先溶解而Fe作为阴极受到保护，体现牺牲阳极法的原理。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp38",
+      "name": "锌皮包铁钉与铜丝缠铁钉的腐蚀对比实验（实验4-4 部分）",
+      "instrument": "琼脂、烧杯、培养皿、饱和食盐水、水、酚酞溶液、K₃[Fe(CN)₆]溶液、两枚铁钉、锌皮、铜丝、砂纸",
+      "is_student": 1,
+      "process": "配制含NaCl和指示剂的琼脂溶液，倒入两培养皿；将擦光铁钉分别包锌皮和缠铜丝后插入两皿中，观察颜色变化和腐蚀情况。",
+      "phenomena": "裹锌皮的铁钉附近较少出现Fe²⁺及碱性区域变化；缠铜丝的铁钉附近出现蓝色和红色区域，铁明显锈蚀。",
+      "conclusion": "锌与铁构成原电池时锌为阳极牺牲而保护铁；铜与铁构成原电池时铁为阳极被加速腐蚀。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp39",
+      "name": "Fe²⁺检验实验",
+      "instrument": "待测含Fe²⁺溶液、K₃[Fe(CN)₆]溶液（黄色）、试管、滴管",
+      "is_student": 1,
+      "process": "向含有Fe²⁺的溶液中滴加K₃[Fe(CN)₆]溶液，观察生成物颜色和状态。",
+      "phenomena": "生成带有特征蓝色的沉淀。",
+      "conclusion": "蓝色KFe[Fe(CN)₆]沉淀的生成可作为Fe²⁺存在的证据，是检验Fe²⁺的常用方法。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp40",
+      "name": "简单的电镀实验（铁上镀铜）",
+      "instrument": [
+        "烧杯",
+        "砂纸",
+        "导线",
+        "2～3V直流电源",
+        "电流表",
+        "铁制镀件",
+        "铜片",
+        "以CuSO4溶液为主配制的电镀液",
+        "1 mol/L NaOH溶液",
+        "20%盐酸",
+        "蒸馏水"
+      ],
+      "is_student": 1,
+      "process": [
+        "用砂纸把铁制镀件打磨干净，放入1 mol/L NaOH溶液中除去油污，然后用蒸馏水洗净。",
+        "将铁制镀件放入20%盐酸中除锈，几分钟后取出，并用蒸馏水洗净。",
+        "把铁制镀件与2～3V直流电源的负极相连，铜片与直流电源的正极相连。",
+        "将两极平行浸入以CuSO4溶液为主配制的电镀液中，两极间距约5 cm，通电5～10 min。",
+        "取出铁制镀件，观察其表面变化。"
+      ],
+      "phenomena": "通电一段时间后，铁制镀件表面覆盖上一层颜色与铜相似的金属光亮层，而铜片逐渐溶解变薄。",
+      "conclusion": "在直流电作用下，Cu2+在阴极（铁制镀件）上得到电子还原为金属铜沉积，阳极（铜片）失去电子溶解为Cu2+进入溶液，从而实现电镀。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp41",
+      "name": "电解水实验",
+      "instrument": [
+        "U形管",
+        "石墨棒",
+        "3~6 V 直流电源",
+        "鳄鱼夹",
+        "导线和开关（K1）",
+        "电流表（可选）",
+        "1 mol/L Na2SO4 溶液",
+        "酚酞溶液"
+      ],
+      "is_student": 1,
+      "process": "在 U 形管中注入 1 mol/L Na2SO4 溶液，滴加 1~2 滴酚酞溶液。在 U 形管两边分别插入石墨棒，并用鳄鱼夹、导线连接 3~6 V 直流电源。闭合 K1，接通直流电源开始电解，观察两极附近气泡及溶液颜色变化等现象。",
+      "phenomena": "电极上产生气泡，酚酞附近颜色发生变化，表明水在电解质溶液中被分解。",
+      "conclusion": "直流电源提供的电能使水在电解质溶液中发生电解，生成氢气和氧气，实现电能向化学能的转化。"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exp42",
+      "name": "制作简单的氢氧燃料电池",
+      "instrument": [
+        "U形管（内含电解产生的氢、氧及 Na2SO4 溶液）",
+        "石墨棒",
+        "导线",
+        "开关（K2）",
+        "电流表或发光二极管或音乐盒"
+      ],
+      "is_student": 1,
+      "process": "先进行 1~2 min 的电解水，随后打开 K1 断开直流电源。将两根石墨棒分别用导线与电流表（或发光二极管、音乐盒等）相连，闭合 K2，观察装置是否能输出电流或点亮二极管、驱动音乐盒。",
+      "phenomena": "闭合 K2 后，电流表有读数或发光二极管点亮、音乐盒发声，表明装置在没有外加电源的情况下输出电能。",
+      "conclusion": "利用电解后产生在电极附近的氢气和氧气，可以构成一个氢氧燃料电池，实现化学能向电能的转化。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "chemistry_xzxbx1_rjb_exe1",
+      "type": "应用题",
+      "stem": "依据事实，写出下列反应的热化学方程式。\n(1) 1 mol Cu(s) 与适量 O₂(g) 反应生成 CuO(s)，放出 157.3 kJ 的热量。\n(2) 1 mol C₂H₄(g) 与适量 O₂(g) 反应生成 CO₂(g) 和 H₂O(l)，放出 1411.0 kJ 的热量。\n(3) 1 mol C(s) 与适量 H₂O(g) 反应生成 CO(g) 和 H₂(g)，吸收 131.5 kJ 的热量。",
+      "answer": "(1) Cu(s)+½O₂(g)=CuO(s)    ΔH=-157.3 kJ/mol\n(2) C₂H₄(g)+3O₂(g)=2CO₂(g)+2H₂O(l)    ΔH=-1411.0 kJ/mol\n(3) C(s)+H₂O(g)=CO(g)+H₂(g)    ΔH=+131.5 kJ/mol",
+      "analysis": "本题考查热化学方程式书写。先写配平的化学方程式，再把题给出的“1 mol 某物质反应放出（或吸收）多少 kJ”直接写成 ΔH，注意符号：放热为负，吸热为正。同时要注明各物质的聚集状态，使热化学方程式满足“ΔH 与方程式一一对应”的原则。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe2",
+      "type": "应用题",
+      "stem": "已知：(1) 1 mol N₂(g) 中的化学键断裂时需要吸收 946 kJ 的能量；(2) 1 mol O₂(g) 中的化学键断裂时需要吸收 498 kJ 的能量；(3) 1 mol NO(g) 中的化学键形成时要释放 632 kJ 的能量。请写出 N₂(g) 与 O₂(g) 反应生成 NO(g) 的热化学方程式。",
+      "answer": "N₂(g)+O₂(g)=2NO(g)    ΔH=+180 kJ/mol（约）",
+      "analysis": "根据键能估算反应热。反应：N₂+O₂→2NO，需要断裂 1 mol N≡N（吸收 946 kJ）和 1 mol O=O（吸收 498 kJ），共吸收 1444 kJ。生成 2 mol NO 时形成 2 mol N–O 键，释放 2×632=1264 kJ。净吸热 Q=1444−1264=180 kJ，即 ΔH≈+180 kJ/mol，表明该反应为吸热反应。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe3",
+      "type": "应用题",
+      "stem": "黄铁矿（主要成分为FeS2）的燃烧是工业上制硫酸时得到SO2的途径之一，反应的化学方程式为：\n4FeS2+11O2(高温)⇌2Fe2O3+8SO2。\n在25℃和101 kPa时，1 mol FeS2(s)完全燃烧生成Fe2O3(s)和SO2(g)时放出853 kJ的热量。\n(1) 写出FeS2燃烧的热化学方程式。\n(2) 计算理论上1 kg黄铁矿（FeS2含量为90%）完全燃烧放出的热量。",
+      "answer": "(1) FeS2(s)+11/4 O2(g)=1/2 Fe2O3(s)+2 SO2(g)  ΔH = -853 kJ/mol。\n(2) n(FeS2)=900 g ÷ 120 g·mol^-1 = 7.5 mol；Q = 7.5×853 kJ = 6398 kJ。",
+      "analysis": "第(1)问先按给定方程式化简到以1 mol FeS2为基准，再标出ΔH；第(2)问先用质量和含量求出FeS2的物质的量，再利用热化学方程式中的“1 mol对应853 kJ”按比例求热量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe4",
+      "type": "应用题",
+      "stem": "焦炭与水蒸气反应、甲烷与水蒸气反应均是工业上制取氢气的重要方法。这两个反应的热化学方程式分别为：\n(1) C(s)+H2O(g)=CO(g)+H2(g)  ΔH1=+131.5 kJ/mol\n(2) CH4(g)+H2O(g)=CO(g)+3H2(g)  ΔH2=+205.9 kJ/mol\n试计算CH4(g)=C(s)+2H2(g)的ΔH。",
+      "answer": "将反应①逆转：CO(g)+H2(g)=C(s)+H2O(g)，ΔH3=-ΔH1=-131.5 kJ/mol；\n然后与反应②相加得到：CH4(g)=C(s)+2H2(g)，\nΔH = ΔH3+ΔH2 = -131.5 kJ/mol + 205.9 kJ/mol = +74.4 kJ/mol。",
+      "analysis": "关键是识别目标方程式与已知方程式的关系：先将(1)取逆，使CO、H2O抵消，再与(2)相加；根据盖斯定律，对应地对ΔH做同样的代数运算即可得到未知ΔH。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe5",
+      "type": "应用题",
+      "stem": "在密闭容器中发生反应：N2 + 3H2 ⇌ 2NH3，反应开始时 N2 的浓度为 0.8 mol/L，5 min 后 N2 的浓度变为 0.7 mol/L。求：\n(1) 以 N2 表示的该时间段内的平均反应速率（单位：mol·L^{-1}·min^{-1}）；\n(2) 该时间段内 H2 和 NH3 浓度的变化量；\n(3) 以 NH3 表示的该时间段内的平均反应速率，并验证 v(N2):v(H2):v(NH3) 与化学方程式计量数的关系。",
+      "answer": "(1) v(N2) = -Δc(N2)/Δt = 0.1 mol·L^{-1} / 5 min = 0.020 mol·L^{-1}·min^{-1}；\n(2) 由方程式 N2 + 3H2 ⇌ 2NH3，Δc(N2):Δc(H2):Δc(NH3) = -1:-3:+2，可得 Δc(H2) = -0.3 mol·L^{-1}，Δc(NH3) = +0.2 mol·L^{-1}；\n(3) v(NH3) = Δc(NH3)/Δt = 0.2 mol·L^{-1} / 5 min = 0.040 mol·L^{-1}·min^{-1}；\n验证：v(N2):v(H2):v(NH3) = 0.020:0.060:0.040 = 1:3:2，与其计量数 1:3:2 成正比，故 \\frac{v(N2)}{1} = \\frac{v(H2)}{3} = \\frac{v(NH3)}{2}。",
+      "analysis": "本题考查反应速率定义及其与计量数的关系。先由浓度变化求平均速率，再根据化学方程式的计量比求其他物质的浓度变化和对应速率，最后比较 v 与计量数的比例关系是否相同。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe6",
+      "type": "选择题",
+      "stem": "在其他条件相同的情况下，某反应在 25℃ 时的速率为 v。若温度升高到 35℃，根据教材中给出的经验规律，下列对速率变化的估计中合理的是（    ）\nA. 速率一定变为 2v\nB. 速率一定变为 3v\nC. 速率大约在 2v～4v 之间\nD. 速率不随温度变化\n并简要说明理由。",
+      "answer": "C。温度每升高 10℃，化学反应速率通常增大为原来的 2～4 倍，所以从 25℃ 升高到 35℃，速率一般会增大到原来的 2～4 倍之间，并非确定的单一数值。",
+      "analysis": "关键是抓住“每升高 10℃，速率通常增大为原来的 2～4 倍”这一经验规律，理解是一个范围而非精确倍数，因此排除 A、B、D。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe7",
+      "type": "应用题",
+      "stem": "在某温度下, 将含有 H2 和 I2 各 0.10 mol 的气态混合物充入容积为 10 L 的密闭容器中, 充分反应并达到平衡后, 测得 c(H2)=0.0080 mol·L⁻¹。\n(1) 计算该反应的平衡常数。\n(2) 在上述温度下, 若起始时向该容器中通入 H2 和 I2(g) 各 0.20 mol, 试求达到化学平衡时各物质的浓度。",
+      "answer": "（1）K = 0.25；（2）平衡时 c(H2)=c(I2)=0.016 mol·L⁻¹，c(HI)=0.0080 mol·L⁻¹。",
+      "analysis": "（1）由初始与平衡数据可得起始 c(H2)=c(I2)=0.010 mol·L⁻¹，平衡时 H2 浓度为 0.0080 mol·L⁻¹，故消耗 0.0020 mol·L⁻¹，I2 同样消耗 0.0020 mol·L⁻¹，生成 HI 0.0040 mol·L⁻¹。代入 K = c²(HI)/[c(H2)c(I2)] = (0.0040)²/(0.0080×0.0080)=0.25。\n（2）初始 c(H2)=c(I2)=0.020 mol·L⁻¹，设平衡时 H2 浓度减少 x，则平衡浓度分别为 c(H2)=0.020−x, c(I2)=0.020−x, c(HI)=2x。代入 K 表达式：(2x)²/(0.020−x)²=0.25，解得 x=0.0040。于是 c(H2)=c(I2)=0.016 mol·L⁻¹，c(HI)=0.0080 mol·L⁻¹。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe8",
+      "type": "应用题",
+      "stem": "在容积不变的密闭容器中, 将 2.0 mol CO 与 10 mol H2O 混合加热到 830℃, 达到下列平衡:\nCO(g)+H2O(g) ⇌ CO2(g)+H2(g)\n此时该反应的 K 为 1.0。求达到平衡时 CO 转化为 CO2 的转化率。",
+      "answer": "CO 转化为 CO2 的转化率为 83%。",
+      "analysis": "设平衡时 CO 转化为 CO2 的物质的量为 x mol，容器体积为 y L。初始浓度分别为 2.0/y, 10/y, 0, 0；变化浓度均为 x/y；平衡浓度为 (2.0−x)/y, (10−x)/y, x/y, x/y。由 K = [c(CO2)c(H2)]/[c(CO)c(H2O)] = (x/y)²/[(2.0−x)(10−x)/y²] = 1.0 得 x² = (2.0−x)(10−x) = 20−12x+x²，解得 x=5/3 mol。转化率 = (5/3 mol)/(2.0 mol)×100% ≈ 83%。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe9",
+      "type": "选择题",
+      "stem": "下列说法中正确的是（   ）\nA. 只有放热反应才能自发进行\nB. 只有熵增的化学反应才能自发进行\nC. 自发反应的方向只取决于焓变\nD. 自发反应的方向与焓变和熵变都有关，二者都不能单独作为判断依据",
+      "answer": "D",
+      "analysis": "教材指出“大多数放热反应是可以自发进行的……有些吸热反应也可以自发进行”，说明并非只有放热反应才能自发；同时“有些熵减的过程也能自发进行”，说明并非只有熵增才能自发。结论是“自发反应的方向与焓变和熵变有关，但焓变和熵变又都不能单独作为判断反应自发进行方向的依据”，故选D。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe10",
+      "type": "选择题",
+      "stem": "在等温、等压条件下，下列哪种情况下反应一定能自发进行？（   ）\nA. ΔH>0，ΔS<0\nB. ΔH<0，ΔS<0\nC. ΔH>0，ΔS>0\nD. ΔH<0，ΔS>0",
+      "answer": "D",
+      "analysis": "由ΔG=ΔH−TΔS可知，当ΔH<0且ΔS>0时，无论温度如何，TΔS为正数，−TΔS为负，ΔG一定为负，反应必然自发。教材“由上述关系式可推知：当ΔH<0，ΔS>0时，反应能自发进行；当ΔH>0，ΔS<0时，反应不能自发进行；当ΔH和ΔS同号时自发性与温度有关。”故选D。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe11",
+      "type": "选择题",
+      "stem": "合成氨工业中采用循环操作，主要是为了（ ）。\n\nA. 增大化学反应速率\n\nB. 提高平衡混合物中氨的含量\n\nC. 降低氨的沸点\n\nD. 提高氮气和氢气的利用率",
+      "answer": "D",
+      "analysis": "循环操作的核心目的是使未反应的N₂和H₂重新进入合成塔反应，提高原料气利用率和整体转化率。提高平衡混合物中氨含量依靠改变温度、压强和浓度，而不是循环本身。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe12",
+      "type": "应用题",
+      "stem": "在密闭容器中，通入 a mol N₂ 和 b mol H₂，在一定条件下反应达到平衡时，容器中剩余 c mol N₂。\n(1) 达到平衡时生成 NH₃ 的物质的量为多少？\n(2) 达到平衡时，H₂ 的转化率为多少？\n(3) 若把容器的容积减小到原来的 1/2，则正反应速率____，逆反应速率____，N₂ 的转化率____（填“增大”“减小”或“不变”）。",
+      "answer": "(1) 2(a - c) mol\n(2) H₂ 的转化率 = 3(a - c) / b\n(3) 正反应速率增大，逆反应速率增大，N₂ 的转化率增大",
+      "analysis": "由反应方程 N₂+3H₂⇌2NH₃ 可知，N₂的消耗量为 a−c，生成NH₃为2(a−c)。H₂的消耗量为3(a−c)，故转化率为3(a−c)/b。减小体积等于增大压强，平衡向气体物质的量较少的一侧（生成NH₃方向）移动，正逆反应速率均随压强增大而增大，且新平衡时N₂转化率增大。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe13",
+      "type": "简答题",
+      "stem": "在硫酸工业中，通过反应 2SO₂(g)+O₂(g)⇌2SO₃(g)（ΔH = −196.6 kJ/mol）使 SO₂ 氧化为 SO₃。下表列出了在不同温度和压强下，平衡时 SO₂ 的转化率。\n\n(1) 从理论上分析，为了使二氧化硫尽可能多地转化为三氧化硫，应选择的条件是怎样的温度和压强？\n(2) 在实际生产中，选定的温度为 400~500 ℃，原因是什么？\n(3) 在实际生产中，采用的压强为常压，原因是什么？\n(4) 在实际生产中，通入过量的空气，原因是什么？\n(5) 尾气中的 SO₂ 必须回收，原因是什么？",
+      "answer": "(1) 低温、高压。\n(2) 温度再低虽有利于提高平衡转化率，但反应速率太低，不经济，因此折中选择 400~500 ℃。\n(3) 表中可见由常压增大到更高压强，转化率提高幅度不大，而高压会显著增加设备和能耗成本，因此采用常压即可。\n(4) 过量空气提供过量 O₂，根据平衡移动原理可推动平衡向生成 SO₃ 方向移动，提高 SO₂ 转化率。\n(5) SO₂ 有毒且会造成严重环境污染，需要回收以减少排放，并提高资源利用率。",
+      "analysis": "本题综合考查平衡移动原理和工业条件优化。理论上放热反应宜低温高压，但需权衡速率与投资成本；通入过量反应物、回收尾气体现了物质转化率与环境保护的综合考虑。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe14",
+      "type": "应用题",
+      "stem": "氢能是一种极具发展潜力的清洁能源。下列反应是目前大规模制取氢气的方法之一：\nCO(g)+H₂O(g)⇌CO₂(g)+H₂(g)，ΔH = −41.2 kJ/mol。\n(1) 在生产中，欲使 CO 的转化率提高，同时提高 H₂ 的产率，可采取哪些措施？\n(2) 在容积不变的密闭容器中，将 2.0 mol CO 与 8.0 mol H₂O 混合加热到 830 ℃ 发生上述反应，达到平衡时 CO 的转化率是 80%。计算该反应在此条件下的平衡常数 K。 ",
+      "answer": "(1) 采用适当较低的温度（在保证足够反应速率前提下），增大反应物浓度（如适当增加 CO 或 H₂O），并及时移除生成物（如吸收 CO₂ 或放出 H₂），也可采用合适催化剂以加快达到平衡的速率。\n(2) 初始：n(CO)=2.0 mol，n(H₂O)=8.0 mol。CO 转化 80% 即消耗 1.6 mol，平衡时：n(CO)=0.4 mol，n(H₂O)=6.4 mol，n(CO₂)=1.6 mol，n(H₂)=1.6 mol。总物质的量 10.0 mol。各物质的平衡浓度（或分压）与物质的量成正比，在恒容下可用物质的量代替：\nK = [CO₂][H₂]/([CO][H₂O]) = (1.6×1.6)/(0.4×6.4) = 2.56/2.56 = 1.0。",
+      "analysis": "第(1)问考查放热平衡系统的条件选择和移除生成物推动平衡的思路；第(2)问通过物质的量变化和转化率求平衡组成，再按反应式求平衡常数。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe15",
+      "type": "简答题",
+      "stem": "结合本节中FeCl3与KSCN、K2Cr2O7、CuCl2 以及 NO2/N2O4 等实验的现象，尝试归纳影响化学平衡移动的主要因素，并说明当这些因素改变时平衡一般向哪个方向移动。",
+      "answer": "主要因素：\n(1) 浓度：增大某一反应物的浓度，平衡向消耗该反应物的一侧移动；减小某一反应物的浓度，平衡向生成该物质的一侧移动。对生成物同理，增大时平衡向消耗生成物的一侧移动，减小时向生成该物质的一侧移动。\n(2) 温度：升高温度，平衡向吸热方向移动；降低温度，平衡向放热方向移动。上述现象可用勒夏特列原理解释，即平衡总是向部分抵消外界改变的方向移动。",
+      "analysis": "本题要求学生对多个实验现象进行综合与抽象，从溶液颜色和气体颜色变化中提炼出浓度和温度两个关键因素，并能用“增大/减小”“吸热/放热”对应平衡移动方向，体现从现象到规律的归纳能力。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe16",
+      "type": "应用题",
+      "stem": "在某温度时，溶质的物质的量浓度为 0.20 mol·L⁻¹ 的氨水中，达到电离平衡时，已电离的 NH3·H2O 为 1.7×10⁻³ mol·L⁻¹。试计算该温度下 NH3·H2O 的电离常数 Kb。",
+      "answer": "Kb ≈ 1.4×10⁻⁵",
+      "analysis": "写出电离方程式：NH3·H2O ⇌ NH4⁺ + OH⁻。根据“起始–变化–平衡”列出各粒子浓度：起始 c(NH3·H2O)=0.20 mol·L⁻¹，c(NH4⁺)=0，c(OH⁻)=0；变化：均为 ±1.7×10⁻³；平衡：c(NH3·H2O)=0.20−1.7×10⁻³≈0.20 mol·L⁻¹，c(NH4⁺)=1.7×10⁻³ mol·L⁻¹，c(OH⁻)=1.7×10⁻³ mol·L⁻¹。代入 Kb = c(NH4⁺)·c(OH⁻)/c(NH3·H2O) 得 Kb ≈ (1.7×10⁻³)² / 0.20 ≈ 1.4×10⁻⁵。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe17",
+      "type": "应用题",
+      "stem": "用 0.1032 mol/L HCl 溶液滴定未知浓度的 NaOH 溶液，重复三次的实验数据如下表所示。计算待测 NaOH 溶液中 NaOH 的物质的量浓度。\n\n实验次数\tHCl溶液的体积/mL\t待测NaOH溶液的体积/mL\n1\t27.84\t25.00\n2\t27.83\t25.00\n3\t27.85\t25.00",
+      "answer": "c(NaOH) = 0.1149 mol/L",
+      "analysis": "滴定反应为 HCl + NaOH = NaCl + H2O，计量比为 1:1，因此有 c(HCl)·V(HCl) = c(NaOH)·V(NaOH)。代入第一次实验数据：c(NaOH) = 0.1032 mol/L × 0.02784 L ÷ 0.02500 L = 0.1149 mol/L。同理可算出 c2 = 0.1149 mol/L, c3 = 0.1150 mol/L。取三次的平均值 c(NaOH) = (0.1149 + 0.1149 + 0.1150) / 3 = 0.1149 mol/L。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe18",
+      "type": "应用题",
+      "stem": "将下列各盐溶液在水中配成0.1 mol/L溶液：NaCl、Na₂CO₃、NH₄Cl、KNO₃、CH₃COONa。(1) 分别判断它们的酸碱性（酸性、碱性或中性）；(2) 指出每种盐属于哪一类：强酸强碱盐、强酸弱碱盐或强碱弱酸盐；(3) 说明Na₂CO₃溶液可被当作“碱”使用的原因。",
+      "answer": "(1) NaCl和KNO₃溶液呈中性；NH₄Cl溶液呈酸性；Na₂CO₃和CH₃COONa溶液呈碱性。(2) NaCl、KNO₃为强酸强碱盐；NH₄Cl为强酸弱碱盐；Na₂CO₃、CH₃COONa为强碱弱酸盐。(3) Na₂CO₃是强碱弱酸盐，CO₃²⁻在水中发生水解生成OH⁻，使溶液呈碱性，因此Na₂CO₃溶液可以作为“碱”来中和酸、去除油污。",
+      "analysis": "先判断构成盐的酸和碱的强弱，将盐归类：NaCl、KNO₃由强酸强碱生成；Na₂CO₃、CH₃COONa由强碱弱酸生成；NH₄Cl由强酸弱碱生成。根据规律：强酸强碱盐溶液中性，强酸弱碱盐溶液酸性，强碱弱酸盐溶液碱性。Na₂CO₃溶液碱性的本质是CO₃²⁻水解产生OH⁻。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe19",
+      "type": "应用题",
+      "stem": "已知FeCl₃是由强酸和弱碱生成的盐，其水解可表示为：Fe³⁺ + 3H₂O ⇌ Fe(OH)₃↓ + 3H⁺。(1) 判断0.01 mol/L FeCl₃溶液的酸碱性，并说明理由；(2) 若将该溶液加热，水解平衡怎样移动？水解程度如何变化？(3) 在配制FeCl₃溶液时常先将FeCl₃晶体溶于较浓盐酸中，再加水稀释，说明这样做的目的。",
+      "answer": "(1) FeCl₃是强酸弱碱盐，Fe³⁺在水中水解生成Fe(OH)₃和H⁺，使溶液中c(H⁺)＞c(OH⁻)，因此溶液呈酸性。(2) FeCl₃的水解是吸热反应，加热使平衡向正反应方向移动，水解程度增大，生成更多Fe(OH)₃和H⁺。(3) 较浓盐酸提供较高的H⁺浓度，使水解平衡向逆反应方向移动，从而抑制FeCl₃水解，使Fe³⁺稳定存在于溶液中，防止产生大量Fe(OH)₃胶体或沉淀。",
+      "analysis": "根据FeCl₃为强酸弱碱盐判断溶液酸性；再利用“盐类水解为吸热反应”的结论，用平衡移动原理分析温度上升时平衡移动方向；最后用“增大H⁺浓度抑制水解”的思路解释配制操作的目的。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe20",
+      "type": "填空题",
+      "stem": "在一定温度下，Mg(OH)2 在水中的沉淀溶解平衡可用离子方程式表示为________，该平衡的 Ksp 可表示为________。",
+      "answer": "Mg(OH)2(s) ⇌ Mg²⁺(aq) + 2OH⁻(aq)；Ksp = c(Mg²⁺)·c(OH⁻)²",
+      "analysis": "根据 Mg(OH)2 的化学式写出溶解平衡；固体不写入平衡常数表达式，按化学计量系数写浓度幂次。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe21",
+      "type": "选择题",
+      "stem": "难溶电解质在水中达到沉淀溶解平衡时，下列说法中错误的是（ ）。\nA. 沉淀的速率和溶解的速率相等 \nB. 难溶电解质在水中形成饱和溶液 \nC. 再加入难溶电解质, 溶液中各离子的浓度不变 \nD. 难溶电解质溶解形成的阴、阳离子的浓度相等",
+      "answer": "D",
+      "analysis": "平衡时溶解和沉淀速率相等，溶液为饱和，再加固体不改变离子浓度，前三项正确；多价离子和化学计量数不同时，阴、阳离子浓度一般不相等，因此 D 错误。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe22",
+      "type": "选择题",
+      "stem": "现将 0.1 mol/L AgNO3 溶液和 0.1 mol/L NaCl 溶液等体积混合，再按教材步骤操作得到悬浊液 a、滤液 b 和沉淀 c。下列关于实验的分析错误的是（ ）。\nA. 悬浊液 a 中存在沉淀溶解平衡: AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq)   \nB. 滤液 b 中不含 Ag⁺   \nC. 实验（3）表明 AgCl 转化为 AgI   \nD. 实验可以证明 AgI 的 Ksp 比 AgCl 的小",
+      "answer": "B",
+      "analysis": "AgCl 为难溶电解质，悬浊液 a 中固体与溶液必有沉淀溶解平衡，A 对；滤液 b 为 AgCl 饱和溶液，仍含少量 Ag⁺，B 错；加入 KI 后沉淀颜色由白转黄，说明 AgCl→AgI，C 对；能发生此转化且 AgI 更稳定，反映 Ksp(AgI)<Ksp(AgCl)，D 对。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe23",
+      "type": "应用题",
+      "stem": "在“用已知浓度的强酸滴定未知浓度的强碱”的实验中，用酸式滴定管装入0.1000 mol/L HCl溶液，用碱式滴定管量取25.00 mL待测NaOH溶液于锥形瓶中，并加入酚酞指示剂。三次滴定记录到的HCl体积分别为：19.96 mL、20.04 mL、20.00 mL。试计算待测NaOH溶液中NaOH的物质的量浓度（假定滴定反应完全，HCl与NaOH的反应按化学方程式HCl + NaOH → NaCl + H₂O进行）。",
+      "answer": "三次HCl平均体积V(HCl) = (19.96 + 20.04 + 20.00) / 3 = 20.00 mL = 0.02000 L；n(HCl) = c(HCl) × V(HCl) = 0.1000 mol/L × 0.02000 L = 2.000×10⁻³ mol。由HCl + NaOH → NaCl + H₂O知n(NaOH) = n(HCl) = 2.000×10⁻³ mol。待测NaOH溶液体积V(NaOH) = 25.00 mL = 0.02500 L，因此c(NaOH) = n/V = 2.000×10⁻³ mol ÷ 0.02500 L = 0.0800 mol/L。",
+      "analysis": "本题考查用中和滴定计算未知溶液浓度的基本方法。关键点：第一步由三次实验求HCl的平均体积；第二步用cV关系求n(HCl)；第三步利用HCl与NaOH的1:1计量关系求n(NaOH)；第四步用n/V求NaOH的物质的量浓度。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe24",
+      "type": "简答题",
+      "stem": "在进行强酸强碱中和滴定实验时，滴定用的锥形瓶是否需要用待测的酸或碱溶液润洗？装入待测溶液前锥形瓶是否必须保持干燥？请简要说明理由。",
+      "answer": "滴定用的锥形瓶只需洁净，不必用待测酸或碱溶液润洗，也不必须完全干燥。因为锥形瓶中少量蒸馏水不会改变被滴定物质（酸或碱）的物质的量，只会略微改变总体积，不影响滴定所依据的物质的量关系；而滴定管则必须用待装溶液润洗，以避免残留水或其他溶液稀释标准溶液，从而改变其物质的量浓度。",
+      "analysis": "本题考查学生对“仪器润洗”的理解和对定量实验本质的掌握。要点：滴定计算依据的是溶质的物质的量，而不是体系总体积；锥形瓶中的水不改变溶质的n，但滴定管中残留的水会改变滴定剂的c。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe25",
+      "type": "简答题",
+      "stem": "根据“向一支试管中加入少量 FeCl₃ 晶体，然后加入 5 mL 蒸馏水，振荡，观察到溶液浑浊；再向试管中加入 2 mL 浓盐酸，振荡，溶液变澄清”的实验结果，回答：在实验室中应如何正确配制较为澄清稳定的 FeCl₃ 溶液？并简要说明理由。",
+      "answer": "配制时应先在少量浓盐酸中溶解 FeCl₃ 晶体，待完全溶解后再用蒸馏水稀释至所需体积。理由：FeCl₃ 溶于水会水解生成 Fe(OH)₃ 使溶液浑浊，而在浓盐酸中大量 H⁺ 可抑制 Fe³⁺ 的水解，使 Fe(OH)₃ 溶解，得到澄清溶液。",
+      "analysis": "题目考查对盐类水解原理的理解和运用。关键是认识到 Fe³⁺ 在水中易水解生成 Fe(OH)₃，导致溶液浑浊；加入浓盐酸提供大量 H⁺，使水解平衡逆向移动，Fe(OH)₃ 溶解，从而溶液变澄清。因此，正确的配制顺序必须是“先酸后水”，以抑制水解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe26",
+      "type": "简答题",
+      "stem": "碱性锌锰电池中，Zn一端作负极，MnO₂一端作正极，电解质是KOH。试回答：\n(1) 放电时负极发生的电极反应是什么？\n(2) 放电时电子在外电路中的流向如何？\n(3) 说明该电池属于一次电池还是二次电池，并简要说明理由。",
+      "answer": "(1) 负极电极反应：Zn + 2OH⁻ - 2e⁻ = Zn(OH)₂。\n(2) 放电时电子由Zn电极经外电路流向MnO₂电极，即从负极流向正极。\n(3) 该电池属于一次电池。因为它放电后不可再充电，活性物质被消耗后不能通过充电恢复，属于一次电池中电解质制成胶状的干电池类型。",
+      "analysis": "根据原文可知碱性锌锰电池是一次电池，电极反应式在书中给出。利用原电池原理判断电子从发生氧化反应的负极流向发生还原反应的正极。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe27",
+      "type": "简答题",
+      "stem": "教材中指出，判断一种电池的优劣或是否适合某种用途，主要看几个指标。请写出至少三项，并说明其中两项各自的含义。",
+      "answer": "主要指标包括：电池单位质量或单位体积所能输出电能的多少（比能量）、输出功率的大小（比功率）、电池可储存时间的长短，以及质量和体积是否小等。\n含义示例：\n(1) 比能量：单位质量或单位体积的电池在放电过程中所能输出的电能，数值越大表示能量密度越高，电池越“耐用”。\n(2) 比功率：单位质量或单位体积的电池可输出的功率，数值越大能在短时间内提供的电流越大，更适合需要大功率的场合。",
+      "analysis": "答案直接来自教材关于电池优劣判断的描述，并结合概念解释比能量与比功率。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe28",
+      "type": "填空题",
+      "stem": "1. 写出下列电极反应和总反应。\n(1) 电解熔融氯化钙: 阳极反应为 ; 阴极反应为 ; 总反应为\n(2) 电解稀的氢氧化钠溶液: 阳极反应为 ; 阴极反应为 ; 总反应为",
+      "answer": "(1) 熔融CaCl₂：阳极：2Cl⁻ − 2e⁻ = Cl₂↑；阴极：Ca²⁺ + 2e⁻ = Ca；总反应：CaCl₂(熔融) → Ca + Cl₂↑。\n(2) 稀NaOH溶液：阳极：4OH⁻ − 4e⁻ = O₂↑ + 2H₂O；阴极：2H₂O + 2e⁻ = H₂↑ + 2OH⁻；总反应：2H₂O → 2H₂↑ + O₂↑。",
+      "analysis": "本题要求根据电解质中存在的离子及放电顺序，分别写出阳极失电子的氧化反应和阴极得电子的还原反应，并进行电子数配平后相加得到总反应，考查学生书写电解电极反应与总反应的能力。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe29",
+      "type": "选择题",
+      "stem": "4. 下列有关电解的叙述中错误的是（ ）。\nA. 与电源正极相连的是阳极\nB. 与电源负极相连的是阴极\nC. 在阴极上发生氧化反应\nD. 阴离子向阳极方向迁移",
+      "answer": "C",
+      "analysis": "电解池中与电源正极相连的是阳极，与负极相连的是阴极；阴离子向阳极迁移，阳离子向阴极迁移；阳极上发生氧化反应，阴极上发生还原反应，因此说“在阴极上发生氧化反应”是错误的。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe30",
+      "type": "简答题",
+      "stem": "2. 从原理上分析，电解精炼铜与电镀铜有何相似之处？写出电解精炼铜的电极反应。",
+      "answer": "相似之处：两者都利用电解原理，通过电流使含Cu²⁺的电解质溶液中的铜在阴极上析出成致密金属层，都属于在阴极上沉积金属的过程。电解精炼铜的电极反应为：阳极：Cu − 2e⁻ = Cu²⁺；阴极：Cu²⁺ + 2e⁻ = Cu。",
+      "analysis": "本题考查学生运用电解原理和电化学系统观比较电镀与电解精炼的能力，并要求写出典型的电解精炼铜电极反应，突出阳极溶解、阴极析出的特征。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe31",
+      "type": "简答题",
+      "stem": "什么是金属的化学腐蚀？什么是金属的电化学腐蚀？举例说明金属腐蚀的危害。",
+      "answer": "金属的化学腐蚀是指金属与其表面接触的气体或液体中的某些物质（如O₂、Cl₂、SO₂等）直接发生化学反应而引起的腐蚀，例如钢材在高温下被氧化、输油钢管被原油中的含硫化合物腐蚀等。金属的电化学腐蚀是指当不纯金属与电解质溶液接触时形成原电池，比较活泼的金属在电化学反应中作为阳极被氧化溶解的腐蚀，例如钢铁在潮湿空气中的生锈、钢铁在酸性溶液中的析氢腐蚀。金属腐蚀会使机器设备、仪器、仪表的精度和灵敏度降低直至报废，并可能导致桥梁、建筑物金属构架强度降低而坍塌、地下金属管道泄漏、轮船船体损坏等危害。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe32",
+      "type": "简答题",
+      "stem": "为了延长锅炉的使用寿命，常在其内壁焊上锌片。请简要说明这种做法所依据的原理。",
+      "answer": "锌比铁更活泼，将锌片焊在锅炉内壁上时，锌和铁以及锅炉中的电解质溶液构成原电池，锌作为阳极优先被氧化溶解，铁作为阴极基本不被腐蚀，从而起到保护锅炉钢铁内壁的作用。这就是牺牲阳极法的阴极保护原理。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe33",
+      "type": "简答题",
+      "stem": "说明外加电流法保护海港钢制管桩的基本原理，并指出高硅铸铁在该系统中的作用。",
+      "answer": "外加电流法是将海港钢制管桩与惰性阳极（如高硅铸铁）一同置于海水中，接入直流电源，使钢制管桩接电源负极，高硅铸铁接正极。通电后，外加电流强制电子流向钢制管桩，使钢桩在整个电化学体系中成为阴极，其表面金属不再失电子溶解，腐蚀电流降至零或接近零，从而得到保护。高硅铸铁在该系统中作为惰性辅助阳极，其主要作用是导电并完成溶液中的阳极过程，本身基本不被消耗。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe34",
+      "type": "简答题",
+      "stem": "在“简单的电镀实验”中，铁制镀件接直流电源负极、铜片接直流电源正极，浸入以CuSO4溶液为主配制的电镀液并通电一段时间后，分别写出阴极和阳极上发生的电极反应，并说明电镀层形成在何处。",
+      "answer": "阴极（铁制镀件）反应：Cu^{2+} + 2e^- → Cu（沉积在铁制镀件表面，形成镀铜层）。\n阳极（铜片）反应：Cu → Cu^{2+} + 2e^-（铜片溶解）。\n电镀层形成在阴极——铁制镀件的表面。",
+      "analysis": "根据“接电源负极为阴极、接正极为阳极”的判定，结合Cu2+在阴极得电子还原、金属铜在阳极失电子溶解的电解机理，即可写出两极反应式并判断镀层位置。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe35",
+      "type": "简答题",
+      "stem": "在“简单的电镀实验”中，如果误将铜片与直流电源的负极相连、铁制镀件与直流电源的正极相连，并通电，则铁制镀件表面会发生怎样的变化？试判断此时阴极和阳极分别是哪一个电极，并简要说明理由。",
+      "answer": "此时铜片接负极，为阴极；铁制镀件接正极，为阳极。通电后，Cu^{2+}在阴极（铜片）上得到电子析出，铜片表面继续沉积铜，而铁制镀件作为阳极会发生氧化溶解，表面不会形成镀铜层，反而可能出现被腐蚀的现象。理由：接直流电源负极的一端为阴极，发生还原反应；接正极的一端为阳极，发生氧化反应。",
+      "analysis": "根据电解中阴阳极的判定方法，先确定电极性质，再运用电镀原理分析Cu^{2+}还原的位置以及铁在阳极的氧化趋势，进而判断现象。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx1_rjb_exe36",
+      "type": "简答题",
+      "stem": "列表比较氢氧燃料电池的工作原理和电解水的原理。",
+      "answer": "（示意答案）\n1. 能量转化方向：\n- 电解水：把电能转化为化学能（水被分解为氢气和氧气）。\n- 氢氧燃料电池：把氢气和氧气反应的化学能转化为电能。\n2. 是否需要外加电源：\n- 电解水：需要外接直流电源，闭合 K1 后才能进行。\n- 氢氧燃料电池：不需外加电源，闭合 K2 即可输出电流。\n3. 反应关系：\n- 电解水是水分解的反应过程。\n- 氢氧燃料电池中发生的是氢气和氧气生成水的反应，与电解水互为逆过程。\n4. 装置共同点与不同点：\n- 共同点：都含有 U 形管、电解质溶液、石墨电极和外电路。\n- 不同点：电解水时外电源是“输入端”，燃料电池时外电路负载是“输出端”。",
+      "analysis": "本题通过对比的形式引导学生从能量转化方向、是否需要外电源、反应关系和装置角色等方面理解电解水与氢氧燃料电池互为逆过程的关系，突出燃料电池工作原理的本质。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t1",
+      "type": "选择题",
+      "stem": "在相同条件下, 质量相等的两份 $\\mathrm{H}_{2}$ 与足量的 $\\mathrm{O}_{2}$ 充分反应, 分别生成液态水 (反应①) 和水蒸气 (反应②)。下列说法正确的是 ( )。\n\nA. 反应①放出的热量多  \nB. 反应②放出的热量多  \nC. 反应①、②放出的热量一样多  \nD. 无法比较反应①、②放出的热量",
+      "answer": "A",
+      "analysis": "两份H2质量相等，物质的量相同，且O2足量，生成水的物质的量相同。反应①生成液态水，反应②生成水蒸气。生成液态水时，除生成化学键能变化外，还包含水由气态变为液态（冷凝）的放热，液态水的生成焓（ΔHf）更负，因此放热更多。故反应①放出的热量多，选A。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t2",
+      "type": "选择题",
+      "stem": "已知: $\\mathrm{N}_{2}(\\mathrm{~g}) + 3 \\mathrm{H}_{2}(\\mathrm{~g}) = 2 \\mathrm{NH}_{3}(\\mathrm{~g}) \\Delta H = -92.4 \\mathrm{~kJ} / \\mathrm{mol}$ 。若断裂 $1 \\mathrm{~mol} \\mathrm{H}-\\mathrm{H} 、 1 \\mathrm{~mol} \\mathrm{N}-\\mathrm{H}$ 需要吸收的能量分别为 $436 \\mathrm{~kJ} 、 391 \\mathrm{~kJ}$ , 则断裂 $1 \\mathrm{~mol} \\mathrm{~N} \\equiv \\mathrm{N}$ 需要吸收的能量为 ( )。\n\nA. $431\\mathrm{kJ}$\n\nB. $945.6\\mathrm{kJ}$\n\nC. $649 \\mathrm{~kJ}$\n\nD. $869 \\mathrm{~kJ}$",
+      "answer": "B",
+      "analysis": "由反应焓变近似等于断键吸能之和减去成键放能之和：\\(\\Delta H=\\sum E(断键)-\\sum E(成键)\\)。\n反应：\\(\\mathrm{N_2}+3\\mathrm{H_2}\\to 2\\mathrm{NH_3}\\)。断键：1 mol \\(\\mathrm{N\\equiv N}\\) 和 3 mol \\(\\mathrm{H-H}\\)，吸能为 \\(E(N\\equiv N)+3\\times 436\\)。成键：生成 2 mol \\(\\mathrm{NH_3}\\) 共 6 mol \\(\\mathrm{N-H}\\)，放能为 \\(6\\times 391\\)。\n代入：\\(-92.4=[E(N\\equiv N)+3\\times 436]-6\\times 391\\)。\n计算：\\(3\\times 436=1308\\)，\\(6\\times 391=2346\\)，所以 \\(-92.4=E(N\\equiv N)+1308-2346=E(N\\equiv N)-1038\\)。\n得 \\(E(N\\equiv N)=1038-92.4=945.6\\,\\mathrm{kJ/mol}\\)，选 B。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t3",
+      "type": "选择题",
+      "stem": "在 $25^{\\circ} \\mathrm{C}$ 和 $101 \\mathrm{kPa}$ 下, $1 \\mathrm{~g} \\mathrm{H}_{2}$ 燃烧生成液态水放出 $142.9 \\mathrm{~kJ}$ 的热量, 则下列热化学方程式中书写正确的是 ( )。\n\nA. $2\\mathrm{H}_{2}(\\mathrm{g}) + \\mathrm{O}_{2}(\\mathrm{g}) = 2\\mathrm{H}_{2}\\mathrm{O}(\\mathrm{l})$\n\n$\\Delta H = -142.9\\mathrm{kJ / mol}$\n\nB. $\\mathrm{H}_{2}(\\mathrm{~g}) + \\frac{1}{2} \\mathrm{O}_{2}(\\mathrm{~g}) = \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{l})$\n\n$\\Delta H = -285.8\\mathrm{kJ / mol}$\n\nC. $2 \\mathrm{H}_{2}(\\mathrm{~g}) + \\mathrm{O}_{2}(\\mathrm{~g}) = 2 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g})$\n\n$\\Delta H = -571.6\\mathrm{kJ / mol}$\n\nD. $\\mathrm{H}_{2}(\\mathrm{~g}) + \\frac{1}{2} \\mathrm{O}_{2}(\\mathrm{~g}) = \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g})$\n\n$\\Delta H = +285.8\\mathrm{kJ / mol}$",
+      "answer": "B",
+      "analysis": "已知1 g H2燃烧生成液态水放热142.9 kJ。H2的摩尔质量为2 g/mol，因此1 g H2为0.5 mol，对应放热142.9 kJ；则1 mol H2放热为142.9÷0.5=285.8 kJ，放热反应ΔH为负。热化学方程式应为H2(g)+1/2 O2(g)=H2O(l)，ΔH=-285.8 kJ/mol，对应选项B。A中ΔH数值对应0.5 mol H2却写成每mol；C、D产物状态或符号不符（题给生成液态水且放热）。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t4",
+      "type": "填空题",
+      "stem": "已知: $\\mathrm{H}_{2}(\\mathrm{~g}) + \\mathrm{Cl}_{2}(\\mathrm{~g}) = 2 \\mathrm{HCl}(\\mathrm{~g}) \\Delta H = -184.6 \\mathrm{~kJ} / \\mathrm{mol}$ 。则 $\\mathrm{HCl}(\\mathrm{~g}) = \\frac{1}{2} \\mathrm{H}_{2}(\\mathrm{~g}) + \\frac{1}{2} \\mathrm{Cl}_{2}(\\mathrm{~g})$ 的 $\\Delta H =$",
+      "answer": "-92.3 kJ/mol",
+      "analysis": "已知反应H2(g)+Cl2(g)→2HCl(g)的ΔH=-184.6 kJ/mol。将化学方程式两边系数都除以2，得到1/2H2(g)+1/2Cl2(g)→HCl(g)。根据盖斯定律，反应式整体乘以1/2时，ΔH也乘以1/2，因此ΔH=(-184.6)×1/2=-92.3 kJ/mol。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t5",
+      "type": "填空题",
+      "stem": "在标准状况下, $1.68 \\mathrm{~L}$ 仅由 $\\mathrm{C} 、 \\mathrm{H}$ 两种元素组成的某气体质量为 $1.2 \\mathrm{~g}$ , 在 $25 \\mathrm{C}$ 和 $101 \\mathrm{kPa}$ 下完全燃烧生成 $\\mathrm{CO}_{2}(\\mathrm{~g})$ 和 $\\mathrm{H}_{2} \\mathrm{O}(\\mathrm{l})$ 时, 放出 $66.77 \\mathrm{~kJ}$ 的热量。\n\n（1）该气体的分子式为  \n(2) 表示该气体燃烧热的热化学方程式为",
+      "answer": "(1) C3H4\n(2) C3H4(g)+4O2(g)→3CO2(g)+2H2O(l)  ΔH=-795 kJ·mol⁻¹",
+      "analysis": "标准状况下气体物质的量n=1.68/22.4=0.075 mol，摩尔质量M=1.2/0.075=16 g·mol⁻¹。只含C、H：设为CxHy，则12x+y=16，且x、y为整数，得x=1,y=4，即CH4，但题给燃烧放热：0.075 mol放出66.77 kJ，则1 mol放热=66.77/0.075≈890 kJ·mol⁻¹，与CH4燃烧热(约890 kJ·mol⁻¹)吻合；然而题目条件为在25℃、101 kPa燃烧生成CO2(g)和H2O(l)，对应CH4的ΔH≈-890 kJ·mol⁻¹。若按计算得到66.77 kJ对应0.084 mol则不符，因此以n=1.68/22.4=0.075为准，确定为CH4，并写热化学方程式：CH4(g)+2O2(g)→CO2(g)+2H2O(l)，ΔH=-890 kJ·mol⁻¹。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t6",
+      "type": "填空题",
+      "stem": "已知：\n\n① $\\mathrm{H}_2\\mathrm{O}(\\mathrm{g}) = \\mathrm{H}_2(\\mathrm{g}) + \\frac{1}{2}\\mathrm{O}_2(\\mathrm{g})$\n\n$\\Delta H = +241.8\\mathrm{kJ / mol}$\n\n$②$ $\\mathrm{C(s) + \\frac{1}{2}O_2(g) = CO(g)}$\n\n$\\Delta H = -110.5\\mathrm{kJ / mol}$\n\n③ $\\mathrm{C(s) + O_2(g) = CO_2(g)}$\n\n$\\Delta H = -393.5\\mathrm{kJ / mol}$\n\n请填写下列空白。\n\n（1）上述反应中属于吸热反应的是 （填序号）。  \n（2）表示C的燃烧热的热化学方程式为 （填序号）。  \n(3) $10 \\mathrm{~g} \\mathrm{H}_{2}$ 完全燃烧生成水蒸气, 放出的热量为  \n（4）写出CO燃烧的热化学方程式：",
+      "answer": "（1）①\n（2）③\n（3）1209 kJ\n（4）CO(g)+1/2O2(g)=CO2(g)  ΔH=-283.0 kJ/mol",
+      "analysis": "（1）ΔH>0为吸热反应，只有①的ΔH=+241.8 kJ/mol。\n（2）燃烧热指1 mol物质完全燃烧生成最稳定氧化物的反应热；C完全燃烧生成CO2，对应③。\n（3）H2燃烧：H2(g)+1/2O2(g)=H2O(g)，为①的逆反应，ΔH=-241.8 kJ/mol。n(H2)=10/2=5 mol，放热Q=5×241.8=1209 kJ。\n（4）由②与③用盖斯定律：②：C+1/2O2→CO(ΔH=-110.5)，③：C+O2→CO2(ΔH=-393.5)。③-②得：CO+1/2O2→CO2，ΔH=-393.5-(-110.5)=-283.0 kJ/mol。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t7",
+      "type": "简答题",
+      "stem": "写出下列反应的热化学方程式。\n\n（1） $1\\mathrm{mol}\\mathrm{C}_2\\mathrm{H}_2(\\mathrm{g})$ 在 $\\mathrm{O}_2$ 中完全燃烧生成 $\\mathrm{CO}_2$ 和液态水，放出 $1299.6\\mathrm{kJ}$ 的热量。  \n(2) $23 \\mathrm{~g} \\mathrm{C}_{2} \\mathrm{H}_{5} \\mathrm{OH}(\\mathrm{l})$ 在 $\\mathrm{O}_{2}$ 中完全燃烧生成 $\\mathrm{CO}_{2}$ 和液态水, 放出 $683.4 \\mathrm{~kJ}$ 的热量。",
+      "answer": "(1) C2H2(g) + 5/2 O2(g) → 2 CO2(g) + H2O(l)  ΔH = −1299.6 kJ\n(2) C2H5OH(l) + 3 O2(g) → 2 CO2(g) + 3 H2O(l)  ΔH = −1366.8 kJ",
+      "analysis": "热化学方程式需配平化学计量数，并在方程式后标注ΔH（放热取负）。\n(1) 乙炔完全燃烧：C2H2→2CO2且H→H2O，配平得C2H2(g)+5/2O2(g)→2CO2(g)+H2O(l)。题给1 mol放热1299.6 kJ，故ΔH=−1299.6 kJ。\n(2) 23 g C2H5OH的物质的量为23/46=0.5 mol。题给0.5 mol放热683.4 kJ，则1 mol放热为2×683.4=1366.8 kJ。乙醇完全燃烧配平：C2H5OH(l)+3O2(g)→2CO2(g)+3H2O(l)，因此ΔH=−1366.8 kJ。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t8",
+      "type": "填空题",
+      "stem": "已知：\n\n① $\\mathrm{C(s) + O_2(g) = CO_2(g)}$ $\\Delta H_{1} = -393.5\\mathrm{kJ / mol}$   \n$2\\mathrm{Mg(s) + O_2(g) = 2MgO(s)}$ $\\Delta H_{2} = -1203.4\\mathrm{kJ / mol}$\n\n写出 $\\mathrm{Mg}$ 与 $\\mathrm{CO}_{2}$ 反应的热化学方程式。",
+      "answer": "2Mg(s)+CO2(g)=2MgO(s)+C(s)  ΔH=-809.9 kJ/mol",
+      "analysis": "由赫斯定律：将②除以2得 Mg(s)+1/2O2(g)=MgO(s) ΔH=-601.7 kJ/mol，乘2得 2Mg(s)+O2(g)=2MgO(s) ΔH=-1203.4 kJ/mol。将①逆写得 CO2(g)=C(s)+O2(g) ΔH=+393.5 kJ/mol。两式相加：2Mg+O2+CO2→2MgO+C+O2，约去O2得 2Mg(s)+CO2(g)=2MgO(s)+C(s)。ΔH=-1203.4+393.5=-809.9 kJ/mol。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t9",
+      "type": "填空题",
+      "stem": "2008年北京奥运会“祥云”火炬的燃料是丙烷（ $\\mathrm{C}_{3} \\mathrm{H}_{8}$ ），1996年亚特兰大奥运会火炬的燃料是丙烯（ $\\mathrm{C}_{3} \\mathrm{H}_{6}$ ）。丙烷脱氢可得到丙烯。\n\n已知：\n\n① $\\mathrm{C}_{3} \\mathrm{H}_{8}(\\mathrm{~g})=\\mathrm{CH}_{4}(\\mathrm{~g})+\\mathrm{C}_{2} \\mathrm{H}_{2}(\\mathrm{~g})+\\mathrm{H}_{2}(\\mathrm{~g}) \\quad \\Delta H_{1} = +255.7 \\mathrm{~kJ} / \\mathrm{mol}$   \n② $\\mathrm{C}_{3} \\mathrm{H}_{6}(\\mathrm{~g})=\\mathrm{CH}_{4}(\\mathrm{~g})+\\mathrm{C}_{2} \\mathrm{H}_{2}(\\mathrm{~g}) \\quad \\Delta H_{2} = +131.5 \\mathrm{~kJ} / \\mathrm{mol}$\n\n计算 $\\mathrm{C}_3\\mathrm{H}_8(\\mathrm{g}) = \\mathrm{C}_3\\mathrm{H}_6(\\mathrm{g}) + \\mathrm{H}_2(\\mathrm{g})$ 的 $\\Delta H$ 。",
+      "answer": "ΔH = +124.2 kJ/mol",
+      "analysis": "由亥斯定律：① C3H8→CH4+C2H2+H2，ΔH1=+255.7；② C3H6→CH4+C2H2，ΔH2=+131.5。将②逆向得 CH4+C2H2→C3H6，ΔH=−131.5。①与②逆向相加：C3H8→C3H6+H2，ΔH=255.7−131.5=+124.2 kJ/mol。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch1_s_t10",
+      "type": "应用题",
+      "stem": "已知：\n\n① $\\mathrm{H}_{2}(\\mathrm{~g}) + \\frac{1}{2} \\mathrm{O}_{2}(\\mathrm{~g}) = \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{l})$ $\\Delta H_{1} = -285.8 \\mathrm{~kJ} / \\mathrm{mol}$   \n② $\\mathrm{C}_{3} \\mathrm{H}_{8}(\\mathrm{~g}) + 5 \\mathrm{O}_{2}(\\mathrm{~g}) = 3 \\mathrm{CO}_{2}(\\mathrm{~g}) + 4 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{l}) \\Delta H_{2} = -2219.9 \\mathrm{~kJ} / \\mathrm{mol}$\n\n(1) 在 $25^{\\circ} \\mathrm{C}$ 和 $101 \\mathrm{kPa}$ 下, $\\mathrm{H}_{2}$ 和 $\\mathrm{C}_{3} \\mathrm{H}_{8}$ 的混合气体 $5 \\mathrm{~mol}$ 完全燃烧生成 $\\mathrm{CO}_{2}$ 和液态水, 放出 $6264.2 \\mathrm{~kJ}$ 的热量。计算该混合气体中 $\\mathrm{H}_{2}$ 和 $\\mathrm{C}_{3} \\mathrm{H}_{8}$ 的体积比。  \n(2) 已知: $\\mathrm{H}_{2} \\mathrm{O}(\\mathrm{l})=\\mathrm{H}_{2} \\mathrm{O}(\\mathrm{g}) \\Delta H_{3} = +44.0 \\mathrm{~kJ} / \\mathrm{mol}$ 。写出 $\\mathrm{C}_{3} \\mathrm{H}_{8}$ 燃烧生成 $\\mathrm{CO}_{2}$ 和水蒸气的热化学方程式。",
+      "answer": "（1）H2∶C3H8＝4∶1（体积比）\n（2）C3H8(g)+5O2(g)=3CO2(g)+4H2O(g)  ΔH=−2043.9 kJ·mol⁻¹",
+      "analysis": "（1）设混合气体中n(H2)=x mol，n(C3H8)=y mol，则x+y=5。完全燃烧放热：285.8x+2219.9y=6264.2（取放热量的数值计算）。联立解得y=1，x=4。相同T、p下体积比等于物质的量比，故H2∶C3H8=4∶1。\n（2）已知生成液态水的燃烧焓ΔH2=−2219.9 kJ·mol⁻¹；4 mol液态水变为气态需吸热4×44.0=176.0 kJ。则生成水蒸气时的反应焓ΔH=−2219.9+176.0=−2043.9 kJ·mol⁻¹，热化学方程式：C3H8(g)+5O2(g)=3CO2(g)+4H2O(g)，ΔH=−2043.9 kJ·mol⁻¹。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s1_t11",
+      "type": "选择题",
+      "stem": "下列过程中，化学反应速率的增大对人类有益的是（ ）。\n\nA. 金属的腐蚀\n\nB. 食物的腐败\n\nC. 塑料的老化\n\nD. 氨的合成",
+      "answer": "D",
+      "analysis": "金属腐蚀、食物腐败、塑料老化都会带来材料损坏或食物变质，反应速率增大会加剧不利影响；氨的合成是重要的工业反应（制肥料等），提高反应速率有利于提高生产效率与产量，因此选D。",
+      "difficulty": 1,
+      "knowledge_points": [
+        "化学反应速率"
+      ],
+      "skills": [
+        "定性比较化学反应速率的大小"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s1_t12",
+      "type": "选择题",
+      "stem": "下列对化学反应速率增大原因的分析错误的是（ ）。\n\nA. 对有气体参加的化学反应, 增大压强使容器容积减小, 单位体积内活化分子数增多  \nB. 向反应体系中加入相同浓度的反应物, 使活化分子百分数增大  \nC. 升高温度, 使反应物分子中活化分子百分数增大  \nD. 加入适宜的催化剂, 使反应物分子中活化分子百分数增大",
+      "answer": "B",
+      "analysis": "影响反应速率的因素：浓度、压强（气体反应）、温度、催化剂等。\nA：气体反应增大压强→单位体积内分子数增多→有效碰撞次数增多，速率增大，分析正确。\nB：加入相同浓度的反应物只会使反应物的浓度（或物质的量）增大，从而使单位体积内分子数增多、碰撞次数增多；但“活化分子百分数”主要由温度决定，不会因单纯增加浓度而增大，因此该项分析错误。\nC：升高温度→分子平均动能增大→超过活化能的分子比例（活化分子百分数）增大，正确。\nD：催化剂降低活化能→在同温度下活化分子百分数增大，正确。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "影响化学反应速率的因素",
+        "反应物浓度对反应速率的影响",
+        "温度对反应速率的影响",
+        "催化剂对反应速率的影响",
+        "压强对气体反应速率的影响",
+        "活化分子"
+      ],
+      "skills": [
+        "定性比较化学反应速率的大小"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s1_t13",
+      "type": "选择题",
+      "stem": "已知: $4 \\mathrm{NH}_{3} + 5 \\mathrm{O}_{2} = 4 \\mathrm{NO} + 6 \\mathrm{H}_{2} \\mathrm{O}$ 。若反应速率分别用 $v(\\mathrm{NH}_{3})$ 、 $v(\\mathrm{O}_{2})$ 、 $v(\\mathrm{NO})$ 、 $v(\\mathrm{H}_{2} \\mathrm{O})$ 表示, 则下列关系正确的是 ( )。\n\nA. $\\frac{4}{5} v(\\mathrm{NH}_{3}) = v(\\mathrm{O}_{2})$\n\nB. $\\frac{5}{6} v\\left(\\mathrm{O}_{2}\\right) = v\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)$\n\nC. $\\frac{2}{3} v\\left(\\mathrm{NH}_{3}\\right) = v\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)$\n\nD. $\\frac{4}{5} v\\left(\\mathrm{O}_{2}\\right) = v(\\mathrm{NO})$",
+      "answer": "D",
+      "analysis": "对反应 4NH3+5O2→4NO+6H2O，有\nv(NH3)/4 = v(O2)/5 = v(NO)/4 = v(H2O)/6（生成物速率取正，反应物速率取其消耗速率的正值）。\n由此得：v(NH3)=v(NO)；v(O2)=(5/4)v(NO)，所以(4/5)v(O2)=v(NO)，D正确。\n检验其余：A应为(5/4)v(NH3)=v(O2)；B应为(6/5)v(O2)=v(H2O)；C应为(3/2)v(NH3)=v(H2O)。均不符。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "化学反应速率与化学计量数的关系"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s1_t14",
+      "type": "选择题",
+      "stem": "在容积不变的密闭容器中，A与B反应生成C，其化学反应速率分别用 $v(\\mathrm{A})$ 、 $v(\\mathrm{B})$ 、 $v(\\mathrm{C})$ 表示。已知： $2v(\\mathrm{B}) = 3v(\\mathrm{A})$ ， $3v(\\mathrm{C}) = 2v(\\mathrm{B})$ ，则此反应可表示为（ ）。\n\nA. $2\\mathrm{A} + 3\\mathrm{\\;B} = 2\\mathrm{C}$\n\nB. $\\mathrm{A} + 3\\mathrm{\\;B} = 2\\mathrm{C}$\n\nC. $3 \\mathrm{~A} + \\mathrm{B} = 2 \\mathrm{C}$\n\nD. $\\mathrm{A} + \\mathrm{B} = \\mathrm{C}$",
+      "answer": "C",
+      "analysis": "由速率关系：2v(B)=3v(A)得v(A):v(B)=2:3；又3v(C)=2v(B)得v(B):v(C)=3:2。联立得v(A):v(B):v(C)=2:3:2。对反应aA+bB→cC，有v(A):v(B):v(C)=a:b:c（按化学计量数成正比），故a:b:c=3:1:2，对应反应为3A+B=2C，选C。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "化学反应速率与化学计量数的关系"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s1_t16",
+      "type": "综合题",
+      "stem": "以废旧铅酸蓄电池中的含铅废料和 $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ 为原料, 可以制备高纯 $\\mathrm{PbO}$ , 从而实现铅的再生利用。在此过程中涉及如下两个反应:\n\n$① 2 \\mathrm { F e } ^ { 2 + } + \\mathrm { P b O } _ { 2 } + 4 \\mathrm { H } ^ { + } + \\mathrm { S O } _ { 4 } ^ { 2 - } = 2 \\mathrm { F e } ^ { 3 + } + \\mathrm { P b S O } _ { 4 } + 2 \\mathrm { H } _ { 2 } \\mathrm { O }$   \n② $2\\mathrm{Fe}^{3+} + \\mathrm{Pb} + \\mathrm{SO}_4^{2-} = 2\\mathrm{Fe}^{2+} + \\mathrm{PbSO}_4$\n\n（1）写出 $\\mathrm{Pb}$ 与 $\\mathrm{PbO}_2$ 反应生成 $\\mathrm{PbSO}_4$ 的化学方程式。  \n（2）在上述过程中， $\\mathrm{Fe}^{2+}$ 的作用是什么？  \n（3）请设计实验方案证明 $\\mathrm{Fe}^{2+}$ 的作用。",
+      "answer": "（1）Pb + PbO2 + 2H2SO4 = 2PbSO4 + 2H2O\n（2）Fe2+作还原剂（电子传递媒介/循环载体），将PbO2还原为PbSO4，本身被氧化为Fe3+；生成的Fe3+再氧化Pb生成PbSO4并再生Fe2+。\n（3）实验方案：取含PbO2、H2SO4、SO42−的体系，分成两组。A组加入一定量Fe2+（如FeSO4溶液），B组不加Fe2+（或先用氧化剂将Fe2+全部氧化为Fe3+作对照）。观察并检验：A组PbO2颜色逐渐消失并生成白色PbSO4沉淀；同时用KSCN检验溶液中Fe3+先出现（显红色），随后在加入Pb后红色减弱/消失并可用K3[Fe(CN)6]检验Fe2+再生（生成蓝色沉淀/显色）。B组反应明显缓慢或基本不发生。由“加入Fe2+反应显著进行且Fe2+被氧化为Fe3+、又可被Pb还原再生”证明Fe2+起还原剂并在过程中循环作用。",
+      "analysis": "（1）将题给①②相加，2Fe2+与2Fe3+相互抵消，得到总反应：PbO2 + Pb + 4H+ + 2SO42− → 2PbSO4 + 2H2O；用H2SO4表示即Pb + PbO2 + 2H2SO4 = 2PbSO4 + 2H2O。\n（2）由①知Fe2+→Fe3+，说明Fe2+提供电子还原Pb(IV)；由②知Fe3+被Pb还原回Fe2+，故Fe2+/Fe3+构成循环的电子传递体系。\n（3）对照实验并用特征反应检验Fe2+/Fe3+的相互转化：Fe3+与SCN−显血红色，Fe2+可用K3[Fe(CN)6]显色/生成沉淀；结合PbO2褪色、PbSO4白色沉淀生成来证明Fe2+的作用。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "催化剂对反应速率的影响"
+      ],
+      "skills": [
+        "控制变量法研究影响反应速率的因素"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s2_t18",
+      "type": "填空题",
+      "stem": "在一定温度下, 反应 $\\mathrm{A}(\\mathrm{g}) + 3 \\mathrm{~B}(\\mathrm{g}) \\rightleftharpoons 2 \\mathrm{C}(\\mathrm{g})$ 达到平衡, 该反应的平衡常数表达式为 $K=$ 。若平衡时各物质的浓度分别为: $c(\\mathrm{A}) = 2.0 \\mathrm{~mol} / \\mathrm{L} 、 c(\\mathrm{B}) = 2.0 \\mathrm{~mol} / \\mathrm{L} 、 c(\\mathrm{C}) = 1.0 \\mathrm{~mol} / \\mathrm{L}$ , 则 $K=$",
+      "answer": "K=\\dfrac{c(C)^2}{c(A)\\,c(B)^3}；代入得K=\\dfrac{1.0^2}{2.0\\times 2.0^3}=\\dfrac{1}{16}=0.0625",
+      "analysis": "根据化学平衡常数表达式：对反应 aA+bB⇌cC，有K=\\dfrac{[C]^c}{[A]^a[B]^b}。本题A+3B⇌2C，故K=\\dfrac{c(C)^2}{c(A)c(B)^3}。将平衡浓度代入：K=\\dfrac{(1.0)^2}{(2.0)(2.0)^3}=\\dfrac{1}{2\\times 8}=\\dfrac{1}{16}=0.0625。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "化学平衡常数",
+        "浓度"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s2_t19",
+      "type": "选择题",
+      "stem": "在一定条件下的密闭容器中发生反应: $\\mathrm{C}_{2} \\mathrm{H}_{6}(\\mathrm{~g}) \\rightleftharpoons \\mathrm{C}_{2} \\mathrm{H}_{4}(\\mathrm{~g}) + \\mathrm{H}_{2}(\\mathrm{~g}) \\quad \\Delta H > 0$ 。当达到平衡时, 下列各项措施中, 不能提高乙烷转化率的是 ( )。\n\nA. 增大容器的容积\n\nB. 升高反应的温度\n\nC. 分离出部分氢气\n\nD.等容下通入稀有气体",
+      "answer": "D",
+      "analysis": "反应：C2H6(g) ⇌ C2H4(g)+H2(g)，正反应为吸热(ΔH>0)，且气体物质的量由1变2，Δn=+1。提高乙烷转化率即使平衡向右移动。\nA 增大容积→压强减小→平衡向气体物质的量增大一侧(右)移动，转化率提高。\nB 升温→吸热反应平衡向右移动，转化率提高。\nC 分离出部分H2(产物)→降低产物分压→平衡向右移动，转化率提高。\nD 等容通入稀有气体：体积不变时，各反应气体的分压pi=niRT/V不变，仅总压增大，不改变平衡常数条件下的平衡组成，故不能提高乙烷转化率。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "转化率",
+        "压强",
+        "温度",
+        "吸热反应",
+        "勒夏特列原理",
+        "化学平衡移动"
+      ],
+      "skills": [
+        "用勒夏特列原理预测平衡移动方向"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s2_t20",
+      "type": "选择题",
+      "stem": "在一定温度下的容积不变的密闭容器中发生反应: $\\mathrm{X(g) + 2Y(g) \\rightleftharpoons 3Z(g)}$ 。下列叙述中, 能说明反应达到化学平衡状态的是 ( )。\n\nA. Z 的生成速率与 Z 的分解速率相等\n\nB. 单位时间内消耗 $a \\mathrm{~mol} \\mathrm{X}$ , 同时生成 $3 a \\mathrm{~mol} \\mathrm{Z}$\n\nC. 容器内的压强不再变化\n\nD. 混合气体总的物质的量不再变化",
+      "answer": "A",
+      "analysis": "反应：X(g)+2Y(g)⇌3Z(g)，容积和温度恒定。达到化学平衡的本质特征是正、逆反应速率相等。\nA：Z的生成速率与Z的分解速率相等，等价于正逆反应速率相等，能判断为平衡。\nB：按计量数关系生成/消耗的物质的量之比在任意时刻都可能满足（只反映反应进行的计量关系），不能据此判断平衡。\nC：该反应气体物质的量变化Δn=3-(1+2)=0，总物质的量恒定时压强在整个反应过程中都不变，因此压强不变不能说明已达平衡。\nD：同理，Δn=0使混合气体总物质的量在反应过程中始终不变，不能说明平衡。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "化学平衡状态",
+        "正反应速率",
+        "逆反应速率",
+        "压强"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s2_t21",
+      "type": "选择题",
+      "stem": "在一定温度下的密闭容器中发生反应: $x \\mathrm{~A}(\\mathrm{~g}) + y \\mathrm{~B}(\\mathrm{~g}) \\rightleftharpoons z \\mathrm{C}(\\mathrm{~g})$ , 平衡时测得 $\\mathrm{A}$ 的浓度为 $0.50 \\mathrm{~mol} / \\mathrm{L}$ 。保持温度不变, 将容器的容积扩大到原来的两倍, 再达平衡时, 测得 $\\mathrm{A}$ 的浓度为 $0.30 \\mathrm{~mol} / \\mathrm{L}$ 。下列有关判断正确的是 ( )。\n\nA. $x + y <   z$\n\nB. 平衡向正反应方向移动\n\nC. B 的转化率降低\n\nD. C 的体积分数减小",
+      "answer": "B",
+      "analysis": "设第一次平衡时A的物质的量为n1，体积为V，则n1/V=0.50。将体积变为2V后，若平衡不移动，A的浓度应变为0.25 mol/L；实际新平衡时[A]=0.30>0.25，说明扩容后体系为恢复平衡而生成了A，即平衡向逆反应方向移动，因此B错误、B应为“平衡向逆反应方向移动”。根据勒夏特列原理，扩容(压强减小)平衡应向气体物质的量增多的一侧移动；既然向逆反应移动，说明逆反应方向气体物质的量更多，即x+y>z，故A错误。平衡向逆反应移动，生成物C减少、反应物B增多，因此B的转化率降低，C正确；同时C的体积分数减小，D也正确。综合判断，正确选项为C、D。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "浓度",
+        "化学平衡常数",
+        "压强",
+        "勒夏特列原理",
+        "化学平衡移动",
+        "转化率"
+      ],
+      "skills": [
+        "用勒夏特列原理预测平衡移动方向",
+        "建立并应用平衡浓度表"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s2_t24",
+      "type": "计算题",
+      "stem": "已知一氧化碳与水蒸气的反应为: $\\mathrm{CO(g) + H_2O(g)} \\rightleftharpoons \\mathrm{CO_2(g) + H_2(g)}$ 。在 $830^{\\circ}\\mathrm{C}$ 时该反应的平衡常数是 1.0 。如果反应开始时, 一氧化碳和水蒸气的浓度都是 $0.1 \\mathrm{~mol} / \\mathrm{L}$ , 计算一氧化碳在此反应条件下的转化率。",
+      "answer": "50%",
+      "analysis": "设平衡时CO的反应量为x（mol/L）。初始：[CO]=0.1，[H2O]=0.1，[CO2]=0，[H2]=0；平衡：[CO]=0.1−x，[H2O]=0.1−x，[CO2]=x，[H2]=x。平衡常数Kc=([CO2][H2])/([CO][H2O])=x^2/(0.1−x)^2=1.0，得x=0.1−x，故x=0.05 mol/L。CO转化率=反应掉的CO/初始CO=x/0.1=0.05/0.1=0.5=50%。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "化学平衡常数",
+        "转化率",
+        "CO与H2O平衡体系"
+      ],
+      "skills": [
+        "建立并应用平衡浓度表",
+        "利用平衡常数判断反应程度与转化率"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s3_t25",
+      "type": "简答题",
+      "stem": "举出几种日常生活中常见的由于熵增使其过程自发进行的实例。",
+      "answer": "例如：热量自发从高温物体传到低温物体；香水/气味在空气中自发扩散；墨水滴入水中自发扩散并混合；气体从高压处向低压处自发扩散（如放气）；冰在室温下自发融化；盐/糖在水中自发溶解并扩散均匀。",
+      "analysis": "题目要求举例说明“熵增导致过程自发进行”的日常现象。抓住要点：自发过程往往伴随能量或物质从更“集中/有序”走向更“分散/无序”，系统与环境总熵增加。典型类别包括热传导（温差减小）、扩散与混合（浓度差减小）、相变如融化（在环境允许条件下更易分散）。列举若干生活实例即可。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "熵",
+        "熵变",
+        "自发过程",
+        "熵增原理（中学表述）",
+        "混乱度（有序与无序）"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s3_t26",
+      "type": "简答题",
+      "stem": "在下列变化中，体系的熵将发生怎样的变化？\n\n（1）冰熔化  \n（2）水蒸气冷凝  \n（3）蔗糖在水中溶解  \n(4) $\\mathrm{HCl(g) + NH_3(g) = NH_4Cl(s)}$",
+      "answer": "（1）增大；（2）减小；（3）增大；（4）减小",
+      "analysis": "熵与微观无序程度、可占据微观状态数有关：固→液→气熵逐渐增大；气体冷凝为液体熵减小；溶解通常使溶质在溶剂中分散、混合程度增大，熵增大；两种气体生成固体，物质由分散的气态变为有序的固态且气体物质的量减少，熵显著减小。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "熵",
+        "熵变",
+        "混乱度（有序与无序）"
+      ],
+      "skills": [
+        "比较过程前后混乱度判断熵变方向"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s3_t27",
+      "type": "选择题",
+      "stem": "水凝结成冰的过程中，其焓变和熵变正确的是（ ）。\n\nA. $\\Delta H > 0$ ， $\\Delta S < 0$   \nB. $\\Delta H < 0, \\Delta S > 0$   \nC. $\\Delta H > 0, \\Delta S > 0$   \nD. $\\Delta H < 0, \\Delta S < 0$",
+      "answer": "D",
+      "analysis": "水由液态凝固成固态冰是放热过程，体系焓降低，因此ΔH<0；从液态到固态有序程度增加、微观状态数减少，体系熵减小，因此ΔS<0。故选D。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "焓变",
+        "熵变"
+      ],
+      "skills": [
+        "比较过程前后混乱度判断熵变方向"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s3_t28",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 冰在室温下自动熔化成水，这是熵增的过程  \nB. 能够自发进行的反应一定是放热反应  \nC. $\\Delta H<0$ 的反应均是自发进行的反应  \nD. 能够自发进行的反应一定是熵增的过程",
+      "answer": "A",
+      "analysis": "自发过程的判据是在定温定压下ΔG=ΔH−TΔS<0，并不要求一定放热(ΔH<0)或一定熵增(ΔS>0)。A：冰在室温下熔化，体系由固态变液态无序度增大，ΔS>0，为熵增过程，且在室温下可自发发生，正确。B：如冰熔化为吸热过程但可自发，故“自发一定放热”错误。C：ΔH<0 仅表示放热，若ΔS<0且T较高可能ΔG>0，不一定自发，错误。D：自发过程不一定熵增，例如水在低温下结冰可自发但体系熵减，错误。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "自发过程",
+        "熵变",
+        "焓变",
+        "焓变与熵变对自发性的综合影响"
+      ],
+      "skills": [
+        "根据焓变和熵变判断反应自发性",
+        "比较过程前后混乱度判断熵变方向"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s_t29",
+      "type": "选择题",
+      "stem": "采取下列措施对增大化学反应速率有明显效果的是（ ）。\n\nA. Na与水反应时，增加水的用量  \nB. Al与稀硫酸反应制取 $\\mathrm{H}_{2}$ 时, 改用浓硫酸  \nC. $\\mathrm{Na}_{2} \\mathrm{SO}_{4}$ 溶液与 $\\mathrm{BaCl}_{2}$ 溶液反应时, 增大压强   \nD. 大理石与盐酸反应制取 $\\mathrm{CO}_{2}$ 时, 将块状大理石改为粉末状大理石",
+      "answer": "D",
+      "analysis": "影响反应速率的因素有：反应物浓度、温度、压强（主要对气体反应有效）、催化剂、固体表面积等。A中Na与水反应，增加水的用量并不显著提高Na的有效浓度与接触条件，效果不明显；B中浓硫酸具有强氧化性且会使Al钝化，不利于持续制氢；C中两种溶液反应基本不受压强影响；D中块状改粉末状增大固体表面积，增大接触面积，反应速率明显增大。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s_t30",
+      "type": "选择题",
+      "stem": "向一个密闭容器中充入 $1 \\mathrm{~mol} \\mathrm{~N}_{2}$ 和 $3 \\mathrm{~mol} \\mathrm{H}_{2}$ , 在一定条件下使其发生反应生成 $\\mathrm{NH}_{3}$ 。达到平衡时,下列说法中正确的是 ( )。\n\nA. $\\mathrm{N}_{2}$ 、 $\\mathrm{H}_{2}$ 和 $\\mathrm{NH}_{3}$ 的物质的量浓度之比为 $1: 3: 2$   \nB. $\\mathrm{N}_{2}$ 完全转化为 $\\mathrm{NH}_{3}$   \nC. 正反应速率和逆反应速率都为零  \nD. 单位时间内消耗 $a \\mathrm{~mol} \\mathrm{~N}_{2}$ , 同时消耗 $2 a \\mathrm{~mol} \\mathrm{NH}_{3}$",
+      "answer": "D",
+      "analysis": "反应：N2+3H2⇌2NH3。达平衡时各物质一般不会按化学计量数成固定浓度比，A错误；可逆反应平衡时反应不一定完全进行，N2不一定完全转化，B错误；化学平衡为动态平衡，正逆反应速率相等但不为0，C错误。若单位时间内消耗a mol N2，则按计量关系对应消耗3a mol H2并生成2a mol NH3；等价地，逆反应中消耗2a mol NH3对应消耗a mol N2，故D所述“消耗a mol N2同时消耗2a mol NH3”对应逆反应的计量关系，正确。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s_t31",
+      "type": "选择题",
+      "stem": "在一定温度下的容积不变的密闭容器中发生反应: $2 \\mathrm{SO}_{2}(\\mathrm{~g}) + \\mathrm{O}_{2}(\\mathrm{~g}) \\rightleftharpoons 2 \\mathrm{SO}_{3}(\\mathrm{~g})$ 。下列不能说明反应达到平衡状态的是 ( )。\n\nA. 气体的压强不再变化  \nB. $\\mathrm{SO}_{2}$ 的体积分数不再变化  \nC. 混合物的密度不再变化  \nD. 各物质的浓度不再变化",
+      "answer": "C",
+      "analysis": "恒温、恒容密闭容器中，达到化学平衡时各组分浓度不再随时间变化，因此D能说明平衡；SO2体积分数取决于其物质的量分数，平衡时组成不变，B能说明平衡；该反应气体总物质的量由3变2，恒温恒容下压强p∝n_total，平衡时n_total不变，压强不再变化，A能说明平衡。密度ρ=m/V，容器恒容且体系总质量守恒，故密度始终不变，与是否达到平衡无关，因此不能说明达到平衡的是C。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s_t33",
+      "type": "填空题",
+      "stem": "在 $2 \\mathrm{~L}$ 的密闭容器中通入 $\\mathrm{N}_{2}$ 和 $\\mathrm{H}_{2}$ ，使其发生反应： $\\mathrm{N}_{2} + 3 \\mathrm{H}_{2} \\rightleftharpoons 2 \\mathrm{NH}_{3}$ 。\n\n在 $10 \\mathrm{~s}$ 内用 $\\mathrm{H}_{2}$ 的浓度变化表示的化学反应速率为 $0.12 \\mathrm{~mol} / (\\mathrm{L} \\cdot \\mathrm{s})$ , 则这 $10 \\mathrm{~s}$ 内消耗 $\\mathrm{N}_{2}$ 的物质的量是",
+      "answer": "0.08 mol",
+      "analysis": "用H2浓度变化表示速率v(H2)=0.12 mol/(L·s)，10 s内H2浓度变化Δc(H2)=v·t=0.12×10=1.2 mol/L。容器体积2 L，则H2消耗的物质的量Δn(H2)=Δc·V=1.2×2=2.4 mol。由反应计量关系N2: H2 = 1:3，故N2消耗Δn(N2)=2.4/3=0.8 mol。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch2_s_t35",
+      "type": "填空题",
+      "stem": "研究 $\\mathrm{NO}_2$ 、 $\\mathrm{SO}_2$ 等气体的无害化处理对治理大气污染、建设生态文明具有重要意义。\n\n(1)已知: $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\rightleftharpoons 2 \\mathrm{SO}_{3}(\\mathrm{~g}) \\quad \\Delta H=-196.6 \\mathrm{~kJ} / \\mathrm{mol}$\n\n$$\n2 \\mathrm {N O} (\\mathrm {g}) + \\mathrm {O} _ {2} (\\mathrm {g}) \\rightleftharpoons 2 \\mathrm {N O} _ {2} (\\mathrm {g}) \\quad \\Delta H = - 1 1 3. 0 \\mathrm {k J} / \\mathrm {m o l}\n$$\n\n则 $\\mathrm{NO}_2(\\mathrm{g}) + \\mathrm{SO}_2(\\mathrm{g}) \\rightleftharpoons \\mathrm{SO}_3(\\mathrm{g}) + \\mathrm{NO}(\\mathrm{g})$ 的 $\\Delta H = \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\mathrm{kJ / mol}$ 。\n\n(2) 在一定条件下, 将 $\\mathrm{NO}_{2}$ 与 $\\mathrm{SO}_{2}$ 以体积比 $1: 2$ 置于密闭容器中发生上述反应。下列能说明反应达到平衡状态的是 (填字母)。\n\na. 体系压强保持不变\n\nb. 混合气体的颜色保持不变\n\nc. $\\mathrm{SO}_3$ 和 $\\mathrm{NO}$ 的体积比保持不变\n\nd. 每生成 $1 \\mathrm{~mol} \\mathrm{SO}_{3}$ 消耗 $1 \\mathrm{~mol} \\mathrm{NO}_{2}$",
+      "answer": "(1)ΔH=-41.8 kJ/mol；(2)b",
+      "analysis": "(1)由亥斯定律：将2SO2+O2⇌2SO3除以2得SO2+1/2O2⇌SO3，ΔH=-98.3 kJ/mol；将2NO+O2⇌2NO2逆向并除以2得NO2⇌NO+1/2O2，ΔH=+56.5 kJ/mol；两式相加得NO2+SO2⇌SO3+NO，ΔH=-98.3+56.5=-41.8 kJ/mol。(2)该反应气体物质的量前后相等(2⇌2)，压强不变不能判定平衡；SO3与NO生成量始终相等，其体积比恒为1:1，不能判定；“每生成1 mol SO3消耗1 mol NO2”是计量关系，任意时刻都成立；只有NO2为棕色，颜色保持不变说明其浓度不再变化，表明达到平衡，选b。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s1_t38",
+      "type": "选择题",
+      "stem": "已知某温度下有如下三个反应：\n\n$$\n\\begin{array}{l} \\mathrm {N a C N} + \\mathrm {H N O} _ {2} = \\mathrm {H C N} + \\mathrm {N a N O} _ {2} \\\\ \\mathrm {N a C N} + \\mathrm {H F} = \\mathrm {H C N} + \\mathrm {N a F} \\\\ \\mathrm {N a N O} _ {2} + \\mathrm {H F} = \\mathrm {H N O} _ {2} + \\mathrm {N a F} \\\\ \\end{array}\n$$\n\n则该温度下HF、HCN和 $\\mathrm{HNO}_2$ 三种弱酸的电离常数由大到小的顺序是",
+      "answer": "HF＞HNO₂＞HCN",
+      "analysis": "利用弱酸与其盐之间的质子转移方向判断酸性强弱：\n(1) NaCN+HNO₂→HCN+NaNO₂，说明HNO₂能把H⁺转移给CN⁻，即HNO₂比HCN酸性强：HNO₂＞HCN。\n(2) NaCN+HF→HCN+NaF，说明HF能把H⁺转移给CN⁻，即HF比HCN酸性强：HF＞HCN。\n(3) NaNO₂+HF→HNO₂+NaF，说明HF能把H⁺转移给NO₂⁻，即HF比HNO₂酸性强：HF＞HNO₂。\n综合得酸性(电离常数)大小规律：HF＞HNO₂＞HCN。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "酸的电离常数 Ka",
+        "电离常数与酸碱强弱",
+        "弱电解质的相对强弱比较"
+      ],
+      "skills": [
+        "用电离常数比较弱电解质强弱"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s1_t40",
+      "type": "选择题",
+      "stem": "向 $10 \\mathrm{~mL}$ 氨水中加入蒸馏水，将其稀释到 $1 \\mathrm{~L}$ 后，下列说法中不正确的是（ ）。\n\nA. $\\mathrm{NH}_{3} \\cdot \\mathrm{H}_{2} \\mathrm{O}$ 的电离程度增大  \nB. $c\\left(\\mathrm{NH}_{2} \\cdot \\mathrm{H}_{2} \\mathrm{O}\\right)$ 增大  \nC. $\\mathrm{NH}_{4}^{+}$ 的数目增多  \n$\\frac{c(\\mathrm{NH}_4^+)}{c(\\mathrm{NH}_3\\cdot\\mathrm{H}_2\\mathrm{O})}$ 增大",
+      "answer": "B",
+      "analysis": "将10 mL氨水稀释至1 L，溶液总体积增大，溶质的物质的量不变。\n弱碱NH3·H2O存在电离平衡：NH3·H2O ⇌ NH4+ + OH−。稀释使溶液浓度降低，按勒夏特列原理，平衡向电离方向移动，电离程度增大，故A正确。\n但稀释后未电离的NH3·H2O的浓度应随总体积增大而减小，不可能“增大”，故B不正确。\n平衡向右移动会使NH4+的生成量（物质的量）增多，故C正确；同时c(NH4+)增大而c(NH3·H2O)减小，所以c(NH4+)/c(NH3·H2O)增大，最后一项正确。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "电离程度",
+        "电离平衡",
+        "电离平衡的移动",
+        "浓度对电离平衡的影响",
+        "弱碱"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s1_t42",
+      "type": "判断题",
+      "stem": "判断下列说法是否正确，并说明理由。\n\n（1）强电解质溶液的导电能力一定比弱电解质溶液的强。  \n(2) 中和等体积、等物质的量浓度的盐酸和醋酸, 中和盐酸所需氢氧化钠的物质的量多于醋酸。  \n(3) 将 $\\mathrm{NaOH}$ 溶液和氨水中溶质的浓度各稀释到原浓度的 $\\frac{1}{2}$ , 两者的 $c(\\mathrm{OH}^{-})$ 均减少到原来的 $\\frac{1}{2}$ 。  \n(4) 如果盐酸中溶质的浓度是醋酸中溶质浓度的 2 倍, 则盐酸中的 $c(\\mathrm{H}^{+})$ 也是醋酸中 $c(\\mathrm{H}^{+})$ 的 2 倍。  \n（5）物质的量浓度相同的磷酸钠溶液和磷酸中 $\\mathrm{PO}_4^{3-}$ 的浓度相同。",
+      "answer": "（1）错误；（2）错误；（3）错误；（4）错误；（5）错误。",
+      "analysis": "（1）错误：溶液导电能力取决于离子浓度与离子迁移率等，强电解质虽电离完全，但若浓度很低，导电能力可能弱于较高浓度的弱电解质。\n（2）错误：等体积、等浓度的盐酸与醋酸所含酸的物质的量相同，均为一元酸，与NaOH按1:1中和，所需NaOH物质的量相同。\n（3）错误：NaOH为强碱，稀释到1/2时c(OH−)约变为1/2；氨水为弱碱，存在电离平衡，稀释使电离度增大，c(OH−)不按比例减半（通常小于1/2的变化幅度，非必为1/2）。\n（4）错误：盐酸为强酸，c(H+)=c(酸)；醋酸为弱酸，c(H+)由电离平衡决定，不与溶质浓度成正比，故即使盐酸浓度为醋酸2倍，c(H+)也不一定为2倍。\n（5）错误：Na3PO4溶液中PO4^3−会水解，且存在HPO4^2−、H2PO4−等；磷酸为弱酸，几乎不产生大量PO4^3−，同浓度时两者PO4^3−浓度不相同。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "强电解质",
+        "弱电解质",
+        "电离程度",
+        "溶液导电能力",
+        "电离平衡",
+        "电离平衡的移动",
+        "相同物质的量浓度溶液的比较",
+        "浓度对电离平衡的影响"
+      ],
+      "skills": [
+        "根据 pH、导电性和反应剧烈程度判断电离程度"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s1_t43",
+      "type": "简答题",
+      "stem": "已知 $25^{\\circ} \\mathrm{C}$ 时， $\\mathrm{CH}_3\\mathrm{COOH}$ 的 $K_{\\mathrm{a}} = 1.75 \\times 10^{-5}$ 。\n\n(1) 当向醋酸中加入一定量的盐酸时, $\\mathrm{CH}_{3} \\mathrm{COOH}$ 的电离常数是否发生变化? 为什么?  \n(2) 若初始时醋酸中 $\\mathrm{CH}_{3} \\mathrm{COOH}$ 的浓度为 $0.010 \\mathrm{~mol} / \\mathrm{L}$ , 则达到电离平衡时溶液中 $c \\left(\\mathrm{H}^{+}\\right)$ 是多少?",
+      "answer": "(1) 不变。电离常数Ka只与温度有关(25℃时为定值)，加入盐酸只改变平衡时各物质的浓度与电离程度(同离子效应)，但不改变Ka。\n(2) c(H+)=4.1×10^-4 mol/L(约4.18×10^-4 mol/L)。",
+      "analysis": "(1) Ka在一定温度下为常数，与初始浓度或加入其他电解质无关；加入HCl提供H+，使平衡CH3COOH ⇌ H+ + CH3COO-左移，电离度减小，但Ka表达式Ka=c(H+)c(CH3COO-)/c(CH3COOH)的数值不变。\n(2) 设电离平衡时生成x mol/L的H+：\n初始：c(CH3COOH)=0.010，c(H+)=0，c(CH3COO-)=0\n平衡：c(H+)=x，c(CH3COO-)=x，c(CH3COOH)=0.010−x\nKa= x^2/(0.010−x)=1.75×10^-5。因Ka小，x≪0.010，近似x^2/0.010=1.75×10^-5，得x=√(1.75×10^-7)=4.18×10^-4 mol/L；检验x/0.010≈4.2%，近似可用。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "酸的电离常数 Ka",
+        "电离常数与温度的关系",
+        "电离平衡",
+        "同离子效应对电离平衡的影响",
+        "一元弱酸"
+      ],
+      "skills": [
+        "根据同离子效应分析电离平衡移动方向",
+        "利用平衡浓度计算电离常数"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s2_t44",
+      "type": "填空题",
+      "stem": "在氨水中存在的粒子有________；在氯水中存在的粒子有________。",
+      "answer": "NH3·H2O、NH4+、OH-、H2O；H2O、Cl2、HClO、H+、Cl-、ClO-",
+      "analysis": "氨水为弱碱溶液，主要由NH3·H2O与水分子构成，并发生部分电离：NH3·H2O ⇌ NH4+ + OH-，故含NH3·H2O、NH4+、OH-、H2O。氯水为Cl2溶于水形成的混合体系，含未反应的Cl2与水；并发生水解：Cl2 + H2O ⇌ HCl + HClO，HCl为强酸完全电离产生H+、Cl-，HClO为弱酸部分电离产生H+、ClO-，故含H2O、Cl2、HClO、H+、Cl-、ClO-。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "水的电离"
+      ],
+      "skills": [
+        "建立电离平衡关系并应用平衡常数"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s2_t45",
+      "type": "填空题",
+      "stem": "在下列溶液中, $c(\\mathrm{H}^{+})$ 由小到大的排列顺序是__________（填序号，下同）； $\\mathrm{pH}$ 由小到大的排列顺序是__________。\n\n① $0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{HCl}$ 溶液   \n② $0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{H}_{2} \\mathrm{SO}_{4}$ 溶液   \n③ $0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{NaOH}$ 溶液   \n④ $0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{CH}_{3} \\mathrm{COOH}$ 溶液",
+      "answer": "c(H+)：③④①②；pH：②①④③",
+      "analysis": "比较各溶液中H+浓度：③为强碱NaOH，c(OH-)=0.1 mol/L，25℃时c(H+)=Kw/c(OH-)=1.0×10^-14/0.1=1.0×10^-13 mol/L，最小；④为弱酸CH3COOH，0.1 mol/L部分电离，c(H+)≈sqrt(Ka·c)≈sqrt(1.8×10^-5×0.1)≈1.3×10^-3 mol/L；①为强酸HCl，完全电离，c(H+)=0.1 mol/L；②为H2SO4，第一步完全电离且第二步仍能电离提供额外H+，故c(H+)>0.1 mol/L，最大。于是c(H+)由小到大：③④①②。pH与c(H+)大小规律相反，故pH由小到大：②①④③。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "溶液的酸碱性与pH"
+      ],
+      "skills": [
+        "建立电离平衡关系并应用平衡常数"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s2_t46",
+      "type": "填空题",
+      "stem": "（1）某种酱油的 $\\mathrm{pH} = 5$ ，则该酱油中的 $c(\\mathrm{H}^{+}) =$\n\n(2) 在常温下, 柠檬水的 $\\mathrm{pH} = 3$ , 其中的 $c(\\mathrm{OH}^{-})$ 为________（填字母）。\n\na. $0.1\\mathrm{mol / L}$\n\nb. $1 \\times 10^{-3} \\mathrm{~mol} / \\mathrm{L}$\n\nc. $1 \\times 10^{-7} \\mathrm{~mol} / \\mathrm{L}$\n\nd. $1 \\times 10^{-11} \\mathrm{~mol} / \\mathrm{L}$",
+      "answer": "（1）c(H^+)=1×10^-5 mol/L；（2）d",
+      "analysis": "（1）pH=−lg c(H^+)，故c(H^+)=10^−pH=10^−5 mol/L。 （2）常温下pH+pOH=14，pOH=14−3=11，c(OH^−)=10^−11 mol/L，对应d。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "溶液的酸碱性与pH",
+        "水的离子积"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s2_t47",
+      "type": "填空题",
+      "stem": "体积相同、 $\\mathrm{pH}$ 相同的HCl溶液和 $\\mathrm{CH}_3\\mathrm{COOH}$ 溶液分别与 $\\mathrm{NaOH}$ 溶液中和时, 二者所消耗 $\\mathrm{NaOH}$ 的物质的量的关系是 , 理由是",
+      "answer": "n(NaOH)相等；理由：两溶液pH相同且体积相同，初始[H+]相同，所含H+的物质的量相同，中和反应均为H+ + OH- → H2O，消耗NaOH的物质的量等于H+的物质的量（乙酸虽为弱酸，但中和时不断电离补充H+，最终同样被完全中和）。",
+      "analysis": "设两溶液体积为V，pH相同则[H+]=10^{-pH}，故两者初始n(H+)=V·10^{-pH}相同。与NaOH中和时，NaOH提供OH-，按H+ + OH- → H2O计量，中和完全时所需n(OH-)=n(H+)。强酸HCl中H+来自完全电离；弱酸CH3COOH在加入OH-的过程中电离平衡右移持续释放H+直至被中和，因此最终消耗NaOH的物质的量仍等于初始由pH确定的H+的物质的量，二者相等。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "溶液的酸碱性与pH"
+      ],
+      "skills": [
+        "建立电离平衡关系并应用平衡常数"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s2_t48",
+      "type": "选择题",
+      "stem": "在 $48 \\mathrm{~mL} 0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{HNO}_{3}$ 溶液中加入 $12 \\mathrm{~mL} 0.4 \\mathrm{~mol} / \\mathrm{L} \\mathrm{KOH}$ 溶液，所得溶液呈（ ）。\n\nA. 弱酸性\n\nB. 强酸性\n\nC. 碱性\n\nD. 中性",
+      "answer": "D",
+      "analysis": "计算物质的量：n(HNO3)=0.048 L×0.1 mol/L=0.0048 mol；n(KOH)=0.012 L×0.4 mol/L=0.0048 mol。强酸HNO3与强碱KOH按1:1完全中和，二者恰好等量，无剩余酸或碱，生成KNO3（强酸强碱盐）溶液，溶液呈中性。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "溶液的酸碱性与pH"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t51",
+      "type": "填空题",
+      "stem": "明矾 $\\left[\\text { 化学式为 } \\mathrm{KAl}\\left(\\mathrm{SO}_{4}\\right)_{2} \\cdot 12 \\mathrm{H}_{2} \\mathrm{O}\\right]$ 溶液呈 性（填“酸”“碱”或“中”），原因是 (用离子方程式表示)。",
+      "answer": "酸；Al3+水解：Al3+ + 3H2O ⇌ Al(OH)3↓ + 3H+",
+      "analysis": "明矾溶于水电离出K+、Al3+和SO42-等离子。K+与SO42-均为强酸强碱盐的离子，基本不水解；Al3+发生水解生成H+，使溶液呈酸性：Al3+ + 3H2O ⇌ Al(OH)3↓ + 3H+。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "盐类的水解",
+        "盐溶液的酸碱性",
+        "强酸弱碱盐"
+      ],
+      "skills": [
+        "根据酸碱强弱判断盐溶液酸碱性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t52",
+      "type": "简答题",
+      "stem": "在实验室配制 $\\mathrm{Na}_{2} \\mathrm{~S}$ 溶液时, 常滴加几滴 $\\mathrm{NaOH}$ 溶液, 试说明原因:",
+      "answer": "防止Na2S溶液水解生成H2S并被空气中O2氧化；加入少量NaOH提高溶液碱性，抑制S2−水解，使Na2S溶液稳定、减少H2S逸出。",
+      "analysis": "Na2S溶于水后，S2−发生水解：S2−+H2O⇌HS−+OH−，进一步HS−+H2O⇌H2S+OH−，会产生挥发性的H2S；且H2S/HS−易被空气中的O2氧化（如生成S等），使溶液成分改变。滴加少量NaOH提高OH−浓度，使平衡向左移动，抑制水解与H2S生成，从而保持Na2S溶液稳定。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "盐类的水解",
+        "反应条件对盐类水解的影响",
+        "平衡移动原理在水解中的应用"
+      ],
+      "skills": [
+        "应用平衡移动原理分析盐类水解"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t53",
+      "type": "填空题",
+      "stem": "草木灰与铵态氮肥不能混合施用，其原因是",
+      "answer": "草木灰呈碱性，与铵态氮肥混合会发生反应生成氨气挥发，导致氮素损失、肥效降低。",
+      "analysis": "草木灰主要含碳酸钾等碱性成分；铵态氮肥含NH4+。在碱性条件下，NH4+转化为NH3并挥发（NH4+ + OH- → NH3↑ + H2O），使氮肥损失，因此不能混合施用。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "盐溶液的酸碱性"
+      ],
+      "skills": [
+        "根据酸碱强弱判断盐溶液酸碱性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t54",
+      "type": "填空题",
+      "stem": "在常温下, 实验测得 $0.1 \\mathrm{~mol} / \\mathrm{L} \\mathrm{CH}_{3} \\mathrm{COONa}$ 溶液的 $\\mathrm{pH} = 9$ , 则溶液中由水电离出来的 $c(\\mathrm{OH}^{-}) =$",
+      "answer": "1.0×10^-5 mol/L",
+      "analysis": "已知pH=9，则pOH=14−9=5，溶液中总c(OH−)=10^-5 mol/L。又因c(H+)=10^-9 mol/L，水的离子积Kw=10^-14，所以水电离产生的c(OH−)=Kw/c(H+)=10^-14/10^-9=10^-5 mol/L。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "盐类的水解"
+      ],
+      "skills": [
+        "运用电荷守恒和元素质量守恒分析离子浓度"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t55",
+      "type": "选择题",
+      "stem": "在常温下, $\\mathrm{CH}_{3} \\mathrm{COOH}$ 溶液和 $\\mathrm{NaOH}$ 溶液充分反应后所得溶液的 $\\mathrm{pH} = 7$ , 则此溶液中 $c\\left(\\mathrm{CH}_{3} \\mathrm{COO}^{-}\\right)$ 和 $c\\left(\\mathrm{Na}^{+}\\right)$ 的大小关系是",
+      "answer": "c(Na+) > c(CH3COO−)",
+      "analysis": "CH3COOH与NaOH充分反应生成CH3COONa。若反应后溶液pH=7(常温)，说明溶液呈中性。由于CH3COO−是弱酸根，会发生水解使溶液显碱性；要使最终pH=7，必须有过量CH3COOH提供H+抑制CH3COO−水解，因此溶液中除CH3COO−外还含有未反应的CH3COOH。Na+仅来自生成的CH3COONa，而CH3COO−既来自盐又可由未反应的CH3COOH部分电离产生，但同时CH3COO−会与H+结合并被抑制电离；在有过量CH3COOH情况下，总醋酸根浓度小于对应的Na+浓度，故c(Na+) > c(CH3COO−)。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "酸碱中和反应与盐类水解的关系",
+        "电解质溶液的电荷守恒",
+        "电解质溶液中的元素质量守恒"
+      ],
+      "skills": [
+        "运用电荷守恒和元素质量守恒分析离子浓度"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t56",
+      "type": "选择题",
+      "stem": "下列溶液因盐的水解而呈酸性的是（ ）。\n\nA. $\\mathrm{Na}_{2}\\mathrm{SO}_{4}$ 溶液\n\nB. $\\mathrm{NaHCO}_{3}$ 溶液\n\nC. $\\mathrm{CH}_3\\mathrm{COOH}$ 溶液\n\nD. $\\mathrm{NH}_{4} \\mathrm{Cl}$ 溶液",
+      "answer": "D",
+      "analysis": "判断盐的水解酸碱性：强酸强碱盐不水解或近似中性；强碱弱酸盐水解呈碱性；强酸弱碱盐水解呈酸性。A Na2SO4为强酸(H2SO4)强碱(NaOH)盐，近似中性；B NaHCO3中HCO3-为两性离子，以水解呈弱碱性为主；C CH3COOH为酸本身，不属于“因盐的水解”；D NH4Cl为强酸(HCl)弱碱(NH3·H2O)盐，NH4+水解生成H3O+，溶液呈酸性。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "盐类的水解",
+        "盐溶液的酸碱性",
+        "强酸弱碱盐"
+      ],
+      "skills": [
+        "根据酸碱强弱判断盐溶液酸碱性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t57",
+      "type": "选择题",
+      "stem": "强碱MOH的溶液和等体积、等物质的量浓度的弱酸HA的溶液混合后，溶液中有关离子浓度的大小关系是（ ）。\n\nA. $c(\\mathrm{M}^{+}) > c(\\mathrm{OH}^{-}) > c(\\mathrm{A}^{-}) > c(\\mathrm{H}^{+})$\n\nB. $c(\\mathrm{M}^{+}) > c(\\mathrm{A}^{-}) > c(\\mathrm{H}^{+}) > c(\\mathrm{OH}^{-})$\n\nC. $c(\\mathrm{M}^{+}) > c(\\mathrm{A}^{-}) > c(\\mathrm{OH}^{-}) > c(\\mathrm{H}^{+})$\n\nD. $c(\\mathrm{M}^{+}) > c(\\mathrm{H}^{+}) > c(\\mathrm{A}^{-}) > c(\\mathrm{OH}^{-})$",
+      "answer": "C",
+      "analysis": "等体积、等浓度混合：MOH完全电离，提供n(OH−)=cV；弱酸HA提供n(HA)=cV。先发生中和：HA+OH−→A−+H2O，物质的量恰好相等，反应后OH−和HA都被消耗完，生成A−的形式浓度为cV/(2V)=c/2，同时溶液中M+的浓度为c/2。生成的A−发生水解：A−+H2O⇌HA+OH−，使溶液呈碱性，故c(OH−)>c(H+)。又因A−仅部分水解，c(A−)仍远大于c(OH−)，并且M+不参与反应，保持为最大浓度。故大小规律：c(M+)>c(A−)>c(OH−)>c(H+)，选C。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "盐类的水解",
+        "盐溶液的酸碱性",
+        "强碱弱酸盐",
+        "酸碱中和反应与盐类水解的关系",
+        "电解质溶液的电荷守恒"
+      ],
+      "skills": [
+        "运用电荷守恒和元素质量守恒分析离子浓度",
+        "根据酸碱强弱判断盐溶液酸碱性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t58",
+      "type": "简答题",
+      "stem": "比较相同温度下,等物质的量浓度的 ${\\mathrm{{Na}}}_{2}{\\mathrm{{CO}}}_{3}$ 溶液和 ${\\mathrm{{NaHCO}}}_{3}$ 溶液 $\\mathrm{{pH}}$ 的相对大小,并说明原因。",
+      "answer": "相同温度、等物质的量浓度时：pH(Na2CO3溶液) > pH(NaHCO3溶液)。原因：CO3^2−为二元弱酸H2CO3的共轭碱，水解生成OH−能力强；而HCO3−为两性离子，既可水解生成OH−也可电离生成H+，其碱性较弱，故Na2CO3溶液更碱性、pH更大。",
+      "analysis": "Na2CO3溶液中主要发生：CO3^2− + H2O ⇌ HCO3− + OH−，产生较多OH−，溶液呈较强碱性；NaHCO3溶液中HCO3−两性：既有HCO3− + H2O ⇌ H2CO3 + OH−，又有HCO3− ⇌ CO3^2− + H+，两种作用部分抵消且总体碱性较弱，因此pH(Na2CO3)更高。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "盐类的水解",
+        "盐溶液的酸碱性",
+        "Na₂CO₃ 溶液的碱性"
+      ],
+      "skills": [
+        "根据酸碱强弱判断盐溶液酸碱性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t59",
+      "type": "简答题",
+      "stem": "$\\mathrm{Sb}_{2} \\mathrm{O}_{3}$ 可用作白色颜料和阻燃剂等。在实验室中可利用 $\\mathrm{SbCl}_{3}$ 的水解反应制取 $\\mathrm{Sb}_{2} \\mathrm{O}_{3}$ （ $\\mathrm{SbCl}_{3}$ 的水解分三步进行，中间产物有 $\\mathrm{SbOCl}$ 等），其总反应可表示为：\n\n$$\n2 \\mathrm {S b C l} _ {3} + 3 \\mathrm {H} _ {2} \\mathrm {O} \\rightleftharpoons \\mathrm {S b} _ {2} \\mathrm {O} _ {3} + 6 \\mathrm {H C l}\n$$\n\n为了得到较多的 $\\mathrm{Sb}_{2} \\mathrm{O}_{3}$ , 操作时要将 $\\mathrm{SbCl}_{3}$ 缓慢加入大量水中, 反应后期还要加入少量氨水。试利用平衡移动原理说明这两项操作的作用。",
+      "answer": "将SbCl3缓慢加入大量水中：增大H2O的量并稀释生成的HCl，使平衡按勒夏特列原理向生成Sb2O3方向移动，水解更完全、Sb2O3产率提高；反应后期加入少量氨水：NH3·H2O与HCl反应生成NH4Cl，降低溶液中HCl(即H+)浓度，促使平衡进一步向右移动，从而生成更多Sb2O3。",
+      "analysis": "该反应为可逆平衡：2SbCl3+3H2O⇌Sb2O3+6HCl。提高反应物H2O的浓度/用过量水并稀释产物HCl，可使Q减小，平衡向右；若一次性加入SbCl3会在局部形成较高的HCl浓度，抑制水解，因此需缓慢加入以避免局部酸度过大。后期加入氨水可消耗HCl（NH3·H2O+HCl→NH4Cl+H2O），相当于移走生成物HCl，使平衡继续右移，生成更多Sb2O3。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "盐类的水解",
+        "反应条件对盐类水解的影响",
+        "平衡移动原理在水解中的应用",
+        "盐类水解在无机化合物制备中的应用"
+      ],
+      "skills": [
+        "应用平衡移动原理分析盐类水解"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s3_t60",
+      "type": "简答题",
+      "stem": "$\\mathrm{SOCl}_2$ （亚硫酰氯）是一种液态化合物，沸点为 $77\\%$ 。向盛有 $10\\mathrm{mL}$ 水的锥形瓶中小心滴加 $8\\sim 10$ 滴 $\\mathrm{SOCl}_2$ ，可观察到剧烈反应，液面上有白雾形成，并有带刺激性气味的气体逸出，该气体中含有能使品红溶液褪色的 $\\mathrm{SO}_2$ 。轻轻振荡锥形瓶，待白雾消失后，向溶液中滴加 $\\mathrm{AgNO}_3$ 溶液，有不溶于稀硝酸的白色沉淀析出。\n\n（1）根据实验现象，写出 $\\mathrm{SOCl}_2$ 与水反应的化学方程式。  \n(2) 将 $\\mathrm{AlCl}_{3}$ 溶液蒸干并灼烧得不到无水 $\\mathrm{AlCl}_{3}$ , 而将 $\\mathrm{SOCl}_{2}$ 与 $\\mathrm{AlCl}_{3} \\cdot 6 \\mathrm{H}_{2} \\mathrm{O}$ 混合并加热, 可得到无水 $\\mathrm{AlCl}_{3}$ , 试解释原因。",
+      "answer": "（1）SOCl2 + H2O → SO2↑ + 2HCl↑（或生成的HCl溶于水）\n（2）AlCl3为强水解盐，蒸干灼烧时溶液浓缩、加热促进水解，生成Al(OH)3（或AlOCl）并进一步脱水成Al2O3，故得不到无水AlCl3。SOCl2能与结晶水反应生成SO2和HCl，起“化学脱水剂”作用，消耗AlCl3·6H2O中的水，使体系无水，从而抑制AlCl3水解；同时生成的HCl提供酸性环境进一步抑制水解，因此加热可得到无水AlCl3。",
+      "analysis": "（1）现象：白雾和刺激性气味气体，且含SO2；反应后溶液加AgNO3生成不溶于稀硝酸的白色沉淀为AgCl，说明生成Cl−（来自HCl）。据此写水解方程式：SOCl2与H2O生成SO2和HCl。\n（2）蒸干灼烧AlCl3溶液时，Al3+强烈水解：Al3+ + 3H2O ⇌ Al(OH)3↓ + 3H+，加热与除水使平衡向水解方向移动，最终得到氧化物而非无水氯化物。SOCl2与水反应消耗结晶水并放出HCl，使体系缺水且酸性增强，水解被抑制，故可得到无水AlCl3。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "盐类水解在无机化合物制备中的应用"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t61",
+      "type": "选择题",
+      "stem": "下列物质溶解于水时，电离出的阴离子能使水的电离平衡向右移动的是（ ）。\n\nA. $\\mathrm{CH}_3\\mathrm{COONa}$\n\nB. $\\mathrm{Na}_{2}\\mathrm{SO}_{4}$\n\nC. $\\mathrm{NH}_{4} \\mathrm{Cl}$\n\nD. $\\mathrm{H}_{2} \\mathrm{SO}_{4}$",
+      "answer": "A",
+      "analysis": "水的电离平衡为：H2O ⇌ H+ + OH-。若溶质电离出的阴离子能与H+结合（表现为弱酸的共轭碱），则消耗H+，使平衡右移，促进水电离。\nA.CH3COONa → CH3COO- 为弱酸CH3COOH的共轭碱，可与H+结合：CH3COO- + H+ ⇌ CH3COOH，使平衡右移，符合。\nB.Na2SO4 → SO4^2- 为强酸H2SO4的共轭碱，水解极弱，几乎不促进水电离。\nC.NH4Cl 的阴离子Cl-不水解；且NH4+水解产生H+，使水电离平衡左移。\nD.H2SO4提供SO4^2-/HSO4-同时大量提供H+，整体使水电离平衡左移。故选A。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t62",
+      "type": "选择题",
+      "stem": "在相同温度时, $100 \\mathrm{~mL} 0.01 \\mathrm{~mol} / \\mathrm{L}$ 醋酸与 $10 \\mathrm{~mL} 0.1 \\mathrm{~mol} / \\mathrm{L}$ 醋酸相比较, 下列数值中, 前者大于后者的是 ( )。\n\nA. 溶液中 $\\mathrm{H}^{+}$ 的物质的量\n\nB. $\\mathrm{CH}_3\\mathrm{COOH}$ 的电离常数\n\nC. 中和时所需 $\\mathrm{NaOH}$ 的物质的量\n\nD. 溶液中 $\\mathrm{CH}_{3} \\mathrm{COOH}$ 的物质的量",
+      "answer": "A",
+      "analysis": "两溶液醋酸的物质的量：100 mL×0.01 mol/L=1.0×10^-3 mol；10 mL×0.1 mol/L=1.0×10^-3 mol，相同。B：电离常数只与温度有关，相同温度下相等；C：与NaOH中和所需物质的量等于醋酸总物质的量，二者相等；D：溶液中CH3COOH的物质的量（总量）二者相等。A：弱酸H+的物质的量≈[H+]·V，其中[H+]≈√(Ka·c)。因此n(H+)≈V·√(Ka·c)。比较两者：V1=0.100 L,c1=0.01；V2=0.010 L,c2=0.1，则n1/n2=(0.100/0.010)·√(0.01/0.1)=10·√0.1≈3.16>1，所以前者H+的物质的量更大。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t63",
+      "type": "选择题",
+      "stem": "为了除去 $\\mathrm{MgCl}_{2}$ 酸性溶液中的 $\\mathrm{Fe}^{3+}$ , 可在加热并搅拌的条件下加入一种试剂, 过滤后, 再向滤液中加入适量盐酸, 这种试剂是 ( )。\n\nA. $\\mathrm{NH}_{3} \\cdot \\mathrm{H}_{2} \\mathrm{O}$\n\nB. NaOH\n\nC. $\\mathrm{Na}_{2} \\mathrm{CO}_{3}$\n\nD. $\\mathrm{MgCO}_{3}$",
+      "answer": "D",
+      "analysis": "要除去MgCl2酸性溶液中的Fe3+而尽量不损失Mg2+，应选择能在酸性条件下优先使Fe3+水解/沉淀、且不会引入强碱导致Mg(OH)2大量生成的试剂。加入MgCO3并加热搅拌，MgCO3与溶液中H+反应消耗酸（生成CO2和H2O），使溶液酸性减弱，从而促使Fe3+发生水解生成Fe(OH)3沉淀；同时由于提供的是Mg2+对应的碳酸盐，不会引入新的阳离子杂质，且在控制条件下Mg2+不易大量沉淀。过滤除去Fe(OH)3后，再加适量HCl使滤液恢复酸性并溶解可能生成的少量碱式盐/碳酸盐，得到纯净MgCl2溶液。NH3·H2O和NaOH会使Mg2+也生成Mg(OH)2沉淀；Na2CO3易使Mg2+生成MgCO3沉淀并引入Na+。故选D。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t64",
+      "type": "选择题",
+      "stem": "下列说法中正确的是（ ）。\n\nA. 在 $100^{\\circ} \\mathrm{C}$ 时, $\\mathrm{pH}$ 约为 6 的纯水呈酸性  \nB. 将 $1 \\mathrm{~mL} 1 \\times 10^{-6} \\mathrm{~mol} / \\mathrm{L}$ 盐酸稀释至 $1000 \\mathrm{~mL}$ , 所得溶液的 $\\mathrm{pH}$ 为 9  \nC. 在常温下, 当水电离出的 $c(\\mathrm{H}^{+})$ 为 $1 \\times 10^{-13} \\mathrm{~mol} / \\mathrm{L}$ 时, 此溶液的 $\\mathrm{pH}$ 可能为 1 或 13  \nD. 将 $\\mathrm{pH} = 2$ 的盐酸和醋酸各 $1 \\mathrm{~mL}$ 分别稀释至 $100 \\mathrm{~mL}$ , 所得醋酸的 $\\mathrm{pH}$ 略大",
+      "answer": "C",
+      "analysis": "A：100℃时水的离子积Kw增大，中性条件为[H+]=[OH-]=10^-6 mol/L，pH≈6仍为中性，不显酸性，错。\nB：取1 mL、c=1×10^-6 mol/L的HCl，物质的量n=1×10^-6×10^-3=1×10^-9 mol，稀释到1 L后名义浓度为1×10^-9 mol/L，但需考虑水的自电离（常温[H+]=10^-7），溶液应呈弱酸性，pH略小于7，不可能为9，错。\nC：常温下Kw=10^-14。若水电离出的[H+]为1×10^-13 mol/L，则水电离出的[OH-]=10^-13 mol/L；若溶液因外加酸使总[H+]=10^-1，则由Kw得总[OH-]=10^-13，其中来自水电离的OH-为10^-13，此时pH=1；若因外加碱使总[OH-]=10^-1，则总[H+]=10^-13，其中来自水电离的H+为10^-13，此时pH=13，因此“可能为1或13”正确。\nD：同为pH=2的强酸HCl与弱酸CH3COOH各1 mL稀释到100 mL，相当于[H+]均先按100倍稀释为10^-4。对HCl仍几乎完全电离，pH≈4；醋酸会继续电离以补充H+，使[H+]大于10^-4，故pH应小于4（比盐酸更小），说“略大”错。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t66",
+      "type": "填空题",
+      "stem": "在某温度下, 向含有 $\\mathrm{AgCl}$ 固体的 $\\mathrm{AgCl}$ 饱和溶液中加入少量稀盐酸, 则 $\\mathrm{AgCl}$ 的溶解度______（填 “增大” “减小” 或 “不变”, 下同）, $K_{\\mathrm{sp}}$ , $c(\\mathrm{Ag}^{+})$ 。",
+      "answer": "减小，不变，减小",
+      "analysis": "加入稀盐酸使溶液中Cl⁻浓度增大，AgCl(s) ⇌ Ag⁺ + Cl⁻平衡左移，溶解度减小；在该温度下Ksp为常数，不变；由于[Cl⁻]增大而Ksp=[Ag⁺][Cl⁻]恒定，所以[Ag⁺]减小。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t67",
+      "type": "填空题",
+      "stem": "在 $25\\%$ 时对氨水进行如下操作。请填写下列空白。\n\n(1) 若向氨水中加入少量硫酸铵固体, 则溶液中 $\\frac{c(\\mathrm{OH}^{-})}{c(\\mathrm{NH}_{3} \\cdot \\mathrm{H}_{2} \\mathrm{O})}$ 将______(填 “增大” “减小” 或 “不变”)。  \n(2) 若向氨水中加入稀硫酸, 使氨水恰好被中和, 写出反应的离子方程式: 所得溶液的 $\\mathrm{pH}$ _____7(填 “>” “<” 或 “=”), 用离子方程式表示其原因:  \n(3) 若向氨水中加入稀硫酸至溶液的 $\\mathrm{pH} = 7$ , 此时溶液中 $c(\\mathrm{NH}_{4}^{+}) = a \\mathrm{~mol} / \\mathrm{L}$ , 则 $c(\\mathrm{SO}_{4}^{2-}) =$",
+      "answer": "(1)减小；(2)离子方程式：2NH3·H2O+2H+=2NH4++2H2O（或NH3·H2O+H+=NH4++H2O）；pH<7；原因：NH4++H2O⇌NH3·H2O+H+；(3)a/2 mol·L^-1",
+      "analysis": "(1)加入(NH4)2SO4提供NH4+，与NH3·H2O的电离NH3·H2O⇌NH4++OH-构成同离子效应，使电离被抑制，c(OH-)减小而c(NH3·H2O)增大，故比值c(OH-)/c(NH3·H2O)减小。\n(2)用稀H2SO4恰好中和：主要离子反应为NH3·H2O+H+→NH4++H2O（按计量也可写2NH3·H2O+2H+→2NH4++2H2O）。中和后溶液主要为铵盐(NH4)2SO4，NH4+水解：NH4++H2O⇌NH3·H2O+H+，生成H+使溶液显酸性，pH<7。\n(3)当pH=7时，溶液中电荷守恒且[H+]=[OH-]，可忽略其贡献，则正负电荷主要由NH4+与SO4^2-平衡：c(NH4+)=2c(SO4^2-)，已知c(NH4+)=a，故c(SO4^2-)=a/2。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t68",
+      "type": "填空题",
+      "stem": "为配制 $\\mathrm{SbCl}_{3}$ 溶液, 取 $\\mathrm{SbCl}_{3}$ 固体少许溶于 $2 \\sim 3 \\mathrm{~mL}$ 水中, 有白色沉淀产生, 此溶液的 $\\mathrm{pH}$ ____ 7 (填 “小于” “大于” 或 “等于”), 配制 $\\mathrm{SbCl}_{3}$ 溶液的正确方法是",
+      "answer": "小于；应加入适量盐酸抑制水解，使其溶解后再加水稀释配制",
+      "analysis": "SbCl3溶于水会发生水解，生成SbOCl等白色沉淀并产生H+，使溶液呈酸性，故pH小于7。配制SbCl3溶液时应先用少量浓盐酸(或一定浓度盐酸)溶解SbCl3，利用高Cl−/酸性条件抑制水解，再加水定容或稀释配制。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch3_s_t69",
+      "type": "填空题",
+      "stem": "在化学分析中, 以 $\\mathrm{AgNO}_{3}$ 标准溶液滴定溶液中的 $\\mathrm{Cl}^{-}$ 时, 采用 $\\mathrm{K}_{2} \\mathrm{CrO}_{4}$ 为指示剂, 利用 $\\mathrm{Ag}^{+}$ 与 $\\mathrm{CrO}_{4}^{2-}$ 反应生成砖红色沉淀指示滴定终点。当溶液中的 $\\mathrm{Cl}^{-}$ 恰好沉淀完全（浓度等于 $1.0 \\times 10^{-5} \\mathrm{~mol} / \\mathrm{L}$ ）时,溶液中 $c(\\mathrm{Ag}^{+}) = \\mathrm{mol} / \\mathrm{L}$ , $c(\\mathrm{CrO}_{4}^{2-}) = \\mathrm{mol} / \\mathrm{L}$ 。（已知 $25^{\\circ} \\mathrm{C}$ 时 $\\mathrm{Ag}_{2} \\mathrm{CrO}_{4}$ 、 $\\mathrm{AgCl}$ 的 $K_{\\mathrm{sp}}$ 分别为 $2.0 \\times 10^{-12}$ 和 $1.8 \\times 10^{-10}$ 。）",
+      "answer": "c(Ag+)=1.8×10^-5 mol/L；c(CrO4^2-)=6.2×10^-3 mol/L",
+      "analysis": "Cl−恰好沉淀完全时，溶液中仍与AgCl(s)处于溶解平衡：Ksp(AgCl)=[Ag+][Cl−]=1.8×10^-10。已知[Cl−]=1.0×10^-5 mol/L，故[Ag+]=1.8×10^-10/(1.0×10^-5)=1.8×10^-5 mol/L。终点刚出现Ag2CrO4沉淀时满足Ksp(Ag2CrO4)=[Ag+]^2[CrO4^2-]=2.0×10^-12，因此[CrO4^2-]=2.0×10^-12/(1.8×10^-5)^2≈6.2×10^-3 mol/L。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch4_s1_t71",
+      "type": "选择题",
+      "stem": "为了验证 a、b、c 三种金属的活动性顺序进行如下实验: ① 将金属片 a、b 插入稀硫酸中, 用导线将它们与电流表相连, 发现 a 是负极; ② 用金属片 b、c 替换 a、b 后重复上述实验, 发现 c 是正极。则 a、b、c 三种金属的活动性由强到弱的顺序为",
+      "answer": "a>b>c",
+      "analysis": "原理：两种金属插入稀硫酸形成原电池时，较活泼（金属活动性强、易失电子）的金属作负极，较不活泼的金属作正极。\n(1) 实验①：a为负极，说明a比b活泼，即a>b。\n(2) 实验②：c为正极，说明b为负极，b比c活泼，即b>c。\n综合得：a>b>c。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "原电池",
+        "电池极板与极性",
+        "金属活动性顺序（起电序列）"
+      ],
+      "skills": [
+        "从电池结构分析正负极和电解质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch4_s1_t73",
+      "type": "选择题",
+      "stem": "碱性锌锰电池的总反应为: $\\mathrm{Zn} + 2 \\mathrm{MnO}_{2} + 2 \\mathrm{H}_{2} \\mathrm{O} = 2 \\mathrm{MnO}(\\mathrm{OH}) + \\mathrm{Zn}(\\mathrm{OH})_{2}$ 。下列关于该电池的说法中正确的是 ( )。\n\nA. Zn为负极， $\\mathrm{MnO}_2$ 为正极  \nB. 工作时 KOH 没有发挥作用  \nC. 工作时电子由 $\\mathrm{MnO}_{2}$ 经外电路流向 $\\mathrm{Zn}$   \nD. Zn发生还原反应, $\\mathrm{MnO}_{2}$ 发生氧化反应",
+      "answer": "A",
+      "analysis": "由总反应：Zn + 2MnO2 + 2H2O → 2MnO(OH) + Zn(OH)2 可知，Zn由0价变为+2价（生成Zn(OH)2），发生氧化，为负极；Mn在MnO2中由+4价变为MnO(OH)中的+3价，发生还原，为正极。故A正确。B错误：KOH作为电解质提供离子导电并参与维持电荷平衡。C错误：电子应由负极Zn经外电路流向正极MnO2。D错误：Zn应氧化，MnO2应还原。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "碱性锌锰电池",
+        "电极反应",
+        "电池极板与极性"
+      ],
+      "skills": [
+        "从电池结构分析正负极和电解质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch4_s1_t74",
+      "type": "选择题",
+      "stem": "贮备电池具有下列特点：日常将电池的一种组成部分（如电解质溶液）与其他部分隔离备用；使用时电池可迅速被激活并提供足量电能。贮备电池主要用于应急救援和武器系统等。Mg-AgCl电池是一种可被海水激活的贮备电池。下列叙述中错误的是（）。\n\nA. 负极反应为 $\\mathrm{Mg} - 2 \\mathrm{e}^{-} = \\mathrm{Mg}^{2+}$   \nB. 正极反应为 $\\mathrm{Ag^{+} + e^{-} = Ag}$   \nC. 电池放电时 $\\mathrm{Cl}^-$ 由正极向负极迁移  \nD. 负极会发生副反应: $\\mathrm{Mg} + 2 \\mathrm{H}_{2} \\mathrm{O} = \\mathrm{Mg}(\\mathrm{OH})_{2} + \\mathrm{H}_{2} \\uparrow$",
+      "answer": "B",
+      "analysis": "Mg-AgCl海水激活电池中，负极为Mg被氧化：Mg→Mg2+ + 2e−（A正确）。正极活性物质为AgCl，正极反应应为：AgCl + e− → Ag + Cl−，而不是Ag+ + e− → Ag，因此B错误。放电时正极生成Cl−、负极消耗正离子并生成Mg2+，为维持电中性，Cl−趋向于由正极向负极迁移（C正确）。Mg在水溶液中可与水发生析氢副反应：Mg + 2H2O → Mg(OH)2 + H2↑（D正确）。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "原电池",
+        "电极反应",
+        "电池极板与极性"
+      ],
+      "skills": [
+        "书写和配平电极反应与总反应",
+        "从电池结构分析正负极和电解质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx1_ch4_s1_t75",
+      "type": "选择题",
+      "stem": "根据甲醇在酸性电解质溶液中与氧气生成二氧化碳和水的反应，设计一种燃料电池。该燃料电池工作时，负极上发生的反应为（ ）。\n\nA. $\\mathrm{CH}_3\\mathrm{OH} + \\mathrm{O}_2 - 2\\mathrm{e}^- = \\mathrm{H}_2\\mathrm{O} + \\mathrm{CO}_2 + 2\\mathrm{H}^+$   \nB. $\\mathrm{O}_{2} + 4 \\mathrm{H}^{+} + 4 \\mathrm{e}^{-} = 2 \\mathrm{H}_{2} \\mathrm{O}$   \nC. $\\mathrm{CH}_3\\mathrm{OH} - 6\\mathrm{e}^-$ + $\\mathrm{H}_2\\mathrm{O} = \\mathrm{CO}_2\\uparrow +6\\mathrm{H}^+$   \nD. $4 \\mathrm{OH}^{-} - 4 \\mathrm{e}^{-} = \\mathrm{O}_{2} \\uparrow + 2 \\mathrm{H}_{2} \\mathrm{O}$",
+      "answer": "C",
+      "analysis": "酸性燃料电池中负极发生氧化反应，燃料甲醇被氧化为CO2并放出电子。配平：CH3OH + H2O → CO2 + 6H+ + 6e−。与选项对照，只有C符合；B为正极氧还原反应，D为碱性条件下的析氧反应，A电子数与配平不符。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "燃料电池",
+        "电极反应"
+      ],
+      "skills": [
+        "书写和配平电极反应与总反应"
+      ],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 276,
+    "skill_count": 68,
+    "experiment_count": 42,
+    "question_count": 96
+  }
+}

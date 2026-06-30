@@ -1,0 +1,58 @@
+[
+  {
+    "id": "k12_kgraph",
+    "name": "K12-KGraph",
+    "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+    "license": "CC BY-NC-SA 4.0",
+    "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+  },
+  {
+    "id": "e_eval",
+    "name": "E-EVAL",
+    "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+    "license": "Apache-2.0",
+    "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+  },
+  {
+    "id": "cmm_math",
+    "name": "CMM-Math",
+    "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+    "license": "BSD-3-Clause",
+    "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+  },
+  {
+    "id": "cmath",
+    "name": "CMATH",
+    "url": "https://huggingface.co/datasets/weitianwen/cmath",
+    "license": "CC BY 4.0",
+    "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+  },
+  {
+    "id": "eduqs",
+    "name": "EduQS",
+    "url": "https://huggingface.co/datasets/chaosY/EduQS",
+    "license": "Apache-2.0",
+    "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+  },
+  {
+    "id": "ceval",
+    "name": "C-Eval",
+    "url": "https://github.com/hkust-nlp/ceval",
+    "license": "CC BY-NC-SA 4.0",
+    "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+  },
+  {
+    "id": "m3ke",
+    "name": "M3KE",
+    "url": "https://github.com/tjunlp-lab/M3KE",
+    "license": "请以仓库 LICENSE 为准",
+    "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+  },
+  {
+    "id": "race",
+    "name": "RACE",
+    "url": "http://www.cs.cmu.edu/~glai1/data/race/",
+    "license": "请以数据集页面为准",
+    "usage": "中国初高中英语阅读理解数据；适合英语阅读题库补充。"
+  }
+]

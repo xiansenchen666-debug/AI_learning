@@ -1,0 +1,1129 @@
+{
+  "id": "physics_bx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_bx1_rjb_cpt1",
+      "name": "质点",
+      "definition": "在研究物体的运动时，可以忽略物体的大小和形状，将其视为具有质量的点，这样的点称为质点。",
+      "importance": "重要",
+      "aliases": [
+        "mass point"
+      ],
+      "examples": [
+        "研究地球公转时将地球视为质点",
+        "研究列车整体运动时将列车视为质点"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt2",
+      "name": "参考系",
+      "definition": "用来作为参考的物体，判断其他物体的位置随时间是否发生变化及怎样变化的依据。",
+      "importance": "重要",
+      "aliases": [
+        "reference frame"
+      ],
+      "examples": [
+        "以地面为参考系描述地面物体运动",
+        "列车内乘客互相看彼此为静止"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt3",
+      "name": "运动的相对性",
+      "definition": "描述物体的位置是否改变及怎样改变，总是相对于某个参考物体而言，因此运动状态依赖参考系。",
+      "importance": "掌握",
+      "examples": [
+        "列车外的人看乘务员在运动，但列车内的人互相看对方是静止的"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt4",
+      "name": "时刻",
+      "definition": "表示某一瞬间，用来指明事件发生的瞬时时间，例如“上午8时”。",
+      "importance": "掌握",
+      "examples": [
+        "8时、8时45分"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt5",
+      "name": "时间间隔",
+      "definition": "两个时刻之间持续的时间量，例如“8时到8时45分之间的45 min”。",
+      "importance": "掌握",
+      "examples": [
+        "45 min"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt6",
+      "name": "位置",
+      "definition": "物体在参考系中相对于坐标原点的位置，用坐标表示。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt7",
+      "name": "坐标系",
+      "definition": "用于精确描述位置的数学系统，如直角坐标系或一维坐标系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt8",
+      "name": "一维坐标系",
+      "definition": "物体做直线运动时常用的坐标系，在一条直线上规定原点、正方向和单位长度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt9",
+      "name": "位置坐标",
+      "definition": "物体在坐标系中相对于原点的数值位置。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt10",
+      "name": "位移",
+      "definition": "描述物体位置变化的矢量，从初位置指向末位置的有向线段，大小等于坐标差。",
+      "importance": "重要",
+      "formula": "Δx = x₂ - x₁"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt11",
+      "name": "矢量",
+      "definition": "既有大小又有方向，加法遵从平行四边形定则的物理量。",
+      "importance": "了解",
+      "examples": [
+        "力",
+        "位移",
+        "速度",
+        "加速度"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt12",
+      "name": "标量",
+      "definition": "只有大小没有方向，加法遵从算术运算法则的物理量。",
+      "importance": "了解",
+      "examples": [
+        "质量",
+        "路程",
+        "功",
+        "电流"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt13",
+      "name": "x-t图像",
+      "definition": "以时间为横轴、位置为纵轴的图像，用来表示物体位置随时间的变化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt14",
+      "name": "打点计时器",
+      "definition": "记录物体位置和时间的仪器，通过等时间间隔打点获取运动信息。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt15",
+      "name": "电磁打点计时器",
+      "definition": "利用交变电源使振针按等时间间隔在纸带上打点的计时器。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt16",
+      "name": "电火花计时器",
+      "definition": "通过电火花在纸带上打点的计时器，与电磁打点计时器原理相同。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt17",
+      "name": "瞬时速度",
+      "definition": "物体在某一时刻或某一很短时间内的速度，用以描述该时刻运动的快慢。",
+      "importance": "重要",
+      "examples": [
+        "利用打点计时器测量纸带上相邻计数点的位置变化求瞬时速度。"
+      ],
+      "unit": "m·s^-1"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt18",
+      "name": "速率",
+      "definition": "瞬时速度的大小，是标量。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt19",
+      "name": "速度—时间图像",
+      "definition": "以速度为纵轴、时间为横轴描绘的图像，用于表示物体速度随时间变化的规律。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt20",
+      "name": "位移传感器测速度原理",
+      "definition": "利用红外线和超声波脉冲传播时间差或单次超声波往返时间差确定物体位置，再通过Δx/Δt计算速度。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt21",
+      "name": "加速度",
+      "definition": "描述物体速度变化快慢的物理量，也可说是描述物体运动状态变化快慢的物理量。",
+      "importance": "重要",
+      "unit": "m/s^2",
+      "formula": "a = Δv / Δt",
+      "aliases": [
+        "acceleration"
+      ],
+      "examples": [
+        "汽车在10 s内从0加速到100 km/h",
+        "火车在300 s内从0加速到100 km/h"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt22",
+      "name": "速度变化量",
+      "definition": "速度在一段时间内的变化值，记为 Δv",
+      "importance": "掌握",
+      "formula": "Δv = v2 - v1"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt23",
+      "name": "加速度方向",
+      "definition": "加速度方向与速度变化量 Δv 的方向相同；速度增加时与速度方向相同，速度减小时与速度方向相反",
+      "importance": "掌握",
+      "examples": [
+        "汽车速度减小时，加速度方向与速度反向"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt24",
+      "name": "v-t 图像",
+      "definition": "表示物体速度随时间变化的图像，图像的斜率表示加速度",
+      "importance": "重要",
+      "examples": [
+        "从 v-t 图像中判断加速度大小"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt25",
+      "name": "变化率",
+      "definition": "某量的变化量与变化所用时间之比，用于描述变化快慢",
+      "importance": "了解",
+      "examples": [
+        "速度是位移对时间的变化率",
+        "加速度是速度对时间的变化率"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt26",
+      "name": "速度随时间变化的规律",
+      "definition": "描述物体速度随时间变化的定量关系，可通过v-t图像分析。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt27",
+      "name": "v-t图像",
+      "definition": "以时间t为横坐标、速度v为纵坐标绘制的图像，用于分析速度随时间变化的规律。",
+      "importance": "掌握",
+      "examples": [
+        "根据纸带测得的多个瞬时速度值绘制v-t图像。"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt28",
+      "name": "匀变速直线运动",
+      "definition": "沿直线、加速度保持不变的运动。",
+      "importance": "重要",
+      "aliases": [
+        "uniform variable rectilinear motion"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt29",
+      "name": "匀加速直线运动",
+      "definition": "物体的速度随时间均匀增加的匀变速直线运动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt30",
+      "name": "匀减速直线运动",
+      "definition": "物体的速度随时间均匀减小的匀变速直线运动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt31",
+      "name": "速度-时间关系式",
+      "definition": "匀变速直线运动中，速度与时间的关系可用公式 v = v0 + at 描述。",
+      "importance": "重要",
+      "formula": "v = v0 + at"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt32",
+      "name": "匀变速直线运动的位移与时间的关系式",
+      "definition": "做匀变速直线运动的物体，其位移满足 x = v0 t + 1/2 a t^2，用于描述物体位移随时间变化的规律。",
+      "importance": "重要",
+      "formula": "x = v0 t + 1/2 a t^2",
+      "examples": "若初速度为0，则 x = 1/2 at^2。例题1(1)使用了该公式。"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt33",
+      "name": "匀变速直线运动的速度与时间的关系式",
+      "definition": "做匀变速直线运动的物体，其速度随时间的变化规律满足 v = v0 + at。",
+      "importance": "重要",
+      "formula": "v = v0 + at"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt34",
+      "name": "匀变速直线运动的速度与位移的关系式",
+      "definition": "将匀变速运动的位移—时间关系式与速度—时间关系式联立消去时间，得到 v^2 - v0^2 = 2ax。",
+      "importance": "重要",
+      "formula": "v^2 - v0^2 = 2ax"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt35",
+      "name": "v-t图像与位移的关系",
+      "definition": "物体在某段时间内的位移等于速度—时间图像下方面积；匀变速运动时，对应面积为梯形面积。",
+      "importance": "掌握",
+      "examples": "图2.3-4，图2.3-5中着色面积表示位移"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt36",
+      "name": "自由落体运动",
+      "definition": "物体只在重力作用下从静止开始下落的运动，只能在真空中发生；在空气阻力较小可忽略时可近似看作自由落体运动。",
+      "importance": "重要",
+      "formula": "v = g t; x = 1/2 g t^2",
+      "examples": "真空中羽毛与铁片同时落下"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt37",
+      "name": "空气阻力",
+      "definition": "空气对运动物体产生的阻力，会影响物体下落快慢。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt38",
+      "name": "胡克定律",
+      "definition": "在弹性限度内，弹簧的弹力 F 与伸长量 x 成正比。",
+      "importance": "重要",
+      "formula": "F = k x",
+      "unit": "N, m, N/m"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt39",
+      "name": "劲度系数",
+      "definition": "表示弹簧硬度的物理量，等于弹力与伸长量的比值。",
+      "importance": "掌握",
+      "unit": "N/m"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt40",
+      "name": "静摩擦力",
+      "definition": "相互接触的物体具有相对运动趋势但仍保持静止时，接触面上产生的阻碍相对运动趋势的力。方向与相对运动趋势相反。",
+      "importance": "重要",
+      "aliases": [
+        "static frictional force"
+      ],
+      "examples": [
+        "用力推沙发但沙发未动时的阻力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt41",
+      "name": "动摩擦因数",
+      "definition": "表示滑动摩擦力与压力成正比关系的比例常数，取决于接触面材料和粗糙程度。",
+      "importance": "掌握",
+      "aliases": [
+        "μ",
+        "动摩擦系数"
+      ],
+      "formula": "F_f = μ F_压",
+      "examples": [
+        "钢-冰之间动摩擦因数为0.02"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt42",
+      "name": "最大静摩擦力",
+      "definition": "物体即将发生相对运动前所能达到的最大静摩擦力。",
+      "importance": "掌握",
+      "formula": "0 < F ≤ F_max"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt43",
+      "name": "压力（支持力）",
+      "definition": "接触面垂直方向上物体所受的力，相互接触的两个物体之间大小相等、方向相反。",
+      "importance": "掌握",
+      "aliases": [
+        "F_N",
+        "支持力"
+      ],
+      "examples": [
+        "水平木板对木块的支持力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt44",
+      "name": "流体阻力",
+      "definition": "物体在流体中运动时受到的与相对运动方向相反的力，与速度、横截面积、形状等因素有关。",
+      "importance": "了解",
+      "examples": [
+        "降落伞利用大横截面积增加空气阻力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt45",
+      "name": "作用力和反作用力",
+      "definition": "两个物体之间的作用总是相互的，一个物体对另一个物体施加力的同时，后者也对前者施加力，这一对力称为作用力和反作用力。",
+      "importance": "掌握",
+      "examples": [
+        "手拉弹簧，弹簧反过来拉手",
+        "地球吸引物体，同时物体吸引地球"
+      ],
+      "aliases": [
+        "相互作用力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt46",
+      "name": "牛顿第三定律",
+      "definition": "两个物体之间的作用力和反作用力总是大小相等、方向相反，并作用在同一条直线上。",
+      "importance": "重要",
+      "formula": "F_作用 = - F_反作用",
+      "examples": [
+        "划船时桨推水，水推桨",
+        "汽车车轮推地面，地面给车轮反作用力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt47",
+      "name": "平衡力",
+      "definition": "作用在同一物体上的两个力，大小相等、方向相反，并作用在同一直线上，使物体保持静止或匀速直线运动。",
+      "importance": "掌握",
+      "examples": [
+        "静止猴子所受重力和树枝拉力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt48",
+      "name": "受力分析",
+      "definition": "明确研究对象，并根据力的种类和相互作用，找出物体受到的所有力的分析方法。",
+      "importance": "掌握",
+      "examples": [
+        "分析斜面静止木块受力：重力、支持力、静摩擦力"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt49",
+      "name": "共点力",
+      "definition": "作用在物体同一点或其作用线相交于一点的几个力。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt50",
+      "name": "合力",
+      "definition": "实际物体所受的力往往不止一个，合力是所有作用在物体上的力的矢量和。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt51",
+      "name": "分力",
+      "definition": "几个力共同作用的效果与某一力单独作用的效果相同，这几个力称为该力的分力。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt52",
+      "name": "力的合成",
+      "definition": "求几个力的合力的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt53",
+      "name": "力的分解",
+      "definition": "求一个力的分力的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt54",
+      "name": "平行四边形定则",
+      "definition": "两个力的合力大小与方向由以表示两个力的有向线段为邻边构成的平行四边形的对角线给出。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt55",
+      "name": "平衡状态",
+      "definition": "物体保持静止或匀速直线运动状态，称为处于平衡状态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt56",
+      "name": "共点力平衡条件",
+      "definition": "多个共点力作用于物体时，若其合力为0，则物体处于平衡状态。",
+      "importance": "重要",
+      "formula": "F合 = 0"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt57",
+      "name": "二力平衡条件",
+      "definition": "两个力大小相等、方向相反并且作用在同一直线上，则这两个力平衡。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt58",
+      "name": "力的正交分解",
+      "definition": "把一个力沿相互垂直的两个方向分解成两个分力。",
+      "importance": "掌握",
+      "aliases": [
+        "正交分解"
+      ],
+      "formula": "F_x = F sinθ, F_y = F cosθ 等"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt59",
+      "name": "惯性参考系",
+      "definition": "在该参考系中，不受力物体保持静止或匀速直线运动状态，牛顿第一定律成立。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt60",
+      "name": "非惯性参考系",
+      "definition": "在该参考系中牛顿第一定律不成立，如加速运动的参考系。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt61",
+      "name": "控制变量法",
+      "definition": "在研究问题时，使多个变量中只有一个变量变化，而其他变量保持不变的方法。",
+      "importance": "重要",
+      "examples": "研究加速度与力关系时保持质量不变；研究加速度与质量关系时保持力不变。"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt62",
+      "name": "加速度与力的正比关系",
+      "definition": "在质量不变时，加速度 a 与作用力 F 成正比。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt63",
+      "name": "加速度与质量的反比关系",
+      "definition": "在力不变时，加速度 a 与质量 m 成反比，即 a 与 1/m 成正比。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt64",
+      "name": "牛顿第二定律",
+      "definition": "物体加速度的大小跟它受到的作用力成正比，跟它的质量成反比，加速度方向与作用力方向相同，可写为 F = ma。",
+      "importance": "重要",
+      "formula": "F = ma"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt65",
+      "name": "力的单位牛顿（N）",
+      "definition": "当质量取 kg，加速度取 m/s^2 时，1 N 等于 1 kg·m/s²，用以衡量力的大小。",
+      "importance": "掌握",
+      "unit": "N"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt66",
+      "name": "动力学测量质量",
+      "definition": "通过对物体施加已知力并测出加速度，利用 F = ma 求得质量的方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt67",
+      "name": "基本量",
+      "definition": "在物理学中被选定的、其单位可用来推导其他物理量单位的物理量，如长度、质量、时间等。",
+      "importance": "重要",
+      "examples": [
+        "长度、质量、时间"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt68",
+      "name": "基本单位",
+      "definition": "基本量所使用的单位，如米、千克、秒。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt69",
+      "name": "导出量",
+      "definition": "由基本量依据物理关系推导出来的物理量，如速度、加速度。",
+      "importance": "重要",
+      "examples": [
+        "速度",
+        "加速度"
+      ]
+    },
+    {
+      "id": "physics_bx1_rjb_cpt70",
+      "name": "导出单位",
+      "definition": "由基本单位依据物理关系推导出来的单位，如速度单位 m/s，加速度单位 m/s^2。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt71",
+      "name": "国际单位制 SI",
+      "definition": "国际上通用的单位制，由七个基本单位构成，包括米、千克、秒、安培、开尔文、摩尔、坎德拉。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt72",
+      "name": "物理量单位之间的关系",
+      "definition": "物理关系式不仅确定物理量关系，也决定其对应单位的关系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt73",
+      "name": "米的定义",
+      "definition": "光在真空中 1/299792458 秒时间间隔内传播的距离。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt74",
+      "name": "秒的定义",
+      "definition": "铯-133 原子基态两个超精细能级跃迁对应辐射的 9192631770 个周期的持续时间。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt75",
+      "name": "千克的定义",
+      "definition": "通过普朗克常数 h 及米、秒来定义的质量单位。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt76",
+      "name": "匀变速直线运动规律",
+      "definition": "描述速度、加速度、时间与位移之间关系的运动学公式。",
+      "importance": "掌握",
+      "formula": "v^2 - v_0^2 = 2ax; x = v_0 t + 1/2 at^2"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt77",
+      "name": "重力的测量",
+      "definition": "在地球表面附近，通过测量加速度g和质量m利用牛顿第二定律或利用力的平衡条件测量重力。",
+      "importance": "掌握",
+      "formula": "G = mg"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt78",
+      "name": "视重",
+      "definition": "体重计的示数，反映了物体对支持物的压力大小。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt79",
+      "name": "失重现象",
+      "definition": "物体对支持物的压力（或对悬挂物的拉力）小于物体所受重力的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt80",
+      "name": "超重现象",
+      "definition": "物体对支持物的压力（或对悬挂物的拉力）大于物体所受重力的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt81",
+      "name": "完全失重",
+      "definition": "物体对支持物完全没有作用力，体重计示数为0的状态，多发生在加速度等于g的下落中。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx1_rjb_cpt82",
+      "name": "支持力",
+      "definition": "支持物对物体的垂直作用力，在本章中常由体重计、地板提供。",
+      "importance": "掌握"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_bx1_rjb_skl1",
+      "name": "建立物理模型",
+      "description": "在研究物理问题时，突出主要因素、忽略次要因素，将实际物体简化为理想化模型以便研究。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl2",
+      "name": "用坐标系描述位置",
+      "description": "在参考系中建立坐标系，通过位置坐标定量描述物体位置。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl3",
+      "name": "从x-t图像读取位移信息",
+      "description": "通过x-t图像判断物体在不同时间的位置和位移变化。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl4",
+      "name": "利用打点计时器测量位移和时间",
+      "description": "使用打点计时器纸带上连续等间隔打点的特点，通过测量点间距离获得位移并计算时间。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl5",
+      "name": "借助图像分析运动规律",
+      "description": "根据速度—时间图像（v-t图）判断物体速度的大小、方向及其变化趋势。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl6",
+      "name": "通过比值定义物理量的方法",
+      "description": "通过两个物理量的比值来定义新的物理量，例如加速度由速度变化量与时间的比值定义"
+    },
+    {
+      "id": "physics_bx1_rjb_skl7",
+      "name": "用图像分析运动",
+      "description": "利用 v-t 图像判断速度变化、加速度大小及方向"
+    },
+    {
+      "id": "physics_bx1_rjb_skl8",
+      "name": "利用打点计时器测量瞬时速度",
+      "description": "通过分析纸带上相邻计数点的间距或利用一定方法近似求出瞬时速度。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl9",
+      "name": "绘制v-t图像并分析规律",
+      "description": "根据实测的t和v数据在直角坐标系中描点、作图，观察图像趋势并分析物体速度变化规律。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl10",
+      "name": "建立一维坐标系处理物理量正负号",
+      "description": "在分析直线运动时，通过设定正方向，使速度、加速度等物理量的正负号明确，从而正确代入公式。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl11",
+      "name": "建立一维坐标系处理矢量正负方向",
+      "description": "在处理速度、加速度等矢量正负号问题时，应先建立一维坐标系，统一物理量的方向判断。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl12",
+      "name": "用分段法分析变化量",
+      "description": "将一个变化过程划分成许多小段，认为每段内物理量近似不变，从而进行求和或积分近似。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl13",
+      "name": "逻辑推理与实验相结合的科学方法",
+      "description": "通过逻辑推理提出结论，再以实验验证结论，以获得可靠的科学规律。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl14",
+      "name": "使用力的图示法",
+      "description": "用有向线段表示力的大小、方向和作用点。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl15",
+      "name": "根据相互作用分析受力",
+      "description": "根据物体间的相互作用成对出现的特点，判断物体所受的力，并正确区分作用力与反作用力。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl16",
+      "name": "力的图示法",
+      "description": "用有向线段同时表示力的大小和方向"
+    },
+    {
+      "id": "physics_bx1_rjb_skl17",
+      "name": "建立直角坐标系分析受力",
+      "description": "在受力分析中选取合适的坐标系，并将力沿坐标轴分解以列方程求解。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl18",
+      "name": "正交分解法求解共点力平衡问题",
+      "description": "将各力分解到坐标轴方向，通过平衡条件在各方向合力为零建立方程求解未知力。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl19",
+      "name": "理想实验与逻辑推理",
+      "description": "通过排除实际条件中难以避免的因素（如摩擦），利用逻辑推理构建理想化实验模型以揭示物理本质。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl20",
+      "name": "描点法判断变量关系",
+      "description": "通过建立直角坐标系，以实验数据描点判断变量是否成正比或反比关系。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl21",
+      "name": "利用位移比求加速度比",
+      "description": "在两个物体运动时间相同的情况下，根据位移比即可得到加速度比。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl22",
+      "name": "力的分解与合成",
+      "description": "将一个力沿坐标轴方向分解或将多个力合成，用来求解合力并建立动力学方程。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl23",
+      "name": "根据受力求运动",
+      "description": "通过受力分析确定合力，用牛顿第二定律求加速度，再结合运动学规律求速度或位移。"
+    },
+    {
+      "id": "physics_bx1_rjb_skl24",
+      "name": "根据运动求受力",
+      "description": "利用运动学求出加速度，再结合受力分析和牛顿第二定律求出力的大小。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_bx1_rjb_exp1",
+      "name": "使用打点计时器测量位移和时间",
+      "instrument": "电磁打点计时器、纸带、刻度尺、电源",
+      "is_student": 1,
+      "process": "安装纸带、启动电源、拉动纸带、记录打点、测量点间距离与时间。",
+      "phenomena": "纸带上形成等时间间隔的点。",
+      "conclusion": "点间距离代表相应时间间隔内的位移。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp2",
+      "name": "测量纸带的平均速度",
+      "instrument": "打点计时器、纸带、直尺",
+      "is_student": 1,
+      "process": "利用打点计时器记录纸带上各点位置，测量相邻计数点间位移和对应时间，计算平均速度。",
+      "conclusion": "通过较长时间间隔的位移和时间之比可求平均速度。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp3",
+      "name": "测量纸带的瞬时速度",
+      "instrument": "打点计时器、纸带、直尺",
+      "is_student": 1,
+      "process": "在目标点附近选择更短的间隔测平均速度，使其逼近瞬时速度。",
+      "conclusion": "通过取更小的Δt，可使平均速度更接近瞬时速度。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp4",
+      "name": "探究小车速度随时间变化的规律",
+      "instrument": [
+        "小车",
+        "打点计时器",
+        "纸带",
+        "滑轮",
+        "长木板",
+        "槽码",
+        "细绳"
+      ],
+      "is_student": 1,
+      "process": "让小车在槽码牵引下运动，通过打点计时器在纸带上打点，记录多个时刻的位置以求瞬时速度。",
+      "phenomena": "纸带上出现一系列逐渐疏开的点。",
+      "conclusion": "通过v-t图像可得小车速度随时间近似呈线性变化。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp5",
+      "name": "牛顿管中轻重物体下落比较实验",
+      "instrument": "封闭玻璃管、铁片、羽毛、抽气设备",
+      "is_student": 0,
+      "process": "分别在有空气与抽成真空的玻璃管中让铁片和羽毛同时下落并观察现象。",
+      "phenomena": "抽出空气后轻重物体下落一样快。",
+      "conclusion": "空气阻力导致日常下落快慢不同。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp6",
+      "name": "打点计时器测自由落体加速度",
+      "instrument": "打点计时器、纸带、重物",
+      "is_student": 1,
+      "process": "让重物自由下落，通过纸带计时分析加速度。",
+      "conclusion": "不同质量物体自由落体加速度相同。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp7",
+      "name": "确定不规则薄板的重心",
+      "instrument": "细线、薄板、挂钩",
+      "is_student": 1,
+      "process": "在不同悬挂点悬挂薄板，分别画竖直线，求交点。",
+      "phenomena": "悬线方向指向重心。",
+      "conclusion": "薄板的重心在多条悬挂竖直线的交点。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp8",
+      "name": "探究弹簧弹力与形变量关系",
+      "instrument": "弹簧、钩码、刻度尺、铁架台",
+      "is_student": 1,
+      "process": "改变钩码质量，测量弹簧伸长量，作 F-x 图像。",
+      "conclusion": "F 与 x 成正比。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp9",
+      "name": "测量滑动摩擦力的实验",
+      "instrument": "弹簧测力计、木块、木板",
+      "is_student": 1,
+      "process": "用弹簧测力计拖动木块，使其匀速运动，记录测力计示数。改变压力并重复测量。",
+      "phenomena": "滑动摩擦力随压力增大而增大。",
+      "conclusion": "滑动摩擦力与压力成正比。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp10",
+      "name": "静摩擦力随拉力变化实验",
+      "instrument": "弹簧测力计、小纸团、木块、木板",
+      "is_student": 0,
+      "process": "逐渐增大拉力，观察木块开始运动前后测力计示数变化。",
+      "phenomena": "在木块开始运动前，静摩擦力随拉力增大；达到最大值后物体开始运动。",
+      "conclusion": "静摩擦力有最大值 F_max。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp11",
+      "name": "用弹簧测力计探究作用力和反作用力的关系",
+      "instrument": "两个弹簧测力计",
+      "is_student": 1,
+      "process": "将两个弹簧测力计连接，用手拉测力计A，读取A与B的示数。",
+      "phenomena": "两个测力计的示数大小相等、方向相反。",
+      "conclusion": "验证了作用力和反作用力大小相等、方向相反。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp12",
+      "name": "用力传感器探究作用力和反作用力的关系",
+      "instrument": "两个力传感器、计算机",
+      "is_student": 1,
+      "process": "连接两个相互钩住的力传感器，同时记录受力随时间变化。",
+      "phenomena": "在任何时刻，两力大小相等、方向相反。",
+      "conclusion": "进一步验证作用力和反作用力的关系。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp13",
+      "name": "探究两个互成角度的力的合成规律",
+      "instrument": "橡皮条、小圆环、两个弹簧测力计",
+      "is_student": 1,
+      "process": "使用两个力 F1 和 F2 使小圆环至 O 点，再用单个力 F 达到相同效果，比较橡皮条伸长判断合力关系。",
+      "conclusion": "两个力的合成遵从平行四边形定则。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp14",
+      "name": "伽利略斜面理想实验",
+      "instrument": "两个斜面、小球",
+      "is_student": 0,
+      "process": "让小球从一个斜面滚下并冲上另一斜面，改变斜面倾角进行推理。",
+      "conclusion": "若无摩擦，小球在水平面上将永远保持运动；力不是维持运动的原因。"
+    },
+    {
+      "id": "physics_bx1_rjb_exp15",
+      "name": "探究加速度与力、质量的关系实验",
+      "instrument": "小车、木板、滑轮、槽码、打点计时器、纸带、天平、刻度尺、秒表",
+      "is_student": 1,
+      "process": "通过控制变量的方法分别改变力或质量，测量不同条件下的小车加速度。",
+      "phenomena": "在力增大时加速度增大；在质量增大时加速度减小。",
+      "conclusion": "加速度与力成正比，与质量成反比。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_bx1_rjb_exe1",
+      "type": "简答题",
+      "stem": "在研究地球绕太阳公转时，为什么可以把地球看作质点？",
+      "answer": "因为地球的大小（约1.3×10^4 km）远小于地日距离（约1.5×10^8 km），地球各点位置差异对研究公转运动影响很小，因此可以忽略形状和大小，将其视为质点。",
+      "analysis": "本题考察质点的应用条件，即当物体大小相比研究尺度很小时，可将其视为质点。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe2",
+      "type": "简答题",
+      "stem": "某物体从 A 点运动到 B 点，坐标 x_A=5 m，x_B=2 m，物体的位移大小与方向？",
+      "answer": "位移大小为3 m，方向指向x轴负方向。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe3",
+      "type": "简答题",
+      "stem": "为研究实验小车沿斜面向下运动的规律，某同学将纸带每隔0.1s剪断并拼接，用纸条上端中心连线绘制v-t图像。这样做有道理吗？说明理由。",
+      "answer": "此方法不完全正确。纸带上端中心连线反映的是位移随时间变化，不是速度随时间变化；应根据相邻打点间距计算瞬时速度，再绘制v-t图像。",
+      "analysis": "题目考察对v-t图像意义及瞬时速度测量方法的理解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe4",
+      "type": "应用题",
+      "stem": "一辆汽车以36 km/h的速度匀速行驶，随后以0.6 m/s²加速10 s，再以6 m/s²匀减速直至停止。求：(1) 汽车在10 s末的速度；(2) 刹车到停下所用的时间。",
+      "answer": "(1) 16 m/s；(2) 2.67 s",
+      "analysis": "两段运动均为匀变速直线运动，分别代入 v = v0 + at 求解。第二问需建立坐标系判断加速度符号。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe5",
+      "type": "应用题",
+      "stem": "某舰载机起飞时，以10 m/s 的初速度进入跑道，做匀加速直线运动，加速度为 25 m/s^2，持续 2.4 s，求滑行距离。",
+      "answer": "96 m",
+      "analysis": "根据匀变速直线运动位移公式 x = v0 t + 1/2 a t^2 直接求得。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe6",
+      "type": "应用题",
+      "stem": "动车从126 km/h 减速至54 km/h，经过3个里程碑（3000 m），视为匀减速运动，求加速度及之后到停止所需距离。",
+      "answer": "加速度约 -0.167 m/s^2；停止需 674 m。",
+      "analysis": "利用速度与位移关系式 v^2 - v0^2 = 2ax 求加速度，再求停止距离。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe7",
+      "type": "应用题",
+      "stem": "钢球由静止开始做自由落体运动，落地速度30 m/s，g取10 m/s^2，求下落高度。",
+      "answer": "h = v^2/(2g) = 45 m",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe8",
+      "type": "应用题",
+      "stem": "一个总质量为4.9×10^3 kg 的钢制雪橇在水平冰道上匀速前进，求马需要施加的水平拉力（μ=0.02，g=10 N/kg）。",
+      "answer": "980 N",
+      "analysis": "匀速运动，拉力等于滑动摩擦力；F_f = μmg。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe9",
+      "type": "证明题",
+      "stem": "一个物体静止放在台式弹簧秤上，证明物体对弹簧秤的压力大小等于物体所受的重力。",
+      "answer": "物体所受重力与弹簧秤的支持力是一对平衡力，因此支持力大小等于重力大小。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe10",
+      "type": "简答题",
+      "stem": "小强认为作用力和反作用力大小相等、方向相反，应该相互平衡。请解释他的误解。",
+      "answer": "作用力和反作用力作用在不同物体上，不能互相抵消；平衡力必须作用在同一物体上。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe11",
+      "type": "应用题",
+      "stem": "某物体受到一个32N水平向右的力和一个44N竖直向上的力，通过作图求出合力大小和方向。",
+      "answer": "合力大小约为54.4N，方向与水平右向夹角约54°。",
+      "analysis": "利用平行四边形定则作图测量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe12",
+      "type": "应用题",
+      "stem": "滑梯水平跨度6m，动摩擦因数0.4，小孩匀速下滑，求滑梯最小高度。",
+      "answer": "2.4 m",
+      "analysis": "根据共点力平衡条件，沿斜面方向列 Gx - Ff = 0，并用 Ff = μFN 求得 h = μb = 2.4m。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe13",
+      "type": "应用题",
+      "stem": "某同学在列车车厢顶部悬挂小球，悬线与竖直方向夹角为 θ，求列车加速度。",
+      "answer": "a = g·tanθ",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe14",
+      "type": "应用题",
+      "stem": "光滑水平桌面上有一个静止的物体，质量是700 g，在1.4 N 的水平恒力作用下开始运动。5 s 末物体的速度是多少？5 s 内的位移是多少？",
+      "answer": "速度 10 m/s，位移 25 m。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe15",
+      "type": "应用题",
+      "stem": "运动员以3.4 m/s速度投掷冰壶，动摩擦因数为0.02，求冰壶滑行距离。g=10 m/s²。",
+      "answer": "28.9 m",
+      "analysis": "受力只有滑动摩擦力 Ff=μmg，利用 a=Ff/m 得 a=-0.2 m/s²；代入 v²-v0²=2ax 求得滑行距离。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx1_rjb_exe16",
+      "type": "应用题",
+      "stem": "某人质量为60kg，电梯以0.25m/s²加速度匀加速上升，求人体对电梯的压力。",
+      "answer": "603N，方向竖直向下。",
+      "analysis": "根据牛顿第二定律FN - mg = ma 得 FN = m(g+a)。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 82,
+    "skill_count": 24,
+    "experiment_count": 15,
+    "question_count": 16
+  }
+}

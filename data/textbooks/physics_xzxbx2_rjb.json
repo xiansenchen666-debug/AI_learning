@@ -1,0 +1,1037 @@
+{
+  "id": "physics_xzxbx2_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理选择性必修二",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_xzxbx2_rjb_cpt1",
+      "name": "安培力",
+      "definition": "通电导线在磁场中受到的力，其大小为 F = ILB（导线方向与磁场垂直时），是洛伦兹力的宏观表现。",
+      "importance": "重要",
+      "formula": "F = I l B sinθ"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt2",
+      "name": "左手定则",
+      "definition": "判断运动正电荷在磁场中受到的洛伦兹力方向，伸开左手，使拇指与四指垂直，磁感线从掌心进入，四指指向电荷运动方向，拇指所指为受力方向。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt3",
+      "name": "磁电式电流表原理",
+      "definition": "通电线圈在磁场中因受安培力而转动，通过偏转角度测量电流。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt4",
+      "name": "洛伦兹力",
+      "definition": "运动电荷在磁场中受到的力称为洛伦兹力，其方向同时垂直于速度方向和磁感应强度方向，大小为 F = q v B sinθ。",
+      "importance": "重要",
+      "formula": "F = q v B sinθ"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt5",
+      "name": "磁偏转",
+      "definition": "由于洛伦兹力垂直于速度方向，使带电粒子在磁场中偏转运动轨迹的现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt6",
+      "name": "带电粒子在匀强磁场中的圆周运动",
+      "definition": "带电粒子以与磁场方向垂直的速度进入匀强磁场时，在洛伦兹力的作用下做匀速圆周运动。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt7",
+      "name": "圆周运动半径公式",
+      "definition": "带电粒子在匀强磁场中做圆周运动的半径由r = mv/(qB)给出。",
+      "importance": "掌握",
+      "formula": "r = mv/(qB)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt8",
+      "name": "圆周运动周期公式",
+      "definition": "带电粒子在匀强磁场中的周期与速度无关，由T = 2πm/(qB)给出。",
+      "importance": "掌握",
+      "formula": "T = 2πm/(qB)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt9",
+      "name": "洛伦兹力与带电粒子圆周运动",
+      "definition": "带电粒子在垂直磁场中仅受洛伦兹力作用，将做匀速圆周运动，满足 r = mv/(qB)。",
+      "importance": "掌握",
+      "formula": "r = mv/(qB); T = 2πm/(qB)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt10",
+      "name": "电场加速带电粒子",
+      "definition": "带电粒子在电势差 U 下被加速，获得的动能满足 1/2 mv² = qU。",
+      "importance": "掌握",
+      "formula": "v = sqrt(2qU/m)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt11",
+      "name": "质谱仪原理",
+      "definition": "利用电场加速离子并在磁场中按质量不同产生不同半径，实现质量分离。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt12",
+      "name": "比荷测量",
+      "definition": "通过测量带电粒子在磁场中圆周运动半径，可求 q/m。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt13",
+      "name": "回旋加速器原理",
+      "definition": "利用恒定磁场控制粒子圆周运动，并用交变电场使粒子在每次通过缝隙时加速。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt14",
+      "name": "回旋加速器周期",
+      "definition": "带电粒子在匀强磁场中的圆周运动周期 T = 2πm/(qB)，与速度、半径无关。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt15",
+      "name": "同位素",
+      "definition": "核内质子数相同、质量不同的原子核称为同位素，可通过质谱仪区分。",
+      "importance": "了解",
+      "examples": "1H、2H、3H"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt16",
+      "name": "楞次定律",
+      "definition": "感应电流的磁场总要阻碍引起感应电流的磁通量的变化。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt17",
+      "name": "右手螺旋定则",
+      "definition": "通过电流方向判断其产生的磁场方向的定则。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt18",
+      "name": "右手定则（切割磁感线）",
+      "definition": "导体棒切割磁感线时，用右手判断感应电流方向的方法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt19",
+      "name": "感应电动势",
+      "definition": "电磁感应现象中产生的电动势，即使电路不闭合也存在。",
+      "importance": "掌握",
+      "formula": "e = ω B S sin(ωt)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt20",
+      "name": "法拉第电磁感应定律",
+      "definition": "闭合电路中感应电动势的大小与穿过电路的磁通量变化率成正比。",
+      "importance": "重要",
+      "formula": "E = ΔΦ / Δt"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt21",
+      "name": "线圈匝数与感应电动势",
+      "definition": "匝数为n的线圈的总感应电动势是单匝线圈的n倍。",
+      "importance": "了解",
+      "formula": "E = n ΔΦ/Δt"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt22",
+      "name": "动生电动势",
+      "definition": "由于导体运动切割磁感线而产生的感应电动势。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt23",
+      "name": "导线切割磁感线的感应电动势公式",
+      "definition": "当导体垂直切割磁感线运动时，感应电动势可由 E = B l v 计算。",
+      "importance": "掌握",
+      "formula": "E = B l v"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt24",
+      "name": "导线运动方向与磁场夹角的感应电动势",
+      "definition": "当导体运动方向与磁感线存在夹角θ时，感应电动势为 E = B l v sinθ。",
+      "importance": "了解",
+      "formula": "E = B l v sinθ"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt25",
+      "name": "感生电场",
+      "definition": "磁场变化时在空间中激发的、不由电荷产生的电场。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt26",
+      "name": "涡流",
+      "definition": "导体内由于磁通量变化而产生的环形感应电流。",
+      "importance": "重要",
+      "aliases": [
+        "涡电流"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt27",
+      "name": "电磁阻尼",
+      "definition": "导体在磁场中运动产生感应电流，感应电流受到的安培力阻碍导体运动的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt28",
+      "name": "电磁驱动",
+      "definition": "磁场相对导体运动产生感应电流，安培力推动导体运动的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt29",
+      "name": "互感",
+      "definition": "当一个线圈中的电流变化时，它所产生的变化的磁场会在另一个相互靠近的线圈中产生感应电动势，这种现象叫作互感。",
+      "importance": "重要",
+      "examples": [
+        "变压器利用互感现象传递能量"
+      ],
+      "aliases": [
+        "mutual induction"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt30",
+      "name": "自感",
+      "definition": "当一个线圈中的电流变化时，它产生的变化磁场在线圈本身激发出感应电动势，这一现象叫作自感。",
+      "importance": "重要",
+      "aliases": [
+        "self-induction"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt31",
+      "name": "自感电动势",
+      "definition": "由自感现象产生的感应电动势，大小正比于电流变化率。",
+      "importance": "掌握",
+      "formula": "E = L * ΔI/Δt"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt32",
+      "name": "自感系数（电感）",
+      "definition": "表征自感电动势与电流变化率成正比关系的比例系数，与线圈大小、匝数及铁芯有关。",
+      "importance": "掌握",
+      "unit": "亨（H）"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt33",
+      "name": "磁场的能量储存",
+      "definition": "线圈中有电流便存在磁场，能量可以储存在磁场中，在电流变化时释放或吸收能量。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt34",
+      "name": "直流电流",
+      "definition": "方向不随时间变化的电流。",
+      "importance": "掌握",
+      "aliases": [
+        "direct current",
+        "DC"
+      ],
+      "examples": [
+        "电池供给的电流"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt35",
+      "name": "正弦式交变电流",
+      "definition": "按正弦函数规律变化的交变电流，其电动势、电压、电流均满足正弦关系。",
+      "importance": "重要",
+      "formula": "e = E_m sin(ωt), u = U_m sin(ωt), i = I_m sin(ωt)"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt36",
+      "name": "峰值",
+      "definition": "交变电流或电压在周期变化过程中所达到的最大值，分别记作 I_m 或 U_m。",
+      "importance": "掌握",
+      "aliases": [
+        "最大值",
+        "peak value"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt37",
+      "name": "交流发电机",
+      "definition": "通过线圈在磁场中转动产生交变电动势的装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt38",
+      "name": "角频率",
+      "definition": "正弦式交变电流表达式 i = I_m sin ωt 中的参数，等于频率的 2π 倍。",
+      "importance": "了解",
+      "formula": "ω = 2πf"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt39",
+      "name": "有效值",
+      "definition": "与交变电流在一个周期内产生同样热量的恒定电流的电流值或电压值。",
+      "importance": "重要",
+      "formula": "I = I_m / √2,  U = U_m / √2",
+      "examples": [
+        "家庭电路电压220V指的是有效值"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt40",
+      "name": "正弦式交变电流表达式",
+      "definition": "正弦式交变电流的瞬时值可表示为 u = U_m sin(ωt) 或 i = I_m sin(ωt)。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt41",
+      "name": "感抗",
+      "definition": "线圈由于电磁感应对交变电流产生的阻碍作用。",
+      "importance": "掌握",
+      "examples": [
+        "扼流圈利用感抗来阻碍交流"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt42",
+      "name": "容抗",
+      "definition": "电容器对交变电流产生的阻碍作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt43",
+      "name": "变压器",
+      "definition": "由闭合铁芯和绕在铁芯上的原线圈与副线圈组成，利用电磁感应改变交流电压的装置。",
+      "importance": "重要",
+      "aliases": [
+        "transformer"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt44",
+      "name": "原线圈",
+      "definition": "与交流电源相连的线圈，是变压器中产生变化磁场的线圈。",
+      "importance": "掌握",
+      "aliases": [
+        "primary coil"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt45",
+      "name": "副线圈",
+      "definition": "与负载相连的线圈，因变化磁场而产生感应电动势并输出电流。",
+      "importance": "掌握",
+      "aliases": [
+        "secondary coil"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt46",
+      "name": "互感现象",
+      "definition": "一个线圈中变化的电流产生变化磁场，使另一个线圈中产生感应电动势的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt47",
+      "name": "理想变压器",
+      "definition": "假设没有能量损耗的变压器模型。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt48",
+      "name": "变压器电压与匝数关系",
+      "definition": "理想变压器原、副线圈的电压之比等于匝数之比，即 U1/U2 = n1/n2。",
+      "importance": "重要",
+      "formula": "U1 / U2 = n1 / n2"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt49",
+      "name": "升压变压器与降压变压器",
+      "definition": "副线圈电压高于原线圈电压为升压变压器，反之为降压变压器。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt50",
+      "name": "变压器效率",
+      "definition": "输出功率与输入功率之比。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt51",
+      "name": "输电线路功率损失",
+      "definition": "电能在输电线上由于电阻产生的功率损失，表达式为 P = I^2 r。",
+      "importance": "重要",
+      "formula": "P = I^2 r"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt52",
+      "name": "输电线电阻",
+      "definition": "输电导线本身的电阻，取决于导线材料的电阻率、长度和横截面积。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt53",
+      "name": "高压输电",
+      "definition": "通过提高输电电压从而降低输电电流，以减少线路损耗的输电方式。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt54",
+      "name": "电网",
+      "definition": "由多座电厂、变电站和输电线构成的网状供电系统，实现区域间电力互联和调度。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt55",
+      "name": "变压器升压与降压",
+      "definition": "利用变压器改变电压大小，以满足远距离输电和用户用电需求。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt56",
+      "name": "振荡电流",
+      "definition": "大小和方向都做周期性迅速变化的电流。",
+      "importance": "掌握",
+      "aliases": [
+        "oscillating current"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt57",
+      "name": "振荡电路",
+      "definition": "能产生振荡电流的电路。",
+      "importance": "掌握",
+      "aliases": [
+        "oscillating circuit"
+      ]
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt58",
+      "name": "LC振荡电路",
+      "definition": "由电感线圈L和电容器C组成的最简单的振荡电路。",
+      "importance": "重要",
+      "formula": "T = 2π√(LC),  f = 1/(2π√(LC))"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt59",
+      "name": "电磁振荡",
+      "definition": "在振荡电路中，电流、电荷量、电场强度、磁感应强度等物理量都做周期性变化的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt60",
+      "name": "电场能与磁场能的相互转化",
+      "definition": "在电磁振荡中，电场能与磁场能周期性地相互转化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt61",
+      "name": "振荡周期与频率",
+      "definition": "电磁振荡完成一次周期性变化的时间叫周期，单位时间内完成的周期性变化次数叫频率。",
+      "importance": "掌握",
+      "formula": "T = 2π√(LC),  f = 1/T"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt62",
+      "name": "电磁波与光的统一性",
+      "definition": "电磁波在真空中的传播速度等于光速，光也是一种电磁波。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt63",
+      "name": "电磁波的发射条件",
+      "definition": "要有效地发射电磁波，振荡电路需要具有高频振荡，并使电场和磁场尽可能分散到较大的空间。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt64",
+      "name": "开放电路",
+      "definition": "将LC振荡电路中的电容极板拉开、减小正对面积，使电场磁场扩展到外部的振荡电路。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt65",
+      "name": "天线与地线",
+      "definition": "开放电路中线圈一端通过导线接地形成地线，另一端接高空天线，用于发射电磁波。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt66",
+      "name": "载波",
+      "definition": "用于携带信号的高频电磁波。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt67",
+      "name": "调幅（AM）",
+      "definition": "使高频电磁波振幅随信号强弱变化的调制方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt68",
+      "name": "调频（FM）",
+      "definition": "使高频电磁波频率随信号强弱变化的调制方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt69",
+      "name": "电谐振",
+      "definition": "当接收电路固有频率与电磁波频率相同时，振荡电流最强的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt70",
+      "name": "调谐",
+      "definition": "调节接收电路，使其固有频率与需要接收的电磁波频率相同。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt71",
+      "name": "可见光",
+      "definition": "能使人眼产生视觉效应的电磁波，波长范围约为400~760 nm。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt72",
+      "name": "X射线",
+      "definition": "波长比紫外线更短，具有较强穿透能力，可用于医学成像和工业探伤。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt73",
+      "name": "γ射线",
+      "definition": "原子核在能级跃迁时释放出的高能电磁波，常伴随α衰变与β衰变出现。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt74",
+      "name": "传感器",
+      "definition": "能够感受诸如力、温度、光、声、化学成分等被测量，并把它们按照一定规律转换为便于传送和处理的可用信号输出的器件或装置。",
+      "importance": "重要",
+      "examples": "声控-光控开关、红外线传感器、乙醇传感器、智能手机中的各类传感器"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt75",
+      "name": "敏感元件",
+      "definition": "直接感受或响应外界被测非电学量的部分。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt76",
+      "name": "转换元件",
+      "definition": "将敏感元件输出的信号转换成电信号的部分。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt77",
+      "name": "物理传感器",
+      "definition": "利用物质的物理特性或物理效应制作的传感器，如力、磁、声等。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt78",
+      "name": "化学传感器",
+      "definition": "利用电化学反应原理，将化学成分、浓度等转换为电信号的传感器。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt79",
+      "name": "生物传感器",
+      "definition": "利用生物活性物质的选择性来识别和测定生物化学物质的传感器。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt80",
+      "name": "干簧管",
+      "definition": "在磁场作用下使两个簧片磁化相吸而接通或断开的器件，可将位置变化等非电学量转换为电路通断。",
+      "importance": "了解",
+      "examples": "门窗防盗报警装置中的位置检测"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt81",
+      "name": "传感器应用模式",
+      "definition": "传感器输出的微弱电信号经过调整放大，可用于显示、驱动执行机构或由计算机处理并发出指令。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt82",
+      "name": "光敏电阻",
+      "definition": "利用硫化镉等半导体材料的电阻随光照强度变化而改变的原理制成的光电传感器。",
+      "importance": "重要",
+      "examples": "自动计数装置"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt83",
+      "name": "热敏电阻",
+      "definition": "由半导体材料制成，电阻随温度上升而显著减小的温度敏感元件。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt84",
+      "name": "金属热电阻",
+      "definition": "由金属材料制成，电阻随温度升高而增大的温度传感器。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt85",
+      "name": "电阻应变片",
+      "definition": "利用导体或半导体在受力形变时电阻发生变化的应变效应制成的力敏元件。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt86",
+      "name": "电容式位移传感器",
+      "definition": "根据电容随极板相对位置变化而变化的原理，将位移转换为电容变化的传感器。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt87",
+      "name": "霍尔效应",
+      "definition": "载流导体在磁场中会在垂直于电流与磁场方向产生电势差的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt88",
+      "name": "霍尔元件",
+      "definition": "基于霍尔效应工作，能够将磁感应强度转换为电压信号的磁敏元件。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt89",
+      "name": "继电器",
+      "definition": "利用电磁吸合实现开关转换的电磁装置，可实现自动控制。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt90",
+      "name": "发光二极管LED",
+      "definition": "具有单向导电性，导通时发光，用于指示和照明。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt91",
+      "name": "晶体三极管",
+      "definition": "具有电流放大作用，可作为电子开关，是控制电路中的基本元件。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_cpt92",
+      "name": "自动控制电路",
+      "definition": "利用传感器和执行器实现自动开关或调节的电路。",
+      "importance": "重要"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_xzxbx2_rjb_skl1",
+      "name": "运用矢量分解计算安培力",
+      "description": "将磁感应强度分解为与电流方向平行和垂直的分量，利用F = I l B⊥ 计算安培力。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl2",
+      "name": "利用左手定则判断受力方向",
+      "description": "通过左手定则判断运动电荷在磁场中受到的洛伦兹力方向，是处理磁场作用力问题的基本方法。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl3",
+      "name": "利用联合方程求粒子轨道半径",
+      "description": "将电场提供的速度公式与磁场圆周运动半径公式联合求解。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl4",
+      "name": "分析磁场与电场综合作用",
+      "description": "判断粒子在电场中加速、在磁场中偏转或圆周运动的整体路径。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl5",
+      "name": "归纳推理",
+      "description": "从具体实验现象中总结出普遍规律的方法。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl6",
+      "name": "磁通量变化率计算",
+      "description": "根据磁通量变化量ΔΦ与时间Δt计算磁通量变化率 ΔΦ/Δt，用于判断感应电动势大小。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl7",
+      "name": "应用楞次定律判断感应电流方向",
+      "description": "根据感应电流产生的磁场阻碍原磁通量变化的规律，判断感应电动势方向。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl8",
+      "name": "使用右手定则判断感应电流方向",
+      "description": "利用右手定则判断线圈各边在磁场中运动时感应电流的方向。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl9",
+      "name": "利用 P=UI 与 P=I^2 r 进行输电分析",
+      "description": "根据功率、电压、电流与电阻的关系分析输电效率与损耗。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl10",
+      "name": "基于场的分析方法",
+      "description": "从场的角度理解电磁现象，以电场、磁场的变化和相互作用分析电磁过程。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl11",
+      "name": "运用电谐振选择信号",
+      "description": "通过调节接收电路的固有频率，使其与目标电磁波频率一致，从而选择出所需信号。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl12",
+      "name": "根据波长或频率比较电磁波性质",
+      "description": "通过波长大小或频率高低判断不同电磁波的能量、传播方式与典型用途。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_skl13",
+      "name": "通过电阻变化判断物理量变化",
+      "description": "通过观察电阻的增大或减小来判断光照、温度或力等物理量的变化。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_xzxbx2_rjb_exp1",
+      "name": "研究安培力方向的实验",
+      "instrument": "蹄形磁体、导体棒、电源",
+      "is_student": 1,
+      "process": "改变磁场方向与电流方向，观察导体棒受力方向变化。",
+      "phenomena": "受力方向与磁场方向、电流方向有关。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp2",
+      "name": "电子束在磁场中的偏转实验",
+      "instrument": "抽成真空的玻璃管、高压电源、磁场装置",
+      "is_student": 0,
+      "process": "观察无磁场与有磁场时电子束的径迹差异，改变磁场方向并观察电子束弯曲方向变化。",
+      "phenomena": "电子束在磁场作用下发生弯曲，方向随磁场方向改变而改变。",
+      "conclusion": "证明运动电荷在磁场中受到垂直于速度方向的洛伦兹力。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp3",
+      "name": "观察带电粒子在磁场中的运动径迹",
+      "instrument": "洛伦兹力演示仪、电子枪、玻璃泡、励磁线圈",
+      "is_student": 0,
+      "phenomena": "无磁场时电子束沿直线运动，加磁场后电子束沿圆轨道运动。",
+      "conclusion": "电子在匀强磁场中做匀速圆周运动，且半径与速度成正比、与磁感应强度成反比。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp4",
+      "name": "研究影响感应电流方向的因素实验",
+      "instrument": "条形磁体、线圈、电流表",
+      "is_student": 1,
+      "process": "改变磁极插入或抽出方向，观察电流表偏转方向。",
+      "phenomena": "磁通量增加或减少时感应电流方向不同。",
+      "conclusion": "感应电流方向与磁通量变化及阻碍作用有关。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp5",
+      "name": "线圈位置改变与落磁体实验",
+      "instrument": "线圈、电压表、长玻璃管、强磁体",
+      "is_student": 1,
+      "process": "改变线圈距管口高度，观察电压表读数；改变线圈匝数和磁体强度重复实验。",
+      "phenomena": "线圈越靠近磁体加速区、匝数越多、磁体越强，感应电动势越大。",
+      "conclusion": "感应电动势与磁通量变化率有关。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp6",
+      "name": "观察开关闭合时灯泡的发光情况",
+      "instrument": [
+        "线圈L",
+        "灯泡A1 A2",
+        "可调电阻R",
+        "电源",
+        "开关"
+      ],
+      "is_student": 1,
+      "process": "闭合开关，观察线圈中感应电动势导致灯泡A1亮起变慢。",
+      "phenomena": "A1亮起较慢",
+      "conclusion": "自感电动势阻碍电流增加"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp7",
+      "name": "用电流传感器显示自感对电流的影响",
+      "instrument": [
+        "电流传感器",
+        "线圈L",
+        "电阻R",
+        "电源",
+        "开关"
+      ],
+      "is_student": 1,
+      "phenomena": "有线圈时电流逐渐增大；断开电源时电流方向改变",
+      "conclusion": "自感影响电流变化率"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp8",
+      "name": "观察交变电流方向的实验",
+      "instrument": "两只发光颜色不同的二极管、教学用发电机",
+      "is_student": 0,
+      "phenomena": "两个二极管交替发光",
+      "conclusion": "说明电流方向在周期性变化，发电机产生的是交变电流。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp9",
+      "name": "探究变压器原、副线圈电压与匝数的关系",
+      "instrument": "可拆变压器、交流电源、多用电表、连接导线",
+      "is_student": 1,
+      "process": "保持原线圈电压不变，改变线圈匝数，测量副线圈电压，记录并分析关系。",
+      "conclusion": "副线圈电压与线圈匝数大致成正比关系。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp10",
+      "name": "观察振荡电路中电压的波形",
+      "instrument": "线圈、电容器、电源、单刀双掷开关、电压传感器或示波器",
+      "is_student": 0,
+      "process": "先为电容器充电，再切换开关至线圈侧使其放电，并用示波器观察电压的周期性变化。",
+      "phenomena": "电容器两端电压周期性变化。",
+      "conclusion": "电路中出现振荡电流。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp11",
+      "name": "赫兹发现电磁波的实验",
+      "instrument": "感应圈、金属小球放电装置、环状导线接收装置",
+      "is_student": 0,
+      "process": "发射端两个金属球放电产生变化电磁场，接收端环状导线间隙出现火花。",
+      "phenomena": "接收器导线环的小球间出现火花。",
+      "conclusion": "验证了电磁波的存在并能在空间传播。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp12",
+      "name": "观察光敏电阻特性",
+      "instrument": "光敏电阻、多用电表",
+      "is_student": 1,
+      "process": "将光敏电阻接入电表，改变光照强度，观察电阻变化。",
+      "phenomena": "遮光时电阻变大，强光照射时电阻变小。",
+      "conclusion": "光敏电阻电阻随光照强度变化。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp13",
+      "name": "观察热敏电阻特性",
+      "instrument": "热敏电阻、多用电表",
+      "is_student": 1,
+      "process": "改变热敏电阻的温度，观察电阻变化。",
+      "phenomena": "升温时电阻减小，降温时电阻增大。",
+      "conclusion": "热敏电阻电阻随温度变化。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp14",
+      "name": "门窗防盗报警装置制作实验",
+      "instrument": "干簧管、继电器、LED、电阻、蜂鸣器、电源、小磁体、开关",
+      "is_student": 1,
+      "process": "将干簧管安装在门框，小磁体安装在门上，并按图连接电路；靠近或远离磁体观察报警变化。",
+      "phenomena": "门关闭时LED亮，门打开时蜂鸣器响。",
+      "conclusion": "干簧管能检测磁体位置变化并控制电路状态。"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exp15",
+      "name": "光控开关实验",
+      "instrument": "光敏电阻、三极管、限流电阻、LED、电源、继电器、小灯泡、二极管",
+      "is_student": 1,
+      "process": "按图连接电路，调节可调电阻改变光照响应阈值；改变光照观察LED或灯泡亮灭。",
+      "phenomena": "光弱时LED亮或继电器吸合，光强时LED灭或继电器断开。",
+      "conclusion": "光敏电阻能将光照变化转换为电阻变化，通过三极管放大实现光控开关。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_xzxbx2_rjb_exe1",
+      "type": "应用题",
+      "stem": "电子的速率 v = 3.0 × 10^6 m/s，沿垂直于磁场方向射入 B = 0.10 T 的磁场中，它受到的洛伦兹力多大？",
+      "answer": "F = q v B = (1.6×10^-19 C)(3.0×10^6 m/s)(0.10 T) = 4.8×10^-14 N。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe2",
+      "type": "应用题",
+      "stem": "一个质量为1.67×10^-27 kg、电荷量为1.6×10^-19 C 的带电粒子以 5×10^5 m/s 的速度垂直射入磁感应强度 0.2 T 的匀强磁场。(1) 求粒子所受重力与洛伦兹力之比。(2) 求轨道半径。(3) 求运动周期。",
+      "answer": "(1) G/F = 1.03×10^-12；(2) r = 2.61×10^-2 m；(3) T = 3.28×10^-7 s",
+      "analysis": "分别计算重力与洛伦兹力，利用r = mv/(qB)和T = 2πm/(qB)求解。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe3",
+      "type": "应用题",
+      "stem": "A、B 两种同位素进入同一匀强磁场，若其轨迹直径之比为 1.08:1，求它们的质量比。",
+      "answer": "mA/mB = (rA/rB)^2 = (1.08)^2 ≈ 1.17",
+      "analysis": "利用 r = (1/B)√(2mU/q)，半径与质量平方根成正比。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe4",
+      "type": "应用题",
+      "stem": "如图2.1-3，线圈M断电瞬间，判断线圈N中感应电流方向。",
+      "answer": "感应电流方向应使其磁场与原磁场方向相同，即沿图2.1-4所示方向。",
+      "analysis": "磁通量减小→感应电流磁场应阻碍减小→方向与原磁场相同，根据右手螺旋定则确定电流方向。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe5",
+      "type": "应用题",
+      "stem": "如图2.1-5，矩形线圈产生A→B→C→D→A方向的感应电流，判断线圈移动方向。",
+      "answer": "线圈向左移动。",
+      "analysis": "感应电流磁场方向与原磁场相反→磁通量增大→线圈应向磁场更强处移动，即向左。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe6",
+      "type": "应用题",
+      "stem": "有一个1000匝的线圈，在0.4 s内通过它的磁通量从0.02 Wb增加到0.09 Wb，求线圈中的感应电动势。",
+      "answer": "E = n ΔΦ/Δt = 1000 × (0.09 - 0.02)/0.4 = 175 V",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe7",
+      "type": "应用题",
+      "stem": "某机床把380V降到36V，如果原线圈1440匝，求副线圈匝数。",
+      "answer": "副线圈匝数约为136匝。",
+      "analysis": "利用 U1/U2 = n1/n2，n2 = n1 * U2 / U1 = 1440 * 36 / 380",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe8",
+      "type": "应用题",
+      "stem": "采用 110 kV 高压输电，输送电功率为 4800 kW 的电能，求输电导线中的电流。",
+      "answer": "I = P/U = 4800 kW / 110 kV ≈ 43.6 A。",
+      "analysis": "使用公式 P=UI，体现高压输电降低电流。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe9",
+      "type": "应用题",
+      "stem": "在LC振荡电路中，线圈L的自感系数为30 μH，可调电容器C的可调范围为1.2~270 pF。求振荡电路的频率范围。",
+      "answer": "1.77×10^6 ~ 2.65×10^7 Hz",
+      "analysis": "利用 f = 1/(2π√(LC)) 分别代入最大与最小电容计算频率范围。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe10",
+      "type": "简答题",
+      "stem": "赫兹在1886年的实验中观察到了什么现象？为什么说这个现象让他捕捉到了电磁波？",
+      "answer": "他观察到环状导线的小球间也产生了火花。这说明导线环接收到来自放电装置发出的电磁波而产生感应电动势。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe11",
+      "type": "应用题",
+      "stem": "我国第一颗人造卫星用20.009 MHz和19.995 MHz的电磁波发送信号，求这两种电磁波的波长。",
+      "answer": "λ1≈15.0 m，λ2≈15.0 m（使用公式λ=c/f）",
+      "analysis": "利用电磁波波长公式λ=c/f，代入频率求解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe12",
+      "type": "简答题",
+      "stem": "能够引起人的视觉的电磁波波长范围是多少？",
+      "answer": "约400~760 nm。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx2_rjb_exe13",
+      "type": "简答题",
+      "stem": "什么是传感器？它的作用是什么？",
+      "answer": "传感器是感受被测量并把其转换成可用信号的装置；它的作用是检测非电量并输出便于处理的电信号。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 92,
+    "skill_count": 13,
+    "experiment_count": 15,
+    "question_count": 13
+  }
+}

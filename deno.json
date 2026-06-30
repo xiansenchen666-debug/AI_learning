@@ -4,6 +4,8 @@
   },
   "tasks": {
     "export": "python -X utf8 tools/export_catalog.py",
+    "build-open-k12": "python -X utf8 tools/build_open_k12_catalog.py",
+    "extract-materials": "python -X utf8 tools/extract_material_books.py",
     "migrate": "deno run --allow-net --allow-read --allow-env migrate.ts",
     "start": "deno run --allow-net --allow-read --allow-env --allow-sys server.ts",
     "check": "deno check server.ts migrate.ts"
@@ -22,7 +24,9 @@
       "schema.postgres.sql",
       "*.html",
       "assets/**/*",
-      "data/catalog.json"
+      "data/catalog.json",
+      "data/open_k12_sources.json",
+      "data/textbooks/**/*"
     ],
     "entrypoint": "server.ts"
   }

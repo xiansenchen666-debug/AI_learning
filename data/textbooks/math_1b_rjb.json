@@ -1,0 +1,904 @@
+{
+  "id": "math_1b_rjb",
+  "stage": "小学",
+  "grade": "一年级下册",
+  "subject": "数学",
+  "title": "数学一年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_1b_rjb_cpt1",
+      "name": "三角形",
+      "definition": "由3条线段围成的图形（每相邻两条线段的端点相连）叫作三角形。",
+      "importance": "掌握",
+      "pages": "三角形的特性页",
+      "examples": [
+        "△ABC"
+      ],
+      "aliases": [
+        "triangle"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt2",
+      "name": "长方形",
+      "definition": "有四个角都是直角，对边相等的四边形叫长方形。",
+      "importance": "掌握",
+      "pages": "长方形和正方形特点部分"
+    },
+    {
+      "id": "math_1b_rjb_cpt3",
+      "name": "正方形",
+      "definition": "四条边相等且四个角都是直角的四边形，是矩形和菱形的特例。",
+      "importance": "掌握",
+      "pages": "长方形和正方形特点部分"
+    },
+    {
+      "id": "math_1b_rjb_cpt4",
+      "name": "平行四边形",
+      "definition": "一组对边互相平行且相等的四边形叫平行四边形。",
+      "importance": "了解",
+      "aliases": [
+        "parallelogram",
+        "□ABCD"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt5",
+      "name": "图形拼组",
+      "definition": "用已有的平面图形拼成新的图形的活动。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_1b_rjb_cpt6",
+      "name": "图形分割",
+      "definition": "把一个图形剪成若干部分的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_1b_rjb_cpt7",
+      "name": "退位减法",
+      "definition": "当被减数个位不够减时，需要向十位借1再进行减法的计算方法。",
+      "importance": "重要",
+      "examples": [
+        "15-9=6",
+        "12-8=4",
+        "36-19",
+        "50-24"
+      ],
+      "formula": "（借1当10）(a1*10 + a0) - b = (a1-1)*10 + (a0+10-b)",
+      "pages": "减法章节"
+    },
+    {
+      "id": "math_1b_rjb_cpt8",
+      "name": "用加法检验减法",
+      "definition": "用‘差 + 减数 = 被减数’来检验减法是否正确。",
+      "importance": "掌握",
+      "examples": [
+        "6+9=15 可检验 15-9=6"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt9",
+      "name": "比较多少（求差）",
+      "definition": "比较两个数量的多少，用减法求出它们的差值。",
+      "importance": "掌握",
+      "examples": [
+        "12-7=5 表示小华比小雪多5个"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt10",
+      "name": "分类",
+      "definition": "根据某种标准把对象分成若干类别的过程。",
+      "importance": "掌握",
+      "examples": [
+        "按形状分类气球",
+        "按种类分类水果",
+        "按大人和孩子分组",
+        "按性别分组",
+        "按水果种类分类"
+      ],
+      "pages": "教材第3章开头"
+    },
+    {
+      "id": "math_1b_rjb_cpt11",
+      "name": "分类标准",
+      "definition": "进行分类时所依据的某一特征或规则。",
+      "importance": "重要",
+      "examples": [
+        "按形状、颜色、用途等不同标准进行分类",
+        "按形状",
+        "按颜色",
+        "按用途",
+        "按性别"
+      ],
+      "pages": "如“还可以按什么分类？”处"
+    },
+    {
+      "id": "math_1b_rjb_cpt12",
+      "name": "分类结果的表示",
+      "definition": "用表格或图示方式记录分类后的各类数量及类别。",
+      "importance": "掌握",
+      "examples": [
+        "表格中记录大人8人、孩子6人"
+      ],
+      "pages": "人物分组示例"
+    },
+    {
+      "id": "math_1b_rjb_cpt13",
+      "name": "比较数量",
+      "definition": "比较不同类或不同组中数量的多少。",
+      "importance": "了解",
+      "examples": [
+        "哪种气球最多？哪种最少？",
+        "喜欢某种动物的人最多",
+        "比较三类图形数量"
+      ],
+      "pages": "气球分类部分"
+    },
+    {
+      "id": "math_1b_rjb_cpt14",
+      "name": "整理数据",
+      "definition": "可以把分组结果整理在表格中。",
+      "importance": "重要",
+      "examples": [
+        "将人数整理成表格",
+        "把图形数量记录在表格中"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt15",
+      "name": "数的顺序",
+      "definition": "按从小到大或从大到小的顺序排列数，例如连续数数二十六、二十七、二十八……",
+      "importance": "掌握",
+      "pages": "教材第4章多个示例"
+    },
+    {
+      "id": "math_1b_rjb_cpt16",
+      "name": "十进制计数法",
+      "definition": "以十为进位单位的计数方法，数位从右向左按个位、十位、百位等顺序排列，每相邻数位之间的进率是10。",
+      "importance": "重要",
+      "pages": "七十是7个十；4个十和6个一是四十六",
+      "examples": [
+        "345.67 中 3 在百位，4 在十位"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt17",
+      "name": "数的读法和写法",
+      "definition": "从高位起读写一个数，例如三十三写作33，读作三十三。",
+      "importance": "重要",
+      "pages": "四十、二十七、三十三的读写示例"
+    },
+    {
+      "id": "math_1b_rjb_cpt18",
+      "name": "数位概念",
+      "definition": "从右往左依次是个位、十位、百位，每个数位上的数字表示相应数位上的数量。",
+      "importance": "重要",
+      "pages": "从右边起第一位是个位，第二位是十位，第三位是百位"
+    },
+    {
+      "id": "math_1b_rjb_cpt19",
+      "name": "比较大小",
+      "definition": "通过比较十位或个位的数判断两个数的大小，例如十位相同则比个位。",
+      "importance": "掌握",
+      "pages": "23和25十位上的数相同，可以比个位"
+    },
+    {
+      "id": "math_1b_rjb_cpt20",
+      "name": "按十分组",
+      "definition": "将若干物体按10个为一组进行计数，例如58里面有5个十和8个一。",
+      "importance": "重要",
+      "pages": "58里面有5个十和8个一"
+    },
+    {
+      "id": "math_1b_rjb_cpt21",
+      "name": "接近整十数",
+      "definition": "判断一个数更接近哪个整十，例如77更接近80，72更接近70。",
+      "importance": "了解",
+      "pages": "77更接近70还是更接近80？"
+    },
+    {
+      "id": "math_1b_rjb_cpt22",
+      "name": "按顺序数数（100以内）",
+      "definition": "一、二、三……二十九添1是三十……一、二、三……五十、五十一……",
+      "importance": "重要",
+      "examples": [
+        "从五十七数到六十三",
+        "从二十六往后数5个数"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt23",
+      "name": "十进制中的十和一",
+      "definition": "10个十是一百。七十是7个十。4个十和6个一是四十六。",
+      "importance": "重要",
+      "examples": [
+        "四十是4个十",
+        "二十七是2个十和7个一"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt24",
+      "name": "数的读写（两位数）",
+      "definition": "读数和写数，都从高位起。从右边起，第一位是个位，第二位是十位。",
+      "importance": "重要",
+      "examples": [
+        "27写作27，读作二十七"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt25",
+      "name": "比较两个两位数大小",
+      "definition": "先比十位上的数，十位相同再比个位上的数。",
+      "importance": "掌握",
+      "examples": [
+        "42 ≥ 37",
+        "23和25十位相同，比个位3<5"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt26",
+      "name": "按十个一组进行估计与计数",
+      "definition": "十根十根地数，10个十是一百。",
+      "importance": "掌握",
+      "examples": [
+        "先圈出10颗，估一估共有多少颗"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt27",
+      "name": "用十进制进行简单分组计算",
+      "definition": "58里面有5个十和8个一，所以能穿5串，还剩8颗。",
+      "importance": "重要",
+      "examples": [
+        "82块饼干，10块一袋，可以装8袋"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt28",
+      "name": "人民币",
+      "definition": "人民币是我国的法定货币，包含纸币和硬币等不同面值形式。",
+      "importance": "重要",
+      "examples": [
+        "1元纸币、5角硬币、1角硬币等"
+      ],
+      "pages": "认识人民币章节首页"
+    },
+    {
+      "id": "math_1b_rjb_cpt29",
+      "name": "人民币单位",
+      "definition": "人民币的基本单位包括元、角、分。",
+      "importance": "掌握",
+      "pages": "人民币单位介绍处"
+    },
+    {
+      "id": "math_1b_rjb_cpt30",
+      "name": "人民币单位进率",
+      "definition": "人民币单位之间的进率关系：1元=10角，1角=10分。",
+      "importance": "掌握",
+      "formula": "1元=10角; 1角=10分"
+    },
+    {
+      "id": "math_1b_rjb_cpt31",
+      "name": "金额表示方法",
+      "definition": "用元、角、分组合表示具体的钱数，例如3元5角、2元8角等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_1b_rjb_cpt32",
+      "name": "等值交换",
+      "definition": "不同面值的人民币可以按单位进率进行等值交换。",
+      "importance": "掌握",
+      "examples": [
+        "1张5元可换5张1元",
+        "1元可换10个1角"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt33",
+      "name": "正好支付",
+      "definition": "用给定的钱数刚好能支付商品价格，不多也不少。",
+      "importance": "重要",
+      "examples": [
+        "用13元正好买两本杂志"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt34",
+      "name": "整十数加法",
+      "definition": "对10、20、30等整十数进行加法运算，可通过先计算“有几个十”来得出结果。",
+      "importance": "重要",
+      "examples": [
+        "10+20=30",
+        "40+50=90"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt35",
+      "name": "整十数减法",
+      "definition": "对10、20、30等整十数进行减法运算，可通过先比较和相减十位上的数来得出结果。",
+      "importance": "重要",
+      "examples": [
+        "70-20=50",
+        "90-80=10"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt36",
+      "name": "两位数加一位数",
+      "definition": "加法中把两位数与一位数相加，通常先算个位，再得到最后结果。",
+      "importance": "重要",
+      "examples": [
+        "26+2",
+        "28+5"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt37",
+      "name": "两位数加整十数",
+      "definition": "两位数与整十数相加时，可先相加十位上的整十数。",
+      "importance": "重要",
+      "examples": [
+        "26+20",
+        "43+50"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt38",
+      "name": "两位数减一位数",
+      "definition": "两位数减一位数时，一般先从个位减起。",
+      "importance": "重要",
+      "examples": [
+        "35-2",
+        "36-8"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt39",
+      "name": "两位数减整十数",
+      "definition": "两位数减整十数时，只需处理十位上的数。",
+      "importance": "重要",
+      "examples": [
+        "35-20",
+        "57-20"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt40",
+      "name": "连加与连减",
+      "definition": "多个加法或减法连在一起的计算方法，按顺序依次计算或按需要先选择合适部分计算。",
+      "importance": "掌握",
+      "examples": [
+        "12-5+4",
+        "7+6+8"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt41",
+      "name": "小括号的作用",
+      "definition": "带括号的算式要先算括号里的部分，再算括号外的。",
+      "importance": "掌握",
+      "examples": [
+        "12-(5+4)",
+        "13-(6+3)"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt42",
+      "name": "规律",
+      "definition": "在物体或数字的排列中，通过观察可以发现重复、递增、递减等有序变化的特征。",
+      "importance": "重要",
+      "examples": [
+        "1面、1面的小旗重复出现",
+        "1 5 9 13 每次加4",
+        "42 32 22 12 每次减10"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt43",
+      "name": "重复规律",
+      "definition": "一组元素按固定顺序不断重复出现的排列规律。",
+      "importance": "掌握",
+      "examples": [
+        "旗子1面、1面重复",
+        "图形按ABAB重复"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt44",
+      "name": "数字的递增规律",
+      "definition": "一串数字按照固定的增加量逐个增长。",
+      "importance": "掌握",
+      "examples": [
+        "1 5 9 13 每次加4",
+        "7 11 15 每次加4"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt45",
+      "name": "数字的递减规律",
+      "definition": "一串数字按照固定的减少量逐个减少。",
+      "importance": "掌握",
+      "examples": [
+        "42 32 22 12 每次减10",
+        "36 30 24 18 每次减6"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt46",
+      "name": "100以内的加减法",
+      "definition": "在0到100的范围内进行加法和减法计算。",
+      "importance": "重要",
+      "examples": [
+        "23+40=63",
+        "80-4=76"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt47",
+      "name": "人民币认识",
+      "definition": "认识常用的人民币单位及其换算关系，如元、角。",
+      "importance": "掌握",
+      "examples": [
+        "1元=10角"
+      ]
+    },
+    {
+      "id": "math_1b_rjb_cpt48",
+      "name": "平面图形认识",
+      "definition": "认识并区分长方形、正方形、三角形、圆等基本图形。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_1b_rjb_cpt49",
+      "name": "分类与统计",
+      "definition": "按照某一标准对事物进行分类，并统计数量。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_1b_rjb_cpt50",
+      "name": "按规律填数",
+      "definition": "根据数列或表格中的变化规律填入缺失的数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_1b_rjb_cpt51",
+      "name": "两位数的组成",
+      "definition": "理解一个两位数由十位和个位组成。",
+      "importance": "掌握",
+      "examples": [
+        "46有4个十和6个一"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_1b_rjb_skl1",
+      "name": "图形组合能力",
+      "description": "将简单图形重新组合成新的图形的能力，如用三角形拼出正方形或平行四边形。"
+    },
+    {
+      "id": "math_1b_rjb_skl2",
+      "name": "图形分解能力",
+      "description": "将复杂图形分解为基本图形，如把正方形剪成两个三角形或长方形。"
+    },
+    {
+      "id": "math_1b_rjb_skl3",
+      "name": "借位思考模型化",
+      "description": "通过把十位拆分成‘十和几个一’，从而理解退位减法的本质，例如把15看成10和5，使学生能通过直观模型完成借位运算。"
+    },
+    {
+      "id": "math_1b_rjb_skl4",
+      "name": "数形结合理解减法",
+      "description": "通过摆一摆、圈一圈、连一连等图形方式，辅助理解减法意义和计算过程。"
+    },
+    {
+      "id": "math_1b_rjb_skl5",
+      "name": "先分后数",
+      "description": "先将对象按标准分类，再分别数出各类的数量。"
+    },
+    {
+      "id": "math_1b_rjb_skl6",
+      "name": "边数边画记录法",
+      "description": "在计数时同步用标记或图画记录数量，避免重复或遗漏。"
+    },
+    {
+      "id": "math_1b_rjb_skl7",
+      "name": "用表格整理信息",
+      "description": "将分类或统计的结果通过表格形式呈现，使信息更清晰。"
+    },
+    {
+      "id": "math_1b_rjb_skl8",
+      "name": "按属性进行分类",
+      "description": "根据物体的某一属性（如形状、颜色、种类等）将物体分成若干组。"
+    },
+    {
+      "id": "math_1b_rjb_skl9",
+      "name": "使用表格整理信息",
+      "description": "将分类或统计的结果记录在表格中，使信息更加清晰。"
+    },
+    {
+      "id": "math_1b_rjb_skl10",
+      "name": "估计数量",
+      "description": "通过分组、观察数量特征等方法对物体数量作初步估计。"
+    },
+    {
+      "id": "math_1b_rjb_skl11",
+      "name": "利用结构化表格寻找规律",
+      "description": "通过观察数表、排列表等找出数之间的规律。"
+    },
+    {
+      "id": "math_1b_rjb_skl12",
+      "name": "按位分析数的结构",
+      "description": "把两位数分解成“十位数×10 + 个位数”以便理解、比较和运算。"
+    },
+    {
+      "id": "math_1b_rjb_skl13",
+      "name": "利用十进制分组策略解决实际问题",
+      "description": "通过“每10个一组”进行分组、估计或求数量。"
+    },
+    {
+      "id": "math_1b_rjb_skl14",
+      "name": "人民币单位换算技能",
+      "description": "根据1元=10角、1角=10分进行元、角、分的互相换算。"
+    },
+    {
+      "id": "math_1b_rjb_skl15",
+      "name": "金额分解与组合",
+      "description": "将金额按元、角、分进行分拆或合并，用于比较、计算和换算。"
+    },
+    {
+      "id": "math_1b_rjb_skl16",
+      "name": "尝试法求解正好支付问题",
+      "description": "通过逐一尝试、比较的方法，找出用某金额能“正好”购买的商品组合。"
+    },
+    {
+      "id": "math_1b_rjb_skl17",
+      "name": "按位计算法",
+      "description": "加减法时先算个位，再算十位或整十数部分。"
+    },
+    {
+      "id": "math_1b_rjb_skl18",
+      "name": "拆分运算法",
+      "description": "把计算拆成更容易的部分，如先加个位，或把数分成“几十”和“几”。"
+    },
+    {
+      "id": "math_1b_rjb_skl19",
+      "name": "从观测中发现规律",
+      "description": "通过观察图形、物体、数字的排列或变化，找出其中的重复、递增、递减等规律。"
+    },
+    {
+      "id": "math_1b_rjb_skl20",
+      "name": "根据规律进行填数或继续排列",
+      "description": "依据已发现的规律，推断出后续的数字或图形。"
+    },
+    {
+      "id": "math_1b_rjb_skl21",
+      "name": "按固定间隔数数",
+      "description": "按照一定间隔进行跳跃数数，如5个5个数。"
+    },
+    {
+      "id": "math_1b_rjb_skl22",
+      "name": "按标准分类",
+      "description": "根据颜色、形状等标准对物品进行分类。"
+    },
+    {
+      "id": "math_1b_rjb_skl23",
+      "name": "观察与发现规律",
+      "description": "通过观察数据或图形，发现其中的规律，如乘法表中行与列的关系。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_1b_rjb_exe1",
+      "type": "应用题",
+      "stem": "用两个同样的三角形可以拼成一个平行四边形，请画出拼成后的图形。",
+      "answer": "两个全等三角形沿同一方向排列即可组成平行四边形。",
+      "analysis": "考查学生对三角形基本性质的认识及图形组合能力。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe2",
+      "type": "填空题",
+      "stem": "将一个正方形沿对角线剪开，会得到什么图形？",
+      "answer": "得到两个完全相同的三角形。",
+      "analysis": "考查对图形分割特性的认识。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe3",
+      "type": "应用题",
+      "stem": "原来有15个气球，送出9个，还剩几个？",
+      "answer": "6",
+      "analysis": "用退位减法：15不够减9，向十位借1，15-9=6。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe4",
+      "type": "填空题",
+      "stem": "12 - 8 = □",
+      "answer": "4",
+      "analysis": "借1当10，12拆成10和2，10-8=2，2+2=4。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe5",
+      "type": "应用题",
+      "stem": "小华套中12个，小雪套中7个，小华比小雪多几 个？",
+      "answer": "5",
+      "analysis": "属于比较多少，用减法求差。12-7=5。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe6",
+      "type": "填空题",
+      "stem": "将下图中的道路交通标志按形状分类，并填写表格中长方形、三角形、圆形标志的数量。",
+      "answer": "长方形3个，三角形2个，圆形3个（示例答案，根据教材插图）",
+      "analysis": "考查学生提取特征并按形状分类的能力，同时运用先分后数的方法。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe7",
+      "type": "填空题",
+      "stem": "把人物按“大人”和“孩子”分组，并将人数填写在表格中。",
+      "answer": "大人8人，孩子6人（教材示例）",
+      "analysis": "考查学生以给定标准完成分类，并能用表格正确表达分类结果。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe8",
+      "type": "应用题",
+      "stem": "按水果的种类分一分，再涂一涂、填一填。",
+      "answer": "根据图片将水果按种类分组，并分别统计数量后填写完整。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe9",
+      "type": "应用题",
+      "stem": "将这些道路交通标志按形状分一分，填写下表。",
+      "answer": "将交通标志按长方形、三角形、圆形分类并统计数量。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe10",
+      "type": "填空题",
+      "stem": "三十五是由（）个十和（）个一组成的。",
+      "answer": "3个十和5个一",
+      "analysis": "利用十进制计数法分解数位结构",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe11",
+      "type": "填空题",
+      "stem": "比较大小：41 ○ 45。",
+      "answer": "<",
+      "analysis": "十位相同，比个位，1 < 5",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe12",
+      "type": "应用题",
+      "stem": "58颗珠子，10颗穿一串，能穿几串？",
+      "answer": "能穿5串，还剩8颗。",
+      "analysis": "按十分组，58＝5个十+8个一",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe13",
+      "type": "判断题",
+      "stem": "42 和 37 比较大小。",
+      "answer": "42 > 37",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe14",
+      "type": "填空题",
+      "stem": "20分等于多少角？",
+      "answer": "20分=2角",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe15",
+      "type": "应用题",
+      "stem": "用13元钱正好可以买哪两本杂志？（书价5元、6元、8元、7元）",
+      "answer": "5元和8元",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe16",
+      "type": "填空题",
+      "stem": "3元9角等于多少角？",
+      "answer": "3元9角=39角",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe17",
+      "type": "填空题",
+      "stem": "计算：10+20 = （  ）",
+      "answer": "30",
+      "analysis": "根据整十数加法，1个十加2个十得3个十。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe18",
+      "type": "应用题",
+      "stem": "小林已经写了26个字，还要写2个字，一共要写多少个字？",
+      "answer": "28",
+      "analysis": "先算6+2=8，再得出26+2=28。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe19",
+      "type": "填空题",
+      "stem": "计算：12-(5+4) = （  ）",
+      "answer": "3",
+      "analysis": "先算括号里 5+4=9，再算12-9=3。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe20",
+      "type": "填空题",
+      "stem": "1 5 9 13 ，下一个数是多少？",
+      "answer": "17",
+      "analysis": "该数列每次加4，因此13加4得到17。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe21",
+      "type": "填空题",
+      "stem": "42 32 22 12 ，下一个数是多少？",
+      "answer": "2",
+      "analysis": "该数列每次减10，因此12减10得到2。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe22",
+      "type": "填空题",
+      "stem": "第7行从右数第5个数由几个十和几个人一组成？",
+      "answer": "该数是65，由6个十和5个一组成。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe23",
+      "type": "填空题",
+      "stem": "15角等于多少元多少角？",
+      "answer": "1元5角",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_1b_rjb_exe24",
+      "type": "简答题",
+      "stem": "按颜色把卡片分一分，并统计每种颜色的数量。",
+      "answer": "根据图中卡片统计即可，如红×，绿×，蓝×（随教材图而定）。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 51,
+    "skill_count": 23,
+    "experiment_count": 0,
+    "question_count": 24
+  }
+}

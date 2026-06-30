@@ -1,0 +1,1336 @@
+{
+  "id": "physics_xzxbx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理选择性必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_xzxbx1_rjb_cpt1",
+      "name": "动量",
+      "definition": "物体的质量与速度的乘积，用 p=mv 表示，是矢量，方向与速度相同。",
+      "importance": "重要",
+      "formula": "p = m v",
+      "unit": "kg·m/s"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt2",
+      "name": "动量不变性（碰撞中的不变量）",
+      "definition": "在某些碰撞过程中，系统各物体的动量之和在碰撞前后保持不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt3",
+      "name": "动量变化量",
+      "definition": "物体末动量与初动量的差，表示为 Δp = p' − p。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt4",
+      "name": "力的冲量",
+      "definition": "力与作用时间的乘积，反映力的时间累积效应，表示为 I = FΔt。",
+      "importance": "掌握",
+      "unit": "N·s"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt5",
+      "name": "动量定理",
+      "definition": "物体在一个过程中的动量变化量等于作用在物体上的力的冲量，即 FΔt = p' - p。",
+      "importance": "重要",
+      "formula": "FΔt = p' − p"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt6",
+      "name": "平均力",
+      "definition": "变力作用过程中用等效恒力的方式描述的平均值，满足 F_avg = Δp/Δt。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt7",
+      "name": "内力",
+      "definition": "系统中物体之间的相互作用力。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt8",
+      "name": "外力",
+      "definition": "系统以外的物体施加给系统内物体的力。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt9",
+      "name": "力学系统",
+      "definition": "由两个或多个相互作用的物体构成的整体，用于研究力学问题。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt10",
+      "name": "动量守恒定律",
+      "definition": "如果一个系统不受外力，或者所受外力的矢量和为0，则系统的总动量保持不变。",
+      "importance": "重要",
+      "formula": "m1 v1 + m2 v2 = m1 v1' + m2 v2'",
+      "examples": [
+        "炮弹发射与炮身后坐",
+        "火箭喷气"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt11",
+      "name": "动量守恒条件",
+      "definition": "系统不受外力或所受外力矢量和为0的条件下可认为动量守恒。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt12",
+      "name": "弹性碰撞",
+      "definition": "碰撞前后系统的动能不变的碰撞。",
+      "importance": "重要",
+      "examples": "钢球、玻璃球之间的碰撞可以看作弹性碰撞。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt13",
+      "name": "非弹性碰撞",
+      "definition": "碰撞后系统的动能减少的碰撞。",
+      "importance": "重要",
+      "examples": "橡皮泥球之间的碰撞。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt14",
+      "name": "正碰（对心碰撞、一维碰撞）",
+      "definition": "碰撞前后两个物体的速度方向都沿两球心连线的一种碰撞方式。",
+      "importance": "掌握",
+      "aliases": "对心碰撞、一维碰撞"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt15",
+      "name": "动能守恒（在弹性碰撞中）",
+      "definition": "弹性碰撞中系统的总动能保持不变。",
+      "importance": "掌握",
+      "formula": "1/2 m1 v1^2 + 1/2 m2 v2^2 = 1/2 m1 v1'^2 + 1/2 m2 v2'^2"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt16",
+      "name": "动量守恒",
+      "definition": "在孤立系统的碰撞过程中，系统的总动量保持不变。",
+      "importance": "重要",
+      "formula": "m1 v1 + m2 v2 = m1 v1' + m2 v2'"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt17",
+      "name": "反冲现象",
+      "definition": "当系统内部有物质高速喷出或分离时，为使系统总动量守恒，本体会获得相反方向的运动，这一现象称为反冲。",
+      "importance": "重要",
+      "examples": [
+        "火箭向前运动",
+        "枪射击时枪向后退",
+        "喷灌装置因反冲而旋转"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt18",
+      "name": "火箭原理",
+      "definition": "火箭通过高速向后喷射燃气，利用反冲获得向前的速度增量，其本质根据动量守恒定律。",
+      "importance": "重要",
+      "formula": "Δv = -(Δm/m)u"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt19",
+      "name": "多级火箭",
+      "definition": "火箭分级逐层抛弃用完燃料的级体以减小质量，提高最终速度的技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt20",
+      "name": "机械振动",
+      "definition": "物体或物体的一部分在一个位置附近的往复运动。",
+      "importance": "掌握",
+      "aliases": [
+        "振动"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt21",
+      "name": "平衡位置",
+      "definition": "弹簧未形变时，小球所受合力为0所处的位置。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt22",
+      "name": "弹簧振子",
+      "definition": "由弹簧和小球组成，在平衡位置附近发生振动的系统，是研究一般性振动的理想化模型。",
+      "importance": "重要",
+      "aliases": [
+        "振子"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt23",
+      "name": "位移-时间图像",
+      "definition": "用横坐标表示时间、纵坐标表示位移绘制出的曲线，用来描述振动物体的位置随时间的变化。",
+      "importance": "掌握",
+      "aliases": [
+        "x-t 图像",
+        "振动图像"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt24",
+      "name": "简谐运动",
+      "definition": "位移随时间按正弦函数规律变化的周期性振动，满足 x = A sin(ωt + φ)。",
+      "importance": "重要",
+      "aliases": [
+        "simple harmonic motion",
+        "SHM"
+      ],
+      "formula": "x = A sin(ωt + φ)"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt25",
+      "name": "圆频率",
+      "definition": "与简谐运动的周期成反比、与频率成正比的量，表示振动快慢，记为 ω。",
+      "importance": "掌握",
+      "formula": "ω = 2π/T = 2πf"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt26",
+      "name": "相位",
+      "definition": "表示简谐运动在周期中状态的量，等于 ωt + φ。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt27",
+      "name": "初相",
+      "definition": "t = 0 时简谐运动的相位，通常记为 φ 或 φ0。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt28",
+      "name": "相位差",
+      "definition": "两个频率相同的简谐运动之间的相位之差。",
+      "importance": "了解",
+      "formula": "Δφ = φ1 - φ2"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt29",
+      "name": "回复力",
+      "definition": "使物体回到平衡位置的力，其大小与偏离平衡位置的位移成正比，方向指向平衡位置。",
+      "importance": "掌握",
+      "examples": [
+        "弹簧振子中的弹簧弹力"
+      ],
+      "formula": "F = - (mg/l)x"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt30",
+      "name": "胡克定律（弹簧弹力）",
+      "definition": "弹簧的弹力大小与形变量成正比，可表示为 F = kx。",
+      "importance": "掌握",
+      "formula": "F = -kx",
+      "unit": "牛顿"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt31",
+      "name": "单摆",
+      "definition": "由轻质细线和小球组成，在小角度偏离平衡位置后可近似进行简谐运动的系统。",
+      "importance": "重要",
+      "examples": [
+        "细线悬挂小球构成的理想模型"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt32",
+      "name": "小角度近似",
+      "definition": "当摆角很小时，可认为sinθ≈θ，摆动圆弧近似为直线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt33",
+      "name": "单摆周期",
+      "definition": "单摆完成一次全振动所用时间，由摆长和重力加速度决定。",
+      "importance": "重要",
+      "formula": "T = 2π √(l/g)"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt34",
+      "name": "影响单摆周期的因素",
+      "definition": "单摆周期与摆长有关，与摆球质量和振幅无关。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt35",
+      "name": "重力加速度",
+      "definition": "描述物体在地球表面附近自由下落时速度随时间变化快慢的物理量。",
+      "importance": "重要",
+      "unit": "m/s^2"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt36",
+      "name": "单摆周期公式",
+      "definition": "小角度摆动的单摆周期与摆长和重力加速度的关系公式。",
+      "formula": "T = 2π√(l/g)",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt37",
+      "name": "摆长",
+      "definition": "从悬挂点到摆球球心的距离。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt38",
+      "name": "周期测量方法",
+      "definition": "通过测定单摆一次或多次全振动的时间来求周期的方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt39",
+      "name": "固有振动",
+      "definition": "振动系统在没有外力干预的情况下，仅由系统自身性质决定的振动。",
+      "importance": "重要",
+      "aliases": [
+        "自由振动"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt40",
+      "name": "固有频率",
+      "definition": "物体进行固有振动时的频率，仅由系统自身性质决定。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt41",
+      "name": "阻尼振动",
+      "definition": "由于摩擦或介质阻碍作用，振幅随时间逐渐减小的振动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt42",
+      "name": "受迫振动",
+      "definition": "周期性外力作用下的振动，外力补偿能量损耗使振动得以维持。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt43",
+      "name": "驱动力",
+      "definition": "使振动系统产生受迫振动的周期性外力。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt44",
+      "name": "共振",
+      "definition": "当驱动力频率等于物体固有频率时，受迫振动振幅达到最大值的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt45",
+      "name": "波",
+      "definition": "振动在介质中传播所形成的现象称为波动，简称波。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt46",
+      "name": "横波",
+      "definition": "质点的振动方向与波的传播方向相互垂直的波。",
+      "importance": "掌握",
+      "examples": "绳子上的波",
+      "aliases": "transverse wave"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt47",
+      "name": "纵波",
+      "definition": "质点的振动方向与波的传播方向在同一直线上的波。",
+      "importance": "掌握",
+      "examples": "弹簧上的波、声波",
+      "aliases": "longitudinal wave"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt48",
+      "name": "波峰",
+      "definition": "横波中凸起的最高处。",
+      "importance": "了解",
+      "aliases": "wave crest"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt49",
+      "name": "波谷",
+      "definition": "横波中凹下的最低处。",
+      "importance": "了解",
+      "aliases": "wave trough"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt50",
+      "name": "密部与疏部",
+      "definition": "纵波中质点分布最密的位置叫密部，最疏的位置叫疏部。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt51",
+      "name": "机械波",
+      "definition": "机械振动在介质中传播形成的波。",
+      "importance": "掌握",
+      "aliases": "mechanical wave"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt52",
+      "name": "波的图像（波形图）",
+      "definition": "在某一时刻，将介质中各质点沿传播方向的平衡位置作为横坐标、其偏离平衡位置的位移作为纵坐标所绘制的图像。",
+      "importance": "掌握",
+      "examples": "图3.2-2",
+      "aliases": "波形图"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt53",
+      "name": "振动图像",
+      "definition": "表示某一质点在各个时刻相对平衡位置的位移随时间变化的图像。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt54",
+      "name": "正弦波（简谐波）",
+      "definition": "波的图像为正弦曲线的波，介质中质点的运动为简谐运动。",
+      "importance": "掌握",
+      "aliases": "简谐波"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt55",
+      "name": "波的频率",
+      "definition": "介质中质点的振动频率，与波源频率相同。",
+      "importance": "重要",
+      "unit": "Hz"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt56",
+      "name": "波的反射",
+      "definition": "波在遇到障碍物或界面时，传播方向发生改变并返回原介质的现象。",
+      "importance": "重要",
+      "examples": "水波遇到挡板产生反射；声波遇到峭壁产生回声"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt57",
+      "name": "反射规律",
+      "definition": "反射线、法线与入射线在同一平面内，反射线和入射线分居法线两侧，反射角等于入射角。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt58",
+      "name": "波的折射",
+      "definition": "波从一种介质进入另一种介质或在同一介质中不同区域传播时，传播方向发生改变的现象。",
+      "importance": "重要",
+      "examples": "水波进入深度不同的水域会发生折射"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt59",
+      "name": "波的衍射",
+      "definition": "波遇到障碍物或通过狭缝时，会绕过障碍物或从狭缝向各个方向传播的现象。",
+      "importance": "重要",
+      "examples": "水波通过狭缝扩散；声波绕过障碍物传播"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt60",
+      "name": "衍射条件",
+      "definition": "当缝、孔的宽度或障碍物尺寸与波长相差不多或比波长更小时，可观察到明显的衍射。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt61",
+      "name": "波的叠加",
+      "definition": "几列波相遇时保持各自的运动特征，在重叠区域介质质点的位移等于各列波单独传播时位移的矢量和。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt62",
+      "name": "相干波源条件",
+      "definition": "发生稳定干涉图样所需的条件：频率相同、相位差恒定、振动方向相同。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt63",
+      "name": "波的干涉",
+      "definition": "满足相干条件的两列波叠加时，在某些区域振动总是加强，在某些区域振动总是减弱，形成稳定的干涉图样的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt64",
+      "name": "干涉图样",
+      "definition": "相干波叠加后形成的稳定加强区和减弱区的空间分布。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt65",
+      "name": "主动降噪原理",
+      "definition": "利用与噪声频率、振幅相同且相位相反的声波，通过干涉使噪声减弱或抵消。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt66",
+      "name": "多普勒效应",
+      "definition": "当波源与观察者相互靠近或相互远离时，观察者接收到的波的频率会发生变化的现象。",
+      "importance": "重要",
+      "examples": [
+        "急救车鸣笛经过时音调由高变低"
+      ],
+      "aliases": [
+        "Doppler效应"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt67",
+      "name": "波的频率变化",
+      "definition": "由于波源与观察者的相对运动，单位时间内通过观察者的波峰数目增加或减少，从而导致接收到的频率变化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt68",
+      "name": "多普勒效应的应用",
+      "definition": "利用波的频率变化来测量物体速度或流体流速的技术。",
+      "importance": "了解",
+      "examples": [
+        "交通测速",
+        "海水流速测量",
+        "医学彩超",
+        "天体运动速度测量"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt69",
+      "name": "光的折射定律",
+      "definition": "折射光线与入射光线、法线在同一平面内，且分居法线两侧；入射角正弦与折射角正弦成比例。",
+      "importance": "重要",
+      "formula": "sinθ1 / sinθ2 = n12"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt70",
+      "name": "折射率",
+      "definition": "光从真空进入介质时，入射角正弦与折射角正弦之比，等于真空光速与介质中光速之比。",
+      "importance": "重要",
+      "formula": "n = c / v"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt71",
+      "name": "光疏介质与光密介质",
+      "definition": "折射率较小的介质称为光疏介质，折射率较大的介质称为光密介质，两者是相对概念。",
+      "importance": "掌握",
+      "examples": "空气相对于水是光疏介质，水相对于空气是光密介质。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt72",
+      "name": "折射定律",
+      "definition": "光从一种介质进入另一种介质时，入射角与折射角之间满足一定关系，折射角随介质折射率变化。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt73",
+      "name": "全反射",
+      "definition": "光从光密介质射向光疏介质时，当入射角大于或等于临界角时，光不再折射而全部反射。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt74",
+      "name": "临界角",
+      "definition": "光从光密介质射向光疏介质时，使折射角达到90°的入射角。",
+      "importance": "重要",
+      "formula": "sin C = 1 / n"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt75",
+      "name": "光导纤维",
+      "definition": "利用全反射原理，使光在纤维内部多次全反射而传播的光学装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt76",
+      "name": "全反射棱镜",
+      "definition": "利用全反射替代反射镜，能实现几乎100%反射率的光学棱镜。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt77",
+      "name": "光的干涉",
+      "definition": "两列频率相同、相位差恒定并振动方向相同的光波在空间叠加时，在某些位置相互加强、在另一些位置相互削弱的现象。",
+      "importance": "重要",
+      "examples": [
+        "薄膜干涉",
+        "双缝干涉"
+      ]
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt78",
+      "name": "双缝干涉",
+      "definition": "单色光通过两个相距很近的狭缝后形成相干光源，这两列光波叠加，在屏上形成明暗相间条纹的现象。",
+      "importance": "重要",
+      "examples": "图4.4-4展示不同色光及不同双缝间距下的干涉条纹。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt79",
+      "name": "干涉条纹",
+      "definition": "两列光波叠加后，在屏幕上形成的明暗相间的条纹图样。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt80",
+      "name": "相干光源",
+      "definition": "频率相同、相位差恒定、振动方向相同的光波源。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt81",
+      "name": "光程差",
+      "definition": "两列光波到达同一点时所经过路程的差值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt82",
+      "name": "干涉条纹位置公式",
+      "definition": "双缝干涉中亮条纹位置满足 x = n(l/d)λ，相邻条纹间距 Δx = (l/d)λ。",
+      "importance": "掌握",
+      "formula": "Δx = (l/d)λ"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt83",
+      "name": "薄膜干涉",
+      "definition": "来自薄膜前后两面的反射光叠加而产生的干涉现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt84",
+      "name": "干涉条纹间距 Δx",
+      "definition": "相邻明条纹或暗条纹之间的距离，由双缝干涉条件决定。",
+      "importance": "掌握",
+      "formula": "Δx = (l/d) λ 或 Δx = a / (n - 1)"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt85",
+      "name": "光的波长 λ",
+      "definition": "光波相邻两个同相位点之间的距离，可通过双缝干涉实验测出。",
+      "importance": "重要",
+      "formula": "λ = (d/l) Δx"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt86",
+      "name": "双缝到屏距离 l",
+      "definition": "双缝到观察屏之间的距离，影响干涉条纹间距。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt87",
+      "name": "双缝间距 d",
+      "definition": "两个缝之间的距离，是影响干涉条纹间距的重要参数。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt88",
+      "name": "光的衍射",
+      "definition": "光遇到障碍物或狭缝时，会绕过障碍物边缘传播，导致原本应为阴影的区域出现明暗相间条纹的现象。",
+      "importance": "重要",
+      "examples": "单缝衍射、圆孔衍射、白光衍射产生彩色条纹"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt89",
+      "name": "单缝衍射",
+      "definition": "光通过单个狭缝后在屏上形成中央亮条纹及其两侧明暗相间条纹的现象。",
+      "importance": "掌握",
+      "examples": "狭缝越窄，中央亮条纹越宽"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt90",
+      "name": "衍射光栅",
+      "definition": "由大量等宽、等间距的狭缝形成的光学元件，可产生窄而亮的衍射条纹，提高分辨能力。",
+      "importance": "掌握",
+      "examples": "透射光栅、反射光栅"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt91",
+      "name": "泊松亮斑",
+      "definition": "当平行光照射小圆盘时，在阴影中心出现亮点的衍射现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt92",
+      "name": "X射线衍射",
+      "definition": "由于晶体结构的周期性排列与X射线波长相近，X射线照射晶体时会产生衍射图样，可用于测定晶体结构。",
+      "importance": "重要",
+      "examples": "劳厄实验、布拉格定律应用"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt93",
+      "name": "DNA双螺旋结构的发现",
+      "definition": "通过分析DNA的X射线衍射图样，沃森和克里克提出DNA的双螺旋结构模型。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt94",
+      "name": "偏振现象",
+      "definition": "横波在传播方向相同的情况下，振动方向可能不同的现象。",
+      "importance": "重要",
+      "examples": "水波绳波的偏振；光的偏振实验"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt95",
+      "name": "偏振方向",
+      "definition": "横波的振动方向称为偏振方向。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt96",
+      "name": "自然光",
+      "definition": "包含在垂直于传播方向的一切方向振动且强度相同的光。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt97",
+      "name": "偏振光",
+      "definition": "在垂直于传播方向的平面内沿某一特定方向振动的光。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt98",
+      "name": "偏振片",
+      "definition": "只能让偏振方向与其透振方向平行的光通过的光学器件。",
+      "importance": "掌握",
+      "aliases": "偏振滤光片"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt99",
+      "name": "透振方向",
+      "definition": "偏振片允许光波振动方向通过的特定方向。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt100",
+      "name": "激光的相干性",
+      "definition": "激光光波之间具有恒定相位差的性质。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_cpt101",
+      "name": "激光的高平行度",
+      "definition": "激光在远距离传播后仍能保持高度不发散的性质。",
+      "importance": "掌握"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_xzxbx1_rjb_skl1",
+      "name": "选择坐标轴并进行矢量动量的代数化处理",
+      "description": "在处理直线运动的动量问题时，先选定正方向，使动量的矢量计算简化为代数计算。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl2",
+      "name": "将实际变力过程分割为短暂过程并应用动量定理",
+      "description": "把变力作用的实际过程细分为多个短暂过程，在每个短暂过程中近似认为力不变，使用 FΔt = Δp，最后对所有过程求和。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl3",
+      "name": "建立研究系统的方法",
+      "description": "在碰撞、爆炸等问题中，将相互作用的物体视为一个系统，通过判断外力是否可以忽略来判断动量是否守恒。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl4",
+      "name": "应用动量守恒定律求解速度",
+      "description": "在外力合为零或可忽略时，根据 p'=p 建立方程，求解碰撞或爆炸后的速度。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl5",
+      "name": "实验系统建模",
+      "description": "确定实验系统的组成、判断外力情况，并分析实验是否满足动量守恒的条件。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl6",
+      "name": "速度测量方法选择",
+      "description": "根据实验器材与条件选择速度测量方式，如数字计时器计时、平抛测距法等。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl7",
+      "name": "抽象与概括",
+      "description": "忽略非本质属性，提取共同的本质属性，从个别现象推广到同类现象的思维方法。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl8",
+      "name": "应用动量守恒分析系统运动",
+      "description": "选择合适的系统并判断外力是否可忽略，通过守恒方程求物体速度或动量变化。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl9",
+      "name": "利用图像分析振动规律",
+      "description": "根据频闪照片或位移-时间图像测量位移、周期，并判断运动是否符合正弦规律。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl10",
+      "name": "判断是否为简谐运动的方法",
+      "description": "检验物体在运动方向上所受的力是否满足 F 与位移 x 成正比且指向平衡位置，从而判断运动是否为简谐运动。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl11",
+      "name": "通过图像分析物理量关系",
+      "description": "通过绘制T-l图像判断周期与摆长的定量关系。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl12",
+      "name": "减小实验误差的方法",
+      "description": "通过选择合适的器材、减小读数误差、进行多次测量求平均值等方法，提高实验测量的准确性。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl13",
+      "name": "利用波形图判断波的传播方向",
+      "description": "通过比较不同时刻的波形图中相同特征点的位置变化，判断波向左或向右传播。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl14",
+      "name": "通过类比理解物理现象",
+      "description": "使用现实情景（如排队行走）类比波的传播，理解抽象物理概念。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl15",
+      "name": "利用折射定律求折射率",
+      "description": "通过测量入射角和折射角，代入折射定律计算介质折射率。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl16",
+      "name": "利用折射定律计算临界角",
+      "description": "根据 sin C = 1/n 计算介质的临界角。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_skl17",
+      "name": "利用多条条纹减小测量误差",
+      "description": "通过测量 n 条亮条纹间的总距离 a，再计算 Δx = a/(n-1)，以减小读数误差。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_xzxbx1_rjb_exp1",
+      "name": "小车碰撞实验（测量碰撞前后 mv 之和）",
+      "instrument": "滑轨、两辆小车、数字计时器",
+      "is_student": 1,
+      "process": "用一辆运动小车撞击一辆静止小车，记录质量与碰撞前后的速度。",
+      "phenomena": "碰撞前后动能之和变化，但 mv 之和基本不变。",
+      "conclusion": "质量与速度的乘积之和（动量）在碰撞前后近似不变。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp2",
+      "name": "气垫导轨滑块碰撞实验",
+      "instrument": "气垫导轨、滑块、数字计时器、质量物块",
+      "is_student": 1,
+      "process": "调水平→安装碰撞结构→测质量→测碰前后速度→计算总动量",
+      "conclusion": "碰撞前后总动量基本相等，验证动量守恒定律"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp3",
+      "name": "斜槽小球碰撞实验",
+      "instrument": "斜槽、小球、天平、测距工具",
+      "is_student": 1,
+      "process": "调水平→从不同高度滚下→测质量→利用平抛确定碰前后速度→比较碰前后总动量",
+      "conclusion": "实验证明两球碰撞近似满足动量守恒"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp4",
+      "name": "研究小车碰撞前后动能的变化",
+      "instrument": "小车、弹性碰撞架、轨道、测速装置",
+      "is_student": 1,
+      "process": "让小车发生碰撞，通过测速比较碰撞前后动能情况。",
+      "phenomena": "若小车粘在一起则总动能减少；加装弹性碰撞架可减少动能损失。",
+      "conclusion": "碰撞可分为弹性碰撞和非弹性碰撞。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp5",
+      "name": "气球反冲实验",
+      "instrument": [
+        "气球"
+      ],
+      "is_student": 1,
+      "process": "给气球充气后放手，观察其在气体喷出时的运动方向。",
+      "phenomena": "气球向与气体喷出方向相反的方向运动。",
+      "conclusion": "验证反冲现象。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp6",
+      "name": "弯管喷水容器旋转实验",
+      "instrument": [
+        "可旋转容器",
+        "弯管",
+        "水"
+      ],
+      "is_student": 1,
+      "process": "容器下部装弯管，让水流出，观察容器旋转。",
+      "phenomena": "容器因反冲而旋转。",
+      "conclusion": "反冲现象可使物体旋转。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp7",
+      "name": "利用频闪照相记录弹簧振子运动",
+      "instrument": "频闪仪、相机、弹簧振子装置",
+      "is_student": 0,
+      "process": "利用频闪仪定时闪光记录不同时间的小球位置。",
+      "phenomena": "底片上呈现按时间顺序排列的小球位置像。",
+      "conclusion": "可获得各时刻位移数据，从而绘制x-t图像。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp8",
+      "name": "测量小球振动的周期",
+      "instrument": "弹簧、小球、秒表",
+      "is_student": 1,
+      "process": "拉开钢球一定距离A后放手，用秒表测 n 个全振动的时间 t，周期为 t/n。",
+      "conclusion": "弹簧振子的周期与振幅无关。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp9",
+      "name": "探究单摆周期与摆长关系实验",
+      "instrument": "单摆装置、铁架台、秒表、尺子",
+      "is_student": 1,
+      "process": "改变摆长，测量各摆长下的周期并记录数据。",
+      "conclusion": "单摆周期与摆长成平方根关系。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp10",
+      "name": "用单摆测量重力加速度",
+      "instrument": "铁架台、铁夹、细线、小球、刻度尺、游标卡尺、停表",
+      "is_student": 1,
+      "process": "搭建单摆装置，测量摆长；测量多次全振动的时间求周期；代入公式计算 g；多组数据取平均值。",
+      "phenomena": "单摆在小角度下做近似简谐摆动。",
+      "conclusion": "根据 g = 4π²l/T² 可求得所在地区的重力加速度。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp11",
+      "name": "研究受迫振动的频率",
+      "instrument": "电动机、弹簧—钩码系统",
+      "is_student": 1,
+      "process": "改变电动机转速，记录驱动力频率与钩码振动频率。",
+      "conclusion": "受迫振动稳定后物体的频率等于驱动力频率。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp12",
+      "name": "演示共振现象",
+      "instrument": "不同摆长的单摆组",
+      "is_student": 0,
+      "phenomena": "摆长相同（固有频率相同）的摆振幅最大。",
+      "conclusion": "驱动力频率越接近固有频率，受迫振动振幅越大；相等时振幅最大。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp13",
+      "name": "绳上波的形成与传播",
+      "instrument": "软绳、手的上下运动",
+      "is_student": 0,
+      "process": "手握绳端上下抖动，使绳上形成凸起和凹下部分，并观察其传播过程。",
+      "phenomena": "波形沿绳向前传播，而绳上的标记点只上下振动。",
+      "conclusion": "波传播的是振动，质点不随波迁移。形成横波。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp14",
+      "name": "弹簧上的纵波形成",
+      "instrument": "长软弹簧、手的推拉",
+      "is_student": 0,
+      "process": "沿弹簧轴线方向推拉，使弹簧形成疏密相间的波。",
+      "phenomena": "密部与疏部沿弹簧传播。",
+      "conclusion": "弹簧中形成纵波，质点沿传播方向振动。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp15",
+      "name": "水波的反射实验",
+      "instrument": "发波水槽、振动发生器、斜放挡板",
+      "is_student": 0,
+      "process": "在水槽中产生水波，并在斜放挡板处观察反射现象。",
+      "phenomena": "水波遇挡板发生反射，反射角等于入射角。",
+      "conclusion": "水波的反射遵循光的反射规律。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp16",
+      "name": "水波的折射实验",
+      "instrument": "发波水槽，两种不同深度的水域",
+      "is_student": 0,
+      "process": "制作深浅不同的水域，观察水波经过界面时方向改变。",
+      "phenomena": "水波在界面处弯折，方向改变。",
+      "conclusion": "水波会发生折射。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp17",
+      "name": "水波的衍射实验",
+      "instrument": "发波水槽、两块挡板形成的狭缝",
+      "is_student": 0,
+      "process": "调整狭缝宽度或波的波长，观察衍射强弱变化。",
+      "phenomena": "狭缝宽度与波长相近时衍射明显；狭缝宽度远大于波长时几乎不发生衍射。",
+      "conclusion": "波长与缝宽比值决定衍射程度。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp18",
+      "name": "绳上横波的叠加观察实验",
+      "instrument": "水平长绳、振动手势",
+      "is_student": 1,
+      "process": "两端同时向上抖动在绳上形成相向传播的波，观察波形相遇后的变化。",
+      "phenomena": "两列波在相遇并通过后仍保持原有波形。",
+      "conclusion": "波的叠加原理成立。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp19",
+      "name": "水波干涉实验",
+      "instrument": "水槽、同步振动的两根细杆、振动片",
+      "is_student": 0,
+      "process": "振动片带动两细杆同步振动，在水面形成两等频率波源并观察干涉图样。",
+      "phenomena": "水面出现稳定的加强区和减弱区。",
+      "conclusion": "满足相干条件的波可形成干涉图样。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp20",
+      "name": "蜂鸣器音调随运动变化的演示实验",
+      "instrument": [
+        "蜂鸣器",
+        "电池",
+        "竹竿"
+      ],
+      "is_student": 0,
+      "process": "固定蜂鸣器于竹竿末端并在头顶快速转动，听音调的变化。",
+      "phenomena": "蜂鸣器靠近和远离观察者时音调发生变化。",
+      "conclusion": "运动导致接收到的频率改变，即产生多普勒效应。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp21",
+      "name": "人队伍模拟多普勒效应实验",
+      "instrument": [
+        "行走队伍",
+        "观察者"
+      ],
+      "is_student": 1,
+      "process": "队伍匀速经过观察者，根据观察者移动方向不同记录“过人频率”的变化。",
+      "phenomena": "逆向行走时频率增大，顺向行走时频率减小。",
+      "conclusion": "模拟了波源与观察者相对运动引起波频率的变化。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp22",
+      "name": "测量玻璃的折射率",
+      "instrument": "玻璃砖、大头针、白纸、木板",
+      "is_student": 1,
+      "process": "利用大头针确定入射光线与出射光线，描线后测量角度代入折射定律计算折射率。",
+      "conclusion": "可通过折射定律计算玻璃的折射率。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp23",
+      "name": "观察全反射现象",
+      "instrument": "半圆形玻璃砖、光源",
+      "is_student": 0,
+      "process": "逐渐增大入射角，观察折射光变弱及消失的过程",
+      "phenomena": "入射角达到某值后折射光消失，仅剩反射光",
+      "conclusion": "验证全反射现象"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp24",
+      "name": "光在弯曲有机玻璃棒中传播",
+      "instrument": "激光、有机玻璃棒",
+      "is_student": 1,
+      "process": "让激光射入弯曲棒的一端，观察光线路径",
+      "phenomena": "光沿锯齿形路径传播",
+      "conclusion": "说明光导纤维的导光原理是全反射"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp25",
+      "name": "双缝干涉演示实验",
+      "instrument": [
+        "氦氖激光器",
+        "双缝挡板",
+        "屏幕"
+      ],
+      "is_student": 0,
+      "process": "单色激光照射双缝，在屏上观察明暗条纹。",
+      "phenomena": "屏上出现规则的明暗相间干涉条纹。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp26",
+      "name": "肥皂膜薄膜干涉实验",
+      "instrument": [
+        "酒精灯",
+        "食盐",
+        "铁丝圈",
+        "肥皂水"
+      ],
+      "is_student": 1,
+      "phenomena": "液膜出现彩色干涉条纹。",
+      "conclusion": "薄膜前后两面反射光的光程差导致干涉。"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp27",
+      "name": "用双缝干涉测量光的波长（毛玻璃屏法）",
+      "instrument": "光源、滤光片、单缝、双缝、遮光筒、毛玻璃屏、测量头、刻度尺",
+      "is_student": 1,
+      "process": "调节光路→放置滤光片→观察干涉条纹→测量 l 和 Δx→计算波长",
+      "phenomena": "可见规则明暗干涉条纹",
+      "conclusion": "利用 λ = (d/l) Δx 求得光波波长"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp28",
+      "name": "用光传感器观察双缝干涉",
+      "instrument": "光源、双缝、光传感器、计算机",
+      "is_student": 0,
+      "phenomena": "计算机显示干涉条纹及强度分布",
+      "conclusion": "可由条纹间距算出光的波长"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exp29",
+      "name": "观察光的偏振现象",
+      "instrument": "两块偏振片P、Q；光源",
+      "is_student": 0,
+      "process": "先观察一块偏振片的透光强度随旋转变化，再在其后放置第二块偏振片并旋转观察透射光变化。",
+      "phenomena": "一块偏振片旋转时亮度基本不变，两块偏振片在透振方向垂直时透光消失。",
+      "conclusion": "光具有偏振性，光是横波。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_xzxbx1_rjb_exe1",
+      "type": "应用题",
+      "stem": "一个质量为 0.1 kg 的钢球以 6 m/s 的速度向右撞墙弹回，以 6 m/s 向左运动。求碰撞前后动量的变化量。",
+      "answer": "动量变化量为 -1.2 kg·m/s，方向向左。",
+      "analysis": "先选定正方向，以 p' - p 求动量变化量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe2",
+      "type": "应用题",
+      "stem": "一个质量为 0.18 kg 的垒球以 25 m/s 的速度飞向球棒，被击打后以 45 m/s 的速度反向飞回，作用时间为 0.002 s。求球棒对垒球的平均作用力大小。",
+      "answer": "6300 N",
+      "analysis": "利用动量定理计算平均力：F = Δp/Δt。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe3",
+      "type": "应用题",
+      "stem": "一辆质量为 1.8×10^4 kg 的货车以 2 m/s 的速度运动，碰上一辆质量为 2.2×10^4 kg 的静止货车，它们碰撞后结合在一起，求碰撞后的速度。",
+      "answer": "0.9 m/s",
+      "analysis": "将两车作为系统，外力合为零，使用动量守恒定律求解 v = m1 v1 / (m1 + m2)。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe4",
+      "type": "应用题",
+      "stem": "质量为 m 的火箭以速度 v 水平飞行，炸成两块，其中一块质量 m1 以速度 v1 反向飞出，求另一块的速度 v2。",
+      "answer": "v2 = (mv - m1 v1) / (m - m1)",
+      "analysis": "在爆炸过程中外力很小，可以忽略，因此系统动量守恒，建立动量守恒方程求解 v2。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe5",
+      "type": "简答题",
+      "stem": "在斜槽实验中，通过测量两小球碰撞后飞出的水平距离之比判断速度之比，从而验证动量守恒定律。为什么可以用水平距离之比表示速度之比？",
+      "answer": "因为碰撞后两球做平抛运动，其下落高度相同，飞行时间相同，因此水平距离之比等于水平速度之比。",
+      "analysis": "考查平抛运动规律与动量守恒的结合",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe6",
+      "type": "应用题",
+      "stem": "如图1.5-2，在光滑水平面上，两个物体质量均为m，一个静止，一个以速度v撞上，碰撞后粘在一起。问：碰撞后系统的总动能是否有损失？",
+      "answer": "有损失，碰撞后总动能为原来的一半。",
+      "analysis": "用动量守恒求速度，再比较碰撞前后动能。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe7",
+      "type": "简答题",
+      "stem": "章鱼喷射水流向后运动，从而身体向前游动，这一现象体现了什么物理原理？",
+      "answer": "体现了反冲现象，根据动量守恒定律，水向后喷出，章鱼获得向前的反冲速度。",
+      "analysis": "水的动量向后，章鱼的动量向前，使系统总动量为0。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe8",
+      "type": "应用题",
+      "stem": "如图2.2-5，小球在 B、C 间做简谐运动，BC=20 cm，从 B 到 C 用时0.5 s。求：5 s 内路程与5 s末位移。",
+      "answer": "路程为 2 m；位移为 0.1 m。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe9",
+      "type": "简答题",
+      "stem": "把光滑斜面上的小球沿斜面拉下一段距离然后松开，假设空气阻力忽略不计，试证明小球的运动是简谐运动。",
+      "answer": "沿斜面方向，小球受到的回复力与其偏离平衡位置的位移成正比，且方向指向平衡位置，因此满足 F = -kx 的形式，故小球做简谐运动。",
+      "analysis": "核心在于将重力沿斜面分解所得的分力在小位移情况下满足近似正比关系。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe10",
+      "type": "应用题",
+      "stem": "一个理想单摆周期为T，若自由落体加速度变为原来的1/2，周期变为多少？",
+      "answer": "T' = √2 T",
+      "analysis": "由T=2π√(l/g)，当g→g/2，T'=2π√(l/(g/2))=√2 T。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe11",
+      "type": "选择题",
+      "stem": "在用单摆测量重力加速度的实验中，下列叙述哪些正确？A. 摆线要选择细些、伸缩性小些且适当长 B. 摆球选择质量大体积小 C. 为使周期大，摆角应大 D. 用刻度尺测摆线长度即为摆长 E. 测 50 次全振动时间 t，则 T = t/50",
+      "answer": "A、E 正确；B、C、D 错误",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe12",
+      "type": "应用题",
+      "stem": "如图3.2-5，正弦波在0.5 s后波形发生位移。若波向左传播，求波速与周期。",
+      "answer": "波速0.12 m/s，周期2.0 s。",
+      "analysis": "根据波峰位移6 cm=1/4λ，得λ=24 cm；v=Δx/t=0.12 m/s，T=λ/v=2.0 s。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe13",
+      "type": "应用题",
+      "stem": "蝙蝠通过声波反射探测障碍物。科学家布置细绳和铜铃，蝙蝠能避开绳索。根据衍射条件，蝙蝠发出的声波频率应具有怎样的数量级？",
+      "answer": "声波波长应显著小于绳索间距，因此频率应较高，约在超声波范围（>20 kHz）。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe14",
+      "type": "简答题",
+      "stem": "解释图3.4‑7所示消声器削弱噪声的原理，并说明达到良好消声效果必须满足的条件。",
+      "answer": "声波在到达a处分成两束，路径差为奇数个半波长时在b处相遇产生相消干涉，使噪声减弱。为了良好消声，两路声波需频率相同、相位差稳定，并满足路径差为(2n+1)λ/2。",
+      "analysis": "本题考查波的干涉及相消条件，要求理解路径差与相位差关系。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe15",
+      "type": "选择题",
+      "stem": "火车上有一个声源发出固定频率的乐音。以下哪种情况中，观察者听到的音调比原来低？A.火车向观察者驶来 B.火车离观察者驶去 C.观察者向火车运动 D.观察者远离火车运动",
+      "answer": "B 和 D。因为波源与观察者相互远离时接收到的频率变小，音调降低。",
+      "analysis": "音调高低由接收频率决定，远离导致频率降低。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe16",
+      "type": "应用题",
+      "stem": "在一储油桶中，油深为桶高的一半时，沿原来方向看到桶底点C，与原先看到的点B相距d/4，求油的折射率和光在油中的速度。",
+      "answer": "折射率 n = 1.58，光速 v = 1.9 × 10^8 m/s。",
+      "analysis": "利用折射定律 sinθ1/sinθ2=n，并结合几何关系求解。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe17",
+      "type": "应用题",
+      "stem": "潜水员看到岸上的景物呈现在一个倒立圆锥内，求圆锥的顶角。",
+      "answer": "顶角为 97.6°。",
+      "analysis": "使用 sin C = 1/n 求得 C，然后顶角为 2C。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe18",
+      "type": "应用题",
+      "stem": "在双缝干涉实验中，光屏上某点 P 到双缝的路程差为 7.5×10^-7 m，若光频率为 6.0×10^14 Hz，判断 P 点是亮条纹还是暗条纹。",
+      "answer": "λ = c/f = 5×10^-7 m，路程差 = 1.5λ，为半波长的奇数倍，因此为暗条纹。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx1_rjb_exe19",
+      "type": "简答题",
+      "stem": "在用双缝干涉测量光的波长的实验中，为什么不直接测 Δx，而要通过测 n 条条纹的间距求出 Δx？",
+      "answer": "因为单次测量 Δx 读数误差较大，测多条条纹的总距离可减小随机误差，提高测量精度。",
+      "analysis": "考察学生理解误差控制方法。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 101,
+    "skill_count": 17,
+    "experiment_count": 29,
+    "question_count": 19
+  }
+}

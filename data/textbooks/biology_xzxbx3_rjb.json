@@ -1,0 +1,2270 @@
+{
+  "id": "biology_xzxbx3_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "生物",
+  "title": "生物选择性必修三",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/biology.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "biology_xzxbx3_rjb_cpt1",
+      "name": "发酵（fermentation）",
+      "definition": "人们利用微生物，在适宜的条件下，将原料通过微生物的代谢转化为人类所需要的产物的过程。",
+      "importance": "掌握",
+      "examples": [
+        "将谷物、水果发酵成含酒精的饮料",
+        "利用发酵制作腐乳、醋、泡菜等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt2",
+      "name": "传统发酵技术",
+      "definition": "利用材料中天然存在的微生物，或利用前一次发酵保存下来的面团、卤汁等发酵物中的微生物进行发酵、制作食品的技术。",
+      "importance": "掌握",
+      "examples": [
+        "酱、酱油、醋、泡菜、豆豉",
+        "家庭式或作坊式发酵"
+      ],
+      "aliases": [
+        "传统发酵"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt3",
+      "name": "乳酸菌",
+      "definition": "一类厌氧细菌，在无氧情况下能将葡萄糖分解成乳酸，可用于乳制品发酵、泡菜腌制等。",
+      "importance": "掌握",
+      "examples": [
+        "乳酸链球菌",
+        "乳酸杆菌",
+        "制作泡菜"
+      ],
+      "formula": "C6H12O6 → 2C3H6O3（乳酸）+ 能量"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt4",
+      "name": "酵母菌",
+      "definition": "一类单细胞真菌，能以多种糖类作为营养和能量来源；为兼性厌氧微生物，在无氧条件下能进行酒精发酵。",
+      "importance": "掌握",
+      "examples": [
+        "酿酒",
+        "制作馒头和面包",
+        "水果表面常见的野生酵母菌"
+      ],
+      "formula": "C6H12O6 → 2C2H5OH（酒精）+ 2CO2 + 能量",
+      "unit": "℃",
+      "aliases": [
+        "酿酒酵母（文中提及其最适生长温度）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt5",
+      "name": "醋酸菌",
+      "definition": "一类好氧细菌；当O2与糖源充足时可将糖分解成乙酸；缺少糖源时可将乙醇经乙醛转化为乙酸，用于制作醋。",
+      "importance": "掌握",
+      "examples": [
+        "制作果醋",
+        "制作各种风味的醋"
+      ],
+      "formula": "（糖源充足）C6H12O6 + 2O2 → 2CH3COOH + 2H2O + 2CO2 + 能量；（糖源不足）C2H5OH + O2 → CH3COOH + H2O + 能量",
+      "unit": "℃"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt6",
+      "name": "泡菜发酵",
+      "definition": "利用植物体表面天然乳酸菌进行发酵，乳酸不断积累，使泡菜形成特有风味与品质的过程。",
+      "importance": "掌握",
+      "examples": [
+        "传统泡菜制作"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt7",
+      "name": "果酒发酵",
+      "definition": "利用水果表面附着的野生酵母菌等在适宜条件下将水果汁中的糖发酵生成酒精的过程。",
+      "importance": "了解",
+      "examples": [
+        "葡萄发酵成葡萄酒"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt8",
+      "name": "果醋发酵",
+      "definition": "在有氧条件下，果酒在醋酸菌作用下进一步发酵生成乙酸（醋）的过程。",
+      "importance": "掌握",
+      "examples": [
+        "葡萄酒进一步发酵成葡萄醋"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt9",
+      "name": "厌氧条件",
+      "definition": "缺乏氧气（无氧）的环境条件，适合乳酸菌发酵与酵母菌进行酒精发酵。",
+      "importance": "重要",
+      "examples": [
+        "泡菜坛用水密封形成缺氧环境",
+        "酵母菌在无氧条件下进行酒精发酵"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt10",
+      "name": "好氧条件",
+      "definition": "氧气充足（有氧）的环境条件，适合醋酸菌将糖或乙醇转化为乙酸。",
+      "importance": "重要",
+      "examples": [
+        "果酒完成后打开瓶盖、盖纱布进行果醋发酵"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt11",
+      "name": "发酵条件控制（温度/密封/留空间/排气/卫生）",
+      "definition": "在发酵过程中通过控制温度、氧气条件、容器密封性、装液空间、排气操作与器具消毒等，以保证发酵顺利进行并获得稳定品质。",
+      "importance": "掌握",
+      "examples": [
+        "泡菜坛水密封并补水",
+        "果酒发酵温度18~30℃、每12h拧松瓶盖排气、留约1/3空间",
+        "器具用70%酒精消毒"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt12",
+      "name": "微生物培养技术获得单一菌种并接种发酵",
+      "definition": "工业化生产中通常先通过微生物培养技术获得单一菌种，再将其接种到物料中进行发酵，以缩短发酵时间并确保品质稳定。",
+      "importance": "了解",
+      "examples": [
+        "大规模生产发酵食品"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt13",
+      "name": "混合菌种发酵（固体/半固体发酵）",
+      "definition": "传统发酵以混合菌种的固体发酵及半固体发酵为主，常见于家庭式或作坊式生产。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt14",
+      "name": "液体培养基",
+      "definition": "不含凝固剂（如琼脂）、呈液体状态的培养基。",
+      "importance": "了解",
+      "examples": [
+        "盛有液体培养基的锥形瓶"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt15",
+      "name": "固体培养基",
+      "definition": "呈固体状态的培养基；在液体培养基中加入琼脂可制成琼脂固体培养基。",
+      "importance": "掌握",
+      "examples": [
+        "琼脂固体培养基"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt16",
+      "name": "琼脂固体培养基",
+      "definition": "在液体培养基中加入琼脂后制成的固体培养基，是实验室中最常用的培养基之一。",
+      "importance": "重要",
+      "unit": null
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt17",
+      "name": "碳源",
+      "definition": "培养基中提供碳元素的物质，是培养基常含的主要营养物质之一。",
+      "importance": "了解",
+      "examples": [
+        "牛肉膏、蛋白胨可提供碳源",
+        "葡萄糖（或蔗糖）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt18",
+      "name": "氮源",
+      "definition": "培养基中提供氮元素的物质，是培养基常含的主要营养物质之一。",
+      "importance": "了解",
+      "examples": [
+        "牛肉膏、蛋白胨含有有机氮"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt19",
+      "name": "无菌技术",
+      "definition": "为获得纯净的微生物培养物、避免杂菌污染而采取的一系列技术措施，主要包括消毒和灭菌，并强调在操作过程中避免已灭菌材料再次被污染。",
+      "importance": "重要",
+      "examples": [
+        "在超净工作台上并在酒精灯火焰附近进行操作"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt20",
+      "name": "消毒",
+      "definition": "使用较为温和的物理、化学或生物等方法杀死物体表面或内部一部分微生物。",
+      "importance": "掌握",
+      "aliases": [
+        "disinfection"
+      ],
+      "examples": [
+        "煮沸消毒",
+        "巴氏消毒",
+        "酒精擦拭双手",
+        "氯气消毒水源",
+        "紫外线照射消毒"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt21",
+      "name": "灭菌",
+      "definition": "使用强烈的理化方法杀死物体内外所有的微生物，包括芽孢和孢子。",
+      "importance": "掌握",
+      "aliases": [
+        "sterilization"
+      ],
+      "examples": [
+        "湿热灭菌",
+        "干热灭菌",
+        "灼烧灭菌"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt22",
+      "name": "湿热灭菌（高压蒸汽灭菌）",
+      "definition": "利用沸水、流通蒸汽或高压蒸汽进行灭菌的方法，其中高压蒸汽灭菌效果最好；实验室常用高压蒸汽灭菌锅以水蒸气为介质在一定压力、温度下维持一定时间灭菌。",
+      "importance": "掌握",
+      "examples": [
+        "高压蒸汽灭菌锅：压力100 kPa、温度121℃、15~30 min"
+      ],
+      "unit": "kPa/℃/min"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt23",
+      "name": "干热灭菌",
+      "definition": "将灭菌物品放入密闭容器如干热灭菌箱，在高温热空气中维持一定时间以达到灭菌目的的方法。",
+      "importance": "了解",
+      "examples": [
+        "160~170℃维持2~3 h用于玻璃器皿、金属用具等"
+      ],
+      "unit": "℃/h"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt24",
+      "name": "灼烧灭菌",
+      "definition": "将接种工具等金属用具直接在酒精灯火焰充分燃烧层灼烧，使其迅速彻底灭菌的方法；接种时试管口、瓶口等也可通过火焰灼烧灭菌。",
+      "importance": "掌握",
+      "examples": [
+        "接种环灼烧至金属丝烧红",
+        "试管口通过火焰"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt25",
+      "name": "培养物",
+      "definition": "在微生物学中，将接种于培养基内，在合适条件下形成的含特定种类微生物的群体称为培养物。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt26",
+      "name": "纯培养物",
+      "definition": "由单一个体繁殖所获得的微生物群体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt27",
+      "name": "纯培养",
+      "definition": "获得纯培养物的过程；微生物纯培养包括配制培养基、灭菌、接种、分离和培养等步骤。",
+      "importance": "重要",
+      "examples": [
+        "酵母菌的纯培养"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt28",
+      "name": "平板划线法",
+      "definition": "用接种环在固体培养基表面连续划线，使聚集的菌种逐步稀释分散，经培养分离得到单菌落的方法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt29",
+      "name": "稀释涂布平板法",
+      "definition": "将微生物稀释后涂布到固体培养基上，使单个微生物分散，培养后获得单菌落的方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt30",
+      "name": "发酵工程",
+      "definition": "在严格控制的环境条件下，利用微生物（多为单一菌种）进行大规模发酵生产发酵产品的工程化技术体系，依托对发酵原理的认识、微生物纯培养技术以及密闭式发酵罐等装备与控制手段。",
+      "importance": "掌握",
+      "examples": [
+        "青霉素产业化生产",
+        "啤酒工业化生产",
+        "柠檬酸发酵生产",
+        "谷氨酸（味精原料）发酵生产"
+      ],
+      "aliases": [
+        "工业发酵（语境相关）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt31",
+      "name": "发酵工程的一般流程（基本环节）",
+      "definition": "发酵工程通常包含：菌种的选育、扩大培养、培养基的配制与灭菌、接种、发酵、产品的分离与提纯等环节。",
+      "importance": "掌握",
+      "examples": [
+        "菌种选育→扩大培养→配制培养基/灭菌→接种→发酵→分离提纯"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt32",
+      "name": "菌种选育",
+      "definition": "获得性状优良、适于生产的菌种，可来自自然筛选，也可通过诱变育种或基因工程育种获得。",
+      "importance": "掌握",
+      "examples": [
+        "筛选产酸量高的黑曲霉用于柠檬酸生产",
+        "基因工程改造啤酒酵母以加速发酵、缩短周期"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt33",
+      "name": "扩大培养",
+      "definition": "在发酵前对菌种进行逐级放大培养，以获得足够体积/数量的种子液来满足工业发酵罐接种需要。",
+      "importance": "了解",
+      "examples": [
+        "发酵罐体积几十至几百立方米，需要几至几十立方米的菌种总体积"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt34",
+      "name": "培养基（配制）",
+      "definition": "根据菌种与产物需求选择原料并配制培养基；工业生产中培养基配方通常需反复试验才能确定。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt35",
+      "name": "灭菌（培养基与设备）",
+      "definition": "为避免杂菌污染导致产量下降或产物被分解，培养基和发酵设备需经过严格灭菌处理。",
+      "importance": "掌握",
+      "examples": [
+        "青霉素生产被杂菌污染时，杂菌分泌青霉素酶分解青霉素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt36",
+      "name": "发酵过程监测与控制（发酵条件控制）",
+      "definition": "在发酵过程中检测微生物数量、产物浓度等，并通过调控温度、pH、溶解氧等条件及补加营养，使发酵处于最佳状态；现代大型发酵罐可用计算机系统监测并进行反馈控制。",
+      "importance": "掌握",
+      "examples": [
+        "监测温度、pH、溶解氧、罐压、通气量、搅拌、泡沫与营养并反馈控制"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt37",
+      "name": "产物分离与提纯",
+      "definition": "发酵结束后依据产物性质进行分离与纯化：若产品为微生物细胞本身，可过滤/沉淀分离菌体并干燥；若为代谢物，则采取适当的提取、分离和纯化措施获得产品。",
+      "importance": "掌握",
+      "examples": [
+        "过滤、沉淀分离菌体并干燥得到菌体产品"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt38",
+      "name": "环境条件对代谢物形成的影响",
+      "definition": "发酵环境条件不仅影响微生物生长繁殖，也影响代谢物的形成与积累；例如pH改变会导致不同产物积累。",
+      "importance": "重要",
+      "examples": [
+        "谷氨酸发酵：中性/弱碱性积累谷氨酸；酸性易形成谷氨酰胺和N-乙酰谷氨酰胺"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt39",
+      "name": "发酵工程应用领域与特点",
+      "definition": "发酵工程因生产条件温和、原料来源丰富且低廉、产物专一、废弃物污染小且易处理等特点，在食品工业、医药工业、农牧业及其他领域广泛应用，形成发酵工业。",
+      "importance": "掌握",
+      "examples": [
+        "食品：酱油、酒类、食品添加剂、酶制剂",
+        "医药：抗生素、氨基酸、激素、疫苗",
+        "农牧：微生物肥料、微生物农药、单细胞蛋白饲料"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt40",
+      "name": "传统发酵产品（食品工业）",
+      "definition": "以特定微生物发酵或其酶作用将原料转化为食品的产品，如利用霉菌产生的蛋白酶水解蛋白制酱油、利用酿酒酵母发酵制酒。",
+      "importance": "了解",
+      "examples": [
+        "黑曲霉产生蛋白酶制酱油",
+        "酿酒酵母发酵制酒类"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt41",
+      "name": "食品添加剂的发酵生产",
+      "definition": "多类食品添加剂可通过发酵工程获得，用于调节酸度、增味、着色、增稠、防腐等。",
+      "importance": "了解",
+      "examples": [
+        "黑曲霉发酵制柠檬酸（酸度调节剂）",
+        "谷氨酸棒状杆菌发酵制谷氨酸，进一步制成味精（谷氨酸钠）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt42",
+      "name": "酶制剂（食品工业）",
+      "definition": "用于直接生产食品或改进工艺的酶类制品，种类多，绝大多数通过发酵工程生产。",
+      "importance": "了解",
+      "examples": [
+        "α-淀粉酶、β-淀粉酶、果胶酶、氨基肽酶、脂肪酶"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt43",
+      "name": "医药工业中的发酵工程（生物制药发酵）",
+      "definition": "利用发酵工程生产抗生素、氨基酸、激素、免疫调节剂等；并可结合基因工程/蛋白质工程改造微生物，实现过去受原料限制药物的规模化生产。",
+      "importance": "了解",
+      "examples": [
+        "青霉素产业化",
+        "基因改造微生物发酵生产生长激素释放抑制激素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt44",
+      "name": "微生物肥料",
+      "definition": "通过发酵工程生产的活菌或其代谢物制品，利用微生物代谢产生的有机酸、生物活性物质等增进土壤肥力、改良土壤结构、促进植株生长，并可抑制病原微生物。",
+      "importance": "了解",
+      "examples": [
+        "根瘤菌肥",
+        "固氮菌肥"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt45",
+      "name": "微生物农药",
+      "definition": "利用微生物或其代谢物防治病虫害的制剂，是生物防治的重要手段。",
+      "importance": "了解",
+      "examples": [
+        "苏云金杆菌防治多种害虫",
+        "白僵菌防治玉米螟、松毛虫",
+        "井冈霉素防治水稻枯纹病"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt46",
+      "name": "单细胞蛋白（微生物饲料/食品添加剂）",
+      "definition": "以淀粉/纤维素水解液或工业废液等为原料发酵获得的大量微生物菌体（富含蛋白质），可作为食品添加剂或制成微生物饲料，提高畜禽增重与产奶/产蛋量。",
+      "importance": "了解",
+      "examples": [
+        "用酵母菌等生产单细胞蛋白",
+        "细菌蛋白质含量可占细胞干重60%~80%"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt47",
+      "name": "植物细胞工程",
+      "definition": "利用植物细胞的生物学特性（如全能性等）及相关技术手段，在人工条件下实现植物细胞/组织的培养、再生与遗传改良等的一类技术体系。本节重点包括植物组织培养与植物体细胞杂交两项基本技术。",
+      "importance": "重要",
+      "examples": [
+        "植物组织培养",
+        "植物体细胞杂交"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt48",
+      "name": "外植体",
+      "definition": "离体培养的植物器官、组织或细胞等材料，在植物组织培养中作为培养起始材料使用。",
+      "importance": "了解",
+      "examples": [
+        "幼嫩的菊花茎段"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt49",
+      "name": "脱分化",
+      "definition": "已分化的细胞在一定的激素和营养等条件诱导下，失去其特有的结构和功能，转变成未分化细胞的过程。",
+      "importance": "掌握",
+      "examples": [
+        "分化细胞脱分化形成愈伤组织"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt50",
+      "name": "愈伤组织",
+      "definition": "脱分化后形成的不定形的薄壁组织团块，可在适宜条件下重新分化形成器官。",
+      "importance": "掌握",
+      "examples": [
+        "菊花组织培养中由外植体诱导形成的愈伤组织"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt51",
+      "name": "再分化",
+      "definition": "愈伤组织在一定条件下重新分化形成芽、根等器官的过程。",
+      "importance": "掌握",
+      "examples": [
+        "愈伤组织重新分化出芽和根"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt52",
+      "name": "原生质体",
+      "definition": "利用纤维素酶和果胶酶去除植物细胞壁后获得的细胞结构，是体细胞杂交中进行融合的基础材料。",
+      "importance": "掌握",
+      "examples": [
+        "烟草叶肉细胞原生质体"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt53",
+      "name": "植物体细胞杂交",
+      "definition": "将不同来源的植物体细胞在一定条件下融合成杂种细胞，并把杂种细胞培育成新植物体的技术。",
+      "importance": "掌握",
+      "aliases": [
+        "plant somatic hybridization"
+      ],
+      "examples": [
+        "番茄—马铃薯杂种植株",
+        "白菜—甘蓝杂种植株",
+        "普通小麦—长穗偃麦草杂种植株"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt54",
+      "name": "动物细胞工程",
+      "definition": "以动物细胞为对象，通过动物细胞培养、动物细胞融合、动物细胞核移植等技术进行细胞操作与应用的技术领域。",
+      "importance": "了解",
+      "examples": [
+        "通过细胞培养构建的人造皮肤",
+        "动物分泌蛋白的规模化生产"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt55",
+      "name": "动物细胞培养",
+      "definition": "从动物体中取出相关组织，将其分散成单个细胞，并在适宜培养条件下使细胞生长和增殖的技术。",
+      "importance": "掌握",
+      "aliases": [
+        "animal cell culture"
+      ],
+      "examples": [
+        "人造皮肤的构建",
+        "动物分泌蛋白的规模化生产"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt56",
+      "name": "合成培养基",
+      "definition": "将细胞所需的营养物质按种类和所需量严格配制而成的培养基。",
+      "importance": "了解",
+      "examples": [
+        "合成培养基中通常需要加入血清等天然成分"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt57",
+      "name": "血清（培养添加物）",
+      "definition": "在使用合成培养基时通常加入的天然成分，用于补充尚未完全明确的细胞营养需求相关成分。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt58",
+      "name": "培养液（液体培养基）",
+      "definition": "培养动物细胞一般使用的液体培养基。",
+      "importance": "了解",
+      "aliases": [
+        "液体培养基"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt59",
+      "name": "无菌、无毒环境（动物细胞培养条件）",
+      "definition": "体外培养细胞时必须保证环境无菌、无毒，需要对培养液和所有培养用具灭菌并在无菌环境下操作，且培养液需定期更换以清除代谢物。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt60",
+      "name": "温度、pH和渗透压（动物细胞培养条件）",
+      "definition": "维持细胞生存所需的重要环境参数，包括适宜温度、适宜pH以及合适渗透压。",
+      "importance": "掌握",
+      "examples": [
+        "哺乳动物细胞培养温度多以(36.5±0.5)℃为宜",
+        "多数动物细胞适宜pH为7.2～7.4"
+      ],
+      "unit": [
+        "℃",
+        "pH"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt61",
+      "name": "气体环境（动物细胞培养条件）",
+      "definition": "动物细胞培养所需的气体主要为O2和CO2；O2用于细胞代谢，CO2主要用于维持培养液pH。",
+      "importance": "掌握",
+      "examples": [
+        "CO2培养箱中常用95%空气和5%CO2的混合气体"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt62",
+      "name": "细胞贴壁",
+      "definition": "需要贴附于某些基质表面（如培养瓶壁）才能生长增殖的细胞在培养过程中出现的贴附现象。",
+      "importance": "掌握",
+      "examples": [
+        "大多数动物细胞属于贴壁生长类型"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt63",
+      "name": "悬浮培养细胞",
+      "definition": "能够悬浮在培养液中生长增殖的一类体外培养动物细胞。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt64",
+      "name": "接触抑制",
+      "definition": "贴壁细胞分裂生长到表面相互接触时，通常会停止分裂增殖的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt65",
+      "name": "分瓶培养（传代操作）",
+      "definition": "当细胞（尤其贴壁细胞）因接触抑制等原因增殖受限时，将细胞分散并分装到新的培养器皿中以继续增殖的培养操作。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt66",
+      "name": "原代培养",
+      "definition": "动物组织经处理后的初次细胞培养（分瓶之前的培养）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt67",
+      "name": "传代培养",
+      "definition": "将原代培养获得的细胞分瓶后继续进行的细胞培养。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt68",
+      "name": "胚胎干细胞（ES细胞）",
+      "definition": "存在于早期胚胎中的干细胞，具有分化为成年动物体内任何一种类型细胞并进一步形成机体所有组织和器官甚至个体的潜能。",
+      "importance": "重要",
+      "aliases": [
+        "embryonic stem cell",
+        "ES细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt69",
+      "name": "成体干细胞",
+      "definition": "存在于成体组织或器官内的干细胞，一般认为具有组织特异性，只能分化成特定的细胞或组织，不具有发育成完整个体的能力。",
+      "importance": "掌握",
+      "examples": [
+        "造血干细胞",
+        "神经干细胞",
+        "精原干细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt70",
+      "name": "诱导多能干细胞（iPS细胞）",
+      "definition": "通过体外诱导体细胞获得的、类似胚胎干细胞的细胞；诱导过程无须破坏胚胎，且可来源于病人自身体细胞，理论上可避免免疫排斥反应。",
+      "importance": "重要",
+      "aliases": [
+        "induced pluripotent stem cell",
+        "iPS细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt71",
+      "name": "胚胎工程",
+      "definition": "对生殖细胞、受精卵或早期胚胎细胞进行多种显微操作和处理，然后将获得的胚胎移植到雌性动物体内生产后代，以满足人类的各种需求的技术体系。",
+      "importance": "重要",
+      "aliases": [
+        "embryo engineering"
+      ],
+      "examples": [
+        "体外受精",
+        "胚胎移植",
+        "胚胎分割"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt72",
+      "name": "体外受精",
+      "definition": "在体外条件下模拟动物自然受精条件，使获能精子与具备受精能力的卵子结合形成合子的技术。",
+      "importance": "掌握",
+      "aliases": [
+        "IVF"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt73",
+      "name": "胚胎移植",
+      "definition": "将获得的胚胎移植到雌性动物体内，使其继续发育并生产后代的技术。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt74",
+      "name": "胚胎分割",
+      "definition": "对早期胚胎进行显微操作，将其分割以获得更多胚胎个体/胚胎用于移植等目的的技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt75",
+      "name": "合子（受精卵）",
+      "definition": "受精过程中形成的、含有两个染色体组的细胞，即受精卵；受精过程结束后其发育开始。",
+      "importance": "掌握",
+      "aliases": [
+        "受精卵",
+        "合子"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt76",
+      "name": "精子获能",
+      "definition": "刚排出的精子不能立即与卵子受精，必须在雌性动物生殖道发生相应生理变化后才获得受精能力的生理现象。",
+      "importance": "掌握",
+      "aliases": [
+        "capacitation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt77",
+      "name": "卵子成熟到MⅡ期",
+      "definition": "卵子在输卵管内进一步成熟，到减数分裂第二次中期（MⅡ期）时，才具备与精子受精的能力。",
+      "importance": "掌握",
+      "aliases": [
+        "MⅡ期",
+        "减数分裂Ⅱ中期"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt78",
+      "name": "透明带反应（阻止多精入卵）",
+      "definition": "精子触及卵细胞膜时，卵细胞膜外透明带迅速发生生理反应，阻止后来的精子进入透明带，从而避免多精入卵。",
+      "importance": "了解",
+      "aliases": [
+        "透明带反应"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt79",
+      "name": "卵细胞膜反应（拒绝其他精子入卵内）",
+      "definition": "精子入卵后，卵细胞膜立即发生生理反应，拒绝其他精子再进入卵内，从而避免多精入卵。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt80",
+      "name": "雄原核",
+      "definition": "精子入卵后，尾部脱离、核膜破裂并形成新的核膜，最终形成比原来精子核更大的核，称为雄原核。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt81",
+      "name": "雌原核",
+      "definition": "精子入卵后被激活的卵子完成减数分裂Ⅱ并排出第二极体后形成的核，称为雌原核。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt82",
+      "name": "受精标志（两极体或雌雄原核）",
+      "definition": "在胚胎工程操作中，常以观察到两个极体或者雌、雄原核作为受精是否发生的标志。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt83",
+      "name": "胚胎早期发育",
+      "definition": "受精卵形成后在输卵管内进行有丝分裂并开始发育的过程，早期包括卵裂及形态阶段变化（如桑葚胚、囊胚等）。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt84",
+      "name": "卵裂",
+      "definition": "受精卵早期在透明带内进行的连续有丝分裂：细胞数量不断增加，但胚胎总体积并不增加的分裂方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt85",
+      "name": "桑葚胚",
+      "definition": "卵裂产生的子细胞逐渐形成致密细胞团、形似桑葚时的胚胎阶段。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt86",
+      "name": "囊胚",
+      "definition": "胚胎进一步发育、细胞分化并形成囊胚腔的阶段；囊胚含内细胞团和滋养层细胞等结构。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt87",
+      "name": "内细胞团",
+      "definition": "囊胚中聚集在胚胎一端的细胞群，将来发育成胎儿的各种组织。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt88",
+      "name": "滋养层细胞",
+      "definition": "囊胚中沿透明带内壁扩展和排列的细胞，将来发育成胎膜和胎盘。",
+      "importance": "了解",
+      "aliases": [
+        "滋养层"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt89",
+      "name": "囊胚腔",
+      "definition": "囊胚内部出现的含液体的腔结构，是囊胚阶段的重要形态特征。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt90",
+      "name": "孵化（囊胚孵化）",
+      "definition": "囊胚进一步扩大导致透明带破裂，胚胎从其中伸展出来的过程；若不能正常孵化，胚胎无法继续发育。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt91",
+      "name": "原肠胚",
+      "definition": "囊胚孵化后继续发育形成的阶段，出现外胚层、内胚层并进一步形成中胚层。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt92",
+      "name": "中胚层",
+      "definition": "发育过程中在内、外两个胚层之间形成的胚层之一，属于三胚层之一，将逐渐分化形成多种组织器官。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt93",
+      "name": "重组DNA技术的基本工具",
+      "definition": "重组DNA操作过程中用于体外切割、拼接DNA并将重组DNA导入受体细胞的三类“分子工具”的总称，包括限制性内切核酸酶、DNA连接酶和载体。",
+      "importance": "掌握",
+      "examples": [
+        "“分子手术刀”限制性内切核酸酶",
+        "“分子缝合针”DNA连接酶",
+        "“分子运输车”载体（如质粒）"
+      ],
+      "aliases": [
+        "基因工程的分子工具"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt94",
+      "name": "限制性内切核酸酶（限制酶）",
+      "definition": "主要从原核生物中分离纯化的一类酶，能够识别双链DNA分子的特定核苷酸序列，并使每一条链中特定位点的磷酸二酯键断开，从而切割DNA。",
+      "importance": "掌握",
+      "aliases": [
+        "restriction endonuclease",
+        "restriction enzyme",
+        "分子手术刀"
+      ],
+      "examples": [
+        "EcoRI",
+        "SmaI"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt95",
+      "name": "限制酶识别序列",
+      "definition": "限制酶在双链DNA上所识别的特定核苷酸序列，限制酶在该序列相关位置切割DNA。",
+      "importance": "掌握",
+      "examples": [
+        "大多数由6个核苷酸组成",
+        "少数由4个、8个或其他数量的核苷酸组成"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt96",
+      "name": "磷酸二酯键",
+      "definition": "DNA链中连接相邻核苷酸的化学键；限制酶切割DNA时使DNA链中特定位点的磷酸二酯键断开，DNA连接酶可恢复该键。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt97",
+      "name": "黏性末端",
+      "definition": "限制酶在识别序列中心轴线两侧分别切开DNA两条链时形成的末端类型，通常产生可互补配对的单链突出端，利于DNA片段拼接。",
+      "importance": "掌握",
+      "aliases": [
+        "粘性末端"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt98",
+      "name": "平末端",
+      "definition": "限制酶在识别序列中心轴线处切开DNA两条链时形成的末端类型，不产生单链突出端。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt99",
+      "name": "DNA连接酶",
+      "definition": "能将两个DNA片段连接成新的DNA分子、恢复被限制酶切开的磷酸二酯键的酶，是基因工程中用于“拼接”DNA片段的关键工具。",
+      "importance": "掌握",
+      "aliases": [
+        "DNA ligase",
+        "分子缝合针"
+      ],
+      "examples": [
+        "E.coli DNA连接酶",
+        "T4 DNA连接酶"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt100",
+      "name": "E.coli DNA连接酶",
+      "definition": "从大肠杆菌分离得到的DNA连接酶，只能连接具有互补黏性末端的DNA片段，不能连接平末端DNA片段。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt101",
+      "name": "T4 DNA连接酶",
+      "definition": "从T4噬菌体分离得到的DNA连接酶，既可连接互补黏性末端，也可连接平末端（但平末端连接效率相对较低）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt102",
+      "name": "载体（vector）",
+      "definition": "将体外重组好的DNA分子导入受体细胞的工具；在基因工程中常用质粒，也可用噬菌体、动植物病毒等。",
+      "importance": "掌握",
+      "aliases": [
+        "分子运输车"
+      ],
+      "examples": [
+        "质粒",
+        "噬菌体",
+        "动植物病毒"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt103",
+      "name": "质粒（plasmid）",
+      "definition": "一种裸露的、结构简单、独立于真核细胞细胞核或原核细胞拟核DNA之外，并具有自我复制能力的环状双链DNA分子，常作为载体用于将外源基因送入细胞。",
+      "importance": "掌握",
+      "examples": [
+        "质粒DNA上含一个至多个限制酶切割位点，供外源DNA片段插入"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt104",
+      "name": "标记基因（用于筛选）",
+      "definition": "载体上用于筛选重组DNA分子的特殊基因标记，常见为抗性基因，便于识别含外源DNA的载体/受体细胞。",
+      "importance": "了解",
+      "examples": [
+        "四环素抗性基因",
+        "氨苄青霉素抗性基因"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt105",
+      "name": "DNA粗提取的原理",
+      "definition": "利用DNA与RNA、蛋白质、脂质等在物理和化学性质上的差异进行分离：例如DNA不溶于酒精；DNA在不同浓度NaCl溶液中溶解度不同（可溶于2 mol/L NaCl）。",
+      "importance": "掌握",
+      "examples": [
+        "加入预冷酒精使DNA析出成白色丝状物",
+        "使用2 mol/L NaCl溶液促进DNA溶解/分离"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt106",
+      "name": "二苯胺试剂鉴定DNA",
+      "definition": "在一定温度下DNA遇二苯胺试剂会呈现蓝色，因此二苯胺试剂可作为鉴定DNA的试剂。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt107",
+      "name": "基因工程的基本操作程序",
+      "definition": "基因工程从获取目的基因到导入受体细胞并检测鉴定的一套基本流程，通常包括：目的基因的筛选与获取、基因表达载体的构建、将目的基因导入受体细胞、目的基因的检测与鉴定。",
+      "importance": "掌握",
+      "examples": [
+        "培育转基因抗虫棉的四个步骤"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt108",
+      "name": "目的基因",
+      "definition": "在基因工程设计与操作中，用于改变受体细胞性状或获得预期表达产物的基因。",
+      "importance": "掌握",
+      "examples": [
+        "Bt抗虫蛋白基因（Bt基因）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt109",
+      "name": "Bt基因",
+      "definition": "来自苏云金杆菌、编码Bt抗虫蛋白的“杀虫基因”，用于培育转基因抗虫棉的目的基因。",
+      "importance": "重要",
+      "aliases": [
+        "Bt抗虫蛋白基因"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt110",
+      "name": "Bt抗虫蛋白",
+      "definition": "由Bt基因表达产生的蛋白质，可破坏鳞翅目昆虫的消化系统（相关信息中描述为多肽与害虫肠上皮细胞特异性受体结合导致细胞膜穿孔），从而致死害虫。",
+      "importance": "了解",
+      "examples": [
+        "使棉铃虫死亡"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt111",
+      "name": "PCR（聚合酶链式反应）",
+      "definition": "根据DNA半保留复制原理，在体外提供DNA复制所需组分与条件，对目的基因的核苷酸序列进行大量复制（扩增）的技术。",
+      "importance": "掌握",
+      "formula": "扩增量约为 2^n（n为循环次数）"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt112",
+      "name": "PCR三步循环：变性-复性-延伸",
+      "definition": "PCR每个循环通常分为三步：目的DNA受热变性成单链；引物与互补序列结合（复性/退火）；DNA聚合酶作用下以单链为模板延伸合成新链。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt113",
+      "name": "引物",
+      "definition": "一小段能与DNA母链某段碱基序列互补配对的短单链核酸，使DNA聚合酶能够从引物3'端开始连接脱氧核苷酸。",
+      "importance": "掌握",
+      "examples": [
+        "PCR引物长度通常为20~30个核苷酸"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt114",
+      "name": "基因表达载体",
+      "definition": "用于使目的基因在受体细胞中稳定存在并能表达的载体；除目的基因、标记基因外，还必须含有启动子、终止子等调控元件。",
+      "importance": "掌握",
+      "examples": [
+        "以质粒作为载体构建重组DNA分子"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt115",
+      "name": "启动子（promoter）",
+      "definition": "位于基因上游、紧挨转录起始位点的一段特殊序列DNA，是RNA聚合酶识别和结合部位，可驱动基因转录产生mRNA；可人工构建诱导型启动子以在诱导物存在时激活或抑制表达。",
+      "importance": "掌握",
+      "aliases": [
+        "promoter"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt116",
+      "name": "终止子（terminator）",
+      "definition": "位于基因下游的一段特殊序列DNA，使转录在所需要的地方停止。",
+      "importance": "掌握",
+      "aliases": [
+        "terminator"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt117",
+      "name": "限制酶",
+      "definition": "在构建基因表达载体时用于切割载体DNA和含目的基因DNA片段、产生可连接末端的酶。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt118",
+      "name": "重组DNA分子",
+      "definition": "通过限制酶切割与DNA连接酶连接，将目的基因片段拼接进入载体后形成的DNA分子。",
+      "importance": "掌握",
+      "aliases": [
+        "重组DNA"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt119",
+      "name": "转化（transformation）",
+      "definition": "目的基因进入受体细胞内，并且在受体细胞内维持稳定和表达的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "transformation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt120",
+      "name": "农杆菌转化法",
+      "definition": "利用农杆菌侵染植物细胞并将Ti质粒T-DNA转移整合到植物染色体DNA上的特性，将插入了目的基因的T-DNA导入植物细胞的方法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt121",
+      "name": "花粉管通道法",
+      "definition": "将含目的基因的DNA溶液通过花粉管通道导入植物胚囊/受体细胞的一类方法，如微量注射入子房或在去柱头后将DNA溶液滴加于花柱切面。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt122",
+      "name": "目的基因的检测与鉴定",
+      "definition": "在目的基因导入受体细胞后，通过分子水平（如PCR检测插入/转录、抗原-抗体杂交检测蛋白表达）与个体生物学水平（如饲喂害虫观察抗性）确认目的基因是否稳定维持并表达遗传特性的过程。",
+      "importance": "掌握",
+      "examples": [
+        "PCR检测棉花染色体DNA是否插入Bt基因",
+        "抗原-抗体杂交检测是否产生Bt抗虫蛋白",
+        "饲喂棉铃虫鉴定抗虫性"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt123",
+      "name": "基因工程的应用",
+      "definition": "基因工程技术在农牧业、医药卫生、食品工业等领域用于改良生物性状或生产生物制品（如药物、工业用酶、氨基酸、维生素等），并可能拓展到环境治理与能源生产等方面的实际用途。",
+      "importance": "重要",
+      "examples": [
+        "重组人胰岛素的生产",
+        "转基因抗虫/抗病/抗除草剂作物",
+        "基因工程药物（如重组人干扰素）",
+        "基因工程菌生产凝乳酶、氨基酸等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt124",
+      "name": "转基因作物",
+      "definition": "将外源基因导入作物基因组并稳定表达，从而获得特定优良性状（如抗虫、抗病、抗除草剂、营养品质改良等）的作物。",
+      "importance": "掌握",
+      "examples": [
+        "转基因棉花",
+        "转基因大豆",
+        "转基因玉米",
+        "转基因番木瓜"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt125",
+      "name": "转基因动物",
+      "definition": "将外源基因导入动物基因组并表达，从而获得特定性状（如生长速率提高、畜产品品质改善或用于生产药物等）的动物。",
+      "importance": "掌握",
+      "examples": [
+        "转基因大西洋鲑（食用）",
+        "转生长激素基因的鲤鱼",
+        "导入肠乳糖酶基因的奶牛（降低乳糖）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt126",
+      "name": "转基因抗虫植物",
+      "definition": "从某些生物中分离具有抗虫功能的基因并导入作物，培育获得具有抗虫性的转基因作物。",
+      "importance": "了解",
+      "examples": [
+        "转基因抗虫棉花",
+        "转基因抗虫玉米",
+        "转基因抗虫水稻"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt127",
+      "name": "转基因抗病植物",
+      "definition": "将来源于某些病毒、真菌等的抗病基因导入植物，培育获得具有抗病性的转基因植物新品种。",
+      "importance": "了解",
+      "examples": [
+        "转基因抗病毒甜椒",
+        "转基因番木瓜",
+        "转基因烟草"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt128",
+      "name": "转基因抗除草剂植物",
+      "definition": "将降解或抵抗某种除草剂的基因导入作物，使作物在喷洒除草剂时不受损伤，从而实现除草而不减产的作物品种。",
+      "importance": "了解",
+      "examples": [
+        "转基因抗除草剂玉米",
+        "转基因抗除草剂大豆",
+        "转基因抗除草剂油菜"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt129",
+      "name": "改良植物品质（营养/观赏）",
+      "definition": "利用转基因技术改变植物的营养价值或观赏性状，例如提高必需氨基酸含量或改变花色等。",
+      "importance": "了解",
+      "examples": [
+        "导入相关基因使转基因玉米赖氨酸含量提高30%",
+        "将花青素代谢相关基因导入矮牵牛获得自然界没有的颜色变异"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt130",
+      "name": "提高动物生长速率（外源生长激素基因表达）",
+      "definition": "通过将外源生长激素基因导入动物体并表达，使转基因动物生长更快，从而提高养殖效率。",
+      "importance": "了解",
+      "examples": [
+        "转基因鲤鱼生长速率比非转基因鲤鱼提高42%~115%"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt131",
+      "name": "改善畜产品品质（降低乳糖以应对乳糖不耐受）",
+      "definition": "通过基因工程改变动物产物成分（如乳汁中的乳糖含量），以提升适用性或营养特性；例如向奶牛导入肠乳糖酶基因以降低乳糖含量。",
+      "importance": "了解",
+      "examples": [
+        "转基因牛分泌乳汁中乳糖含量大大降低而其他营养成分不受影响"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt132",
+      "name": "基因工程药物",
+      "definition": "对微生物或动植物细胞进行基因改造，使其能够生产用于预防和治疗疾病的药物（如细胞因子、抗体、疫苗和激素等）。",
+      "importance": "掌握",
+      "examples": [
+        "重组人胰岛素",
+        "重组人干扰素",
+        "血小板生成素",
+        "促红细胞生成素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt133",
+      "name": "重组人胰岛素",
+      "definition": "将编码人胰岛素的基因导入大肠杆菌细胞中，使其表达得到的胰岛素（重组人胰岛素），用于治疗糖尿病。",
+      "importance": "重要",
+      "examples": [
+        "1978年科学家导入人胰岛素基因至大肠杆菌表达重组人胰岛素",
+        "我国研制成功并广泛应用的基因工程药物"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt134",
+      "name": "干扰素",
+      "definition": "一种具有干扰病毒复制作用的糖蛋白，在临床上广泛用于治疗病毒感染性疾病，并对部分肿瘤等有一定疗效。",
+      "importance": "了解",
+      "examples": [
+        "用于治疗慢性乙型肝炎、慢性丙型肝炎等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt135",
+      "name": "重组人干扰素α-1b",
+      "definition": "利用基因工程方法在微生物（如大肠杆菌、酵母菌）中获得的人干扰素制品；我国批准生产的第一个基因工程药物之一，用于治疗慢性乙型肝炎等。",
+      "importance": "了解",
+      "examples": [
+        "1993年我国批准生产重组人干扰素α-1b"
+      ],
+      "aliases": [
+        "重组人干扰素 α-1b"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt136",
+      "name": "乳腺生物反应器（乳房生物反应器）",
+      "definition": "将药用蛋白基因与乳腺中特异表达的启动子等调控元件重组，通过显微注射导入哺乳动物受精卵，使转基因动物在泌乳期通过乳汁批量生产所需药物的技术体系。",
+      "importance": "掌握",
+      "examples": [
+        "在牛、山羊等乳腺生物反应器中获得抗凝血酶、血清白蛋白、生长激素、α-抗胰蛋白酶等"
+      ],
+      "aliases": [
+        "乳房生物反应器"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt137",
+      "name": "移植器官工厂（转基因克隆猪器官设想）",
+      "definition": "通过基因工程改造猪器官（如抑制或去除与免疫排斥相关的抗原决定基因表达），并结合克隆技术，培育可能不引起免疫排斥反应的器官供体，以缓解人体移植器官短缺。",
+      "importance": "了解",
+      "examples": [
+        "在器官供体基因组中导入调节因子以抑制抗原决定基因表达，或设法除去抗原决定基因，再结合克隆技术"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt138",
+      "name": "基因工程菌",
+      "definition": "用基因工程的方法使外源基因得到高效表达的菌类。",
+      "importance": "掌握",
+      "examples": [
+        "导入牛凝乳酶基因的大肠杆菌、黑曲霉或酵母菌",
+        "用于生产食品工业用酶、氨基酸和维生素等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt139",
+      "name": "基因工程在食品工业中的应用",
+      "definition": "利用基因工程菌生产食品工业所需的酶、氨基酸、维生素等物质，并通过发酵等方式实现规模化生产、提高纯度并降低成本。",
+      "importance": "掌握",
+      "examples": [
+        "基因工程菌生产凝乳酶用于奶酪制造",
+        "生产天冬氨酸和苯丙氨酸用于合成阿斯巴甜",
+        "生产淀粉酶、脂肪酶等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt140",
+      "name": "凝乳酶的基因工程生产",
+      "definition": "将编码牛凝乳酶的基因导入微生物（大肠杆菌、黑曲霉或酵母菌）基因组，并通过工业发酵批量生产凝乳酶以满足奶酪生产需求。",
+      "importance": "了解",
+      "examples": [
+        "1990年投入市场，2008年市场份额超过80%"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt141",
+      "name": "蛋白质工程",
+      "definition": "以蛋白质分子的结构规律及其与生物功能的关系作为基础，通过改造或合成基因，来改造现有蛋白质或制造新的蛋白质，以满足人类生产和生活需求的综合科技工程。",
+      "importance": "掌握",
+      "aliases": [
+        "第二代基因工程（在基因工程基础上延伸）"
+      ],
+      "examples": [
+        "改造胰岛素基因获得速效胰岛素类似物",
+        "对玉米赖氨酸合成关键酶进行氨基酸位点替换以提高赖氨酸含量"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt142",
+      "name": "基因工程",
+      "definition": "将一种生物的基因转移到另一种生物体内，使受体产生其原本不能产生的蛋白质并表现新性状的技术；原则上只能生产自然界中已存在的蛋白质。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt143",
+      "name": "中心法则（基因表达与蛋白质形成过程）",
+      "definition": "天然蛋白质合成遵循：基因→表达（转录和翻译）→形成特定氨基酸序列的多肽链→形成具有高级结构的蛋白质→行使生物功能。",
+      "importance": "掌握",
+      "formula": "基因 → 转录/翻译 → 多肽链（氨基酸序列） → 蛋白质高级结构 → 生物功能"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt144",
+      "name": "蛋白质工程的基本思路（逆向设计流程）",
+      "definition": "从预期蛋白质功能出发，设计预期结构，推测应有的氨基酸序列，找到并改变相应的脱氧核苷酸序列（基因）或合成新基因，从而获得所需蛋白质。",
+      "importance": "掌握",
+      "formula": "功能 → 结构 → 氨基酸序列 → 基因（DNA序列的改变/合成） → 蛋白质"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt145",
+      "name": "蛋白质结构与功能关系",
+      "definition": "蛋白质功能依赖其正确的高级结构；结构与功能存在密切对应关系，是蛋白质工程设计改造的基础。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt146",
+      "name": "蛋白质高级结构",
+      "definition": "蛋白质在特定氨基酸序列基础上形成的复杂三维空间构象；蛋白质发挥功能必须依赖正确的高级结构。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt147",
+      "name": "定点突变（碱基替换）",
+      "definition": "对基因中特定位点进行碱基替换，从而实现蛋白质相应氨基酸位点改变的技术，是蛋白质工程常用手段之一。",
+      "importance": "掌握",
+      "examples": [
+        "将天冬氨酸激酶第352位苏氨酸变为异亮氨酸",
+        "胰岛素B28位脯氨酸替换为天冬氨酸或与B29赖氨酸交换"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt148",
+      "name": "蛋白质三维结构模型",
+      "definition": "借助计算机建立的蛋白质三维结构表示，用于辅助理解与预测蛋白质结构并服务于蛋白质工程设计。",
+      "importance": "了解",
+      "examples": [
+        "血红蛋白三维结构模型（教材图示）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt149",
+      "name": "X射线衍射解析晶体结构",
+      "definition": "制备蛋白质晶体并利用X射线衍射技术分析晶体结构，以获得蛋白质三维结构信息的方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt150",
+      "name": "胰岛素聚合（形成二聚体/六聚体）",
+      "definition": "天然胰岛素制剂易形成二聚体或六聚体；皮下注射后需逐渐解离为单体，导致疗效延缓。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt151",
+      "name": "速效胰岛素类似物",
+      "definition": "通过改造胰岛素关键相互作用区域的氨基酸组成、抑制胰岛素聚合而获得的临床应用产品，可加快起效。",
+      "importance": "了解",
+      "examples": [
+        "B28位脯氨酸→天冬氨酸",
+        "B28与B29位氨基酸互换"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt152",
+      "name": "天然蛋白质不一定满足人类需求（蛋白质工程崛起缘由）",
+      "definition": "天然蛋白质是在进化中形成，结构和功能适合物种生存但未必符合人类生产生活需求，因此需要通过蛋白质工程对其进行设计改造。",
+      "importance": "重要",
+      "examples": [
+        "玉米赖氨酸含量低且难提高"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt153",
+      "name": "反馈抑制导致赖氨酸难以提高（玉米案例）",
+      "definition": "赖氨酸合成关键酶（天冬氨酸激酶、二氢吡啶二羧酸合成酶）活性受细胞内赖氨酸浓度影响，赖氨酸达到一定浓度会抑制两酶活性，使赖氨酸含量难提高。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt154",
+      "name": "转基因技术",
+      "definition": "利用基因工程技术对生物的遗传物质（基因组构成）进行改变，从而使生物获得新性状的一类技术。",
+      "importance": "掌握",
+      "aliases": [
+        "转基因"
+      ],
+      "examples": [
+        "用转基因技术抑制番茄乙烯形成酶活性，育成耐储藏番茄",
+        "将生长激素相关基因转入动物体内培育生长迅速的家禽家畜",
+        "构建基因工程菌生产氨基酸或药物"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt155",
+      "name": "农业转基因生物",
+      "definition": "利用基因工程技术改变基因组构成，用于农业生产或者农产品加工的动植物、微生物及其产品。",
+      "importance": "掌握",
+      "examples": [
+        "转基因动植物（含种子、种畜禽、水产苗种）和微生物",
+        "转基因农产品的直接加工品",
+        "含有转基因成分的农药、兽药、肥料和添加剂等产品"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt156",
+      "name": "转基因产品安全性评价",
+      "definition": "转基因产品上市前需经过一系列安全性评价，符合相应标准后才能上市的评价过程与体系。",
+      "importance": "重要",
+      "examples": [
+        "建成规范的生物安全性评价技术体系，确保转基因产品安全",
+        "我国逐步建立与国际接轨并适合国情的转基因安全评价体系"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt157",
+      "name": "依法监管（转基因安全管理）",
+      "definition": "通过法规政策对农业转基因生物的研究、试验、生产、加工、经营及进出口等活动进行严格管理，以保障人体健康、动植物和微生物安全并保护生态环境。",
+      "importance": "重要",
+      "examples": [
+        "《农业转基因生物安全管理条例》及配套管理办法",
+        "成立国家农业转基因生物安全委员会提供技术支撑"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt158",
+      "name": "转基因标识制度",
+      "definition": "为保护消费者知情权、规范销售行为，对农业转基因生物及其加工品等实行强制或规范标注“转基因××”等信息的制度与方法。",
+      "importance": "了解",
+      "examples": [
+        "直接标注“转基因××”",
+        "加工品标注“转基因××加工品（制成品）”或“加工原料为转基因××”"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt159",
+      "name": "基因污染（转基因花粉传播风险）",
+      "definition": "转基因生物的遗传物质通过花粉等途径向外传播、可能造成非目标生物/环境受到影响的风险。",
+      "importance": "了解",
+      "examples": [
+        "通过使花粉失去活性来防止转基因花粉传播"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt160",
+      "name": "理性看待转基因技术",
+      "definition": "在了解转基因原理与操作规程的基础上，认识观点受政治经济文化等因素影响，并依靠确凿证据与严谨逻辑进行思考与辩论，从而形成正确态度。",
+      "importance": "重要",
+      "aliases": [
+        "科学理性态度"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt161",
+      "name": "生殖性克隆",
+      "definition": "通过克隆技术产生能够独立生存的新个体的克隆方式。",
+      "importance": "掌握",
+      "aliases": [
+        "生殖性克隆人（作为对象/应用）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt162",
+      "name": "治疗性克隆",
+      "definition": "利用克隆技术产生特定的细胞、组织和器官，用于修复或替代受损的细胞、组织和器官，从而达到治疗疾病的目的。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt163",
+      "name": "克隆技术",
+      "definition": "用于获得与供体遗传物质高度一致的细胞或个体的一类生物技术，可用于生殖性克隆或治疗性克隆等应用。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt164",
+      "name": "体细胞核移植技术",
+      "definition": "将体细胞核移入去核卵母细胞，以获得可继续发育的重构胚的技术路线。",
+      "importance": "了解",
+      "aliases": [
+        "SCNT（英文缩写，教材未出现，谨慎不写入）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt165",
+      "name": "重构胚",
+      "definition": "通过体细胞核移植等方式构建、可继续发育的胚胎结构（由去核卵母细胞与移入的体细胞核等重建而成）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt166",
+      "name": "胚胎移植与着床",
+      "definition": "将体外形成的胚胎移植到母体子宫中并在子宫内着床、继续发育的过程；涉及着床率、流产率等结局指标。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt167",
+      "name": "生殖性克隆人的伦理问题",
+      "definition": "围绕是否应开展生殖性克隆人研究/实践而产生的伦理争议与风险，包括人类尊严、心理健康、家庭与人伦关系、器官供体强制、社会伦理秩序等方面。",
+      "importance": "重要",
+      "examples": [
+        "克隆人被当作“产品”制造",
+        "克隆人没有“父母”带来的心理影响",
+        "家庭地位难以认定导致血缘人伦关系冲击",
+        "能否强制其作为器官移植供体"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt168",
+      "name": "人类尊严",
+      "definition": "生命伦理中的核心价值概念，强调人格不可侵犯等；关于其内涵目前没有统一答案。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt169",
+      "name": "克隆的技术风险（低成功率与高异常率）",
+      "definition": "在哺乳动物克隆实践中出现的构建重构胚成功率低、胚胎移植后着床率低、流产率高、胎儿畸形率高、出生后死亡率高等问题，提示技术尚不成熟。",
+      "importance": "重要",
+      "examples": [
+        "构建重构胚成功率低",
+        "着床率低、流产率高",
+        "胎儿畸形率高、出生后死亡率高"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt170",
+      "name": "基因多样性",
+      "definition": "群体中基因差异的天然属性；教材指出生殖性克隆人可能破坏人类基因多样性的天然属性，不利于人类生存和进化。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt171",
+      "name": "iPS细胞（诱导多能干细胞）",
+      "definition": "通过特定转录因子或小分子化合物等方式诱导体细胞转变而来的多能干细胞；可用于研究并在特定条件下与克隆技术结合。",
+      "importance": "了解",
+      "aliases": [
+        "化学诱导多能干细胞（当用小分子化合物诱导时）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt172",
+      "name": "基因组编辑技术",
+      "definition": "在体内或体外以较低成本对基因进行敲除、插入等操作，从而有目的地改造特定基因的技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt173",
+      "name": "人类基因组编写计划（合成人类基因组）",
+      "definition": "希望合成人类整个基因组的计划；可能带来用于移植的器官培育、疫苗研发加速等潜在应用，同时引发伦理担忧。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt174",
+      "name": "设计试管婴儿（植入前遗传学诊断）",
+      "definition": "在胚胎植入前进行遗传学诊断并进行选择的辅助生殖实践，用于获得特定匹配（如骨髓配型适合）或特定遗传特征的婴儿。",
+      "importance": "了解",
+      "aliases": [
+        "PGD（教材未出现，谨慎不写入）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt175",
+      "name": "医学伦理委员会",
+      "definition": "在涉及人的生物医学研究中，负责伦理培训与指导、伦理审查，保护受试者合法权益与尊严，促进研究规范开展的组织。",
+      "importance": "掌握",
+      "examples": [
+        "国家医学伦理专家委员会",
+        "医疗卫生机构、高校、科研院所设立伦理委员会"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt176",
+      "name": "四不原则（我国对生殖性克隆人立场）",
+      "definition": "我国政府对任何生殖性克隆人实验的态度：不赞成、不允许、不支持、不接受。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt177",
+      "name": "生物武器",
+      "definition": "以致病微生物（如致病菌、病毒）或生化毒剂等为战剂，通过散布并侵入人、畜体内（或损害植物）从而造成伤亡与恐慌的大规模杀伤性武器。",
+      "importance": "掌握",
+      "examples": [
+        "天花病毒",
+        "霍乱弧菌",
+        "炭疽杆菌",
+        "生化毒剂"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt178",
+      "name": "生物武器的种类",
+      "definition": "生物武器按战剂来源/类型可分为致病菌类、病毒类和生化毒剂类等。",
+      "importance": "了解",
+      "examples": [
+        "致病菌类：霍乱弧菌、炭疽杆菌等",
+        "病毒类：天花病毒等",
+        "生化毒剂类：生物毒素等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt179",
+      "name": "致病菌类生物武器",
+      "definition": "以细菌等致病微生物作为战剂的生物武器类型，可通过环境、食物或昆虫等媒介传播并致病。",
+      "importance": "了解",
+      "examples": [
+        "炭疽杆菌",
+        "霍乱弧菌",
+        "鼠疫、伤寒等病原体（教材举例为日军培养对象）"
+      ],
+      "aliases": [
+        "细菌武器"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt180",
+      "name": "病毒类生物武器",
+      "definition": "以病毒作为战剂的生物武器类型，具有传播性强、可造成群体感染的特点。",
+      "importance": "了解",
+      "examples": [
+        "天花病毒",
+        "鼠痘病毒（报道的新型）",
+        "流感病毒（可被改造）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt181",
+      "name": "生化毒剂类生物武器",
+      "definition": "以生物毒素等化学性质毒剂（来源于生物或经生物技术获得）作为战剂的生物武器类型。",
+      "importance": "了解",
+      "examples": [
+        "生物毒素分子的基因与流感病毒基因拼接后批量生产（教材信息）"
+      ],
+      "aliases": [
+        "生化毒剂"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt182",
+      "name": "生物武器危害的特点",
+      "definition": "生物武器致病能力强、攻击范围广，可通过食物、生活必需品、带菌昆虫等散布，并经呼吸道、消化道、皮肤等侵入，造成大规模伤亡、损害植物，并易引发社会恐慌。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt183",
+      "name": "传播与侵入途径（生物武器）",
+      "definition": "生物战剂可直接或借助食物、生活必需品、带菌昆虫等散布，并经呼吸道、消化道和皮肤等途径侵入机体。",
+      "importance": "掌握",
+      "examples": [
+        "通过信件粉末传播（炭疽事件）",
+        "投放带菌昆虫（苍蝇、跳蚤）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt184",
+      "name": "生物安全",
+      "definition": "国家有效防范和应对危险生物因子及相关因素威胁，保障人民生命健康和生态系统处于没有危险和不受威胁状态，并具备维护国家安全和持续发展的能力。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt185",
+      "name": "口岸核生化有害因子防控",
+      "definition": "在口岸对核放射性物质、生物战剂、化学毒剂等有害因子进行防控，以保障国门生物安全。",
+      "importance": "了解",
+      "examples": [
+        "核放射性物质",
+        "生物战剂",
+        "化学毒剂"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt186",
+      "name": "转基因技术与新型致病菌风险",
+      "definition": "转基因技术使制造新型致病菌成为可能，这些人类从未接触过的致病菌可能导致感染者突然发病且无药可医，从而造成极度恐慌与社会瘫痪风险。",
+      "importance": "重要",
+      "examples": [
+        "研制新型鼠痘病毒且无有效治疗药物",
+        "将蜡状杆菌改造成像炭疽杆菌一样的致病菌",
+        "改造流感病毒基因以影响特定易感人群"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt187",
+      "name": "《禁止生物武器公约》",
+      "definition": "禁止发展、生产、储存细菌（生物）及毒素武器并销毁此种武器的国际公约；1972年签署，1975年生效，我国1984年加入，并重申不发展、不生产、不储存并反对扩散。",
+      "importance": "掌握",
+      "aliases": [
+        "《禁止发展、生产、储存细菌（生物）及毒素武器和销毁此种武器公约》"
+      ]
+    },
+    {
+      "id": "biology_xzxbx3_rjb_cpt188",
+      "name": "全面禁止与彻底销毁生物武器",
+      "definition": "通过国际公约与国家承诺，反对生物武器及其技术设备扩散，主张全面禁止并彻底销毁生物武器等大规模杀伤性武器。",
+      "importance": "重要"
+    }
+  ],
+  "skills": [
+    {
+      "id": "biology_xzxbx3_rjb_skl1",
+      "name": "变量控制与条件优化（发酵过程）",
+      "description": "在发酵食品制作中识别关键影响因素（如温度、氧气条件、时间、盐度、卫生与杂菌等），通过调控这些条件来优化产物质量与安全性，并进行对比分析与改进。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl2",
+      "name": "取样监测与过程记录",
+      "description": "在发酵过程中按一定时间间隔取样或观察记录发酵液变化，用于判断发酵进程与完成时机，并据此调整操作条件。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl3",
+      "name": "培养基配制与倒平板",
+      "description": "根据微生物营养需求配置培养基，并在无菌条件下将培养基倒入培养皿制成平板，包括控制培养基冷却至约50℃后在酒精灯火焰附近操作、倒置放置待凝固等关键点。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl4",
+      "name": "无菌操作规范",
+      "description": "围绕避免杂菌污染进行操作：对空间/操作者清洁消毒；器皿、培养基、接种用具等灭菌；操作时在超净工作台及酒精灯火焰附近进行，避免已灭菌物品与周围物品接触，并对试管口等易污染部位火焰灼烧处理。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl5",
+      "name": "平板划线分离单菌落",
+      "description": "用接种环在平板上分区连续划线，逐步稀释分散微生物；每次划线前灼烧并冷却接种环，后续划线从前一区末端开始，避免最后一次划线与第一次相连，以获得单菌落。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl6",
+      "name": "评估论点可信度（基于证据）",
+      "description": "针对某一健康或科学论点，通过提出关键问题（概念界定、原理、成分、必要性与替代性、潜在风险）并设计获取证据的方法来支持或反驳论点。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl7",
+      "name": "发酵过程参数监测与反馈调控",
+      "description": "在发酵过程中持续监测关键指标（如微生物数量、产物浓度、温度、pH、溶解氧等），并通过补料、通气、搅拌、温控等手段进行调控；可采用计算机系统实现反馈控制，使过程维持在最佳状态。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl8",
+      "name": "根据产物性质选择分离纯化路径",
+      "description": "判断发酵产品是细胞本身还是代谢物，并据此选择过滤、沉淀、干燥或提取、分离、纯化等工艺组合以获得目标产品。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl9",
+      "name": "无菌操作与材料灭菌",
+      "description": "在组织培养中通过对培养基、器械和外植体进行灭菌/消毒，并在相对无菌环境（如酒精灯火焰旁、超净工作台）完成接种操作，以降低污染并保证培养成功。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl10",
+      "name": "设计对照实验探究激素比例影响",
+      "description": "围绕单一变量（如生长素与细胞分裂素用量比值）设置不同处理组（含不加激素组）并比较结果，以分析变量对愈伤组织形成与分化的影响。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl11",
+      "name": "动物细胞培养流程设计与操作",
+      "description": "将动物组织取材后分散为单个细胞，制备细胞悬液，选择悬浮或贴壁培养方式，在适宜的营养、无菌无毒、温度/pH/渗透压与气体环境下培养，并根据细胞状态进行分瓶以维持增殖。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl12",
+      "name": "无菌操作与污染控制",
+      "description": "对培养液与培养用具进行灭菌处理，在无菌环境下操作，并定期更换培养液以清除代谢物、降低毒害与污染风险。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl13",
+      "name": "组织消化/分散制备单细胞悬液",
+      "description": "对新鲜取材组织采用机械分散或用胰蛋白酶、胶原蛋白酶等处理，将成块组织分散为单个细胞，并用培养液制成细胞悬液以便接种培养。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl14",
+      "name": "传代与分瓶培养操作",
+      "description": "当细胞因密度过大、代谢物积累、营养缺乏或（贴壁细胞）接触抑制而增殖受限时，通过收集细胞并分瓶继续培养；悬浮细胞可离心收集，贴壁细胞需先用胰蛋白酶等消化分散后再离心收集。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl15",
+      "name": "按过程阶段梳理生物学事件",
+      "description": "将复杂生命过程按“准备阶段—关键反应/事件—结果”进行分段描述与串联，形成完整的流程性理解（如受精的准备阶段与受精阶段；胚胎早期发育的阶段划分）。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl16",
+      "name": "比较分析与据表推断",
+      "description": "利用表格数据对不同对象进行对比，归纳差异并据此推断结论或提出处理策略（如不同动物受精卵发育与进入子宫时间/阶段差异，推断移植时机）。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl17",
+      "name": "利用特性差异进行生物大分子分离",
+      "description": "根据DNA、RNA、蛋白质、脂质等在溶解性等物理化学性质上的差异，选择合适的物理/化学方法实现提取与初步分离（如利用DNA不溶于酒精、在不同NaCl浓度下溶解度不同）。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl18",
+      "name": "根据限制酶切割规律判断末端类型并进行重组",
+      "description": "依据限制酶在识别序列中的切割位置，判断产生黏性末端或平末端，并据此进行片段拼接（黏性末端需要碱基互补配对）。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl19",
+      "name": "按流程进行基因工程设计与实施",
+      "description": "围绕目标性状确定目的基因，选择获取与扩增手段，构建表达载体，选择合适导入方法进入受体细胞，并通过分子与表型层面检测鉴定结果，形成可复用的工程化操作流程。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl20",
+      "name": "利用PCR进行特异性扩增与结果判定",
+      "description": "根据目标序列设计引物，在适当反应体系与循环程序下完成变性-复性-延伸的循环扩增，并结合电泳等手段对扩增产物进行鉴定。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl21",
+      "name": "举例归纳法（从案例概括应用领域）",
+      "description": "通过多个典型实例（如药物、农业性状改良、工业酶生产等）归纳总结某项技术的主要应用方向与价值。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl22",
+      "name": "基于数据的效果评估（比较与百分比解读）",
+      "description": "使用统计数据或对照实验结果（如面积增长、施药量变化、产量与收益变化、性状提升比例等）来评估技术应用的效果与意义。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl23",
+      "name": "从功能出发进行逆向设计（功能→结构→序列→基因）",
+      "description": "根据对蛋白质功能的特定需求，先设计或推测所需结构，再推断氨基酸序列，最后落实到对应DNA序列的改造/合成，以获得目标蛋白质。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl24",
+      "name": "依据结构信息定位关键功能区并提出改造位点",
+      "description": "利用蛋白质结构解析结果（如晶体结构）识别决定相互作用或功能的关键区域/位点，并据此设计氨基酸替换或序列调整方案。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl25",
+      "name": "学科交叉整合：计算建模+晶体学+分子生物学",
+      "description": "在蛋白质工程中综合使用计算机三维建模、蛋白质晶体制备与X射线衍射结构解析、基因定点突变等手段协同完成设计与验证。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl26",
+      "name": "基于证据与逻辑进行科学论证（辩论）",
+      "description": "围绕争议问题搜集资料并区分谣言/事实、事实/观点；舍弃矛盾或证据不充分的信息，寻找确凿证据；在表达中精准使用证据、排除无关因素、有序呈现证据并进行符合逻辑的推理判断，同时识别对方论证中的陷阱与逻辑错误。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl27",
+      "name": "评估证据获取难度（证明安全/不安全）",
+      "description": "比较在同一问题上获取“证明安全”与“证明不安全”所需证据的难易程度，分析原因并形成结论。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl28",
+      "name": "伦理问题的客观理性讨论",
+      "description": "基于事实与价值冲突点，识别相关利益主体与潜在风险，形成可论证的观点并参与公共议题讨论。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl29",
+      "name": "比较分类（区分相近概念）",
+      "description": "通过定义、目的、对象与后果等维度对相近概念进行对照，明确其本质区别。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl30",
+      "name": "从传播角度比较不同武器危害特征",
+      "description": "围绕传播媒介、传播途径、波及范围、隐蔽性与可控性等维度，对生物武器与枪炮、导弹等常规武器进行对比分析，形成有依据的结论。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_skl31",
+      "name": "基于历史与事实证据进行危害评估与观点论证",
+      "description": "搜集并引用历史事件与数据（感染人数、死亡人数、散布方式等）来评估危害并论证政策立场或防控必要性。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "biology_xzxbx3_rjb_exp1",
+      "name": "制作泡菜（传统发酵食品）",
+      "instrument": "泡菜坛或密封性良好的罐子、食盐、清水、新鲜蔬菜、蒜瓣、生姜及香辛料",
+      "is_student": 1,
+      "process": "配制并煮沸冷却5%~20%盐水；蔬菜洗净切块/条晾干装坛至八成满并加入香辛料；倒入盐水没过菜料；盖盖并在坛盖水槽中注水形成水密封，发酵过程中补水并依据温度控制时间。",
+      "conclusion": "利用植物体表面天然乳酸菌在缺氧条件下发酵，乳酸积累使泡菜形成适宜风味与品质。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp2",
+      "name": "制作果酒和果醋（以葡萄为例）",
+      "instrument": "发酵瓶、榨汁机、纱布、洗洁精、70%酒精、新鲜水果（葡萄等）",
+      "is_student": 1,
+      "process": "器具清洗并用70%酒精消毒晾干；葡萄冲洗1~2次去枝梗与腐粒沥干；榨汁装入发酵瓶并留约1/3空间盖盖；18~30℃发酵10~12d，约每12h拧松瓶盖一次再拧紧以放气，并可取样监测；果酒完成后打开瓶盖加纱布，30~35℃有氧发酵7~8d制果醋。",
+      "conclusion": "果酒主要依赖酵母菌无氧酒精发酵生成乙醇；果醋需在有氧条件下由醋酸菌将乙醇/糖转化为乙酸。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp3",
+      "name": "酵母菌的纯培养（马铃薯琼脂平板划线）",
+      "instrument": "酵母菌培养液、马铃薯、葡萄糖（或蔗糖）、琼脂、蒸馏水、天平、小刀、纱布、烧杯、锥形瓶、棉塞、牛皮纸（或报纸）、皮筋、培养皿、接种环、酒精灯、超净工作台、高压蒸汽灭菌锅、干热灭菌箱、恒温培养箱",
+      "is_student": 1,
+      "process": "制备培养基（马铃薯煮沸过滤；加糖与琼脂定容）→培养基高压蒸汽灭菌、培养皿干热灭菌→冷却至约50℃倒平板并倒置放置→接种环灼烧冷却取菌液→在平板上分区连续划线并间隔灼烧接种环→28℃左右恒温培养箱培养24~48 h，并设置未接种对照平板。",
+      "phenomena": "培养后在平板上形成菌落；若未接种平板也出现菌落提示污染；接种平板可观察到单菌落及其形态差异。",
+      "conclusion": "通过无菌操作与平板划线分离可获得单菌落，从而获得纯化的酵母菌。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp4",
+      "name": "菊花的组织培养",
+      "instrument": "幼嫩菊花茎段、培养基、70%酒精、约5%次氯酸钠溶液、无菌水、50 mL锥形瓶/培养瓶、烧杯、酒精灯、超净工作台/接种箱、高压蒸汽灭菌锅、培养箱、封口膜、滤纸、标签、酒精棉球、培养皿、解剖刀、镊子等",
+      "is_student": 1,
+      "process": "外植体消毒→切段→接种到诱导愈伤组织培养基→18~22℃培养并观察记录→15~20 d后转接诱导生芽培养基→长芽后转接诱导生根培养基形成试管苗→炼苗后移栽至蛭石/珍珠岩等并再移栽入土",
+      "phenomena": "外植体在培养基上形成愈伤组织，进一步分化出芽和根，形成试管苗；若操作不当可出现污染",
+      "conclusion": "在适宜激素与营养等条件下，分化细胞可脱分化形成愈伤组织并再分化为完整植株，体现植物细胞全能性。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp5",
+      "name": "DNA的粗提取与鉴定（洋葱材料）",
+      "instrument": "新鲜洋葱；研磨液；95%酒精（预冷）；2 mol/L NaCl溶液；二苯胺试剂；蒸馏水；烧杯、量筒、玻璃棒、研钵、纱布、漏斗、试管、试管架、试管夹、酒精灯、陶土网、三脚架、火柴、刀片、天平（可选离心管与离心机）",
+      "is_student": 1,
+      "process": [
+        "称取约30 g洋葱切碎，加入10 mL研磨液充分研磨",
+        "纱布过滤取滤液（或离心取上清液）并适当冷却",
+        "向上清液加入等体积预冷95%酒精，静置2~3 min使DNA析出成白色丝状物，用玻璃棒卷取"
+      ],
+      "phenomena": [
+        "加入酒精后出现白色丝状物（粗提取DNA）"
+      ],
+      "conclusion": "利用DNA在酒精中不溶等性质可实现DNA粗提取；二苯胺试剂加热显蓝可用于鉴定DNA。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp6",
+      "name": "琼脂糖凝胶电泳鉴定PCR产物",
+      "instrument": "PCR扩增仪（PCR仪）、琼脂糖凝胶电泳装置",
+      "is_student": 0,
+      "process": "PCR扩增完成后，将扩增产物上样进行琼脂糖凝胶电泳分离并观察条带。",
+      "phenomena": "出现与预期大小相符的DNA条带。",
+      "conclusion": "PCR扩增获得了目的DNA片段（或用于判断是否扩增成功及片段大小是否符合预期）。"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exp7",
+      "name": "饲喂棉铃虫鉴定转基因棉抗虫性",
+      "instrument": "转基因棉叶片、棉铃虫（饲喂材料与饲养容器等）",
+      "is_student": 0,
+      "process": "采摘抗虫棉叶片饲喂棉铃虫，观察虫体存活/取食情况并评估抗性程度。",
+      "phenomena": "棉铃虫死亡或取食受抑制（抗性强弱可表现为死亡率/取食量差异）。",
+      "conclusion": "判断Bt基因是否赋予棉花抗虫特性及抗性程度。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "biology_xzxbx3_rjb_exe1",
+      "type": "简答题",
+      "stem": "制作泡菜时，用水密封泡菜坛（在坛盖边沿水槽中注满水并经常补水）的目的是什么？这说明泡菜制作需要什么条件？",
+      "answer": "目的：形成水封，隔绝外界空气并防止杂菌进入，同时允许少量气体变化而不直接通气；说明泡菜制作需要缺氧（厌氧）条件，利于乳酸菌发酵。",
+      "analysis": "水封的本质是控制氧气条件；乳酸菌为厌氧细菌，无氧更利于产生乳酸并抑制需氧杂菌。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe2",
+      "type": "简答题",
+      "stem": "果酒制作过程中，为什么发酵瓶中要留出大约1/3的空间，并且每隔约12 h拧松一次瓶盖后再拧紧？",
+      "answer": "留出1/3空间用于容纳发酵产生的CO2和泡沫，避免液体外溢与过压；定期拧松瓶盖是为释放CO2、降低瓶内压力，防止胀裂，同时仍保持相对缺氧环境以利于酵母菌酒精发酵。",
+      "analysis": "酒精发酵产生CO2；空间与放气操作属于发酵条件控制的一部分。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe3",
+      "type": "判断题",
+      "stem": "判断题：消毒与灭菌的区别在于，消毒可杀死物体内外所有微生物（包括芽孢和孢子），而灭菌只杀死一部分微生物。",
+      "answer": "错误。消毒是杀死一部分微生物；灭菌是杀死所有微生物，包括芽孢和孢子。",
+      "analysis": "依据教材对“消毒/灭菌”的定义进行对比。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe4",
+      "type": "简答题",
+      "stem": "简答题：在进行酵母菌平板划线时，为什么每次划线前要灼烧接种环并在火焰旁冷却？",
+      "answer": "灼烧可迅速彻底灭菌接种环，避免带入杂菌造成污染；冷却是防止高温杀死或损伤待接种的酵母菌，保证接种成功并利于获得单菌落。",
+      "analysis": "将“灼烧灭菌”与“无菌操作的目的（防止杂菌污染）”联系，并说明冷却的必要性。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe5",
+      "type": "简答题",
+      "stem": "发酵工程的一般流程包括哪些基本环节？请按先后顺序写出。",
+      "answer": "菌种选育→扩大培养→培养基的配制与灭菌→接种→发酵→产品的分离与提纯。",
+      "analysis": "直接回忆教材给出的“发酵工程一般包括……”的流程表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe6",
+      "type": "简答题",
+      "stem": "在谷氨酸发酵生产中，不同pH条件下主要积累的产物有什么不同？",
+      "answer": "中性和弱碱性条件下会积累谷氨酸；酸性条件下容易形成谷氨酰胺和N-乙酰谷氨酰胺。",
+      "analysis": "考查“环境条件影响代谢物形成”的具体例证。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe7",
+      "type": "简答题",
+      "stem": "植物组织培养中，“外植体”“脱分化”“愈伤组织”“再分化”分别指什么？请用一句话概括它们在组织培养流程中的先后关系。",
+      "answer": "外植体：用于离体培养的植物器官/组织/细胞材料；脱分化：已分化细胞在诱导下失去特有结构功能转变为未分化细胞的过程；愈伤组织：脱分化形成的不定形薄壁组织团块；再分化：愈伤组织重新分化形成芽、根等器官的过程。先后关系：外植体在适宜条件下发生脱分化形成愈伤组织，愈伤组织再分化形成器官并发育为植株。",
+      "analysis": "考查对组织培养关键概念及流程逻辑的理解与表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe8",
+      "type": "简答题",
+      "stem": "为什么进行植物体细胞杂交之前必须先去除细胞壁获得原生质体？（简答）",
+      "answer": "因为植物细胞外的细胞壁会阻碍细胞间的杂交与融合；去除细胞壁获得原生质体后，才能在一定技术手段作用下实现原生质体融合，形成杂种细胞并进一步培养成杂种植株。",
+      "analysis": "依据教材“细胞壁阻碍杂交→需酶解去壁→原生质体融合”的因果链作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe9",
+      "type": "简答题",
+      "stem": "动物细胞培养时常用胰蛋白酶分散细胞。胰蛋白酶能帮助细胞分散说明：细胞间的物质主要是什么成分？用胃蛋白酶行吗？（简答）",
+      "answer": "细胞间的物质（如细胞外基质/细胞间连接相关成分）主要含有蛋白质成分，胰蛋白酶能水解蛋白质从而利于细胞分散。胃蛋白酶一般需在强酸性条件下活性较高，而动物细胞培养环境接近中性（pH约7.2～7.4），不适合使用胃蛋白酶，且酸性条件会损伤细胞，因此通常不用胃蛋白酶。",
+      "analysis": "题干以“胰蛋白酶分散细胞”为线索，考查对动物细胞培养过程（组织分散）及适宜pH条件的理解。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe10",
+      "type": "填空题",
+      "stem": "多数动物细胞在体外培养时适宜的pH范围是多少？CO2在动物细胞培养中的主要作用是什么？（填空）",
+      "answer": "适宜pH：7.2～7.4；CO2主要作用：维持培养液的pH。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe11",
+      "type": "简答题",
+      "stem": "表中哪种动物的胚胎在进入子宫时发育程度最高？",
+      "answer": "马。因为表中显示马进入子宫时胚胎的发育阶段为“囊胚”，相较于小鼠（桑葚胚）、绵羊（16细胞）、猪（4~6细胞）、牛（8~16细胞），囊胚阶段发育程度更高。",
+      "analysis": "依据表格“进入子宫时…发育阶段”一栏，比较各动物阶段：4~6细胞 < 8~16细胞/16细胞 < 桑葚胚 < 囊胚。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe12",
+      "type": "填空题",
+      "stem": "在实际胚胎工程操作中，常以什么作为受精的标志？",
+      "answer": "常以观察到两个极体或者雌、雄原核作为受精的标志。",
+      "analysis": "来自教材“相关信息”段：‘常以观察到两个极体或者雌、雄原核作为受精的标志。’",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe13",
+      "type": "简答题",
+      "stem": "（基于教材“思考·讨论：重组DNA分子”）在两段给定的双链DNA序列中，找出EcoRI的识别序列与切割位点，并说明该限制酶切割后形成的末端类型（黏性末端/平末端）。",
+      "answer": "EcoRI识别序列为5'-GAATTC-3'（互补链为3'-CTTAAG-5'）。EcoRI在G与A之间切割（5'-G^AATTC-3' / 3'-CTTAA^G-5'），切割产生带单链突出端的黏性末端。",
+      "analysis": "先在序列中定位GAATTC（或互补CTTAAG），再依据EcoRI的特定位点切割规则判断切口错位，因此产生黏性末端。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe14",
+      "type": "简答题",
+      "stem": "（基于“DNA的粗提取与鉴定”）将预冷95%酒精加入到处理后的洋葱提取液中，观察到白色丝状物析出。写出这一现象出现的主要原因，并指出该白色丝状物主要是什么物质。",
+      "answer": "原因：DNA不溶于酒精，加入酒精后DNA从溶液中析出并聚集成丝状。白色丝状物主要为粗提取的DNA（可能夹带少量杂质）。",
+      "analysis": "用“溶解性差异”解释酒精沉淀，并将观察到的丝状物对应到DNA。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe15",
+      "type": "简答题",
+      "stem": "PCR扩增目的基因时，每次循环通常包括哪三个基本步骤？并说明引物在PCR中的作用是什么。",
+      "answer": "三个步骤是变性、复性（退火）、延伸。引物是一段与模板链互补的短单链核酸，能与模板特定位点结合，为DNA聚合酶提供3'端起始点，使DNA聚合酶从引物3'端开始连接脱氧核苷酸并延伸合成新链，从而实现对特定片段的特异性扩增。",
+      "analysis": "题目直接对应教材对PCR循环步骤与引物作用的定义性表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe16",
+      "type": "简答题",
+      "stem": "基因表达载体除目的基因和标记基因外，还必须包含哪些关键结构？分别起什么作用？",
+      "answer": "还必须包含启动子和终止子等。启动子位于基因上游、是RNA聚合酶识别和结合部位，能驱动基因转录产生mRNA从而表达蛋白质；终止子位于基因下游，使转录在需要的位置停止。",
+      "analysis": "考查对基因表达载体组成与启动子/终止子功能的理解与表述。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe17",
+      "type": "选择题",
+      "stem": "教材指出“用基因工程的方法，使外源基因得到高效表达的菌类一般称为基因工程菌”。下列属于基因工程菌应用实例的是（  ）\nA. 从动物胰腺中提取胰岛素\nB. 将编码牛凝乳酶的基因导入大肠杆菌并发酵生产凝乳酶\nC. 常规育种培育抗病新品种\nD. 直接从人血液白细胞提取干扰素",
+      "answer": "B",
+      "analysis": "基因工程菌的关键是“外源基因导入并高效表达”。B符合；A、D为传统提取法；C为常规育种。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe18",
+      "type": "简答题",
+      "stem": "简答：传统生产干扰素的方法与基因工程生产干扰素的方法在产量获取方式上有何不同？结合教材数据简要说明基因工程法的优势。",
+      "answer": "传统方法是从人血液白细胞中提取，产量极低（每300 L血液只能提取约1 mg干扰素）；基因工程方法可在大肠杆菌或酵母菌中表达获得，单位培养物产量更高（约1 kg培养物可得20～40 mg），因此更易规模化、成本更低、供应更稳定。",
+      "analysis": "对比“提取来源与产量数据”，用数据说明优势。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe19",
+      "type": "简答题",
+      "stem": "蛋白质工程与天然蛋白质合成（中心法则）的思路有何不同？请分别用流程箭头表示两者的基本路径。",
+      "answer": "天然蛋白质合成（中心法则）：基因→表达（转录和翻译）→多肽链（特定氨基酸序列）→蛋白质高级结构→生物功能。蛋白质工程基本思路：从预期功能出发→设计预期结构→推测氨基酸序列→找到并改变相应DNA序列（基因）或合成新基因→获得所需蛋白质。",
+      "analysis": "抓住教材给出的两条流程：中心法则是“由基因到功能”的正向过程；蛋白质工程是“由功能到基因”的逆向设计过程。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe20",
+      "type": "简答题",
+      "stem": "速效胰岛素类似物研发的关键思想是什么？（1）天然胰岛素为什么起效较慢？（2）通过什么方式可以抑制其聚合从而加快起效？",
+      "answer": "（1）天然胰岛素制剂易形成二聚体或六聚体，皮下注射后需逐渐解离为单体，延缓疗效。（2）先解析胰岛素晶体结构定位B链20~29关键区域，再通过改造胰岛素基因改变该区域氨基酸组成（如B28位脯氨酸替换为天冬氨酸或与B29位赖氨酸交换），以降低分子间作用力、抑制聚合，从而获得速效胰岛素类似物。",
+      "analysis": "对应教材给出的“结构解析→确定关键区域→基因改造→氨基酸改变→功能改善”的链条。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe21",
+      "type": "简答题",
+      "stem": "对某种转基因食品而言，证明它安全与证明它不安全，哪个获取所需证据的难度大？为什么？",
+      "answer": "通常“证明不安全”更难获取充分证据。因为不安全可能表现为低概率、长期、特定条件下才出现的风险，需要大样本、长时间、多因素控制的研究来发现；而“证明安全”一般是在规定的检测指标与评价框架下，通过毒理、过敏性、营养等项目的测试与对照，证明在既定条件与范围内未发现危害，更易形成可操作的证据链。但需要注意，“证明安全”多为在现有检测手段与评价范围内的相对安全结论，而非逻辑上的绝对安全。",
+      "analysis": "题干要求比较证据获取难度，应从科学证据的可观察性、风险的低概率与长期性、实验设计与样本量等角度论证，并指出安全结论通常是“在既定评价体系下未发现风险”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe22",
+      "type": "简答题",
+      "stem": "生殖性克隆与治疗性克隆有什么本质区别？分别说明其目的与产生的结果（产物）。",
+      "answer": "生殖性克隆：通过克隆技术产生能够独立生存的新个体；目的在于获得“个体”。治疗性克隆：利用克隆技术产生特定的细胞、组织和器官，用于修复或替代受损组织器官以治疗疾病；目的在于获得“细胞/组织/器官”并用于治疗，不以产生新个体为目的。",
+      "analysis": "抓住教材对两者的定义句：生殖性克隆产生新个体；治疗性克隆产生细胞/组织/器官用于治疗。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe23",
+      "type": "简答题",
+      "stem": "教材列举了我国禁止生殖性克隆人的多条理由。请写出其中任意3条，并指出它们分别属于“伦理价值/社会关系/技术风险/人类进化影响”中的哪一类。",
+      "answer": "示例答案（任写三条即可）：(1) 生殖性克隆人是对人类尊严的侵犯——伦理价值；(2) 克隆人的家庭地位难以认定，可能使以血缘为纽带的人伦关系消亡——社会关系；(3) 由于技术问题，可能孕育出有严重生理缺陷的克隆人（流产、畸形等风险高）——技术风险；(4) 破坏人类基因多样性的天然属性，不利于人类生存和进化——人类进化影响。",
+      "analysis": "按教材列点作答，再对理由进行归类。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe24",
+      "type": "填空题",
+      "stem": "教材指出生物武器可“直接或者通过食物、生活必需品和带菌昆虫等散布，经由呼吸道、消化道和皮肤等侵入人、畜体内”。请据此写出：①两种散布方式；②两种侵入途径。",
+      "answer": "①散布方式示例：直接散布；通过食物散布；通过生活必需品散布；通过带菌昆虫散布（任写两种）。②侵入途径示例：呼吸道；消化道；皮肤（任写两种）。",
+      "analysis": "直接从教材原句提取“散布方式”和“侵入途径”的关键词，分别列举两项即可。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe25",
+      "type": "判断题",
+      "stem": "根据教材“生物武器包括致病菌类、病毒类和生化毒剂类”等信息，判断下列说法正误：生物武器的种类至少包括致病菌类、病毒类和生化毒剂类三类。",
+      "answer": "正确。",
+      "analysis": "教材明确给出生物武器的分类表述。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx3_rjb_exe26",
+      "type": "简答题",
+      "stem": "简答：为什么教材强调“面对一切可能的生物武器威胁，我们绝不能掉以轻心”？请结合教材给出两条理由。",
+      "answer": "理由示例：①生物武器致病能力强、攻击范围广，能造成大规模伤亡并引发恐慌；②生物武器相对容易获得、便于携带和施放，可能被恐怖组织或个人利用；③转基因/基因工程使制造新型致病菌成为可能，可能突然发病且无药可医，后果严重（任答两条即可）。",
+      "analysis": "从教材中“致病能力强、攻击范围广”“相对容易获得…一旦被利用危害极大”“转基因技术…无药可医”等句子归纳两点。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 188,
+    "skill_count": 31,
+    "experiment_count": 7,
+    "question_count": 26
+  }
+}

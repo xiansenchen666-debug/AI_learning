@@ -1,0 +1,874 @@
+{
+  "id": "math_xzxbx3_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "数学",
+  "title": "数学选择性必修三",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_xzxbx3_rjb_cpt1",
+      "name": "分类加法计数原理",
+      "definition": "完成一件事有若干类互不相同的方案，每一类中有若干种不同方法，则总方法数等于各类方法数之和。",
+      "importance": "重要",
+      "formula": "N = m1 + m2 + …",
+      "examples": [
+        "给座位编号用字母或数字",
+        "从不同楼层任选一本书"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt2",
+      "name": "分步乘法计数原理",
+      "definition": "完成一件事需要多个步骤，每一步有若干种方法，则总方法数等于各步方法数的乘积。",
+      "importance": "重要",
+      "formula": "N = m1 × m2 × …",
+      "examples": [
+        "字母与数字组成座位编号",
+        "选男生1名与女生1名"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt3",
+      "name": "子集个数公式",
+      "definition": "一个 n 元集合的子集个数为 2^n。",
+      "importance": "掌握",
+      "formula": "2^n",
+      "examples": [
+        "3 元集合有 8 个子集"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt4",
+      "name": "排列",
+      "definition": "从 n 个不同元素中取出 m(m ≤ n) 个元素，并按照一定顺序排成一列所形成的结果。",
+      "importance": "重要",
+      "aliases": [
+        "arrangement"
+      ],
+      "examples": [
+        "从3人中选2人分别排上午、下午；从4个数字中取3个组成三位数"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt5",
+      "name": "排列数",
+      "definition": "从 n 个不同元素中取出 m 个元素的所有不同排列的个数，记作 A_n^m。",
+      "importance": "重要",
+      "formula": "A_n^m = n(n-1)...(n-m+1) = n!/(n-m)!",
+      "examples": [
+        "A_3^2 = 6",
+        "A_4^3 = 24"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt6",
+      "name": "全排列",
+      "definition": "从 n 个不同元素中全部取出并按顺序排列的排列，即 m=n 的排列。",
+      "importance": "掌握",
+      "formula": "A_n^n = n!",
+      "examples": [
+        "5 个元素的全排列为 5! = 120"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt7",
+      "name": "阶乘",
+      "definition": "正整数 1 到 n 的连乘积，记为 n!，并规定 0!=1。",
+      "importance": "了解",
+      "formula": "n!=1×2×…×n"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt8",
+      "name": "组合",
+      "definition": "从 n 个不同元素中取出 m(m ≤ n) 个元素组成一组，且不考虑顺序的选取方式。",
+      "importance": "重要",
+      "aliases": [
+        "combination"
+      ],
+      "examples": [
+        "从3名同学中选2人参加活动"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt9",
+      "name": "组合数",
+      "definition": "从 n 个不同元素中取出 m 个元素的所有不同组合的个数，记作 C_n^m 或 (n m)。",
+      "importance": "重要",
+      "formula": "C_n^m = A_n^m / A_m^m = n!/(m!(n-m)!)"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt10",
+      "name": "组合数性质1",
+      "definition": "C_n^m = C_n^{n-m}，即选 m 个与选剩余 n-m 个等价。",
+      "importance": "掌握",
+      "examples": [
+        "C_12^5 = C_12^7"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt11",
+      "name": "组合数性质2",
+      "definition": "C_{n+1}^m = C_n^m + C_n^{m-1}，根据分类加法计数原理得出。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt12",
+      "name": "二项式定理",
+      "definition": "(a + b)^n 的展开式为 C_n^0 a^n + C_n^1 a^{n-1} b + ... + C_n^n b^n，其中 C_n^k 为组合数。",
+      "importance": "重要",
+      "formula": "(a + b)^n = Σ C_n^k a^{n-k} b^k"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt13",
+      "name": "二项式系数",
+      "definition": "(a + b)^n 展开式中各项的系数 C_n^k，具有对称性、增减性及和等性质。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt14",
+      "name": "二项式展开式的通项",
+      "definition": "T_{k+1} = C_n^k a^{n-k} b^k 是 (a + b)^n 展开式中第 k+1 项。",
+      "importance": "掌握",
+      "formula": "T_{k+1} = C_n^k a^{n-k} b^k"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt15",
+      "name": "条件概率",
+      "definition": "在事件A发生的条件下事件B发生的概率，定义为 P(B|A)=P(AB)/P(A)，其中P(A)>0。",
+      "importance": "重要",
+      "formula": "P(B|A)=P(AB)/P(A)"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt16",
+      "name": "乘法公式",
+      "definition": "对任意事件A和B，若P(A)>0，则P(AB)=P(A)P(B|A)。",
+      "importance": "重要",
+      "formula": "P(AB)=P(A)P(B|A)"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt17",
+      "name": "全概率公式",
+      "definition": "若A1,A2,...,An构成样本空间的一个完备事件组，则对任意事件B有 P(B)=Σ P(Ai)P(B|Ai)。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt18",
+      "name": "贝叶斯公式",
+      "definition": "用于计算后验概率的公式：P(Ai|B)=P(Ai)P(B|Ai)/Σ P(Ak)P(B|Ak)。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt19",
+      "name": "随机变量",
+      "definition": "对随机试验中每个样本点 ω 唯一对应一个实数 X(ω) 的变量称为随机变量。",
+      "importance": "重要",
+      "aliases": [
+        "random variable"
+      ],
+      "examples": [
+        "掷骰子得到的点数",
+        "抽到次品记为1、正品记为0"
+      ],
+      "formula": "X: Ω → R"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt20",
+      "name": "离散型随机变量",
+      "definition": "可能取值为有限个或可以一一列举的随机变量。",
+      "importance": "重要",
+      "aliases": [
+        "discrete random variable"
+      ],
+      "examples": [
+        "骰子的点数",
+        "浏览次数",
+        "产品次品数"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt21",
+      "name": "随机变量的分布列",
+      "definition": "离散型随机变量 X 取值 xi 的概率 P(X=xi)=pi 构成的序列称为 X 的分布列。",
+      "importance": "重要",
+      "examples": [
+        "掷骰子：P(X=m)=1/6"
+      ],
+      "formula": "P(X=xi)=pi"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt22",
+      "name": "两点分布(0-1分布)",
+      "definition": "随机变量仅取 0 和 1 两个值的分布，P(X=1)=p, P(X=0)=1-p。",
+      "importance": "掌握",
+      "examples": [
+        "是否抽到次品",
+        "是否中奖"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt23",
+      "name": "概率分布列的性质",
+      "definition": "离散型随机变量分布列满足：pi ≥ 0；Σ pi = 1。",
+      "importance": "掌握",
+      "formula": "pi ≥ 0; Σ pi = 1"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt24",
+      "name": "离散型随机变量的均值（数学期望）",
+      "definition": "离散型随机变量可能取值关于取值概率的加权平均数，反映随机变量取值的平均水平。E(X)=Σx_i p_i。",
+      "importance": "重要",
+      "formula": "E(X)=\\sum x_i p_i"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt25",
+      "name": "两点分布的期望",
+      "definition": "若离散型随机变量X只取0和1两值，且P(X=1)=p，则E(X)=p。",
+      "importance": "掌握",
+      "formula": "E(X)=p"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt26",
+      "name": "期望的线性性质",
+      "definition": "对常数a、b，有E(aX+b)=aE(X)+b。",
+      "importance": "重要",
+      "formula": "E(aX+b)=aE(X)+b"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt27",
+      "name": "离散型随机变量的方差",
+      "definition": "反映离散型随机变量取值与其均值的偏离程度。D(X)=Σ(x_i−E(X))² p_i。",
+      "importance": "重要",
+      "formula": "D(X)=\\sum (x_i-E(X))^2 p_i"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt28",
+      "name": "方差计算简化公式",
+      "definition": "离散型随机变量的方差可通过公式D(X)=Σx_i² p_i − [E(X)]² 计算。",
+      "importance": "掌握",
+      "formula": "D(X)=\\sum x_i^2 p_i - (E(X))^2"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt29",
+      "name": "方差的性质",
+      "definition": "对常数a、b，有D(X+b)=D(X)，D(aX)=a²D(X)，D(aX+b)=a²D(X)。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt30",
+      "name": "伯努利试验",
+      "definition": "只有两个可能结果的随机试验，如合格或不合格、中靶或脱靶等。",
+      "importance": "重要",
+      "examples": [
+        "掷硬币出现正反面",
+        "检测产品为合格/不合格"
+      ],
+      "aliases": [
+        "Bernoulli trials"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt31",
+      "name": "n重伯努利试验",
+      "definition": "将同一个伯努利试验独立重复进行n次的试验。",
+      "importance": "重要",
+      "examples": [
+        "抛掷硬币10次"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt32",
+      "name": "二项分布",
+      "definition": "若X表示n次伯努利试验中事件A发生的次数，且P(X=k)=C(n,k)p^k(1-p)^{n-k}，则称X服从二项分布。",
+      "importance": "重要",
+      "formula": "P(X=k)=C(n,k)p^k(1-p)^{n-k}",
+      "aliases": [
+        "B(n,p)"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt33",
+      "name": "二项分布的均值与方差",
+      "definition": "若X~B(n,p)，则E(X)=np，D(X)=np(1-p)。",
+      "importance": "掌握",
+      "formula": "E(X)=np, D(X)=np(1-p)"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt34",
+      "name": "超几何分布",
+      "definition": "从含M件次品的N件产品中不放回抽取n件，X为次品数，其分布为P(X=k)=C(M,k)C(N-M,n-k)/C(N,n)。",
+      "importance": "重要",
+      "aliases": [
+        "Hypergeometric distribution"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt35",
+      "name": "超几何分布的均值",
+      "definition": "若X服从超几何分布，则E(X)=n(M/N)。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt36",
+      "name": "连续型随机变量",
+      "definition": "取值在某个区间或整个实轴上，且任意单点取值的概率为0的随机变量。",
+      "importance": "重要",
+      "examples": [
+        "袋装食盐误差 X 是连续型随机变量"
+      ],
+      "aliases": [
+        "continuous random variable"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt37",
+      "name": "正态分布",
+      "definition": "若随机变量 X 的概率密度函数为 f(x)=1/(σ√(2π)) e^{-(x-μ)^2/(2σ^2)}，则称 X 服从正态分布。",
+      "importance": "重要",
+      "formula": "X ~ N(μ, σ^2)",
+      "aliases": [
+        "高斯分布",
+        "normal distribution"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt38",
+      "name": "正态密度函数",
+      "definition": "正态分布的概率密度函数 f(x)=1/(σ√(2π)) e^{-(x-μ)^2/(2σ^2)}，曲线为钟形对称分布。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt39",
+      "name": "标准正态分布",
+      "definition": "均值为0、方差为1的正态分布。",
+      "importance": "掌握",
+      "formula": "N(0,1)"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt40",
+      "name": "正态分布参数 μ 和 σ",
+      "definition": "μ 表示分布的集中位置，σ 表示分布的离散程度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt41",
+      "name": "3σ原则",
+      "definition": "服从正态分布的随机变量 X 几乎总在 [μ−3σ, μ+3σ] 内取值，区间外概率约为 0.0027。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt42",
+      "name": "概率密度与概率面积关系",
+      "definition": "连续型随机变量的概率由密度曲线下的面积表示，如 P(a ≤ X ≤ b) 为曲线与 x 轴之间的面积。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt43",
+      "name": "相关关系",
+      "definition": "两个变量有关系，但由一个变量的值不能唯一确定另一个变量的值。",
+      "importance": "掌握",
+      "examples": [
+        "身高与体重",
+        "广告支出与销售收入"
+      ],
+      "aliases": [
+        "correlation"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt44",
+      "name": "正相关",
+      "definition": "当一个变量的值增加时，另一个变量的相应值呈现增加趋势。",
+      "importance": "掌握",
+      "examples": [
+        "年龄增加，脂肪含量增加"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt45",
+      "name": "负相关",
+      "definition": "当一个变量的值增加时，另一个变量的相应值呈现减小趋势。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt46",
+      "name": "散点图",
+      "definition": "用点表示成对数据在坐标系中的位置，直观展示变量之间关系的图形。",
+      "importance": "重要",
+      "aliases": [
+        "scatter plot"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt47",
+      "name": "线性相关",
+      "definition": "两个变量的散点大致分布在一条直线附近，相关系数表明线性关系的强弱及正负方向。",
+      "importance": "重要",
+      "examples": [
+        "父亲身高与儿子身高的相关系数约0.886，呈正线性相关"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt48",
+      "name": "非线性相关",
+      "definition": "两个变量具有相关性，但散点不落在直线附近，而落在曲线或其他形状附近。",
+      "importance": "了解",
+      "aliases": [
+        "曲线相关"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt49",
+      "name": "成对数据",
+      "definition": "每个观测单位产生的两个相互关联的数据构成一对数据。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt50",
+      "name": "样本相关系数",
+      "definition": "度量成对样本数据线性相关程度的数字特征，记为 r，取值范围为[-1,1]。",
+      "importance": "重要",
+      "formula": "r = Σ(x_i- x̄)(y_i- ȳ) / √[Σ(x_i- x̄)² Σ(y_i- ȳ)²]"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt51",
+      "name": "一元线性回归模型",
+      "definition": "用于刻画两个随机变量之间线性关系的统计模型，形式为Y = bx + a + e。",
+      "importance": "重要",
+      "formula": "Y = bx + a + e, E(e)=0, D(e)=σ^2",
+      "examples": [
+        "儿子身高Y与父亲身高x之间的关系建模"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt52",
+      "name": "因变量和自变量",
+      "definition": "回归模型中被解释的变量称为因变量或响应变量，解释其他变量的变量称为自变量或解释变量。",
+      "importance": "了解",
+      "examples": [
+        "儿子身高为因变量，父亲身高为自变量"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt53",
+      "name": "随机误差",
+      "definition": "模型未能解释的部分，由其他未观测因素、测量误差或模型近似产生。",
+      "importance": "掌握",
+      "examples": [
+        "母亲身高、生活环境、测量误差导致的误差项e"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt54",
+      "name": "最小二乘法",
+      "definition": "通过最小化残差平方和Q来估计线性回归模型参数的方法。",
+      "importance": "重要",
+      "formula": "Q = Σ(y_i - bx_i - a)^2",
+      "examples": [
+        "估计斜率b与截距a"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt55",
+      "name": "经验回归方程",
+      "definition": "用样本数据估计得到的回归关系，形式为ŷ = b̂x + â。",
+      "importance": "掌握",
+      "examples": [
+        "ŷ = 0.839x + 28.957"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt56",
+      "name": "残差",
+      "definition": "观测值与预测值之差，是随机误差的估计值。",
+      "importance": "掌握",
+      "examples": [
+        "残差 = yi − ŷi"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt57",
+      "name": "残差分析",
+      "definition": "通过残差判断模型是否合理及是否满足假设的重要工具。",
+      "importance": "重要",
+      "examples": [
+        "残差图判断是否满足E(e)=0, D(e)=σ^2"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt58",
+      "name": "非线性回归",
+      "definition": "当变量关系明显非线性时，通过函数变换或其他方式建立非线性经验回归方程。",
+      "importance": "掌握",
+      "examples": [
+        "男子100m纪录与年份呈对数关系"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt59",
+      "name": "对数变换",
+      "definition": "通过引入x = ln(t - 1895)等变换，将非线性关系转化为线性关系用于回归分析。",
+      "importance": "掌握",
+      "examples": [
+        "记录年份变量经ln(t-1895)变换后呈强线性相关"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt60",
+      "name": "决定系数R²",
+      "definition": "刻画模型拟合优度的指标，R²越大表示拟合效果越好。",
+      "importance": "掌握",
+      "formula": "R² = 1 - Σ(yi - ŷi)² / Σ(yi - ȳ)²",
+      "examples": [
+        "模型②的R²约为0.9983"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt61",
+      "name": "分类变量",
+      "definition": "用于区分不同现象或性质的特殊随机变量，通常取值为若干类别，如0和1，数值仅作编号，无通常的大小和运算意义。",
+      "importance": "掌握",
+      "examples": [
+        "性别：0表示女生，1表示男生",
+        "数学成绩优秀与否：0表示不优秀，1表示优秀"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt62",
+      "name": "2×2列联表",
+      "definition": "用于展示两分类变量成对数据频数的表格，包含四个交叉频数以及边缘频数，用于观察变量间的关联关系。",
+      "importance": "掌握",
+      "examples": [
+        "性别与锻炼习惯的列联表",
+        "学校与数学成绩优秀与否的列联表"
+      ]
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt63",
+      "name": "独立性",
+      "definition": "若两个事件满足P(A,B)=P(A)P(B)，则称它们独立；对于分类变量，四个对应事件之间的概率均满足乘法关系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt64",
+      "name": "零假设（原假设）",
+      "definition": "统计推断中提出的待检验假设，如独立性检验中的“X与Y独立”。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt65",
+      "name": "χ²统计量",
+      "definition": "用于衡量列联表中观测频数与期望频数偏离程度的统计量，用于独立性检验。",
+      "importance": "重要",
+      "formula": "χ² = n(ad−bc)² / [(a+b)(c+d)(a+c)(b+d)]"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt66",
+      "name": "独立性检验（χ²检验）",
+      "definition": "基于χ²统计量和临界值判断两个分类变量是否独立的方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx3_rjb_cpt67",
+      "name": "小概率事件与临界值",
+      "definition": "在零假设下发生概率不超过α的事件，其对应的统计量阈值称为临界值。",
+      "importance": "了解"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_xzxbx3_rjb_skl1",
+      "name": "用分类或分步分析计数问题",
+      "description": "分析计数问题时先判断“一件事”的内容，再判断是否应采用分类（不重不漏）或分步（步骤完整）方法。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl2",
+      "name": "分步乘法计数原理",
+      "description": "将一件事分为若干步骤完成，每步方法数相乘得到总方法数。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl3",
+      "name": "分类加法计数原理",
+      "description": "将问题按互不重叠的情况分类，各类方法数相加得到总数。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl4",
+      "name": "从具体到抽象归纳数学公式",
+      "description": "通过观察具体实例、寻找规律并归纳出一般公式的方法。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl5",
+      "name": "将复杂事件分解为互斥事件",
+      "description": "通过分析事件发生的不同路径，将复杂事件表示为多个互斥事件之并，再利用加法公式与乘法公式计算概率。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl6",
+      "name": "根据情境建立随机变量",
+      "description": "根据随机试验的样本点特点，为每个样本点指定数值，构建能表示事件的随机变量。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl7",
+      "name": "利用分布列计算概率",
+      "description": "通过概率的加法公式，利用已知的分布列计算事件如 X ≤ k、X = a 或 {X ∈ A} 的概率。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl8",
+      "name": "从分布列计算期望",
+      "description": "从给定的离散型随机变量分布列，根据定义E(X)=Σx_i p_i 进行计算。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl9",
+      "name": "从分布列计算方差",
+      "description": "根据方差定义或简化公式进行计算，D(X)=Σ(x_i-E(X))² p_i 或 D(X)=Σx_i² p_i − [E(X)]²。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl10",
+      "name": "建立二项分布模型",
+      "description": "识别伯努利试验、确定p与n，并构建X~B(n,p)。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl11",
+      "name": "建立超几何分布模型",
+      "description": "识别不放回抽样场景，确定N、M、n，并构建超几何分布模型。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl12",
+      "name": "利用样本估计正态分布参数",
+      "description": "用样本均值估计 μ，用样本标准差估计 σ。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl13",
+      "name": "绘制散点图",
+      "description": "根据成对数据在直角坐标系中绘制点，观察变量之间的关系。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl14",
+      "name": "计算样本相关系数",
+      "description": "利用成对样本数据代入公式，计算线性相关程度。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl15",
+      "name": "构建回归模型",
+      "description": "从散点图和变量关系出发，选择适当模型（线性或非线性），并进行参数估计与解释。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl16",
+      "name": "残差图分析",
+      "description": "通过残差的分布情况判断模型假设是否成立，识别线性关系、方差齐性等问题。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl17",
+      "name": "构建列联表",
+      "description": "将成对分类变量的样本数据整理成2×2列联表以便进行统计分析。"
+    },
+    {
+      "id": "math_xzxbx3_rjb_skl18",
+      "name": "使用χ²独立性检验推断关联性",
+      "description": "计算χ²统计量，与临界值比较，并根据检验规则判断变量是否独立。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_xzxbx3_rjb_exe1",
+      "type": "应用题",
+      "stem": "某班有男生30名、女生24名，从中任选男生和女生各1名代表班级参加比赛，共有多少种不同的选法？",
+      "answer": "720",
+      "analysis": "分两步：先选男生30种，再选女生24种，根据分步乘法原理得 30×24=720。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe2",
+      "type": "应用题",
+      "stem": "从 1,2,3,4 中每次取 3 个数字组成不同的三位数，有多少个？",
+      "answer": "24",
+      "analysis": "按排列定义，A_4^3 = 4×3×2 = 24。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe3",
+      "type": "应用题",
+      "stem": "求 (x + 1/x)^6 的展开式。",
+      "answer": "x^6 + 6x^4 + 15x^2 + 20 + 15x^-2 + 6x^-4 + x^-6",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe4",
+      "type": "应用题",
+      "stem": "求 (1 + 2x)^7 的展开式的第4项的系数。",
+      "answer": "280",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe5",
+      "type": "应用题",
+      "stem": "某学校有A、B两家餐厅，王同学第1天随机选择一家就餐。若第1天去A餐厅，则第2天去A餐厅的概率为0.6；若第1天去B餐厅，则第2天去A餐厅的概率为0.8。求王同学第2天去A餐厅的概率。",
+      "answer": "0.7",
+      "analysis": "利用全概率公式：P(A2)=P(A1)P(A2|A1)+P(B1)P(A2|B1)=0.5*0.6 + 0.5*0.8 = 0.7。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe6",
+      "type": "应用题",
+      "stem": "一批产品中次品率为 5%，随机抽取 1 件，定义 X = 1 表示抽到次品，X = 0 表示抽到正品，求 X 的分布列。",
+      "answer": "P(X=0)=0.95, P(X=1)=0.05",
+      "analysis": "根据事件概率直接写出分布列，是典型两点分布。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe7",
+      "type": "应用题",
+      "stem": "某校 200 名学生体育测试等级如表所示，从中任取 1 人，求分数 X 的分布列及 P(X≥4)。",
+      "answer": "分布列：P(1)=1/10, P(2)=1/4, P(3)=3/10, P(4)=1/5, P(5)=3/20；P(X≥4)=7/20。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe8",
+      "type": "应用题",
+      "stem": "一枚均匀硬币抛掷10次，求恰好5次正面朝上的概率。",
+      "answer": "P(X=5)=C(10,5)*0.5^10=63/256",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe9",
+      "type": "应用题",
+      "stem": "从100件产品中（含8件次品）不放回抽取4件，求恰有1件次品的概率。",
+      "answer": "P(X=1)=C(8,1)C(92,3)/C(100,4)≈0.25621",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe10",
+      "type": "应用题",
+      "stem": "李明分别记录了坐公交车和骑自行车50次的时间，已知均值与样本方差，假设均服从正态分布，估计两个正态分布参数。",
+      "answer": "X~N(30,6^2)，Y~N(34,2^2)",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe11",
+      "type": "应用题",
+      "stem": "根据脂肪含量与年龄的数据，判断两变量是否线性相关，并求样本相关系数。",
+      "answer": "线性相关，样本相关系数约为0.97。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe12",
+      "type": "填空题",
+      "stem": "依据例1中甲、乙两校的抽样数据，构建分类变量X（学校）和Y（数学成绩优秀与否）的2×2列联表，并写出对应的四个频数。",
+      "answer": "甲校：不优秀33，优秀10；乙校：不优秀38，优秀7。列联表四格分别为a=33,b=10,c=38,d=7。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx3_rjb_exe13",
+      "type": "应用题",
+      "stem": "利用例2的数据，计算χ²统计量，并判断在α=0.1下两校数学成绩优秀率是否有差异。",
+      "answer": "χ²≈0.837，小于2.706，接受H0，认为两校数学成绩优秀率无显著差异。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 67,
+    "skill_count": 18,
+    "experiment_count": 0,
+    "question_count": 13
+  }
+}

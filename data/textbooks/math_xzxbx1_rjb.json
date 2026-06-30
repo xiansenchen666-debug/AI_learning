@@ -1,0 +1,858 @@
+{
+  "id": "math_xzxbx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "数学",
+  "title": "数学选择性必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_xzxbx1_rjb_cpt1",
+      "name": "空间向量",
+      "definition": "在空间中具有大小和方向的量称为空间向量，可用有向线段表示。",
+      "importance": "掌握",
+      "examples": "位移、速度、力"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt2",
+      "name": "相反向量",
+      "definition": "与向量a等长、方向相反的向量，记作−a。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt3",
+      "name": "空间向量线性运算",
+      "definition": "包括向量加法、减法、数乘运算，其结果与向量起点无关。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt4",
+      "name": "向量运算律",
+      "definition": "空间向量满足加法交换律、结合律以及数乘与加法的分配律。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt5",
+      "name": "向量共面的充要条件",
+      "definition": "若a,b不共线，则向量p与a,b共面当且仅当存在唯一实数对(x,y)，使p=xa+yb。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt6",
+      "name": "向量数量积",
+      "definition": "a·b=|a||b|cos⟨a,b⟩，反映长度与夹角关系。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt7",
+      "name": "向量夹角",
+      "definition": "将两个向量平移至同一平面后构成的角，范围为[0,π]。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt8",
+      "name": "直线方向向量",
+      "definition": "与直线平行的非零向量，可用于确定直线的位置。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt9",
+      "name": "空间向量基本定理",
+      "definition": "如果三个向量 a, b, c 不共面，那么对任意一个空间向量 p，存在唯一的有序实数组 (x, y, z)，使得 p = xa + yb + zc。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt10",
+      "name": "基底",
+      "definition": "由三个不共面的向量 a, b, c 生成的空间向量集合，可将所有空间向量表示为 xa + yb + zc。",
+      "importance": "掌握",
+      "aliases": [
+        "base"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt11",
+      "name": "基向量",
+      "definition": "构成空间基底的三个不共面的向量。",
+      "importance": "了解",
+      "aliases": [
+        "base vectors"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt12",
+      "name": "单位正交基底",
+      "definition": "三个基向量两两垂直且长度为 1 的基底，通常记为 {i, j, k}。",
+      "importance": "掌握",
+      "aliases": [
+        "orthonormal basis"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt13",
+      "name": "空间直角坐标系",
+      "definition": "在空间中以一点为原点，取单位正交基底 {i, j, k} 的方向为坐标轴正方向，并以其长度为单位长度建立的三条互相垂直的数轴所构成的坐标系。",
+      "importance": "重要",
+      "aliases": [
+        "三维直角坐标系",
+        "Oxyz 坐标系"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt14",
+      "name": "点的空间坐标",
+      "definition": "点 A 在空间直角坐标系中的坐标为唯一的有序实数组 (x, y, z)，满足 OA = x i + y j + z k。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt15",
+      "name": "向量的空间坐标",
+      "definition": "在空间直角坐标系中，向量 a 可表示为 (x, y, z)，其中 a = x i + y j + z k。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt16",
+      "name": "空间向量的坐标运算",
+      "definition": "空间向量在坐标形式下的加法、减法、数乘和数量积等运算规则与平面向量类似。",
+      "importance": "重要",
+      "formula": "a·b = a1 b1 + a2 b2 + a3 b3；|a| = √(a1²+a2²+a3²)"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt17",
+      "name": "空间两点间的距离公式",
+      "definition": "空间中两点 P1(x1, y1, z1) 与 P2(x2, y2, z2) 的距离为 √[(x2−x1)²+(y2−y1)²+(z2−z1)²]。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt18",
+      "name": "空间中点的位置向量",
+      "definition": "取定一点O作为基点，空间中任意一点P可以用向量OP表示，该向量称为点P的位置向量。",
+      "importance": "掌握",
+      "examples": [
+        "OP 为点 P 的向量表示"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt19",
+      "name": "空间直线的向量表示",
+      "definition": "空间直线可由直线上一点A和方向向量a确定，满足 OP = OA + t a。",
+      "importance": "重要",
+      "formula": "OP = OA + t a"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt20",
+      "name": "空间平面的向量表示",
+      "definition": "空间平面可由平面内一点A和两个不共线向量AB、AC表示，满足 OP = OA + x AB + y AC。",
+      "importance": "重要",
+      "formula": "OP = OA + x AB + y AC"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt21",
+      "name": "平面的法向量",
+      "definition": "若向量n垂直于平面内所有向量，则n为该平面的法向量。",
+      "importance": "重要",
+      "examples": [
+        "平面 {P | a · AP = 0} 的法向量为 a"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt22",
+      "name": "直线与直线平行的向量判定",
+      "definition": "两直线平行当且仅当其方向向量平行。",
+      "importance": "掌握",
+      "formula": "u1 = λ u2"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt23",
+      "name": "直线与平面平行的向量判定",
+      "definition": "直线l平行于平面α当且仅当直线方向向量u与平面法向量n垂直。",
+      "importance": "掌握",
+      "formula": "u · n = 0"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt24",
+      "name": "平面与平面平行的向量判定",
+      "definition": "平面α与平面β平行当且仅当它们的法向量平行。",
+      "importance": "掌握",
+      "formula": "n1 = λ n2"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt25",
+      "name": "直线与直线垂直的向量判定",
+      "definition": "两直线垂直当且仅当其方向向量垂直。",
+      "importance": "掌握",
+      "formula": "u1 · u2 = 0"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt26",
+      "name": "直线与平面垂直的向量判定",
+      "definition": "直线l垂直于平面α当且仅当直线方向向量与平面法向量平行。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt27",
+      "name": "平面与平面垂直的向量判定",
+      "definition": "两个平面垂直当且仅当它们的法向量垂直。",
+      "importance": "掌握",
+      "formula": "n1 · n2 = 0"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt28",
+      "name": "点到直线的距离公式",
+      "definition": "点 P(x0,y0) 到直线 Ax+By+C=0 的距离为 |Ax0+By0+C| / sqrt(A^2+B^2)。",
+      "importance": "重要",
+      "formula": "d = |Ax0+By0+C| / sqrt(A^2+B^2)",
+      "examples": [
+        "例5求得距离 5/3。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt29",
+      "name": "点到平面的距离公式",
+      "definition": "点P到平面α的距离为 |AP · n| / |n|。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt30",
+      "name": "直线的倾斜角",
+      "definition": "直线与x轴正向之间所成的角，取值范围为0° ≤ α < 180°，用于表示直线的方向和倾斜程度。",
+      "importance": "重要",
+      "aliases": [
+        "倾斜角",
+        "angle of inclination"
+      ],
+      "examples": [
+        "当直线与x轴平行时，倾斜角为0°；直线l1的倾斜角为锐角，直线l'的倾斜角为钝角。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt31",
+      "name": "直线的斜率",
+      "definition": "直线倾斜角α的正切值，k = tan α，用数值刻画直线相对于x轴的倾斜程度。",
+      "importance": "重要",
+      "aliases": [
+        "斜率",
+        "slope"
+      ],
+      "formula": "k = tan α",
+      "examples": [
+        "倾斜角30°的直线斜率为√3/3。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt32",
+      "name": "斜率的两点式公式",
+      "definition": "若直线经过两点P1(x1, y1), P2(x2, y2)，且x1 ≠ x2，则斜率k = (y2 - y1) / (x2 - x1)。",
+      "importance": "重要",
+      "formula": "k = (y2 - y1) / (x2 - x1)"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt33",
+      "name": "直线平行的斜率判定",
+      "definition": "两条直线平行当且仅当它们的斜率相等（对存在斜率的情形）。",
+      "importance": "掌握",
+      "formula": "l1 // l2 ⇔ k1 = k2"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt34",
+      "name": "直线垂直的斜率判定",
+      "definition": "两条直线互相垂直当且仅当它们的斜率之积为-1（在都存在斜率的前提下）。",
+      "importance": "掌握",
+      "formula": "l1 ⟂ l2 ⇔ k1 × k2 = -1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt35",
+      "name": "直线的点斜式方程",
+      "definition": "由直线上一点 (x0, y0) 和该直线斜率 k 所确定的方程 y - y0 = k(x - x0)。",
+      "importance": "掌握",
+      "formula": "y - y0 = k(x - x0)"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt36",
+      "name": "斜率",
+      "definition": "表示直线倾斜程度的量，若两点 (x1,y1),(x2,y2) 在直线上，则斜率 k = (y2 - y1)/(x2 - x1)。",
+      "importance": "掌握",
+      "formula": "k = (y2 - y1)/(x2 - x1)"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt37",
+      "name": "直线的斜截式方程",
+      "definition": "由直线的斜率 k 和其在 y 轴上的截距 b 所确定的方程 y = kx + b。",
+      "importance": "重要",
+      "formula": "y = kx + b"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt38",
+      "name": "直线的两点式方程",
+      "definition": "经过两点 (x1,y1) 和 (x2,y2) 的直线方程 (y - y1)/(y2 - y1) = (x - x1)/(x2 - x1)。",
+      "importance": "掌握",
+      "formula": "(y - y1)/(y2 - y1) = (x - x1)/(x2 - x1)"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt39",
+      "name": "直线的截距式方程",
+      "definition": "由直线在 x 轴和 y 轴上的截距 a 和 b 所确定的方程 x/a + y/b = 1。",
+      "importance": "了解",
+      "formula": "x/a + y/b = 1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt40",
+      "name": "直线的一般式方程",
+      "definition": "形如 Ax + By + C = 0 的关于 x,y 的二元一次方程，表示平面上一条直线。",
+      "importance": "重要",
+      "formula": "Ax + By + C = 0"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt41",
+      "name": "方向向量与直线的参数方程",
+      "definition": "若直线过点 (x0,y0) 且方向向量为 (m,n)，则直线的参数方程为 x = x0 + mt, y = y0 + nt。",
+      "importance": "掌握",
+      "formula": "x = x0 + mt, y = y0 + nt"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt42",
+      "name": "两条直线的交点坐标",
+      "definition": "两条相交直线的交点是两条直线方程所组成方程组的解。",
+      "importance": "掌握",
+      "formula": "解方程组 A1x+B1y+C1=0, A2x+B2y+C2=0 得交点坐标。",
+      "examples": [
+        "例1中求出交点 M(-2,2)。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt43",
+      "name": "两点间距离公式",
+      "definition": "平面内两点 P1(x1,y1)、P2(x2,y2) 间的距离为 sqrt[(x2−x1)^2 + (y2−y1)^2]。",
+      "importance": "掌握",
+      "formula": "d = sqrt((x2-x1)^2 + (y2-y1)^2)",
+      "examples": [
+        "例3求得 PA=PB=2√2。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt44",
+      "name": "两条平行直线间的距离",
+      "definition": "两条平行直线间的距离等于其中一条直线上的任一点到另一条直线的距离。",
+      "importance": "重要",
+      "formula": "d=|C1−C2|/sqrt(A^2+B^2)",
+      "examples": [
+        "例8中推导一般公式。"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt45",
+      "name": "圆的标准方程",
+      "definition": "圆心在(a,b)、半径为r的圆可以用方程 (x - a)^2 + (y - b)^2 = r^2 表示。",
+      "importance": "重要",
+      "formula": "(x - a)^2 + (y - b)^2 = r^2"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt46",
+      "name": "圆的一般方程",
+      "definition": "圆的方程可以写成 x^2 + y^2 + Dx + Ey + F = 0 的形式，当 D^2 + E^2 - 4F > 0 时表示圆。",
+      "importance": "重要",
+      "formula": "x^2 + y^2 + Dx + Ey + F = 0"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt47",
+      "name": "直线与圆的位置关系",
+      "definition": "直线与圆可以相交、相切或相离，对应两个、一个或没有公共点。",
+      "importance": "重要",
+      "examples": [
+        "相交有两个公共点，相切有一个公共点，相离没有公共点"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt48",
+      "name": "用方程判断直线与圆的位置关系",
+      "definition": "通过联立直线与圆的方程，判断方程组实数解的个数从而确定它们的位置关系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt49",
+      "name": "圆心到直线的距离与半径的比较",
+      "definition": "通过比较圆心到直线的距离与圆的半径的大小，判断直线与圆的相交、相切或相离关系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt50",
+      "name": "弦长公式",
+      "definition": "若直线与圆相交，弦长可用两交点距离公式或利用垂径定理计算，即 2√(r²−d²)。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt51",
+      "name": "圆与圆的位置关系",
+      "definition": "两个圆可以相交、相切（外切或内切）、相离（外离或内含）。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt52",
+      "name": "用圆心距与半径比较判断圆与圆的位置关系",
+      "definition": "比较两圆圆心距 d 与 r1 + r2、|r1 − r2| 的关系以判断相交、相切或相离。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt53",
+      "name": "椭圆",
+      "definition": "平面内与两个定点的距离之和等于常数（大于两定点距离）的点的轨迹。",
+      "importance": "重要",
+      "aliases": [
+        "ellipse"
+      ]
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt54",
+      "name": "椭圆的焦点",
+      "definition": "椭圆定义中给出的两个定点，记为 F1、F2。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt55",
+      "name": "焦距与半焦距",
+      "definition": "两焦点间的距离称为焦距，焦距的一半称为半焦距 c。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt56",
+      "name": "椭圆的标准方程（焦点在 x 轴上）",
+      "definition": "焦点在 x 轴上时椭圆的标准方程为 x^2/a^2 + y^2/b^2 = 1，其中 c^2 = a^2 - b^2，a > b > 0。",
+      "importance": "重要",
+      "formula": "x^2/a^2 + y^2/b^2 = 1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt57",
+      "name": "椭圆的标准方程（焦点在 y 轴上）",
+      "definition": "焦点在 y 轴上时椭圆的标准方程为 y^2/a^2 + x^2/b^2 = 1。",
+      "importance": "重要",
+      "formula": "y^2/a^2 + x^2/b^2 = 1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt58",
+      "name": "椭圆的范围",
+      "definition": "椭圆 x^2/a^2 + y^2/b^2 = 1 的点满足 -a ≤ x ≤ a，-b ≤ y ≤ b。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt59",
+      "name": "椭圆的对称性",
+      "definition": "椭圆关于 x 轴、y 轴、原点对称。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt60",
+      "name": "椭圆的顶点、长轴、短轴",
+      "definition": "椭圆与对称轴的四个交点为顶点，长轴长为 2a，短轴长为 2b。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt61",
+      "name": "离心率",
+      "definition": "e = c/a（0 < e < 1），表示椭圆的扁平程度。",
+      "importance": "重要",
+      "formula": "e = c/a"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt62",
+      "name": "椭圆的准线定义",
+      "definition": "点 M 到焦点 F 的距离与其到对应准线的距离之比为常数 e（0 < e < 1）。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt63",
+      "name": "双曲线",
+      "definition": "平面内与两个定点 F1、F2 的距离的差的绝对值等于非零常数（小于 |F1F2|）的点的轨迹。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt64",
+      "name": "双曲线标准方程（焦点在 x 轴）",
+      "definition": "当焦点在 x 轴上时，双曲线的标准方程为 x^2/a^2 - y^2/b^2 = 1（a>0, b>0），其中 c^2 = a^2 + b^2。",
+      "importance": "掌握",
+      "formula": "x^2/a^2 - y^2/b^2 = 1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt65",
+      "name": "双曲线标准方程（焦点在 y 轴）",
+      "definition": "当焦点在 y 轴上时，双曲线的标准方程为 y^2/a^2 - x^2/b^2 = 1（a>0, b>0），其中 c^2 = a^2 + b^2。",
+      "importance": "掌握",
+      "formula": "y^2/a^2 - x^2/b^2 = 1"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt66",
+      "name": "双曲线的渐近线",
+      "definition": "双曲线 x^2/a^2 - y^2/b^2 = 1 的两条渐近线为 x/a ± y/b = 0，曲线向外延伸时无限接近这些直线但不相交。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt67",
+      "name": "双曲线的离心率",
+      "definition": "双曲线的离心率 e = c/a，其中 c 为焦距的半长，a 为实半轴长，且 e > 1。用于刻画双曲线张口大小。",
+      "importance": "重要",
+      "formula": "e = c/a"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt68",
+      "name": "双曲线的几何性质",
+      "definition": "包括双曲线的范围、对称性、顶点、实轴与虚轴等基本性质。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt69",
+      "name": "焦点",
+      "definition": "抛物线定义中到其距离与点到准线距离相等的定点。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt70",
+      "name": "准线",
+      "definition": "抛物线定义中点到其距离与点到焦点距离相等的定直线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt71",
+      "name": "抛物线标准方程",
+      "definition": "通过建立适当坐标系推得的抛物线方程，如y^2=2px。",
+      "importance": "重要",
+      "formula": "y^2=2px 或 x^2=2py"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt72",
+      "name": "离心率（抛物线）",
+      "definition": "抛物线上点到焦点距离与到准线距离之比，抛物线的离心率e=1。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx1_rjb_cpt73",
+      "name": "二次函数图像为抛物线",
+      "definition": "通过配方和平移变换可将二次函数转化为抛物线的标准形式，从而说明其图像为抛物线。",
+      "importance": "掌握"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_xzxbx1_rjb_skl1",
+      "name": "利用向量表达几何关系",
+      "description": "将几何元素表示为向量，通过向量运算推导其空间关系，如共面、垂直、平行等"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl2",
+      "name": "向量基底表示方法",
+      "description": "将任意空间向量表示为基底向量的线性组合，并利用向量运算求出各分量。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl3",
+      "name": "建立适当的空间直角坐标系解决几何问题",
+      "description": "根据问题特点建立坐标系，将点与向量用坐标表示，通过坐标运算解决空间角度、距离、垂直关系等问题。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl4",
+      "name": "空间向量三步法",
+      "description": "建立几何图形与向量的联系；进行向量运算解决位置关系或度量问题；将向量结果翻译成几何结论。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl5",
+      "name": "利用坐标计算直线斜率",
+      "description": "根据直线上两点的坐标代入斜率公式 k = (y2 - y1) / (x2 - x1) 计算直线斜率。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl6",
+      "name": "利用斜率判断直线位置关系",
+      "description": "通过比较直线斜率的大小、相等关系或乘积关系，判断两条直线是否平行或垂直。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl7",
+      "name": "坐标法解决几何问题",
+      "description": "通过建立平面直角坐标系，把几何关系转化为代数关系（如方程、向量等）进行求解。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl8",
+      "name": "待定系数法求圆方程",
+      "description": "通过设圆的标准方程或一般方程形式，代入满足条件的点，建立方程组并求解参数。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl9",
+      "name": "坐标法三步曲",
+      "description": "建立坐标系并以坐标表示几何元素；通过代数运算解决问题；将代数结果解释为几何结论。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl10",
+      "name": "建立曲线的方程（轨迹法）",
+      "description": "通过设点坐标，利用几何条件建立关系式，消元得到轨迹方程。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl11",
+      "name": "利用代数方法分析曲线性质",
+      "description": "使用方程研究曲线的范围、对称性、特殊点等。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl12",
+      "name": "类比法研究圆锥曲线",
+      "description": "通过类比椭圆的研究方法，包括建立坐标系、根据定义列式、化简得到双曲线的性质和方程。"
+    },
+    {
+      "id": "math_xzxbx1_rjb_skl13",
+      "name": "建立适当坐标系",
+      "description": "根据几何特征选择合理坐标系以简化方程推导，是解析几何的核心方法。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_xzxbx1_rjb_exe1",
+      "type": "应用题",
+      "stem": "如图1.1-12，在平行六面体ABCD-A'B'C'D'中，AB=5, AD=3, AA'=7, ∠BAD=60°。求 AB·AD。",
+      "answer": "AB·AD=5×3×cos60°=7.5",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe2",
+      "type": "判断题",
+      "stem": "已知向量a,b均非零，且a·b=0，判断a与b的空间关系。",
+      "answer": "a与b垂直。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe3",
+      "type": "应用题",
+      "stem": "如图，M 是四面体 OABC 的棱 BC 的中点，N 在线段 OM 上，P 在线段 AN 上，MN = 1/2 ON，AP = 3/4 AN，求用向量 OA, OB, OC 表示 OP。",
+      "answer": "OP = 1/4 OA + 1/4 OB + 1/4 OC",
+      "analysis": "利用 OA, OB, OC 构成的基底，根据线段比例逐步分解 OP 并表示为基底的线性组合。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe4",
+      "type": "证明题",
+      "stem": "在正方体 ABCD−A₁B₁C₁D₁ 中，E、F 分别是 BB₁ 和 D₁B₁ 的中点。求证 EF ⟂ DA₁。",
+      "answer": "通过建立坐标系，计算得向量 EF = (-1/2, -1/2, 1/2)，DA₁ = (1,0,1)，其数量积为 0，因此 EF ⟂ DA₁。",
+      "analysis": "将关键点坐标化并进行向量数量积运算，是解决空间垂直关系的有效方法。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe5",
+      "type": "应用题",
+      "stem": "如图，在长方体ABCD-A1B1C1D1中…（例1）求平面BCC1B1与平面MCA1的法向量。",
+      "answer": "平面BCC1B1法向量为(0,1,0)；平面MCA1法向量可取(2,3,3)。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe6",
+      "type": "应用题",
+      "stem": "求下列两条直线 l1:3x+4y−2=0 和 l2:2x+y+2=0 的交点坐标。",
+      "answer": "交点为 M(-2,2)。",
+      "analysis": "解方程组求得 x=-2,y=2。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe7",
+      "type": "应用题",
+      "stem": "已知 A(-1,2)、B(2,√7)，在 x 轴上求一点 P，使 |PA|=|PB|。",
+      "answer": "P(1,0)，|PA|=2√2。",
+      "analysis": "利用两点间距离公式列方程求解。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe8",
+      "type": "应用题",
+      "stem": "求点 P(-1,2) 到直线 l:3x-2=0 的距离。",
+      "answer": "5/3。",
+      "analysis": "代入点到直线距离公式 d=|Ax0+By0+C|/√(A²+B²)。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe9",
+      "type": "应用题",
+      "stem": "求两条平行直线 2x−7y−8=0 与 6x−21y−1=0 之间的距离。",
+      "answer": "距离为 23/(159)·√53。",
+      "analysis": "在线上取点后利用点到直线距离公式计算。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe10",
+      "type": "证明题",
+      "stem": "用坐标法证明平行四边形对角线平方和等于邻边平方和的两倍。",
+      "answer": "AC²+BD²=2(AB²+AD²)。",
+      "analysis": "建立坐标系表示顶点并代入距离公式展开即可。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe11",
+      "type": "应用题",
+      "stem": "求圆心为 A(2, -3)，半径为 5 的圆的标准方程，并判断点 M1(5, -7)、M2(-2, -1) 是否在该圆上。",
+      "answer": "标准方程：(x - 2)^2 + (y + 3)^2 = 25。M1 在圆上，M2 不在圆上。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe12",
+      "type": "应用题",
+      "stem": "求过三点 O(0,0)、M1(1,1)、M2(4,2) 的圆的一般方程及圆心与半径。",
+      "answer": "圆方程：x^2 + y^2 - 8x + 6y = 0，圆心(4, -3)，半径5。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe13",
+      "type": "应用题",
+      "stem": "已知椭圆的焦点为 (-2,0) 和 (2,0)，并经过点 (5/2, -3/2)，求其标准方程。",
+      "answer": "x^2/10 + y^2/6 = 1",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe14",
+      "type": "应用题",
+      "stem": "点 P 在圆 x^2 + y^2 = 4 上，线段 PD 在 x 轴上垂足为 D，求中点 M 的轨迹方程。",
+      "answer": "x^2/4 + y^2 = 1",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe15",
+      "type": "应用题",
+      "stem": "已知双曲线的两个焦点分别为 F1(-5,0), F2(5,0)，双曲线上一点 P 与 F1、F2 的距离差的绝对值等于 6，求双曲线的标准方程。",
+      "answer": "x^2/9 - y^2/16 = 1",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe16",
+      "type": "应用题",
+      "stem": "已知炮弹爆炸声在 A、B 两地传播的时间差为 2s，AB=800m，声速340m/s，求爆炸点的轨迹方程。",
+      "answer": "x^2/115600 - y^2/44400 = 1，且 x ≥ 340",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe17",
+      "type": "简答题",
+      "stem": "已知抛物线的标准方程是 y^2=6x ，求它的焦点坐标和准线方程。",
+      "answer": "焦点(3/2,0)，准线x=-3/2",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx1_rjb_exe18",
+      "type": "简答题",
+      "stem": "已知抛物线关于x轴对称，顶点在原点，经过点(2,-2√2)，求其标准方程。",
+      "answer": "y^2=4x",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 73,
+    "skill_count": 13,
+    "experiment_count": 0,
+    "question_count": 18
+  }
+}

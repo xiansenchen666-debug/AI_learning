@@ -1,0 +1,811 @@
+{
+  "id": "math_3a_rjb",
+  "stage": "小学",
+  "grade": "三年级上册",
+  "subject": "数学",
+  "title": "数学三年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_3a_rjb_cpt1",
+      "name": "秒",
+      "definition": "计量很短时间常用的时间单位，钟表滴答一声是1秒。",
+      "importance": "掌握",
+      "examples": [
+        "体育运动计时常用秒"
+      ],
+      "pages": "原文前段"
+    },
+    {
+      "id": "math_3a_rjb_cpt2",
+      "name": "分钟",
+      "definition": "常用的时间单位，1分钟=60秒。",
+      "importance": "掌握",
+      "formula": "1分=60秒"
+    },
+    {
+      "id": "math_3a_rjb_cpt3",
+      "name": "小时",
+      "definition": "时间单位，1小时=60分钟。",
+      "importance": "掌握",
+      "formula": "1时=60分"
+    },
+    {
+      "id": "math_3a_rjb_cpt4",
+      "name": "时间单位的换算",
+      "definition": "包括秒、分、时之间的进率换算：1分钟=60秒、1小时=60分钟。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_3a_rjb_cpt5",
+      "name": "两位数加法的口算方法",
+      "definition": "利用加数按十位与个位拆分，先加整十数再加个位数，完成两位数加法的口算。",
+      "importance": "掌握",
+      "examples": [
+        "45-34 的思路：45-30=15，再15-4=11"
+      ],
+      "pages": "教材第2章"
+    },
+    {
+      "id": "math_3a_rjb_cpt6",
+      "name": "两位数减法的口算方法",
+      "definition": "利用被减数或减数按十位和个位拆分，先减整十数，再减个位数的方法。",
+      "importance": "掌握",
+      "examples": [
+        "45-34 的思路：45-30=15，再15-4=11"
+      ],
+      "pages": "教材第2章"
+    },
+    {
+      "id": "math_3a_rjb_cpt7",
+      "name": "整十数加减整十数",
+      "definition": "对几十、几百几十的数进行整十整百计算的方法。",
+      "importance": "掌握",
+      "examples": [
+        "380+550",
+        "410+250"
+      ],
+      "pages": "教材相关例题"
+    },
+    {
+      "id": "math_3a_rjb_cpt8",
+      "name": "估算",
+      "definition": "对加减法运算进行大致的数值判断，通过把数取整来快速估计结果。",
+      "importance": "重要",
+      "examples": [
+        "223≈220，234≈230，可估 220+230≈450"
+      ],
+      "pages": "阅读与理解部分"
+    },
+    {
+      "id": "math_3a_rjb_cpt9",
+      "name": "毫米",
+      "definition": "用于测量较短物体长度或需要较精确测量时使用的长度单位。",
+      "importance": "掌握",
+      "unit": "mm",
+      "pages": "毫米、分米的认识部分"
+    },
+    {
+      "id": "math_3a_rjb_cpt10",
+      "name": "分米",
+      "definition": "长度单位，1分米等于10厘米。",
+      "importance": "了解",
+      "unit": "dm"
+    },
+    {
+      "id": "math_3a_rjb_cpt11",
+      "name": "千米",
+      "definition": "用于测量较长距离的长度单位，1千米=1000米。",
+      "importance": "掌握",
+      "unit": "km"
+    },
+    {
+      "id": "math_3a_rjb_cpt12",
+      "name": "吨",
+      "definition": "较大的质量单位，1吨=1000千克。",
+      "importance": "掌握",
+      "unit": "t"
+    },
+    {
+      "id": "math_3a_rjb_cpt13",
+      "name": "万以内加法的竖式计算",
+      "definition": "按照数位对齐，从个位加起，满十向前一位进1的加法计算方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_3a_rjb_cpt14",
+      "name": "万以内减法的竖式计算",
+      "definition": "按照数位对齐，从个位减起，不够减向前一位退1的减法计算方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_3a_rjb_cpt15",
+      "name": "加法验算",
+      "definition": "用交换加数的位置或用减法检查加法结果是否正确的方法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt16",
+      "name": "减法验算",
+      "definition": "用加法或用被减数减去差检查减法是否正确的方法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt17",
+      "name": "倍的意义",
+      "definition": "表示一个数量是另一个数量的多少倍，即比较两个数量之间包含与被包含的关系。通常是求“较大的数量中有几个较小的数量”。",
+      "importance": "重要",
+      "examples": [
+        "12是4的3倍",
+        "一行的根数是另一行的倍数关系"
+      ],
+      "pages": "教材第5章多处出现"
+    },
+    {
+      "id": "math_3a_rjb_cpt18",
+      "name": "用除法求倍数",
+      "definition": "在已知两个数量中较大数和较小数时，用较大数除以较小数可以求出倍数。",
+      "importance": "掌握",
+      "examples": [
+        "12 ÷ 4 = 3 表示12里面有3个4"
+      ],
+      "pages": "示意图与除法计算例子处"
+    },
+    {
+      "id": "math_3a_rjb_cpt19",
+      "name": "用乘法求倍量",
+      "definition": "已知一个数量和倍数时，用乘法求另一个数量。",
+      "importance": "掌握",
+      "examples": [
+        "8 × 4 = 32 表示32元是8元的4倍"
+      ],
+      "pages": "跳棋与象棋价钱例题"
+    },
+    {
+      "id": "math_3a_rjb_cpt20",
+      "name": "多位数乘一位数",
+      "definition": "用一个一位数去乘多位数，从个位起依次与多位数的每一位相乘，满十进位。",
+      "importance": "重要",
+      "pages": "教材第6章贯穿呈现"
+    },
+    {
+      "id": "math_3a_rjb_cpt21",
+      "name": "整十整百整千数乘一位数的口算",
+      "definition": "利用整十、整百、整千数末尾含有0的特点，先算有效数字部分再添0。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt22",
+      "name": "0 的乘法特性",
+      "definition": "0与任何数相乘都得0。",
+      "importance": "掌握",
+      "pages": "“0和任何数相乘都得0.”"
+    },
+    {
+      "id": "math_3a_rjb_cpt23",
+      "name": "四边形",
+      "definition": "由4条直的边围成的封闭图形，具有4条直边和4个角。",
+      "importance": "重要",
+      "pages": "教材第7章开头",
+      "examples": [
+        "门的表面",
+        "书本封面"
+      ]
+    },
+    {
+      "id": "math_3a_rjb_cpt24",
+      "name": "封闭图形",
+      "definition": "各边首尾相连围成的图形。",
+      "importance": "掌握",
+      "pages": "周长定义前"
+    },
+    {
+      "id": "math_3a_rjb_cpt25",
+      "name": "周长",
+      "definition": "封闭图形一周的长度。",
+      "importance": "重要",
+      "pages": "周长定义处"
+    },
+    {
+      "id": "math_3a_rjb_cpt26",
+      "name": "分数",
+      "definition": "表示把一个整体平均分成若干份后，其中若干份所占的部分的数。写作 a/b。",
+      "importance": "重要",
+      "examples": [
+        "1/2, 1/3, 2/4, 7/10"
+      ],
+      "pages": "章节1开头"
+    },
+    {
+      "id": "math_3a_rjb_cpt27",
+      "name": "分子",
+      "definition": "分数中上面的数，表示取了几份。",
+      "importance": "掌握",
+      "pages": "章节1 ‘1……分子’处"
+    },
+    {
+      "id": "math_3a_rjb_cpt28",
+      "name": "分母",
+      "definition": "分数中下面的数，表示平均分成的份数。",
+      "importance": "掌握",
+      "pages": "章节1 ‘3……分母’处"
+    },
+    {
+      "id": "math_3a_rjb_cpt29",
+      "name": "同分母分数加法",
+      "definition": "分母相同的两个分数相加，只需要分子相加，分母不变。",
+      "importance": "重要",
+      "formula": "a/b + c/b = (a+c)/b",
+      "pages": "2.分数的简单计算"
+    },
+    {
+      "id": "math_3a_rjb_cpt30",
+      "name": "同分母分数减法",
+      "definition": "分母相同的两个分数相减，只需要分子相减，分母不变。",
+      "importance": "重要",
+      "formula": "a/b - c/b = (a-c)/b",
+      "pages": "2.分数的简单计算"
+    },
+    {
+      "id": "math_3a_rjb_cpt31",
+      "name": "集合",
+      "definition": "把具有某种共同特征的对象组成的一个整体称为集合。",
+      "importance": "重要",
+      "examples": [
+        "跳绳的学生组成一个集合",
+        "昨天进的水果品种组成一个集合",
+        "1~10之间的偶数构成的集合",
+        "所有正方形组成的集合"
+      ],
+      "pages": "第9章开头"
+    },
+    {
+      "id": "math_3a_rjb_cpt32",
+      "name": "集合的元素",
+      "definition": "集合中的每一个具体对象叫做集合的元素。",
+      "importance": "了解",
+      "examples": [
+        "杨明是“跳绳”这个集合的元素"
+      ]
+    },
+    {
+      "id": "math_3a_rjb_cpt33",
+      "name": "交集",
+      "definition": "由所有属于集合A且属于集合B的元素组成的集合，记作A ∩ B。",
+      "importance": "重要",
+      "examples": [
+        "既参加跳绳又参加踢毽的学生",
+        "两个圈里都出现的数",
+        "{2,4,6,8,10} ∩ {3,5,8,12} = {8}"
+      ],
+      "aliases": [
+        "intersection set"
+      ]
+    },
+    {
+      "id": "math_3a_rjb_cpt34",
+      "name": "用图表示集合（维恩图）",
+      "definition": "用相交或不相交的圆圈来表示集合及其之间的关系。",
+      "importance": "掌握",
+      "examples": [
+        "跳绳和踢毽学生的示意图",
+        "大于50小于70 与 大于60小于80 的示意图"
+      ]
+    },
+    {
+      "id": "math_3a_rjb_cpt35",
+      "name": "分数的基本认识",
+      "definition": "认识几分之一，理解把整体平均分成若干份，每份表示为几分之一。",
+      "importance": "掌握",
+      "examples": [
+        "1/2、1/3、1/4 等"
+      ],
+      "pages": "总复习开篇、分数墙部分"
+    },
+    {
+      "id": "math_3a_rjb_cpt36",
+      "name": "同分母分数加减法",
+      "definition": "分子相加减，分母不变，用于计算同分母分数的加减。",
+      "importance": "掌握",
+      "examples": [
+        "3/5+1/5=4/5",
+        "3/8+1/8",
+        "5/6-1/6"
+      ],
+      "pages": "教材第6章"
+    },
+    {
+      "id": "math_3a_rjb_cpt37",
+      "name": "长方形和正方形的特征",
+      "definition": "认识长方形和正方形的边及特征，能区分两者形状。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_3a_rjb_cpt38",
+      "name": "周长的计算",
+      "definition": "图形各边长度的总和。长方形周长等于（长+宽）×2，正方形周长等于边长×4。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt39",
+      "name": "时间单位换算",
+      "definition": "时、分、秒之间可以按1时=60分、1分=60秒进行换算。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt40",
+      "name": "长度单位换算",
+      "definition": "掌握米、分米、厘米、毫米之间的进率换算。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt41",
+      "name": "多位数加减法",
+      "definition": "在万以内进行加减法，注意进位和退位。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt42",
+      "name": "倍数关系",
+      "definition": "描述一个量是另一个量的几倍。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3a_rjb_cpt43",
+      "name": "简单的实际问题建模",
+      "definition": "用加、减、乘等数学知识解决生活中的数量关系问题。",
+      "importance": "重要"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_3a_rjb_skl1",
+      "name": "利用钟表读时间",
+      "description": "通过观察钟面上时针、分针、秒针的位置读出时间。"
+    },
+    {
+      "id": "math_3a_rjb_skl2",
+      "name": "时间的估计",
+      "description": "根据经验估计某段时间的长度，如估计30秒或1分钟。"
+    },
+    {
+      "id": "math_3a_rjb_skl3",
+      "name": "时间的加减计算",
+      "description": "根据已知时间通过加减法求经过的时间或结束时间。"
+    },
+    {
+      "id": "math_3a_rjb_skl4",
+      "name": "口算拆分法",
+      "description": "把数拆分成十位与个位（或百位与十位），分步进行简单加减，再组合得出结果。"
+    },
+    {
+      "id": "math_3a_rjb_skl5",
+      "name": "估算策略应用",
+      "description": "对数进行取整或近似判断，通过比较量级快速判断结果是否合理。"
+    },
+    {
+      "id": "math_3a_rjb_skl6",
+      "name": "单位换算",
+      "description": "根据单位之间的关系进行长度或质量单位的换算。"
+    },
+    {
+      "id": "math_3a_rjb_skl7",
+      "name": "根据数位分析计算",
+      "description": "在加减法中根据个位、十位、百位的特征判断是否需要进退位并选择合适策略。"
+    },
+    {
+      "id": "math_3a_rjb_skl8",
+      "name": "选择合适的计算策略解决实际问题",
+      "description": "根据情境需要选择估算、笔算或口算等不同计算方式。"
+    },
+    {
+      "id": "math_3a_rjb_skl9",
+      "name": "画示意图理解倍的关系",
+      "description": "通过绘制简单图形或线段图，将两个数量的包含关系直观表示出来，以帮助判断和计算倍数。"
+    },
+    {
+      "id": "math_3a_rjb_skl10",
+      "name": "根据情境提出倍数问题",
+      "description": "根据图形或具体场景，提出与倍数关系相关的数学问题。"
+    },
+    {
+      "id": "math_3a_rjb_skl11",
+      "name": "笔算乘法",
+      "description": "按照从个位起、一位一位相乘、满十进位的规则列竖式并计算。"
+    },
+    {
+      "id": "math_3a_rjb_skl12",
+      "name": "估算",
+      "description": "将数字取近似值进行大致计算，用于判断结果范围是否合理。"
+    },
+    {
+      "id": "math_3a_rjb_skl13",
+      "name": "测量长度",
+      "description": "使用直尺等工具测量边的长度，用于计算图形的周长。"
+    },
+    {
+      "id": "math_3a_rjb_skl14",
+      "name": "在方格纸上画图形",
+      "description": "利用方格纸根据长度要求画出长方形和正方形等图形。"
+    },
+    {
+      "id": "math_3a_rjb_skl15",
+      "name": "将整体平均分",
+      "description": "把一个物体或数量平均分成若干份，用以理解分母与单位“1”。"
+    },
+    {
+      "id": "math_3a_rjb_skl16",
+      "name": "用图形表示分数",
+      "description": "通过涂色或分割图形来表示一个分数，帮助理解分子、分母的意义。"
+    },
+    {
+      "id": "math_3a_rjb_skl17",
+      "name": "根据分数求具体数量",
+      "description": "已知整体数量及其某个分数部分，通过“先求1份，再乘相应份数”求具体数量。"
+    },
+    {
+      "id": "math_3a_rjb_skl18",
+      "name": "通过画图分析集合关系",
+      "description": "用画集合图的方法找出不同集合之间的重叠部分，帮助理解交集及总体数量的计算。"
+    },
+    {
+      "id": "math_3a_rjb_skl19",
+      "name": "列式解决集合问题",
+      "description": "根据集合关系，用加、减等算式求出总体数量或交集数量。"
+    },
+    {
+      "id": "math_3a_rjb_skl20",
+      "name": "数形结合",
+      "description": "通过将代数数量与图形性质结合，辅助理解圆、弧、扇形及其公式的推导。"
+    },
+    {
+      "id": "math_3a_rjb_skl21",
+      "name": "估算能力",
+      "description": "在计算前对结果进行合理的估计，用于快速判断量的大小及答案范围。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_3a_rjb_exe1",
+      "type": "填空题",
+      "stem": "1分=（）秒",
+      "answer": "60秒",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe2",
+      "type": "应用题",
+      "stem": "小明从8:05走到8:20用了多少分钟？",
+      "answer": "15分钟",
+      "analysis": "8:20-8:05=15分钟",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe3",
+      "type": "应用题",
+      "stem": "9:15发车的地铁全程需要35分钟，何时到终点站？",
+      "answer": "9:50",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe4",
+      "type": "应用题",
+      "stem": "计算 45−34，并说一说你的口算方法。",
+      "answer": "11",
+      "analysis": "把34拆成30和4，45-30=15，15-4=11。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe5",
+      "type": "应用题",
+      "stem": "科技馆影院有445个座位，223人和234人同时看电影坐得下吗？",
+      "answer": "坐不下，总人数超过445。",
+      "analysis": "223≈220, 234≈230，估得220+230=450>445。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe6",
+      "type": "填空题",
+      "stem": "3厘米 = （ ）毫米",
+      "answer": "30毫米",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe7",
+      "type": "填空题",
+      "stem": "70厘米 = （ ）分米",
+      "answer": "7分米",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe8",
+      "type": "填空题",
+      "stem": "1千米 = （ ）米",
+      "answer": "1000米",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe9",
+      "type": "填空题",
+      "stem": "4吨 = （ ）千克",
+      "answer": "4000千克",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe10",
+      "type": "应用题",
+      "stem": "445+298=？他列竖式得出743，你能验算一下吗？",
+      "answer": "445+298=743，交换加数位置重新计算可验证结果正确。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe11",
+      "type": "应用题",
+      "stem": "276−124=？从哪一位减起？",
+      "answer": "276−124=152，从个位减起，按数位对齐进行竖式减法。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe12",
+      "type": "应用题",
+      "stem": "500−268=？",
+      "answer": "500−268=232。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe13",
+      "type": "应用题",
+      "stem": "教室里扫地的有4人，擦桌椅的有12人。擦桌椅的人数是扫地的几倍？",
+      "answer": "12 ÷ 4 = 3，所以是3倍。",
+      "analysis": "根据倍的意义，求较大的数量12里有几个4，用除法求倍数。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe14",
+      "type": "应用题",
+      "stem": "跳棋的价钱是8元，象棋的价钱是跳棋的4倍。象棋的价钱是多少？",
+      "answer": "8 × 4 = 32（元）。",
+      "analysis": "已知倍数和一个量，用乘法求倍量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe15",
+      "type": "应用题",
+      "stem": "小红踢了18个，小亮踢了3个。小红踢的是小亮的几倍？",
+      "answer": "18 ÷ 3 = 6，所以小红踢的是小亮的6倍。",
+      "analysis": "用较大的18除以较小的3求倍数。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe16",
+      "type": "判断题",
+      "stem": "判断四边形的相关描述是否正确：（1）四边形有4条直的边；（2）四边形有4个直角；（3）四边形的对边相等。",
+      "answer": "（1）对；（2）错；（3）错。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe17",
+      "type": "应用题",
+      "stem": "一个长方形花坛，长5米，宽3米，它的周长是多少米？",
+      "answer": "周长=（5+3）×2=16米。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe18",
+      "type": "应用题",
+      "stem": "计算边长为5厘米的正方形的周长。",
+      "answer": "周长=5×4=20厘米。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe19",
+      "type": "填空题",
+      "stem": "把一个月饼平均分成2份，每份是整体的几分之几？",
+      "answer": "1/2",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe20",
+      "type": "应用题",
+      "stem": "哥哥吃了2/8西瓜，弟弟吃了1/8，他们一共吃了几分之几？",
+      "answer": "3/8",
+      "analysis": "同分母分数相加",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe21",
+      "type": "应用题",
+      "stem": "有12名学生，其中1/3是女生，2/3是男生。女生、男生各有多少人？",
+      "answer": "女生4人，男生8人",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe22",
+      "type": "应用题",
+      "stem": "跳绳9人，踢毽8人，两项都参加的有3人。参加这两项比赛的共有多少人？",
+      "answer": "9 + 8 - 3 = 14（人）",
+      "analysis": "根据集合加法原理，用总数相加再减去重复的部分。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe23",
+      "type": "应用题",
+      "stem": "在大于50小于70与大于60小于80两个圈中，两个圈里都出现的数有多少个？",
+      "answer": "61～69 共9个数。",
+      "analysis": "找两个区间重叠部分，即交集。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe24",
+      "type": "应用题",
+      "stem": "参观熊猫馆25人，参观大象馆30人，两馆都参观的有18人。去动物园的一共有多少人？",
+      "answer": "25 + 30 - 18 = 37（人）",
+      "analysis": "两个集合的并集数量等于各自数量相加减去交集。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe25",
+      "type": "填空题",
+      "stem": "计算：3/5 + 1/5 = ?",
+      "answer": "4/5",
+      "analysis": "同分母分数相加，分子相加，分母不变。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe26",
+      "type": "应用题",
+      "stem": "一架飞机先从北京飞到广州，再飞行690千米到三亚，一共飞行多少千米？比从北京直接飞到三亚多飞多少千米？",
+      "answer": "1907+690=2597千米，比直飞多飞2597-2541=56千米",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3a_rjb_exe27",
+      "type": "应用题",
+      "stem": "一个长方形长6厘米，宽3厘米，求它的周长。",
+      "answer": "(6+3)*2=18厘米",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 43,
+    "skill_count": 21,
+    "experiment_count": 0,
+    "question_count": 27
+  }
+}

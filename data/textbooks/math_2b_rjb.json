@@ -1,0 +1,774 @@
+{
+  "id": "math_2b_rjb",
+  "stage": "小学",
+  "grade": "二年级下册",
+  "subject": "数学",
+  "title": "数学二年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_2b_rjb_cpt1",
+      "name": "数据收集",
+      "definition": "通过调查或观察获得信息的过程，如让同学举手、投票、记录天气等。",
+      "importance": "重要",
+      "examples": [
+        "调查最喜欢的颜色",
+        "记录天气情况"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt2",
+      "name": "统计表",
+      "definition": "用行和列组成的表格来整理和表达数据，使信息更加清晰、便于比较。",
+      "importance": "重要",
+      "examples": [
+        "颜色—人数表",
+        "票数统计表",
+        "男生最喜欢的运动项目人数情况表",
+        "空气质量级别天数表",
+        "天气情况表",
+        "早餐偏好表"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt3",
+      "name": "正字记录法",
+      "definition": "用“正”字计数的方法，每画一个“正”字表示5个数量，便于快速统计。",
+      "importance": "掌握",
+      "examples": [
+        "记录图书数量",
+        "记录车辆数量"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt4",
+      "name": "比较数量多少",
+      "definition": "通过观察统计数据，判断最多、最少或差多少。",
+      "importance": "掌握",
+      "examples": [
+        "哪个颜色人数最多",
+        "阴天比雪天多几天"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt5",
+      "name": "平均分",
+      "definition": "把若干物体分成若干份，每份得到的数量都相同，这种分法叫做平均分。",
+      "importance": "重要",
+      "examples": [
+        "把6块平均分成3份",
+        "把18个橘子平均分成6份"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt6",
+      "name": "除法的含义",
+      "definition": "在平均分问题中，求每份是多少或求能分成多少份时，用除法计算。",
+      "importance": "重要",
+      "examples": [
+        "12除以4等于3表示把12平均分成4份，每份是3。"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt7",
+      "name": "被除数",
+      "definition": "除法算式中被平均分或总数量的数叫被除数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt8",
+      "name": "除数",
+      "definition": "除法算式中表示分成几份或每份是多少的数叫除数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt9",
+      "name": "商",
+      "definition": "除法算式的结果叫商，可以表示每份是多少，也可以表示有多少份。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt10",
+      "name": "用乘法口诀求商",
+      "definition": "根据乘法口诀反推除法算式中的商。",
+      "importance": "重要",
+      "examples": [
+        "想：三四十二，12÷3=4"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt11",
+      "name": "轴对称图形",
+      "definition": "与某个图形关于一条直线对称的图形，与原图形的形状、大小完全相同，对应点连接成的线段被对称轴垂直平分。",
+      "importance": "重要",
+      "examples": [
+        "剪纸中剪出的对称图案",
+        "教材中对折后剪出的图形",
+        "剪纸图案",
+        "部分汉字结构",
+        "常见的脸谱图案",
+        "左右脚印的对称图形",
+        "三角形关于直线l的对称图形"
+      ],
+      "pages": "教材第119页附近",
+      "aliases": [
+        "axisymmetric figure"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt12",
+      "name": "平移",
+      "definition": "把一个图形整体沿某一直线方向移动，得到的图形与原图形形状和大小完全相同。新图形中的每一点都是由原图形中的某一点移动得到。",
+      "importance": "重要",
+      "examples": [
+        "小房子通过平移重合",
+        "小鱼平移重合",
+        "向右平移6格",
+        "向上平移3格",
+        "将AM沿垂直方向平移到AN，得到A′N + NB 的最短路径问题"
+      ],
+      "pages": "练习七对应页面",
+      "aliases": [
+        "translation"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt13",
+      "name": "旋转",
+      "definition": "一种图形运动方式，图形绕一个固定点按一定方向和角度转动，形状和大小保持不变。",
+      "importance": "了解",
+      "examples": [
+        "陀螺旋转",
+        "分针从12转到不同位置"
+      ],
+      "pages": "练习七第6题"
+    },
+    {
+      "id": "math_2b_rjb_cpt14",
+      "name": "除法的意义",
+      "definition": "求一个数里面有几个相同数量的另一数的过程，通常用于“平均分”或“包含除”。",
+      "importance": "重要",
+      "examples": [
+        "56 ÷ 8 表示 56 里面有几个 8"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt15",
+      "name": "乘除法的互逆关系",
+      "definition": "乘法和除法互为逆运算，可通过已知的乘法口诀求相应的除法得数。",
+      "importance": "重要",
+      "examples": [
+        "因为7×8=56，所以56÷8=7，56÷7=8"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt16",
+      "name": "综合算式",
+      "definition": "由两个或两个以上不同运算符号组成、需要按一定顺序进行计算的算式。",
+      "importance": "重要",
+      "examples": [
+        "53-24+38",
+        "4×3+3"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt17",
+      "name": "加减法的运算顺序",
+      "definition": "在没有括号且只有加、减法的算式中，要按照从左往右的顺序依次计算。",
+      "importance": "掌握",
+      "examples": [
+        "23+6-11 从左往右算"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt18",
+      "name": "乘除法的运算顺序",
+      "definition": "在没有括号且只有乘、除法的算式中，应当从左往右依次计算。",
+      "importance": "掌握",
+      "examples": [
+        "2×8÷4 从左往右算"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt19",
+      "name": "四则混合运算顺序",
+      "definition": "在没有括号的算式里，如果同时含有乘、除和加、减，要先算乘除，再算加减。",
+      "importance": "重要",
+      "examples": [
+        "4+4×6 先乘除后加减"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt20",
+      "name": "括号的作用",
+      "definition": "有括号的算式必须先计算括号内的运算，括号可以改变原有的运算顺序。",
+      "importance": "重要",
+      "examples": [
+        "58-(14+6) 必须先算括号"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt21",
+      "name": "有余数的除法",
+      "definition": "当被除数不能被除数整除时，计算结果由商和余数组成的除法。",
+      "importance": "重要",
+      "examples": [
+        "10÷3=3……1",
+        "13÷4=3……1",
+        "24÷5=4……4"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt22",
+      "name": "余数的意义",
+      "definition": "余数表示在平均分或分组后剩下的数量。",
+      "importance": "重要",
+      "examples": [
+        "10÷3中余1表示剩下1根小棒"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt23",
+      "name": "余数必须小于除数",
+      "definition": "在有余数的除法中，余数一定小于除数。",
+      "importance": "掌握",
+      "examples": [
+        "13÷4中余1，小于4"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt24",
+      "name": "除法竖式表示",
+      "definition": "用竖式展示被除数、除数、商、余数之间关系的表示方法。",
+      "importance": "掌握",
+      "examples": [
+        "13÷4 的竖式结构展示 13、4、3、1 的含义"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt25",
+      "name": "商的意义",
+      "definition": "商表示每份或每组能分到的数量，或可以分成的组数。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2b_rjb_cpt26",
+      "name": "被除数与除数的意义",
+      "definition": "被除数表示总数量，除数表示每份或每组的数量。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_2b_rjb_cpt27",
+      "name": "万以内数的认识",
+      "definition": "理解并能读写0到9999的数，知道这些数的组成与数位。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2b_rjb_cpt28",
+      "name": "数位与数位顺序",
+      "definition": "从右向左依次为个位、十位、百位、千位；按位值确定数字的大小和意义。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2b_rjb_cpt29",
+      "name": "数的组成",
+      "definition": "一个数可以由若干个千、百、十和一组成，如235由2个百、3个十和5个一组成。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt30",
+      "name": "数的读法",
+      "definition": "从高位读起，按数位顺序读，其中某位为0时按规则读出或略读。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt31",
+      "name": "数的写法",
+      "definition": "从高位写起，在没有数字的数位上写0。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2b_rjb_cpt32",
+      "name": "数的大小比较",
+      "definition": "先比较位数，位数相同从高位起依次比较大小。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2b_rjb_cpt33",
+      "name": "估算与近似数",
+      "definition": "用接近的整十、整百或整千表示实际数量，便于快速判断。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_2b_rjb_cpt34",
+      "name": "克",
+      "definition": "克是计量比较轻的物品常用的质量单位，符号为g。",
+      "importance": "掌握",
+      "pages": "教材前半部分",
+      "examples": [
+        "2个曲别针约重1克",
+        "1克黄豆的颗数"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt35",
+      "name": "千克",
+      "definition": "千克是计量比较重的物品常用的质量单位，符号为kg。",
+      "importance": "掌握",
+      "pages": "教材中段",
+      "examples": [
+        "2袋白砂糖重1000克，也就是1千克",
+        "人的体重一般用千克计量"
+      ],
+      "unit": "kg"
+    },
+    {
+      "id": "math_2b_rjb_cpt36",
+      "name": "质量单位换算",
+      "definition": "克与千克之间的基本换算关系是1千克=1000克。",
+      "importance": "重要",
+      "pages": "含“1千克=1000克”的页面",
+      "formula": "1kg = 1000g"
+    },
+    {
+      "id": "math_2b_rjb_cpt37",
+      "name": "净含量",
+      "definition": "净含量指桶、袋或箱子里实际包含物品的质量。",
+      "importance": "了解",
+      "pages": "净含量图片所在页"
+    },
+    {
+      "id": "math_2b_rjb_cpt38",
+      "name": "常见质量单位（公斤、斤、两）",
+      "definition": "生活中常用公斤、斤和两表示物品的质量，它们与克、千克之间有固定换算关系。",
+      "importance": "了解",
+      "examples": [
+        "1公斤=2斤",
+        "1斤=500克",
+        "1斤=10两"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt39",
+      "name": "秤的读法",
+      "definition": "根据指针在刻度上的位置，判断物体的质量（克或千克）。",
+      "importance": "掌握",
+      "pages": "指针指着几就表示物品质量的页面"
+    },
+    {
+      "id": "math_2b_rjb_cpt40",
+      "name": "排除法",
+      "definition": "根据已知条件逐一排除不可能的情况，从而确定唯一结果的方法。",
+      "importance": "重要",
+      "examples": [
+        "根据“我拿的不是数学书”排除对应连线"
+      ],
+      "pages": "教材第9章"
+    },
+    {
+      "id": "math_2b_rjb_cpt41",
+      "name": "简单逻辑推理",
+      "definition": "利用题目给出的条件，对对象之间的关系进行推断，得出确定结论的思维过程。",
+      "importance": "重要",
+      "examples": [
+        "判断三人各拿了什么书",
+        "推断狗的重量顺序"
+      ],
+      "pages": "教材第9章"
+    },
+    {
+      "id": "math_2b_rjb_cpt42",
+      "name": "行列不重复规则",
+      "definition": "在方格填数中，每一行、每一列必须包含给定范围内的所有数字且不能重复。",
+      "importance": "掌握",
+      "examples": [
+        "1~4方格问题",
+        "数独的行列规则"
+      ],
+      "pages": "教材第9章"
+    },
+    {
+      "id": "math_2b_rjb_cpt43",
+      "name": "数独规则",
+      "definition": "在9×9方格中，每行、每列、每个3×3宫内均需填入1~9且不重复。",
+      "importance": "了解",
+      "pages": "教材第9章"
+    },
+    {
+      "id": "math_2b_rjb_cpt44",
+      "name": "万以内的数",
+      "definition": "认识并读写万以内的数，理解数位、计数单位，并能进行简单的大小比较和近似数估计。",
+      "importance": "重要",
+      "examples": [
+        "2000+700+8",
+        "读作二千七百零八"
+      ]
+    },
+    {
+      "id": "math_2b_rjb_cpt45",
+      "name": "数据收集与整理",
+      "definition": "通过调查获得数据，并用统计表、简单统计图进行整理与展示。",
+      "importance": "掌握",
+      "examples": [
+        "统计同学最喜欢的体育活动"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_2b_rjb_skl1",
+      "name": "设计并实施调查",
+      "description": "确定调查对象、调查方式（如举手、投票）、记录方法，并保证调查全面、每人只能选择一项。"
+    },
+    {
+      "id": "math_2b_rjb_skl2",
+      "name": "阅读和解读统计表",
+      "description": "通过查看统计表中的数据，得出结论或回答问题。"
+    },
+    {
+      "id": "math_2b_rjb_skl3",
+      "name": "根据情境判断除法的意义",
+      "description": "根据题目叙述判断是求‘每份是多少’还是‘有多少份’。"
+    },
+    {
+      "id": "math_2b_rjb_skl4",
+      "name": "用乘法口诀反推除法",
+      "description": "根据乘法口诀中两个因数的积，推断除法算式中的商。"
+    },
+    {
+      "id": "math_2b_rjb_skl5",
+      "name": "通过对折和剪裁构造轴对称图形",
+      "description": "先将纸对折，再在折痕上画出半个图案，通过剪裁得到轴对称图形。"
+    },
+    {
+      "id": "math_2b_rjb_skl6",
+      "name": "识别图形的平移、旋转和轴对称现象",
+      "description": "通过观察判断一个图形或现象属于平移、旋转或轴对称中的哪一种。"
+    },
+    {
+      "id": "math_2b_rjb_skl7",
+      "name": "根据乘法口诀进行除法计算",
+      "description": "通过回忆乘法口诀的积与因数，快速判断除法算式中的商。"
+    },
+    {
+      "id": "math_2b_rjb_skl8",
+      "name": "根据实际情境建立除法数学模型",
+      "description": "从购物、分物体等生活情境中抽象出除法算式来解决问题。"
+    },
+    {
+      "id": "math_2b_rjb_skl9",
+      "name": "多步骤解决问题",
+      "description": "根据情境判断计算顺序，逐步求解中间量，再得到最终答案。"
+    },
+    {
+      "id": "math_2b_rjb_skl10",
+      "name": "将情境转化为综合算式",
+      "description": "从应用题文本中提取数量关系，正确列成综合算式表示解题过程。"
+    },
+    {
+      "id": "math_2b_rjb_skl11",
+      "name": "用除法解决分组或平均分问题",
+      "description": "通过除法计算每组数量、可分成几组，或剩余情况。"
+    },
+    {
+      "id": "math_2b_rjb_skl12",
+      "name": "根据规律用除法确定序号对应元素",
+      "description": "通过除法求一个序列中的某一项，例如颜色或图案的规律。"
+    },
+    {
+      "id": "math_2b_rjb_skl13",
+      "name": "按数位分解与合成数",
+      "description": "将数拆分为千、百、十、一的形式，或由这些部分合成一个数。"
+    },
+    {
+      "id": "math_2b_rjb_skl14",
+      "name": "在计数器和算盘上表示数",
+      "description": "根据数位拨珠，表示具体数字。"
+    },
+    {
+      "id": "math_2b_rjb_skl15",
+      "name": "从大到小或从小到大排列数",
+      "description": "依据位数与数位大小对多个数排序。"
+    },
+    {
+      "id": "math_2b_rjb_skl16",
+      "name": "估测质量",
+      "description": "根据生活经验判断物品的大致质量，并选择合适的质量单位（克或千克）。"
+    },
+    {
+      "id": "math_2b_rjb_skl17",
+      "name": "比较质量",
+      "description": "通过换算或估测对两个质量进行比较，判断大小关系。"
+    },
+    {
+      "id": "math_2b_rjb_skl18",
+      "name": "列表与连线分析法",
+      "description": "将人物与物品写成表格或两行，通过划去不可能项、保留可能项来推理结论。"
+    },
+    {
+      "id": "math_2b_rjb_skl19",
+      "name": "逐行逐列填数法",
+      "description": "先寻找行或列中已出现多个数字的格子，利用不重复原则确定该格子的数字。"
+    },
+    {
+      "id": "math_2b_rjb_skl20",
+      "name": "竖式笔算加减法",
+      "description": "按照数位对齐、从低位算起、满十进一或借位的原则进行加减计算。"
+    },
+    {
+      "id": "math_2b_rjb_skl21",
+      "name": "运算顺序应用",
+      "description": "根据先乘除后加减、括号优先的规则合理安排计算顺序。"
+    },
+    {
+      "id": "math_2b_rjb_skl22",
+      "name": "从调查中提出数学问题",
+      "description": "基于收集的数据提出数学问题并尝试解释或解决。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_2b_rjb_exe1",
+      "type": "应用题",
+      "stem": "把12个竹笋平均放在4个盘子里，每盘放几个？",
+      "answer": "每盘放3个。",
+      "analysis": "属于平均分求每份是多少，用除法 12÷4=3。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe2",
+      "type": "填空题",
+      "stem": "12÷3 用乘法口诀求商。",
+      "answer": "4，因为“三四十二”。",
+      "analysis": "利用乘法口诀反推除法商。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe3",
+      "type": "选择题",
+      "stem": "下面哪些图形是轴对称图形？在括号里画“√”。",
+      "answer": "选择具有对称轴、对折能重合的图形（根据教材图片）。",
+      "analysis": "学生需要通过观察来判断图形是否存在对称轴。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe4",
+      "type": "应用题",
+      "stem": "哪些小鱼可以通过平移与红色小鱼重合？把它们涂上颜色。",
+      "answer": "能与红色小鱼在方向、形状、大小相同，只需位置平移即可重合的那些小鱼。",
+      "analysis": "考察学生对平移的本质理解：只改变位置，不改变方向与大小。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe5",
+      "type": "填空题",
+      "stem": "计算：56 ÷ 8 = ？（提示：想一想与之对应的乘法口诀）",
+      "answer": "7",
+      "analysis": "因为7×8=56，所以56÷8=7，利用乘除法的互逆关系求解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe6",
+      "type": "应用题",
+      "stem": "一个计数器8元，56元可以买几个计数器？",
+      "answer": "56 ÷ 8 = 7（个）",
+      "analysis": "根据情境建立除法模型，求56元里有几个8元，商为7。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe7",
+      "type": "应用题",
+      "stem": "计算：53－24＋38",
+      "answer": "67",
+      "analysis": "先算53－24=29，再算29＋38=67。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe8",
+      "type": "应用题",
+      "stem": "下面一共有多少盒酸奶？（图示为4盒一组，共3组，另有3盒）",
+      "answer": "15",
+      "analysis": "先求每组的数量：4×3=12，再加上3盒，共15盒。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe9",
+      "type": "填空题",
+      "stem": "有（ ）个百、（ ）个十和（ ）个一，它们组成的数是（ ）。",
+      "answer": "根据图示具体填写，例如2个百、3个十、5个一组成235。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe10",
+      "type": "填空题",
+      "stem": "在○里填上“>”或“<”：1020 ○ 999",
+      "answer": "1020 > 999",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe11",
+      "type": "判断题",
+      "stem": "2个曲别针约重1克。请判断下列物品哪些可能比1克轻：干树叶、羽毛、小纸片。",
+      "answer": "羽毛、小纸片可能比1克轻。",
+      "analysis": "典型的估测质量练习，考查对“克”的感知.",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe12",
+      "type": "填空题",
+      "stem": "把下面的质量进行比较：2千克 ○ 2000克。",
+      "answer": "2千克 = 2000克。",
+      "analysis": "需要应用质量单位换算：1千克=1000克。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe13",
+      "type": "填空题",
+      "stem": "一个物品重1500克，请问是多少千克？",
+      "answer": "1500克 = 1.5千克。",
+      "analysis": "考查克与千克的换算能力。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe14",
+      "type": "应用题",
+      "stem": "小刚、小雪、小雨三人分别拿着《语文》《数学》《道德与法治》三本书。小雨说“我拿的是语文书”，小雪说“我拿的不是数学书”。请问小刚、小雪分别拿的是什么书？",
+      "answer": "小刚拿数学书；小雪拿道德与法治。",
+      "analysis": "根据小雨拿语文，小雪不是数学，可排除推得答案。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe15",
+      "type": "填空题",
+      "stem": "在方格中，每行、每列都需要填写1~4且不能重复。A、B在图中位置，请问B应为几？",
+      "answer": "B=1",
+      "analysis": "先确定A，再根据所在行列排除出现数字，从而确定B。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe16",
+      "type": "应用题",
+      "stem": "24个泥娃娃装在5个盒子里，平均每盒装多少个？还剩多少个？",
+      "answer": "24÷5=4……4，所以平均每盒装4个，还剩4个。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe17",
+      "type": "填空题",
+      "stem": "读出并写出数2000+700+8表示的数，并说明它是万以内的什么数。",
+      "answer": "表示的数是2708，是一个四位数。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2b_rjb_exe18",
+      "type": "应用题",
+      "stem": "根据同学们最喜欢的体育活动统计结果完成统计表，并提出一个数学问题。",
+      "answer": "统计表根据打“正”数填写；示例问题：哪项活动参加人数最多？",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 45,
+    "skill_count": 22,
+    "experiment_count": 0,
+    "question_count": 18
+  }
+}

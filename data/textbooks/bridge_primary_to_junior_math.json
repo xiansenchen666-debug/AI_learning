@@ -1,0 +1,477 @@
+{
+  "schema_version": "1.0",
+  "id": "bridge_primary_to_junior_math",
+  "stage": "小升初衔接",
+  "grade": "六升七",
+  "subject": "数学",
+  "title": "小升初数学衔接",
+  "publisher": "开放资料整理",
+  "source_license": "混合开放来源，见 question_bank_sources",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph"
+    },
+    {
+      "id": "cmm_math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math"
+    },
+    {
+      "id": "cmath",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "bridge_math_001",
+      "name": "整数、小数、分数到有理数",
+      "description": "把小学数的运算经验迁移到负数、有理数、数轴和绝对值。",
+      "from": "六年级下册数学",
+      "to": "七年级上册数学"
+    },
+    {
+      "id": "bridge_math_002",
+      "name": "算术表达式到代数式",
+      "description": "从具体数量关系过渡到用字母表示数、列代数式和合并同类项。",
+      "from": "小学数量关系",
+      "to": "七年级整式"
+    },
+    {
+      "id": "bridge_math_003",
+      "name": "等量关系到一元一次方程",
+      "description": "把小学方程和应用题中的等量关系，升级为规范建模、解方程与检验。",
+      "from": "小学简易方程",
+      "to": "七年级一元一次方程"
+    },
+    {
+      "id": "bridge_math_004",
+      "name": "图形认识到几何语言",
+      "description": "从平面图形面积/周长，过渡到线段、角、相交线、平行线和推理表达。",
+      "from": "小学图形与几何",
+      "to": "七年级几何初步"
+    },
+    {
+      "id": "bridge_math_005",
+      "name": "统计图表到数据分析",
+      "description": "从读图和平均数，过渡到数据收集、整理、描述与简单判断。",
+      "from": "小学统计",
+      "to": "初中数据分析"
+    }
+  ],
+  "skills": [
+    {
+      "id": "bridge_skill_001",
+      "name": "从算术思维转向代数思维"
+    },
+    {
+      "id": "bridge_skill_002",
+      "name": "用规范步骤表达推理过程"
+    },
+    {
+      "id": "bridge_skill_003",
+      "name": "整理错因：概念、计算、审题、建模"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_6b_rjb_exe1",
+      "type": "选择题",
+      "stem": "-3℃与-18℃哪个温度更低？",
+      "answer": "-18℃温度更低。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe2",
+      "type": "简答题",
+      "stem": "读出下列各数，并指出哪些是正数，哪些是负数：-7, 2.5, +5, 0, -5.2, -1/3, +41",
+      "answer": "负数：-7, -5.2, -1/3；正数：2.5, +5, +41；0既不是正数也不是负数。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe3",
+      "type": "应用题",
+      "stem": "在图中标出各数：-4，-2，2.5，-0.5，1.5，-5/2。",
+      "answer": "按各数在数轴上的位置，从左到右依次为：-4 < -5/2 < -2 < -0.5 < 1.5 < 2.5。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe4",
+      "type": "应用题",
+      "stem": "爸爸给小雨买了一辆原价280元的自行车，现打八五折。买这辆自行车用了多少钱？",
+      "answer": "280×85%=238元",
+      "analysis": "计算折扣价需将原价乘以折扣百分比。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe5",
+      "type": "应用题",
+      "stem": "某工厂去年用电350万千瓦时，今年比去年节电二成五。今年用电多少万千瓦时？",
+      "answer": "350×(1−25%)=262.5万千瓦时",
+      "analysis": "二成五=25%，节电需用(1−百分数)。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe6",
+      "type": "应用题",
+      "stem": "一个圆柱形罐头的侧面贴着商标纸，底面半径5cm，高10cm。这张商标纸的面积是多少？",
+      "answer": "侧面积=2πrh=2×3.14×5×10=314cm²",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe7",
+      "type": "应用题",
+      "stem": "一个圆锥形零件，底面积19cm²，高12cm。求体积。",
+      "answer": "V=1/3×19×12=76cm³",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe8",
+      "type": "判断题",
+      "stem": "判断 6:10 和 9:15 是否能组成比例，并说明理由。",
+      "answer": "能，因为 6×15 = 10×9，外项积等于内项积。",
+      "analysis": "考查比例基本性质 ad = bc。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe9",
+      "type": "应用题",
+      "stem": "长征五号模型总长与实际火箭总长比为 1:10，实际火箭长 57m，求模型长。",
+      "answer": "5.7m",
+      "analysis": "设 x:57 = 1:10，解得 x = 5.7。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe10",
+      "type": "应用题",
+      "stem": "一个圆柱形零件高 5mm，图纸上为 2cm，求比例尺。",
+      "answer": "1:4",
+      "analysis": "5mm=0.5cm，比例尺为 0.5:2 = 1:4。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe11",
+      "type": "应用题",
+      "stem": "随意找 13 位老师，他们中至少有 2 个人的属相相同。为什么？",
+      "answer": "12 个属相对应 13 个人，人数多于类别数，因此至少有 2 个人属相相同。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe12",
+      "type": "应用题",
+      "stem": "把 7 本书放进 3 个抽屉，不管怎么放，总有 1 个抽屉里至少放进 3 本书。为什么？",
+      "answer": "因为 7÷3 得到 2 余 1，因此至少有一个抽屉不少于 3 本书。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_6b_rjb_exe13",
+      "type": "应用题",
+      "stem": "盒子里有红球和蓝球各 4 个，要想摸出的球一定有 2 个同色的，至少要摸出几个球？",
+      "answer": "至少摸 3 个球，因为最极端情况是先各摸到 1 个颜色，再摸第 3 个一定与前两个之一同色。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe1",
+      "type": "应用题",
+      "stem": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+      "answer": "小明：2kg；小华：-1kg；小强：0kg。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe2",
+      "type": "应用题",
+      "stem": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+      "answer": "美国-6.4%，德国1.3%，法国-2.4%，英国-3.5%，意大利0.2%，中国7.5%。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe3",
+      "type": "简答题",
+      "stem": "利用数轴判断，-3 和 -5 哪个数更大？",
+      "answer": "-3 > -5",
+      "analysis": "两个负数比较大小，绝对值大的反而小，因为 |-5| > |-3|，所以 -5 < -3。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe4",
+      "type": "简答题",
+      "stem": "求 |-7| 与 |3| 的值，并比较大小。",
+      "answer": "|-7| = 7, |3| = 3, 因此 7 > 3",
+      "analysis": "正数绝对值为其本身，负数绝对值为相反数。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe5",
+      "type": "填空题",
+      "stem": "计算：(-3) + (-9)",
+      "answer": "-12",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe6",
+      "type": "计算题",
+      "stem": "计算 (-3)×9。",
+      "answer": "-27",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe7",
+      "type": "计算题",
+      "stem": "计算 (-36) ÷ 9。",
+      "answer": "-4",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe8",
+      "type": "应用题",
+      "stem": "计算 (-4)^3。",
+      "answer": "-64",
+      "analysis": "根据乘方定义，(-4)^3 = (-4)×(-4)×(-4)，奇次幂为负。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe9",
+      "type": "应用题",
+      "stem": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+      "answer": "面积为 πR²−πr²；代入得 392.5 cm²",
+      "analysis": "由外圆面积减内圆面积得到面积公式 πR²−πr²。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe10",
+      "type": "应用题",
+      "stem": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+      "answer": "4/5 xy^2",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe11",
+      "type": "应用题",
+      "stem": "求多项式 2x^2 - 5x + x^2 + 4x - 3x^2 - 2 在 x=1/2 时的值。",
+      "answer": "-5/2",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe12",
+      "type": "应用题",
+      "stem": "解方程：x + 7 = 26。",
+      "answer": "x = 19",
+      "analysis": "根据等式的性质1，两边减7，得到 x = 19。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe13",
+      "type": "应用题",
+      "stem": "解方程：3x + 7 = 32 - 2x.",
+      "answer": "x = 5",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe14",
+      "type": "填空题",
+      "stem": "把无限循环小数 0.7̇ 写成分数形式。",
+      "answer": "7/9",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe15",
+      "type": "应用题",
+      "stem": "解方程：(1) 2x - (x + 10) = 5x + 2(x - 1)",
+      "answer": "x = -4/3",
+      "analysis": "通过去括号、移项、合并同类项、系数化为1求得解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe16",
+      "type": "应用题",
+      "stem": "解方程：(2) 3x - 7(x - 1) = 3 - 2(x + 3)",
+      "answer": "x = 5",
+      "analysis": "使用去括号、移项、合并同类项等步骤。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe17",
+      "type": "应用题",
+      "stem": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+      "answer": "螺柱工人10名，螺母工人12名。",
+      "analysis": "利用螺母数量应为螺柱数量2倍建立方程 2000(22−x)=2×1200x。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe18",
+      "type": "应用题",
+      "stem": "例2：整理图书工作……应先安排多少人工作？",
+      "answer": "先安排2人。",
+      "analysis": "运用工作量=效率×人数×时间，列方程 4x/40 + 8(x+2)/40 = 1。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe19",
+      "type": "应用题",
+      "stem": "如图，O 是直线 AB 上一点，∠AOC = 53°17′，求 ∠BOC 的度数。",
+      "answer": "126°43′",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_7a_rjb_exe20",
+      "type": "应用题",
+      "stem": "把一个周角7等分，每一份是多少度的角（精确到分）？",
+      "answer": "51°26′",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 5,
+    "skill_count": 3,
+    "experiment_count": 0,
+    "question_count": 33
+  }
+}

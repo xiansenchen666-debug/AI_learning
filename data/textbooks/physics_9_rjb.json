@@ -1,0 +1,2742 @@
+{
+  "id": "physics_9_rjb",
+  "stage": "初中",
+  "grade": "九年级全一册",
+  "subject": "物理",
+  "title": "物理九年级全一册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_9_rjb_cpt1",
+      "name": "物质由分子构成",
+      "definition": "常见物质由极其微小的粒子——分子、原子构成。",
+      "importance": "重要",
+      "examples": [
+        "花香分子进入空气传播"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt2",
+      "name": "扩散",
+      "definition": "不同物质的分子能彼此进入对方，这种现象称为扩散，由分子的无规则运动引起。",
+      "importance": "重要",
+      "examples": [
+        "二氧化氮与空气混合",
+        "硫酸铜溶液在水中扩散",
+        "固体金与铅的长期互相渗入",
+        "酱油色素扩散到蛋清中"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt3",
+      "name": "分子热运动",
+      "definition": "一切物质的分子都在不停地做无规则的运动，且分子运动越剧烈，温度越高。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt4",
+      "name": "分子间作用力",
+      "definition": "分子之间存在引力和斥力，随分子间距离变化而改变，由分子内部带电粒子的相互作用产生。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt5",
+      "name": "物态的微观结构差异",
+      "definition": "固体、液体、气体在分子间距离与作用力上不同，从而导致不同宏观性质。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt6",
+      "name": "分子动能",
+      "definition": "构成物质的分子由于不停地做热运动而具有的动能，温度越高，分子热运动速度越大，分子动能越大。",
+      "importance": "掌握",
+      "examples": [
+        "温度升高时分子动能平均值增大"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt7",
+      "name": "分子势能",
+      "definition": "分子之间由于相互吸引或排斥的相互作用力而具有的势能。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt8",
+      "name": "内能",
+      "definition": "系统中所有分子热运动的动能和分子间相互作用势能的总和。",
+      "importance": "重要",
+      "unit": "焦耳（J）"
+    },
+    {
+      "id": "physics_9_rjb_cpt9",
+      "name": "热传递",
+      "definition": "由于温度差而发生的能量从高温物体向低温物体的传递，会导致物体内能改变。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt10",
+      "name": "热量",
+      "definition": "在热传递过程中传递的能量，物体吸收热量内能增大，放出热量内能减少。",
+      "importance": "掌握",
+      "unit": "焦耳（J）"
+    },
+    {
+      "id": "physics_9_rjb_cpt11",
+      "name": "做功改变内能",
+      "definition": "外界对物体做功或物体对外做功，可使物体内能增加或减少。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt12",
+      "name": "温室效应",
+      "definition": "大气中的二氧化碳减弱地表向外的热辐射，使地球表面温度维持在稳定水平的现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt13",
+      "name": "比热容",
+      "definition": "一定质量的某种物质，在温度升高或降低时吸收或放出的热量与它的质量和温度变化乘积之比。",
+      "importance": "重要",
+      "formula": "c = Q / (m·Δt)",
+      "unit": "J/(kg·°C)",
+      "examples": [
+        "水的比热容为4.2×10^3 J/(kg·°C)",
+        "铝的比热容为0.88×10^3 J/(kg·°C)"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt14",
+      "name": "热量计算",
+      "definition": "利用比热容公式，根据物质的质量和温度变化计算吸收或放出的热量。",
+      "importance": "重要",
+      "formula": "Q吸 = cm(t - t0); Q放 = cm(t0 - t)"
+    },
+    {
+      "id": "physics_9_rjb_cpt15",
+      "name": "分子动理论基本观点",
+      "definition": "物质由大量分子构成，分子做无规则热运动，分子间存在引力和斥力。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt16",
+      "name": "热机",
+      "definition": "利用内能做功的机械，通过能量转化将燃料的化学能转化为机械能。",
+      "importance": "重要",
+      "examples": [
+        "蒸汽机",
+        "内燃机",
+        "汽轮机",
+        "喷气发动机",
+        "四冲程汽油机",
+        "柴油机"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt17",
+      "name": "内燃机",
+      "definition": "燃料直接在汽缸内燃烧产生动力的热机，是现代社会最常见的热机类型。",
+      "importance": "重要",
+      "examples": [
+        "汽车发动机"
+      ],
+      "aliases": [
+        "heat engine (internal combustion)"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt18",
+      "name": "汽油机",
+      "definition": "一种内燃机，以汽油为燃料，其工作过程包括吸气、压缩、做功、排气四冲程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt19",
+      "name": "柴油机",
+      "definition": "一种通过压缩空气使柴油自燃的内燃机，其工作过程同样分为四冲程，但压缩更强，功率更大。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt20",
+      "name": "四冲程",
+      "definition": "内燃机连续工作的四个阶段：吸气、压缩、做功、排气。",
+      "importance": "掌握",
+      "examples": [
+        "汽油机四冲程",
+        "柴油机四冲程"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt21",
+      "name": "能量转化（内燃机）",
+      "definition": "内燃机运行中涉及燃料化学能、气体内能与机械能之间的转化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt22",
+      "name": "燃料的热值",
+      "definition": "某种燃料完全燃烧放出的热量与其质量之比，数值上等于1 kg燃料完全燃烧放出的热量。",
+      "importance": "掌握",
+      "unit": "J/kg 或 J/m³",
+      "formula": "Q = qm（其中q为热值）",
+      "examples": [
+        "干木柴约1.2×10^7 J/kg",
+        "汽油4.6×10^7 J/kg"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt23",
+      "name": "热机效率",
+      "definition": "热机做有用功的能量与燃料完全燃烧放出的能量之比。",
+      "importance": "重要",
+      "formula": "η = W / Q_total",
+      "examples": [
+        "蒸汽机效率6%~15%",
+        "汽油机效率20%~30%",
+        "柴油机效率30%~45%"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt24",
+      "name": "燃料利用率",
+      "definition": "燃料燃烧实际被有效利用的能量与燃料燃烧总放出能量的比值。",
+      "importance": "了解",
+      "examples": [
+        "锅炉燃料利用率较低",
+        "煤磨成煤粉可以提高利用率"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt25",
+      "name": "热机的能量损失",
+      "definition": "热机运行过程中未转化为有用功、以废气、散热等形式损失的能量。",
+      "importance": "了解",
+      "examples": [
+        "废气带走大量能量",
+        "烟气散热损失"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt26",
+      "name": "能量的转化",
+      "definition": "能量在一定条件下可以从一种形式转化为另一种形式，例如机械能转化为内能、化学能转化为电能等。",
+      "importance": "重要",
+      "examples": [
+        "摩擦生热：机械能转化为内能",
+        "水轮机带动发电机发电：机械能转化为电能",
+        "燃料燃烧发热：化学能转化为内能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt27",
+      "name": "能量守恒定律",
+      "definition": "能量既不会凭空产生，也不会凭空消失；它只能从一种形式转化为其他形式，或者从一个物体转移到别的物体，在转化或转移的过程中，能量的总量保持不变。",
+      "importance": "重要",
+      "aliases": [
+        "能源守恒",
+        "能量守恒",
+        "law of energy conservation"
+      ],
+      "examples": [
+        "汽车中燃料的化学能转化为机械能与内能",
+        "小球弹跳时机械能转化为内能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt28",
+      "name": "热值",
+      "definition": "燃料完全燃烧放出的热量与其质量之比。",
+      "importance": "掌握",
+      "unit": "J/kg 或 J/m³"
+    },
+    {
+      "id": "physics_9_rjb_cpt29",
+      "name": "电荷",
+      "definition": "摩擦过的物体带了‘电’，或者说带了电荷；自然界只有两种电荷：正电荷和负电荷，同种电荷相互排斥，异种电荷相互吸引。",
+      "importance": "重要",
+      "aliases": [
+        "electric charge"
+      ],
+      "examples": [
+        "摩擦过的琥珀能吸引轻小物体",
+        "雷电与摩擦产生的电性质相同"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt30",
+      "name": "摩擦起电",
+      "definition": "很多物体会由于摩擦而带电的现象/方式；其原因是摩擦时一些受束缚较弱的电子从一个物体转移到另一个物体，使得得到电子的物体带负电、失去电子的物体带正电。",
+      "importance": "重要",
+      "aliases": [
+        "electrification by friction"
+      ],
+      "examples": [
+        "摩擦过的琥珀吸引羽毛/草芥等轻小物体"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt31",
+      "name": "电荷量",
+      "definition": "电荷的多少，通常用Q（或q）表示；在国际单位制中的单位是库仑（C）。正电荷的电荷量为正值，负电荷的电荷量为负值。",
+      "importance": "掌握",
+      "unit": "库仑（C）",
+      "aliases": [
+        "electric quantity"
+      ],
+      "formula": "Q 或 q；符号单位：C"
+    },
+    {
+      "id": "physics_9_rjb_cpt32",
+      "name": "正电荷与负电荷",
+      "definition": "用丝绸摩擦过的玻璃棒带正电荷，用毛皮摩擦过的橡胶棒带负电荷；同种电荷互相排斥，异种电荷相互吸引。",
+      "importance": "重要",
+      "aliases": [
+        "两种电荷"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt33",
+      "name": "验电器",
+      "definition": "检验物体是否带电的仪器，带电体接触金属球后电荷转移，使金属箔因同种电荷排斥而张开。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt34",
+      "name": "原子结构",
+      "definition": "原子由带正电的原子核和带负电的电子构成，原子核的正电荷与核外电子负电荷数量相等，使原子整体不显电性。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt35",
+      "name": "电子电荷量",
+      "definition": "电子带有最小负电荷，电荷量为1.6×10⁻¹⁹ C。",
+      "importance": "掌握",
+      "unit": "C"
+    },
+    {
+      "id": "physics_9_rjb_cpt36",
+      "name": "导体和绝缘体",
+      "definition": "容易导电的物体叫导体，如金属、人体等；不容易导电的物体叫绝缘体，如橡胶、玻璃等。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt37",
+      "name": "自由电子",
+      "definition": "在金属中能够脱离原子核束缚并自由移动的电子，金属导电依赖自由电子运动。",
+      "importance": "掌握",
+      "aliases": [
+        "free electron"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt38",
+      "name": "电流",
+      "definition": "表示电流强弱的物理量，用字母I表示，单位是安培(A)。",
+      "importance": "重要",
+      "aliases": [
+        "electric current"
+      ],
+      "unit": "A"
+    },
+    {
+      "id": "physics_9_rjb_cpt39",
+      "name": "电流方向",
+      "definition": "规定正电荷定向移动的方向为电流方向。闭合电路时，电源外部电流由正极流向负极。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt40",
+      "name": "电路",
+      "definition": "电源、用电器、导线及开关组成的电流可以流过的路径叫做电路。",
+      "importance": "重要",
+      "aliases": [
+        "electric circuit"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt41",
+      "name": "电源",
+      "definition": "能把电子从一个电极搬运到另一个电极，使电源两端始终保持一定电势差，从而使电路中存在持续电流的装置。",
+      "importance": "了解",
+      "examples": [
+        "干电池",
+        "自制铜锌电池",
+        "手电筒中的干电池",
+        "锂离子电池"
+      ],
+      "aliases": [
+        "power source"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt42",
+      "name": "用电器",
+      "definition": "消耗电能的装置，如小灯泡、电动机、蜂鸣器等。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt43",
+      "name": "电路的状态：通路、断路、短路",
+      "definition": "通路：用电器能正常工作的电路；断路：电路某处被切断无电流；短路：电源两极被导线直接连接，产生很大电流。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt44",
+      "name": "短接",
+      "definition": "电路接通时，用电器两端被导线直接连通，该用电器被短接。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt45",
+      "name": "电路图",
+      "definition": "用图形符号表示电路连接的图，是对实际电路的抽象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt46",
+      "name": "LED单向导电性",
+      "definition": "LED电流只能从正极流向负极，反向不导通，可用来判断电流方向。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt47",
+      "name": "串联电路",
+      "definition": "两个或多个用电器依次相连后接入电路，电流依次流经每个用电器的电路形式。",
+      "importance": "重要",
+      "aliases": [
+        "series connection"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt48",
+      "name": "并联电路",
+      "definition": "两个或多个用电器的两端分别连接在一起后接入电路的连接方式，各用电器分别处在独立的支路上。",
+      "importance": "重要",
+      "aliases": [
+        "parallel connection"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt49",
+      "name": "干路",
+      "definition": "并联电路中各支路共同通过的部分电路。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt50",
+      "name": "支路",
+      "definition": "并联电路中由单个用电器独自使用的电路部分，不同支路彼此独立。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt51",
+      "name": "开关的控制作用",
+      "definition": "开关通过闭合或断开控制电路中电流是否通过相应用电器；在串联中控制所有用电器，在并联中干路开关控制全部，支路开关只控制本支路。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt52",
+      "name": "电流单位换算",
+      "definition": "毫安(mA)、微安(μA)同安培(A)的换算关系。",
+      "importance": "掌握",
+      "formula": "1 mA = 10^-3 A；1 μA = 10^-6 A"
+    },
+    {
+      "id": "physics_9_rjb_cpt53",
+      "name": "电流表",
+      "definition": "测量电路中电流的仪表，具有不同量程，需要正确连接才能测量电流。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt54",
+      "name": "电流表的量程",
+      "definition": "电流表可测量电流的范围，如0~0.6A、0~3A。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt55",
+      "name": "电流表的分度值",
+      "definition": "电流表表盘上每个小格所表示的电流数值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt56",
+      "name": "串联电路电流规律",
+      "definition": "串联电路中的电流处处相等。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt57",
+      "name": "并联电路电流规律",
+      "definition": "并联电路干路中的电流等于各支路电流之和。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt58",
+      "name": "电流表使用规则",
+      "definition": "电流表必须与被测用电器串联，并保证电流从正接线柱流入，不得超过量程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt59",
+      "name": "电压",
+      "definition": "使电路中自由电荷定向运动起来的物理量，由电源提供，用字母U表示。",
+      "importance": "重要",
+      "unit": "V",
+      "aliases": [
+        "电势差"
+      ],
+      "examples": [
+        "干电池电压约1.5V",
+        "家庭电路为220V"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt60",
+      "name": "电压的单位",
+      "definition": "电压的基本单位是伏特（V），常用的还有毫伏（mV）、千伏（kV）。",
+      "importance": "了解",
+      "formula": "1 kV = 10^3 V；1 mV = 10^-3 V"
+    },
+    {
+      "id": "physics_9_rjb_cpt61",
+      "name": "电压表",
+      "definition": "用于测量电压的仪器，与被测用电器并联，正负接线柱必须正确连接。",
+      "importance": "掌握",
+      "examples": [
+        "学生用直流电压表"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt62",
+      "name": "电流与电压的关系",
+      "definition": "电路中的电流大小与电源提供的电压有关；电压越高，电流通常越大。",
+      "importance": "了解",
+      "examples": [
+        "一节干电池灯泡较暗，两节干电池灯泡较亮"
+      ],
+      "formula": "I ∝ U"
+    },
+    {
+      "id": "physics_9_rjb_cpt63",
+      "name": "串联电路的电压规律",
+      "definition": "串联电路中各用电器两端的电压之和等于电源两端的电压。",
+      "importance": "重要",
+      "examples": [
+        "串联灯泡L1、L2时 U总 = U_L1 + U_L2"
+      ],
+      "formula": "U = U1 + U2"
+    },
+    {
+      "id": "physics_9_rjb_cpt64",
+      "name": "并联电路的电压规律",
+      "definition": "并联电路中各支路用电器两端的电压都等于电源两端的电压。",
+      "importance": "重要",
+      "examples": [
+        "并联灯泡L1、L2时 U_L1 = U_L2 = U电源"
+      ],
+      "formula": "U = U1 = U2"
+    },
+    {
+      "id": "physics_9_rjb_cpt65",
+      "name": "电池串联电压",
+      "definition": "串联电池组两端的电压等于每节电池两端电压之和。",
+      "importance": "掌握",
+      "examples": [
+        "两节1.5V干电池串联得到3.0V"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt66",
+      "name": "电阻",
+      "definition": "反映导体对电流阻碍作用的物理量；对同一导体（温度等条件不显著变化时），电压与电流之比为常量，定义为R=U/I。",
+      "importance": "重要",
+      "unit": "欧姆(Ω), kΩ, MΩ",
+      "examples": "手电筒灯丝几欧到十几欧；电炉丝几十欧；铜导线电阻极小",
+      "formula": "R = U / I",
+      "aliases": [
+        "导体的电阻",
+        "resistance",
+        "R"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt67",
+      "name": "电阻的影响因素",
+      "definition": "导体的电阻取决于材料、长度和横截面积等因素。",
+      "importance": "重要",
+      "examples": "镍铬合金丝较细时电阻更大；较长导线电阻更大"
+    },
+    {
+      "id": "physics_9_rjb_cpt68",
+      "name": "导体、绝缘体与半导体",
+      "definition": "导体导电性能好，绝缘体导电性能差，半导体导电性能介于两者之间且受外界因素影响大。",
+      "importance": "了解",
+      "examples": "导体：铜、银；绝缘体：橡胶；半导体：硅、锗"
+    },
+    {
+      "id": "physics_9_rjb_cpt69",
+      "name": "超导现象",
+      "definition": "一些金属在特别低的温度下电阻可以降到0的现象；用超导材料形成回路后，一旦有电流，电流可无损耗持续。",
+      "importance": "了解",
+      "examples": "铝在−271.76°C以下阻为0；铅在−265.95°C以下阻为0"
+    },
+    {
+      "id": "physics_9_rjb_cpt70",
+      "name": "变阻器",
+      "definition": "能改变接入电路中电阻大小的元件。",
+      "importance": "重要",
+      "aliases": [
+        "可变电阻"
+      ],
+      "examples": [
+        "滑动变阻器",
+        "电位器",
+        "数字电位器"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt71",
+      "name": "滑动变阻器",
+      "definition": "通过移动滑片改变接入电路的电阻大小的变阻器类型，常见于学生实验。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt72",
+      "name": "电位器",
+      "definition": "一种可通过机械旋钮调节电阻值的变阻器，常用于家用电器的音量、亮度、温度调节。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt73",
+      "name": "数字电位器",
+      "definition": "一种用数字信号控制阻值变化的集成电路变阻器，具有程序控制、耐震动、噪声小等优点。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt74",
+      "name": "电流与电阻的关系",
+      "definition": "在电压一定时，通过导体的电流与电阻成反比。",
+      "importance": "重要",
+      "formula": "I ∝ 1/R"
+    },
+    {
+      "id": "physics_9_rjb_cpt75",
+      "name": "U/I 与电阻的关系",
+      "definition": "电阻R与U/I相等。",
+      "importance": "了解",
+      "formula": "R = U/I"
+    },
+    {
+      "id": "physics_9_rjb_cpt76",
+      "name": "欧姆定律",
+      "definition": "导体中的电流与其两端的电压成正比，与导体的电阻成反比，可用公式 I = U / R 表示。",
+      "importance": "重要",
+      "formula": "I = U / R",
+      "unit": "电流(A)、电压(V)、电阻(Ω)"
+    },
+    {
+      "id": "physics_9_rjb_cpt77",
+      "name": "气敏电阻",
+      "definition": "一种阻值随气体成分或浓度变化而改变的电阻元件。",
+      "importance": "了解",
+      "examples": [
+        "酒精气体传感器"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt78",
+      "name": "伏安法测电阻",
+      "definition": "利用欧姆定律，通过测量电流和电压，计算导体的电阻的方法。",
+      "importance": "重要",
+      "examples": [
+        "使用电流表、电压表、滑动变阻器测定电阻"
+      ],
+      "formula": "R = U/I"
+    },
+    {
+      "id": "physics_9_rjb_cpt79",
+      "name": "滑动变阻器的作用",
+      "definition": "通过改变电阻值控制电路中的电流和电压大小。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt80",
+      "name": "电压表和电流表的量程选择",
+      "definition": "根据预计的电压和电流大小选择合适的测量量程，以避免损坏仪表或读数不准确。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt81",
+      "name": "小灯泡的电阻随电压变化",
+      "definition": "小灯泡在不同电压下电阻会变化，通常电压越高灯丝温度越高、电阻越大。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt82",
+      "name": "串联电路电压规律",
+      "definition": "串联电路的电压等于各分电阻两端电压之和。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt83",
+      "name": "串联电路电流计算",
+      "definition": "串联电路的电流等于电源电压除以各分电阻之和。",
+      "importance": "掌握",
+      "formula": "I = U / (R1 + R2 + ...)"
+    },
+    {
+      "id": "physics_9_rjb_cpt84",
+      "name": "并联电路电压规律",
+      "definition": "并联电路各支路两端的电压都等于电源电压。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt85",
+      "name": "电能",
+      "definition": "各种发电厂和电池把不同形式的能转化为电能供人们使用。电能可以进一步转化为光能、机械能、内能等。",
+      "importance": "重要",
+      "examples": [
+        "电灯把电能转化为光能",
+        "电动机把电能转化为机械能"
+      ],
+      "aliases": [
+        "electric energy"
+      ],
+      "unit": "kW·h, J"
+    },
+    {
+      "id": "physics_9_rjb_cpt86",
+      "name": "千瓦时",
+      "definition": "电能的常用单位，又称“度”，符号为kW·h。1千瓦时=3.6×10^6 J。",
+      "importance": "掌握",
+      "formula": "1 kW·h = 3.6×10^6 J",
+      "aliases": [
+        "度电"
+      ],
+      "unit": "kW·h"
+    },
+    {
+      "id": "physics_9_rjb_cpt87",
+      "name": "电能表",
+      "definition": "安装在进户线后的装置，用来显示家庭所消耗的电能。",
+      "importance": "重要",
+      "examples": [
+        "转盘式电能表",
+        "IC卡电能表",
+        "电子电能表"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt88",
+      "name": "电功",
+      "definition": "电流在一段电路中所做的功，等于该段电路两端电压U、电流I与通电时间t的乘积：W=UIt。",
+      "importance": "重要",
+      "aliases": [
+        "electric work"
+      ],
+      "formula": "W = U I t",
+      "unit": "焦耳(J)",
+      "examples": [
+        "电热水壶通电时电能转化为内能",
+        "电动机通电时电能转化为机械能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt89",
+      "name": "电功公式",
+      "definition": "描述电功与电压、电流、通电时间关系的公式：W = U I t。",
+      "importance": "掌握",
+      "formula": "W = U I t"
+    },
+    {
+      "id": "physics_9_rjb_cpt90",
+      "name": "电功率",
+      "definition": "电流在一段电路中做功与通电时间之比，表示电流做功的快慢：P=W/t；在一般电路中P=UI。",
+      "importance": "重要",
+      "formula": "P = W / t; P = UI",
+      "unit": "W（瓦）",
+      "aliases": [
+        "electric power"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt91",
+      "name": "千瓦",
+      "definition": "较大的电功率单位，1 kW = 1000 W。",
+      "importance": "了解",
+      "unit": "kW"
+    },
+    {
+      "id": "physics_9_rjb_cpt92",
+      "name": "毫瓦",
+      "definition": "较小的电功率单位，1 W = 1000 mW。",
+      "importance": "了解",
+      "unit": "mW"
+    },
+    {
+      "id": "physics_9_rjb_cpt93",
+      "name": "额定电压",
+      "definition": "电器在正常工作时所需要的电压值，通常标注在电器上。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt94",
+      "name": "额定功率",
+      "definition": "用电器在额定电压下正常工作时的电功率。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt95",
+      "name": "电功率测量",
+      "definition": "通过测量用电器两端电压和通过电流来确定实际功率。",
+      "importance": "掌握",
+      "formula": "P = UI"
+    },
+    {
+      "id": "physics_9_rjb_cpt96",
+      "name": "实际电功率",
+      "definition": "电器在非额定条件下工作时的实际电功率，通过测量其两端电压和通过的电流计算得出。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt97",
+      "name": "滑动变阻器调节电压",
+      "definition": "通过改变滑动变阻器的阻值来调节串联电路中小灯泡两端的电压。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt98",
+      "name": "电流的热效应",
+      "definition": "电流通过导体时电能转化成内能的现象。",
+      "importance": "掌握",
+      "examples": [
+        "电热水器发热",
+        "电炉丝发红"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt99",
+      "name": "焦耳定律",
+      "definition": "电流通过导体产生的热量Q与电流的二次方I^2成正比，与导体电阻R及通电时间t成正比：Q=I^2Rt。",
+      "importance": "重要",
+      "formula": "Q = I^2 R t",
+      "unit": "焦耳(J)",
+      "aliases": [
+        "Joule's law"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt100",
+      "name": "家庭电路",
+      "definition": "由进户线、电能表、总开关、保险装置、用电器及导线组成的实用电路，用于家庭的照明和电器供电。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt101",
+      "name": "总开关",
+      "definition": "家庭电路的总控制开关，可以使室内电路与外部电源分离，确保维修安全。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt102",
+      "name": "熔丝（保险丝）",
+      "definition": "电流过大时会熔化、切断电路，对用电器起保护作用的简易保险装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt103",
+      "name": "空气开关",
+      "definition": "一种替代保险丝的自动断电保护装置，可在电流过大时自动切断电路。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt104",
+      "name": "火线",
+      "definition": "进户两条输电线之一，与大地不相连，带电。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt105",
+      "name": "零线",
+      "definition": "进户输电线之一，已与大地相连，不带电。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt106",
+      "name": "试电笔",
+      "definition": "用于判断火线与零线的电工工具，利用氖管在小电流下发光的现象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt107",
+      "name": "接地线（E线）",
+      "definition": "三孔插头中的一条导线，与电器外壳相连并与大地相通，用于防止外壳意外带电造成触电。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt108",
+      "name": "漏电保护器",
+      "definition": "当电流异常流向大地（如人体触电）时能迅速切断电流的保护装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt109",
+      "name": "电功率与电流、电压的关系",
+      "definition": "电功率P、电流I、电压U之间满足P = UI。",
+      "importance": "重要",
+      "formula": "P = UI, I = P/U"
+    },
+    {
+      "id": "physics_9_rjb_cpt110",
+      "name": "家庭电路的电压",
+      "definition": "家庭电路中的电压一般恒定为220V。",
+      "importance": "了解",
+      "unit": "V"
+    },
+    {
+      "id": "physics_9_rjb_cpt111",
+      "name": "用电器总功率",
+      "definition": "多个并联用电器的功率相加得到家庭电路的总功率。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt112",
+      "name": "家庭电路中电流过大的原因",
+      "definition": "家庭电路中电流过大可能由用电器总功率过大或短路引起。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt113",
+      "name": "短路",
+      "definition": "电源两端短接导致外电阻R=0的状态，电流由内阻限制，短路电流为E/r，可能引发过热危险。",
+      "importance": "掌握",
+      "examples": "绝缘层破损、进水、操作失误",
+      "formula": "R=0 ⇒ I=E/r"
+    },
+    {
+      "id": "physics_9_rjb_cpt114",
+      "name": "保险丝",
+      "definition": "由电阻大、熔点低的金属制成，当电流过大时会因温度升高而熔断，切断电路以保护电路安全。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt115",
+      "name": "保险管的额定电流",
+      "definition": "保险管允许通过的最大安全电流，超过该电流保险丝会熔断。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt116",
+      "name": "触电",
+      "definition": "当人体成为闭合电路的一部分时，有电流通过人体并达到一定大小时造成的伤害。",
+      "importance": "重要",
+      "examples": [
+        "接触火线和零线",
+        "接触火线并站在地上"
+      ],
+      "aliases": [
+        "电击"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt117",
+      "name": "人体电阻",
+      "definition": "人体对电流的阻碍作用，通常约为1e4到1e5欧姆，皮肤潮湿时可降至约1e3欧姆。",
+      "importance": "掌握",
+      "unit": "欧姆"
+    },
+    {
+      "id": "physics_9_rjb_cpt118",
+      "name": "安全电压",
+      "definition": "对人体不会造成伤害的电压范围，通常远低于家庭电压。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt119",
+      "name": "跨步电压",
+      "definition": "高压线落地时，人两脚之间存在的电压差，会使电流经双腿流过人体。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt120",
+      "name": "电弧触电",
+      "definition": "在高压电场中，人未接触导体却因空气击穿形成电弧而触电。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt121",
+      "name": "保险装置",
+      "definition": "包括保险丝和空气开关，用于在电流过大时自动切断电路。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt122",
+      "name": "避雷针",
+      "definition": "将尖锐金属棒装在建筑物顶端，并用粗导线与埋地金属板良好接地，利用静电感应与尖端放电向大气释放电荷以避免雷击的装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt123",
+      "name": "雷电",
+      "definition": "云层之间或云层与大地之间产生的巨大放电现象，电压可达数百万伏至数亿伏。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt124",
+      "name": "磁体",
+      "definition": "能够吸引铁、钴、镍等物质的物体",
+      "importance": "掌握",
+      "examples": [
+        "条形磁体",
+        "蹄形磁体",
+        "天然磁石"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt125",
+      "name": "磁极",
+      "definition": "磁体吸引能力最强的两个部位",
+      "importance": "掌握",
+      "aliases": [
+        "magnetic pole"
+      ],
+      "examples": [
+        "N极",
+        "S极"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt126",
+      "name": "南极与北极",
+      "definition": "自由转动的磁体静止时指南的磁极为南极S，指北的为北极N",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt127",
+      "name": "磁极间相互作用规律",
+      "definition": "同名磁极相互排斥，异名磁极相互吸引",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt128",
+      "name": "磁化",
+      "definition": "一些物体在磁体或电流作用下获得磁性的现象",
+      "importance": "了解",
+      "examples": [
+        "钢针磁化后可做指南针"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt129",
+      "name": "磁场",
+      "definition": "磁体与磁体之间、磁体与通电导体之间，以及通电导体与通电导体之间的相互作用所通过的客观存在的物质；类似电场，虽看不见摸不着，但能通过对其他物体的作用表现其特性。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt130",
+      "name": "磁场方向",
+      "definition": "小磁针静止时北极所指的方向即该点磁场方向",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt131",
+      "name": "磁感线",
+      "definition": "沿磁场中的铁屑分布画出的曲线，使曲线上每一点的切线方向都跟该点磁场方向一致；用来形象描述磁场分布的曲线。",
+      "importance": "掌握",
+      "examples": [
+        "磁体外部磁感线从N极出发回到S极"
+      ],
+      "aliases": [
+        "磁感应线"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt132",
+      "name": "地磁场",
+      "definition": "地球周围存在的磁场，使磁针指向大致的南北方向",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt133",
+      "name": "电流的磁效应",
+      "definition": "通电导线（电流）能使附近小磁针偏转，表明电流能够产生磁场，从而揭示电与磁存在联系。",
+      "importance": "重要",
+      "examples": [
+        "导线通电时旁边的小磁针发生偏转",
+        "通电导线放在指南针上方，通电时磁针转动（奥斯特实验）"
+      ],
+      "aliases": [
+        "电流产生磁场（现象表述）"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt134",
+      "name": "通电螺线管",
+      "definition": "由导线绕成的螺旋形线圈，通电后会产生类似条形磁体的磁场。",
+      "importance": "重要",
+      "aliases": [
+        "线圈"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt135",
+      "name": "通电螺线管的磁场",
+      "definition": "各圈电流产生的磁场叠加，形成类似条形磁体的磁场分布，且极性由电流方向决定。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt136",
+      "name": "安培定则",
+      "definition": "判断通电螺线管极性的方法：右手握住螺线管，四指指向电流方向，拇指所指端为N极。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt137",
+      "name": "电流方向与螺线管极性的关系",
+      "definition": "改变电流方向会使螺线管的N、S极对调，极性完全由电流方向决定。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt138",
+      "name": "电磁铁",
+      "definition": "通电时具有磁性、断电后失去磁性的磁体，由线圈和铁芯组成。",
+      "importance": "重要",
+      "examples": [
+        "电冰箱、电铃、电磁继电器中的电磁铁"
+      ],
+      "aliases": [
+        "electromagnet"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt139",
+      "name": "电磁铁磁性的影响因素",
+      "definition": "电磁铁磁性的强弱与电流大小、线圈匝数等因素有关。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt140",
+      "name": "电磁继电器",
+      "definition": "利用低电压弱电流控制高电压强电流通断的装置，主要由电磁铁、衔铁、弹簧、触点组成。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt141",
+      "name": "磁浮列车的磁悬浮原理",
+      "definition": "利用通电电磁铁产生的磁体相互作用，使列车悬浮在轨道上方运行。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt142",
+      "name": "电磁力",
+      "definition": "通电导线在磁场中会受到力的作用，力的方向与电流方向和磁感线方向均有关。",
+      "importance": "重要",
+      "examples": [
+        "通电导线在磁场中偏转",
+        "电动机线圈受力转动"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt143",
+      "name": "通电线圈的受力与转动",
+      "definition": "通电线圈在磁场中能够产生使其转动的力矩，但在线圈越过平衡位置后受力方向将阻碍其转动。",
+      "importance": "掌握",
+      "examples": [
+        "线圈在图甲位置受力顺时针转动"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt144",
+      "name": "换向器",
+      "definition": "由两个相互绝缘的铜半环组成，与线圈相连，可使线圈电流方向在适当时刻反向，从而使线圈持续获得同一方向的转动力。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt145",
+      "name": "电动机",
+      "definition": "利用通电线圈在磁场中受力而连续转动的装置，由转子和定子组成。",
+      "importance": "重要",
+      "examples": [
+        "家用电扇",
+        "电梯驱动电动机"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt146",
+      "name": "转子",
+      "definition": "电动机中能够转动的部分，多由线圈构成。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt147",
+      "name": "定子",
+      "definition": "电动机中保持不动的部分，通常为磁体或产生磁场的装置。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt148",
+      "name": "扬声器的工作原理",
+      "definition": "扬声器利用线圈在交变电流作用下在磁场中来回运动，带动纸盆振动从而发声。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt149",
+      "name": "电磁感应",
+      "definition": "由磁与电之间的“感应”引起的现象：当穿过闭合导体回路的磁通量发生变化时，闭合导体回路中会产生感应电流。",
+      "importance": "重要",
+      "aliases": [
+        "磁生电",
+        "electromagnetic induction"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt150",
+      "name": "感应电流",
+      "definition": "在电磁感应现象中，由磁通量变化而在闭合导体回路中产生的电流。",
+      "importance": "掌握",
+      "aliases": [
+        "induction current"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt151",
+      "name": "发电机",
+      "definition": "利用电磁感应原理把机械能转化为电能的装置。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt152",
+      "name": "交变电流",
+      "definition": "大小和方向都随时间做周期性变化的电流。",
+      "importance": "掌握",
+      "unit": "Hz",
+      "aliases": [
+        "交流",
+        "alternating current",
+        "AC"
+      ],
+      "examples": [
+        "家庭电网中的电流"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt153",
+      "name": "磁记录",
+      "definition": "利用硬磁性材料被不同程度磁化来记录信息的技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt154",
+      "name": "硬磁性材料",
+      "definition": "磁化后磁性能够保持的材料，可用于永磁体和磁记录。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt155",
+      "name": "软磁性材料",
+      "definition": "磁化后磁性很容易消失的材料。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt156",
+      "name": "动圈式话筒原理",
+      "definition": "线圈随振膜在磁场中振动而产生感应电流，用于声音转电信号。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt157",
+      "name": "电话",
+      "definition": "利用电信号将声音传递到远方的通信设备，由话筒、听筒及线路等部分组成。",
+      "importance": "重要",
+      "examples": [
+        "老式电话",
+        "现代数字电话"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt158",
+      "name": "话筒将声音转换成电信号",
+      "definition": "话筒中膜片因声音振动而导致电阻变化，使电流随之变化，从而形成电信号。",
+      "importance": "掌握",
+      "examples": [
+        "炭粒话筒随声音振动电阻发生变化"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt159",
+      "name": "听筒将电信号转换成声音",
+      "definition": "听筒利用电磁铁的磁力随电流变化而带动膜片振动，从而重新产生声音。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt160",
+      "name": "模拟信号",
+      "definition": "频率和振幅随声音变化而变化的连续电信号，以“模仿”原始声音的变化来传递信息。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt161",
+      "name": "数字信号",
+      "definition": "使用点、画、亮暗、电流有无或0、1等离散符号组成的信息表示方式。",
+      "importance": "重要",
+      "examples": [
+        "莫尔斯电码",
+        "汉字电报码"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt162",
+      "name": "电话交换机",
+      "definition": "用于在不同电话用户之间自动或手动建立通话连接的设备。",
+      "importance": "重要",
+      "examples": [
+        "人工接线交换机",
+        "自动电话交换机",
+        "程控交换机"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt163",
+      "name": "电磁波",
+      "definition": "周期性变化的电场引起周期性变化的磁场，变化的磁场又引起新的变化的电场；二者交替产生并由近及远向周围传播的波动。",
+      "importance": "重要",
+      "examples": [
+        "广播电台、电视台、移动电话发出的无线电波",
+        "微波炉中的微波"
+      ],
+      "aliases": [
+        "electromagnetic wave"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt164",
+      "name": "电磁波的产生",
+      "definition": "导线中迅速变化的电流在空间激起（产生）电磁波。",
+      "importance": "重要",
+      "examples": [
+        "时断时续的电流产生电磁波"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt165",
+      "name": "电磁波的传播",
+      "definition": "电磁波具有波的特征，如波长、频率、波速，并可以在真空中传播。",
+      "importance": "重要",
+      "aliases": [
+        "电磁波传播特性"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt166",
+      "name": "波长",
+      "definition": "在波的传播方向上振动相位相同的两个相邻质点之间的距离。",
+      "importance": "掌握",
+      "unit": "m",
+      "formula": "λ"
+    },
+    {
+      "id": "physics_9_rjb_cpt167",
+      "name": "波速",
+      "definition": "波的传播速度，其大小满足 v = λ/T 或 v = fλ。",
+      "importance": "掌握",
+      "formula": "v = λ f"
+    },
+    {
+      "id": "physics_9_rjb_cpt168",
+      "name": "真空中的电磁波传播",
+      "definition": "电磁波可以在真空中传播，真空中的传播速度约为 3×10^8 m/s。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt169",
+      "name": "无线电波",
+      "definition": "波长大于1 mm（频率低于300 GHz）的电磁波，按波长可分为多个波段，具有不同传播方式和用途。",
+      "importance": "了解",
+      "examples": [
+        "长波、中波、短波、微波等"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt170",
+      "name": "微波",
+      "definition": "无线电波中波长较短的一段，衍射不明显，方向性好，常用于雷达、通信等。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt171",
+      "name": "音频信号",
+      "definition": "由声音转换成的电信号，频率在几十赫到几千赫之间。",
+      "importance": "掌握",
+      "examples": [
+        "讲话声转换成的电信号"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt172",
+      "name": "视频信号",
+      "definition": "由图像转换成的电信号，频率在几赫到几兆赫之间。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt173",
+      "name": "射频电流",
+      "definition": "将音频或视频信号加载到频率更高的电流上产生的高频电流，可激发电磁波发射到空间。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt174",
+      "name": "电磁波发射",
+      "definition": "高频电流在天线中产生电磁波并向空间传播的过程。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt175",
+      "name": "电磁波接收",
+      "definition": "接收天线从空间捕获电磁波并转换为电信号的过程。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt176",
+      "name": "调制",
+      "definition": "把音频或视频信号加载到高频电流上的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt177",
+      "name": "解调",
+      "definition": "从混合信号中去除高频部分并取出音频或视频信号的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "检波"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt178",
+      "name": "频道",
+      "definition": "电视台使用的不同射频范围，避免互相干扰。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt179",
+      "name": "移动电话工作方式",
+      "definition": "手机通过电磁波同时发射与接收语音信息的工作方式，并由基地台进行转接。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt180",
+      "name": "电磁波频率与信息量",
+      "definition": "作为载体的电磁波，频率越高，相同时间内可以传输的信息越多。",
+      "importance": "重要",
+      "examples": [
+        "电视广播比声音广播能传递更多信息"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt181",
+      "name": "微波通信",
+      "definition": "利用微波作为载体进行信息传输，需要沿线布置中继站。",
+      "importance": "掌握",
+      "examples": [
+        "微波线路可同时开通几千、几万路电话"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt182",
+      "name": "同步卫星通信",
+      "definition": "利用地球同步卫星作为中继站进行微波通信，实现大范围通信覆盖。",
+      "importance": "掌握",
+      "examples": [
+        "三颗同步卫星实现全球通信"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt183",
+      "name": "光纤通信",
+      "definition": "使用在光导纤维中传播的激光来传递信息，信息容量极大。",
+      "importance": "重要",
+      "examples": [
+        "光缆可传递电视、电话等多种信息"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt184",
+      "name": "激光",
+      "definition": "频率相同、相位差恒定、振动方向一致的光波，具有高度相干性和平行度。",
+      "importance": "掌握",
+      "examples": [
+        "激光测距、光盘读写、激光切割"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt185",
+      "name": "能源",
+      "definition": "能够为生产和生活提供能量的各种来源统称为能源。",
+      "importance": "重要",
+      "examples": [
+        "柴薪、煤、石油、天然气、电能、风能、水能、太阳能等"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt186",
+      "name": "一次能源",
+      "definition": "可以直接从自然界获取的能源，如化石能源、风能、水能、太阳能、地热能、核能等。",
+      "importance": "重要",
+      "examples": [
+        "风能、水能、太阳能、地热能、核能、化石能源"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt187",
+      "name": "二次能源",
+      "definition": "需要通过消耗一次能源加工转换后得到的能源。",
+      "importance": "重要",
+      "examples": [
+        "电能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt188",
+      "name": "化石能源",
+      "definition": "煤炭、石油和天然气等目前人类生产生活使用的主要能源；由古代植物和动物遗体在地层中经历一系列生物化学变化形成。",
+      "importance": "重要",
+      "examples": [
+        "煤、石油、天然气",
+        "煤的形成",
+        "石油与天然气的形成",
+        "煤炭",
+        "石油",
+        "天然气"
+      ],
+      "aliases": [
+        "化石燃料"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt189",
+      "name": "电能便于输送和转化",
+      "definition": "电能在输送和转换成其他形式能量方面具有方便、高效的特点，是现代社会广泛使用的原因。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt190",
+      "name": "蒸汽机",
+      "definition": "蒸汽机的发明使机械动力逐步代替人力和畜力，是人类利用能源的重要里程碑。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt191",
+      "name": "核能",
+      "definition": "原子核发生裂变或聚变时由于核子结合方式变化而释放出的巨大能量。",
+      "importance": "了解",
+      "aliases": [
+        "nuclear energy"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt192",
+      "name": "能源危机",
+      "definition": "由于能源供给受战争和政治影响导致全球能源紧缺的重大事件。",
+      "importance": "了解",
+      "examples": [
+        "三次石油危机"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt193",
+      "name": "能源科学",
+      "definition": "研究能源的开发、利用、保护及其相关生态环境、人口、社会经济问题的综合科学领域。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt194",
+      "name": "裂变",
+      "definition": "重的原子核吸收中子后分裂成两个中等质量原子核，同时释放核能并产生新的中子。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt195",
+      "name": "链式反应",
+      "definition": "核裂变产生的中子继续引起新的核裂变，使反应一代接一代持续进行的过程。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt196",
+      "name": "核反应堆",
+      "definition": "利用可控链式反应持续释放核能的装置，是核电站的核心设备。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt197",
+      "name": "聚变",
+      "definition": "轻的原子核（如氘、氚）在超高温下结合成较重原子核并释放核能的过程。",
+      "importance": "重要",
+      "aliases": [
+        "热核反应"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt198",
+      "name": "氘核与氚核",
+      "definition": "氘核由一个质子和一个中子组成，氚核由一个质子和两个中子组成，是能够发生聚变的轻核。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt199",
+      "name": "原子核结构",
+      "definition": "原子核由质子和中子组成，质子带正电，中子不带电，二者依靠强核力紧密结合。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt200",
+      "name": "核泄漏",
+      "definition": "核反应堆中产生的射线泄漏到外界，可能危害人类和生态环境。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt201",
+      "name": "太阳能",
+      "definition": "太阳以光和热的形式向外辐射的能量，其中约二十亿分之一到达地球，是地球上多种能量形式的根源。",
+      "importance": "重要",
+      "examples": [
+        "化石能源来源于古代植物储存的太阳能",
+        "太阳能集热器",
+        "太阳能电池"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt202",
+      "name": "核聚变",
+      "definition": "太阳内部氢原子核在超高温下相互聚变，释放出巨大的核能。",
+      "importance": "掌握",
+      "examples": [
+        "太阳核心每时每刻发生类似氢弹爆炸的聚变反应"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt203",
+      "name": "太阳能集热器",
+      "definition": "一种利用太阳能进行光热转换的装置，通过吸收太阳辐射并将其转化为内能，从而加热其中的水流。",
+      "importance": "掌握",
+      "examples": [
+        "楼顶太阳能热水器"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt204",
+      "name": "太阳能电池",
+      "definition": "将太阳能直接转化为电能的装置，具有寿命长、无污染的特点，但转化效率较低，每片产生的电压较低。",
+      "importance": "重要",
+      "examples": [
+        "太阳能计算器",
+        "航天领域的太阳能板"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt205",
+      "name": "能量转化",
+      "definition": "太阳能可以通过光热转换、光化转换、光电转换等方式转化为其他形式的能量。",
+      "importance": "掌握",
+      "examples": [
+        "太阳能转化为热能",
+        "太阳能转化为化学能",
+        "太阳能转化为电能",
+        "电池中的化学能转化为电能",
+        "电能通过灯泡转化为内能和光能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt206",
+      "name": "能量转化与转移的方向性",
+      "definition": "能量在转化和转移过程中具有方向性，特别是涉及热现象的能量转化不可逆，例如热量只能自发地从高温物体传向低温物体。",
+      "importance": "重要",
+      "examples": [
+        "制动时动能转化为内能且不可逆",
+        "冰箱需要消耗电能才能让热量从低温转向高温"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt207",
+      "name": "热量自发传递方向",
+      "definition": "热量在自然条件下只能自发地从高温物体传递到低温物体，不能反向。",
+      "importance": "掌握",
+      "examples": [
+        "热传递过程的自然方向"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt208",
+      "name": "不可逆过程",
+      "definition": "能量转化或转移中不能自发逆向进行的过程，例如摩擦生热的能量不能自动恢复为机械能。",
+      "importance": "掌握",
+      "examples": [
+        "汽车制动时动能转化为内能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt209",
+      "name": "能源对环境的影响",
+      "definition": "能源的消耗会造成空气污染、酸雨、温室效应等环境问题。",
+      "importance": "重要",
+      "examples": [
+        "化石燃料产生二氧化碳、二氧化硫等污染物"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt210",
+      "name": "酸雨",
+      "definition": "含有酸性物质的降水，由二氧化硫、氮氧化物等污染物形成，会腐蚀建筑物和破坏生态。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_9_rjb_cpt211",
+      "name": "可持续发展与能源",
+      "definition": "能源使用应考虑环境、资源储量以及未来发展的需求，可再生能源是重要方向。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_9_rjb_cpt212",
+      "name": "不可再生能源",
+      "definition": "在自然界短期内无法再生或补充的能源，如煤、石油、天然气、核能等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_9_rjb_cpt213",
+      "name": "可再生能源",
+      "definition": "在自然界可以再生的能源类型（如水能、风能等，归根结底来源于太阳能）。",
+      "importance": "掌握",
+      "examples": [
+        "水能",
+        "风能"
+      ]
+    },
+    {
+      "id": "physics_9_rjb_cpt214",
+      "name": "太阳能利用方式",
+      "definition": "通过集热器加热物质或利用太阳能电池将太阳能转化为电能。",
+      "importance": "了解"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_9_rjb_skl1",
+      "name": "通过宏观现象推断微观规律",
+      "description": "通过可观察的宏观现象，如扩散、压缩难易等，推测分子的运动和相互作用。"
+    },
+    {
+      "id": "physics_9_rjb_skl2",
+      "name": "实验数据记录与比较",
+      "description": "通过设计表格记录实验数据，比较不同物质吸热情况的差异。"
+    },
+    {
+      "id": "physics_9_rjb_skl3",
+      "name": "根据热值计算燃烧放热",
+      "description": "利用燃料热值和燃料质量/体积计算完全燃烧放出的热量。"
+    },
+    {
+      "id": "physics_9_rjb_skl4",
+      "name": "计算热机效率",
+      "description": "根据做功能量和燃料完全燃烧放出的能量计算热机效率。"
+    },
+    {
+      "id": "physics_9_rjb_skl5",
+      "name": "画电路图",
+      "description": "根据实物电路使用约定符号画出标准电路图，并能根据电路图连接实物电路。"
+    },
+    {
+      "id": "physics_9_rjb_skl6",
+      "name": "电流表的正确连接方法",
+      "description": "测量电流时，电流表必须与被测用电器串联；让电流从“+”端流入、“-”端流出；不能直接接在电源两极；正确选择量程。"
+    },
+    {
+      "id": "physics_9_rjb_skl7",
+      "name": "电流表读数方法",
+      "description": "根据所选量程和分度值，判断指针偏转对应的电流值。"
+    },
+    {
+      "id": "physics_9_rjb_skl8",
+      "name": "实验数据分析",
+      "description": "通过对比实验中各测量点电流数据，总结电流在不同电路结构中的分布规律。"
+    },
+    {
+      "id": "physics_9_rjb_skl9",
+      "name": "使用电压表测量电压",
+      "description": "根据说明书正确选择量程、正确连接（并联）、注意极性、读取示数。"
+    },
+    {
+      "id": "physics_9_rjb_skl10",
+      "name": "设计电路图",
+      "description": "根据实验目的和器材，合理绘制串联或并联电路图，确保电压表、电流表、用电器、电源连接正确。"
+    },
+    {
+      "id": "physics_9_rjb_skl11",
+      "name": "图象法分析物理量关系",
+      "description": "通过在坐标系中描点并连接曲线，直观判断两个物理量之间的定量关系。"
+    },
+    {
+      "id": "physics_9_rjb_skl12",
+      "name": "利用欧姆定律求物理量",
+      "description": "已知电流、电压、电阻中的两个量，通过公式 I = U / R 进行计算，求出第三个量。"
+    },
+    {
+      "id": "physics_9_rjb_skl13",
+      "name": "设计实验数据表格",
+      "description": "根据测量内容设计用于记录电压、电流及计算电阻的数据表格。"
+    },
+    {
+      "id": "physics_9_rjb_skl14",
+      "name": "多次测量取平均值",
+      "description": "通过多次测量同一物理量并取平均值减小实验误差。"
+    },
+    {
+      "id": "physics_9_rjb_skl15",
+      "name": "利用欧姆定律求电学量",
+      "description": "根据已知电流、电阻、电压中的任意两个量，利用 I=U/R 进行计算。"
+    },
+    {
+      "id": "physics_9_rjb_skl16",
+      "name": "基本电路连接方法",
+      "description": "根据电路图正确连接电流表、电压表、滑动变阻器和电源，确保量程选择正确，并在闭合电路前检查接线。"
+    },
+    {
+      "id": "physics_9_rjb_skl17",
+      "name": "利用公式进行物理量计算",
+      "description": "根据物理定律与公式（如欧姆定律、焦耳定律等）进行逐步代入与推算获得结果。"
+    },
+    {
+      "id": "physics_9_rjb_skl18",
+      "name": "使用试电笔判断火线",
+      "description": "将手指按住笔卡，用笔尖接触导线，观察氖管是否发光以判断火线。"
+    },
+    {
+      "id": "physics_9_rjb_skl19",
+      "name": "利用公式计算电流",
+      "description": "根据电功率与电压，使用 I = P/U 计算电流大小。"
+    },
+    {
+      "id": "physics_9_rjb_skl20",
+      "name": "安全用电意识",
+      "description": "在生活中遵守不接触带电体、保持电器干燥、及时更换老化线路等规则以避免触电。"
+    },
+    {
+      "id": "physics_9_rjb_skl21",
+      "name": "利用小磁针探测磁场方向",
+      "description": "通过观察小磁针N极静止方向判断磁场方向"
+    },
+    {
+      "id": "physics_9_rjb_skl22",
+      "name": "通过实验探究影响物理量的因素",
+      "description": "通过控制变量法改变电流或线圈匝数，观察电磁铁磁性的变化。"
+    },
+    {
+      "id": "physics_9_rjb_skl23",
+      "name": "电磁现象分析方法",
+      "description": "根据电流方向、磁场方向判断通电导线或线圈在磁场中的受力方向。"
+    },
+    {
+      "id": "physics_9_rjb_skl24",
+      "name": "分析信号转换过程",
+      "description": "从能量和信号的角度分析声音、电流和振动之间的相互转换关系。"
+    },
+    {
+      "id": "physics_9_rjb_skl25",
+      "name": "使用波速公式",
+      "description": "根据波速公式 v = λ f 求解波速、波长或频率。"
+    },
+    {
+      "id": "physics_9_rjb_skl26",
+      "name": "估算传播时间",
+      "description": "根据传播距离与光速计算信号在空中的传播时间。"
+    },
+    {
+      "id": "physics_9_rjb_skl27",
+      "name": "能量转化分析方法",
+      "description": "通过分析系统内能量的输入、输出和转化形式，判断能量的变化路径和守恒关系。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_9_rjb_exp1",
+      "name": "气体扩散演示实验",
+      "instrument": "装有二氧化氮的瓶子、空瓶子、玻璃板",
+      "is_student": 0,
+      "phenomena": "二氧化氮向上扩散，两个瓶子中颜色变均匀",
+      "conclusion": "气体能自动混合，发生扩散"
+    },
+    {
+      "id": "physics_9_rjb_exp2",
+      "name": "液体扩散实验",
+      "instrument": "量筒、清水、硫酸铜溶液、细管",
+      "is_student": 0,
+      "phenomena": "清晰界面逐渐模糊，溶液颜色均匀",
+      "conclusion": "液体间也能发生扩散"
+    },
+    {
+      "id": "physics_9_rjb_exp3",
+      "name": "温度对扩散作用的影响",
+      "instrument": "两个装有热水和冷水的烧杯、滴管、墨水",
+      "is_student": 1,
+      "phenomena": "热水中墨水扩散更快",
+      "conclusion": "温度越高，分子运动越剧烈，扩散越快"
+    },
+    {
+      "id": "physics_9_rjb_exp4",
+      "name": "压缩空气点燃硝化棉",
+      "instrument": "厚玻璃筒、活塞、硝化棉",
+      "is_student": 0,
+      "process": "快速压下活塞压缩空气。",
+      "phenomena": "硝化棉燃烧。",
+      "conclusion": "活塞对气体做功使气体内能增大，温度升高。"
+    },
+    {
+      "id": "physics_9_rjb_exp5",
+      "name": "给装水瓶打气出现白雾",
+      "instrument": "烧瓶（或可乐瓶）、水、打气装置",
+      "is_student": 0,
+      "process": "向瓶内打气直至瓶塞跳出。",
+      "phenomena": "瓶内出现白雾。",
+      "conclusion": "气体膨胀对外做功，内能减少，水蒸气液化形成小水滴。"
+    },
+    {
+      "id": "physics_9_rjb_exp6",
+      "name": "比较不同物质吸热的实验",
+      "instrument": "电加热器、玻璃杯、温度计",
+      "is_student": 1,
+      "process": "加热相同质量的水和食用油，使其升高相同温度，记录吸收热量差异。",
+      "phenomena": "相同质量且温升相同时，水和油吸收的热量不同。",
+      "conclusion": "不同物质吸收热量的能力不同，比热容不同。"
+    },
+    {
+      "id": "physics_9_rjb_exp7",
+      "name": "用传感器比较不同物质的比热容",
+      "instrument": "温度传感器、铁架台、红外加热器、计算机数据采集系统",
+      "is_student": 1,
+      "process": "同时加热相同质量的水和油，通过传感器记录温度变化图线。",
+      "phenomena": "温度随时间变化速率不同。",
+      "conclusion": "可快速对比水和油的比热容差异。"
+    },
+    {
+      "id": "physics_9_rjb_exp8",
+      "name": "加热试管使塞子弹出实验",
+      "instrument": "试管、橡胶塞、水、加热装置",
+      "is_student": 0,
+      "process": "向试管内装水并塞住，加热后观察塞子被冲出的现象。",
+      "phenomena": "水蒸气产生高压推开塞子。",
+      "conclusion": "展示蒸汽机工作原理：内能可做功。"
+    },
+    {
+      "id": "physics_9_rjb_exp9",
+      "name": "摩擦双手实验",
+      "instrument": [
+        "双手"
+      ],
+      "is_student": 1,
+      "process": "迅速来回摩擦双手。",
+      "phenomena": "手变热。",
+      "conclusion": "机械能转化为内能。"
+    },
+    {
+      "id": "physics_9_rjb_exp10",
+      "name": "太阳加热水实验",
+      "instrument": [
+        "黑塑料袋",
+        "水",
+        "温度计"
+      ],
+      "is_student": 1,
+      "phenomena": "袋中水温升高。",
+      "conclusion": "光能转化为内能。"
+    },
+    {
+      "id": "physics_9_rjb_exp11",
+      "name": "太阳能电池驱动电扇实验",
+      "instrument": [
+        "太阳能电池",
+        "小电扇"
+      ],
+      "is_student": 1,
+      "phenomena": "小电扇转动。",
+      "conclusion": "光能转化为电能，再转化为机械能。"
+    },
+    {
+      "id": "physics_9_rjb_exp12",
+      "name": "电荷间的相互作用实验",
+      "instrument": "丝绸、玻璃棒、毛皮、橡胶棒、悬挂装置",
+      "is_student": 0,
+      "phenomena": "同种电荷相互排斥，异种电荷相互吸引。",
+      "conclusion": "自然界只有两种电荷：正电荷和负电荷。"
+    },
+    {
+      "id": "physics_9_rjb_exp13",
+      "name": "电荷在金属棒中的定向移动实验",
+      "instrument": "验电器A、验电器B、橡胶棒、带绝缘柄的金属棒",
+      "is_student": 0,
+      "phenomena": "用金属棒连接时电荷从A移动到B；用橡胶棒连接时电荷不移动。",
+      "conclusion": "金属能导电，电荷在金属中可以定向移动。"
+    },
+    {
+      "id": "physics_9_rjb_exp14",
+      "name": "利用LED判断电流方向",
+      "instrument": "LED、电池、导线、开关",
+      "is_student": 1,
+      "process": "将LED接入电路闭合开关，观察是否发光。",
+      "phenomena": "LED正向连接时发光，反向不发光。",
+      "conclusion": "可根据发光判断电流方向。"
+    },
+    {
+      "id": "physics_9_rjb_exp15",
+      "name": "串联电路中开关控制作用实验",
+      "instrument": [
+        "电源",
+        "两个小灯泡",
+        "开关",
+        "导线"
+      ],
+      "is_student": 1,
+      "process": "按照图15.3-3连接串联电路，将开关接在不同位置并观察对两个小灯泡发光的控制情况。",
+      "conclusion": "串联电路中开关位置对控制作用无影响，均能控制所有用电器。"
+    },
+    {
+      "id": "physics_9_rjb_exp16",
+      "name": "并联电路中干路和支路开关控制作用实验",
+      "instrument": [
+        "电源",
+        "两个小灯泡",
+        "干路开关S",
+        "支路开关S1、S2",
+        "导线"
+      ],
+      "is_student": 1,
+      "process": "按照图15.3-4连接电路，闭合干路开关并依次断开各支路开关，观察灯泡情况。",
+      "conclusion": "干路开关控制所有用电器；支路开关只控制各自支路内的用电器。"
+    },
+    {
+      "id": "physics_9_rjb_exp17",
+      "name": "练习使用电流表",
+      "instrument": "电流表、小灯泡、电源、导线、开关",
+      "is_student": 1,
+      "process": "按图连接电路，选择量程，串联电流表并读数。",
+      "phenomena": "电流表指针偏转。",
+      "conclusion": "能够正确使用电流表测量电流。"
+    },
+    {
+      "id": "physics_9_rjb_exp18",
+      "name": "探究串联电路中各处电流的关系",
+      "instrument": "电流表、小灯泡、导线、电源",
+      "is_student": 1,
+      "process": "按图15.5-2测量A、B、C三点电流并记录数据。",
+      "phenomena": "A、B、C三点电流相等。",
+      "conclusion": "串联电路中电流处处相等。"
+    },
+    {
+      "id": "physics_9_rjb_exp19",
+      "name": "探究并联电路中干路与支路电流关系",
+      "instrument": "电流表、小灯泡、导线、电源",
+      "is_student": 1,
+      "process": "分别测量A、B、C三点电流并记录数据。",
+      "phenomena": "干路电流大于单支路电流。",
+      "conclusion": "干路电流等于各支路电流之和。"
+    },
+    {
+      "id": "physics_9_rjb_exp20",
+      "name": "比较一节和两节干电池时灯泡亮度",
+      "instrument": "干电池、小灯泡、导线",
+      "is_student": 1,
+      "process": "分别接入一节和两节干电池观察灯泡亮度。",
+      "phenomena": "两节干电池时灯泡更亮。",
+      "conclusion": "电压越高，电路中电流越大。"
+    },
+    {
+      "id": "physics_9_rjb_exp21",
+      "name": "使用电压表测量电压",
+      "instrument": "电压表、小灯泡、电源、导线",
+      "is_student": 1,
+      "process": "分别测量灯泡两端及电源两端电压。",
+      "phenomena": "两次读数相等。",
+      "conclusion": "在只有一个用电器的电路中，用电器两端的电压等于电源两端的电压。"
+    },
+    {
+      "id": "physics_9_rjb_exp22",
+      "name": "探究串联电路中用电器两端的电压与电源电压的关系",
+      "instrument": "电源、小灯泡L1、L2、电压表、连接导线",
+      "is_student": 1,
+      "process": "测量AB、BC、AC间电压，改变灯泡规格重复实验",
+      "phenomena": "U_AB + U_BC 接近 U_AC",
+      "conclusion": "串联电路的总电压等于各器件两端电压之和"
+    },
+    {
+      "id": "physics_9_rjb_exp23",
+      "name": "探究并联电路中各支路电压与电源电压的关系",
+      "instrument": "电源、小灯泡L1、L2、电压表、连接导线",
+      "is_student": 1,
+      "process": "测量各支路电压与电源电压",
+      "phenomena": "U_L1 与 U_L2 均接近电源电压",
+      "conclusion": "并联各支路电压相等且等于电源电压"
+    },
+    {
+      "id": "physics_9_rjb_exp24",
+      "name": "比较不同材料导线的电阻",
+      "instrument": "铜丝、镍铬合金丝、小灯泡、电流表、电源",
+      "is_student": 0,
+      "process": "将不同材料但长度和粗细相同的导线接入电路，比较灯泡亮度与电流表示数。",
+      "phenomena": "铜丝接入时电流大灯亮；镍铬丝接入时电流小灯暗。",
+      "conclusion": "铜的电阻小于镍铬合金。"
+    },
+    {
+      "id": "physics_9_rjb_exp25",
+      "name": "探究影响导体电阻大小的因素",
+      "instrument": "不同长度和粗细的镍铬合金丝、电流表、电源",
+      "is_student": 1,
+      "process": "分别改变导线的长度或横截面积，测量电流大小。",
+      "phenomena": "长导线电流小；细导线电流小。",
+      "conclusion": "电阻与材料、长度、横截面积有关。"
+    },
+    {
+      "id": "physics_9_rjb_exp26",
+      "name": "用铅笔芯调节小灯泡亮度实验",
+      "instrument": [
+        "铅笔芯",
+        "夹子",
+        "小灯泡",
+        "电源"
+      ],
+      "is_student": 1,
+      "process": "移动夹子改变接入电路中铅笔芯的长度。",
+      "phenomena": "铅笔芯越短，电阻越小，小灯泡越亮。",
+      "conclusion": "导体电阻与其长度有关，变阻器可改变接入电路电阻。"
+    },
+    {
+      "id": "physics_9_rjb_exp27",
+      "name": "练习使用滑动变阻器实验",
+      "instrument": [
+        "滑动变阻器",
+        "小灯泡",
+        "电流表",
+        "电源"
+      ],
+      "is_student": 1
+    },
+    {
+      "id": "physics_9_rjb_exp28",
+      "name": "探究电流与电压的关系",
+      "instrument": "电源、电阻、电流表、电压表、滑动变阻器、导线",
+      "is_student": 1,
+      "process": "连接电路，改变电阻两端电压，测量对应电流并记录数据。",
+      "phenomena": "电压增大时电流增大。",
+      "conclusion": "电阻一定时，电流与电压成正比。"
+    },
+    {
+      "id": "physics_9_rjb_exp29",
+      "name": "探究电流与电阻的关系",
+      "instrument": "电源、电流表、电压表、不同阻值的电阻、导线",
+      "is_student": 1,
+      "process": "在保持电压不变的条件下更换不同电阻，测量电流并记录数据。",
+      "phenomena": "电阻增大时电流减小。",
+      "conclusion": "电压一定时，电流与电阻成反比。"
+    },
+    {
+      "id": "physics_9_rjb_exp30",
+      "name": "伏安法测电阻实验",
+      "instrument": [
+        "电流表",
+        "电压表",
+        "滑动变阻器",
+        "电源",
+        "待测电阻",
+        "导线",
+        "开关"
+      ],
+      "is_student": 1,
+      "process": "按图17.3-1连接电路；调节滑动变阻器改变电压；多次测量电压和电流；计算电阻并求平均值。",
+      "phenomena": "电流和电压随变阻器调节发生变化。",
+      "conclusion": "可由R=U/I计算电阻。"
+    },
+    {
+      "id": "physics_9_rjb_exp31",
+      "name": "比较不同用电器的电功率大小",
+      "instrument": "节能灯、电吹风、电能表",
+      "is_student": 0,
+      "process": "将不同功率的用电器接入同一电路，观察电能表铝盘转速。",
+      "phenomena": "功率大的电器使铝盘转得快，功率小的转得慢。",
+      "conclusion": "电功率反映电流做功快慢。"
+    },
+    {
+      "id": "physics_9_rjb_exp32",
+      "name": "研究电压对电功率的影响",
+      "instrument": "36V 25W灯泡、可调电源",
+      "is_student": 0,
+      "process": "将灯泡接入不同电压下观察亮度。",
+      "phenomena": "电压低时灯泡暗，电压高时灯泡亮。",
+      "conclusion": "同一用电器的电功率随两端电压变化。"
+    },
+    {
+      "id": "physics_9_rjb_exp33",
+      "name": "测量小灯泡的电功率",
+      "instrument": "小灯泡、电流表、电压表、滑动变阻器、电源、导线",
+      "is_student": 1,
+      "process": "通过滑动变阻器改变小灯泡两端电压，测量三种电压下的小灯泡亮度、电流和电压，并计算功率。",
+      "phenomena": "电压变化会引起灯泡亮度和功率的变化。",
+      "conclusion": "小灯泡在额定电压下功率最大且正常工作，电压升高或降低均会改变实际功率。"
+    },
+    {
+      "id": "physics_9_rjb_exp34",
+      "name": "电阻不同情况下产生热量比较实验",
+      "instrument": "两个密闭容器、U形管、电阻丝、电源",
+      "is_student": 0,
+      "phenomena": "电阻大的电阻丝使空气温度上升更多。",
+      "conclusion": "在电流相同、通电时间相同的情况下，电阻越大，产生的热量越多。"
+    },
+    {
+      "id": "physics_9_rjb_exp35",
+      "name": "电流不同情况下产生热量比较实验",
+      "instrument": "两个密闭容器、U形管、电阻丝、电源、外接电阻",
+      "is_student": 0,
+      "phenomena": "电流大的容器温度上升更多。",
+      "conclusion": "在电阻相同、通电时间相同的情况下，电流越大，产生的热量越多。"
+    },
+    {
+      "id": "physics_9_rjb_exp36",
+      "name": "观察保险丝的作用",
+      "instrument": "滑动变阻器、保险丝、铜丝、电源、接线柱",
+      "is_student": 0,
+      "process": "调节滑动变阻器增大电流，观察保险丝与铜丝变化。",
+      "phenomena": "电流增大时保险丝熔断，铜丝不熔断。",
+      "conclusion": "保险丝因电阻大熔点低而在电流过大时熔断保护电路。"
+    },
+    {
+      "id": "physics_9_rjb_exp37",
+      "name": "研究条形磁体的磁场方向",
+      "instrument": "条形磁体、小磁针",
+      "is_student": 1,
+      "process": "在条形磁体周围放置一些小磁针，观察其N极指向",
+      "phenomena": "不同位置的小磁针方向不同",
+      "conclusion": "磁场方向由小磁针N极指向表示"
+    },
+    {
+      "id": "physics_9_rjb_exp38",
+      "name": "研究蹄形磁体的磁场分布",
+      "instrument": "蹄形磁体、小磁针、有机玻璃、铁屑",
+      "is_student": 1,
+      "process": "在磁体上方放玻璃并撒铁屑，轻敲观察铁屑排列",
+      "phenomena": "铁屑呈规则曲线排列",
+      "conclusion": "磁感线形象显示磁场分布"
+    },
+    {
+      "id": "physics_9_rjb_exp39",
+      "name": "小磁针与通电直导线实验（奥斯特实验）",
+      "instrument": "直导线、小磁针、电池",
+      "is_student": 0,
+      "process": "使导线与电池触接，观察小磁针偏转；断电后磁针回到原位",
+      "phenomena": "通电瞬间磁针偏转，断电后恢复",
+      "conclusion": "通电直导线周围存在磁场"
+    },
+    {
+      "id": "physics_9_rjb_exp40",
+      "name": "探究通电螺线管外部的磁场分布",
+      "instrument": "螺线管、电源、小磁针、铁棒",
+      "is_student": 1,
+      "process": "将小磁针放在螺线管四周，记录指向；对比磁体磁场",
+      "phenomena": "磁针指向类似条形磁体",
+      "conclusion": "通电螺线管外部磁场类似条形磁体"
+    },
+    {
+      "id": "physics_9_rjb_exp41",
+      "name": "研究电流对电磁铁磁性的影响",
+      "instrument": [
+        "滑动变阻器",
+        "电流表",
+        "线圈",
+        "铁钉",
+        "电源",
+        "曲别针"
+      ],
+      "is_student": 0,
+      "process": "改变滑动变阻器滑片位置，调节电流大小，观察吸引曲别针数量的变化。",
+      "phenomena": "电流越大，吸引曲别针越多。",
+      "conclusion": "匝数一定时，电流越大，电磁铁磁性越强。"
+    },
+    {
+      "id": "physics_9_rjb_exp42",
+      "name": "研究线圈匝数对电磁铁磁性的影响",
+      "instrument": [
+        "不同匝数的螺线管",
+        "铁钉",
+        "电源",
+        "曲别针"
+      ],
+      "is_student": 0,
+      "conclusion": "电流一定时，线圈匝数越多，电磁铁磁性越强。"
+    },
+    {
+      "id": "physics_9_rjb_exp43",
+      "name": "通电导线在磁场中受力演示",
+      "instrument": [
+        "导线ab",
+        "电源",
+        "蹄形磁体"
+      ],
+      "is_student": 0,
+      "phenomena": "通电导线在磁场中发生偏转，方向随电流方向或磁场方向改变而反向。",
+      "conclusion": "通电导线在磁场中受到力，其方向与电流方向和磁感线方向均有关。"
+    },
+    {
+      "id": "physics_9_rjb_exp44",
+      "name": "通电线圈在磁场中扭转演示",
+      "instrument": [
+        "线框",
+        "电源",
+        "磁体"
+      ],
+      "is_student": 0,
+      "phenomena": "通电线框可以转到一定角度，但不能持续旋转。",
+      "conclusion": "线圈受力方向在越过平衡位置后会反向，阻碍持续转动。"
+    },
+    {
+      "id": "physics_9_rjb_exp45",
+      "name": "小电动机的制作",
+      "instrument": [
+        "漆包线线圈",
+        "电池",
+        "金属丝支架",
+        "磁铁"
+      ],
+      "is_student": 1,
+      "process": "制作线圈，通过刮漆控制电路通断，使线圈借助惯性和断续受力持续转动。",
+      "conclusion": "通过控制电流方向或通断，可使线圈连续转动，从而构成电动机原理模型。"
+    },
+    {
+      "id": "physics_9_rjb_exp46",
+      "name": "干电池—导线—收音机实验",
+      "instrument": [
+        "干电池",
+        "导线",
+        "收音机"
+      ],
+      "is_student": 0,
+      "process": "将导线与电池正极时断时续接触，观察收音机声响变化。",
+      "phenomena": "收音机能听到杂音。",
+      "conclusion": "迅速变化的电流能够产生电磁波。"
+    },
+    {
+      "id": "physics_9_rjb_exp47",
+      "name": "真空罩中的手机实验",
+      "instrument": [
+        "真空罩",
+        "移动电话"
+      ],
+      "is_student": 0,
+      "process": "将手机置于真空罩中，拨打该手机。",
+      "phenomena": "手机能接收到信号。",
+      "conclusion": "电磁波可以在真空中传播。"
+    },
+    {
+      "id": "physics_9_rjb_exp48",
+      "name": "电磁波的发射与接收实验",
+      "instrument": "电磁波发射器、接收器、传感器、采集器、计算机",
+      "is_student": 1,
+      "process": "改变发射器发出的电磁波频率并观察波形",
+      "phenomena": "计算机显示不同频率的电磁波信号",
+      "conclusion": "电磁波频率变化会导致接收信号的变化"
+    },
+    {
+      "id": "physics_9_rjb_exp49",
+      "name": "光沿水流传播实验",
+      "instrument": "塑料瓶、不透光纸、小灯泡、水",
+      "is_student": 1,
+      "process": "瓶侧壁开孔，水流出时灯泡发出的光沿水流传播。",
+      "phenomena": "可看到光随着弯曲的水流传播形成光斑。",
+      "conclusion": "光在光导纤维中可多次反射并沿曲线路径传播，为光纤通信提供原理。"
+    },
+    {
+      "id": "physics_9_rjb_exp50",
+      "name": "自制太阳能集热器实验",
+      "instrument": "黑色盘子、白色盘子、冷水、玻璃板或透明塑料纸、温度计",
+      "is_student": 1,
+      "process": "在两个盘中注入等量冷水，盖玻璃板，放在阳光下照射一小时后测温比较。",
+      "phenomena": "黑色盘子中的水温升高更多。",
+      "conclusion": "黑色表面吸收更多太阳能，玻璃盖有助于保温，提高集热效率。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_9_rjb_exe1",
+      "type": "简答题",
+      "stem": "火箭上升过程中外壳与空气摩擦温度升高，这一过程中火箭外壳的内能如何变化？原因是什么？",
+      "answer": "火箭外壳内能增加，因为外壳与空气摩擦，火箭外壳克服摩擦力做功，增加了外壳的内能。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe2",
+      "type": "应用题",
+      "stem": "质量为2 kg 的某种物质，温度从20°C 升高到40°C 时，吸收的热量是1.88×10^4 J，该物质的比热容是多少？",
+      "answer": "c = Q / (m·Δt) = 1.88×10^4 / (2×20) = 470 J/(kg·°C)",
+      "analysis": "根据比热容定义直接代入公式计算。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe3",
+      "type": "应用题",
+      "stem": "把质量为2 kg、温度30°C 的铝块加热到100°C，铝块吸收的热量是多少？（已知c=0.88×10^3 J/(kg·°C)）",
+      "answer": "Q = cmΔt = 0.88×10^3 × 2 × 70 = 1.232×10^5 J",
+      "analysis": "使用Q=cm(t - t0)公式进行计算。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe4",
+      "type": "简答题",
+      "stem": "在四冲程中，哪个冲程使汽车获得动力？说明原因。",
+      "answer": "做功冲程。在此阶段燃料燃烧产生的高温高压气体推动活塞向下运动，带动曲轴转动，对外做功。",
+      "analysis": "做功冲程体现了内能向机械能的转化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe5",
+      "type": "应用题",
+      "stem": "汽油的热值为4.6×10^7 J/kg。一个60 kg的人从1楼走到11楼，每层3 m，求其做功，并计算需要多少质量的汽油提供等量能量。",
+      "answer": "做功约1.8×10^4 J，需要汽油质量约3.9×10^-4 kg，约等于一小块糖的质量。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe6",
+      "type": "简答题",
+      "stem": "秋千停止用力后越摆越低，请分析秋千在运动中的能量转化及高度变低的原因。",
+      "answer": "秋千的机械能逐渐减少，是因为一部分机械能通过摩擦和空气阻力转化成了内能，因此摆幅逐渐减小，但总能量并未消失。",
+      "analysis": "根据能量转化与守恒定律分析机械能变化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe7",
+      "type": "简答题",
+      "stem": "把某物体放在带电吸管附近，吸管向物体靠近，是否能判断物体带电？",
+      "answer": "不能。因为带电体能吸引带电体，也能吸引中性物体。",
+      "analysis": "考察电荷吸引现象及电荷间相互作用的理解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe8",
+      "type": "简答题",
+      "stem": "丝绸摩擦玻璃棒靠近带电吸管，吸管运动方向如何？吸管与餐巾纸带哪种电？",
+      "answer": "吸管被丝绸摩擦过的玻璃棒排斥或吸引判断其电性。吸管与餐巾纸带相反种电荷。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe9",
+      "type": "判断题",
+      "stem": "在玩具警车的电路图中，小灯泡L与小电动机M是串联还是并联？",
+      "answer": "根据图示，L与M串联。",
+      "analysis": "题目考察对串联并联结构的识别能力。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe10",
+      "type": "应用题",
+      "stem": "如图15.5-4，当电流表A1示数为0.3A，通过小灯泡L1的电流是多少？电流表A2的示数是多少？",
+      "answer": "L1电流为0.3A；A2示数为0.3A。",
+      "analysis": "串联电路电流处处相等，故三处电流一样。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe11",
+      "type": "简答题",
+      "stem": "用两节干电池和一节干电池分别连接同一小灯泡，观察亮度，并说明亮度变化的原因。",
+      "answer": "两节干电池时亮度更高，因为电源提供的电压更大，导致电流更大。",
+      "analysis": "依据教材示例，一节和两节干电池提供不同电压，电压影响电流大小。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe12",
+      "type": "简答题",
+      "stem": "有两段导线A和B，在相同电压下，通过A的电流较大，通过B的电流较小，哪段导线电阻大？",
+      "answer": "B的电阻大。",
+      "analysis": "相同电压下电流小的导线电阻大。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe13",
+      "type": "填空题",
+      "stem": "24000Ω = 24 kΩ = 0.024 MΩ",
+      "answer": "24；0.024",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe14",
+      "type": "应用题",
+      "stem": "在电阻一定时的实验中，小明的数据表明一组数据与其他数据规律不符，应剔除。根据表中数据判断哪组数据明显错误。",
+      "answer": "第五组数据（U=1.5V, I=0.38A）偏离趋势最大，应剔除。",
+      "analysis": "电流应随电压近似线性增大，只有第5组明显偏离线性趋势。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe15",
+      "type": "应用题",
+      "stem": "一辆汽车的车灯接在 12V 电源两端，灯丝电阻为 30Ω，求通过灯丝的电流。",
+      "answer": "0.4A",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe16",
+      "type": "应用题",
+      "stem": "闭合开关后，电压表示数为 6V，电流表示数为 0.3A，求电阻 R 的阻值。",
+      "answer": "20Ω",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe17",
+      "type": "应用题",
+      "stem": "如图17.4-1所示，R1=10Ω，电压为6V。（1）当R2=50Ω时求通过R1的电流I；（2）当R3=20Ω时求I′。",
+      "answer": "(1) I = 0.1 A；(2) I′ = 0.2 A",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe18",
+      "type": "应用题",
+      "stem": "如图17.4-2所示，R1=10Ω，电压为12V。（1）当R2=40Ω时求I1和总电流I；（2）当R3=20Ω时求I1′和I′。",
+      "answer": "(1) I1=1.2A，I=1.5A；(2) I1′=1.2A，I′=1.8A",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe19",
+      "type": "应用题",
+      "stem": "某电视机的电功率是150 W，每天使用3 h，一个月用电多少千瓦时？",
+      "answer": "13.5 kW·h",
+      "analysis": "将功率换算为千瓦，时间换算为总小时数，再用W=Pt计算能量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe20",
+      "type": "应用题",
+      "stem": "某电炉在额定电压 220V 下的功率为 1000W。当实际电压只有额定电压的 80% 时，若电阻保持不变，此时电炉的实际功率是多少？",
+      "answer": "P 实 = (0.8 × 220)^2 / R = (0.8^2) × 1000W = 640W",
+      "analysis": "电阻不变，故 P ∝ U²，根据比例关系求出实际功率。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe21",
+      "type": "应用题",
+      "stem": "一根60Ω的电阻丝接在36V电源两端，在5分钟内共产生多少热量？",
+      "answer": "6480J",
+      "analysis": "先利用欧姆定律求I=U/R=0.6A，再代入Q=I^2Rt计算。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe22",
+      "type": "简答题",
+      "stem": "根据试电笔的构造和工作原理，解释为什么用试电笔测量火线时氖管会发光，而测量零线时不会发光。",
+      "answer": "接触火线时，电流经笔尖、电阻、氖管和人体流向大地，构成闭合回路，氖管发光；而接触零线时电位接近大地，不能形成电流，氖管不发光。",
+      "analysis": "考查对试电笔回路及火线、零线电位差的理解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe23",
+      "type": "应用题",
+      "stem": "明明家新购置一台1kW空调，原有用电器总功率5600W。电能表标有“220V 10(40)A”。问：（1）空调工作时电流是多少？（2）是否允许安装？",
+      "answer": "（1）电流约4.5A。（2）总电流约30A，小于40A，允许安装。",
+      "analysis": "利用I=P/U分别计算空调电流与总电流，然后与电能表额定最大电流比较。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe24",
+      "type": "简答题",
+      "stem": "两根外形完全相同的钢棒，其中一根有磁性，另一根无磁性。没有其他器材，如何把它们区别开来？",
+      "answer": "利用磁性钢棒的磁极吸引能力较强的特点，用一根钢棒的端部吸引另一根的中部。若能够吸住，则第一根有磁性；若只能端对端吸住，则第二根可能有磁性。",
+      "analysis": "依据磁极吸引最强的概念进行判断。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe25",
+      "type": "简答题",
+      "stem": "为什么工厂中控制大型机械时使用电磁继电器而不是让强电流直接通过按钮？",
+      "answer": "因为强电流直接通过按钮会非常危险，电磁继电器利用弱电流控制强电流，使操作人员安全地控制大型机械。",
+      "analysis": "本题考查电磁继电器的作用——用低压弱电流控制高压强电流。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe26",
+      "type": "应用题",
+      "stem": "根据汉字电报码，如果图中的点和画分别用数字0和1表示，“学”字的电报码1331应如何转化为数字形式？",
+      "answer": "1331 中的每个数字对应莫尔斯电码中由点和画组成的序列，再将点替换为0、画替换为1。最终编码为：1→·−（01），3→−··（100），组合得到 01 100 100 01。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe27",
+      "type": "应用题",
+      "stem": "广播电台发射频率为 100 MHz 的无线电波，求电磁波在此频率下的波长。（取 c = 3×10^8 m/s）",
+      "answer": "λ = c / f = 3×10^8 / 1×10^8 = 3 m。",
+      "analysis": "利用波速公式 λ = v / f。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe28",
+      "type": "应用题",
+      "stem": "小晶用收音机收听1008kHz频道，听到440Hz的音，问射频电流频率、音频电流频率及接收到的电磁波频率。",
+      "answer": "(1) 射频电流频率1008kHz，音频电流频率440Hz；(2) 接收到的电磁波频率1008kHz。",
+      "analysis": "射频频率由频道给出，音频由声音频率决定，电磁波频率等于射频。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe29",
+      "type": "应用题",
+      "stem": "某同步卫星与地球的距离为36000 km。估算信号往返传播造成的通话延迟。",
+      "answer": "信号往返距离约72000 km，按照光速3×10^5 km/s，延迟约0.24秒。",
+      "analysis": "本题应用了光速传播时间的估算方法。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_9_rjb_exe30",
+      "type": "简答题",
+      "stem": "有人说，我们现在开采的煤、石油等化石能源，实际上都是来源于上亿年前太阳上的核能。请说明这句话的道理。",
+      "answer": "古代植物通过光合作用把太阳能转化为化学能储存在体内，这些植物埋藏并经过地质变化形成煤、石油和天然气，因此化石能源来自远古的太阳能，而太阳能来源于太阳内部的核聚变。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 214,
+    "skill_count": 27,
+    "experiment_count": 50,
+    "question_count": 30
+  }
+}

@@ -1,0 +1,803 @@
+{
+  "id": "math_2a_rjb",
+  "stage": "小学",
+  "grade": "二年级上册",
+  "subject": "数学",
+  "title": "数学二年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_2a_rjb_cpt1",
+      "name": "长度单位",
+      "definition": "用于测量长度的标准单位体系，包括米、千米、厘米、毫米、英寸等。",
+      "importance": "重要",
+      "pages": "教材第1章",
+      "examples": [
+        "1米",
+        "15厘米",
+        "树高6米"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt2",
+      "name": "厘米",
+      "definition": "常用的较小的长度单位，通常用于测量较短的物体，符号为cm。",
+      "importance": "重要",
+      "pages": "教材第1章",
+      "unit": "cm"
+    },
+    {
+      "id": "math_2a_rjb_cpt3",
+      "name": "米",
+      "definition": "较大的长度单位，常用于测量较长的物体，符号为m。1米=100厘米。",
+      "importance": "重要",
+      "pages": "教材第1章",
+      "unit": "m"
+    },
+    {
+      "id": "math_2a_rjb_cpt4",
+      "name": "线段",
+      "definition": "由两个端点确定、具有固定长度的线，是直线的一部分。",
+      "importance": "掌握",
+      "pages": "线段部分"
+    },
+    {
+      "id": "math_2a_rjb_cpt5",
+      "name": "两位数加法的竖式计算",
+      "definition": "把加数按照数位对齐，从个位加起，满十向十位进1的加法计算方法。",
+      "importance": "重要",
+      "examples": [
+        "35+32",
+        "46+24"
+      ],
+      "pages": "加法章节"
+    },
+    {
+      "id": "math_2a_rjb_cpt6",
+      "name": "两位数减法的竖式计算",
+      "definition": "把被减数和减数按照数位对齐，从个位减起，不够减向十位借1的减法计算方法。",
+      "importance": "重要",
+      "examples": [
+        "48-36",
+        "36-19"
+      ],
+      "pages": "减法章节"
+    },
+    {
+      "id": "math_2a_rjb_cpt7",
+      "name": "进位加法",
+      "definition": "相加个位满十，需要向十位进1的加法。",
+      "importance": "重要",
+      "examples": [
+        "35+37",
+        "56+27"
+      ],
+      "pages": "加法章节"
+    },
+    {
+      "id": "math_2a_rjb_cpt8",
+      "name": "加减混合运算",
+      "definition": "在一道题里既有加法又有减法，按照从左到右的顺序进行计算。",
+      "importance": "掌握",
+      "examples": [
+        "47-15+18"
+      ],
+      "pages": "连加连减章节"
+    },
+    {
+      "id": "math_2a_rjb_cpt9",
+      "name": "角",
+      "definition": "有公共端点的两条射线组成的图形叫做角，这个公共端点是角的顶点，这两条射线是角的两条边。",
+      "importance": "重要",
+      "examples": [
+        "三角尺上的角",
+        "日常物体的棱角"
+      ],
+      "aliases": [
+        "angle"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt10",
+      "name": "角的顶点",
+      "definition": "角的两条边相交的点。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt11",
+      "name": "角的边",
+      "definition": "从顶点出发的两条线段构成角的边。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt12",
+      "name": "直角",
+      "definition": "与三角尺上直角一样大的角。",
+      "importance": "重要",
+      "examples": [
+        "正方形和长方形的四个角"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt13",
+      "name": "锐角",
+      "definition": "小于90度的角。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt14",
+      "name": "钝角",
+      "definition": "大于90度而小于180度的角。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt15",
+      "name": "乘法",
+      "definition": "求几个相同加数的和的简便运算叫作乘法。",
+      "importance": "重要",
+      "examples": [
+        "3+3+3+3=4×3",
+        "3×4=12"
+      ],
+      "pages": "乘法初步认识部分"
+    },
+    {
+      "id": "math_2a_rjb_cpt16",
+      "name": "加法的重复相加",
+      "definition": "把同一个加数连续相加若干次。",
+      "importance": "重要",
+      "examples": [
+        "3+3+3",
+        "2+2+2+2+2"
+      ],
+      "pages": "乘法初步认识部分"
+    },
+    {
+      "id": "math_2a_rjb_cpt17",
+      "name": "乘法算式",
+      "definition": "用“×”把两个乘数连接起来求积的算式。",
+      "importance": "重要",
+      "examples": [
+        "2×7=14",
+        "5×3=15"
+      ],
+      "pages": "乘法算式表示部分"
+    },
+    {
+      "id": "math_2a_rjb_cpt18",
+      "name": "乘号（×）",
+      "definition": "表示乘法运算的符号。",
+      "importance": "了解",
+      "pages": "你知道吗？"
+    },
+    {
+      "id": "math_2a_rjb_cpt19",
+      "name": "乘数和积",
+      "definition": "乘法算式中相乘的数叫乘数，计算的结果叫积。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2a_rjb_cpt20",
+      "name": "1～6 的乘法口诀",
+      "definition": "记忆 1到6 的乘法基本算式及其读法的方法。",
+      "importance": "重要",
+      "examples": [
+        "二五一十",
+        "三三得九"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt21",
+      "name": "从不同方向观察物体",
+      "definition": "观察同一物体时，从不同方向看到的形状可能不同。",
+      "importance": "重要",
+      "pages": "观察物体章节",
+      "examples": [
+        "从前面看到正方形，从侧面看到长方形"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt22",
+      "name": "立体图形的面",
+      "definition": "立体图形由若干平面组成，不同位置的面形状可能不同。",
+      "importance": "掌握",
+      "pages": "观察物体章节",
+      "examples": [
+        "正方体的面都是正方形"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt23",
+      "name": "7的乘法口诀",
+      "definition": "表示7与1到9相乘的乘法结果的口诀集合，如“一七得七”到“七七四十九”。",
+      "importance": "重要",
+      "examples": [
+        "七七四十九",
+        "7×4=28 四七二十八"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt24",
+      "name": "8的乘法口诀",
+      "definition": "表示8与1到9相乘结果的乘法口诀，如“一八得八”到“八八六十四”。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2a_rjb_cpt25",
+      "name": "9的乘法口诀",
+      "definition": "表示9与1到9相乘的乘法口诀，如“一九得九”到“九九八十一”。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_2a_rjb_cpt26",
+      "name": "乘法意义",
+      "definition": "表示几个相同加数的和，例如“3个8元就是8×3”。",
+      "importance": "重要",
+      "examples": [
+        "8元×3个=24元"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt27",
+      "name": "node_8"
+    },
+    {
+      "id": "math_2a_rjb_cpt28",
+      "name": "node_9"
+    },
+    {
+      "id": "math_2a_rjb_cpt29",
+      "name": "node_10"
+    },
+    {
+      "id": "math_2a_rjb_cpt30",
+      "name": "时",
+      "definition": "表示时间的单位，1时等于60分。在钟面上时针从一个数字走到下一个数字表示1小时。",
+      "importance": "掌握",
+      "examples": [
+        "4时、7时、11时"
+      ],
+      "pages": "教材多幅钟面示例"
+    },
+    {
+      "id": "math_2a_rjb_cpt31",
+      "name": "分",
+      "definition": "表示时间的单位，1小时等于60分。分针从一个小格到下一个小格表示1分。",
+      "importance": "掌握",
+      "examples": [
+        "5分、30分、45分"
+      ],
+      "pages": "教材钟面刻度说明"
+    },
+    {
+      "id": "math_2a_rjb_cpt32",
+      "name": "半小时",
+      "definition": "30分可以表示为半小时。",
+      "importance": "了解",
+      "pages": "原文：30分也可以说成半小时"
+    },
+    {
+      "id": "math_2a_rjb_cpt33",
+      "name": "整点与几时几分",
+      "definition": "由时针和分针共同表示的时间格式，如4时30分、7:15等。",
+      "importance": "重要",
+      "examples": [
+        "4时5分、4时30分、11时25分"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt34",
+      "name": "钟面读时",
+      "definition": "通过观察时针所在的大致位置和分针所在的小刻度，确定当前时间的时和分。",
+      "importance": "重要",
+      "examples": [
+        "根据分针从12开始数确定分钟"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt35",
+      "name": "搭配问题",
+      "definition": "在若干选项中按照一定规则进行选择、组合或配对，从而统计所有可能情形的问题。",
+      "importance": "重要",
+      "examples": [
+        "从1、2、3中选不同的两位数组成方法",
+        "从水果和蔬菜中各选一种榨汁"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt36",
+      "name": "不重不漏地列举",
+      "definition": "按照一定顺序将所有可能情况系统地列出来，既不重复也不遗漏。",
+      "importance": "掌握",
+      "examples": [
+        "固定十位数依次变化个位数"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt37",
+      "name": "顺序是否影响结果",
+      "definition": "在计数时判断顺序是否产生不同结果；如果顺序不同但结果相同，则只算一种情况。",
+      "importance": "掌握",
+      "examples": [
+        "5加7与7加5和相同，只算一种"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt38",
+      "name": "加法交换律",
+      "definition": "两个数相加，交换加数的位置，和不变，即 a + b = b + a。",
+      "importance": "了解",
+      "examples": [
+        "5+7=7+5"
+      ],
+      "formula": "a + b = b + a"
+    },
+    {
+      "id": "math_2a_rjb_cpt39",
+      "name": "乘法的含义",
+      "definition": "用几个相同加数相加可以用乘法算式表示，例如2+2+2+2+2+2+2+2=16可以写成2×8=16。",
+      "importance": "重要",
+      "examples": [
+        "2×3=6",
+        "2×8=16"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt40",
+      "name": "乘法口诀",
+      "definition": "表示两个数相乘得积的基本算式，用于快速记忆和计算乘法结果。",
+      "importance": "重要",
+      "examples": [
+        "二三得六",
+        "四七二十八",
+        "七八五十六",
+        "三九二十七"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt41",
+      "name": "角的分类",
+      "definition": "根据角的大小可以将角分为锐角、直角和钝角。",
+      "importance": "掌握",
+      "examples": [
+        "直角",
+        "锐角",
+        "钝角"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt42",
+      "name": "笔算加法",
+      "definition": "用竖式进行两位数加法计算的方法，需要注意进位。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt43",
+      "name": "笔算减法",
+      "definition": "用竖式进行两位数减法计算的方法，需要注意退位。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_2a_rjb_cpt44",
+      "name": "时间单位",
+      "definition": "表示时间的单位，如时、分。",
+      "importance": "了解",
+      "examples": [
+        "一节课40分"
+      ]
+    },
+    {
+      "id": "math_2a_rjb_cpt45",
+      "name": "观察物体",
+      "definition": "通过不同视角观察物体，理解物体在不同方向看到的形状或特征。",
+      "importance": "了解"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_2a_rjb_skl1",
+      "name": "使用尺子测量长度",
+      "description": "将尺子的0刻度对准物体的一端，读取另一端所对应的刻度，得到物体的长度。"
+    },
+    {
+      "id": "math_2a_rjb_skl2",
+      "name": "估测长度",
+      "description": "根据生活经验或参照物，对物体的长度进行大致判断。"
+    },
+    {
+      "id": "math_2a_rjb_skl3",
+      "name": "数位对齐",
+      "description": "笔算加减法时，所有数必须按个位对齐，十位在十位上，保证计算准确。"
+    },
+    {
+      "id": "math_2a_rjb_skl4",
+      "name": "从个位算起",
+      "description": "竖式加减法统一从个位开始计算，符合数位大小顺序。"
+    },
+    {
+      "id": "math_2a_rjb_skl5",
+      "name": "画图理解数量关系",
+      "description": "通过条形图、示意图帮助理解“多多少”、“少多少”等数量关系。"
+    },
+    {
+      "id": "math_2a_rjb_skl6",
+      "name": "画角的方法",
+      "description": "先画一个点作为顶点，再从这个点向两个不同方向画两条直线即可画出一个角。"
+    },
+    {
+      "id": "math_2a_rjb_skl7",
+      "name": "用三角尺判断直角",
+      "description": "将三角尺上的直角与要判断的角进行比较，以确定该角是否是直角。"
+    },
+    {
+      "id": "math_2a_rjb_skl8",
+      "name": "比较角的大小",
+      "description": "通过与基准直角对比或拼接三角尺的方法判断角的大小关系。"
+    },
+    {
+      "id": "math_2a_rjb_skl9",
+      "name": "用图示理解乘法",
+      "description": "通过摆小棒、画圈、阵列图等方式理解“几个几”的含义。"
+    },
+    {
+      "id": "math_2a_rjb_skl10",
+      "name": "用加法转化为乘法",
+      "description": "把相同加数的加法表示成乘法算式，提高计算效率。"
+    },
+    {
+      "id": "math_2a_rjb_skl11",
+      "name": "根据情境建模乘法",
+      "description": "根据生活场景中的“每…有…，一共有多少”建立乘法算式。"
+    },
+    {
+      "id": "math_2a_rjb_skl12",
+      "name": "从多角度观察物体",
+      "description": "通过从前、后、左、右、上等不同方向观察物体，以获得更全面的信息。"
+    },
+    {
+      "id": "math_2a_rjb_skl13",
+      "name": "用乘法解决实际问题",
+      "description": "根据情境，确定单位数量与组数，用乘法求总量。"
+    },
+    {
+      "id": "math_2a_rjb_skl14",
+      "name": "使用乘法口诀进行快速计算",
+      "description": "根据记忆的乘法口诀直接得出乘法结果。"
+    },
+    {
+      "id": "math_2a_rjb_skl15",
+      "name": "利用乘法口诀快速计算",
+      "description": "根据熟记的乘法口诀直接得出乘法算式结果，提高计算速度。"
+    },
+    {
+      "id": "math_2a_rjb_skl16",
+      "name": "根据情境建立乘法算式",
+      "description": "根据生活情境中的“相同数量的重复”建立相应的乘法算式解决问题。"
+    },
+    {
+      "id": "math_2a_rjb_skl17",
+      "name": "读取钟面时间",
+      "description": "根据时针位置确定小时，并从分针起点12开始数小格确定分钟，得出具体时间。"
+    },
+    {
+      "id": "math_2a_rjb_skl18",
+      "name": "时间单位换算",
+      "description": "能够在小时与分钟之间正确换算，如1时=60分、半小时=30分。"
+    },
+    {
+      "id": "math_2a_rjb_skl19",
+      "name": "列表法",
+      "description": "用表格方式逐一列出各种可能的搭配或组合情况，便于观察是否重复或遗漏。"
+    },
+    {
+      "id": "math_2a_rjb_skl20",
+      "name": "使用竖式计算",
+      "description": "将两位数加减法写成竖式，按列对齐，并进行进位或退位运算。"
+    },
+    {
+      "id": "math_2a_rjb_skl21",
+      "name": "估计与测量",
+      "description": "先对长度进行估计，再使用工具测量出实际长度。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_2a_rjb_exe1",
+      "type": "填空题",
+      "stem": "看一看，铅笔长（ ）厘米。",
+      "answer": "大约 10 厘米（因教材图示不同，答案可根据尺子刻度给出实际数值）",
+      "analysis": "此题要求学生用尺子对准铅笔两端，读出刻度，考察基本测量能力。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe2",
+      "type": "判断题",
+      "stem": "一根旗杆的高度是13厘米还是13米？",
+      "answer": "13米。",
+      "analysis": "学生需要根据常识判断旗杆不可能只有13厘米，体现单位选择能力和对厘米、米大小的理解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe3",
+      "type": "应用题",
+      "stem": "35+2=？ 二（1）班学生和老师一共有多少人？",
+      "answer": "35+2=37",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe4",
+      "type": "填空题",
+      "stem": "35+37=？ 个位上5加7得12，应怎样写？",
+      "answer": "个位写2，向十位进1，结果是72。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe5",
+      "type": "简答题",
+      "stem": "36-19=？ 个位不够减怎么办？",
+      "answer": "从十位退1，个位变成16，16-9=7，十位2-1=1，所以36-19=17。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe6",
+      "type": "应用题",
+      "stem": "47-15+18=？ 现在车上有多少人？",
+      "answer": "47-15=32，32+18=50。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe7",
+      "type": "应用题",
+      "stem": "按照例2的方法，自己画出一个角。",
+      "answer": "先画一个点作为顶点，再向两个不同方向画两条直线形成一个角。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe8",
+      "type": "判断题",
+      "stem": "下面哪些角是直角？（提供的四个图）",
+      "answer": "将三角尺的直角与图中角比较，凡是完全重合的为直角。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe9",
+      "type": "选择题",
+      "stem": "连接锐角、直角和钝角与对应的图形。",
+      "answer": "锐角对应比直角小的图；直角对应与三角尺直角相同的图；钝角对应比直角大的图。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe10",
+      "type": "应用题",
+      "stem": "5个3相加，一共是多少？写出加法算式和乘法算式。",
+      "answer": "加法算式：3+3+3+3+3=15；乘法算式：5×3=15 或 3×5=15",
+      "analysis": "考察从重复加法到乘法的转化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe11",
+      "type": "应用题",
+      "stem": "每只小兔拔5根胡萝卜，4只小兔一共拔多少根？",
+      "answer": "5×4=20（根）",
+      "analysis": "典型“每…有…”结构，建模乘法。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe12",
+      "type": "填空题",
+      "stem": "背出并填写：三三得（ ），四五（ ）。",
+      "answer": "三三得九；四五二十",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe13",
+      "type": "应用题",
+      "stem": "下面这些图分别是谁看到的？（根据物体不同方向的视图匹配人物位置）",
+      "answer": "依据图中物体前、侧、后的特征判断对应人物视图。",
+      "analysis": "考查从不同方向观察物体的能力。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe14",
+      "type": "应用题",
+      "stem": "2022年，2个星期有多少天？3个星期呢？",
+      "answer": "14天；21天",
+      "analysis": "考查7的乘法口诀：7×2，7×3。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe15",
+      "type": "应用题",
+      "stem": "买3个8元的笔袋，一共多少钱？",
+      "answer": "24元",
+      "analysis": "使用乘法解决实际问题：8×3",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe16",
+      "type": "应用题",
+      "stem": "一只蜘蛛8条腿，3只蜘蛛多少条腿？",
+      "answer": "24条腿",
+      "analysis": "使用8的乘法口诀：8×3",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe17",
+      "type": "填空题",
+      "stem": "7×4=？ 你用的是哪句口诀？",
+      "answer": "28，使用“四七二十八”。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe18",
+      "type": "应用题",
+      "stem": "看图读时间：钟面上分针指向3，时针略过7，是什么时间？",
+      "answer": "7时15分",
+      "analysis": "分针指向3表示15分，时针略过7表示7时。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe19",
+      "type": "填空题",
+      "stem": "用合适的单位填空：30分也可以说成（ ）。",
+      "answer": "半小时",
+      "analysis": "根据1时=60分，可知30分为半小时。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe20",
+      "type": "应用题",
+      "stem": "2+2+2+2+2+2+2+2等于多少？请用乘法算式表示。",
+      "answer": "16，乘法算式是2×8=16。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe21",
+      "type": "填空题",
+      "stem": "28+59等于多少？请用竖式计算。",
+      "answer": "87。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe22",
+      "type": "简答题",
+      "stem": "下面的图形里有几个角？哪些是直角？",
+      "answer": "图形中有若干角，其中标有方形符号的为直角。（根据教材图形）",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_2a_rjb_exe23",
+      "type": "填空题",
+      "stem": "床长1( )90( )，请在括号内填写合适的长度单位。",
+      "answer": "1米90厘米。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 45,
+    "skill_count": 21,
+    "experiment_count": 0,
+    "question_count": 23
+  }
+}

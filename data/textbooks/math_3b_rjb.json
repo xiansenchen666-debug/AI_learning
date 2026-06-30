@@ -1,0 +1,885 @@
+{
+  "id": "math_3b_rjb",
+  "stage": "小学",
+  "grade": "三年级下册",
+  "subject": "数学",
+  "title": "数学三年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_3b_rjb_cpt1",
+      "name": "东南西北四个基本方向",
+      "definition": "在空间中常用东、南、西、北四个基本方向描述位置。",
+      "importance": "掌握",
+      "examples": [
+        "太阳从东方升起；教学楼在操场的北面。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt2",
+      "name": "相对方向",
+      "definition": "东与西相对，北与南相对。",
+      "importance": "掌握",
+      "examples": [
+        "东与（西）相对，北与（南）相对。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt3",
+      "name": "利用自然现象判断方向",
+      "definition": "通过“早晨太阳在东方”和“北极星在夜空北方”来辨认方向。",
+      "importance": "了解",
+      "examples": [
+        "早晨太阳在东方；夜晚找到北极星可确定北方。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt4",
+      "name": "建筑物之间的方向关系",
+      "definition": "用东、南、西、北描述物体或建筑之间的相对位置。",
+      "importance": "重要",
+      "examples": [
+        "人民英雄纪念碑在天安门的南面。",
+        "图书馆在东面，体育馆在西面。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt5",
+      "name": "八个方向",
+      "definition": "在四个基本方向基础上细分得到东北、东南、西北、西南方向。",
+      "importance": "了解",
+      "examples": [
+        "长颈鹿馆在西北角。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt6",
+      "name": "指南针辨别方向",
+      "definition": "利用指南针或司南等工具确定方向。",
+      "importance": "了解",
+      "examples": [
+        "指南针是指示方向的工具。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt7",
+      "name": "除数是一位数的除法",
+      "definition": "被除数是两位数或三位数，除数是一位数的除法，包括笔算和口算的方法。",
+      "importance": "重要",
+      "pages": "全章出现"
+    },
+    {
+      "id": "math_3b_rjb_cpt8",
+      "name": "被除数、除数、商、余数",
+      "definition": "除法算式中的四个基本量，被除数÷除数=商…余数，余数必须小于除数。",
+      "importance": "掌握",
+      "pages": "多处，如148÷6处"
+    },
+    {
+      "id": "math_3b_rjb_cpt9",
+      "name": "竖式除法的位值原则",
+      "definition": "除到被除数的哪一位，就把商写在相应的哪一位上；每一步余数必须小于除数。",
+      "importance": "重要",
+      "pages": "如52÷2、148÷6示例"
+    },
+    {
+      "id": "math_3b_rjb_cpt10",
+      "name": "有余数的除法验算",
+      "definition": "用“商×除数+余数=被除数”检验计算是否正确。",
+      "importance": "掌握",
+      "pages": "如148÷6处"
+    },
+    {
+      "id": "math_3b_rjb_cpt11",
+      "name": "简单统计表",
+      "definition": "只包含一类对象或一项数据分类的统计表，表格结构较为简单。",
+      "importance": "掌握",
+      "examples": [
+        "2013年空气质量各级别天数情况表"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt12",
+      "name": "复式统计表",
+      "definition": "包含两类或多类对象的数据，能同时展示多个角度的信息，是在简单统计表基础上的扩展。",
+      "importance": "重要",
+      "examples": [
+        "男生、女生最喜欢的运动项目人数情况表",
+        "不同年份空气质量对比表"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt13",
+      "name": "数据整理",
+      "definition": "将调查得到的数据分类、汇总并整理到表格中的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3b_rjb_cpt14",
+      "name": "乘法的分配律（整数范围）",
+      "definition": "一个数与两个数的和相乘，可以先分别与这两个数相乘，再把积相加。教材中用16分成10和6计算16×3示例。",
+      "importance": "重要",
+      "examples": [
+        "16=10+6，因此16×3=10×3+6×3"
+      ],
+      "pages": "口算乘法章节开头"
+    },
+    {
+      "id": "math_3b_rjb_cpt15",
+      "name": "整十数乘法",
+      "definition": "一个因数是整十数（如20、30、40等）的乘法，可以先把非整十数部分相乘，再在积的末尾添相应个数的0。",
+      "importance": "掌握",
+      "examples": [
+        "6×10=60",
+        "18×10=180",
+        "160×30 先算16×3=48，再添两个0 得4800"
+      ],
+      "pages": "口算乘法 6×10 示例"
+    },
+    {
+      "id": "math_3b_rjb_cpt16",
+      "name": "整百数乘法",
+      "definition": "把整百数看成若干个整十数或整数相乘，再在积末尾添上两个0。",
+      "importance": "了解",
+      "examples": [
+        "140×4 = 14×4 再添0"
+      ],
+      "pages": "做一做 110×5、230×4 等"
+    },
+    {
+      "id": "math_3b_rjb_cpt17",
+      "name": "两位数乘两位数的笔算方法",
+      "definition": "先用乘数个位乘被乘数，再用乘数十位乘被乘数，且第二次乘得的数末位与十位对齐，最后把两个部分积相加。",
+      "importance": "重要",
+      "pages": "笔算乘法部分 ‘小组讨论’ 处"
+    },
+    {
+      "id": "math_3b_rjb_cpt18",
+      "name": "估算（乘法）",
+      "definition": "对两个因数进行四舍五入或取整，得到便于心算的数，再估计积的大致大小。",
+      "importance": "掌握",
+      "examples": [
+        "37≈40, 48≈50, 40×50≈2000"
+      ],
+      "pages": "37×48 酸奶问题"
+    },
+    {
+      "id": "math_3b_rjb_cpt19",
+      "name": "面积",
+      "definition": "表示物体或区域在平面上所占的大小，如土地面积、场地面积等。",
+      "importance": "重要",
+      "pages": "第5章开头至多处反复出现",
+      "examples": [
+        "黑板面的大小就是黑板面的面积",
+        "数学书封面的大小就是数学书封面的面积"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt20",
+      "name": "面积单位",
+      "definition": "用于测量面积大小的标准单位，包括平方厘米、平方分米、平方米等。",
+      "importance": "重要",
+      "pages": "常用面积单位处",
+      "examples": [
+        "1平方厘米",
+        "1平方分米",
+        "1平方米"
+      ],
+      "aliases": [
+        "平方单位"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt21",
+      "name": "平方厘米",
+      "definition": "边长1厘米的正方形的面积。",
+      "importance": "掌握",
+      "pages": "常用面积单位(1)",
+      "unit": "cm²",
+      "examples": [
+        "手指甲的面积接近1平方厘米"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt22",
+      "name": "平方分米",
+      "definition": "边长1分米的正方形的面积。",
+      "importance": "掌握",
+      "pages": "常用面积单位(2)",
+      "unit": "dm²"
+    },
+    {
+      "id": "math_3b_rjb_cpt23",
+      "name": "平方米",
+      "definition": "边长1米的正方形的面积。",
+      "importance": "掌握",
+      "pages": "常用面积单位(3)",
+      "unit": "m²"
+    },
+    {
+      "id": "math_3b_rjb_cpt24",
+      "name": "面积单位进率",
+      "definition": "相邻两个面积单位之间大小关系：1平方分米 = 100平方厘米，1平方米 = 100平方分米。",
+      "importance": "重要",
+      "pages": "6页内容"
+    },
+    {
+      "id": "math_3b_rjb_cpt25",
+      "name": "长方形面积公式",
+      "definition": "长方形的面积等于长乘以宽。",
+      "importance": "重要",
+      "formula": "面积 = 长 × 宽",
+      "pages": "4(1)(2)"
+    },
+    {
+      "id": "math_3b_rjb_cpt26",
+      "name": "正方形面积公式",
+      "definition": "正方形的面积等于边长乘以边长。",
+      "importance": "掌握",
+      "formula": "面积 = 边长 × 边长",
+      "pages": "4(3)"
+    },
+    {
+      "id": "math_3b_rjb_cpt27",
+      "name": "年、月、日",
+      "definition": "年、月、日是常用的时间单位，用来表示和计算日期。",
+      "importance": "掌握",
+      "pages": "章节开头"
+    },
+    {
+      "id": "math_3b_rjb_cpt28",
+      "name": "月份天数",
+      "definition": "不同月份的天数不同，其中大月31天，小月30天，2月为28天或29天。",
+      "importance": "掌握",
+      "pages": "观察2023、2024年年历"
+    },
+    {
+      "id": "math_3b_rjb_cpt29",
+      "name": "平年",
+      "definition": "2月有28天的年份称为平年，共365天。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3b_rjb_cpt30",
+      "name": "闰年",
+      "definition": "2月有29天的年份称为闰年，共366天。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3b_rjb_cpt31",
+      "name": "24时计时法",
+      "definition": "用0时到24时表示一天中的时间，便于简明和不易出错。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_3b_rjb_cpt32",
+      "name": "时间间隔计算",
+      "definition": "求两个时间之间经过的时长，可在钟面上数或用加减法计算。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_3b_rjb_cpt33",
+      "name": "小数",
+      "definition": "像 3.45、0.85、2.60 和 36.6 这样的数叫作小数。",
+      "importance": "重要",
+      "examples": [
+        "3.45",
+        "0.85",
+        "2.60",
+        "36.6"
+      ],
+      "pages": "教材开篇小数介绍页"
+    },
+    {
+      "id": "math_3b_rjb_cpt34",
+      "name": "十分之一与分米、角的关系",
+      "definition": "把 1 个单位平均分成 10 份，每一份是原单位的十分之一，如 1 分米是 1 米的十分之一，1 角是 1 元的十分之一。",
+      "importance": "掌握",
+      "examples": [
+        "1 分米 = 0.1 米",
+        "1 角 = 0.1 元"
+      ],
+      "pages": "分米与米、小数表示部分"
+    },
+    {
+      "id": "math_3b_rjb_cpt35",
+      "name": "小数的读法",
+      "definition": "小数的读法从左到右依次读出整数部分、小数点和小数部分，如 3.45 读作“三点四五”。",
+      "importance": "掌握",
+      "examples": [
+        "3.5 读作三点五",
+        "5.25 读作五点二五"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt36",
+      "name": "小数的比较大小",
+      "definition": "比较小数大小时，先比较整数部分；若相同，再从小数部分依次比较各位数字。",
+      "importance": "掌握",
+      "examples": [
+        "0.8 < 1.2",
+        "2.5 > 1.8"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt37",
+      "name": "小数加减法及小数点对齐",
+      "definition": "进行小数加减法时，小数点必须对齐，整数部分对整数部分，小数部分对小数部分。",
+      "importance": "重要",
+      "examples": [
+        "0.8 + 0.6 = 1.4",
+        "1.2 - 0.6 = 0.6"
+      ],
+      "pages": "小数加减法教学页"
+    },
+    {
+      "id": "math_3b_rjb_cpt38",
+      "name": "不重复数字组成的两位数",
+      "definition": "从给定的数字中选取两个不同的数字，按顺序组成一个两位数，要求十位不能为0且数字不重复。",
+      "importance": "重要",
+      "examples": [
+        "用0、1、3、5可组成10个不同的两位数"
+      ],
+      "pages": "教材第8章前半部分"
+    },
+    {
+      "id": "math_3b_rjb_cpt39",
+      "name": "系统列举法",
+      "definition": "按照一定顺序排列所有可能情况，使结果不重不漏。",
+      "importance": "重要",
+      "examples": [
+        "先固定十位数字，再更换个位数字"
+      ],
+      "pages": "教材“这样按顺序写，就能不重不漏”"
+    },
+    {
+      "id": "math_3b_rjb_cpt40",
+      "name": "分类计数",
+      "definition": "将复杂的计数问题按照某种特征分成若干类，分别计算再相加。",
+      "importance": "掌握",
+      "examples": [
+        "从饮品和主食中各选1样，需要分类饮品和主食"
+      ],
+      "pages": "饮品与主食搭配示例"
+    },
+    {
+      "id": "math_3b_rjb_cpt41",
+      "name": "两个元素的所有配对（两两组合）",
+      "definition": "从若干对象中任选2个组成一组，每一对只计算一次。",
+      "importance": "重要",
+      "examples": [
+        "4个班比赛，每2个班踢一场，共6场"
+      ],
+      "pages": "足球比赛示例"
+    },
+    {
+      "id": "math_3b_rjb_cpt42",
+      "name": "方位",
+      "definition": "用东、南、西、北等词语描述物体所在的位置关系。",
+      "importance": "掌握",
+      "examples": [
+        "按方位说一说小玲家的周围有什么。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt43",
+      "name": "示意图",
+      "definition": "用简单的图形表示物体的大致位置和相互关系的图。",
+      "importance": "了解",
+      "examples": [
+        "公园示意图、家庭周边示意图。"
+      ]
+    },
+    {
+      "id": "math_3b_rjb_cpt44",
+      "name": "长方形面积计算",
+      "definition": "长方形的面积等于长乘宽。",
+      "importance": "重要",
+      "formula": "面积=长×宽"
+    },
+    {
+      "id": "math_3b_rjb_cpt45",
+      "name": "正方形面积计算",
+      "definition": "正方形的面积等于边长乘边长。",
+      "importance": "重要",
+      "formula": "面积=边长×边长"
+    },
+    {
+      "id": "math_3b_rjb_cpt46",
+      "name": "两位数乘两位数",
+      "definition": "通过分部计算并相加的方法求两位数与两位数的乘积。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_3b_rjb_cpt47",
+      "name": "时间跨度计算",
+      "definition": "根据时和分计算时间的经过或差值。",
+      "importance": "掌握",
+      "examples": [
+        "图书馆8:30-16:30开放多少小时"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_3b_rjb_skl1",
+      "name": "根据参照物确定方向",
+      "description": "以自己或某个物体为参照，判断其他物体所在的方向。"
+    },
+    {
+      "id": "math_3b_rjb_skl2",
+      "name": "根据示意图判断方向",
+      "description": "阅读地图或示意图，根据上北下南左西右东判断各位置关系。"
+    },
+    {
+      "id": "math_3b_rjb_skl3",
+      "name": "使用指南针确定方向",
+      "description": "利用指南针的指针指向北方，从而确定其他方向。"
+    },
+    {
+      "id": "math_3b_rjb_skl4",
+      "name": "口算整十、整百数的除法",
+      "description": "利用整十、整百含有若干个十或百的特点，将其转化为简单除法，如60÷3看作6个十除以3。"
+    },
+    {
+      "id": "math_3b_rjb_skl5",
+      "name": "估算商",
+      "description": "通过把被除数取近似值或比较接近的整十、整百数来估计商的大小，而不需要精确计算。"
+    },
+    {
+      "id": "math_3b_rjb_skl6",
+      "name": "笔算除法步骤",
+      "description": "从高位开始试除，求一位商减一位数，余数小于除数后再落下一位继续除，直到被除数全部处理完。"
+    },
+    {
+      "id": "math_3b_rjb_skl7",
+      "name": "比较分析数据",
+      "description": "通过比较同一统计表中不同项目或不同年份、不同对象的数据，发现变化、趋势或差异。"
+    },
+    {
+      "id": "math_3b_rjb_skl8",
+      "name": "合并统计表",
+      "description": "将两个或多个具有相同分类指标的单一统计表合成为一个表，使信息表达更完整、简洁。"
+    },
+    {
+      "id": "math_3b_rjb_skl9",
+      "name": "分解数进行口算",
+      "description": "将一个因数拆分成更易计算的部分（如按十位和个位拆分），分别计算后再合并结果。"
+    },
+    {
+      "id": "math_3b_rjb_skl10",
+      "name": "画线段图或点子图理解乘法关系",
+      "description": "用图示方法表示数量之间的倍数、分组或乘法关系，辅助理解问题结构。"
+    },
+    {
+      "id": "math_3b_rjb_skl11",
+      "name": "估算结果判断计算合理性",
+      "description": "先得到大致结果，再与精确计算对比，判断是否出现位数错误或部分积未对齐等问题。"
+    },
+    {
+      "id": "math_3b_rjb_skl12",
+      "name": "用单位面积测量法比较面积",
+      "description": "选择一种面积单位（如1平方厘米）反复填充图形，以计数的方式比较面积大小。"
+    },
+    {
+      "id": "math_3b_rjb_skl13",
+      "name": "分割与拼合法求面积",
+      "description": "通过把图形分割成若干已知面积的部分，或将其拼合成规则图形计算面积。"
+    },
+    {
+      "id": "math_3b_rjb_skl14",
+      "name": "读取年历",
+      "description": "根据年历判断日期、星期几和月份天数等信息。"
+    },
+    {
+      "id": "math_3b_rjb_skl15",
+      "name": "使用24时计时法",
+      "description": "将上午、下午的时间转换为24小时制，并进行比较与计算。"
+    },
+    {
+      "id": "math_3b_rjb_skl16",
+      "name": "计算时间差",
+      "description": "用数时法或加减法求两个时刻之间的时间间隔。"
+    },
+    {
+      "id": "math_3b_rjb_skl17",
+      "name": "用图形或量感理解小数",
+      "description": "通过分割图形、长度条等方式理解十分之一、小数的大小关系。"
+    },
+    {
+      "id": "math_3b_rjb_skl18",
+      "name": "依据情境进行小数估算",
+      "description": "在购物、测量等生活情境中，根据小数进行合理估算与判断，如是否够钱、是否超载等。"
+    },
+    {
+      "id": "math_3b_rjb_skl19",
+      "name": "画连线图",
+      "description": "用点和线表示对象之间的两两配对关系，帮助理解组合数量。"
+    },
+    {
+      "id": "math_3b_rjb_skl20",
+      "name": "整理统计表",
+      "description": "根据数据或图表填充统计表并从中获取信息。"
+    },
+    {
+      "id": "math_3b_rjb_skl21",
+      "name": "提出数学问题",
+      "description": "从情境数据中发现、提出并解决数学问题。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_3b_rjb_exe1",
+      "type": "简答题",
+      "stem": "面向北，你的前、后、左、右各是什么方向？",
+      "answer": "前为北，后为南，左为西，右为东。",
+      "analysis": "通过自身朝向确定四个方向。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe2",
+      "type": "填空题",
+      "stem": "东与（ ）相对，北与（ ）相对。",
+      "answer": "西；南。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe3",
+      "type": "填空题",
+      "stem": "根据动物园导游图：大熊猫馆在动物园的( )角，飞禽馆在动物园的( )角。",
+      "answer": "大熊猫馆在东南角；飞禽馆在东北角。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe4",
+      "type": "简答题",
+      "stem": "指南针是我国古代四大发明之一。利用指南针可以确定什么方向？",
+      "answer": "指南针指针指向北方，从而可确定东、南、西方向。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe5",
+      "type": "应用题",
+      "stem": "把60张彩色手工纸平均分给3人，每人分得多少张？",
+      "answer": "20张",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe6",
+      "type": "应用题",
+      "stem": "李叔叔骑车旅行，3天一共骑行267千米。估计一下平均每天大约骑行多少千米。",
+      "answer": "大约90～100千米",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe7",
+      "type": "应用题",
+      "stem": "学校的石榴树结了148个石榴，平均分给6个年级。每个年级分得多少个，还剩几个？",
+      "answer": "每个年级24个，余4个",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe8",
+      "type": "应用题",
+      "stem": "根据“男生、女生最喜欢的运动项目人数情况”表，回答：男生喜欢哪种运动项目的人最多？女生呢？",
+      "answer": "根据表中人数最多的项目进行判断，例如：男生最多的是足球，女生最多的是跳绳（若数据需学生填写，答案依最终表为准）。",
+      "analysis": "考察学生从表格中读取最大值并比较的能力。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe9",
+      "type": "简答题",
+      "stem": "比较2013、2017、2021三年的空气质量数据，你有什么发现？",
+      "answer": "总体发现如：空气质量逐年变好，“优”和“良”的天数增多，污染天数减少。",
+      "analysis": "考察比较数据、发现趋势的能力。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe10",
+      "type": "应用题",
+      "stem": "将第一分公司和第二分公司人员配置情况合成一个表。",
+      "answer": "合成后的表包含三类人员及两个分公司的对应人数。",
+      "analysis": "考察能否正确按类别对齐并整合表格数据。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe11",
+      "type": "应用题",
+      "stem": "16×3 的口算结果是多少？请用分解数的方法计算。",
+      "answer": "48。16=10+6，10×3=30，6×3=18，30+18=48。",
+      "analysis": "考查分解数口算（分配律）。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe12",
+      "type": "应用题",
+      "stem": "计算 37×48，并判断计算结果是否合理。",
+      "answer": "1776。可先估算 40×50≈2000 判断位数。",
+      "analysis": "考查两位数乘两位数笔算及估算检验合理性。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe13",
+      "type": "应用题",
+      "stem": "一个长方形长5厘米，宽3厘米。求它的面积。",
+      "answer": "5×3=15平方厘米",
+      "analysis": "利用长方形面积公式面积=长×宽。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe14",
+      "type": "应用题",
+      "stem": "右面的交通标志牌近似正方形，边长约80厘米。求面积并换算成平方分米。",
+      "answer": "面积=80×80=6400平方厘米=64平方分米",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe15",
+      "type": "填空题",
+      "stem": "用1平方厘米的小正方形数一数图形的面积（如下三图）哪个最大？",
+      "answer": "按图形数格，面积最大的为图形C（示例），最小为图形A（示例）。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe16",
+      "type": "填空题",
+      "stem": "2016年是闰年，( )年后，即( )年又是闰年。",
+      "answer": "4年后，即2020年又是闰年。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe17",
+      "type": "简答题",
+      "stem": "下午5时用24时计时法表示是几时？",
+      "answer": "17时。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe18",
+      "type": "应用题",
+      "stem": "一场排球比赛19时30分开始，21时45分结束，比赛进行了多少分钟？",
+      "answer": "比赛进行了135分钟。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe19",
+      "type": "填空题",
+      "stem": "1分米 = （ ）米；5角是5/10元，还可以写成（ ）元。",
+      "answer": "1分米 = 0.1米；5角 = 0.5元",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe20",
+      "type": "填空题",
+      "stem": "比较大小：0.8、1.2、1.1、0.9，请按从大到小排序。",
+      "answer": "1.2 > 1.1 > 0.9 > 0.8",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe21",
+      "type": "应用题",
+      "stem": "计算：0.8 + 0.6；1.2 - 0.6（要求解释小数点为什么要对齐）",
+      "answer": "0.8 + 0.6 = 1.4；1.2 - 0.6 = 0.6。原因：小数点对齐后各位数字才能正确对应位值进行计算。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe22",
+      "type": "应用题",
+      "stem": "用0、2、4、6可以组成多少个没有重复数字的两位数？",
+      "answer": "8个。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe23",
+      "type": "应用题",
+      "stem": "三年级4个班进行足球比赛，每2个班踢一场，一共要踢多少场？",
+      "answer": "6场。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe24",
+      "type": "应用题",
+      "stem": "从饮品和主食中各选1样，有多少种不同的搭配？（饮品2种，主食3种）",
+      "answer": "6种。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe25",
+      "type": "应用题",
+      "stem": "图书馆的开馆时间是8:30-16:30，图书馆一天共开放多少小时？",
+      "answer": "8小时",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe26",
+      "type": "应用题",
+      "stem": "一个长方形健身园长85米，宽66米。它占地多少平方米？",
+      "answer": "85×66=5610（平方米）",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe27",
+      "type": "应用题",
+      "stem": "小红家去年平均每个月用水9吨，全年的水费一共540元。每吨水多少钱？",
+      "answer": "540÷12÷9 = 5 元/吨",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_3b_rjb_exe28",
+      "type": "应用题",
+      "stem": "一只鸟7天吃掉665只虫子，平均每天吃掉多少只？",
+      "answer": "665÷7=95只",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 47,
+    "skill_count": 21,
+    "experiment_count": 0,
+    "question_count": 28
+  }
+}

@@ -1,0 +1,1494 @@
+{
+  "id": "physics_xzxbx3_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理选择性必修三",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_xzxbx3_rjb_cpt1",
+      "name": "物体由大量分子组成",
+      "definition": "物体是由大量微小的分子组成的。在研究热运动性质时，可以把构成物质的微粒统称为分子。",
+      "importance": "掌握",
+      "examples": [
+        "1 mol 水含有 6.02×10^23 个水分子"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt2",
+      "name": "分子的无规则运动",
+      "definition": "分子永不停息地做无规则运动，其方向和速率在微观上具有偶然性。",
+      "importance": "掌握",
+      "examples": [
+        "扩散现象",
+        "布朗运动的微观原因"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt3",
+      "name": "布朗运动",
+      "definition": "悬浮在液体中的微粒受到周围液体分子无规则撞击而产生的无规则运动。",
+      "importance": "重要",
+      "examples": [
+        "显微镜下观察炭粒的随机运动"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt4",
+      "name": "热运动",
+      "definition": "分子永不停息的无规则运动称为热运动，温度越高，分子的热运动越剧烈。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt5",
+      "name": "分子动理论基本内容",
+      "definition": "物体由大量分子组成；分子永不停息地做无规则运动；分子之间存在相互作用力。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt6",
+      "name": "油膜法估测分子大小",
+      "definition": "通过测量油酸在水面上形成单分子油膜的体积和面积，计算油膜厚度，从而估测分子的直径。",
+      "importance": "重要",
+      "formula": "d = V / S",
+      "examples": "油酸分子的直径估算约为10^-10 m"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt7",
+      "name": "单分子油膜",
+      "definition": "油酸滴在水面上形成的只含一层油酸分子的薄膜。",
+      "importance": "掌握",
+      "examples": "油膜上无爽身粉，可清晰观察轮廓"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt8",
+      "name": "分子大小数量级",
+      "definition": "多数分子大小的数量级为10^-10 m，除一些大分子外。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt9",
+      "name": "宏观量测微观量",
+      "definition": "利用宏观可测物理量的方法推算微观物理量。",
+      "importance": "掌握",
+      "examples": "通过油膜面积和体积测分子直径"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt10",
+      "name": "随机事件",
+      "definition": "在一定条件下某事件可能出现，也可能不出现的事件。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt11",
+      "name": "统计规律",
+      "definition": "大量随机事件的整体往往表现出的规律性。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt12",
+      "name": "气体分子无规则运动",
+      "definition": "气体分子的速度大小和方向不断改变，向各个方向运动的分子数目在统计上几乎相等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt13",
+      "name": "气体分子速率分布规律",
+      "definition": "气体中大量分子的速率呈“中间多、两头少”的统计分布，并随温度变化。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt14",
+      "name": "气体压强的微观解释",
+      "definition": "气体压强来源于大量气体分子不断与器壁碰撞所产生的平均作用力。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt15",
+      "name": "分子热运动的平均动能",
+      "definition": "物体中所有分子的动能的平均值，是温度的微观标志。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt16",
+      "name": "温度的微观含义",
+      "definition": "温度表示分子热运动平均动能的大小。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt17",
+      "name": "分子间距离与势能关系",
+      "definition": "分子势能随分子距离变化，在平衡距离 r0 时最小。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt18",
+      "name": "热力学系统",
+      "definition": "由大量分子组成、作为研究对象的物质整体，简称系统，系统外与系统发生相互作用的其他物体称为外界。",
+      "importance": "掌握",
+      "examples": [
+        "加热气体时，气体为系统，容器与酒精灯为外界"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt19",
+      "name": "状态参量",
+      "definition": "用于确定热力学系统状态的物理量，包括体积、压强、温度等。",
+      "importance": "掌握",
+      "examples": [
+        "V、p、T"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt20",
+      "name": "平衡态",
+      "definition": "系统的状态参量不随时间变化的稳定状态。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt21",
+      "name": "热平衡",
+      "definition": "两个相互接触并能传热的系统，经过一段时间状态参量不再变化的状态。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt22",
+      "name": "热平衡定律",
+      "definition": "若两个系统分别与第三个系统达到热平衡，则它们彼此之间也处于热平衡。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt23",
+      "name": "温标",
+      "definition": "定量描述温度的一套方法，通过测温物质的某种性质建立。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt24",
+      "name": "摄氏温标",
+      "definition": "以冰点 0°C、沸点 100°C 为基准，将两者间分成100等份的温标。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt25",
+      "name": "热力学温标",
+      "definition": "基于热力学原理建立的温标，其温度单位为开尔文K。",
+      "importance": "重要",
+      "formula": "T = t + 273.15"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt26",
+      "name": "气体的等温变化",
+      "definition": "一定质量的气体在温度不变时，其压强与体积发生的变化过程。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt27",
+      "name": "压强与体积的反比关系",
+      "definition": "在温度不变时，一定质量气体的压强 p 与体积 V 成反比。",
+      "formula": "p ∝ 1/V",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt28",
+      "name": "玻意耳定律",
+      "definition": "一定质量的某种气体在温度不变时，压强 p 与体积 V 的乘积为常量，即 pV = C。",
+      "formula": "pV = C 或 p1V1 = p2V2",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt29",
+      "name": "等温线",
+      "definition": "表示温度不变时气体压强与体积关系的 p-V 曲线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt30",
+      "name": "气体的等压变化",
+      "definition": "一定质量的某种气体，在压强不变时，体积随温度变化的过程。",
+      "importance": "掌握",
+      "formula": "V ∝ T,  V = C T,  V1/T1 = V2/T2"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt31",
+      "name": "盖-吕萨克定律",
+      "definition": "一定质量的某种气体，在压强不变的情况下，体积 V 与热力学温度 T 成正比。",
+      "importance": "重要",
+      "formula": "V = C T"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt32",
+      "name": "气体的等容变化",
+      "definition": "一定质量的某种气体，在体积不变时，压强随温度变化的过程。",
+      "importance": "掌握",
+      "formula": "p ∝ T,  p = C T,  p1/T1 = p2/T2"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt33",
+      "name": "查理定律",
+      "definition": "一定质量的某种气体，在体积不变的情况下，压强 p 与热力学温度 T 成正比。",
+      "importance": "重要",
+      "formula": "p = C T"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt34",
+      "name": "理想气体",
+      "definition": "一种分子大小和相互作用力可以忽略、在任何温度与压强下都遵从气体实验定律的假想气体。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt35",
+      "name": "理想气体状态方程",
+      "definition": "一定质量的理想气体在任意状态变化中 pV/T 保持不变。",
+      "importance": "重要",
+      "formula": "pV/T = C"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt36",
+      "name": "理想模型",
+      "definition": "为便于研究，通过忽略次要因素并抽象主要特征构建的模型。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt37",
+      "name": "各向异性",
+      "definition": "物体在不同方向具有不同的物理性质，如导热性、导电性、光学性质等。",
+      "importance": "掌握",
+      "examples": [
+        "晶体的导热不同方向不一样",
+        "方解石双折射"
+      ],
+      "aliases": [
+        "anisotropy"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt38",
+      "name": "各向同性",
+      "definition": "物体在各个方向物理性质相同。",
+      "importance": "掌握",
+      "examples": [
+        "非晶体的各向同性"
+      ],
+      "aliases": [
+        "isotropy"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt39",
+      "name": "单晶体",
+      "definition": "由规则排列的微粒构成、具有明确外形且各向异性的晶体。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt40",
+      "name": "多晶体",
+      "definition": "由许多微小的单晶体随机取向聚集而成，没有规则外形，宏观上呈各向同性，但具有确定熔点。",
+      "importance": "了解",
+      "examples": [
+        "金属",
+        "潮湿结块的蔗糖"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt41",
+      "name": "晶体的微观结构",
+      "definition": "晶体内部原子、离子或分子按一定规则周期性排列，并在平衡位置附近不断振动。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt42",
+      "name": "石墨结构",
+      "definition": "碳原子呈层状排列，层间距大、作用力弱，因此质地松软。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt43",
+      "name": "金刚石结构",
+      "definition": "碳原子呈三维强键合结构，因此硬度极大。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt44",
+      "name": "液体的表面张力",
+      "definition": "液体表面层中分子间存在沿液面切向、使液体表面具有收缩趋势的作用力，称为表面张力。",
+      "importance": "重要",
+      "aliases": [
+        "surface tension"
+      ],
+      "examples": "水黾停在水面、露珠呈球形、肥皂膜绷紧棉线"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt45",
+      "name": "浸润",
+      "definition": "一种液体能润湿某种固体并附着在固体表面上的现象。",
+      "importance": "掌握",
+      "examples": "水润湿玻璃"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt46",
+      "name": "不浸润",
+      "definition": "一种液体不能润湿某种固体，也不会附着在其表面的现象。",
+      "importance": "掌握",
+      "examples": "水不润湿蜡、水银不润湿玻璃"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt47",
+      "name": "毛细现象",
+      "definition": "浸润液体在细管中上升及不浸润液体在细管中下降的现象。",
+      "importance": "重要",
+      "examples": "细玻璃管中水面上升、塑料笔芯中水面下降"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt48",
+      "name": "液晶",
+      "definition": "介于固态与液态之间，具有一定流动性又保持部分分子排列有序性的物质状态。",
+      "importance": "重要",
+      "examples": "液晶显示器中的TN液晶"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt49",
+      "name": "绝热过程",
+      "definition": "系统与外界不发生热量交换的过程，内能变化仅由外界对系统做的功决定。",
+      "importance": "重要",
+      "aliases": [
+        "adiabatic process"
+      ],
+      "examples": [
+        "空气压缩引火仪快速压缩过程"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt50",
+      "name": "做功引起的内能变化",
+      "definition": "在绝热过程中，系统内能的变化等于外界对系统所做的功。",
+      "importance": "重要",
+      "formula": "ΔU = W"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt51",
+      "name": "热量与内能的变化",
+      "definition": "在单纯传热过程中，系统内能的变化等于吸收或放出的热量。",
+      "importance": "掌握",
+      "formula": "ΔU = Q"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt52",
+      "name": "功与热的等效性",
+      "definition": "外界对系统做的机械功与传给系统的热在改变系统状态方面具有等效性。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt53",
+      "name": "做功",
+      "definition": "外界对系统或系统对外界施加力并发生位移时能量转移的方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt54",
+      "name": "传热",
+      "definition": "系统与外界之间由于温度差而发生的能量转移方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt55",
+      "name": "热力学第一定律",
+      "definition": "做功和传热可以改变系统的内能，内能与外界能量发生转化或转移时能量总量保持不变，是能量守恒定律在热学中的表达。",
+      "importance": "重要",
+      "formula": "ΔU = Q + W"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt56",
+      "name": "热动说",
+      "definition": "认为热是物体内部粒子无规则运动的表现。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt57",
+      "name": "热质说",
+      "definition": "认为热是一种无质量的流质，可在不同物体间流动。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt58",
+      "name": "永动机不可能制成",
+      "definition": "永动机违背能量守恒定律，因为没有能量输入就无法持续对外做功。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt59",
+      "name": "能量形式相互转化",
+      "definition": "能量可以在不同形式间转化，如电能、机械能、热能等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt60",
+      "name": "能量与质量的关系",
+      "definition": "相对论建立后认识到能量与质量相关联，是物质基本属性之一。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt61",
+      "name": "热力学第二定律",
+      "definition": "描述自然界宏观过程的方向性，指出许多满足能量守恒的过程无法自发发生。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt62",
+      "name": "克劳修斯表述",
+      "definition": "热量不能自发地从低温物体传到高温物体。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt63",
+      "name": "开尔文表述",
+      "definition": "不可能从单一热库吸收热量并使其完全变为功而不产生其他影响。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt64",
+      "name": "孤立系统",
+      "definition": "不与外界发生物质和能量交换的系统。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt65",
+      "name": "熵",
+      "definition": "用以描述系统无序程度的物理量。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt66",
+      "name": "熵增加原理",
+      "definition": "孤立系统的熵在自发过程中总是不减少的。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt67",
+      "name": "微观态与宏观态",
+      "definition": "微观态指粒子具体分布方式，宏观态由许多微观态构成。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt68",
+      "name": "能量耗散",
+      "definition": "高品质能量不可逆地转化为分散的内能且难以再利用的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt69",
+      "name": "黑体辐射实验规律",
+      "definition": "黑体辐射强度随波长分布的规律：温度升高时各波段强度增加，峰值向短波方向移动。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt70",
+      "name": "能量量子化",
+      "definition": "微观粒子的能量只能取某些分立值的物理规律。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt71",
+      "name": "宏观能量连续性",
+      "definition": "宏观物体（如弹簧振子）的能量可以连续变化，不是分立的。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt72",
+      "name": "光电效应",
+      "definition": "光照射到金属表面能使电子从金属中逸出的现象。",
+      "importance": "重要",
+      "aliases": [
+        "photoelectric effect"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt73",
+      "name": "光电子",
+      "definition": "在光电效应中从金属表面逸出的电子。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt74",
+      "name": "截止频率",
+      "definition": "使光电流恰好为零的入射光最低频率，低于此频率不发生光电效应。",
+      "importance": "重要",
+      "aliases": [
+        "极限频率"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt75",
+      "name": "饱和电流",
+      "definition": "电压增大到一定值后光电流不再增大的最大电流。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt76",
+      "name": "遏止电压",
+      "definition": "使光电流减小到零的反向电压。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt77",
+      "name": "逸出功",
+      "definition": "电子从金属表面逸出所需的最小能量。",
+      "importance": "重要",
+      "aliases": [
+        "work function"
+      ],
+      "formula": "W0"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt78",
+      "name": "光子能量",
+      "definition": "频率为ν的光子的能量为hν。",
+      "importance": "重要",
+      "formula": "E=hν"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt79",
+      "name": "爱因斯坦光电效应方程",
+      "definition": "描述光电子最大初动能与光频率关系的方程。",
+      "importance": "重要",
+      "formula": "Ek = hν - W0"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt80",
+      "name": "光子的动量",
+      "definition": "光子动量与波长关系为 p = h/λ。",
+      "importance": "掌握",
+      "formula": "p=h/λ"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt81",
+      "name": "康普顿效应",
+      "definition": "散射X射线波长变大的效应，由光子与电子碰撞引起。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt82",
+      "name": "波粒二象性",
+      "definition": "光以及微观粒子同时具有波动性和粒子性。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt83",
+      "name": "阴极射线",
+      "definition": "由阴极发出的带电粒子流，在稀薄气体放电时产生，可使玻璃管壁发出荧光。",
+      "importance": "重要",
+      "aliases": [
+        "cathode ray"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt84",
+      "name": "电子",
+      "definition": "构成阴极射线的带负电粒子，是原子的组成成分之一，质量远小于质子。",
+      "importance": "重要",
+      "unit": "电荷量 e, 质量 me"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt85",
+      "name": "比荷",
+      "definition": "带电粒子的电荷量与质量之比，是重要物理量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt86",
+      "name": "电荷量子化",
+      "definition": "电荷只能取电子电荷 e 的整数倍。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt87",
+      "name": "汤姆孙原子模型",
+      "definition": "正电荷均匀弥漫分布于球体中，电子镶嵌其中，也称“西瓜模型/枣糕模型”。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt88",
+      "name": "α粒子散射实验",
+      "definition": "用α粒子轰击金属箔，通过统计散射角度推断原子内部电荷分布。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt89",
+      "name": "核式结构模型",
+      "definition": "原子的正电荷和大部分质量集中在极小的核内，电子在核外运动。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt90",
+      "name": "原子核",
+      "definition": "集中全部正电荷与几乎全部原子质量，尺度约为10^-15 m。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt91",
+      "name": "光谱",
+      "definition": "用棱镜或光栅将光按波长展开后得到的波长与强度分布记录。",
+      "importance": "掌握",
+      "examples": "太阳光通过棱镜形成的红橙黄绿蓝靛紫"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt92",
+      "name": "线状谱",
+      "definition": "由一条条离散的亮线组成的光谱。",
+      "importance": "掌握",
+      "examples": "气体放电管中的氢原子光谱"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt93",
+      "name": "连续谱",
+      "definition": "由连续分布的光带组成，没有分立谱线的光谱。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt94",
+      "name": "特征谱线",
+      "definition": "不同原子的光谱中，由于能级结构不同而在特定位置出现的亮线。",
+      "importance": "掌握",
+      "examples": "氢原子的 Hα、Hβ 等谱线"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt95",
+      "name": "光谱分析",
+      "definition": "利用物质的特征谱线来鉴别元素和确定成分的方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt96",
+      "name": "巴耳末公式",
+      "definition": "描述氢原子可见光区谱线的经验公式：1/λ = R∞ (1/2² − 1/n²)。",
+      "importance": "重要",
+      "formula": "1/λ = R∞ (1/2² − 1/n²)"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt97",
+      "name": "定态",
+      "definition": "电子在轨道上运动且不辐射能量的稳定状态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt98",
+      "name": "激发态与基态",
+      "definition": "能量最低的定态称为基态，能量更高的定态称为激发态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt99",
+      "name": "跃迁",
+      "definition": "电子在不同能级之间的不连续变化，伴随光子的吸收或释放。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt100",
+      "name": "频率条件",
+      "definition": "电子由高能级向低能级跃迁时放出的光子的能量满足 hv = En − Em。",
+      "importance": "重要",
+      "formula": "hν = En − Em"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt101",
+      "name": "玻尔原子模型",
+      "definition": "电子在量子化轨道上绕核运动并具有分立能级的模型。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt102",
+      "name": "电子云",
+      "definition": "表示电子在空间中出现概率分布的图像，不再认为电子沿确定轨道运动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt103",
+      "name": "德布罗意假设",
+      "definition": "所有运动的实物粒子都具有波动性，并与一条物质波相联系。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt104",
+      "name": "德布罗意关系式",
+      "definition": "粒子的能量与频率、动量与波长满足 v = ε/h ， λ = h/p。",
+      "importance": "掌握",
+      "formula": "v = ε/h； λ = h/p"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt105",
+      "name": "物质波",
+      "definition": "与微观粒子运动相联系的波，也称德布罗意波。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt106",
+      "name": "电子衍射",
+      "definition": "电子束通过晶体等结构时出现类似光波衍射的现象，是电子波动性的证据。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt107",
+      "name": "早期量子论",
+      "definition": "普朗克、玻尔、爱因斯坦等为解释黑体辐射、光电效应、原子结构等提出的一系列理论。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt108",
+      "name": "矩阵力学",
+      "definition": "海森堡、玻恩等人提出的量子理论表述方式，适用于一般量子系统。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt109",
+      "name": "波动力学",
+      "definition": "薛定谔基于物质波提出的量子理论表述方式，以薛定谔方程为核心。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt110",
+      "name": "薛定谔方程",
+      "definition": "描述物质波行为的基本方程，是波动力学的核心。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt111",
+      "name": "量子力学",
+      "definition": "描述微观粒子行为的普遍性理论，由矩阵力学和波动力学统一而成。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt112",
+      "name": "放射性",
+      "definition": "物质自发地发出射线的性质。",
+      "importance": "重要",
+      "examples": "铀、钍、钋、镭等元素均具有放射性。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt113",
+      "name": "天然放射现象",
+      "definition": "放射性元素自发地发出射线的现象，不受化合物种类、温度、压强等外界因素影响。",
+      "importance": "重要",
+      "examples": "铀盐无需光照即可使底片感光。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt114",
+      "name": "α射线",
+      "definition": "由α粒子构成的带正电粒子流，质量较大、电离作用强、穿透能力弱。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt115",
+      "name": "β射线",
+      "definition": "高速电子流，电离作用较弱，穿透能力较强。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt116",
+      "name": "电离作用",
+      "definition": "射线使原子中的电子脱离核的束缚成为自由电子的过程。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt117",
+      "name": "威尔逊云室",
+      "definition": "利用过饱和酒精蒸气在离子附近凝结成雾滴以显示带电粒子径迹的装置。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt118",
+      "name": "质子",
+      "definition": "带正电的核子，质量约为1.6726×10^-27 kg，是原子核的组成部分。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt119",
+      "name": "中子",
+      "definition": "不带电的核子，质量约为1.6749×10^-27 kg，与质子质量接近，是原子核的组成部分。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt120",
+      "name": "核子",
+      "definition": "原子核中的质子和中子的统称。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt121",
+      "name": "电荷数 Z",
+      "definition": "原子核中质子的数目，代表核所带的总电荷量，也是元素的原子序数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt122",
+      "name": "质量数 A",
+      "definition": "原子核中核子总数，约等于原子核质量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt123",
+      "name": "放射性衰变",
+      "definition": "原子核自发地放出粒子或能量，使得核素发生转变的过程。",
+      "importance": "重要",
+      "examples": [
+        "铀238衰变为钍234"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt124",
+      "name": "α衰变",
+      "definition": "原子核放出一个α粒子（2个质子和2个中子），质量数减少4、电荷数减少2的衰变方式。",
+      "importance": "掌握",
+      "formula": "A → A-4 + 4/2 He"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt125",
+      "name": "β衰变",
+      "definition": "原子核中的一个中子转变为一个质子并放出一个电子，使得质量数不变、电荷数增加1的衰变方式。",
+      "importance": "掌握",
+      "formula": "n → p + e⁻"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt126",
+      "name": "质量数守恒",
+      "definition": "核反应或衰变前后的总质量数保持不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt127",
+      "name": "电荷数守恒",
+      "definition": "核反应或衰变前后的净电荷数保持不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt128",
+      "name": "半衰期",
+      "definition": "某种放射性元素的原子核有一半发生衰变所需的时间。",
+      "importance": "重要",
+      "examples": [
+        "碳14的半衰期为5730年"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt129",
+      "name": "核反应",
+      "definition": "原子核在外来粒子轰击下发生的转变或状态变化，满足质量数和电荷数守恒。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt130",
+      "name": "放射性同位素",
+      "definition": "具有放射性的同位素，可用于医疗、工业、科研等领域。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt131",
+      "name": "示踪原子",
+      "definition": "利用放射性同位素具有相同化学性质但可探测的特点来研究物质运动规律的方法。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt132",
+      "name": "辐射安全",
+      "definition": "避免射线对人体造成损害的安全规范和防护要求。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt133",
+      "name": "四种基本相互作用",
+      "definition": "自然界存在的四种基本相互作用，包括引力相互作用、电磁相互作用、强相互作用和弱相互作用。",
+      "importance": "重要",
+      "examples": [
+        "引力使天体聚集",
+        "电磁作用导致压力和弹力",
+        "强相互作用使核子结合",
+        "弱相互作用导致β衰变"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt134",
+      "name": "强相互作用",
+      "definition": "原子核中核子之间存在的一种很强的、短程的相互作用，使核子紧密结合在一起。",
+      "importance": "重要",
+      "examples": [
+        "质子与中子之间的强相互作用"
+      ],
+      "formula": "作用范围约为 10^-15 m"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt135",
+      "name": "弱相互作用",
+      "definition": "引起β衰变等现象的一种基本相互作用，是一种比强相互作用作用范围更短的短程力。",
+      "importance": "了解",
+      "examples": [
+        "中子转变为质子的β衰变"
+      ],
+      "formula": "作用范围约为 10^-18 m"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt136",
+      "name": "结合能",
+      "definition": "把原子核中的核子分开所需要的能量，也等于核子结合成原子核所释放的能量。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt137",
+      "name": "比结合能",
+      "definition": "原子核的结合能与核子数之比，表示核子结合的牢固程度。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt138",
+      "name": "质量亏损",
+      "definition": "原子核的质量小于构成它的核子的质量之和的现象，与结合能相对应。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt139",
+      "name": "质能方程",
+      "definition": "爱因斯坦提出的能量与质量的关系式 E = mc²。",
+      "importance": "掌握",
+      "formula": "E = mc²"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt140",
+      "name": "核裂变",
+      "definition": "较重的原子核被中子轰击后分裂成两个或多个中等质量原子核并释放大量能量的过程。",
+      "importance": "掌握",
+      "examples": "铀235核裂变：U-235 + n → Ba-144 + Kr-89 + 3n"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt141",
+      "name": "临界质量",
+      "definition": "核裂变物质能够发生链式反应所需的最小质量。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt142",
+      "name": "慢化剂",
+      "definition": "使快中子与原子核碰撞后减速成为热中子的物质。",
+      "importance": "掌握",
+      "examples": "石墨、重水、普通水"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt143",
+      "name": "控制棒",
+      "definition": "利用吸收中子的能力强的材料（如镉）制作，用于控制链式反应速率。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt144",
+      "name": "核电站",
+      "definition": "利用核反应堆产生的热能转化为电能的设施。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt145",
+      "name": "热核反应",
+      "definition": "在极高温下由原子核克服库仑斥力而发生的核聚变反应。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt146",
+      "name": "磁约束",
+      "definition": "利用磁场对带电粒子的约束来实现可控核聚变的方案。",
+      "importance": "了解",
+      "examples": "托卡马克装置"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt147",
+      "name": "惯性约束",
+      "definition": "利用反应物质在极短时间内的惯性实现核聚变的方案。",
+      "importance": "了解",
+      "examples": "激光聚变（神光III）"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt148",
+      "name": "粒子分类",
+      "definition": "现代物理学中已发现的粒子大体分为强子、轻子、规范玻色子和希格斯玻色子四类。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt149",
+      "name": "强子",
+      "definition": "参与强相互作用的粒子，如质子和中子，具有内部结构，由夸克组成。",
+      "importance": "掌握",
+      "examples": [
+        "质子",
+        "中子"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt150",
+      "name": "轻子",
+      "definition": "不参与强相互作用的粒子，包括电子、μ子、τ子及其对应的中微子。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt151",
+      "name": "规范玻色子",
+      "definition": "传递基本相互作用的粒子，包括光子、W和Z玻色子、胶子。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt152",
+      "name": "希格斯玻色子",
+      "definition": "希格斯场的量子激发，基本粒子通过与希格斯场耦合获得质量。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt153",
+      "name": "反粒子",
+      "definition": "与已知粒子质量、自旋等相同但电荷等性质相反的粒子。",
+      "importance": "掌握",
+      "examples": [
+        "正电子",
+        "反质子"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt154",
+      "name": "夸克",
+      "definition": "构成强子的更基本成分，具有6种味道并带有分数电荷，不能以自由状态单独存在。",
+      "importance": "重要",
+      "aliases": [
+        "分数电荷粒子"
+      ],
+      "examples": [
+        "上夸克",
+        "下夸克",
+        "奇异夸克",
+        "粲夸克",
+        "底夸克",
+        "顶夸克"
+      ]
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt155",
+      "name": "夸克禁闭",
+      "definition": "夸克不能单独以自由状态存在的性质。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_cpt156",
+      "name": "粒子物理标准模型",
+      "definition": "描述基本粒子及其相互作用的理论体系，包括夸克、轻子、规范玻色子和希格斯玻色子。",
+      "importance": "重要"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_xzxbx3_rjb_skl1",
+      "name": "建立物理模型与合理估算",
+      "description": "在实验或研究中，基于现象构建可计算的模型并进行数量级估算。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl2",
+      "name": "统计分析方法",
+      "description": "通过大量数据或事件的统计来发现整体规律的方法。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl3",
+      "name": "宏观与微观对应分析",
+      "description": "利用分子动理论建立宏观量（如温度）与微观量（如平均动能）之间的联系。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl4",
+      "name": "用图像分析物理量关系",
+      "description": "通过绘制 p-V 图像或 p-1/V 图像，判断物理量之间的函数关系，例如判断是否满足反比或正比关系。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl5",
+      "name": "利用气体实验定律进行状态量推算",
+      "description": "根据等温、等压、等容及理想气体状态方程，在气体状态变化前后进行 p、V、T 的推算。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl6",
+      "name": "辨析能量转化与能量转移",
+      "description": "区分做功导致能量形式转化和传热导致能量转移的物理机制。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl7",
+      "name": "能量守恒分析方法",
+      "description": "通过分析系统的不同能量形式及其转移或转化，判断能量是否守恒，用于解释物理过程。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl8",
+      "name": "从实验规律归纳物理模型",
+      "description": "根据实验数据的整体趋势提炼数学模型或物理规律。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl9",
+      "name": "根据光电效应方程分析实验规律",
+      "description": "使用Ek=hν−W0及Ek=eUc分析频率、强度对光电流和遏止电压的影响。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl10",
+      "name": "通过散射确定结构的方法",
+      "description": "通过统计散射粒子在各方向的分布，反推出微观结构的电荷和质量分布。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl11",
+      "name": "利用光谱识别元素",
+      "description": "通过比对光谱中的特征谱线判断物质成分。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_skl12",
+      "name": "核反应方程书写方法",
+      "description": "根据质量数守恒、电荷数守恒原则，正确书写核反应和衰变方程。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_xzxbx3_rjb_exp1",
+      "name": "观察炭粒的布朗运动",
+      "instrument": [
+        "显微镜",
+        "载玻片",
+        "盖玻片",
+        "稀释墨汁"
+      ],
+      "is_student": 0,
+      "process": "制备稀释墨汁悬浊液，滴在载玻片上，用显微镜观察炭粒运动，并在不同温度下重复实验。",
+      "phenomena": "炭粒做无规则运动，升高温度时运动更明显。",
+      "conclusion": "布朗运动由液体分子的无规则运动引起。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp2",
+      "name": "用油膜法估测油酸分子的大小",
+      "instrument": "注射器、浅盘、爽身粉、玻璃板、坐标方格纸、油酸酒精溶液",
+      "is_student": 1,
+      "process": "测量油酸体积V；测量油膜面积S；计算d = V/S。",
+      "phenomena": "油酸在水面上形成清晰可见的单分子油膜。",
+      "conclusion": "可估测油酸分子的直径数量级约为10^-10 m。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp3",
+      "name": "模拟气体压强产生机理实验",
+      "instrument": "豆粒、台秤",
+      "is_student": 0,
+      "process": "单颗豆粒与秤盘碰撞，再用大量豆粒连续倒下观察指针情况。",
+      "phenomena": "大量豆粒碰撞产生持续、均匀压力。",
+      "conclusion": "大量分子的频繁碰撞可形成稳定的压强。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp4",
+      "name": "探究气体等温变化的规律",
+      "instrument": "注射器、橡胶套、压力表、刻度尺",
+      "is_student": 1,
+      "process": "改变注射器空气柱体积，缓慢移动柱塞以保持温度基本不变，分别记录空气柱的体积和压强。",
+      "phenomena": "体积增大时压强减小；体积减小时压强增大。",
+      "conclusion": "p 与 1/V 成正比，即 p 与 V 成反比。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp5",
+      "name": "用传感器探究气体等温变化规律",
+      "instrument": "注射器、气体压强传感器、计算机",
+      "is_student": 1,
+      "process": "用传感器实时采集不同体积时的压强，自动绘制 p-V 图像。",
+      "conclusion": "判断 p 与 V 是否呈反比关系。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp6",
+      "name": "观察玻璃和云母片上石蜡熔化区域的形状",
+      "instrument": [
+        "玻璃片",
+        "云母片",
+        "烙铁",
+        "石蜡"
+      ],
+      "is_student": 1,
+      "process": "将熔化石蜡涂在玻璃片和云母片上，用热烙铁加热背面观察熔化区域形状。",
+      "phenomena": "玻璃片上呈圆形，云母片上呈椭圆形。",
+      "conclusion": "玻璃各向同性，云母各向异性。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp7",
+      "name": "观察肥皂膜和棉线的变化",
+      "instrument": "铁丝环、棉线、肥皂液、烧热的针",
+      "is_student": 1,
+      "process": "在铁丝环上形成肥皂膜并刺破膜的一侧，观察棉线的变化。",
+      "phenomena": "未被刺破一侧的肥皂膜收缩并绷紧棉线。",
+      "conclusion": "液体表面具有收缩趋势。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp8",
+      "name": "观察毛细现象",
+      "instrument": "细玻璃管、塑料笔芯、水",
+      "is_student": 1,
+      "process": "将不同内径的细管竖直插入水中观察液面高度。",
+      "phenomena": "玻璃管内水面升高，塑料笔芯内水面下降。",
+      "conclusion": "浸润和不浸润导致的毛细现象。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp9",
+      "name": "焦耳实验1（重物搅拌水升温）",
+      "instrument": [
+        "绝热容器",
+        "叶片搅拌器",
+        "重物"
+      ],
+      "is_student": 0,
+      "process": "重物下落带动叶片搅拌水，使水因摩擦温度升高。",
+      "phenomena": "水温升高",
+      "conclusion": "在绝热过程中外界对系统做功使内能增加"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp10",
+      "name": "焦耳实验2（电流加热液体）",
+      "instrument": [
+        "发电机",
+        "电阻丝",
+        "液体容器"
+      ],
+      "is_student": 0,
+      "process": "重物下落带动发电机发电，电流经过电阻丝加热液体。",
+      "phenomena": "液体温度上升",
+      "conclusion": "绝热过程中文电功相同则系统状态变化相同"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp11",
+      "name": "空气压缩引火仪观察硝化棉自燃",
+      "instrument": [
+        "空气压缩仪",
+        "活塞",
+        "硝化棉"
+      ],
+      "is_student": 0,
+      "phenomena": "迅速压下活塞时硝化棉被点燃",
+      "conclusion": "绝热压缩做功使气体内能和温度迅速升高"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp12",
+      "name": "焦耳实验",
+      "instrument": "搅拌器、砝码、水容器、温度计等",
+      "is_student": 0,
+      "conclusion": "功与热量是等价的，一定量的功对应确定量的热。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp13",
+      "name": "伦福德炮筒镗孔实验",
+      "instrument": "钻头、炮筒、水",
+      "is_student": 0,
+      "phenomena": "钻头与钢铁摩擦能持续产生大量热。",
+      "conclusion": "支持热动说，热不是热质而是运动。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp14",
+      "name": "紫外线照射锌板的光电效应演示",
+      "instrument": "锌板、验电器、紫外线灯",
+      "is_student": 0,
+      "phenomena": "指针张角变小，说明电子逸出",
+      "conclusion": "紫外线能使电子从金属中逸出"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp15",
+      "name": "图4.2-1光电效应研究实验",
+      "instrument": "光电管、可调电源、安培计、不同频率光源",
+      "is_student": 1,
+      "conclusion": "验证截止频率、饱和电流、遏止电压等规律"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp16",
+      "name": "α粒子散射实验",
+      "instrument": "α粒子源、铅块、金箔/重金属箔、荧光屏、显微镜",
+      "is_student": 0,
+      "phenomena": "绝大多数α粒子几乎不偏转，少数发生大角度偏转，极少数被弹回。",
+      "conclusion": "原子核集中正电荷，尺寸极小。"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exp17",
+      "name": "电子束晶体衍射实验",
+      "instrument": "电子束源、单晶或多晶晶体、探测屏",
+      "is_student": 0,
+      "process": "用电子束照射单晶或多晶晶体，观察衍射图样。",
+      "phenomena": "出现类似 X 射线衍射的环状或条纹衍射图样。",
+      "conclusion": "证实电子具有波动性。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_xzxbx3_rjb_exe1",
+      "type": "应用题",
+      "stem": "把一片尺寸为10 cm × 20 cm、质量为36 g的塑料薄膜放在密度1.2×10^3 kg/m^3的盐水中悬浮，求薄膜厚度。",
+      "answer": "薄膜体积 = 质量/密度 = 0.036 kg / (1.2×10^3 kg/m^3) = 3×10^-5 m^3；面积=0.1 m × 0.2 m = 0.02 m^2；厚度 = 体积/面积 = 1.5×10^-3 m。",
+      "analysis": "利用密度公式与体积关系求厚度。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe2",
+      "type": "简答题",
+      "stem": "在一个密闭容器内有一滴15℃的水，过一段时间后蒸发成水蒸气，温度仍为15℃。它的内能是否发生变化？为什么？",
+      "answer": "内能增加。因为水变为水蒸气后分子间距离增大，分子势能增大，尽管温度不变，但内能仍上升。",
+      "analysis": "考查内能由动能和势能组成，蒸发过程主要改变分子势能。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe3",
+      "type": "简答题",
+      "stem": "在“探究气体等温变化的规律”实验中，小王认为两组数据 p 和 V 的乘积几乎相等，因此体现了反比规律；小李认为若 p-1/V 图像延长线不经过原点，则不符合反比规律。你怎么看？",
+      "answer": "两人的观点都部分正确。小王关注 pV 是否接近常量，是判断反比关系的一种方式；小李强调 p 与 1/V 的正比关系应通过图像经过原点来验证。这两种方法都应结合使用，才能更可靠判断气体的等温变化是否满足反比规律。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe4",
+      "type": "简答题",
+      "stem": "某人通过对两个等距点温度升高相同，判断薄片为非晶体。该结论是否科学？为什么？",
+      "answer": "结论不科学。仅在两个方向测得导热相同不能说明材料在所有方向上都相同，无法得出各向同性的结论。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe5",
+      "type": "应用题",
+      "stem": "压缩汽缸里的空气，对空气做了900 J的功，同时汽缸向外散热210 J，空气的内能改变多少？",
+      "answer": "ΔU = Q + W = -210 J + 900 J = 690 J，内能增加690 J。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe6",
+      "type": "简答题",
+      "stem": "下面的设想是否符合能量守恒定律？（1）利用永久磁铁间的作用力造永动机；（2）无动力系统的船在水面行驶；（3）通过太阳照射使飞机不带燃料飞行。",
+      "answer": "（1）不符合，没有外界能量输入无法持续做功；（2）不符合，无动力无法克服阻力；（3）原则上可利用太阳能，但本质上是利用外界能源，因此不属于永动机。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe7",
+      "type": "计算题",
+      "stem": "可见光波长 400 nm 与 760 nm 的电磁辐射的能量子 ε 分别是多少？",
+      "answer": "利用公式 ε = hν = hc/λ，可得：ε(400 nm) ≈ 4.97×10^-19 J；ε(760 nm) ≈ 2.62×10^-19 J。",
+      "analysis": "考查能量子公式 ε = hν = hc/λ 的应用。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe8",
+      "type": "简答题",
+      "stem": "在光电效应实验中，如果入射光的波长确定而强度增加，将产生什么结果？如果入射光的频率增加，将产生什么结果？",
+      "answer": "光强增加使饱和电流增大；频率增加使遏止电压增大。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe9",
+      "type": "简答题",
+      "stem": "β射线是电子流。原子核中没有电子，为什么放射性核会放出β粒子？",
+      "answer": "因为β衰变是中子转变为质子并放出电子，电子由中子转化过程产生。",
+      "analysis": "考查β衰变机理，即中子→质子+电子。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe10",
+      "type": "填空题",
+      "stem": "写出Po-210的β衰变方程。",
+      "answer": "210/84 Po → 210/85 At + 0/-1 e",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe11",
+      "type": "应用题",
+      "stem": "已知中子的质量 mn = 1.6749×10^-27 kg，质子的质量 mp = 1.6726×10^-27 kg，氘核质量 mD = 3.3436×10^-27 kg，求氘核的比结合能。",
+      "answer": "氘核比结合能 = 1.10 MeV",
+      "analysis": "利用质量亏损 Δm = mp + mn − mD，结合质能方程 E=mc² 求得结合能，再除以核子数。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_xzxbx3_rjb_exe12",
+      "type": "简答题",
+      "stem": "什么是核裂变？什么是链式反应？",
+      "answer": "核裂变是重核分裂成两个或多个中等质量原子核并释放能量的过程；链式反应是裂变产生的中子继续引发新的裂变，使反应持续进行的过程。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 156,
+    "skill_count": 12,
+    "experiment_count": 17,
+    "question_count": 12
+  }
+}

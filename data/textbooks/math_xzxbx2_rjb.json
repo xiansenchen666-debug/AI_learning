@@ -1,0 +1,614 @@
+{
+  "id": "math_xzxbx2_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "数学",
+  "title": "数学选择性必修二",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_xzxbx2_rjb_cpt1",
+      "name": "数列",
+      "definition": "按照确定顺序排列的一列数，通常记为{a_n}，其中第n项记为a_n。",
+      "importance": "重要",
+      "aliases": [
+        "sequence"
+      ],
+      "examples": [
+        "75,87,96,...",
+        "5,10,20,..."
+      ],
+      "formula": "a_n=f(n)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt2",
+      "name": "数列的项",
+      "definition": "数列中按照顺序排列的每一个数称为项，第n项记为a_n。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt3",
+      "name": "首项",
+      "definition": "数列中的第一项，通常记为a_1。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt4",
+      "name": "有穷数列",
+      "definition": "项数有限的数列。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt5",
+      "name": "无穷数列",
+      "definition": "项数无限的数列。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt6",
+      "name": "数列的函数观点",
+      "definition": "数列可看作从正整数集到实数集的函数，自变量为序号n，对应值为a_n=f(n)。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt7",
+      "name": "递增数列",
+      "definition": "从第2项起，每一项都大于前一项的数列。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt8",
+      "name": "递减数列",
+      "definition": "从第2项起，每一项都小于前一项的数列。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt9",
+      "name": "常数列",
+      "definition": "所有项都相等的数列。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt10",
+      "name": "通项公式",
+      "definition": "用一个表达式表示数列第n项a_n的方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt11",
+      "name": "递推公式",
+      "definition": "用前几项表示下一项的方法，如a_n=...。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt12",
+      "name": "斐波那契数列",
+      "definition": "由F_n = F_{n-1} + F_{n-2}(n>2)确定的数列，初始值为1,1。",
+      "importance": "重要",
+      "examples": [
+        "1,1,2,3,5,8,..."
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt13",
+      "name": "前n项和",
+      "definition": "数列前n项的和，记为S_n。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt14",
+      "name": "等差数列",
+      "definition": "从第2项起，每一项与它的前一项的差都等于同一个常数的数列。",
+      "importance": "重要",
+      "aliases": [
+        "arithmetic progression"
+      ],
+      "examples": [
+        "9,18,27,...",
+        "38,40,42,...",
+        "25.0,24.4,23.8,...",
+        "ar, ar-br, ar-2br,..."
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt15",
+      "name": "公差",
+      "definition": "等差数列中相邻两项的差，是一个常数，通常用 d 表示。",
+      "importance": "重要",
+      "examples": [
+        "数列9,18,27,...的公差为9"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt16",
+      "name": "等差中项",
+      "definition": "在由三个数 a, A, b 组成的等差数列中，A 称为 a 与 b 的等差中项，满足 2A = a + b。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt17",
+      "name": "等差数列的递推公式",
+      "definition": "等差数列满足 a_{n+1} - a_n = d。",
+      "importance": "掌握",
+      "formula": "a_{n+1} = a_n + d"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt18",
+      "name": "等差数列的通项公式",
+      "definition": "首项为 a1、公差为 d 的等差数列的第 n 项为 a_n = a_1 + (n - 1)d。",
+      "importance": "重要",
+      "formula": "a_n = a_1 + (n - 1)d"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt19",
+      "name": "等差数列与一次函数的关系",
+      "definition": "当 d≠0 时，等差数列的 a_n 是一次函数 f(x)=dx+(a1−d) 在 x=n 的取值。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt20",
+      "name": "等差数列的前 n 项和公式",
+      "definition": "等差数列前 n 项和 S_n = n(a_1+a_n)/2 或 S_n = n a_1 + n(n-1)d/2。",
+      "importance": "重要",
+      "formula": "S_n = n(a_1 + a_n)/2 = n a_1 + n(n-1)d/2"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt21",
+      "name": "等比数列",
+      "definition": "从第2项起，每一项与它的前一项的比都等于同一个常数的数列。",
+      "importance": "重要",
+      "aliases": [
+        "geometric progression"
+      ],
+      "formula": "a_n = a_1 q^{n-1}"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt22",
+      "name": "公比",
+      "definition": "等比数列中相邻两项的比值，记作 q，且 q≠0。",
+      "importance": "重要",
+      "aliases": [
+        "common ratio"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt23",
+      "name": "等比中项",
+      "definition": "若在 a 与 b 之间插入 G 使 a, G, b 成等比数列，则 G 为等比中项，满足 G^2 = ab。",
+      "importance": "掌握",
+      "formula": "G = ±√(ab)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt24",
+      "name": "等比数列通项公式",
+      "definition": "等比数列第 n 项表达式 a_n = a_1 q^{n-1}。",
+      "importance": "重要",
+      "formula": "a_n = a_1 q^{n-1}"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt25",
+      "name": "等比数列前 n 项和公式",
+      "definition": "等比数列前 n 项的和 S_n = a_1 (1 - q^n)/(1 - q), (q ≠ 1)。",
+      "importance": "重要",
+      "formula": "S_n = a_1 (1 - q^n)/(1 - q)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt26",
+      "name": "数学归纳法",
+      "definition": "一种证明与正整数 n 有关的命题的方法，通过证明归纳奠基和归纳递推两个步骤，推出命题对所有从 n0 开始的正整数均成立。",
+      "importance": "重要",
+      "aliases": [
+        "mathematical induction"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt27",
+      "name": "归纳奠基",
+      "definition": "数学归纳法的第一步，证明当 n = n0 时命题成立。",
+      "importance": "掌握",
+      "examples": [
+        "证明等差数列通项公式时验证 n = 1 使公式成立"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt28",
+      "name": "归纳递推",
+      "definition": "数学归纳法的第二步，在假设 n = k 时命题成立的前提下，证明 n = k+1 时命题也成立。",
+      "importance": "掌握",
+      "examples": [
+        "若 a_k = a_1 + (k − 1)d，则推出 a_{k+1} = a_1 + k d"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt29",
+      "name": "递推关系",
+      "definition": "由前一项推出后一项的关系式，用于表达命题之间的推演结构，如“若 P(k) 真，则 P(k+1) 真”。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt30",
+      "name": "等差数列通项公式",
+      "definition": "公差为 d 的等差数列满足 a_n = a_1 + (n − 1)d。",
+      "importance": "掌握",
+      "formula": "a_n = a_1 + (n - 1)d"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt31",
+      "name": "平均变化率",
+      "definition": "函数 y=f(x) 从 x0 到 x0+Δx 的平均变化率是 (f(x0+Δx)−f(x0)) / Δx。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt32",
+      "name": "瞬时变化率",
+      "definition": "当 Δx→0 时，平均变化率的极限，等于函数在该点的导数。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt33",
+      "name": "导数",
+      "definition": "如果平均变化率在 Δx→0 时存在极限，则该极限称为函数在该点的导数，表示瞬时变化率。",
+      "importance": "重要",
+      "aliases": [
+        "derivative",
+        "求导",
+        "微分系数"
+      ]
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt34",
+      "name": "平均速度",
+      "definition": "物体在一段时间内的位移变化量除以时间变化量，表示物体在该时间段内的平均运动速度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt35",
+      "name": "瞬时速度",
+      "definition": "物体在某一时刻的速度，是平均速度在时间间隔趋于0时的极限。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt36",
+      "name": "切线斜率",
+      "definition": "曲线在某点的切线的斜率是割线斜率在两点间距趋于0时的极限。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt37",
+      "name": "导数的几何意义",
+      "definition": "函数在某点的导数等于该点处曲线的切线斜率。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt38",
+      "name": "基本初等函数的导数",
+      "definition": "常用初等函数如常数函数、幂函数、指数函数、对数函数、三角函数等的导数公式集合。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt39",
+      "name": "幂函数求导公式",
+      "definition": "若f(x)=x^a，则f'(x)=ax^{a-1}",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt40",
+      "name": "加减法求导法则",
+      "definition": "两个函数的和（或差）的导数等于它们导数的和（或差）。",
+      "importance": "掌握",
+      "formula": "[f(x)±g(x)]'=f'(x)±g'(x)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt41",
+      "name": "乘法求导法则",
+      "definition": "两个函数乘积的导数公式。",
+      "importance": "重要",
+      "formula": "[f(x)g(x)]'=f'(x)g(x)+f(x)g'(x)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt42",
+      "name": "商法求导法则",
+      "definition": "两个函数商的导数公式。",
+      "importance": "掌握",
+      "formula": "[f/g]'=(f'g - fg')/g^2 (g≠0)"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt43",
+      "name": "复合函数",
+      "definition": "由两个函数 y=f(u), u=g(x) 复合得到的函数 y=f(g(x))。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt44",
+      "name": "链式法则（复合函数求导法则）",
+      "definition": "复合函数求导的法则：y'_x = y'_u * u'_x。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt45",
+      "name": "导数的物理意义",
+      "definition": "导数可表示物体的瞬时变化率，例如瞬时速度。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt46",
+      "name": "牛顿法",
+      "definition": "利用切线迭代逼近方程根的数值求解方法。",
+      "importance": "重要",
+      "formula": "x_n = x_{n-1} - f(x_{n-1})/f'(x_{n-1})"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt47",
+      "name": "导数的正负与单调性的关系",
+      "definition": "若函数在区间内导数大于0，则函数单调递增；若导数小于0，则函数单调递减。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt48",
+      "name": "极值",
+      "definition": "函数在某点附近取得的局部最大值或最小值。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt49",
+      "name": "极值点的一阶导数判别法",
+      "definition": "当f'(x0)=0，且导数在x0左右出现由正到负或由负到正变化时，x0是极值点。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt50",
+      "name": "最大值与最小值",
+      "definition": "函数在某一区间上取得的全局最大与全局最小的函数值。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_xzxbx2_rjb_cpt51",
+      "name": "导数绝对值与函数图象陡峭程度",
+      "definition": "导数绝对值越大，函数图象越陡峭；绝对值越小，图象越平缓。",
+      "importance": "掌握"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_xzxbx2_rjb_skl1",
+      "name": "根据通项公式求前若干项",
+      "description": "给定a_n的表达式，通过代入n=1,2,3...获得前几项的值。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl2",
+      "name": "由前几项寻找通项公式",
+      "description": "根据数列前几项的规律推测一个可能的a_n表达式。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl3",
+      "name": "利用递推关系求通项",
+      "description": "根据等差数列的递推公式 a_{n+1} = a_n + d 归纳推得通项公式。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl4",
+      "name": "利用倒序相加求和",
+      "description": "将数列倒序排列并与原式相加，将求和转化为相同项的加法，用于推导前 n 项和公式。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl5",
+      "name": "用通项公式求数列项",
+      "description": "根据等比数列通项公式 a_n = a_1 q^{n-1} 计算任意一项。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl6",
+      "name": "利用相邻项比值判断是否为等比数列",
+      "description": "通过检查 a_{n+1}/a_n 是否为常数来判断数列是否为等比数列。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl7",
+      "name": "使用数学归纳法证明命题",
+      "description": "通过验证基础步骤和递推步骤，证明命题对所有正整数成立。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl8",
+      "name": "以直代曲思想",
+      "description": "在曲线某点附近用切线近似代替曲线，用简单对象逼近复杂对象。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl9",
+      "name": "根据导数定义求导",
+      "description": "利用极限定义求导数：求Δx趋0时Δy/Δx的极限。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl10",
+      "name": "利用导数公式求导",
+      "description": "使用基本初等函数导数公式和四则运算法则进行求导。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl11",
+      "name": "应用链式法则求复合函数的导数",
+      "description": "识别复合结构，按y'_x = y'_u * u'_x求导。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl12",
+      "name": "利用导数判定单调性",
+      "description": "计算导数并根据其正负确定函数在区间上的单调递增或单调递减性质。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl13",
+      "name": "利用导数求极值",
+      "description": "求解f'(x)=0并判断导数符号变化，从而确定函数的极大值与极小值。"
+    },
+    {
+      "id": "math_xzxbx2_rjb_skl14",
+      "name": "求闭区间上的最大值和最小值",
+      "description": "比较区间端点值与内部极值，确定区间上的最值。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_xzxbx2_rjb_exe1",
+      "type": "应用题",
+      "stem": "已知等差数列 {a_n} 的通项公式为 a_n = 5 - 2n，求公差和首项。",
+      "answer": "公差 d = -2，首项 a1 = 3。",
+      "analysis": "根据 d = a_n - a_{n-1} 求公差，再代 n=1 求首项。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe2",
+      "type": "应用题",
+      "stem": "求等差数列 8, 5, 2,... 的第 20 项。",
+      "answer": "a_20 = -49。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe3",
+      "type": "应用题",
+      "stem": "若等比数列 {a_n} 的第4项和第6项分别为48和12，求第5项。",
+      "answer": "24 或 -24",
+      "analysis": "利用 a_n = a_1 q^{n-1} 建立方程组求 q，再求 a_5。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe4",
+      "type": "应用题",
+      "stem": "已知等比数列 {a_n} 的首项为 1/2，公比为 1/2，求 S_8。",
+      "answer": "255/256",
+      "analysis": "代入 S_n = a_1(1-q^n)/(1-q)。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe5",
+      "type": "证明题",
+      "stem": "用数学归纳法证明：如果 {a_n} 是公差为 d 的等差数列，则 a_n = a_1 + (n − 1)d 对所有正整数 n 成立。",
+      "answer": "（1）当 n=1 时，a_1 = a_1 + 0·d，成立。（2）假设 n=k 时成立，即 a_k = a_1 + (k−1)d，由等差数列定义 a_{k+1} = a_k + d = a_1 + k d，即公式对 k+1 也成立。",
+      "analysis": "标准数学归纳法结构：基础步验证 n=1，递推步利用假设推得 n=k+1 成立。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe6",
+      "type": "应用题",
+      "stem": "设 f(x)=1/x，求 f′(1)。",
+      "answer": "-1",
+      "analysis": "根据导数定义，计算极限 (1/(1+Δx)−1)/Δx。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe7",
+      "type": "应用题",
+      "stem": "求函数 y = (3x+5)^3 的导数。",
+      "answer": "y' = 9(3x+5)^2",
+      "analysis": "识别复合函数结构，使用链式法则。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe8",
+      "type": "应用题",
+      "stem": "使用牛顿法求方程 (1/15)x^3 - (3/5)x^2 + 2x - 12/5 = 0 的近似解，取初始值 x0=6，迭代一次求 x1。",
+      "answer": "x1 = 6 - f(6)/f'(6) = 6 - 0.4/4 = 5.9",
+      "analysis": "按牛顿法公式计算一次迭代。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe9",
+      "type": "简答题",
+      "stem": "利用导数判断函数 f(x)=x^3+3x 的单调性。",
+      "answer": "f'(x)=3x^2+3>0，因此函数在R上单调递增。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_xzxbx2_rjb_exe10",
+      "type": "简答题",
+      "stem": "求函数 f(x)=1/3 x^3 − 4x + 4 的极值。",
+      "answer": "极大值在x=-2，f(-2)=28/3；极小值在x=2，f(2)=-4/3。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 51,
+    "skill_count": 14,
+    "experiment_count": 0,
+    "question_count": 10
+  }
+}

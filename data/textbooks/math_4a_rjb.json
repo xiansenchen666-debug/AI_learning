@@ -1,0 +1,798 @@
+{
+  "id": "math_4a_rjb",
+  "stage": "小学",
+  "grade": "四年级上册",
+  "subject": "数学",
+  "title": "数学四年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_4a_rjb_cpt1",
+      "name": "计数单位",
+      "definition": "表示数量大小的基本单位，包括个、十、百、千、万、亿等，相邻两个计数单位之间的进率是10。",
+      "importance": "掌握",
+      "pages": "教材前半部分多处出现"
+    },
+    {
+      "id": "math_4a_rjb_cpt2",
+      "name": "数位",
+      "definition": "在数字中，各计数单位按一定顺序排列的位置称为数位，如个位、十位、百位、千位等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt3",
+      "name": "数级",
+      "definition": "多位数按照万、亿等分成的等级，每级含有四个数位（千、百、十、个）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt4",
+      "name": "多位数的读法",
+      "definition": "读多位数时，从高位到低位按数级依次读，每级按个级的读法读，万级末尾加“万”、亿级末尾加“亿”。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt5",
+      "name": "多位数的写法",
+      "definition": "写多位数时先确定数级，再填写各数位，哪个数位上没有单位就写0。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt6",
+      "name": "比较数的大小",
+      "definition": "比较多位数时先比位数，位数相同则从最高位开始逐位比较。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt7",
+      "name": "四舍五入",
+      "definition": "求近似数的方法：看被省略部分最高位数字，小于5舍去，等于或大于5则进一。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt8",
+      "name": "公顷",
+      "definition": "公顷是常用来计量较大土地面积的单位，等于10000平方米。",
+      "importance": "重要",
+      "formula": "1公顷 = 10000平方米",
+      "pages": "教材第2章前半部分"
+    },
+    {
+      "id": "math_4a_rjb_cpt9",
+      "name": "平方千米",
+      "definition": "平方千米是计量更大面积（如国家、省区面积）常用的单位，等于100公顷或1000000平方米。",
+      "importance": "重要",
+      "formula": "1平方千米 = 100公顷 = 1000000平方米",
+      "pages": "教材第2章中段"
+    },
+    {
+      "id": "math_4a_rjb_cpt10",
+      "name": "面积单位换算",
+      "definition": "不同面积单位之间的换算，如公顷与平方米、平方千米与公顷之间的换算。",
+      "importance": "掌握",
+      "pages": "教材习题部分"
+    },
+    {
+      "id": "math_4a_rjb_cpt11",
+      "name": "亩",
+      "definition": "中国传统的土地面积单位，约等于667平方米，目前不是法定计量单位。",
+      "importance": "了解",
+      "pages": "你知道吗？"
+    },
+    {
+      "id": "math_4a_rjb_cpt12",
+      "name": "直线",
+      "definition": "把线段向两端无限延伸得到的图形，没有端点，是无限长的。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt13",
+      "name": "射线",
+      "definition": "从一个端点开始向一方向无限延伸的线，是直线的一部分。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt14",
+      "name": "度（角的单位）",
+      "definition": "将圆平均分成360份，其中1份所对的角为1度。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_4a_rjb_cpt15",
+      "name": "量角器",
+      "definition": "把半圆分成180等份制成的测量角大小的工具。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt16",
+      "name": "平角",
+      "definition": "度数为180度的角，由射线旋转半周形成。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt17",
+      "name": "周角",
+      "definition": "度数为360度的角，由射线旋转一周形成。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt18",
+      "name": "三位数乘两位数的笔算",
+      "definition": "按照个位对齐、从右向左逐位相乘并处理进位，再将部分积相加得到最终乘积的计算方法。",
+      "importance": "重要",
+      "examples": [
+        "145×12 的竖式计算示例"
+      ],
+      "pages": "教材第4章开头部分"
+    },
+    {
+      "id": "math_4a_rjb_cpt19",
+      "name": "积的变化规律",
+      "definition": "一个因数不变，另一个因数乘或除以几（0除外），积也相应乘或除以几。",
+      "importance": "重要",
+      "examples": [
+        "6×2=12，6×20=120 积扩大10倍"
+      ],
+      "pages": "教材习题中规律总结部分"
+    },
+    {
+      "id": "math_4a_rjb_cpt20",
+      "name": "单价×数量=总价",
+      "definition": "已知单价和数量，可以通过乘法求得总价的数量关系。",
+      "importance": "掌握",
+      "examples": [
+        "80元一件，买3件：80×3=240元"
+      ],
+      "pages": "单价数量总价小节"
+    },
+    {
+      "id": "math_4a_rjb_cpt21",
+      "name": "速度×时间=路程",
+      "definition": "已知速度与时间，可通过乘法求路程的数量关系。",
+      "importance": "掌握",
+      "examples": [
+        "70千米/时，4小时行70×4=280千米"
+      ],
+      "pages": "速度时间路程小节"
+    },
+    {
+      "id": "math_4a_rjb_cpt22",
+      "name": "平行线",
+      "definition": "在同一平面内，两条不重合且不相交的直线叫做平行线。",
+      "importance": "掌握",
+      "examples": [
+        "a ∥ b"
+      ],
+      "pages": "教材前部",
+      "aliases": [
+        "parallel"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt23",
+      "name": "垂直",
+      "definition": "两条直线相交所成的四个角中任意一个为90°时，这两条直线互相垂直。",
+      "importance": "掌握",
+      "examples": [
+        "a ⟂ b"
+      ],
+      "pages": "教材前部",
+      "aliases": [
+        "perpendicular"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt24",
+      "name": "垂足",
+      "definition": "两条互相垂直的直线的交点叫作垂足。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt25",
+      "name": "点到直线的距离",
+      "definition": "从直线外一点到这条直线所作的垂线段的长度。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_4a_rjb_cpt26",
+      "name": "平行四边形的高",
+      "definition": "从平行四边形一条边上的一点向对边引的垂线段。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt27",
+      "name": "平行四边形的底",
+      "definition": "垂足所在的那一条边叫作平行四边形的底。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt28",
+      "name": "梯形",
+      "definition": "只有一组对边平行的四边形叫作梯形。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt29",
+      "name": "等腰梯形",
+      "definition": "两腰相等的梯形叫作等腰梯形。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt30",
+      "name": "直角梯形",
+      "definition": "有一个角是直角的梯形叫作直角梯形。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4a_rjb_cpt31",
+      "name": "除数是两位数的除法",
+      "definition": "用两位数作除数进行整数除法的计算方法，包括口算、笔算及试商技巧。",
+      "importance": "重要",
+      "examples": [
+        "92÷30",
+        "197÷28"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt32",
+      "name": "试商",
+      "definition": "根据除数和被除数的大小关系，估计商的大小并写在相应数位上的方法。",
+      "importance": "重要",
+      "examples": [
+        "92÷30中把92看作90，商约为3"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt33",
+      "name": "四舍五入试商法",
+      "definition": "把除数看作与它最接近的整十数，通过四舍五入估计商的方法。",
+      "importance": "掌握",
+      "examples": [
+        "28看作30来试商"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt34",
+      "name": "商的变化规律",
+      "definition": "被除数和除数同时乘或除以相同的数，商保持不变；被除数乘几，商也乘几；除数乘几，商就除以几。",
+      "importance": "重要",
+      "examples": [
+        "120÷15=(120×4)÷(15×4)=480÷60"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt35",
+      "name": "条形统计图",
+      "definition": "用长度不同的条形表示数量多少的统计图，便于比较数据的大小。",
+      "importance": "掌握",
+      "examples": [
+        "天气情况条形统计图",
+        "动物寿命条形图",
+        "A市2021年9月天气情况统计图",
+        "五年级学生五一度假方式统计图"
+      ],
+      "pages": "教材第7章"
+    },
+    {
+      "id": "math_4a_rjb_cpt36",
+      "name": "每格表示的数量",
+      "definition": "条形统计图中一格所代表的实际数量，需要根据数据大小合理选择。",
+      "importance": "重要",
+      "examples": [
+        "1格代表2人",
+        "1格代表5辆车"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt37",
+      "name": "比较数据",
+      "definition": "利用表或统计图比较不同类别数据的多少、最大最小等信息。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4a_rjb_cpt38",
+      "name": "统计单位（每格表示的数量）",
+      "definition": "在条形统计图中，每格代表的具体数量，需根据数据大小选择合适的单位。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_4a_rjb_cpt39",
+      "name": "优化",
+      "definition": "在给定条件下，使所需时间最短或效率最高的安排方式。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_4a_rjb_cpt40",
+      "name": "数的数级与数位",
+      "definition": "按照“亿级—万级—个级”将大数分级，并根据从高到低的数位（千亿位、百亿位……个位）理解每个数字所表示的具体数量。",
+      "importance": "掌握",
+      "examples": [
+        "50804000000 中“5”在十亿位，表示5个十亿。"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt41",
+      "name": "大数的读法与写法",
+      "definition": "根据数级、数位读出或写出较大的整数，包括将数改写成以“万”或“亿”为单位。",
+      "importance": "掌握",
+      "examples": [
+        "300000000=3亿",
+        "1276270000≈13亿"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt42",
+      "name": "两位数乘法",
+      "definition": "乘数或被乘数中有两位数的笔算乘法。",
+      "importance": "掌握",
+      "examples": [
+        "145×12"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt43",
+      "name": "两位数除法",
+      "definition": "除数为两位数时的笔算除法方法与步骤。",
+      "importance": "掌握",
+      "examples": [
+        "896÷26"
+      ]
+    },
+    {
+      "id": "math_4a_rjb_cpt44",
+      "name": "积和商的变化规律",
+      "definition": "乘法和除法中因数或除数放大或缩小10、100、1000倍时，积或商的相应变化规律。",
+      "importance": "重要",
+      "examples": [
+        "6×20, 6×200 的积变化"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_4a_rjb_skl1",
+      "name": "分级读数法",
+      "description": "将多位数按个级、万级、亿级进行分级，再逐级阅读，有助于准确快速读数。"
+    },
+    {
+      "id": "math_4a_rjb_skl2",
+      "name": "分级写数法",
+      "description": "将需要写的多位数先按数级分结构，再依次填写各数位，确保写法正确。"
+    },
+    {
+      "id": "math_4a_rjb_skl3",
+      "name": "面积单位换算方法",
+      "description": "根据单位间的倍数关系进行换算，如平方千米、公顷、平方米之间的换算。"
+    },
+    {
+      "id": "math_4a_rjb_skl4",
+      "name": "用量角器测量角",
+      "description": "将量角器中心与角的顶点重合，0度刻度线与角的一条边重合，读取另一边所对应的刻度。"
+    },
+    {
+      "id": "math_4a_rjb_skl5",
+      "name": "用量角器画角",
+      "description": "画一条射线，使量角器中心对准端点，根据给定度数点下标记，再画一条经过标记点的射线。"
+    },
+    {
+      "id": "math_4a_rjb_skl6",
+      "name": "运用数量关系解决实际问题",
+      "description": "根据题目场景选择适当数量关系（如单价×数量，总价÷单价，速度×时间）求解问题的能力。"
+    },
+    {
+      "id": "math_4a_rjb_skl7",
+      "name": "画垂线",
+      "description": "利用三角尺或其他工具，过直线上一点或直线外一点画一条与该直线垂直的直线。"
+    },
+    {
+      "id": "math_4a_rjb_skl8",
+      "name": "画平行线",
+      "description": "利用三角尺或平行尺画出与已知直线平行的直线。"
+    },
+    {
+      "id": "math_4a_rjb_skl9",
+      "name": "画长方形或正方形",
+      "description": "根据长和宽（或边长）画出互相垂直的边，构成长方形或正方形。"
+    },
+    {
+      "id": "math_4a_rjb_skl10",
+      "name": "口算两位数除法",
+      "description": "通过整十数关系或商的变化规律快速算两位数除法。"
+    },
+    {
+      "id": "math_4a_rjb_skl11",
+      "name": "笔算两位数除法",
+      "description": "从高位起试商、乘除结合、逐步求余的笔算方法。"
+    },
+    {
+      "id": "math_4a_rjb_skl12",
+      "name": "选择合适的统计方式",
+      "description": "根据数据特点选择使用统计表或条形统计图等方式进行呈现。"
+    },
+    {
+      "id": "math_4a_rjb_skl13",
+      "name": "根据任务时间安排顺序（优化）",
+      "description": "根据任务之间的依赖关系和可并行性，合理安排顺序节省时间。"
+    },
+    {
+      "id": "math_4a_rjb_skl14",
+      "name": "任务并行处理",
+      "description": "在可能的情况下同时做多项任务以提高效率。"
+    },
+    {
+      "id": "math_4a_rjb_skl15",
+      "name": "合理安排任务顺序",
+      "description": "根据任务间的先后依赖关系及可并行性，安排顺序使总时间最短。"
+    },
+    {
+      "id": "math_4a_rjb_skl16",
+      "name": "选择合适的统计图与单位",
+      "description": "根据数据量大小和比较需求，选择统计表、条形统计图以及恰当的每格代表数量。"
+    },
+    {
+      "id": "math_4a_rjb_skl17",
+      "name": "整理与分类信息",
+      "description": "根据给定表格或图形统计数据，提取、比较并分析数据之间的关系。"
+    },
+    {
+      "id": "math_4a_rjb_skl18",
+      "name": "单位转换",
+      "description": "在万、亿之间进行单位换算或将数改写为以万、亿为单位的数。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_4a_rjb_exe1",
+      "type": "简答题",
+      "stem": "读出下面的数：五万四千六百二十一。",
+      "answer": "54621",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe2",
+      "type": "简答题",
+      "stem": "将923456000省略亿位后面的尾数，求它的近似数。",
+      "answer": "9亿",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe3",
+      "type": "判断题",
+      "stem": "比较 92504 和 103600 的大小。",
+      "answer": "92504 < 103600",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe4",
+      "type": "应用题",
+      "stem": "边长是10米的正方形，多少个这样的正方形的面积是1公顷？",
+      "answer": "100个（因为1公顷=10000平方米，单个正方形面积=100平方米）",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe5",
+      "type": "应用题",
+      "stem": "“鸟巢”的占地面积约为20公顷，（ ）个“鸟巢”的占地面积约为1平方千米。",
+      "answer": "5个（因为1平方千米=100公顷）",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe6",
+      "type": "填空题",
+      "stem": "7公顷等于多少平方米？",
+      "answer": "70000平方米",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe7",
+      "type": "选择题",
+      "stem": "直线、线段、射线中，哪一种图形没有端点？",
+      "answer": "直线没有端点。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe8",
+      "type": "填空题",
+      "stem": "用量角器量出一个直角的度数是多少？",
+      "answer": "直角是90度。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe9",
+      "type": "判断题",
+      "stem": "判断：钝角的度数大于90度但小于180度。（对/错）",
+      "answer": "对。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe10",
+      "type": "应用题",
+      "stem": "李叔叔从某城市乘火车去北京用了12小时，火车平均每小时行145千米。经过了多少千米？",
+      "answer": "145×12=1740（千米）",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe11",
+      "type": "填空题",
+      "stem": "计算 160×30。",
+      "answer": "160×30=4800",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe12",
+      "type": "应用题",
+      "stem": "一个篮球80元，买3个要多少钱？",
+      "answer": "80×3=240（元）",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe13",
+      "type": "应用题",
+      "stem": "一辆汽车每小时行70千米，4小时行多少千米？",
+      "answer": "70×4=280（千米）",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe14",
+      "type": "应用题",
+      "stem": "右图中，小明从A点过马路，应怎样走路线最短？为什么？",
+      "answer": "应从A点向马路对边作垂线，沿垂线走最短，因为点到直线的垂线段最短。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe15",
+      "type": "应用题",
+      "stem": "画一个长10厘米、宽8厘米的长方形。",
+      "answer": "先画长10厘米，再在端点作垂线画宽8厘米，最后连接得长方形。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe16",
+      "type": "判断题",
+      "stem": "下面哪些图形是梯形？指出它们的上底、下底和腰。",
+      "answer": "选出只有一组对边平行的图形，并标注其上底、下底、腰。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe17",
+      "type": "应用题",
+      "stem": "92本连环画，每班分30本，可以分给几个班？",
+      "answer": "3班",
+      "analysis": "92≈90，90÷30=3；竖式计算商为3。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe18",
+      "type": "应用题",
+      "stem": "学校共有612名学生，每18人组成一个环保小组，可以组成多少组？",
+      "answer": "34组",
+      "analysis": "612÷18→18看作20试商约30；准确计算为34。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe19",
+      "type": "简答题",
+      "stem": "120÷15 的值是多少？",
+      "answer": "8",
+      "analysis": "被除数和除数同乘4变成 480÷60=8。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe20",
+      "type": "应用题",
+      "stem": "根据下表数据画出一幅条形统计图：早餐种类牛奶6人、豆浆12人、粥24人。选择合适的每格人数标度。",
+      "answer": "可选1格代表2人或代表5人，通常选择1格代表2人更精确。",
+      "analysis": "考察条形统计图绘制与标度选择。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe21",
+      "type": "简答题",
+      "stem": "烧水前必须洗水壶并接水，烧水需要8分钟。在等待烧开的时间内，你可以安排哪些任务以节省总时间？",
+      "answer": "可在烧水期间完成洗茶杯、找茶叶等任务，实现并行处理。",
+      "analysis": "考察任务并行与时间优化。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe22",
+      "type": "应用题",
+      "stem": "某商场一周电视销售量如下：15、10、20、25、30、50、45（周一至周日）。请找出哪天销售量最多、哪天最少。",
+      "answer": "最多为周六50台，最少为周二10台。",
+      "analysis": "考察数据比较能力。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe23",
+      "type": "应用题",
+      "stem": "根据四（1）班早餐统计表（牛奶6人、豆浆12人、粥24人），选择合适的每格人数并绘制条形统计图。",
+      "answer": "可选择每格表示2人或4人。若人数较大（如24），用每格4人更清晰。",
+      "analysis": "考察学生是否能根据数据大小选择合适的统计单位并绘图。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe24",
+      "type": "应用题",
+      "stem": "烧水时需要洗水壶（1分钟）、接水（1分钟）、烧水（8分钟）、洗茶杯（2分钟）、找茶叶（1分钟）、泡茶（1分钟）。怎样安排最节省时间？",
+      "answer": "先洗水壶→接水→开始烧水。烧水8分钟过程中同时完成洗茶杯、找茶叶。最后烧开后泡茶。总用时为烧水的8分钟加前置2分钟共约10分钟。",
+      "analysis": "考查任务依赖关系与并行处理思想。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe25",
+      "type": "应用题",
+      "stem": "三个人各要玩两局五分钟的游戏，至少需要多少分钟？可多人一起玩。",
+      "answer": "两人可同时玩，因此安排两人一组进行：前5分钟两人玩，后5分钟第三人与其中一人玩，以此类推，共需15分钟。",
+      "analysis": "考查任务资源分配与最少时间安排。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe26",
+      "type": "简答题",
+      "stem": "读出并写出下面的数：406098000，并指出其中数字“6”和“8”的数位及意义。",
+      "answer": "读作：四亿零六百零九万八千。6在百万位，表示6个百万；8在千位，表示8个千。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe27",
+      "type": "简答题",
+      "stem": "利用积的变化规律计算：6×200 的结果是多少？已知 6×2＝12。",
+      "answer": "6×200＝1200，因为乘数扩大100倍，积也扩大100倍。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4a_rjb_exe28",
+      "type": "简答题",
+      "stem": "根据统计表完成某小学男生戴近视镜人数的条形统计图，并指出：哪几个年级人数明显增多？",
+      "answer": "四、五、六年级人数较多（分别为19、25、32人）。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 44,
+    "skill_count": 18,
+    "experiment_count": 0,
+    "question_count": 28
+  }
+}

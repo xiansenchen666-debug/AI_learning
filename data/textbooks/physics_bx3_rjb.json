@@ -1,0 +1,2876 @@
+{
+  "id": "physics_bx3_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理必修三",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_bx3_rjb_cpt1",
+      "name": "正电荷",
+      "definition": "规定为电性为“正”的电荷类型；其电荷量取正值。",
+      "importance": "了解",
+      "aliases": [
+        "positive charge"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt2",
+      "name": "负电荷",
+      "definition": "规定为电性为“负”的电荷类型；其电荷量取负值。",
+      "importance": "了解",
+      "aliases": [
+        "negative charge"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt3",
+      "name": "库仑（C）",
+      "definition": "电荷量的国际单位；定义为1A恒定电流在1s时间间隔内所传送的电荷量为1C。",
+      "importance": "了解",
+      "unit": "C",
+      "formula": "1C = 1A × 1s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt4",
+      "name": "电中性",
+      "definition": "物体（如原子）整体对外表现为不带电的状态；以原子为例，质子正电荷数量与电子负电荷数量一样多，故整体电中性。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt5",
+      "name": "电子转移",
+      "definition": "在外界作用（如摩擦、带电体靠近导体）下，电子从一个物体转移到另一个物体或从物体的一部分转移到另一部分，从而导致带电或电荷重新分布。",
+      "importance": "掌握",
+      "examples": [
+        "摩擦时电子从一种物质转移到另一种物质",
+        "静电感应中自由电荷在导体内重新分布"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt6",
+      "name": "离子",
+      "definition": "在金属中失去自由电子的原子成为带正电的离子；在金属内部离子在平衡位置附近振动而不移动。",
+      "importance": "了解",
+      "aliases": [
+        "ion"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt7",
+      "name": "导体",
+      "definition": "内部存在能自由移动的电荷（如金属中的自由电子），因此能够导电的材料。",
+      "importance": "掌握",
+      "examples": [
+        "金属"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt8",
+      "name": "绝缘体",
+      "definition": "内部几乎不存在能自由移动的电荷，因此不易导电的材料。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt9",
+      "name": "物理模型（微观结构模型）",
+      "definition": "对金属中正离子与自由电子状态及运动的简化描述，用于有效解释金属导电等现象。",
+      "importance": "了解",
+      "examples": [
+        "金属的微观结构模型用于解释静电感应与导电相关现象"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt10",
+      "name": "静电感应",
+      "definition": "当带电体靠近导体时，由于电荷间相互吸引或排斥，导体中的自由电荷趋向或远离带电体，使导体靠近带电体一端带异种电荷、远离一端带同种电荷的现象。",
+      "importance": "掌握",
+      "aliases": [
+        "electrostatic induction"
+      ],
+      "examples": [
+        "不带电金属导体ABCD放入电场中，AB侧感应负电荷、CD侧感应正电荷",
+        "雷雨云靠近建筑物时，避雷针金属棒出现与云层相反的电荷"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt11",
+      "name": "感应起电",
+      "definition": "利用静电感应使金属导体带电的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt12",
+      "name": "电荷守恒定律",
+      "definition": "电荷既不会创生，也不会消灭，只能在物体间或物体内部转移；在与外界没有电荷交换的系统中，电荷的代数和保持不变。",
+      "importance": "重要",
+      "aliases": [
+        "law of conservation of charge"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt13",
+      "name": "元电荷",
+      "definition": "实验发现的最小电荷量（电子所带的电荷量），用e表示；所有带电体的电荷量都是e的整数倍，表明电荷量不能连续变化。",
+      "importance": "掌握",
+      "aliases": [
+        "elementary charge"
+      ],
+      "formula": "e = 1.602176634×10^-19 C（计算可取1.60×10^-19 C）",
+      "unit": "C"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt14",
+      "name": "电荷量量子化",
+      "definition": "所有带电体的电荷量都是元电荷e的整数倍，因此电荷量不能连续变化。",
+      "importance": "掌握",
+      "formula": "Q = n·e（n为整数）"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt15",
+      "name": "电子的比荷",
+      "definition": "电子的电荷量e与电子质量me之比，称为电子的比荷，是一个重要物理量。",
+      "importance": "了解",
+      "aliases": [
+        "specific charge"
+      ],
+      "formula": "e/me = 1.76×10^11 C/kg",
+      "unit": "C/kg"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt16",
+      "name": "静电力（库仑力）",
+      "definition": "电荷之间的相互作用力，发生在静止电荷之间；在库仑定律适用条件下，其大小与电荷量乘积成正比、与距离平方成反比，方向在两电荷连线上。",
+      "importance": "掌握",
+      "aliases": [
+        "库仑力",
+        "electrostatic force"
+      ],
+      "examples": [
+        "同种电荷相互排斥，异种电荷相互吸引"
+      ],
+      "unit": "N"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt17",
+      "name": "库仑定律",
+      "definition": "真空中两个静止点电荷之间的相互作用力，与它们电荷量的乘积成正比，与它们距离的二次方成反比，方向在它们的连线上。",
+      "importance": "重要",
+      "formula": "F = k * q1*q2 / r^2",
+      "unit": "F: N; q: C; r: m"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt18",
+      "name": "点电荷",
+      "definition": "当带电体之间的距离比它们自身大小大得多，以致形状、大小及电荷分布对相互作用力的影响可以忽略时，可把带电体看作带电的点，称为点电荷。",
+      "importance": "掌握",
+      "aliases": [
+        "point charge"
+      ],
+      "examples": [
+        "相距远大于自身尺寸的小金属球可近似为点电荷"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt19",
+      "name": "静电力常量k",
+      "definition": "库仑定律中的比例系数，表征真空中静电相互作用强弱。",
+      "importance": "掌握",
+      "formula": "k = 9.0×10^9 N·m^2/C^2",
+      "unit": "N·m^2/C^2"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt20",
+      "name": "平方反比规律（对距离）",
+      "definition": "在点电荷情形下，静电力大小与电荷间距离r的平方成反比。",
+      "importance": "掌握",
+      "formula": "F ∝ 1/r^2"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt21",
+      "name": "电荷量乘积正比规律",
+      "definition": "在点电荷情形下，静电力大小与两电荷量q1、q2的乘积成正比。",
+      "importance": "掌握",
+      "formula": "F ∝ q1 q2"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt22",
+      "name": "静电力的方向与性质（引力/斥力）",
+      "definition": "两个点电荷间的静电力方向在两电荷连线上；同种电荷相互排斥，异种电荷相互吸引。",
+      "importance": "掌握",
+      "examples": [
+        "同种电荷：斥力；异种电荷：引力"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt23",
+      "name": "叠加原理（静电力的矢量叠加）",
+      "definition": "若存在两个以上点电荷，则某点电荷所受合力等于其他各点电荷单独作用力的矢量和。",
+      "importance": "重要",
+      "formula": "F合 = Σ Fi（矢量和）"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt24",
+      "name": "两点电荷相互作用的独立性（不受第三电荷影响）",
+      "definition": "实验表明，两个点电荷之间的作用力不因第三个点电荷的存在而改变。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt25",
+      "name": "电场",
+      "definition": "由电荷产生、存在于电荷周围的一种场；处在电场中的其他电荷受到的作用力可以看作电场给予的作用。",
+      "importance": "掌握",
+      "aliases": [
+        "electric field"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt26",
+      "name": "静电场",
+      "definition": "静止电荷产生的电场。",
+      "importance": "了解",
+      "aliases": [
+        "electrostatic field"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt27",
+      "name": "试探电荷",
+      "definition": "为研究源电荷电场性质而引入的小电荷量、小体积的点电荷，其引入不改变源电荷的电场。",
+      "importance": "掌握",
+      "examples": [
+        "在点电荷Q的电场中于P点放入很小的q1或q2来测量受力"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt28",
+      "name": "场源电荷（源电荷）",
+      "definition": "激发电场的带电体所带的电荷。",
+      "importance": "掌握",
+      "aliases": [
+        "源电荷",
+        "场源电荷"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt29",
+      "name": "电场强度",
+      "definition": "反映电场在各点性质的物理量，定义为该点试探电荷所受静电力与其电荷量之比；方向规定为正电荷在该点所受静电力方向。",
+      "importance": "掌握",
+      "aliases": [
+        "electric field strength",
+        "E"
+      ],
+      "formula": "E = F/q",
+      "unit": "N/C",
+      "examples": [
+        "1 C电荷在某点受力1 N，则该点E=1 N/C"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt30",
+      "name": "电场强度的矢量性与方向规定",
+      "definition": "电场强度是矢量；电场中某点电场强度方向与正电荷在该点所受静电力方向相同，负电荷受力方向与电场强度方向相反。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt31",
+      "name": "点电荷的电场强度",
+      "definition": "电荷量为Q的点电荷在距其r处的电场强度大小为kQ/r^2；方向：Q为正沿半径向外，Q为负沿半径向内。",
+      "importance": "掌握",
+      "formula": "E = kQ/r^2",
+      "unit": "N/C"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt32",
+      "name": "电场强度的叠加（多点电荷电场）",
+      "definition": "若场源是多个点电荷，则电场中某点的电场强度等于各点电荷单独在该点产生的电场强度的矢量和。",
+      "importance": "掌握",
+      "formula": "E = E1 + E2 + ... (矢量和)"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt33",
+      "name": "带电体分割为点电荷并叠加计算电场",
+      "definition": "当带电体不能看作点电荷时，可将其分成足够小的小块视为点电荷，用点电荷电场强度叠加的方法计算整体电场。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt34",
+      "name": "均匀带电球体（或球壳）外部电场的点电荷等效",
+      "definition": "半径为R的均匀带电球体（或球壳）在外部产生的电场，与位于球心、总电荷量相等的点电荷在同一点产生的电场相同（r>R）。",
+      "importance": "重要",
+      "formula": "E = kQ/r^2 (r>R)"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt35",
+      "name": "电场线",
+      "definition": "为形象描述电场而画的有方向曲线；曲线上每点切线方向表示该点电场强度方向；同一幅图中线越密处电场强度越大。",
+      "importance": "掌握",
+      "aliases": [
+        "electric field line"
+      ],
+      "examples": [
+        "沿着电场线的方向，电势越来越低。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt36",
+      "name": "电场线的基本特点",
+      "definition": "（1）电场线从正电荷或无限远出发，终止于无限远或负电荷；（2）电场线在电场中不相交。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt37",
+      "name": "匀强电场",
+      "definition": "电场中各点电场强度大小相等、方向相同的电场；其电场线可用间隔相等的平行线表示。",
+      "importance": "掌握",
+      "examples": [
+        "相距很近的一对带等量异种电荷的平行金属板之间（除边缘外）可看作匀强电场",
+        "平行板间近似匀强电场（忽略边缘效应）"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt38",
+      "name": "静电平衡",
+      "definition": "导体内自由电子在电场作用下运动并重新分布，直到导体内部各点电场强度为0、自由电子不再发生定向移动时，导体达到的平衡状态。",
+      "importance": "掌握",
+      "formula": "导体内部：E = 0"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt39",
+      "name": "静电平衡时导体的电荷分布",
+      "definition": "静电平衡时导体内部没有净剩电荷，电荷只分布在导体的外表面；外表面越尖锐处电荷面密度越大。",
+      "importance": "掌握",
+      "examples": [
+        "导体尖端处电荷密度更大，周围电场更强"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt40",
+      "name": "电荷面密度",
+      "definition": "单位面积上的电荷量。",
+      "importance": "了解",
+      "unit": "C/m^2",
+      "aliases": [
+        "面电荷密度"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt41",
+      "name": "空气电离",
+      "definition": "在强电场作用下，空气中分子正负电荷分离，中性分子变成自由电子和正离子的过程。",
+      "importance": "了解",
+      "examples": [
+        "导体尖端周围强电场使空气发生电离"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt42",
+      "name": "尖端放电",
+      "definition": "导体尖端附近强电场使空气电离并形成带电粒子运动，符号相反的粒子被吸引到尖端与其电荷中和，等效于导体从尖端失去电荷的放电现象。",
+      "importance": "掌握",
+      "examples": [
+        "高压线周围出现绿色光晕（电晕）属于微弱放电现象"
+      ],
+      "aliases": [
+        "尖端电晕放电（语境相关）"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt43",
+      "name": "静电屏蔽",
+      "definition": "利用处于静电平衡的导体壳（或金属网）使其内部电场强度保持为0，从而隔绝外部电场对内部空间/仪器影响的作用。",
+      "importance": "掌握",
+      "examples": [
+        "电学仪器放在封闭金属壳里不受壳外电场影响",
+        "金属网罩住验电器后外部带电球靠近不再使箔片张开",
+        "高压输电线上方接地导线形成稀疏“金属网”进行屏蔽"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt44",
+      "name": "空腔导体的屏蔽性质（腔内E=0）",
+      "definition": "带空腔的导体在静电平衡时内表面无电荷，导体壳壁内电场强度为0，电场线不进入空腔，因此空腔内电场强度处处为0。",
+      "importance": "掌握",
+      "formula": "空腔内：E = 0"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt45",
+      "name": "静电吸附",
+      "definition": "在电场中带电粒子受静电力作用向电极运动并被吸附在电极上的现象/原理。",
+      "importance": "掌握",
+      "examples": [
+        "静电除尘：粉尘带电后被吸附到收集电极",
+        "静电喷漆：带电漆雾微粒沉积在工件表面",
+        "静电复印：利用带电与吸附过程完成显影转印"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt46",
+      "name": "静电除尘",
+      "definition": "使空气中尘埃带电，在静电力作用下到达电极并被收集的技术。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt47",
+      "name": "静电喷漆",
+      "definition": "使喷出的油漆微粒带电，在静电力作用下向作为异号电极的工件运动并沉积成膜的喷漆技术。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt48",
+      "name": "静电复印（OPC鼓）",
+      "definition": "利用有机光导体鼓在暗处绝缘、受光后导电的性质，配合充电、曝光、显影、转印、放电等步骤实现图文复制的技术。",
+      "importance": "了解",
+      "examples": [
+        "工作流程：充电→曝光→显影→转印→放电"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt49",
+      "name": "静电力做功与路径无关（静电场力做功特点）",
+      "definition": "在静电场中（包含匀强电场与可推广到非匀强电场），电荷从A点到B点运动时，静电力所做的功只与起始位置和终止位置有关，与电荷经过的路径无关。",
+      "importance": "掌握",
+      "formula": "W_{AB}仅由A、B决定；在匀强电场推导例：W=qE|AM|",
+      "examples": [
+        "将试探电荷q从A到B，走直线AB与折线AMB，静电力做功相同",
+        "将曲线ANB分段，垂直电场方向不做功，总功仍等于沿电场方向位移之和对应的qE|AM|"
+      ],
+      "aliases": [
+        "静电力做功具有保守力特点（路径无关）"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt50",
+      "name": "电势能",
+      "definition": "电荷在电场中由于相互作用而具有的势能，称为电势能，用Ep表示；静电力做功等于电势能的减少量。",
+      "importance": "掌握",
+      "formula": "W_{AB}=E_{pA}-E_{pB}",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt51",
+      "name": "电势能的相对性与零势能参考点",
+      "definition": "静电力做功只能决定电势能的变化量，不能决定某点电势能的数值；必须先规定某点电势能为0（如无限远或大地表面），才能确定其他点电势能。",
+      "importance": "重要",
+      "examples": [
+        "若规定B点电势能为0，则A点电势能数值等于W_AB",
+        "通常取离场源电荷无限远处电势能为0，或取大地表面为0"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt52",
+      "name": "电势",
+      "definition": "电场中某一点的电势定义为该点电荷的电势能与电荷量之比，反映电场该点性质，与试探电荷本身无关；电势用φ表示，为标量。",
+      "importance": "掌握",
+      "formula": "\\varphi=\\frac{E_p}{q}",
+      "unit": "V",
+      "examples": [
+        "选择不同的位置作为零电势点，电场中某点电势的数值也会改变，但电场中某两点之间电势的差值却保持不变。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt53",
+      "name": "电势的单位（伏特）",
+      "definition": "电势的国际单位是伏特（V），当1C电荷在某点具有1J电势能时，该点电势为1V。",
+      "importance": "了解",
+      "formula": "1\\,\\mathrm{V}=1\\,\\mathrm{J}/\\mathrm{C}",
+      "unit": "V"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt54",
+      "name": "沿电场线方向电势降低（匀强电场）",
+      "definition": "在匀强电场中，正试探电荷沿电场线方向运动时电势能逐渐减少，因此可以说沿电场线方向电势逐渐降低。",
+      "importance": "重要",
+      "examples": [
+        "图10.1-4中正试探电荷沿电场线从左向右移向O点，电势能逐渐减少"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt55",
+      "name": "零电势参考点与电势正负",
+      "definition": "与电势能类似，应先规定电场中某处电势为0（如无限远或大地），才能确定其他点电势；电势可为正值或负值。",
+      "importance": "重要",
+      "examples": [
+        "理论研究常取无限远处电势为0；实际应用常取大地电势为0"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt56",
+      "name": "电势差",
+      "definition": "两点间电势的差，常用U_AB表示；在静电场中与静电力做功相关，满足W=qU_AB。",
+      "importance": "掌握",
+      "aliases": [
+        "电压",
+        "U_AB",
+        "电压（文中表述为“加上电压”）"
+      ],
+      "formula": "U_AB = φ_A - φ_B；U_BA = φ_B - φ_A；U_AB = -U_BA",
+      "unit": "V",
+      "examples": [
+        "当A点电势比B点电势高时，U_AB为正值，U_BA为负值。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt57",
+      "name": "静电力做功",
+      "definition": "电场力在位移过程中所做的功；在电势差为U的两点间，电荷量q通过该电势差时静电力做功W=qU（取决于约定符号）。",
+      "importance": "掌握",
+      "formula": "W_AB = E_pA - E_pB = q(φ_A-φ_B)=qU_AB",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt58",
+      "name": "等势面",
+      "definition": "在电场中电势相同的各点构成的面叫作等势面。",
+      "importance": "掌握",
+      "examples": [
+        "在同一个等势面上，任何两点的电势都相等。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt59",
+      "name": "电场强度方向",
+      "definition": "电场强度矢量的指向，等同于电场线在该处的切线方向；与等势面垂直。",
+      "importance": "了解",
+      "examples": [
+        "等势面一定跟电场线垂直，即跟电场强度的方向垂直。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt60",
+      "name": "电子伏(eV)",
+      "definition": "微观粒子常用的能量单位；1 eV等于一个电子经过1 V电压加速后所增加的动能。",
+      "importance": "了解",
+      "unit": "eV",
+      "examples": [
+        "1 eV等于一个电子经过1V电压加速后所增加的动能。"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt61",
+      "name": "匀强电场中电势差与电场强度的关系",
+      "definition": "在匀强电场中，两点间的电势差等于电场强度与这两点沿电场方向距离的乘积，U_AB=Ed；等价形式E=U_AB/d，表示单位距离上的电势降低量。",
+      "importance": "重要",
+      "formula": "U_AB=Ed；E=U_AB/d",
+      "unit": "E的单位：V/m（=N/C）",
+      "examples": [
+        "平行金属板间近似匀强电场：E=U/d"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt62",
+      "name": "等势线（等势面）",
+      "definition": "电势相等的点连成的线（面）；在剖面图中等势面表现为等势线，相邻等势线间电势差可相等。",
+      "importance": "了解",
+      "aliases": [
+        "等势面"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt63",
+      "name": "等势线疏密与电场强度的对应关系",
+      "definition": "当相邻等势线间电势差U相同时，由E=U/d可知E越大处d越小，因此电场线密的地方等势线也密。",
+      "importance": "掌握",
+      "formula": "E=U/d（相邻等势线U相同）"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt64",
+      "name": "静电力做功与动能变化（动能定理在静电场中的应用）",
+      "definition": "静电力做的功等于带电粒子动能的变化；当粒子由静止加速通过电势差U时，有qU=1/2 mv^2，因此只要加速电压一定，获得的动能一定。",
+      "importance": "重要",
+      "formula": "qU=\\frac{1}{2}mv^2"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt65",
+      "name": "空气击穿",
+      "definition": "空气在很强电场下，分子中正负电荷受力很大以至分子“破碎”，出现可自由移动电荷而导电并放电的现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt66",
+      "name": "电容器",
+      "definition": "由两个彼此绝缘且相距很近的导体组成、能够储存电荷与电能的重要电学元件；最简单形式是在两块相距很近的平行金属板间夹入电介质构成。",
+      "importance": "掌握",
+      "aliases": [
+        "capacitor"
+      ],
+      "examples": [
+        "平行板电容器",
+        "固定电容器（聚苯乙烯电容器、电解电容器）",
+        "可变电容器",
+        "超级电容器"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt67",
+      "name": "平行板电容器",
+      "definition": "在两个相距很近的平行金属板中间夹上一层电介质构成的最简单电容器；两金属板称为极板。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt68",
+      "name": "极板",
+      "definition": "电容器中用于储存等量异种电荷的两块导体（金属板）；平行板电容器中为两块平行金属板。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt69",
+      "name": "电介质",
+      "definition": "夹在电容器两极板之间的绝缘物质（空气也属于电介质），用于隔离极板并影响电容大小。",
+      "importance": "了解",
+      "examples": [
+        "空气",
+        "有机玻璃板",
+        "聚苯乙烯薄膜",
+        "陶瓷",
+        "氧化膜"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt70",
+      "name": "电容（电容器的电容）",
+      "definition": "电容器所带电荷量Q（指一个极板所带电荷量的绝对值）与两极板间电势差U之比，表征电容器储存电荷的特性。",
+      "importance": "掌握",
+      "formula": "C = Q / U",
+      "unit": "F（法拉）"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt71",
+      "name": "法拉",
+      "definition": "电容的国际单位制单位，符号F；当电容器两极板间电势差为1V时所带电荷量为1C，则电容为1F。",
+      "importance": "了解",
+      "unit": "F"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt72",
+      "name": "微法",
+      "definition": "常用电容单位，符号μF，与法拉的换算关系为1μF=10^-6 F。",
+      "importance": "了解",
+      "unit": "μF",
+      "formula": "1 μF = 10^-6 F"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt73",
+      "name": "皮法",
+      "definition": "常用电容单位，符号pF，与法拉的换算关系为1pF=10^-12 F。",
+      "importance": "了解",
+      "unit": "pF",
+      "formula": "1 pF = 10^-12 F"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt74",
+      "name": "击穿电压",
+      "definition": "加在电容器两极板上的电压不能超过的极限值，超过则电介质被击穿、电容器损坏。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt75",
+      "name": "额定电压（工作电压）",
+      "definition": "电容器外壳上标注的允许工作电压数值，通常低于击穿电压。",
+      "importance": "了解",
+      "aliases": [
+        "工作电压"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt76",
+      "name": "相对介电常数",
+      "definition": "当平行板电容器极板间充满同一种介质时，电容相对真空增大的倍数εr，是与电介质性质有关的常数。",
+      "importance": "了解",
+      "formula": "C = (εr S) / (4π k d)"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt77",
+      "name": "平行板电容器电容与几何/介质的关系",
+      "definition": "平行板电容器在真空中电容与正对面积S成正比、与极板间距d成反比；插入电介质会使电容增大为真空时的εr倍。",
+      "importance": "重要",
+      "formula": "真空：C = S / (4π k d)；充满介质：C = (εr S) / (4π k d)",
+      "unit": "F"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt78",
+      "name": "电容器充电",
+      "definition": "电源通过电路使电容器两极板积累等量异种电荷、极板间电势差增大；随着电势差增大，充电电流逐渐减小至0。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt79",
+      "name": "电容器放电",
+      "definition": "电容器通过外电路（如电阻R）使两极板正负电荷中和，极板电荷量与电势差减小，放电电流逐渐减小至0。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt80",
+      "name": "电容器储能与能量转化",
+      "definition": "充电过程中电源能量不断储存在电容器中；放电过程中电容器把储存的能量通过电流做功转化为电路中其他形式的能量。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt81",
+      "name": "带电粒子在电场中的加速",
+      "definition": "利用电场对带电粒子施加静电力，使其速度大小增大的一类运动情形；在简单情形中带电粒子的速度方向与电场强度方向相同或相反。",
+      "importance": "掌握",
+      "examples": [
+        "电子直线加速器中电子在电场作用下加速",
+        "范德格拉夫静电加速器中正离子在强电场中加速"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt82",
+      "name": "静电力（电场力）",
+      "definition": "电场对电荷的作用力；在匀强电场中大小为F=qE，方向与电场方向对正电荷同向、对负电荷反向。",
+      "importance": "掌握",
+      "formula": "F = qE"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt83",
+      "name": "动能定理（静电力做功与动能变化）",
+      "definition": "合外力对物体所做的功等于物体动能的变化；在电场中常用静电力做功来求速度变化。",
+      "importance": "掌握",
+      "formula": "W = \\Delta E_k"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt84",
+      "name": "带电粒子在电场中的偏转",
+      "definition": "当带电粒子初速度方向与电场方向不共线（如垂直）时，静电力方向与速度方向不在同一直线上，粒子的运动轨迹发生弯曲的现象。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt85",
+      "name": "匀强电场中的带电粒子偏转轨迹为抛物线",
+      "definition": "带电粒子以初速度垂直于匀强电场方向射入时，在电场力作用下垂直方向做匀加速、平行方向做匀速，合运动轨迹为抛物线，类似平抛运动。",
+      "importance": "重要",
+      "aliases": [
+        "类平抛运动"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt86",
+      "name": "导体内部电场强度为0（静电平衡特性）",
+      "definition": "在静电平衡时导体内部电场强度为0，因此带电粒子在理想金属导体内部不受静电力作用。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt87",
+      "name": "带电粒子在金属圆筒内做匀速直线运动",
+      "definition": "由于导体内部电场强度为0，带电粒子在金属圆筒内部不受静电力作用，因而沿轴线作匀速直线运动。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt88",
+      "name": "电极",
+      "definition": "电源的两个端点（与外电路连接的两端），分别带一定数量的正、负电荷以维持电势差。",
+      "importance": "了解",
+      "examples": [
+        "A和B是电源的两个电极"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt89",
+      "name": "电流方向规定",
+      "definition": "规定正电荷定向移动的方向为电流的方向；电子定向移动的方向与电流方向相反。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt90",
+      "name": "恒定电场",
+      "definition": "由稳定分布的电荷所产生的、空间电场分布不随时间变化的电场。",
+      "importance": "掌握",
+      "aliases": [
+        "steady electric field"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt91",
+      "name": "恒定电流",
+      "definition": "大小、方向都不随时间变化的电流。",
+      "importance": "掌握",
+      "aliases": [
+        "steady current"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt92",
+      "name": "电流（物理量）",
+      "definition": "表示电流强弱程度的物理量；单位时间内通过导体横截面的电荷量越多，电流越大。",
+      "importance": "掌握",
+      "formula": "I = q / t",
+      "unit": "A（安培）",
+      "examples": [
+        "mA、μA为常用电流单位"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt93",
+      "name": "安培（A）",
+      "definition": "国际单位制中电流的单位，符号A；由I=q/t可知1 C = 1 A·s。",
+      "importance": "了解",
+      "unit": "A",
+      "formula": "1 C = 1 A·s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt94",
+      "name": "自由电子定向运动（漂移）",
+      "definition": "在电场作用下，导体中的自由电子在无规则热运动之外产生的整体定向移动；宏观上表现为电流。",
+      "importance": "重要",
+      "examples": [
+        "金属中自由电子在电势差形成的电场中受静电力作用而定向移动"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt95",
+      "name": "电流的微观关系式",
+      "definition": "金属导体中电流大小与自由电子数密度、横截面积及漂移速率的关系。",
+      "importance": "了解",
+      "formula": "I = n e S v",
+      "unit": "I的单位为A；n单位为1/m^3，S单位为m^2，v单位为m/s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt96",
+      "name": "电池容量",
+      "definition": "电池放电时能输出的总电荷量。",
+      "importance": "了解",
+      "unit": "A·h 或 mA·h",
+      "examples": [
+        "手机电池容量 4000 mA·h"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt97",
+      "name": "U-I图像的斜率与电阻",
+      "definition": "在导体的U-I图像中，图像的斜率反映导体电阻的大小；同一金属导体的U-I图像为过原点的直线。",
+      "importance": "掌握",
+      "formula": "U-I图像斜率k = U/I = R（针对线性、过原点直线情形）",
+      "examples": [
+        "比较不同导体A、B的U-I图像倾斜程度判断R大小"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt98",
+      "name": "影响导体电阻的因素",
+      "definition": "导体电阻与导体的长度、横截面积及材料有关：同种材料时R与长度l成正比、与横截面积S成反比；材料不同则电阻不同。",
+      "importance": "掌握",
+      "examples": [
+        "输电线做得更粗以减小电能损耗（对应减小电阻）"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt99",
+      "name": "电阻定律（均匀导体）",
+      "definition": "均匀导体的电阻与其材料电阻率ρ、长度l、横截面积S的关系为R=ρ·l/S。",
+      "importance": "掌握",
+      "formula": "R = ρ l / S"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt100",
+      "name": "电阻率",
+      "definition": "表征导体材料电学特性的物理量；在同种材料、长度和横截面积一定条件下，ρ越大电阻越大；同种材料的ρ在一定条件下不变，不同材料ρ一般不同。",
+      "importance": "掌握",
+      "formula": "ρ = R S / l",
+      "unit": "Ω·m",
+      "aliases": [
+        "resistivity",
+        "ρ"
+      ],
+      "examples": [
+        "纯金属电阻率较小，合金电阻率较大",
+        "连接电路导线常用铜（ρ小）制作，必要时镀银"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt101",
+      "name": "电阻率与温度的关系（金属）",
+      "definition": "金属的电阻率随温度升高而增大；温度降低时电阻率减小。",
+      "importance": "重要",
+      "examples": [
+        "加热灯丝使串联小灯泡变暗，说明灯丝电阻率变大"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt102",
+      "name": "电阻温度计原理",
+      "definition": "利用金属电阻随温度变化的规律制成；已知某金属（如铂）电阻随温度变化关系，测其电阻即可确定温度。",
+      "importance": "了解",
+      "examples": [
+        "精密电阻温度计用铂制作"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt103",
+      "name": "伏安特性曲线（I-U图像）",
+      "definition": "以电压U为横坐标、电流I为纵坐标画出的I-U图像称为导体的伏安特性曲线，用于描述元件的电流-电压关系。",
+      "importance": "了解",
+      "aliases": [
+        "I-U图像",
+        "伏安特性"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt104",
+      "name": "线性元件",
+      "definition": "在温度没有显著变化时，电阻几乎不变，电流I与电压U成正比，伏安特性曲线为过原点的直线的电学元件（如金属导体）。",
+      "importance": "了解",
+      "examples": [
+        "金属导体在温度不显著变化时表现为线性元件"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt105",
+      "name": "非线性元件",
+      "definition": "在某些情况下电流与电压不成正比、伏安特性曲线不是过原点直线的电学元件，如气态导体和半导体元件等。",
+      "importance": "了解",
+      "examples": [
+        "晶体二极管的伏安特性曲线为非线性"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt106",
+      "name": "长度（物理量）",
+      "definition": "物理学中的基本物理量；实验中需要测量金属电阻丝接入电路的有效长度l。",
+      "importance": "了解",
+      "unit": "m",
+      "aliases": [
+        "l"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt107",
+      "name": "有效长度",
+      "definition": "电阻丝长度测量时，并非测总长度，而是测接入电路的那一段长度，称为有效长度l。",
+      "importance": "掌握",
+      "unit": "m",
+      "aliases": [
+        "l（有效）"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt108",
+      "name": "截面积",
+      "definition": "导体横截面的面积；圆柱形电阻丝的截面积S=πd^2/4。",
+      "importance": "掌握",
+      "formula": "S=πd^2/4",
+      "unit": "m^2",
+      "aliases": [
+        "S"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt109",
+      "name": "直径",
+      "definition": "圆柱形导体横截面的直径；本实验通过刻度尺累积法或游标卡尺/螺旋测微器直接测量获得d。",
+      "importance": "掌握",
+      "unit": "m",
+      "aliases": [
+        "d"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt110",
+      "name": "电导率",
+      "definition": "电阻率的倒数，是检验纯净水是否合格的一项指标。",
+      "importance": "了解",
+      "formula": "σ=1/ρ",
+      "unit": "S/m",
+      "aliases": [
+        "σ"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt111",
+      "name": "游标卡尺（测量工具）",
+      "definition": "利用主尺1mm刻度与游标尺单位刻度之间固定微量差值来提高测量精度的长度测量工具。",
+      "importance": "掌握",
+      "unit": "mm",
+      "examples": [
+        "10分度、20分度、50分度游标卡尺"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt112",
+      "name": "螺旋测微器（测量工具）",
+      "definition": "利用螺杆旋转一周前进（或后退）一个螺距的原理，将圆周分度转化为轴向微小位移，实现高精度长度测量的工具。",
+      "importance": "掌握",
+      "unit": "mm",
+      "examples": [
+        "测量电阻丝直径、A4纸厚度、头发丝直径"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt113",
+      "name": "游标卡尺读数（主尺+游标尺）",
+      "definition": "读数时先读主尺刻度，再读游标尺上与主尺刻度线对齐的刻度值，两者相加得到被测长度。",
+      "importance": "掌握",
+      "examples": [
+        "主尺23mm，游标0.7mm，总读数23.7mm"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt114",
+      "name": "螺旋测微器读数（固定刻度+可动刻度）",
+      "definition": "读数时先读固定刻度（含半毫米刻度线是否露出），再读可动刻度对应的分度值（每格0.01mm），两者相加得到被测长度。",
+      "importance": "掌握",
+      "examples": [
+        "固定刻度6.5mm，可动刻度22.5格×0.01mm=0.225mm，总读数6.725mm"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt115",
+      "name": "串联电路中的电流规律",
+      "definition": "在串联电路中，由于电路中各处电荷分布保持不变，相同时间内通过各点的电荷量相等，因此串联电路中的电流处处相等。",
+      "importance": "掌握",
+      "formula": "I1 = I2 = ... = I"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt116",
+      "name": "并联电路中的电流规律",
+      "definition": "在并联电路中，为保证电路各处电荷量分布保持不变，干路电流等于各支路电流之和。",
+      "importance": "掌握",
+      "formula": "I = I1 + I2 + ... + In"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt117",
+      "name": "串联电路中的电压规律",
+      "definition": "串联电路两端的总电压等于各部分电路两端电压之和。",
+      "importance": "掌握",
+      "formula": "U = U1 + U2 + ... + Un"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt118",
+      "name": "并联电路中的电压规律",
+      "definition": "并联电路中（不考虑导线电阻），各支路两端电势差相同，因此并联电路的总电压与各支路电压相等。",
+      "importance": "掌握",
+      "formula": "U = U1 = U2 = ... = Un"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt119",
+      "name": "串联电路的等效电阻",
+      "definition": "多个电阻串联作为整体时，等效电阻等于各电阻之和。",
+      "importance": "掌握",
+      "formula": "R = R1 + R2 + ... + Rn",
+      "unit": "Ω"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt120",
+      "name": "并联电路的等效电阻",
+      "definition": "多个电阻并联作为整体时，等效电阻的倒数等于各支路电阻倒数之和。",
+      "importance": "掌握",
+      "formula": "1/R = 1/R1 + 1/R2 + ... + 1/Rn",
+      "unit": "Ω"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt121",
+      "name": "表头（小量程电流表）",
+      "definition": "常用电压表和电流表由小量程电流表（表头）改装而成；从电路角度看，表头就是一个电阻，遵从欧姆定律，通过表头的电流可由刻度盘读出。",
+      "importance": "了解",
+      "aliases": [
+        "小量程电流表",
+        "表头电流计"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt122",
+      "name": "电流表内阻（表头内阻）",
+      "definition": "表头的电阻Rg叫作电流表的内阻。",
+      "importance": "掌握",
+      "formula": "Rg",
+      "unit": "Ω"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt123",
+      "name": "满偏电流",
+      "definition": "指针偏转到最大刻度时的电流Ig叫作满偏电流。",
+      "importance": "掌握",
+      "formula": "Ig",
+      "unit": "A"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt124",
+      "name": "满偏电压",
+      "definition": "表头通过满偏电流时，加在它两端的电压Ug叫作满偏电压。",
+      "importance": "掌握",
+      "formula": "Ug",
+      "unit": "V"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt125",
+      "name": "表头的欧姆定律关系（满偏关系）",
+      "definition": "由欧姆定律可知，表头满偏电压Ug等于满偏电流Ig与表头内阻Rg的乘积。",
+      "importance": "掌握",
+      "formula": "Ug = Ig * Rg"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt126",
+      "name": "电压表的改装（串联分压电阻）",
+      "definition": "测量较大的电压时，要在表头上串联一个电阻R，将表头改装成电压表；串联电阻分担一部分电压，称为分压电阻。",
+      "importance": "重要",
+      "examples": [
+        "在表头外串联电阻扩大电压量程"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt127",
+      "name": "电流表的改装（并联分流电阻）",
+      "definition": "测量较大的电流时，要在表头上并联一个电阻R，将表头改装成大量程电流表；并联电阻分去一部分电流，称为分流电阻。",
+      "importance": "重要",
+      "examples": [
+        "在表头外并联电阻扩大电流量程"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt128",
+      "name": "多用电表",
+      "definition": "一种多功能电学仪表，可用来测量直流电流、直流电压、交变电压以及电阻等物理量。",
+      "importance": "掌握",
+      "examples": [
+        "测量小灯泡两端电压",
+        "测量通过小灯泡的电流",
+        "测量定值电阻、小灯泡、人体、二极管的电阻"
+      ],
+      "aliases": [
+        "万用表"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt129",
+      "name": "量程（倍率）选择原则",
+      "definition": "测量前应选择与被测物理量对应的挡位，并选取合适量程/倍率：电压、电流应选大于估计值的量程；测电阻应选使指针落在欧姆刻度盘中间区域的倍率，以减小读数误差。",
+      "importance": "掌握",
+      "examples": [
+        "测小灯泡电压时选择大于电压估计值的直流电压量程",
+        "测未知电阻先用中等倍率试测，再根据读数改选合适挡位"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt130",
+      "name": "指针定位（机械调零）",
+      "definition": "使用前通过指针定位螺丝调整，使指针指到零刻度，以保证读数基准正确。",
+      "importance": "掌握",
+      "examples": [
+        "使用前调整指针定位螺丝，使指针指到零刻度"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt131",
+      "name": "欧姆表调零（电阻挡调零）",
+      "definition": "在电阻测量前将两表笔短接，通过欧姆调零旋钮使指针指向“0”（欧姆零点）；更换不同倍率的欧姆挡后必须重新调零。",
+      "importance": "掌握",
+      "examples": [
+        "测电阻之前先短接表笔并调欧姆零点",
+        "改变欧姆挡倍率后重复调零"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt132",
+      "name": "欧姆表读数与倍率关系",
+      "definition": "使用欧姆挡测电阻时，电阻值等于表盘读数乘以所选倍率。",
+      "importance": "掌握",
+      "formula": "R = 读数 × 倍率",
+      "unit": "Ω"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt133",
+      "name": "多用电表测直流电压接线极性",
+      "definition": "测量直流电压时，红表笔应接到电势较高的一端，黑表笔接到电势较低的一端。",
+      "importance": "掌握",
+      "examples": [
+        "测小灯泡电压时红表笔接高电势端、黑表笔接低电势端"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt134",
+      "name": "多用电表测直流电流接线与电流方向",
+      "definition": "测量直流电流时，多用电表应串联接入电路，且电流应从红表笔流入多用电表。",
+      "importance": "掌握",
+      "examples": [
+        "断开电路后将多用电表串联在断开处测小灯泡电流"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt135",
+      "name": "选择开关置OFF（规范与安全）",
+      "definition": "不使用多用电表时应将选择开关旋转到OFF位置，以符合使用规范并降低风险。",
+      "importance": "重要",
+      "examples": [
+        "不使用的时候应该把选择开关旋转到OFF位置"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt136",
+      "name": "数字式多用电表",
+      "definition": "测量值以数字形式直接显示，使用方便；内部装有电子电路，除可测电压、电流和电阻外还可测量其他多种物理量。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt137",
+      "name": "电荷量与电流关系",
+      "definition": "在时间t内通过电路任一截面的电荷量q等于电流I与时间t的乘积：q=It。",
+      "importance": "了解",
+      "formula": "q=It",
+      "unit": "库仑(C)"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt138",
+      "name": "发热功率（电阻热功率）",
+      "definition": "在电流做的功全部转化为热（或讨论导体发热部分）时，单位时间内产生的热量对应的功率：P热=Q/t=I^2R。",
+      "importance": "掌握",
+      "formula": "P热=Q/t=I^2R",
+      "unit": "瓦特(W)"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt139",
+      "name": "能量守恒定律（用于电路能量转化）",
+      "definition": "能量在相互转化或转移的过程中是守恒的；在电动机等电路中体现为输入功率等于各输出/损耗功率之和。",
+      "importance": "重要",
+      "examples": [
+        "电动机：P电=P机+P损（若只计线圈发热损耗则P损=P热）",
+        "电热元件：W=Q"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt140",
+      "name": "电动机的功率分配关系",
+      "definition": "电动机从电源获得的电功率P电，一部分转化为对外做功的机械功率P机，另一部分为损耗功率P损（如线圈发热等），满足P电=P机+P损；若忽略其他损耗仅计线圈发热，则P损=P热=I^2R。",
+      "importance": "掌握",
+      "formula": "P电=UI；P电=P机+P损；（仅计线圈发热）P损=P热=I^2R"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt141",
+      "name": "闭合电路",
+      "definition": "由导线、电源和用电器连成的电路。",
+      "importance": "掌握",
+      "aliases": [
+        "closed circuit"
+      ],
+      "examples": [
+        "由电池、导线、小灯泡连接成的电路"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt142",
+      "name": "外电路",
+      "definition": "闭合电路中由用电器和导线组成的部分。",
+      "importance": "了解",
+      "examples": [
+        "灯泡及其连接导线构成外电路"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt143",
+      "name": "内电路",
+      "definition": "电源内部的电路部分。",
+      "importance": "了解",
+      "examples": [
+        "电池内部的导电路径属于内电路"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt144",
+      "name": "非静电力",
+      "definition": "在电源内部使正电荷能够逆着静电力方向运动、将正电荷从负极搬运到正极的力；在这一过程中非静电力对电荷做功使电势能增加。",
+      "importance": "掌握",
+      "examples": [
+        "化学电池中的化学作用产生的力",
+        "发电机中的电磁作用产生的力"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt145",
+      "name": "电动势",
+      "definition": "用非静电力所做的功与所移动的电荷量之比来表示电源特性，反映电源把正电荷从负极移送到正极的本领。",
+      "importance": "掌握",
+      "formula": "E = W/q",
+      "unit": "V",
+      "aliases": [
+        "electromotive force",
+        "E"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt146",
+      "name": "部分电路欧姆定律",
+      "definition": "导体中的电流I跟导体两端的电压U成正比、跟导体的电阻R成反比。",
+      "importance": "掌握",
+      "formula": "I = U/R"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt147",
+      "name": "内阻",
+      "definition": "电源内部的电阻，用r表示；导致电源带负载时路端电压随电流增大而减小。",
+      "importance": "掌握",
+      "aliases": [
+        "内电阻",
+        "r"
+      ],
+      "unit": "Ω",
+      "formula": [
+        "E = U + Ir",
+        "U = -Ir + E",
+        "r = E / I短",
+        "r = |ΔU/ΔI|"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt148",
+      "name": "闭合电路欧姆定律",
+      "definition": "闭合电路的电流与电源电动势成正比，与内外电路电阻之和成反比；也可表述为电源电动势等于内外电路电势降落之和。",
+      "importance": "重要",
+      "formula": "I = E/(R + r)；E = IR + Ir"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt149",
+      "name": "电势降落（电压降）",
+      "definition": "沿电流方向电势降低的量；在外电路为IR，在内电路为Ir。",
+      "importance": "了解",
+      "examples": [
+        "外电路总电势降落U外=IR",
+        "内电路电势降落U内=Ir"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt150",
+      "name": "路端电压",
+      "definition": "电源外电路两端（电源端子间）的电压，用U表示；随电路电流变化。",
+      "importance": "掌握",
+      "formula": "U = E - Ir",
+      "unit": "V",
+      "aliases": [
+        "端电压",
+        "U"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt151",
+      "name": "负载",
+      "definition": "外电路中的用电器。",
+      "importance": "了解",
+      "examples": [
+        "灯泡、电动机等用电器作为负载"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt152",
+      "name": "断路（开路）",
+      "definition": "外电路断开时电流为0的状态，此时路端电压等于电动势。",
+      "importance": "了解",
+      "formula": "I=0 ⇒ U=E"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt153",
+      "name": "电源输出电能（非静电力做功）",
+      "definition": "电源在时间t内因非静电力做功而输出的电能，等于EIt（或Eq）。",
+      "importance": "了解",
+      "formula": "W = Eq = EIt",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt154",
+      "name": "焦耳热（电阻上的电能转化为内能）",
+      "definition": "电流通过电阻时电能转化为内能的量，外电路为I^2Rt，内电路为I^2rt。",
+      "importance": "了解",
+      "formula": "Q外=I^2Rt；Q内=I^2rt",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt155",
+      "name": "欧姆表原理（电阻-电流对应刻度）",
+      "definition": "在表内含电源的闭合电路中，电流随待测电阻变化：Ix=E/(RΩ+Rx)，据Rx=E/Ix-RΩ把电流刻度换算为电阻刻度；因Rx与Ix非线性，对应刻度不均匀。",
+      "importance": "了解",
+      "formula": "Ix=E/(RΩ+Rx)；Rx=E/Ix−RΩ"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt156",
+      "name": "U-I图像（路端电压-电流图像）",
+      "definition": "以U为纵坐标、I为横坐标作图，测量点近似成一直线；其纵截距为电动势E，斜率为-r，可由图像求E与r。",
+      "importance": "掌握",
+      "formula": [
+        "U = -Ir + E",
+        "纵截距：E",
+        "斜率：-r"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt157",
+      "name": "短路电流",
+      "definition": "当外电路电阻趋近于0、路端电压U=0时电路中的电流，记为I短；可由U-I直线与I轴的截距确定，并用于求内阻r。",
+      "importance": "了解",
+      "aliases": [
+        "I短",
+        "I_short"
+      ],
+      "unit": "A",
+      "formula": [
+        "r = E / I短"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt158",
+      "name": "能量转移",
+      "definition": "能量从一个物体传递到另一个物体的过程（如热从热鸡蛋传给冷水）。",
+      "importance": "了解",
+      "examples": [
+        "热鸡蛋放入冷水后，鸡蛋降温、水升温"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt159",
+      "name": "能量转移或转化的方向性",
+      "definition": "自然界中能量的转化与转移过程存在“哪些能自发发生、哪些不能自发发生”的方向性（宏观过程具有方向性）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt160",
+      "name": "不可逆过程（宏观热过程不可逆性）",
+      "definition": "与热现象有关的宏观自然过程都是不可逆的；过程不能自发逆向发生而回到初始状态。",
+      "importance": "掌握",
+      "examples": [
+        "热鸡蛋在冷水中放热后，热量不会再次自动聚集使鸡蛋自发变热、冷水自发变冷"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt161",
+      "name": "能量的耗散",
+      "definition": "能量在转化过程中，虽数量不减少，但热等形式扩散到环境中，变得难以重新收集利用，导致能量可利用的品质降低的现象。",
+      "importance": "重要",
+      "examples": [
+        "燃料燃烧释放的热量不会再次自动聚集供人类重新利用",
+        "灯泡发光发热后，热和光被吸收变成周围环境内能，难以收集再利用"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt162",
+      "name": "能源危机（深层含义）",
+      "definition": "能源利用中能量虽守恒，但由于能量耗散导致可利用品质下降，从“便于利用的能源”变成“不便于利用的能源”，从而产生能源危机的深层含义。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt163",
+      "name": "太阳能（能源来源）",
+      "definition": "水能、风能等能源归根结底来源的能量来源；可通过太阳能电池等方式直接转化为电能。",
+      "importance": "了解",
+      "examples": [
+        "太阳能电池将太阳能直接转化成电能"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt164",
+      "name": "核裂变能（核能发电原理）",
+      "definition": "质量较大的原子核裂变成较轻的原子核时释放的能量；可控制的裂变反应释放的能量可被利用来发电。",
+      "importance": "了解",
+      "examples": [
+        "核电站利用可控核裂变来发电"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt165",
+      "name": "核聚变能",
+      "definition": "质量较小的原子核聚合发生聚变时释放的能量；相对裂变产能效率高、核废料少。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt166",
+      "name": "可持续发展",
+      "definition": "追求发展与资源、环境的平衡：既满足当代人的需求，又不损害子孙后代的需求。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt167",
+      "name": "节约能源（必要性）",
+      "definition": "由于能量转化/转移的方向性与能量耗散，能量虽守恒但可利用品质会降低，因此需要节能以减少高品质能源向难利用形式的耗散与环境代价。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt168",
+      "name": "磁场方向（用小磁针规定）",
+      "definition": "物理学中把小磁针在磁场中静止时N极所指的方向规定为该点磁场的方向。",
+      "importance": "掌握",
+      "examples": [
+        "在某点放小磁针，静止后N极指向即该点磁场方向"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt169",
+      "name": "磁感线疏密与磁场强弱",
+      "definition": "磁感线较密的地方表示磁场较强；较疏表示磁场较弱。",
+      "importance": "掌握",
+      "examples": [
+        "条形磁体两极磁感线较密，表示两极附近磁场较强"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt170",
+      "name": "直线电流的磁感线分布",
+      "definition": "直线电流周围的磁感线是一圈圈同心圆，这些同心圆位于与导线垂直的平面上；改变电流方向，各点磁场方向相反。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt171",
+      "name": "环形电流（线圈）轴线上磁场方向",
+      "definition": "环形电流（或通电螺线管）轴线上磁场方向可由安培定则判断：四指与电流方向一致，拇指指向轴线上磁场方向。",
+      "importance": "了解",
+      "examples": [
+        "通电螺线管可看作许多匝环形电流串联而成"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt172",
+      "name": "分子电流假说",
+      "definition": "安培提出：物质内部存在环形电流（分子电流），使每个微粒成为微小磁体；未磁化时分子电流取向杂乱磁场相互抵消，对外不显磁性；受外磁场作用取向趋同则被磁化形成磁极；高温或撞击使取向再杂乱而退磁。",
+      "importance": "了解",
+      "aliases": [
+        "安培分子电流假说"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt173",
+      "name": "电流元",
+      "definition": "把很短一段通电导线中的电流 I 与导线长度 l 的乘积 Il 叫作电流元（严格说孤立的电流元不存在）。",
+      "importance": "了解",
+      "formula": "Il",
+      "unit": "A·m",
+      "examples": "在研究空间某点磁场时，考虑在该处放一段很短的通电导线来近似电流元"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt174",
+      "name": "磁感应强度",
+      "definition": "表征磁场强弱和方向的物理量。在导线与磁场垂直时，磁感应强度 B 定义为 B=F/(Il)；B 是矢量，方向为该处小磁针静止时N极所指方向。",
+      "importance": "掌握",
+      "formula": "B=F/(Il)（导线与磁场垂直时）",
+      "unit": "T（特斯拉）= N/(A·m)",
+      "aliases": [
+        "magnetic induction"
+      ],
+      "examples": [
+        "同样的 I、l 在不同磁场中导线受力不同，反映 B 不同"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt175",
+      "name": "磁场力（通电导线在磁场中受力）",
+      "definition": "通电导线处在磁场中会受到磁场力；在导线与磁场方向垂直的情况下，力的大小满足 F=IlB。",
+      "importance": "掌握",
+      "formula": "F=IlB（导线与磁场垂直时）",
+      "unit": "N"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt176",
+      "name": "匀强磁场",
+      "definition": "如果磁场中各点的磁感应强度的大小相等、方向相同，这个磁场叫作匀强磁场。",
+      "importance": "掌握",
+      "examples": [
+        "距离很近的两个平行异名磁极之间（除边缘部分外）的磁场",
+        "两个平行放置较近的线圈通电时中间区域的磁场近似为匀强磁场"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt177",
+      "name": "磁通量",
+      "definition": "在磁感应强度为 B 的匀强磁场中，穿过与磁场方向垂直的面积 S 的磁通量 Φ 定义为 Φ=BS；当平面不与 B 垂直时，用该面在垂直于 B 方向的投影面积 S' 与 B 的乘积表示磁通量。",
+      "importance": "掌握",
+      "formula": "Φ=BS（垂直时）；一般情形：Φ=B·S'（S'为对垂直于B方向的投影面积）",
+      "unit": "Wb（韦伯）= T·m^2",
+      "aliases": [
+        "磁通"
+      ],
+      "examples": [
+        "闭合电路ABCD面积变化导致“穿过电路ABCD的磁通量发生变化”"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt178",
+      "name": "单位面积磁通量（B=Φ/S的意义）",
+      "definition": "由 Φ=BS 得 B=Φ/S，表示磁感应强度的大小等于穿过垂直磁场方向的单位面积的磁通量。",
+      "importance": "重要",
+      "formula": "B=Φ/S（S垂直于B）"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt179",
+      "name": "地磁偏角",
+      "definition": "地理两极与地磁两极不重合导致磁针并非准确指南或指北，其间的交角叫作地磁偏角；不同地点数值不同，且会随地磁极缓慢移动而缓慢变化。",
+      "importance": "了解",
+      "examples": [
+        "使用指南针确定南北方向时需将地磁偏角考虑在内"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt180",
+      "name": "产生感应电流的条件：磁通量变化",
+      "definition": "当穿过闭合导体回路的磁通量发生变化时，闭合导体回路中就产生感应电流。",
+      "importance": "重要",
+      "examples": [
+        "线圈A电流迅速变化使线圈B内磁场强弱变化，穿过线圈B的磁通量变化，从而线圈B中有感应电流"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt181",
+      "name": "切割磁感线运动",
+      "definition": "导体在磁场中运动并与磁感线有相对切割（不沿磁感线方向运动），常作为导致回路磁通量变化、从而产生感应电流的一种情形。",
+      "importance": "了解",
+      "examples": [
+        "金属棒AB切割磁感线时产生感应电流；AB沿磁感线运动时不产生感应电流"
+      ],
+      "aliases": [
+        "切割磁感线"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt182",
+      "name": "电磁感应的应用：发电机与电气化设备",
+      "definition": "利用电磁感应现象把机械能等转化为电能或实现能量转换的装置与技术，例如发电机、变压器、电磁炉等。",
+      "importance": "了解",
+      "examples": [
+        "法拉第圆盘发电机",
+        "电厂发电机",
+        "变压器",
+        "电磁炉"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt183",
+      "name": "电磁感应现象",
+      "definition": "在变化的磁场中放入闭合电路，电路里会产生感应电流的现象。",
+      "importance": "掌握",
+      "examples": [
+        "变化的磁场中放入闭合电路产生感应电流"
+      ],
+      "aliases": [
+        "法拉第电磁感应"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt184",
+      "name": "变化的磁场产生电场",
+      "definition": "变化的磁场即使在空间中没有闭合电路，也会在空间产生电场；在闭合电路中表现为感应电流的产生。",
+      "importance": "重要",
+      "aliases": [
+        "变化磁场生电场"
+      ],
+      "examples": "在变化的磁场中放一个闭合电路，电路里产生感应电流。"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt185",
+      "name": "变化的电场产生磁场",
+      "definition": "麦克斯韦提出的假设：变化的电场像导线中的电流一样，会在空间产生磁场。",
+      "importance": "重要",
+      "aliases": [
+        "变化电场生磁场"
+      ],
+      "examples": "电容器充放电过程中极板间周期变化的电场产生磁场。"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt186",
+      "name": "电磁场",
+      "definition": "由相互关联、不可分割的电场和磁场组成，变化的电场与磁场彼此引起并可向外传播。",
+      "importance": "掌握",
+      "aliases": [
+        "统一的电磁场",
+        "electromagnetic field"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt187",
+      "name": "电磁波可在真空中传播",
+      "definition": "电磁波的传播不依赖空气、水等介质，在真空中也能传播，因为传播靠电场与磁场的相互“激发”。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt188",
+      "name": "电磁波的传播速度等于光速",
+      "definition": "麦克斯韦推算电磁波在真空中的传播速度与光速相同。",
+      "importance": "掌握",
+      "formula": "c = 3×10^8 m/s",
+      "unit": "m/s",
+      "aliases": [
+        "光速c"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt189",
+      "name": "光的电磁理论",
+      "definition": "光是以波动形式传播的一种电磁振动，即光是一种电磁波。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt190",
+      "name": "波速（波的传播速度）",
+      "definition": "描述波传播快慢的物理量。",
+      "importance": "掌握",
+      "unit": "m/s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt191",
+      "name": "电磁波的波速公式",
+      "definition": "电磁波的波速c与波长λ、频率f满足c=λf。",
+      "importance": "掌握",
+      "formula": "c = λ f",
+      "unit": "m/s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt192",
+      "name": "电磁波谱",
+      "definition": "按电磁波的波长或频率大小规律将不同电磁波（无线电波、红外线、可见光、紫外线、X射线、γ射线等）排列得到的序列。",
+      "importance": "掌握",
+      "examples": [
+        "无线电波、红外线、可见光、紫外线、X射线、γ射线"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt193",
+      "name": "电磁波具有能量（电磁波是一种物质存在）",
+      "definition": "电磁波能够传递能量；赫兹实验证实电磁波存在也意味着电磁场不仅是描述方式，而且是真正的物质存在。",
+      "importance": "重要",
+      "examples": [
+        "微波炉加热食物：微波使水分子热运动加剧，内能增加",
+        "电台发射的电磁波在收音机天线中感应出电流，有电流就有能量"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt194",
+      "name": "电磁波通信",
+      "definition": "信息通过电磁波进行传递，既可以有线传播也可以无线传播；可用于广播、电视、移动通信、卫星宽带等。",
+      "importance": "了解",
+      "examples": [
+        "广播、电视、移动通信",
+        "卫星宽带通信网络"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt195",
+      "name": "热辐射",
+      "definition": "物体由于温度而向外辐射电磁波的现象，辐射与物体温度有关；温度升高时，热辐射中波长较短的成分越来越强。",
+      "importance": "掌握",
+      "examples": [
+        "铁块随温度升高从发热到发光，颜色依次呈现暗红、赤红、橘红直到黄白色"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt196",
+      "name": "辐射强度按波长的分布（谱分布）",
+      "definition": "辐射强度随波长变化的分布规律；实验表明该分布会随物体温度而改变。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt197",
+      "name": "黑体",
+      "definition": "能够完全吸收入射的各种波长电磁波而不发生反射的物体；黑体仍可向外辐射电磁波，其辐射强度按波长的分布只与温度有关。",
+      "importance": "掌握",
+      "examples": [
+        "带小孔的空腔可近似为绝对黑体"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt198",
+      "name": "黑体辐射",
+      "definition": "黑体向外辐射电磁波的现象与规律；其辐射强度按波长的分布只与黑体温度有关，因此是研究热辐射规律的核心对象。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt199",
+      "name": "能量子",
+      "definition": "不可再分的最小能量值ε；普朗克假设振动带电微粒的能量只能取ε的整数倍。",
+      "importance": "重要",
+      "aliases": [
+        "energy quantum"
+      ],
+      "formula": "ε = hν",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt200",
+      "name": "普朗克常量",
+      "definition": "能量子表达式 ε = hν 中的比例常量。",
+      "importance": "掌握",
+      "aliases": [
+        "Planck constant"
+      ],
+      "formula": "h = 6.62607015×10^-34 J·s",
+      "unit": "J·s"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt201",
+      "name": "能量量子化（能量不连续/分立）",
+      "definition": "在微观世界中，粒子的能量不是连续变化的，而是只能取分立值（量子化）。",
+      "importance": "重要",
+      "examples": [
+        "与宏观单摆能量在摩擦作用下连续减小不同，微观粒子能量是量子化的"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt202",
+      "name": "光子",
+      "definition": "光本身由一个个不可分割的能量子组成；频率为ν的光子的能量为hν。",
+      "importance": "重要",
+      "aliases": [
+        "photon"
+      ],
+      "formula": "E_photon = hν",
+      "unit": "J"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt203",
+      "name": "能级",
+      "definition": "原子系统中量子化的能量值；原子能量取分立值，这些分立能量值称为能级。",
+      "importance": "重要",
+      "aliases": [
+        "energy level"
+      ]
+    },
+    {
+      "id": "physics_bx3_rjb_cpt204",
+      "name": "能级跃迁",
+      "definition": "原子由一个能级转变到另一个能级的过程；原子从高能级向低能级跃迁会放出光子。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt205",
+      "name": "发射光谱的线状谱（分立亮线）",
+      "definition": "由于原子能级分立，原子从高能级向低能级跃迁时放出的光子能量分立，因此发射光谱表现为一些分立的亮线。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt206",
+      "name": "电源的电动势",
+      "definition": "从电源的电路特性角度表征电源的参数；在U-I图像中可由直线与坐标轴的交点得到。",
+      "importance": "了解",
+      "unit": "V"
+    },
+    {
+      "id": "physics_bx3_rjb_cpt207",
+      "name": "电源的内阻",
+      "definition": "电源内部等效电阻；可由U-I图像的直线特征确定（与电动势共同表征电源电路特性）。",
+      "importance": "了解",
+      "unit": "Ω"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_bx3_rjb_skl1",
+      "name": "用微观机制解释宏观现象",
+      "description": "借助原子/电子等微观结构与电子转移、自由电子等概念，解释摩擦起电、静电感应、金属导电等宏观现象。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl2",
+      "name": "利用电荷守恒与量子化进行定量计算",
+      "description": "在电荷转移问题中用“总电荷代数和不变”和“Q为e的整数倍”求电子转移方向与电子数等。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl3",
+      "name": "类比建模提出物理猜想",
+      "description": "将待研究对象与已知规律对象进行类比（如把电荷间相互作用与万有引力类比），提出可能的函数形式；并认识到类比不是严格推理，需要实验检验。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl4",
+      "name": "用控制变量法探究影响因素",
+      "description": "保持一个因素不变，改变另一个因素，观察物理量变化规律，从而确定函数关系（如分别改变距离r、改变电荷量q）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl5",
+      "name": "矢量合成求合力（平行四边形定则）",
+      "description": "将多个力按方向进行矢量合成，常用平行四边形定则/分解法求合力大小与方向。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl6",
+      "name": "用物理量之比定义新物理量",
+      "description": "用两个物理量的比值来刻画研究对象的性质，并在定义新量的同时确定其与原有物理量的关系；如用F/q定义电场强度E。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl7",
+      "name": "矢量叠加（矢量求和）",
+      "description": "当多个来源对同一物理量产生贡献时，用矢量和合成总效果；例如多个点电荷在同一点产生的电场强度为各自电场强度的矢量和。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl8",
+      "name": "静电现象的机理解释（用“电荷分布—电场—运动/中和”链条）",
+      "description": "遇到静电相关现象时，用“静电感应导致电荷分布变化→电场叠加与强弱变化→带电粒子/自由电子运动与中和→宏观现象（放电、屏蔽、吸附等）”的因果链进行解释。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl9",
+      "name": "通过“力做功—能量变化”研究能量的方法",
+      "description": "利用某种力所做的功与对应势能变化的关系，来引入或分析与该力相关的势能及其变化规律；例如由静电力做功推出电势能的概念，并建立W与Ep变化的定量关系。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl10",
+      "name": "分解位移并用功的叠加判断路径无关",
+      "description": "将运动路径分解为沿力方向与垂直力方向的分量（或将曲线分段），利用垂直分量不做功与功的可加性，证明总功只与起终点有关。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl11",
+      "name": "利用W=qU计算电场力做功",
+      "description": "当已知两点间电势差U及电荷量q时，用W=qU计算电荷在两点间移动时静电力做功；符号由q和U共同决定。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl12",
+      "name": "电势差的串联叠加(路径分段求和)",
+      "description": "沿同一路径分段移动时，总电势差等于各段电势差的代数和，如U_AC = U_AB + U_BC。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl13",
+      "name": "反证法",
+      "description": "先假设结论不成立，通过推理导出矛盾，从而证明原结论成立；教材用其论证等势面与电场线垂直。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl14",
+      "name": "等式推导与比较法（由两种功的表达式推出物理关系）",
+      "description": "对同一物理过程分别用不同物理量表达同一量（如功W），再通过比较得到量之间的关系（如由W=qU与W=qEd推出U=Ed）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl15",
+      "name": "建立物理模型并作近似处理",
+      "description": "将实际情境抽象为标准模型（如平行板间匀强电场、匀变速直线运动），并根据量级判断忽略次要因素（如静电力远大于重力则忽略重力）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl16",
+      "name": "多步计算与单位一致性检查",
+      "description": "根据公式链（E=U/d，F=qE，a=F/m，v^2=2ad或qU=1/2mv^2）分步求解，同时进行单位换算与一致性检查（如V/m与N/C等价）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl17",
+      "name": "通过实验归纳物理量的定量关系并定义新物理量",
+      "description": "通过控制变量与测量数据（如Q变化导致U同比例变化）归纳稳定比值，再以该不变量定义新物理量（如用C=Q/U定义电容）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl18",
+      "name": "由I-t图像用面积求电荷量",
+      "description": "根据电流与时间的关系，利用Q=∫I dt，I-t图像下的面积表示通过的电荷量（或放电释放的电荷量）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl19",
+      "name": "牛顿第二定律结合匀变速直线运动公式分析带电粒子加速",
+      "description": "先用F=qE求静电力，再用a=F/m得到加速度；在匀强电场且需要时间等过程量时，结合匀变速直线运动公式（如v=v0+at、x=v0 t+1/2 a t^2）求解。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl20",
+      "name": "静电力做功结合动能定理解题",
+      "description": "用W=qU（或积分形式）求静电力做功，再由动能定理W=ΔEk求速度或动能变化；适用于只涉及位移、速率等动能定理物理量或非匀强电场情景。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl21",
+      "name": "类平抛运动的分解法分析偏转",
+      "description": "将运动分解为与初速度方向平行的匀速分运动和与电场方向平行的匀加速分运动；由t=l/v0求飞行时间，再求偏移y=1/2 a t^2与偏转角tanθ=v⊥/v0。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl22",
+      "name": "用电流定义式进行电学量计算",
+      "description": "根据I=q/t在电流、电荷量、时间之间进行换算；必要时进行单位换算（A、mA、μA；C与A·s）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl23",
+      "name": "安时与库仑的换算与平均电流估算",
+      "description": "利用1 A·h = 3600 C，将电池容量换算为电荷量，并用I=q/t估算平均电流（如待机/播放视频等平均电流）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl24",
+      "name": "控制变量法探究定量关系",
+      "description": "研究某物理量与多个因素的关系时，每次只改变一个因素，保持其他因素不变，通过对比实验数据得到该因素对物理量的影响规律。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl25",
+      "name": "利用串联分压测量电阻比",
+      "description": "串联电路中各段电流相同，各段两端电压与其电阻成正比；因此可用电压之比代替电阻之比，避免直接测电阻数值。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl26",
+      "name": "根据图像斜率比较物理量",
+      "description": "通过U-I或I-U图像的倾斜程度（斜率）判断或比较相关物理量大小；对过原点直线的U-I图像，斜率对应U/I。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl27",
+      "name": "用U-I图像求电阻",
+      "description": "在改变滑动变阻器使电路中电压、电流成组变化的条件下，读取多组(U,I)数据，作U-I图像，由图像斜率求电阻R（R=U/I，斜率为R）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl28",
+      "name": "多次测量取平均值以减小偶然误差",
+      "description": "对同一物理量反复测量多次，求平均值作为结果，以减小测量的偶然误差。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl29",
+      "name": "测量工具选用与误差权衡",
+      "description": "根据测量要求选择合适量具，既考虑使用方便，也考虑测量误差大小；细小尺寸优先用更高精度量具或采用改进测量方案。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl30",
+      "name": "累积法测微小直径",
+      "description": "将细丝在圆柱体上紧密缠绕若干圈，用刻度尺测总宽度，再除以圈数得到单根直径，从而提高测量精度。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl31",
+      "name": "利用串并联规律推导等效电阻公式",
+      "description": "将串/并联电路中的电流、电压关系与R=U/I结合，通过代数变形得到等效电阻表达式（如串联R=R1+R2，并联1/R=1/R1+1/R2）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl32",
+      "name": "仪表改装参数计算（分压/分流法）",
+      "description": "根据表头的Rg、Ig先求Ug=IgRg；改装电压表用串联分压电阻使表头在量程上限时通过Ig；改装电流表用并联分流电阻使表头在量程上限时仍通过Ig，并用串并联等效关系求新内阻。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl33",
+      "name": "用估算指导量程选择",
+      "description": "根据被测量的估计值先选取较大量程/合适倍率进行测量，必要时再调整到更合适的量程/倍率，以兼顾安全与精度。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl34",
+      "name": "按表盘刻度与所选量程进行读数换算",
+      "description": "根据选择开关所对应量程/倍率，读取表盘相应刻度，并进行必要的量程换算或倍率乘算得到最终测量值。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl35",
+      "name": "用定义式与已知关系推导物理公式",
+      "description": "从物理量定义出发（如P=W/t），结合已知关系式（如q=It、W=Uq、欧姆定律U=IR）进行代数推导得到目标表达式（如P=UI、Q=I^2Rt）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl36",
+      "name": "用能量守恒分析电路中的能量转化（功率平衡）",
+      "description": "从“输入能量/功率=各去向能量/功率之和”建立方程，区分电功率P=UI与其中转化为热的部分P热=I^2R，进而求机械输出或损耗。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl37",
+      "name": "能量守恒法分析电路",
+      "description": "用能量守恒把电源非静电力做功与内外电路电能转化量联系起来，建立方程并推导电路关系式（如闭合电路欧姆定律）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl38",
+      "name": "函数与图像法（U-I直线关系）",
+      "description": "将U=E-Ir改写为一次函数形式U=-rI+E，通过U-I图像判断截距、斜率及物理意义（如断路电压、短路电流等）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl39",
+      "name": "多次测量并取平均以减小误差",
+      "description": "通过改变外电路条件获得多组数据，分别求出若干组结果，最后取平均值作为实验结果，以降低偶然误差。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl40",
+      "name": "作图法（线性拟合/描点作直线）求物理量",
+      "description": "将实验数据在坐标系中描点并画出近似直线，通过截距和斜率等图像特征求出待测物理量（如由U-I图像求E、r）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl41",
+      "name": "实验方案设计（根据测量条件选择器材与电路）",
+      "description": "根据实验原理与已有器材（如只有电流表或只有电压表的情况），设计可测得所需物理量的数据获取方案与电路连接方式。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl42",
+      "name": "能量转化链分析",
+      "description": "识别系统中能量的初始形式、转化后的形式及去向，形成能量转化与转移的“链条”描述，用于解释装置工作与能量去向（含有用输出与耗散）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl43",
+      "name": "用方向性/耗散论证节能必要性",
+      "description": "在不违背能量守恒的前提下，利用宏观过程不可逆与能量耗散导致“可利用品质下降”的观点，论证节约能源与优化能源结构的必要性。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl44",
+      "name": "安培定则（右手螺旋定则）判断磁场方向",
+      "description": "用右手判断电流与磁感线（或轴线上磁场）方向：直导线情形为拇指指电流方向、四指弯曲指磁感线环绕方向；环形电流/螺线管情形为四指与电流方向一致、拇指指轴线上磁场方向。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl45",
+      "name": "控制变量法（探究物理量之间关系）",
+      "description": "在实验中通过改变某一因素（如电流 I 或通电长度 l），并保持其他条件不变，观察受力大小的变化，从而判断力与各因素的定量关系。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl46",
+      "name": "用检验物体定义场强类物理量",
+      "description": "通过分析“检验物体”在场中的受力情况，引入并定义表征场强弱与方向的物理量（如用通电导线定义磁感应强度）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl47",
+      "name": "用“磁通量是否变化”判断感应电流的有无",
+      "description": "分析闭合回路在磁场中运动或磁场变化时，判断穿过回路的磁通量是否随时间改变；若磁通量变化则有感应电流，若不变化则无感应电流。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl48",
+      "name": "用波速公式进行量纲一致的物理计算",
+      "description": "根据c=λf在已知两个量时求第三个量，并注意单位换算（如MHz→Hz，km→m）。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl49",
+      "name": "按波长或频率判别电磁波类型",
+      "description": "利用c=λf由频率求波长（或反之），再结合电磁波谱的波长/频率大小规律判断属于无线电波、红外、可见光、紫外、X射线或γ射线等。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl50",
+      "name": "从U-I图像判断电源特性并求电动势与内阻",
+      "description": "通过改变负载电流并测量路端电压U与电流I，作出U-I图像；若点近似落在一条直线上，可认为该电源具有与普通电池类似的电路特性；并可由直线与坐标轴交点（及直线斜率）求出电动势E和内阻r。"
+    },
+    {
+      "id": "physics_bx3_rjb_skl51",
+      "name": "提出可探究的科学问题（情境—认知联系）",
+      "description": "面对真实情境，通过与已有认知的联系和分析，提出并表述可以进行探究的物理问题。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_bx3_rjb_exp1",
+      "name": "观察静电感应现象",
+      "instrument": "用绝缘柱支持的导体A和B、带正电的带电体C（配绝缘棒）、金属箔（或金属箔验电结构）",
+      "is_student": 1,
+      "process": "使导体A和B接触且不带电，观察金属箔闭合；将带正电体C移近A观察金属箔变化；保持C在附近将A、B分开，再移开C观察变化；再让A、B接触观察现象，并用金属微观结构模型解释。",
+      "phenomena": "带电体靠近时金属箔发生张开等变化；分开与移开后仍呈现带电迹象；再次接触现象改变。",
+      "conclusion": "带电体靠近导体会引起导体内自由电荷重新分布，形成两端异/同种电荷的静电感应现象。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp2",
+      "name": "制作并使用验电器检测带电情况",
+      "instrument": "玻璃瓶、两片金属箔、金属丝、导体棒、绝缘瓶塞（或指针+金属外壳的静电计结构）",
+      "is_student": 1,
+      "process": "制作验电器；用其检测不同带电体所带电荷的种类和相对数量；观察带电体靠近导体棒上端时金属箔是否张开。",
+      "phenomena": "带电体靠近导体棒上端时金属箔片张开（随带电情况变化）。",
+      "conclusion": "验电器可用来检测物体是否带电，并比较带电的相对多少（并可配合方法判断电性）。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp3",
+      "name": "库仑扭秤实验（扭秤实验）",
+      "instrument": "库仑扭秤（细银丝、绝缘棒、小球A、平衡物体B、带电金属小球C、容器等）",
+      "is_student": 0,
+      "process": "使小球A与金属球C接触带同种电荷；分开后让C靠近A产生作用力使A偏转；扭转悬丝使A回到初始位置并静止，通过悬丝扭转角度比较力的大小；改变距离r记录扭转角，得到F与r关系；再通过相同金属球接触分电的方法改变电荷量，得到F与q1q2关系。",
+      "phenomena": "C靠近A时A被推开（同种电荷斥力）；悬丝需扭转一定角度才能使A回到初始位置，扭转角随作用力大小变化。",
+      "conclusion": "F与r的二次方成反比；F与q1q2成正比，从而得到F = k q1 q2 / r^2。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp4",
+      "name": "模拟电场线（蓖麻油中碎屑排列）",
+      "instrument": "蓖麻油、头发碎屑（或轻小碎屑）、电场装置（电极/电源）",
+      "is_student": 0,
+      "process": "把头发碎屑悬浮在蓖麻油里，加上电场，观察碎屑的排列情况。",
+      "phenomena": "碎屑按电场强度方向排列，显示出类似电场线的分布。",
+      "conclusion": "电场线不是实际存在的线；实验只能模拟电场线的分布。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp5",
+      "name": "金属网静电屏蔽验证（验电器箔片是否张开）",
+      "instrument": "验电器、带电金属球、金属网（罩）、绝缘支撑（可选）",
+      "is_student": 1,
+      "process": "先使带电金属球靠近验电器但不接触，观察箔片；再用金属网罩住验电器，重复使带电球靠近，比较两次箔片张开情况。",
+      "phenomena": "未罩网时箔片张开；罩上金属网后箔片不张开或张开显著减弱。",
+      "conclusion": "金属网也能起到静电屏蔽作用，使罩内电场强度保持为0或显著减小。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp6",
+      "name": "观察电容器的充、放电现象（图10.4-1）",
+      "instrument": "直流电源、电阻、电容器、电流表、数字电压表、单刀双掷开关、导线",
+      "is_student": 1,
+      "process": "S接1给电容器充电，观察U增大并趋于稳定、I逐渐减小到0；S接2通过电阻R放电，观察I方向与充电相反、U与I逐渐减小到0。",
+      "phenomena": "充电时电压表示数迅速增大后趋稳，电流逐渐减小至0；放电时电流从正极板经R流向负极板，电压与电流都逐渐减小到0。",
+      "conclusion": "电容器能在充电时储存等量异种电荷并建立电势差；放电时电荷中和，电势差消失，同时发生能量转化。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp7",
+      "name": "用传感器观察电容器的放电过程并获得I-t图像（图10.4-2～10.4-3）",
+      "instrument": "电流传感器、计算机、直流电源（如8V）、电容器（几十微法电解电容器）、电阻R、开关、导线",
+      "is_student": 0,
+      "process": "先充电（S接1），再切换至S接2使电容器通过R放电，传感器把电流随时间变化传入计算机显示I-t图像。",
+      "phenomena": "屏幕显示随时间变化的放电电流I-t图像。",
+      "conclusion": "放电电流随时间变化可被记录；I-t图像面积对应放电释放的电荷量。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp8",
+      "name": "验证电容器两极板间电势差U与所带电荷量Q成正比（图10.4-4）",
+      "instrument": "电容器A、相同电容器B、数字电压表、干电池、开关S1、开关S2、导线",
+      "is_student": 0,
+      "process": "先给A充电测得电压；令B与A并联分配电荷，观察电压变为原来一半；放电B后再与A并联，电压再次减半；可重复操作。",
+      "phenomena": "并联一次电压减半，再次操作电压再减半。",
+      "conclusion": "实验表明电容器电荷量减半时，两极板间电势差也减半，提示Q与U成正比，从而Q/U为常量用于定义电容。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp9",
+      "name": "研究影响平行板电容器电容大小的因素（图10.4-6）",
+      "instrument": "已充电平行板电容器、静电计、可调极板面积装置/极板间距调节装置、电介质板（如有机玻璃）",
+      "is_student": 0,
+      "process": "保持Q不变，分别改变正对面积S、极板间距d、插入电介质，观察静电计指针变化得到U变化，据C=Q/U判断C变化。",
+      "phenomena": "改变S、d或插入电介质会引起U变化，从而反映C变化。",
+      "conclusion": "减小S、增大d会减小电容；插入电介质会增大电容。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp10",
+      "name": "研究导体电阻与长度、横截面积及材料的定量关系（串联分压法）",
+      "instrument": "电源、电压表、滑动变阻器、开关、导线、待测金属导体a/b/c/d（长度/横截面积/材料可控）、连接导线",
+      "is_student": 1,
+      "process": "将四段导体a、b、c、d串联在同一电路中，调节滑动变阻器获得多组数据；分别用电压表测各段两端电压；用电压比推电阻比；比较仅改变某一因素的两段（a与b、a与c、a与d）得出R与l、S、材料的关系。",
+      "conclusion": "同种材料时R与l成正比、与S成反比；当l与S确定后，材料不同R不同。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp11",
+      "name": "电阻率与温度的关系演示（加热灯丝）",
+      "instrument": "灯丝（可加热导体）、小灯泡、电源、导线、开关、酒精灯",
+      "is_student": 0,
+      "process": "将灯丝与小灯泡串联接入电路使小灯泡发光；用酒精灯给灯丝加热，观察小灯泡亮度变化。",
+      "phenomena": "加热灯丝后，小灯泡变暗。",
+      "conclusion": "温度升高，灯丝电阻（电阻率）变大；金属电阻率随温度升高而增大。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp12",
+      "name": "长度的测量及测量工具的选用",
+      "instrument": "刻度尺、游标卡尺、螺旋测微器",
+      "is_student": 1,
+      "process": "学习并练习使用游标卡尺和螺旋测微器测量物体尺寸（直径、厚度、内外径等），掌握读数与使用要点。",
+      "conclusion": "不同测量要求应选用不同测量工具；游标卡尺与螺旋测微器可提高长度测量精度。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp13",
+      "name": "金属丝电阻率的测量",
+      "instrument": "金属电阻丝、电源、滑动变阻器、电压表、电流表、导线、刻度尺、游标卡尺或螺旋测微器（或圆柱体+刻度尺用于累积法）",
+      "is_student": 1,
+      "process": "连接测电阻电路，改变滑片读取多组U、I并作U-I图像求R；用刻度尺测接入电路的有效长度l并多次取平均；测直径d（可用游标卡尺/螺旋测微器多点测量取平均，或用刻度尺累积法）；计算S=πd^2/4并代入ρ=SR/l求电阻率。",
+      "conclusion": "通过测R、l、d并代入ρ=SR/l可得到金属丝材料的电阻率，并可与电阻率表对比分析误差。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp14",
+      "name": "练习使用多用电表",
+      "instrument": "多用电表（指针式/数字式）、红黑表笔、直流电源、小灯泡、开关、导线、定值电阻、二极管等",
+      "is_student": 1,
+      "process": "使用前机械调零；选择与被测物理量对应挡位并选合适量程/倍率；测直流电压时并联且注意红笔接高电势端；测直流电流时断开电路后串联接入且电流从红笔流入；测电阻前短接表笔进行欧姆调零，更换倍率后重复调零，读数乘倍率；不用时旋到OFF。",
+      "conclusion": "正确使用多用电表需完成调零、正确选挡选量程/倍率、正确接线与读数换算，才能获得可靠测量结果并降低风险。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp15",
+      "name": "测量电池的电动势和内阻（电压表+电流表+滑动变阻器法）",
+      "instrument": "被测电池、电压表、电流表、滑动变阻器、导线、开关（及必要连接器材）",
+      "is_student": 1,
+      "process": "调节滑动变阻器改变外电路电阻，测多组路端电压U与电流I；作U-I图像或联立方程求E与r。",
+      "conclusion": "由闭合电路欧姆定律E=U+Ir确定E与r；U-I图像纵截距为E、斜率绝对值为r。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp16",
+      "name": "测量水果电池的电动势和内阻（电压表+电阻箱法）",
+      "instrument": "水果电池（铜片、锌片、水果）、电压表、电阻箱、导线、开关等",
+      "is_student": 1,
+      "process": "改变电阻箱R，测多组电压U与R；利用E=U+(U/R)r处理数据求E与r；测量尽量迅速。",
+      "conclusion": "在只有电压表条件下，可通过改变外电阻并结合闭合电路欧姆定律求出电动势与内阻。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp17",
+      "name": "奥斯特实验（通电导线使磁针偏转）",
+      "instrument": "直导线、电源（通电装置）、指南针/小磁针",
+      "is_student": 0,
+      "phenomena": "通电时磁针发生偏转（转动）。",
+      "conclusion": "电流具有磁效应，电与磁存在联系。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp18",
+      "name": "观察常见磁场的分布（铁屑显示磁场）",
+      "instrument": "条形磁体、通电直导线、玻璃板、细铁屑（可轻敲装置）",
+      "is_student": 0,
+      "process": "在磁体上方玻璃板撒铁屑并轻敲使其规则排列；再让通电直导线穿过玻璃板重复操作，观察铁屑分布。",
+      "phenomena": "铁屑在磁场中排列成有规则的图样，反映磁场分布。",
+      "conclusion": "可用铁屑显示磁场分布，并据此描绘磁感线。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp19",
+      "name": "探究影响通电导线受力的因素（匀强磁场中）",
+      "instrument": "蹄形磁体（三块相同，提供近似匀强磁场）、直导线（水平悬挂）、电源与外部电路（调节电流）、电流表、接线端子（改变通电长度）",
+      "is_student": 0,
+      "process": "将三块相同蹄形磁体并排放置；把直导线水平悬挂在两极间，使导线方向与磁场方向垂直；通电后观察导线摆动角度；通过外电路改变电流 I，并通过切换接线改变通电长度 l；比较摆动角度判断受力大小变化。",
+      "phenomena": "通电时导线摆动一定角度；改变电流或通电长度时摆动角度（受力）随之改变。",
+      "conclusion": "当导线与磁场方向垂直时，导线受力大小与 I 成正比、与 l 成正比，从而 F=IlB；B 与 I、l 无关，用以表征磁场强弱。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp20",
+      "name": "探究感应电流产生的条件（双线圈互感实验）",
+      "instrument": "线圈A、线圈B、铁芯（或将A装入B内）、电源、开关、滑动变阻器、电流表、导线",
+      "is_student": 1,
+      "process": "线圈A通过变阻器和开关接电源，线圈B两端接电流表，将A装在B内；分别在开关闭合瞬间、断开瞬间、开关闭合且变阻器不动、开关闭合且迅速移动滑片等情况下观察线圈B电流表是否偏转。",
+      "phenomena": "当开关瞬间接通/断开或迅速移动变阻器滑片（使A中电流迅速变化）时，B中出现电流表偏转；当A中电流稳定不变时，B中无偏转。",
+      "conclusion": "穿过闭合导体回路（线圈B）的磁通量发生变化时，回路中产生感应电流。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp21",
+      "name": "捕捉电磁波（赫兹式发射与接收演示）",
+      "instrument": "高压发生器G；两根带放电电极的铜管A、B（发射天线，间隙约0.5 cm，长约1 m）；两根铜管C、D（接收天线）；绝缘架；电流表",
+      "is_student": 0,
+      "process": "闭合高压发生器电源在电极间产生放电火花；使接收天线与发射天线平行；改变两天线距离，观察电流表示数变化。",
+      "phenomena": "放电时接收天线回路中电流表出现示数，且随天线距离变化而变化。",
+      "conclusion": "放电产生的电磁波可在空间传播并在接收天线中感应出电流，从而“捕捉到”电磁波。"
+    },
+    {
+      "id": "physics_bx3_rjb_exp22",
+      "name": "充电宝不同电量时的电动势和内阻研究",
+      "instrument": "两只数字多用表（作电压表和电流表）、滑动变阻器R、保护电阻R0、开关、连接导线、充电宝（作为电源）",
+      "is_student": 1,
+      "process": "记录电量百分比；按电路连接并将滑动变阻器调到最大；闭合开关，逐步减小变阻器阻值，记录多组(U,I)数据；作U-I图像并由直线特征求E、r；在80%、60%、40%、20%、5%等电量重复。",
+      "conclusion": "充电宝在不同电量下放电时U-I图像近似为直线，可视为具有一定电动势与内阻的直流电源；其电动势较稳定且与电量关系不明显，内阻很小且与电量无明显相关。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_bx3_rjb_exe1",
+      "type": "计算题",
+      "stem": "在图9.1-3所示的实验中，导体分开后，A带上了 -1.0×10^-8 C 的电荷。实验过程中，是电子由A转移到B，还是由B转移到A？A、B得到或失去的电子数各是多少？",
+      "answer": "A带负电说明A得到电子，因此电子由B转移到A。电子转移数 N=|Q|/e=1.0×10^-8 / (1.60×10^-19)≈6.25×10^10 个。A得到约6.25×10^10个电子，B失去约6.25×10^10个电子。",
+      "analysis": "先由电性判断电子转移方向：带负电=得到电子；再用电荷量量子化N=|Q|/e求电子数，并用电荷守恒得两者得失相等。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe2",
+      "type": "简答题",
+      "stem": "关于电荷，小明有以下认识：A. 电荷量很小的电荷就是元电荷。B. 物体所带的电荷量可以是任意的。你认为他的看法正确吗？请简述你的理由。",
+      "answer": "A不正确：元电荷是“最小电荷量”的大小（e），不是“很小”就一定等于e。B不正确：电荷量是量子化的，任何带电体的电荷量Q只能是e的整数倍，不能取任意值。",
+      "analysis": "围绕元电荷定义与电荷量量子化Q=ne作判断。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe3",
+      "type": "计算题",
+      "stem": "在氢原子内，氢原子核与电子之间的最短距离为 5.3×10^-11 m。试比较氢原子核与电子之间的静电力和万有引力。（已知：q=1.6×10^-19 C，mp=1.67×10^-27 kg，me=9.1×10^-31 kg，k=9.0×10^9 N·m^2/C^2，G=6.7×10^-11 N·m^2/kg^2）",
+      "answer": "静电力 F库 = 8.2×10^-8 N；万有引力 F引 = 3.6×10^-47 N；比值 F库/F引 = 2.3×10^39，因此静电力约为万有引力的2.3×10^39倍。",
+      "analysis": "分别用库仑定律与万有引力定律计算同一距离下的力，再求比值比较量级。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe4",
+      "type": "计算题",
+      "stem": "真空中有三个带正电的点电荷，固定在边长为50 cm的等边三角形三个顶点上，每个点电荷电荷量为2.0×10^-6 C，求它们各自所受的静电力。",
+      "answer": "每对电荷间斥力 F1=F2=k q^2/r^2=0.144 N；合力大小 F=2F1 cos30°=0.25 N。每个点电荷所受合力大小均为0.25 N，方向沿另外两个点电荷连线的垂直平分线向外。",
+      "analysis": "对任一顶点电荷，来自另外两电荷的斥力大小相等、夹角60°，用平行四边形定则合成。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe5",
+      "type": "简答题",
+      "stem": "关于电场强度，小明有以下认识：\nA. 若在电场中的P点不放试探电荷，则P点的电场强度为0。\nB. 点电荷的电场强度公式E=kQ/r^2表明，点电荷周围某点电场强度的大小与该点到场源电荷距离r的二次方成反比，在r减半的位置上，电场强度变为原来的4倍。\nC. 电场强度公式E=F/q表明，电场强度的大小与试探电荷的电荷量q成反比，若q减半，则该处的电场强度变为原来的2倍。\nD. 匀强电场中电场强度处处相同，所以任何电荷在其中受力都相同。\n你认为他的看法正确吗？请简述你的理由。",
+      "answer": "A错误：电场是由场源电荷产生的，是否放试探电荷不改变电场的存在与性质，P点电场强度不因不放试探电荷而为0。\nB正确：由E=kQ/r^2知E与r^2成反比，r减半则E变为4倍。\nC错误：E=F/q是定义式，表示同一点处F与q成正比，E与q无关；改变q会同比改变F，E不变。\nD错误：匀强电场中E相同，但受力F=qE与电荷量q有关，不同电荷受力不一定相同。",
+      "analysis": "区分“定义式”与“决定式”；理解试探电荷不改变电场；匀强电场中F=qE。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe6",
+      "type": "填空题",
+      "stem": "把试探电荷q放到电场中的A点，测得它所受的静电力为F；再把它放到B点，测得它所受的静电力为nF。A点和B点的电场强度之比EA/EB是多少？再把另一个电荷量为nq的试探电荷放到另一点C，测得它所受的静电力也是F。A点和C点的电场强度之比EA/EC是多少？",
+      "answer": "EA=F/q，EB=nF/q，因此EA/EB=1/n。\nEC=F/(nq)，因此EA/EC=(F/q)/(F/(nq))=n。",
+      "analysis": "直接用E=F/q计算各点电场强度并取比。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe7",
+      "type": "简答题",
+      "stem": "使带电的金属球靠近验电器，但不接触，箔片是否张开？解释看到的现象。用金属网把验电器罩起来，再使带电金属球靠近验电器，观察箔片是否张开。这个现象说明什么？",
+      "answer": "（1）不罩金属网时：箔片会张开。原因是带电金属球的电场使验电器发生静电感应，箔片和金属杆上同号电荷增多而相互排斥张开。（2）罩上金属网后：箔片不张开或张开明显减弱。说明金属网能起静电屏蔽作用，使网内电场强度趋于0（或显著减小），外部电场难以影响内部验电器。",
+      "analysis": "关键抓住：靠近但不接触→感应起电；加金属网→形成导体屏蔽层，屏蔽外电场。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe8",
+      "type": "简答题",
+      "stem": "在燃气灶和燃气热水器中，常常安装电子点火器，接通电子线路时产生高电压，通过高压放电的电火花来点燃气体。点火器的放电电极是钉尖形。这是为什么？",
+      "answer": "钉尖形电极尖端曲率半径小，尖端处电荷面密度更大、周围电场更强，容易使空气电离并发生尖端放电/击穿，从而更容易产生电火花点火。",
+      "analysis": "利用“尖端处电荷密度大→电场强→更易电离放电”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe9",
+      "type": "应用题",
+      "stem": "在电场强度为60 N/C的匀强电场中有A、B、C三点，AB=5 cm且沿电场方向，BC=12 cm且与电场方向夹角60°。将电荷量4×10^-8 C的正电荷从A移到B，再从B移到C，静电力做了多少功？若将该电荷沿直线由A移到C，静电力做的功又是多少？",
+      "answer": "W_AB=qE·AB=4×10^-8×60×0.05=1.2×10^-7 J；W_BC=qE·BC·cos60°=4×10^-8×60×0.12×0.5=1.44×10^-7 J；故W_A→B→C=2.64×10^-7 J。直线A到C的功等于qE乘以从A到C在电场方向上的位移分量：Δx=AB+BC·cos60°=0.05+0.12×0.5=0.11 m，W_AC=qEΔx=4×10^-8×60×0.11=2.64×10^-7 J，与分段路径相同。",
+      "analysis": "匀强电场中静电力恒定，做功W=qE·s·cosθ；总功等于各段功之和，并只取位移在电场方向的分量，因此不同路径同起终点功相同。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe10",
+      "type": "计算题",
+      "stem": "试探电荷q1=4×10^-9 C放在电场中A点，具有电势能6×10^-8 J。A点的电势是多少？若把q2=-2×10^-10 C放在A点，q2具有的电势能是多少？",
+      "answer": "φ_A=E_p/q=6×10^-8/(4×10^-9)=15 V；E_{p2}=q2·φ_A=-2×10^-10×15=-3×10^-9 J。",
+      "analysis": "用电势定义φ=E_p/q求出A点电势；同一点电势不变，电势能E_p=qφ随电荷量成正比并带符号。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe11",
+      "type": "应用题",
+      "stem": "在匀强电场中把电荷量为2.0×10^-9 C的点电荷从A点移动到B点，静电力做的功为1.6×10^-7 J。再把这个电荷从B点移动到C点，静电力做的功为-4.0×10^-7 J。(1)A、B、C三点中哪点电势最高？哪点电势最低？(2)A、B间，B、C间，A、C间的电势差各是多大？(3)把电荷量为-1.5×10^-9 C的点电荷从A点移动到C点，静电力做的功是多少？",
+      "answer": "(1)电势最高：C点；电势最低：B点；A点居中。(2)U_AB=W_AB/q=1.6×10^-7/(2.0×10^-9)=80 V；U_BC=W_BC/q=-4.0×10^-7/(2.0×10^-9)=-200 V；U_AC=U_AB+U_BC=80-200=-120 V。(3)W_AC=q' U_AC=(-1.5×10^-9)×(-120)=1.8×10^-7 J(正功)。",
+      "analysis": "先用U=W/q求各段电势差并用U_AB=φ_A-φ_B判断电势高低；再用电势差叠加求U_AC，最后用W=qU求不同电荷的做功。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe12",
+      "type": "应用题",
+      "stem": "在某电场中，已知A、B两点之间的电势差U_AB为20 V，q为-2×10^-9 C的电荷由A点移动到B点，静电力做的功是多少？电势能是增加还是减少，增加或者减少多少？",
+      "answer": "W_AB=qU_AB=(-2×10^-9)×20=-4.0×10^-8 J(负功)。由W_AB=E_pA-E_pB可得E_pB-E_pA=4.0×10^-8 J，因此电势能增加4.0×10^-8 J。",
+      "analysis": "用W=qU计算做功，再用W=E_pA-E_pB判断电势能变化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe13",
+      "type": "简答题",
+      "stem": "电场中两个电势不同的等势面能不能相交？说明理由。",
+      "answer": "不能相交。若相交，则交线上同一点同时属于两个等势面，会被赋予两个不同的电势，矛盾。",
+      "analysis": "利用等势面的定义：同一等势面上电势相同；用反证思路说明相交将导致同一点电势不唯一。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe14",
+      "type": "应用题",
+      "stem": "真空中平行金属板M、N间距d=0.04 m，带电粒子质量m=2×10^-15 kg，电荷量q=8×10^-15 C，两板加直流电压U=200 V。(1)求粒子受静电力大小。(2)粒子从M板旁由静止到达N板速度。(3)若板距增大为2d，其他不变，(1)(2)结果如何？",
+      "answer": "(1)E=U/d=200/0.04=5.0×10^3 V/m，F=qE=8×10^-15×5.0×10^3=4×10^-11 N。(2)忽略重力，a=F/m=4×10^-11/(2×10^-15)=2×10^4 m/s^2，v=√(2ad)=√(2×2×10^4×0.04)=40 m/s。(3)d'=2d→E'=U/d'=E/2，F'=F/2=2×10^-11 N；a'=a/2，但位移变为2d，所以v'=√(2a'd')=√(2ad)=40 m/s，速度不变。",
+      "analysis": "先用匀强电场关系E=U/d得到场强，再由F=qE得力；运动学用a=F/m与v^2=2ad（或用qU=1/2mv^2直接得速度与d无关）。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe15",
+      "type": "应用题",
+      "stem": "一次实验中，电压为4×10^4 V的直流电源两极连在一对平行金属板上，当两板距离减小到1.3 cm时两板之间放电，空气被击穿。求空气被击穿时的电场强度。",
+      "answer": "匀强电场近似：E=U/d=4×10^4/(1.3×10^-2)≈3.08×10^6 V/m（约3.1×10^6 V/m）。",
+      "analysis": "将平行板间近似看作匀强电场，直接用E=U/d。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe16",
+      "type": "应用题",
+      "stem": "有一个已充电的电容器，两极板之间的电压为3V，所带电荷量为4.5×10^-4 C，此电容器的电容是多少？将电容器的电压降为2V，电容器的电容是多少？所带电荷量是多少？",
+      "answer": "C=Q/U=4.5×10^-4/3=1.5×10^-4 F。电容不变仍为1.5×10^-4 F。电压降为2V时，Q=CU=1.5×10^-4×2=3.0×10^-4 C。",
+      "analysis": "利用电容定义式C=Q/U求C；同一电容器电容与Q、U无关（在未击穿且结构不变时），改变U后用Q=CU求新的电荷量。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe17",
+      "type": "应用题",
+      "stem": "某心脏除颤器的电容器电容为15μF，如果充电后电容器的电压为4.0kV，电容器放电至两极板之间的电压为0，这次放电有多少电荷量通过人体组织？",
+      "answer": "放电释放电荷量Q=CU=15×10^-6 F×4.0×10^3 V=6.0×10^-2 C。",
+      "analysis": "放电至0V意味着释放电荷量等于初始极板电荷量，直接用Q=CU计算，注意单位换算（μF、kV）。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe18",
+      "type": "应用题",
+      "stem": "【例题1】多个横截面积相同的金属圆筒依次排列，奇数圆筒与交变电源一极相连、偶数圆筒与另一极相连。t=0时奇数圆筒相对偶数圆筒的电势差为正，圆板0中央的电子在圆板与圆筒1间电场中由静止开始加速并进入圆筒1。为使电子到各圆筒间隙处都能恰好受到与运动方向相同的静电力不断加速（电子通过间隙时间忽略），已知电子质量m、电荷量e、电压绝对值u、周期T。求金属圆筒长度与序号的定量关系，并求第n个圆筒长度。",
+      "answer": "由每过一个间隙动能增加eu，进入第n个圆筒后满足 n e u = (1/2) m v^2 ，故 v=\\sqrt(2 n e u / m)。电子在圆筒内匀速，且要求其在圆筒内运动时间等于半个周期T/2，因此第n个圆筒长度 l = v (T/2) = (T/2)\\sqrt(2 n e u / m) = (T/(2m))\\sqrt(2 n e u m)。所以圆筒长度与\\sqrt{n}成正比。",
+      "analysis": "关键：导体内E=0，圆筒内不受静电力做匀速；仅在间隙加速。用动能定理累计n次加速得到速度，再用“踏准节奏”条件t=T/2确定长度。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe19",
+      "type": "应用题",
+      "stem": "【例题2】两相同极板A、B长度l=6.0 cm，相距d=2 cm，板间电压U=200 V。电子以速度v0=3.0×10^7 m/s沿平行于板面的方向射入匀强电场。求射出电场时沿垂直于板面方向偏移距离y和偏转角θ。",
+      "answer": "匀强电场E=U/d，加速度a=eE/m=eU/(md)。飞行时间t=l/v0。偏移 y=(1/2) a t^2 = e U l^2 /(2 m d v0^2) =0.35 cm。垂直分速度 v⊥=a t = e U l /(m d v0)。偏转角满足 tanθ=v⊥/v0 = e U l /(m d v0^2)，代入得 θ≈6.7°。",
+      "analysis": "将运动分解：平行板面方向无力匀速，垂直方向受静电力匀加速；由时间统一两方向。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe20",
+      "type": "计算题",
+      "stem": "手电筒中的干电池给小灯泡供电时，在某次接通开关的10 s内通过某一横截面的电荷量为3 C，则电流是多少？",
+      "answer": "I = q/t = 3 C / 10 s = 0.30 A。",
+      "analysis": "直接应用电流定义式I=q/t。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe21",
+      "type": "应用题",
+      "stem": "某手机说明书标明该手机电池容量为4000 mA·h，待机时间为22 d，请估算该手机的待机电流有多大。说明书还标明，用该手机播放视频的时间是17 h，请估算播放视频的电流大约是待机电流的几倍。",
+      "answer": "容量4000 mA·h = 4 A·h。待机时间t1=22 d=528 h，则I1≈(4 A·h)/528 h≈7.6×10^-3 A=7.6 mA。播放视频时间t2=17 h，则I2≈(4 A·h)/17 h≈0.235 A=235 mA。倍数I2/I1≈0.235/0.0076≈31。",
+      "analysis": "将电池容量视为可输出的总电荷量（以A·h计），用I≈(容量)/时间估算平均电流，并求比值。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe22",
+      "type": "简答题",
+      "stem": "某同学对四个电阻各进行了一次测量，把每个电阻两端的电压和通过它的电流在平面直角坐标系中描点，得到了A、B、C、D四个点。请比较这四个电阻的大小。",
+      "answer": "在U-I图像中R=U/I。比较各点到原点连线的斜率（或计算U/I）：斜率越大（U/I越大）电阻越大；斜率越小电阻越小。按各点的U/I由大到小排序即为电阻由大到小排序。",
+      "analysis": "由定义R=U/I或“U-I图像斜率反映电阻大小”，同一次测量对应图上一点，电阻大小取决于该点的U/I。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe23",
+      "type": "应用题",
+      "stem": "某同学想探究导电溶液的电阻随长度、横截面积的变化规律。他拿了一根细橡胶管，里面灌满了盐水，两端用粗铜丝塞住管口，形成一段封闭的盐水柱。盐水柱原长30 cm，电阻为R。现握住橡胶管两端把它拉长，使盐水柱长度变为40 cm。若溶液的电阻随长度、横截面积的变化规律与金属导体相同，此时盐水柱电阻为多少？（假设体积不变）",
+      "answer": "体积不变：S1 l1 = S2 l2，所以S2 = S1·l1/l2 = S1·30/40 = 0.75 S1。由R=ρl/S得R2/R1=(l2/S2)/(l1/S1)=(40/(0.75S1))/(30/S1)=40/0.75/30=16/9，因此R2 = (16/9)R。",
+      "analysis": "用电阻定律R=ρl/S，并结合拉伸导致横截面积变化（体积守恒）建立比例关系。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe24",
+      "type": "填空题",
+      "stem": "电阻丝的电阻为R，接入电路的有效长度为l，直径为d。写出该金属丝电阻率ρ的计算式（用R、l、d表示）。",
+      "answer": "ρ=SR/l，其中S=πd^2/4，所以ρ=πd^2R/(4l)。",
+      "analysis": "由电阻率定义关系ρ=SR/l，圆截面面积S=πd^2/4，代入即可。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe25",
+      "type": "填空题",
+      "stem": "用刻度尺测电阻丝直径误差较大。若将电阻丝在圆柱体上紧密缠绕N圈，测得总宽度为L（刻度尺读数），则电阻丝直径d应如何表达？",
+      "answer": "d=L/N（需保证缠绕紧密且圈与圈无间隙）。",
+      "analysis": "累积法用总宽度平均到每一圈，等效为单根直径。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe26",
+      "type": "应用题",
+      "stem": "一个表头的内阻Rg为30Ω，满偏电流Ig为1mA。要把它改装为量程0～0.6A的电流表，需要并联多大的电阻？改装后电流表的内阻是多少？",
+      "answer": "分流电阻R=5×10^-2 Ω；改装后电流表内阻RA≈5×10^-2 Ω（更精确为RA= (30×0.05)/(30+0.05) Ω ≈0.0499 Ω）。",
+      "analysis": "量程上限I=0.6A时表头仍过Ig=0.001A，分流支路电流IR=I-Ig=0.599A。表头满偏电压Ug=IgRg=0.001×30=0.03V，并联电阻两端同电压，故R=Ug/IR=0.03/0.599≈0.050Ω。电流表内阻为Rg与R并联：RA=RgR/(Rg+R)≈0.0499Ω。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe27",
+      "type": "简答题",
+      "stem": "用表盘为图11.5-1的多用电表正确测量了一个13.0Ω的电阻后，需要继续测量一个阻值大约是2kΩ的电阻。在用红、黑表笔接触这个电阻两端之前，以下哪些操作步骤是必需的？请按操作顺序写出。\nA. 用螺丝刀调节指针定位螺丝，使表针指向“0”。\nB. 将红表笔和黑表笔接触。\nC. 把选择开关旋转到“×1k”位置。\nD. 把选择开关旋转到“×100”位置。\nE. 调节欧姆调零旋钮使表针指向欧姆零点。",
+      "answer": "B → C → E（先将表笔短接，再将选择开关改到合适倍率×1k，随后进行欧姆调零；机械调零A一般为使用前进行，此处不必作为换测2kΩ前的必需步骤；×100不合适）。",
+      "analysis": "测电阻且更换倍率后必须短接表笔并重新欧姆调零；估计2kΩ应选×1k倍率更合适。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe28",
+      "type": "简答题",
+      "stem": "用多用电表测量直流电流时，电流应该从哪支表笔流入多用电表？测量直流电压时，哪支表笔应接在电势较高的一端？",
+      "answer": "测直流电流时电流应从红表笔流入多用电表；测直流电压时红表笔应接在电势较高的一端（黑表笔接电势较低的一端）。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe29",
+      "type": "应用题",
+      "stem": "一台电动机，线圈的电阻是0.4Ω，当它两端所加的电压为220V时，通过的电流是5A。这台电动机发热的功率与对外做功的功率各是多少？",
+      "answer": "发热功率P热=I^2R=5^2×0.4W=10W；电功率P电=UI=220×5W=1100W；对外做功功率P机=P电-P热=1100W-10W=1090W。",
+      "analysis": "先用焦耳定律求线圈发热功率P热=I^2R；再用电功率公式P电=UI求输入功率；由功率守恒P电=P机+P热求P机。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe30",
+      "type": "应用题",
+      "stem": "某锂电池的内阻是0.23Ω，不接负载时的电压是3.85V，则短路时电流是多少？",
+      "answer": "不接负载时可认为路端电压U=E=3.85V。短路时I=E/r=3.85/0.23≈16.7A。",
+      "analysis": "利用断路时U=E与短路电流I=E/r。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe31",
+      "type": "应用题",
+      "stem": "电源的电动势为4.5V、外电阻为4.0Ω时，路端电压为4.0V。求电源内阻r。并联一个6.0Ω电阻后路端电压是多少？（忽略电源参数变化）",
+      "answer": "已知U=IR且I=U/R=4.0/4.0=1.0A。由U=E-Ir得r=(E-U)/I=(4.5-4.0)/1.0=0.50Ω。并联后外电阻R'=(4.0×6.0)/(4.0+6.0)=2.4Ω，电流I'=E/(R'+r)=4.5/(2.4+0.5)=4.5/2.9≈1.55A，路端电压U'=I'R'≈1.55×2.4≈3.72V（或U'=E-I'r≈4.5-1.55×0.5≈3.72V）。",
+      "analysis": "先由U=IR求I，再用U=E-Ir求r；并联求等效电阻后用I=E/(R+r)与U=IR求端电压。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe32",
+      "type": "应用题",
+      "stem": "某同学按图12.3-1的电路测量蓄电池的电动势和内阻。他调整滑动变阻器共测得5组电流和电压的数据：I/A为1.72、1.35、0.98、0.63、0.34；U/V为1.88、1.92、1.93、1.98、1.99。请作出U-I图像，并根据U-I图像得出蓄电池的电动势E和内阻r的测量值。",
+      "answer": "用直线关系U=-rI+E作近似线性拟合。由两端点估算斜率：ΔU=1.99-1.88=0.11V，ΔI=0.34-1.72=-1.38A，斜率k=ΔU/ΔI≈-0.0797 V/A，因此r≈|k|≈0.080Ω。电动势E=U+rI，取I=1.72A、U=1.88V得E≈1.88+0.080×1.72≈2.02V（用I=0.34A、U=1.99V也得E≈2.02V）。故E≈2.02V，r≈0.080Ω。",
+      "analysis": "将U-I数据描点画直线，利用U=-rI+E：纵截距为E，斜率为-r。用端点或拟合估算斜率与截距即可。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe33",
+      "type": "简答题",
+      "stem": "有人说：“既然能量不会凭空产生，也不会凭空消灭，能量在转化和转移的过程中，其总量是保持不变的，那么，我们为什么还要节约能源？”请你用能量转化和转移的方向性来论述节约能源的必要性。",
+      "answer": "能量守恒只说明能量总量不变，但自然界的宏观能量转化/转移具有方向性，很多过程不可逆：例如燃料燃烧释放的热量会分散到环境中，不会再次自动聚集；电能经灯泡转化为光和热后，最终多变为环境内能且难以收集再利用。这种能量耗散使能量“品质”下降，从便于利用变为不便于利用，因此虽然能量不灭，但可用能减少、利用有代价，所以必须节约能源并提高利用效率。",
+      "analysis": "抓住三点：①不违背能量守恒；②宏观过程不可逆/有方向性；③耗散导致可利用品质下降→节能必要。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe34",
+      "type": "简答题",
+      "stem": "生活中的许多用品都可以看作能量转化器，它们把能量从一种形式转化为另一种形式。请观察你家中的各种生活用品，分别指出它们工作时进行了哪些能量转化。",
+      "answer": "示例：电热水壶：电能→水的内能（加热）+少量向环境的内能；电风扇：电能→机械能（叶片转动）+内能（电机发热）；手机充电：电能→电池化学能（储能）+内能；LED灯：电能→光能+内能。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe35",
+      "type": "简答题",
+      "stem": "通电直导线附近的小磁针如图13.1-13所示，标出导线中的电流方向。",
+      "answer": "用安培定则判断：小磁针N极所指为该点磁场方向，磁场方向沿导线周围同心圆切线方向；右手四指沿磁场方向弯曲，拇指所指即电流方向。据图中磁针指向可判定电流方向为（按图示磁针指向确定）从纸面内指向纸面外或相反。",
+      "analysis": "先用“磁场方向=小磁针N极指向”确定磁场环绕方向，再用右手螺旋定则由磁场方向反推电流方向。由于题目依赖具体图示，答案用判定规则表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe36",
+      "type": "简答题",
+      "stem": "如图13.1-14，当导线环中沿逆时针方向通过电流时，说出小磁针最后静止时N极的指向。",
+      "answer": "用环形电流的安培定则：右手四指沿导线环电流方向（从观察方向看为逆时针）弯曲，拇指指向导线环轴线上磁场方向；小磁针N极最终指向该方向，即指向观察者（若逆时针是从纸面正面观察得到，则N极指向纸面外；若题图相反，则按图的观察方向判定）。",
+      "analysis": "环形电流轴线上磁场方向由“右手四指沿电流、拇指指磁场”确定，再用小磁针N极指向=磁场方向。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe37",
+      "type": "计算题",
+      "stem": "在匀强磁场中，一根长0.4 m的通电导线中的电流为20 A，这条导线与磁场方向垂直时，所受的磁场力为0.015 N，求磁感应强度的大小。",
+      "answer": "由F=IlB得B=F/(Il)=0.015/(20×0.4)=0.001875 T=1.875×10^-3 T。",
+      "analysis": "题设满足“导线与磁场垂直”的条件，直接使用F=IlB或B=F/(Il)代入数值计算即可。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe38",
+      "type": "简答题",
+      "stem": "有人根据 B=F/(Il) 提出：磁场中某点的磁感应强度 B 与通电导线在磁场中所受的磁场力 F 成正比，与电流 I 和导线长度 l 的乘积成反比。这种说法有什么问题？",
+      "answer": "问题在于把“定义式/测量式”误当成描述B随F变化的函数关系。B由磁场本身决定，在给定磁场与位置处，B与所选检验导线的I、l无关；改变I或l会改变F，但不意味着B随F成正比变化。只有在同一磁场、同一位置、且导线与磁场垂直等条件下，才能用B=F/(Il)由测得的F、I、l计算B。",
+      "analysis": "强调B是表征磁场的物理量，F随I、l变化而变；B=F/(Il)是特定条件下的定义/求值关系，不应写成“B与F成正比”的因果或变化关系。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe39",
+      "type": "简答题",
+      "stem": "匀强磁场中有一个矩形闭合导线框。在下列几种情况下，线框中是否产生感应电流？\n（1）保持线框平面始终与磁感线垂直，线框在磁场中上下运动。\n（2）保持线框平面始终与磁感线垂直，线框在磁场中左右运动。\n（3）线框绕轴线转动。",
+      "answer": "（1）不产生感应电流（线框处于匀强磁场且面积与方向不变，穿过线框的磁通量不变）。\n（2）不产生感应电流（同理，磁通量不变）。\n（3）产生感应电流（转动会使穿过线框的磁通量随时间变化）。",
+      "analysis": "判断依据是“穿过闭合回路的磁通量是否变化”。匀强磁场中平移且线框面积与取向不变→磁通量不变；转动通常改变线框法向与磁场夹角→磁通量变化。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe40",
+      "type": "简答题",
+      "stem": "磁场中有一个闭合的弹簧线圈。先把线圈撑开，然后放手，让线圈收缩。线圈收缩时，其中是否有感应电流？为什么？",
+      "answer": "有感应电流。线圈收缩过程中线圈面积减小（磁场方向不变），穿过线圈的磁通量发生变化，因此产生感应电流。",
+      "analysis": "将形变问题转化为磁通量变化：面积变化→磁通量变化→有感应电流。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe41",
+      "type": "简答题",
+      "stem": "在铁芯上绕着两个线圈A和B。若线圈A中电流i与时间t的关系有四种情况，问在t1~t2这段时间内，哪种情况可以观察到线圈B中有感应电流？",
+      "answer": "在t1~t2内，只要线圈A中的电流i随时间变化（斜率不为0），就能观察到线圈B中有感应电流；若i保持恒定不变，则没有感应电流。",
+      "analysis": "A中电流变化→产生磁场强弱变化→穿过B的磁通量变化→B中出现感应电流；A中电流恒定→磁通量不变→无感应电流。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe42",
+      "type": "计算题",
+      "stem": "家用微波炉的微波频率为2450 MHz，它的波长是多少?",
+      "answer": "λ=c/f=3.0×10^8/(2.450×10^9)≈1.22×10^-1 m，约0.122 m（12.2 cm）。",
+      "analysis": "将MHz换算为Hz，用c=λf求λ。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe43",
+      "type": "简答题",
+      "stem": "变化的磁场和变化的电场形成不可分割的统一体——电磁场，它会由近及远地向外传播，它的传播需要介质吗？它传播的速度是多少？",
+      "answer": "不需要介质，可在真空中传播；在真空中的传播速度c=3×10^8 m/s（等于光速）。",
+      "analysis": "电磁波与声波、水波不同，不依赖介质；速度为光速。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe44",
+      "type": "计算题",
+      "stem": "已知天宫一号目标飞行器轨道半径为6740 km，地球半径为6400 km，试计算航天员讲课的实时画面从天宫一号目标飞行器发至地面接收站，最少需要多少时间?",
+      "answer": "最短距离取为轨道高度h=6740-6400=340 km=3.40×10^5 m；t=h/c=3.40×10^5/(3.00×10^8)≈1.13×10^-3 s，约1.1 ms。",
+      "analysis": "把信号视为以光速传播的电磁波；最少时间对应最短传播距离（近似取垂直高度）。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe45",
+      "type": "应用题",
+      "stem": "电焊弧温度在3000℃时，辐射出大量频率为1.0×10^15 Hz的电磁波。根据波长判断，它属于哪种电磁波？电焊工人作业时，需要佩戴专业的防护头盔，这是为什么？",
+      "answer": "λ=c/f=3.0×10^8/(1.0×10^15)=3.0×10^-7 m=300 nm，属于紫外线；紫外线能量较强，对眼睛和皮肤有伤害，因此需要防护头盔/面罩隔离辐射。",
+      "analysis": "先由c=λf求波长，再对照电磁波谱判断波段，并结合紫外线危害说明防护原因。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe46",
+      "type": "计算题",
+      "stem": "对应于7.4×10^-19 J的能量子，其电磁辐射的频率和波长各是多少？",
+      "answer": "由ε=hν得ν=ε/h=7.4×10^-19/(6.626×10^-34)≈1.12×10^15 Hz。取真空中c≈3.00×10^8 m/s，则λ=c/ν≈3.00×10^8/(1.12×10^15)≈2.69×10^-7 m≈269 nm。",
+      "analysis": "用能量子关系ε=hν求频率，再用电磁波关系λ=c/ν求波长。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe47",
+      "type": "计算题",
+      "stem": "氪氖激光器发射波长为632.8 nm的单色光，这种光的一个光子的能量为多少？若该激光器的发光功率为18 mW，则每秒发射多少个光子？",
+      "answer": "光子能量E=hc/λ=(6.626×10^-34×3.00×10^8)/(632.8×10^-9)≈3.14×10^-19 J。功率P=18 mW=1.8×10^-2 J/s，每秒光子数N=P/E≈(1.8×10^-2)/(3.14×10^-19)≈5.7×10^16 个/s。",
+      "analysis": "先用E=hc/λ求单个光子能量，再用N=P/E求单位时间内发射的光子数。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx3_rjb_exe48",
+      "type": "简答题",
+      "stem": "晴朗的夜空繁星闪烁，有的恒星颜色偏红，有的恒星颜色偏蓝。对于“红星”和“蓝星”，哪种恒星的表面温度更高？说明理由。",
+      "answer": "蓝星表面温度更高。温度升高时热辐射中波长较短的成分越来越强；蓝光波长短于红光，因此偏蓝的恒星辐射峰更偏向短波，表面温度更高。",
+      "analysis": "依据热辐射随温度升高向短波增强的规律判断颜色与温度的关系。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 207,
+    "skill_count": 51,
+    "experiment_count": 22,
+    "question_count": 48
+  }
+}

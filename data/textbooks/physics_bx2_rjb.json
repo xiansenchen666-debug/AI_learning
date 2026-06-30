@@ -1,0 +1,920 @@
+{
+  "id": "physics_bx2_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "物理",
+  "title": "物理必修二",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/physics.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "physics_bx2_rjb_cpt1",
+      "name": "曲线运动",
+      "definition": "物体运动的轨迹为曲线，且速度方向不断变化的运动。",
+      "importance": "重要",
+      "examples": [
+        "链球飞出后沿曲线飞行",
+        "河水沿弯曲河道流动"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt2",
+      "name": "速度方向与切线方向",
+      "definition": "质点在某一点的速度方向沿轨迹在该点的切线方向。",
+      "importance": "重要",
+      "examples": [
+        "钢球离开弯轨后在纸上的印迹方向表示该点速度方向"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt3",
+      "name": "切线",
+      "definition": "当割线上另一个点逐渐趋近曲线上某点时，该割线的极限位置为该点的切线。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt4",
+      "name": "曲线运动的条件",
+      "definition": "当物体所受合力方向与其速度方向不在同一直线上时，物体做曲线运动。",
+      "importance": "重要",
+      "examples": [
+        "磁铁使钢球偏转",
+        "斜上抛石子受重力"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt5",
+      "name": "加速度与受力方向一致",
+      "definition": "根据牛顿第二定律，物体的加速度方向与其所受合力方向总一致。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt6",
+      "name": "运动的合成",
+      "definition": "由若干个分运动求出物体的合运动的过程，遵从矢量运算法则。",
+      "importance": "重要",
+      "aliases": [
+        "合运动的求法"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt7",
+      "name": "运动的分解",
+      "definition": "把一个合运动分解成若干个分运动的过程，通常分解为互相垂直的分运动，遵从矢量运算法则。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt8",
+      "name": "速度的分解",
+      "definition": "将一个速度矢量分解为互相垂直方向的分速度，例如水平分速度 vx 和竖直分速度 vy。",
+      "importance": "掌握",
+      "formula": "v = √(vx² + vy²), tanθ = vy / vx"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt9",
+      "name": "平面运动的坐标描述",
+      "definition": "在平面直角坐标系中用 x(t)、y(t) 描述物体的位置随时间变化，从而分析其运动轨迹与速度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt10",
+      "name": "抛体运动",
+      "definition": "物体以一定速度抛出，在空气阻力可忽略时仅受重力作用的运动。",
+      "importance": "重要",
+      "aliases": [
+        "projectile motion"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt11",
+      "name": "平抛运动",
+      "definition": "物体具有水平方向初速度，在仅受重力作用下沿曲线下落的运动，水平方向为匀速运动，竖直方向为自由落体运动。",
+      "importance": "重要",
+      "aliases": [
+        "水平抛出运动"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt12",
+      "name": "平抛运动的分解",
+      "definition": "将平抛运动分解为水平方向的分运动和竖直方向的分运动的分析方法。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt13",
+      "name": "平抛运动水平分运动",
+      "definition": "平抛运动在水平方向的分运动，其特点是速度大小不变、位移随时间成正比。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt14",
+      "name": "平抛运动竖直分运动",
+      "definition": "平抛运动在竖直方向的分运动，其规律与自由落体运动相同。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt15",
+      "name": "平抛运动的速度规律",
+      "definition": "平抛运动中水平方向的分速度保持为初速度v0，竖直方向分速度随时间按vy=gt增大，总速度满足v = √(vx² + vy²)。",
+      "importance": "重要",
+      "formula": "vx=v0，vy=gt，v=√(v0²+g²t²)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt16",
+      "name": "平抛运动的位移规律",
+      "definition": "平抛运动中水平方向分位移 x = v0 t，竖直方向分位移 y = 1/2 g t²。",
+      "importance": "重要",
+      "formula": "x=v0 t, y=1/2 g t²"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt17",
+      "name": "平抛运动轨迹方程",
+      "definition": "平抛运动轨迹由y = (g / 2v0²) x²表示，是一条抛物线。",
+      "importance": "重要",
+      "formula": "y = (g / 2v0²) x²",
+      "aliases": [
+        "抛物线轨迹"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt18",
+      "name": "斜抛运动",
+      "definition": "初速度与水平方向成一定角度的抛体运动，水平和竖直方向分别满足匀速和匀加速规律。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt19",
+      "name": "线速度",
+      "definition": "表示物体在圆周运动中沿弧线运动的快慢，定义为单位时间内通过的弧长，v = Δs/Δt，方向沿切线方向。",
+      "importance": "掌握",
+      "formula": "v = Δs/Δt",
+      "unit": "m/s"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt20",
+      "name": "瞬时速度（在圆周运动中的应用）",
+      "definition": "当Δt足够小时，弧长Δs等于位移Δl的大小，因此线速度就是直线运动中学过的瞬时速度。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt21",
+      "name": "匀速圆周运动",
+      "definition": "线速度大小处处相等的圆周运动。虽然速率不变，但由于方向不断变化，它是一种变速运动。",
+      "importance": "掌握",
+      "examples": [
+        "小球绕钉子在桌面上作圆周运动"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt22",
+      "name": "角速度",
+      "definition": "描述做圆周运动的物体绕圆心转动快慢的物理量，定义为单位时间内转过的角度，ω = Δθ/Δt。",
+      "importance": "掌握",
+      "unit": "rad/s",
+      "formula": "ω = Δθ/Δt"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt23",
+      "name": "周期",
+      "definition": "交变电流完成一次周期性变化所需的时间，常用 T 表示，单位是秒。",
+      "importance": "掌握",
+      "unit": "s",
+      "formula": "T = 1/f",
+      "aliases": [
+        "周期 T"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt24",
+      "name": "转速",
+      "definition": "物体单位时间内完成的转数，用n表示，常用单位为r/s或r/min。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt25",
+      "name": "线速度与角速度的关系",
+      "definition": "圆周运动中线速度大小等于角速度大小与半径的乘积，v = ωr。",
+      "importance": "重要",
+      "formula": "v = ωr"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt26",
+      "name": "向心力",
+      "definition": "使物体做圆周运动的合力，方向始终指向圆心，不是独立的力，而是由某个或多个实际力的合力提供。",
+      "importance": "重要",
+      "aliases": [
+        "centripetal force"
+      ],
+      "examples": [
+        "飞椅的绳子拉力与重力的合力提供向心力",
+        "太阳对地球的引力提供向心力"
+      ],
+      "formula": "F_n = mω^2 r 或 F_n = mv^2/r"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt27",
+      "name": "变速圆周运动",
+      "definition": "物体沿圆周轨迹运动但速度大小随时间变化的运动形式。",
+      "importance": "了解",
+      "examples": [
+        "沙袋加速转动"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt28",
+      "name": "一般曲线运动",
+      "definition": "轨迹既不是直线也不是圆周的运动，可局部视为圆周运动进行分析。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt29",
+      "name": "向心力公式",
+      "definition": "向心力的定量关系式：F_n = mω^2 r 或 F_n = mv^2/r",
+      "importance": "重要",
+      "formula": "F_n = mω^2 r; F_n = mv^2/r"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt30",
+      "name": "向心加速度",
+      "definition": "做匀速圆周运动的物体，其加速度方向指向圆心，大小为v²/r或ω²r。",
+      "importance": "重要",
+      "formula": "a_n = v^2/r = ω^2 r"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt31",
+      "name": "圆周运动",
+      "definition": "物体沿圆形轨道运动的形式，具有指向圆心的向心加速度。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt32",
+      "name": "超高路面（弯道外高内低）",
+      "definition": "在弯道处外轨或外侧路面高于内侧，使支持力方向偏向圆心，从而提供部分向心力。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt33",
+      "name": "支持力的变化（凸形桥/凹形路）",
+      "definition": "在圆周轨迹上支持力随速度和位置变化，凸形桥顶支持力减小，凹形路最低点支持力增大。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt34",
+      "name": "离心运动",
+      "definition": "因合力不足以提供所需向心力，物体逐渐远离圆心的运动形式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt35",
+      "name": "日心说",
+      "definition": "认为太阳是静止的，地球和其他行星绕太阳运动的理论体系。",
+      "importance": "重要",
+      "examples": [
+        "哥白尼提出的天文学体系"
+      ],
+      "aliases": [
+        "太阳中心说"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt36",
+      "name": "地心说",
+      "definition": "认为地球是宇宙中心，其他天体绕地球运动的理论体系。",
+      "importance": "了解",
+      "examples": [
+        "托勒密的本轮-均轮模型"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt37",
+      "name": "椭圆轨道",
+      "definition": "行星绕太阳运动的轨道是椭圆，太阳位于椭圆的一个焦点上。",
+      "importance": "掌握",
+      "examples": [
+        "行星真实轨道形状"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt38",
+      "name": "开普勒第一定律",
+      "definition": "所有行星绕太阳运动的轨道都是椭圆，太阳位于椭圆的一个焦点上。",
+      "importance": "重要",
+      "aliases": [
+        "轨道定律"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt39",
+      "name": "开普勒第二定律",
+      "definition": "行星与太阳的连线在相等时间内扫过的面积相等。",
+      "importance": "重要",
+      "aliases": [
+        "面积定律"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt40",
+      "name": "开普勒第三定律",
+      "definition": "所有行星轨道的半长轴的三次方与公转周期的二次方的比值相等。",
+      "importance": "重要",
+      "formula": "a^3 / T^2 = k"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt41",
+      "name": "行星逆行",
+      "definition": "行星相对于恒星的背景在一段时间内向西运动的现象。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt42",
+      "name": "万有引力定律",
+      "definition": "自然界中任何两个物体之间的吸引力大小与它们质量的乘积成正比，与距离的二次方成反比，方向沿两物体的连线。",
+      "importance": "重要",
+      "formula": "F = G * m1 * m2 / r^2"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt43",
+      "name": "引力常量",
+      "definition": "万有引力定律中的比例系数，与物体无关，为自然界的基本常量。",
+      "importance": "掌握",
+      "unit": "N·m²/kg²",
+      "examples": "G = 6.67 × 10⁻¹¹ N·m²/kg²"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt44",
+      "name": "地球质量的计算公式",
+      "definition": "利用地面上物体的重力等于地球对其引力，可得 m地 = gR^2 / G。",
+      "importance": "掌握",
+      "formula": "m地 = gR^2 / G"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt45",
+      "name": "向心力由万有引力提供",
+      "definition": "行星做匀速圆周运动时，其向心力由太阳与行星之间的万有引力提供。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt46",
+      "name": "天体质量的计算",
+      "definition": "利用行星绕太阳做圆周运动，结合万有引力定律和 ω=2π/T，可得 m = 4π²r³ /(GT²)。",
+      "importance": "重要",
+      "formula": "m = 4π² r³ / (G T²)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt47",
+      "name": "利用引力理论预测天体运动",
+      "definition": "依据万有引力定律可以预测行星轨道或彗星回归。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt48",
+      "name": "第一宇宙速度",
+      "definition": "物体在地球附近绕地球做匀速圆周运动所需的最小速度，约为7.9 km/s。",
+      "importance": "重要",
+      "formula": "v = sqrt(G M / R) 或 v = sqrt(g R)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt49",
+      "name": "第二宇宙速度",
+      "definition": "物体在地面附近能够克服地球引力、脱离地球束缚所需的最小速度，约为11.2 km/s。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt50",
+      "name": "第三宇宙速度",
+      "definition": "物体摆脱太阳引力、飞出太阳系所需的最小速度，约为16.7 km/s。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt51",
+      "name": "万有引力提供向心力",
+      "definition": "在地球附近绕地球作圆周运动的物体，受到的万有引力提供其向心力。",
+      "importance": "掌握",
+      "formula": "G M m / r^2 = m v^2 / r"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt52",
+      "name": "逃逸速度",
+      "definition": "使物体能够克服天体引力、永远脱离其引力束缚所需的最小初速度。",
+      "importance": "掌握",
+      "formula": "v = sqrt(2 G M / R)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt53",
+      "name": "黑洞",
+      "definition": "逃逸速度大于光速、连光也无法脱离其表面的天体。",
+      "importance": "了解"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt54",
+      "name": "地球同步卫星",
+      "definition": "位于约36000 km高度，周期与地球自转周期相同，相对地面静止的卫星。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt55",
+      "name": "牛顿力学时空观（绝对时空观）",
+      "definition": "认为时间均匀流逝、空间独立存在，二者与物体运动无关，是独立且绝对的。",
+      "importance": "重要",
+      "aliases": [
+        "绝对时空观"
+      ]
+    },
+    {
+      "id": "physics_bx2_rjb_cpt56",
+      "name": "经典速度叠加原理",
+      "definition": "在经典力学中，不同参考系间物体速度线性叠加，如 v_船岸 = v_船水 + v_水岸。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt57",
+      "name": "光速不变原理",
+      "definition": "真空中光速在所有惯性参考系中都相同，与光源和观察者的相对运动无关。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt58",
+      "name": "相对论时空观",
+      "definition": "认为时间和空间依赖于物体的运动状态，不再独立绝对，而是相互联系的整体。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt59",
+      "name": "时间延缓效应",
+      "definition": "运动物体的时间变慢，在外部参考系观测，其时间间隔 Δt 大于本征时间 Δτ。",
+      "importance": "重要",
+      "formula": "Δt = Δτ / sqrt(1 - (v/c)^2)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt60",
+      "name": "长度收缩效应",
+      "definition": "沿运动方向测量到的长度变短，运动参考系下的长度 l 小于静止长度 l0。",
+      "importance": "重要",
+      "formula": "l = l0 * sqrt(1 - (v/c)^2)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt61",
+      "name": "同时性的相对性",
+      "definition": "不同惯性参考系对于两个事件是否同时发生的判断不一致。",
+      "importance": "重要"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt62",
+      "name": "牛顿力学的适用范围与局限性",
+      "definition": "牛顿力学适用于低速、大尺度情形，但在接近光速和微观领域不再适用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt63",
+      "name": "正功与负功",
+      "definition": "当力与位移夹角为锐角时做正功，为直角时不做功，为钝角时做负功。",
+      "importance": "掌握",
+      "examples": "拉车前进为正功；阻力使物体减速为负功。"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt64",
+      "name": "恒力做功的功率表达式",
+      "definition": "沿位移方向的恒力做功的功率等于力与速度的乘积。",
+      "importance": "重要",
+      "formula": "P = Fv"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt65",
+      "name": "重力做功",
+      "definition": "物体在高度发生变化时，重力对物体所做的功，只与物体的起点和终点高度差有关，与运动路径无关。",
+      "importance": "重要",
+      "formula": "W_G = mg(h_1 - h_2)"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt66",
+      "name": "重力势能与参考平面",
+      "definition": "重力势能相对于某一参考平面取值，该平面上的重力势能定义为0。不同参考平面的选取会改变势能数值，但不影响势能差值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt67",
+      "name": "动能定理",
+      "definition": "力对物体所做的功等于物体动能的变化，即 W = Ek2 − Ek1。",
+      "importance": "重要",
+      "formula": "W = ΔE_k"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt68",
+      "name": "机械能守恒定律",
+      "definition": "在只有保守力做功的系统中，动能和势能可以相互转化，其总机械能保持不变。",
+      "importance": "重要",
+      "aliases": [
+        "mechanical energy conservation"
+      ],
+      "formula": "1/2 m v^2 + m g h = 常量"
+    },
+    {
+      "id": "physics_bx2_rjb_cpt69",
+      "name": "向心力与向心加速度",
+      "definition": "做圆周运动的物体指向圆心的加速度及产生该加速度的合力。",
+      "importance": "了解",
+      "formula": "a = v^2 / r"
+    }
+  ],
+  "skills": [
+    {
+      "id": "physics_bx2_rjb_skl1",
+      "name": "利用切线判断速度方向",
+      "description": "通过作出运动轨迹在某点的切线来确定该点的瞬时速度方向。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl2",
+      "name": "建立坐标系分析运动",
+      "description": "根据运动特点选择合适的坐标系，用坐标表示物体位置随时间的变化，从而求出轨迹、速度等量。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl3",
+      "name": "运动分解方法",
+      "description": "将复杂的曲线运动分解为互相独立的方向上的分运动，从而分别分析各分运动的规律。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl4",
+      "name": "分方向研究运动的方法",
+      "description": "将平面运动分解为相互垂直的水平方向和竖直方向分别研究，通过分别分析受力和加速度来求解运动规律。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl5",
+      "name": "分解力分析方法",
+      "description": "将一个力分解为沿切线方向与指向圆心方向的两个分力，以分析变速圆周运动中的受力特点。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl6",
+      "name": "速度变化矢量分析法",
+      "description": "通过比较物体在极短时间内速度方向的变化，确定加速度方向的方法。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl7",
+      "name": "圆周运动受力分析方法",
+      "description": "将物体所受力分解，确定指向圆心方向的合力，并运用牛顿第二定律 F = m v^2 / r 进行分析。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl8",
+      "name": "基于观测数据建立物理规律",
+      "description": "从大量可靠的观测数据中寻找模式，建立物理定律。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl9",
+      "name": "利用已知物理规律建模并求未知量",
+      "description": "根据已知物理关系（如引力提供向心力）列方程并求解未知物理量。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl10",
+      "name": "利用万有引力与向心力关系求轨道速度",
+      "description": "将万有引力等于向心力，从而求解物体绕天体做圆周运动的速度。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl11",
+      "name": "力的分解方法",
+      "description": "将一个力分解为与位移方向平行和垂直的分力，以确定做功的分力。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl12",
+      "name": "根据高度差计算重力做功",
+      "description": "利用W_G = mgΔh计算重力做功，而无需考虑具体路径。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl13",
+      "name": "选择参考平面分析势能变化",
+      "description": "根据问题需要选取参考平面，通过不同位置的mgh计算势能变化。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl14",
+      "name": "演绎推理",
+      "description": "从一般原理、定律或定理推导出具体结论的方法。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl15",
+      "name": "机械能守恒分析法",
+      "description": "在满足机械能守恒条件的情况下，通过比较初末状态的机械能求解速度、位置等物理量。"
+    },
+    {
+      "id": "physics_bx2_rjb_skl16",
+      "name": "物理量的实验测量",
+      "description": "通过仪器与数据记录方法测量质量、速度、高度等物理量，并用于能量分析。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "physics_bx2_rjb_exp1",
+      "name": "钢球离开弯轨记录速度方向实验",
+      "instrument": [
+        "弯轨",
+        "红色印泥",
+        "白纸",
+        "钢球"
+      ],
+      "is_student": 1,
+      "process": "让涂印泥的钢球通过不同弯轨出口，在白纸上留下痕迹，从而记录钢球离开轨道瞬时的速度方向。",
+      "phenomena": "不同出口处的印迹方向不同，均沿着轨迹的切线方向。",
+      "conclusion": "做曲线运动物体在某点的速度方向沿该点的切线方向。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp2",
+      "name": "钢球受侧向力发生曲线运动实验",
+      "instrument": [
+        "钢球",
+        "水平面",
+        "磁铁"
+      ],
+      "is_student": 1,
+      "process": "让钢球直线运动，然后从不同方向施加磁力，观察路径变化。",
+      "phenomena": "施加的合力与速度方向不共线时，钢球发生偏转。",
+      "conclusion": "当合力方向与速度方向不在同一直线上时，物体做曲线运动。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp3",
+      "name": "蜡块平面运动实验",
+      "instrument": "玻璃管、清水、红蜡小圆柱体、刻度尺、黑板",
+      "is_student": 0,
+      "process": "玻璃管内竖直方向匀速上升，同时玻璃管沿水平方向匀速右移，观察蜡块在背景下的运动轨迹。",
+      "phenomena": "蜡块相对于黑板呈右上方直线运动。",
+      "conclusion": "蜡块的合运动可分解为两个相互垂直的匀速直线分运动。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp4",
+      "name": "对比平抛与自由落体的竖直分运动",
+      "instrument": "小锤、弹性金属片、A球、B球、刻度尺等",
+      "is_student": 1,
+      "process": "同时让A球做平抛运动、B球自由落体，观察两球落地时间。",
+      "phenomena": "两球同时落地。",
+      "conclusion": "平抛运动的竖直分运动与自由落体运动相同。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp5",
+      "name": "绘制平抛运动轨迹实验",
+      "instrument": "斜槽、钢球、倾斜挡板、白纸、复写纸",
+      "is_student": 1,
+      "process": "调节挡板高度，多次记录钢球飞行落点，连接成轨迹。",
+      "conclusion": "利用轨迹结合竖直分运动规律可判断水平分运动特点。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp6",
+      "name": "感受向心力实验",
+      "instrument": "绳子、小沙袋",
+      "is_student": 1,
+      "process": "手握绳一端，使沙袋在水平面内做圆周运动，更换质量、速度、绳长，体会向心力变化。",
+      "phenomena": "速度越大、质量越大、半径越小，所需拉力越大。",
+      "conclusion": "向心力大小与质量、速度、半径有关。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp7",
+      "name": "向心力大小表达式实验（向心力演示器）",
+      "instrument": "向心力演示器（塔轮、槽、测力套筒等）",
+      "is_student": 0,
+      "process": "使小球随装置匀速圆周运动，通过测力套筒下降量比较向心力大小。",
+      "conclusion": "验证向心力公式 F_n = mω^2 r 或 F_n = mv^2 / r"
+    },
+    {
+      "id": "physics_bx2_rjb_exp8",
+      "name": "图钉和细绳绘制椭圆",
+      "instrument": [
+        "细绳",
+        "两只图钉",
+        "纸和木板",
+        "铅笔"
+      ],
+      "is_student": 1,
+      "process": "用两钉固定绳端，保持绳张紧，移动铅笔画出椭圆轨迹",
+      "phenomena": "得到两个焦点决定的椭圆",
+      "conclusion": "椭圆可由定义为两焦点距离和为定值的点的轨迹构成"
+    },
+    {
+      "id": "physics_bx2_rjb_exp9",
+      "name": "卡文迪什扭秤实验",
+      "instrument": "扭秤、T形架、小球、大球、石英丝、平面镜、刻度尺",
+      "is_student": 0,
+      "process": "利用扭秤装置测量已知质量小球与大球间的微弱引力，通过扭转角求得引力大小。",
+      "phenomena": "扭秤发生可测量的扭转角。",
+      "conclusion": "可计算出引力常量 G 的值。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp10",
+      "name": "伽利略斜面实验",
+      "instrument": [
+        "斜面A",
+        "斜面B",
+        "小球"
+      ],
+      "is_student": 0,
+      "process": "让小球从不同斜面上滚下，观察其上升到另一斜面的高度。",
+      "phenomena": "小球最终达到的高度与初始高度基本相同。",
+      "conclusion": "存在某种在运动过程中保持不变的量，为机械能守恒的早期线索。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp11",
+      "name": "验证机械能守恒定律（自由落体）",
+      "instrument": "打点计时器、纸带、天平、刻度尺、重物、铁架台",
+      "is_student": 1,
+      "process": "记录自由下落的纸带数据，测量高度差和瞬时速度，比较动能变化与重力势能变化。",
+      "conclusion": "自由落体近似满足机械能守恒。"
+    },
+    {
+      "id": "physics_bx2_rjb_exp12",
+      "name": "验证机械能守恒定律（光滑斜面）",
+      "instrument": "气垫导轨、光电门、气泵、滑块、天平",
+      "is_student": 1,
+      "process": "测量滑块沿斜面下滑的高度变化与瞬时速度，比较动能与势能变化。",
+      "conclusion": "光滑斜面运动近似满足机械能守恒。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "physics_bx2_rjb_exe1",
+      "type": "应用题",
+      "stem": "某商场设有步行楼梯和自动扶梯……哪位顾客先到达楼上？如果楼层高 4.56 m，甲上楼用了多少时间？",
+      "answer": "甲先到达楼上；甲用时约 12 s。",
+      "analysis": "比较甲乙在竖直方向的分速度，通过分解速度判断谁先到达。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe2",
+      "type": "应用题",
+      "stem": "将一个物体以10 m/s 的速度从10 m 的高度水平抛出，求落地时速度方向与水平地面的夹角θ（g=10 m/s²）。",
+      "answer": "θ = 55°",
+      "analysis": "根据vx=v0=10 m/s，vy=√(2gh)=14.1 m/s，tanθ=vy/vx=1.41，θ≈55°。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe3",
+      "type": "应用题",
+      "stem": "一个圆盘匀速转动，角速度为4 rad/s，盘面上距中心0.10 m处有质量0.10 kg的小物体随圆盘做匀速圆周运动。求其向心力大小。",
+      "answer": "F = mω²r = 0.10 × 4² × 0.10 = 0.16 N",
+      "analysis": "基于向心力公式 F = mω²r 直接代入计算。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe4",
+      "type": "应用题",
+      "stem": "圆锥摆中，当细绳与竖直方向的夹角为θ时，小球的向心加速度大小是多少？",
+      "answer": "a_n = g tanθ",
+      "analysis": "根据受力分析得F_n = m g tanθ，再根据a_n = F_n/m得到g tanθ。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe5",
+      "type": "简答题",
+      "stem": "汽车以速度 v 通过半径为 r 的拱形桥最高点时，支持力为何会减小？请写出支持力表达式。",
+      "answer": "根据 G - F_N = m v^2 / r ，可得 F_N = G - m v^2 / r ，由于 m v^2 / r 随速度增大而增大，因此 F_N 减小。",
+      "analysis": "考察支持力与向心力关系，需理解向心力由合力提供。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe6",
+      "type": "应用题",
+      "stem": "某人造地球卫星沿圆轨道运行，轨道半径 6.8×10^3 km ，周期 5.6×10^3 s，估算地球的质量。",
+      "answer": "使用公式 m地 = 4π² r³ /(G T²)，得约 6×10^24 kg。",
+      "analysis": "本题通过引力提供向心力关系建立方程，属于典型的天体质量计算问题。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe7",
+      "type": "简答题",
+      "stem": "有人根据公式 v = ω r 说：人造地球卫星的轨道半径增大2倍，卫星速度也增大2倍。但根据 v = sqrt(GM/r) 轨道半径增大时速度减小，应怎样理解？",
+      "answer": "v = ω r 适用于角速度相同的情况；人造卫星绕地球运动时角速度并不是固定的，它由万有引力决定，因此需用 v = sqrt(GM/r)。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe8",
+      "type": "简答题",
+      "stem": "一列火车以速度 v 运动。如果地面上观察者测得光同时到达前后壁，则火车上观察者认为闪光先到达哪一壁？如何解释？",
+      "answer": "火车上观察者认为闪光同时到达前后壁，因为在其参考系中车厢静止、光速相同且光源位于中点。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe9",
+      "type": "应用题",
+      "stem": "一个质量为150kg 的雪橇，受到大小500N、与水平方向成37°的拉力，在水平地面上移动5m，阻力为100N。求总功。",
+      "answer": "总功为1500J。",
+      "analysis": "找出与位移方向平行的分力做功并与阻力功相加。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe10",
+      "type": "简答题",
+      "stem": "图8.2‑7中，让质量相同的物体沿不同倾角的斜面从顶端运动到底端。重力做的功是否与斜面倾角有关？",
+      "answer": "重力做的功均为mg(h_顶端−h_底端)，与斜面的倾角无关。",
+      "analysis": "因为重力做功只与高度差有关，而与路径无关。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe11",
+      "type": "应用题",
+      "stem": "一架喷气式飞机质量 7.0×10⁴ kg，从静止滑跑 2.5×10³ m 达到 80 m/s。已知平均阻力为重力的 1/50，求牵引力大小。",
+      "answer": "牵引力大小为 1.04×10⁵ N。",
+      "analysis": "根据动能定理，牵引力做功与动能增加及阻力做功的代数和相等。由 W=ΔEk 求合力，再根据 F牵 = F合 + F阻 求牵引力。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe12",
+      "type": "应用题",
+      "stem": "若摆长为 l、最大偏角为 θ 的单摆，小球在最低点的速度是多少？（忽略阻力）",
+      "answer": "v = sqrt(2 g l (1 - cosθ))",
+      "analysis": "根据机械能守恒：最高点势能差等于最低点动能。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "physics_bx2_rjb_exe13",
+      "type": "应用题",
+      "stem": "自由下落的重物在从O点到B点的过程中，动能与重力势能分别变化多少？已知质量m、打点周期T、距起点的高度差为Δh。",
+      "answer": "重力势能变化：ΔE_p = m g Δh；动能变化：ΔE_k = 1/2 m (v_B^2 - v_O^2)，其中 v_B = (h_C - h_A)/(2T)。",
+      "analysis": "考察自由落体运动与机械能守恒的理解。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 69,
+    "skill_count": 16,
+    "experiment_count": 12,
+    "question_count": 13
+  }
+}

@@ -1,0 +1,4580 @@
+{
+  "id": "chemistry_xzxbx2_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "化学",
+  "title": "化学选择性必修二",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/chemistry.json"
+    },
+    {
+      "id": "k12_kgraph_afterclass",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/afterclass_exercises/chemistry_highschool_rjb_xzxbx2.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt1",
+      "name": "原子结构",
+      "definition": "原子的内部构造，包括原子核及核外电子的分布、能量状态和运动方式。原子不是最小粒子，它有复杂结构，原子的基本性质与原子结构密切相关。",
+      "importance": "重要",
+      "examples": [
+        "原子半径、电离能、电负性等性质与原子结构密切相关"
+      ],
+      "aliases": [
+        "atomic structure"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt2",
+      "name": "能层",
+      "definition": "核外电子按能量不同分成的、由内向外排列的分层，每一层有固定符号并有最大可容纳电子数。",
+      "importance": "重要",
+      "examples": [
+        "K、L、M、N、O、P、Q能层",
+        "第一能层最多容纳2个电子，第二能层最多容纳8个电子"
+      ],
+      "formula": "E(K) < E(L) < E(M) < E(N) < E(O) < E(P) < E(Q)",
+      "aliases": [
+        "shell"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt3",
+      "name": "能级",
+      "definition": "同一能层内按能量进一步划分的离散能量状态，用ns、np、nd、nf…表示，每个能级可以容纳一定数目的电子。",
+      "importance": "重要",
+      "examples": [
+        "1s、2s、2p、3s、3p、3d等能级"
+      ],
+      "aliases": [
+        "level"
+      ],
+      "formula": "同一能层能量顺序：E(ns) < E(np) < E(nd) < E(nf)…"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt4",
+      "name": "能级最大容电子数规律",
+      "definition": "任一能层的能级从s开始，能级数等于能层序数；s、p、d、f…对应的最大容电子数依次为自然数奇数序列1、3、5、7…的2倍。",
+      "importance": "掌握",
+      "formula": "ns: 2×1=2; np: 2×3=6; nd: 2×5=10; nf: 2×7=14",
+      "examples": [
+        "2p能级最多容纳6个电子",
+        "3d能级最多容纳10个电子"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt5",
+      "name": "基态原子",
+      "definition": "处于最低能量状态的原子，其核外电子排布使整个原子能量最低。",
+      "importance": "重要",
+      "examples": [
+        "基态氢原子的电子在1s能级",
+        "表1-1中给出的都是各元素基态原子的电子排布"
+      ],
+      "aliases": [
+        "ground state atom"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt6",
+      "name": "激发态原子",
+      "definition": "基态原子吸收能量后，电子从较低能级跃迁到较高能级而形成的高能状态原子。",
+      "importance": "掌握",
+      "examples": [
+        "电子从1s跃迁到2s或3s，原子变为激发态原子"
+      ],
+      "aliases": [
+        "excited atom"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt7",
+      "name": "电子跃迁",
+      "definition": "原子核外电子在不同能级之间的跃迁过程，从低能级跃迁到高能级需要吸收能量，从高能级跃迁到低能级会释放能量。",
+      "importance": "重要",
+      "examples": [
+        "电子从1s跃迁到2s、3s",
+        "电子从较高能级跃迁回基态时释放光"
+      ],
+      "aliases": [
+        "能级跃迁"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt8",
+      "name": "原子光谱",
+      "definition": "原子中电子发生跃迁时吸收或释放的光构成的光谱，包括吸收光谱和发射光谱，用光谱仪可摄取各种元素原子的光谱。",
+      "importance": "重要",
+      "examples": [
+        "Li、He、Hg的发射光谱和吸收光谱",
+        "太阳光谱中的夫琅禾费线"
+      ],
+      "aliases": [
+        "atomic spectrum",
+        "吸收光谱",
+        "发射光谱"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt9",
+      "name": "光谱分析",
+      "definition": "利用原子光谱上的特征谱线来鉴定元素的一种分析方法。",
+      "importance": "掌握",
+      "examples": [
+        "通过光谱发现铯、铷",
+        "通过太阳光谱发现氦"
+      ],
+      "aliases": [
+        "spectrum analysis"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt10",
+      "name": "构造原理",
+      "definition": "以光谱学事实为基础，从氢开始，随核电荷数递增，新增电子按一定能级顺序填入原子核外能级，从而确定各元素基态原子电子排布的经验规律。",
+      "importance": "重要",
+      "examples": [
+        "从氢到碳的基态原子电子排布式",
+        "表1-1各元素基态原子的电子排布"
+      ],
+      "aliases": [
+        "aufbau principle"
+      ],
+      "formula": "电子按能量由低到高依次填入能级，并出现3p→4s→3d等能级交错"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt11",
+      "name": "电子排布式",
+      "definition": "用能级符号及其右上角电子数来表示原子核外电子在各能级上的分布的式子。",
+      "importance": "重要",
+      "examples": [
+        "氢：1s¹；碳：1s²2s²2p²；钙：1s²2s²2p⁶3s²3p⁶4s²"
+      ],
+      "aliases": [
+        "电子排布",
+        "electronic configuration"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt12",
+      "name": "能级交错",
+      "definition": "随核电荷数增大时，电子填入能级的顺序并不完全按能层先后进行，而是按3p→4s→3d等非简单递增顺序，表现为不同能层能级间的能量交错。",
+      "importance": "掌握",
+      "examples": [
+        "电子是按3p→4s→3d填充，而不是3p→3d→4s"
+      ],
+      "aliases": [
+        "能量交错"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt13",
+      "name": "理想化模型",
+      "definition": "为简化复杂实际情况而在理论中作出的假设模型，忽略一些次要因素，用以建立和理解科学原理。",
+      "importance": "了解",
+      "examples": [
+        "构造原理是思维模型，是个假想过程",
+        "理想气体忽略分子体积和相互作用",
+        "矿物的理想化学式忽略掺杂离子"
+      ],
+      "aliases": [
+        "理想化",
+        "idealization"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt14",
+      "name": "概率",
+      "definition": "表示电子在核外某处出现可能性的量，通常记为P。",
+      "importance": "掌握",
+      "examples": [
+        "电子在某处出现的概率P=90%时的空间用于绘制电子云轮廓图"
+      ],
+      "aliases": [
+        "probability"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt15",
+      "name": "概率密度",
+      "definition": "单位体积内电子出现的概率，反映电子在空间分布的稠密程度。",
+      "importance": "重要",
+      "examples": [
+        "用P表示电子在某处出现的概率，V表示该处体积，则P/V称为概率密度"
+      ],
+      "aliases": [
+        "probability density",
+        "ρ"
+      ],
+      "formula": "ρ = P / V"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt16",
+      "name": "电子云",
+      "definition": "处于一定空间运动状态的电子在原子核外空间的概率密度分布的形象化描述，因其看起来像云雾而得名。",
+      "importance": "重要",
+      "examples": [
+        "氢原子1s电子的概率密度分布图中的小点",
+        "1s、2s、3s电子云轮廓图"
+      ],
+      "aliases": [
+        "electron cloud"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt17",
+      "name": "电子云轮廓图",
+      "definition": "通过圈出电子在核外空间出现概率达到某一百分比（如90%）的区域，来表示电子云轮廓形状的简化图示。",
+      "importance": "掌握",
+      "examples": [
+        "1s、2s、3s、4s电子云轮廓图",
+        "2p电子云的哑铃状轮廓图"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt18",
+      "name": "原子轨道",
+      "definition": "量子力学中电子在原子核外的一种空间运动状态，通常用轨道的形状和取向（即电子云轮廓图）来表示。",
+      "importance": "重要",
+      "examples": [
+        "1s轨道是球形",
+        "2p轨道有p_x、p_y、p_z三个相互垂直的哑铃形轨道"
+      ],
+      "aliases": [
+        "atomic orbital"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt19",
+      "name": "s轨道和p轨道的形状及取向",
+      "definition": "s轨道的电子云轮廓图为球形，半径随能层升高而增大；p轨道电子云为哑铃状，每个能层有三个相互垂直、沿x、y、z方向取向的p轨道。",
+      "importance": "掌握",
+      "examples": [
+        "2s、3s、4s电子云都是球形，但半径不同",
+        "2p_x、2p_y、2p_z三个互相垂直的哑铃形轨道"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt20",
+      "name": "电子自旋",
+      "definition": "电子除空间运动状态外的一种内在属性，在空间有两种取向（常记为↑和↓），称为自旋相反。",
+      "importance": "重要",
+      "examples": [
+        "用上下箭头表示自旋相反的电子",
+        "自旋帮助解释光谱双线、磁性等现象"
+      ],
+      "aliases": [
+        "spin"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt21",
+      "name": "泡利原理",
+      "definition": "在一个原子轨道里最多只能容纳2个电子，而且这2个电子的自旋必须相反，也称泡利不相容原理。",
+      "importance": "重要",
+      "examples": [
+        "1s轨道最多容纳2个电子，且必须自旋相反"
+      ],
+      "aliases": [
+        "泡利不相容原理",
+        "Pauli exclusion principle"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt22",
+      "name": "轨道表示式",
+      "definition": "用方框表示原子轨道，用箭头表示电子及自旋状态，用方框的排列表示能量高低和简并关系的一种电子排布图示方式。",
+      "importance": "掌握",
+      "examples": [
+        "氢的基态原子轨道表示式只有一个1s方框内有一个箭头",
+        "氧原子最外层2p轨道表示式中有两个自旋平行的单电子"
+      ],
+      "aliases": [
+        "电子排布图"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt23",
+      "name": "简并轨道",
+      "definition": "具有相同能量的一组原子轨道，例如同一能级中的多个p轨道或d轨道。",
+      "importance": "掌握",
+      "examples": [
+        "三个2p轨道是简并轨道",
+        "五个3d轨道是简并轨道"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt24",
+      "name": "洪特规则",
+      "definition": "基态原子中，电子填入简并轨道时，总是先单独分占各轨道且自旋平行，之后才成对填入同一轨道的经验规则。",
+      "importance": "重要",
+      "examples": [
+        "基态氧原子2p轨道中，先出现3个自旋平行的单电子，再成对"
+      ],
+      "aliases": [
+        "Hund rule"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt25",
+      "name": "能量最低原理",
+      "definition": "在构建基态原子电子排布时，电子将尽可能占据能量最低的原子轨道，使整个原子能量达到最低的一条原理。",
+      "importance": "重要",
+      "examples": [
+        "主族元素基态原子遵循先填能量低的能级",
+        "副族元素中有时让1~2个电子占据稍高能能级以降低电子排斥能"
+      ],
+      "aliases": [
+        "minimum energy principle"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt26",
+      "name": "主族元素与副族元素基态电子排布差异",
+      "definition": "主族元素基态电子排布主要由能量最低原理简单确定；副族元素由于相邻能级能量接近，有时通过让少数电子占据高能级以降低电子排斥能，从而整体能量最低，导致排布偏离简单构造原理。",
+      "importance": "了解",
+      "examples": [
+        "Cr的基态为3d⁵4s¹而非3d⁴4s²",
+        "Cu的基态为3d¹⁰4s¹"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt27",
+      "name": "元素周期律的微观基础",
+      "definition": "对原子结构的认识为元素周期律提供的理论根据，特别是能层、能级和电子排布决定了原子半径、电离能、电负性等性质的周期性变化。",
+      "importance": "掌握",
+      "examples": [
+        "随核外电子填入方式变化，原子半径、电离能呈周期性变化"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt28",
+      "name": "元素周期系",
+      "definition": "按元素原子核电荷数递增排列得到的元素序列，体现出元素性质的周期性变化。",
+      "importance": "重要",
+      "aliases": [
+        "periodic system of elements"
+      ],
+      "examples": [
+        "从氢到Og的所有元素，按核电荷数顺序构成一个唯一的元素周期系。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt29",
+      "name": "构造原理与核外电子排布",
+      "definition": "按能量由低到高依次填充各能级与亚层，使原子处于能量最低状态的规则，用以确定核外电子排布，并解释周期表结构。",
+      "importance": "重要",
+      "aliases": [
+        "构造原理",
+        "Aufbau原理"
+      ],
+      "examples": [
+        "第一周期从1s¹开始，以1s²结束；其余周期从ns能级开始，以np能级结束。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt30",
+      "name": "周期与族",
+      "definition": "周期表中横行称为周期，表示电子层数的递增；纵列称为族，同族元素价层电子数相同（或相近），化学性质相似。",
+      "importance": "重要",
+      "examples": [
+        "第一周期含2种元素；第二、三周期各8种；第四、五周期各18种；第六周期32种。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt31",
+      "name": "主族元素与副族元素（过渡元素）",
+      "definition": "主族元素一般为s区和p区元素，价电子主要在最外层ns与np；副族（过渡）元素主要为d区元素，价电子分布在(n−1)d和ns等轨道，常被称为过渡元素。",
+      "importance": "重要",
+      "aliases": [
+        "主族元素",
+        "副族元素",
+        "过渡元素"
+      ],
+      "examples": [
+        "Na、Mg、Al为主族元素；Fe、Cu、Zn等为过渡元素。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt32",
+      "name": "元素周期表的分区（s区、p区、d区、f区、ds区）",
+      "definition": "按照构造原理最后填入电子的能级类型，将元素周期表划分为不同分区：s区、p区、d区、f区及特殊的ds区。",
+      "importance": "掌握",
+      "examples": [
+        "除ds区外，各区名称来自最后填入电子的能级的符号，如s区元素最后填入s轨道。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt33",
+      "name": "非金属三角区与类金属",
+      "definition": "元素周期表中非金属主要集中在右上角的三角区域，而处于金属与非金属分界线附近的元素既有金属性又有非金属性，常称为半金属或类金属。",
+      "importance": "掌握",
+      "aliases": [
+        "非金属三角区",
+        "半金属",
+        "类金属"
+      ],
+      "examples": [
+        "锗、锑等位于非金属三角区边界，电负性约在1.8左右。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt34",
+      "name": "原子半径及其周期性变化",
+      "definition": "原子半径是表征原子大小的物理量，受电子能层数和核电荷数两个相反因素共同影响，随原子序数递增呈现周期性的递变。",
+      "importance": "重要",
+      "examples": [
+        "同一周期从左到右，一般原子半径减小；同族从上到下，原子半径增大。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt35",
+      "name": "第一电离能及其周期性变化",
+      "definition": "气态基态原子失去一个电子转化为气态基态正离子所需要的最低能量叫做第一电离能，它随核电荷数改变呈现明显的周期性规律。",
+      "importance": "重要",
+      "aliases": [
+        "第一电离能"
+      ],
+      "examples": [
+        "每个周期的第一种元素（氢和碱金属）电离能最小，最后一种元素（稀有气体）电离能最大；同族由上到下第一电离能变小。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt36",
+      "name": "电负性及其周期性变化",
+      "definition": "描述不同元素的原子对键合电子吸引力大小的相对量，电负性越大，对键合电子的吸引力越大，同周期自左向右逐渐增大，同族自上而下逐渐减小。",
+      "importance": "重要",
+      "aliases": [
+        "electronegativity"
+      ],
+      "examples": [
+        "以氟的电负性4.0和锂的电负性1.0为相对标准；金属元素电负性一般小于1.8，非金属元素一般大于1.8。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt37",
+      "name": "金属性与非金属性强弱",
+      "definition": "元素表现金属特性或非金属特性的强弱，与其电负性、第一电离能等量有关，金属一般电负性小、电离能小，非金属相反。",
+      "importance": "重要",
+      "examples": [
+        "金属性：Na > Mg > Al；电负性：Na < Mg < Al；金属的还原性通常随金属性增强而增强。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt38",
+      "name": "价层与价电子排布",
+      "definition": "原子最外层电子所在的能级称为价层，其中参与化学键形成的电子称为价电子，价层电子的排布决定元素的价态和化学性质。",
+      "importance": "重要",
+      "examples": [
+        "铋原子的价层电子排布为6s²6p³；稀有气体最外层电子数多为8，形成相对稳定结构。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt39",
+      "name": "主族与副族价层电子排布特征",
+      "definition": "主族元素的价电子主要分布在最外层的ns和np轨道；副族（过渡）元素除最外层ns外，还有(n−1)d或其他内层轨道电子参与成键，价层电子数与族序存在一定对应关系。",
+      "importance": "掌握",
+      "examples": [
+        "过渡元素的价层电子排布通式常写成(n−1)d^m ns²或相近形式。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt40",
+      "name": "键合电子与化学键",
+      "definition": "原子中用于形成化学键的电子称为键合电子，不同原子对键合电子吸引力的差异可用电负性表示，从而影响化学键的性质。",
+      "importance": "掌握",
+      "examples": [
+        "共价化合物中，电负性大的成键元素通常表现为负价。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt41",
+      "name": "稀有气体及惰性气体稳定结构",
+      "definition": "稀有气体原子最外层电子数一般为8，曾被视为化学惰性并形成惰性气体稳定结构观念，但后来发现稀有气体也能形成多种化合物。",
+      "importance": "掌握",
+      "aliases": [
+        "惰性气体",
+        "稀有气体稳定结构"
+      ],
+      "examples": [
+        "XeF₂、XeF₄、XeF₆等稀有气体化合物表明“惰性气体不惰”。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt42",
+      "name": "元素周期律的科学价值",
+      "definition": "元素周期律奠定了元素分类的科学基础，能系统预测未知元素及其性质，指导新元素和新化合物的发现，对化学理论发展具有重要意义。",
+      "importance": "了解",
+      "examples": [
+        "门捷列夫凭周期律预言未知元素；周期表结构指导新元素如Og的合成与定位。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt43",
+      "name": "共用电子对",
+      "definition": "由两个原子共同占有的电子对，是形成共价键的电子本质。",
+      "importance": "掌握",
+      "aliases": [
+        "shared electron pair"
+      ],
+      "examples": [
+        "H2 中两个氢原子共用的一对电子",
+        "HCl 中氢和氯共用的一对电子"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt44",
+      "name": "共价键的饱和性",
+      "definition": "在给定原子轨道和价电子数限制下，每个原子只能形成一定数目的共价键，不能无限增加，表现为像 H3、H2Cl、Cl3 等分子不能存在。",
+      "importance": "掌握",
+      "examples": [
+        "按定义只能有 H2、HCl、Cl2 等，不可能有 H3、H2Cl 和 Cl3 等"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt45",
+      "name": "原子轨道重叠形成共价键",
+      "definition": "原子轨道在两个原子核间发生重叠，核间电子出现的概率增大，使带负电的电子像“桥梁”把带正电的两个原子核黏结在一起，从而形成共价键。",
+      "importance": "重要",
+      "examples": [
+        "氢原子 1s 轨道重叠形成 H2 中的共价键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt46",
+      "name": "σ键",
+      "definition": "由成键原子轨道沿键轴方向“头碰头”重叠形成的共价键，是有机化合物中单键的基本形式，允许绕键轴旋转。",
+      "importance": "重要",
+      "aliases": [
+        "σ bond"
+      ],
+      "examples": [
+        "H2 中的 H—H 键",
+        "HCl 中的 H—Cl 键",
+        "Cl2 中的 Cl—Cl 键",
+        "所有共价单键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt47",
+      "name": "π键",
+      "definition": "由未杂化p轨道“肩并肩”侧面重叠形成的共价键，常与σ键共同构成双键或三键，连接的原子或原子团不能绕键轴自由旋转。",
+      "importance": "重要",
+      "aliases": [
+        "π bond"
+      ],
+      "examples": [
+        "乙烯分子中的 C=C 键中的 π 键",
+        "乙炔分子中的两个 π 键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt48",
+      "name": "s-s σ键",
+      "definition": "由两个原子的 s 轨道“头碰头”重叠形成的 σ 键。",
+      "importance": "了解",
+      "examples": [
+        "H2 中由两个氢原子的 1s 轨道形成的 σ 键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt49",
+      "name": "s-p σ键",
+      "definition": "由一个原子的 s 轨道与另一个原子的 p 轨道“头碰头”重叠形成的 σ 键。",
+      "importance": "了解",
+      "examples": [
+        "HCl 中 1s 轨道与 3p 轨道重叠形成的 H—Cl 键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt50",
+      "name": "p-p σ键",
+      "definition": "由两个原子的 p 轨道“头碰头”重叠形成的 σ 键。",
+      "importance": "了解",
+      "examples": [
+        "Cl2 中两个氯原子的 3p 轨道重叠形成的 Cl—Cl 键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt51",
+      "name": "σ键的轴对称性",
+      "definition": "σ 键以形成化学键的两原子核的连线为轴旋转时，电子云图形保持不变，表现为轴对称。",
+      "importance": "掌握",
+      "examples": [
+        "H2、HCl、Cl2 中共价键的电子云图形都是轴对称的"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt52",
+      "name": "π键的镜面对称性",
+      "definition": "π 键的电子云由两块互为镜像的部分组成，整体相对于通过两个核的平面表现出镜面对称。",
+      "importance": "掌握",
+      "examples": [
+        "图2-3 中示意的 p-p π 键电子云分布"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt53",
+      "name": "σ键与π键强度比较",
+      "definition": "在同一对原子之间，π 键一般不如 σ 键牢固，更易断裂，因此含 π 键的分子化学性质不同于仅含 σ 键的分子。",
+      "importance": "掌握",
+      "examples": [
+        "乙烯、乙炔分子中的 π 键不如 σ 键牢固，因而其性质不同于只有 σ 键的乙烷"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt54",
+      "name": "共价键的类型构成规则",
+      "definition": "共价单键是 σ 键；共价双键中有一个 σ 键、一个 π 键；共价三键由一个 σ 键和两个 π 键构成。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt55",
+      "name": "电负性差与键类型",
+      "definition": "当元素的电负性相差很大，化学反应形成的电子对不会被共用，形成的是离子键；共价键则是电负性相差不大的原子之间形成的化学键。",
+      "importance": "重要",
+      "examples": [
+        "NaCl 中形成离子键，HCl、CO 中形成共价键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt56",
+      "name": "键参数",
+      "definition": "描述共价键特性的定量参数，主要包括键能、键长和键角。",
+      "importance": "重要",
+      "aliases": [
+        "bond parameters"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt57",
+      "name": "键能",
+      "definition": "气态分子中 1 mol 化学键解离成气态原子所吸收的能量，通常指 298.15 K、101 kPa 条件下的标准值，用来衡量共价键的强弱。",
+      "importance": "重要",
+      "aliases": [
+        "bond energy"
+      ],
+      "unit": "kJ·mol^-1",
+      "examples": [
+        "H—H 键能 436.0 kJ·mol^-1",
+        "C≡C 键能 812 kJ·mol^-1"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt58",
+      "name": "平均键能",
+      "definition": "同种化学键在不同分子或一个分子内多次断裂所需能量的平均值，用作该键键能的代表值。",
+      "importance": "了解",
+      "examples": [
+        "CH4 中 4 个 C—H 键能不同，其 C—H 键能取平均值；表2-1 中的 C—H 键能为更多分子平均值"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt59",
+      "name": "键能与反应热效应估算",
+      "definition": "通过查表获得反应物和生成物中各化学键的键能，比较断键吸收的能量与成键释放的能量，可以判断反应是吸热还是放热并估算其热效应。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt60",
+      "name": "键长",
+      "definition": "构成化学键的两个原子在分子中处于平衡位置时的核间距离，是衡量共价键强弱的重要参数之一。",
+      "importance": "重要",
+      "aliases": [
+        "bond length"
+      ],
+      "unit": "pm",
+      "examples": [
+        "C—C 键长 154 pm",
+        "C=C 键长 133 pm",
+        "C≡C 键长 120 pm",
+        "H₂：74 pm",
+        "Cl₂：198 pm"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt61",
+      "name": "键长与键能的关系",
+      "definition": "在同一对原子之间，键长越小，键能越大，化学键越牢固。",
+      "importance": "掌握",
+      "examples": [
+        "C—C、C=C、C≡C 的键长依次为 154、133、120 pm，键能依次为 347.7、615、812 kJ·mol^-1"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt62",
+      "name": "键角",
+      "definition": "在多原子分子中，两个相邻共价键之间的夹角称为键角，是描述分子空间结构的重要参数。",
+      "importance": "重要",
+      "aliases": [
+        "bond angle"
+      ],
+      "examples": [
+        "CO2 中 O=C=O 的键角为 180°，为直线形分子；H2O 中 H—O—H 键角为 105°，为 V 形分子",
+        "H₂O：105°",
+        "NH₃：107°",
+        "CH₄：109°28′",
+        "CO₂：180°"
+      ],
+      "unit": "度(°)"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt63",
+      "name": "共价键的方向性",
+      "definition": "多原子分子的键角一定，说明共价键在空间形成时具有特定方向，这是决定分子空间结构的重要因素。",
+      "importance": "重要",
+      "examples": [
+        "H2O 中固定的 105° 键角导致分子为 V 形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt64",
+      "name": "键长和键角的测定",
+      "definition": "键长和键角的数值可以通过晶体的 X 射线衍射实验获得。",
+      "importance": "了解",
+      "examples": [
+        "利用 X 射线衍射精确测定晶体中原子核间的距离和夹角"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt65",
+      "name": "红外光谱",
+      "definition": "有机化合物吸收与其化学键或官能团振动频率相同的红外线，通过红外光谱仪记录得到的谱图，可提供分子中所含化学键和官能团的信息。",
+      "importance": "重要",
+      "examples": [
+        "红外光谱图上通过吸收峰识别O–H、C–H、C–O振动",
+        "根据C–O、C–H、O–H吸收峰判断未知物A含羟基。"
+      ],
+      "aliases": [
+        "红外吸收光谱",
+        "IR",
+        "红外光谱图"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt66",
+      "name": "红外光谱仪",
+      "definition": "用于测定物质红外光谱的仪器，使红外线透过样品并记录吸收峰以分析分子结构。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt67",
+      "name": "化学键振动",
+      "definition": "分子中原子之间的化学键不是静止的，而是围绕平衡位置不断振动的运动形式，不同键及振动方式对应不同振动频率。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt68",
+      "name": "红外吸收峰",
+      "definition": "当分子吸收与其某些化学键振动频率相同的红外线时，在红外光谱图上出现的吸收信号峰，对应特定化学键或振动方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt69",
+      "name": "质谱法",
+      "definition": "使分子在质谱仪中电离成带正电的分子离子和碎片离子，根据离子的质荷比和相对丰度测定相对分子质量并推断结构的方法。",
+      "importance": "重要",
+      "aliases": [
+        "质谱分析"
+      ],
+      "examples": [
+        "根据未知物A质谱图中分子离子峰 m/z=46 判断相对分子质量为46。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt70",
+      "name": "质谱仪",
+      "definition": "利用电场加速和磁场分离不同质荷比离子的仪器，通过记录离子信号峰获得质谱图，用于测定分子相对分子质量和结构信息。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt71",
+      "name": "质荷比 m/z",
+      "definition": "带电粒子的相对质量m与其电荷数z之比，是质谱图横坐标的物理量，用于区分不同离子。",
+      "importance": "掌握",
+      "formula": "m/z"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt72",
+      "name": "相对丰度",
+      "definition": "质谱图中反映不同离子信号强弱的量，与离子浓度成正比，常作为纵坐标表示各峰的相对高低。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt73",
+      "name": "分子离子峰",
+      "definition": "质谱图中由样品分子失去一个电子形成的分子离子所对应的信号峰，其质荷比一般等于分子相对分子质量。",
+      "importance": "掌握",
+      "examples": [
+        "未知物A质谱图最右侧分子离子峰的 m/z=46。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt74",
+      "name": "碎片离子峰",
+      "definition": "有机分子在质谱仪中裂解产生的带电碎片离子所对应的信号峰，可为分子结构推断提供信息。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt75",
+      "name": "分子空间结构类型",
+      "definition": "多原子分子按其原子几何排布可归类的几种典型形状，如直线形、V形、平面三角形、三角锥形、四面体形等。",
+      "importance": "重要",
+      "examples": [
+        "三原子分子: 直线形、V形",
+        "四原子分子: 平面三角形、三角锥形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt76",
+      "name": "直线形分子结构",
+      "definition": "所有原子位于同一直线上的分子空间结构，其特征键角为180°。",
+      "importance": "掌握",
+      "examples": [
+        "CO₂",
+        "sp杂化中心原子的某些分子"
+      ],
+      "formula": "键角 ≈ 180°"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt77",
+      "name": "V形（角形）分子结构",
+      "definition": "三个原子不共线，中心原子与两个外侧原子形成小于180°的键角，整体呈“V”字形的空间结构。",
+      "importance": "掌握",
+      "examples": [
+        "H₂O，键角105°"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt78",
+      "name": "平面三角形分子结构",
+      "definition": "中心原子和三个外围原子共处一个平面，三键之间键角约为120°的空间结构。",
+      "importance": "掌握",
+      "examples": [
+        "CH₂O（甲醛），键角约120°"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt79",
+      "name": "三角锥形分子结构",
+      "definition": "三个外围原子形成的三角形为底面，中心原子在三角形的一侧形成类锥形的三维结构，键角略小于109.5°。",
+      "importance": "掌握",
+      "examples": [
+        "NH₃，键角107°"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt80",
+      "name": "正四面体形分子结构",
+      "definition": "四个外围原子位于正四面体四个顶角，中心原子在正四面体中心，各键角约为109°28′的空间结构。",
+      "importance": "重要",
+      "examples": [
+        "CH₄"
+      ],
+      "formula": "键角 ≈ 109°28′"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt81",
+      "name": "分子结构与稳定性",
+      "definition": "分子的空间结构与其能量和稳定程度相关，不同构型的稳定性可以有差别。",
+      "importance": "掌握",
+      "examples": [
+        "S₈皇冠式比翻转结构更稳定",
+        "椅式 C₆H₁₂ 比船式 C₆H₁₂ 稳定"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt82",
+      "name": "椅式构象",
+      "definition": "类似椅子形状的碳环分子三维构象，相对于船式构象能量较低、更稳定。",
+      "importance": "了解",
+      "examples": [
+        "椅式 C₆H₁₂"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt83",
+      "name": "船式构象",
+      "definition": "类似船形的碳环分子三维构象，相对于椅式构象稳定性较差。",
+      "importance": "了解",
+      "examples": [
+        "船式 C₆H₁₂"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt84",
+      "name": "价层电子对互斥模型",
+      "definition": "认为分子的空间结构是由中心原子周围价层电子对（键电子对和孤电子对）之间相互排斥达到能量最低排列所决定的一种简单结构理论，用于预测分子空间结构。",
+      "importance": "重要",
+      "aliases": [
+        "VSEPR模型",
+        "价层电子对互斥理论"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt85",
+      "name": "价层电子对",
+      "definition": "在VSEPR模型中，指中心原子周围参与σ键的键电子对以及中心原子上的孤电子对，多重键只计其中的σ键电子对。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt86",
+      "name": "σ键电子对数",
+      "definition": "分子中中心原子与周围原子形成的σ键所包含的电子对数，可由化学式和键数确定，用于VSEPR分析。",
+      "importance": "掌握",
+      "examples": [
+        "H₂O中O有2个σ键电子对",
+        "NH₃中N有3个σ键电子对",
+        "SO₄²⁻有4个σ键电子对"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt87",
+      "name": "孤电子对",
+      "definition": "处于原子价层中不参与成键、成对存在的电子对，在VSEPR模型中也计入价层电子对并影响分子空间结构。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt88",
+      "name": "孤电子对数的计算公式",
+      "definition": "用于计算中心原子上孤电子对数的经验公式：中心原子上的孤电子对数 = ½(a − x b)。",
+      "importance": "重要",
+      "formula": "孤电子对数 = \\frac{1}{2}(a - x b)",
+      "examples": [
+        "SO₂中S的孤电子对数为1",
+        "NH₄⁺中N的孤电子对数为0",
+        "CO₃²⁻中C的孤电子对数为0"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt89",
+      "name": "参数a（价电子数）",
+      "definition": "在孤电子对数公式中，a为中心原子的价电子数（主族元素等于最外层电子数），阳离子要减去电荷数，阴离子要加上电荷数绝对值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt90",
+      "name": "参数x（配位原子数）",
+      "definition": "在孤电子对数公式中，x为与中心原子结合的原子数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt91",
+      "name": "参数b（可接受电子数）",
+      "definition": "在孤电子对数公式中，b为与中心原子结合的原子最多能接受的电子数，氢为1，其他原子为“8减去该原子的价电子数”。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt92",
+      "name": "价键理论",
+      "definition": "用原子轨道重叠形成共价键来解释化学键及分子结构的一类理论，杂化轨道理论属于价键理论的组成部分。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt93",
+      "name": "杂化轨道理论",
+      "definition": "鲍林为解释分子空间结构提出的价键理论，认为原子的若干价层原子轨道可以发生混杂，形成能量相同、方向特定的杂化轨道，与其它原子轨道重叠形成共价键，以解释实际的键角和分子形状。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt94",
+      "name": "sp³杂化轨道",
+      "definition": "由一个s轨道和三个p轨道混杂形成的四个能量相同、指向正四面体四个顶角的轨道，形成的键角约为109°28′。",
+      "importance": "重要",
+      "examples": [
+        "CH₄中的C",
+        "H₂O中的O",
+        "NH₃中的N"
+      ],
+      "aliases": [
+        "sp3杂化"
+      ],
+      "formula": "1 s + 3 p → 4 sp³"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt95",
+      "name": "sp²杂化轨道",
+      "definition": "由一个s轨道和两个p轨道混杂形成的三个能量相同并在同一平面内呈120°分布的杂化轨道，通常导致平面三角形结构。",
+      "importance": "掌握",
+      "aliases": [
+        "sp2杂化"
+      ],
+      "formula": "1 s + 2 p → 3 sp²"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt96",
+      "name": "sp杂化轨道",
+      "definition": "由一个s轨道和一个p轨道混杂形成的两个能量相同、彼此成180°的直线形杂化轨道，通常导致直线形结构。",
+      "importance": "掌握",
+      "formula": "1 s + 1 p → 2 sp"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt97",
+      "name": "氨分子结构",
+      "definition": "氨分子（NH₃）为四原子分子，中心N为sp³杂化，三个N–H键和一个孤电子对组成类四面体电子对结构，分子呈三角锥形，键角107°。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt98",
+      "name": "三原子分子空间结构",
+      "definition": "由三个原子组成的分子，其空间结构常见有直线形和V形两种。",
+      "importance": "掌握",
+      "examples": [
+        "CO₂为直线形",
+        "H₂O为V形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt99",
+      "name": "四原子分子空间结构",
+      "definition": "由四个原子组成的分子，其常见空间结构为平面三角形和三角锥形。",
+      "importance": "掌握",
+      "examples": [
+        "CH₂O为平面三角形",
+        "NH₃为三角锥形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt100",
+      "name": "极性分子",
+      "definition": "分子内正电中心和负电中心不重合，使分子的某一部分呈正电性(δ+)，另一部分呈负电性(δ−)的分子。",
+      "importance": "重要",
+      "examples": [
+        "H2O",
+        "NH3",
+        "HCl",
+        "O3"
+      ],
+      "aliases": [
+        "polar molecule"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt101",
+      "name": "非极性分子",
+      "definition": "分子内正电中心和负电中心重合，整体不表现出电性分布差异的分子，可以只含非极性键，也可以含极性键但键的极性矢量和为零。",
+      "importance": "重要",
+      "examples": [
+        "CO2",
+        "CCl4",
+        "CH4",
+        "O2"
+      ],
+      "aliases": [
+        "nonpolar molecule"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt102",
+      "name": "分子偶极矩与分子极性的关系",
+      "definition": "分子中各键极性的合成效果可以用偶极矩表示，当合成偶极矩不为零时分子呈极性，合成偶极矩为零时分子为非极性。",
+      "importance": "掌握",
+      "examples": [
+        "非极性分子中可以含极性键，但各个键的极性的向量和必须等于零。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt103",
+      "name": "羧酸的酸性与pKa",
+      "definition": "羧酸分子中的羧基(—COOH)可以电离出H+而呈酸性，其酸强弱常用pKa表示，pKa越小，酸性越强。",
+      "importance": "掌握",
+      "examples": [
+        "表2-6中甲酸、乙酸、丙酸及氯乙酸、二氯乙酸、三氯乙酸、三氟乙酸的pKa"
+      ],
+      "formula": "pKa 越小 → 酸性越强"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt104",
+      "name": "诱导效应对羧酸酸性的影响",
+      "definition": "羧酸分子中靠近羧基的吸电子取代基（如Cl、F）通过诱导效应增强羧基电离倾向，使pKa减小、酸性增强；吸电子能力越强或数目越多，增强酸性的作用越明显。",
+      "importance": "掌握",
+      "examples": [
+        "甲酸与乙酸、丙酸酸性比较",
+        "氯乙酸、二氯乙酸、三氯乙酸、三氟乙酸酸性增强趋势"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt105",
+      "name": "分子结构修饰",
+      "definition": "在不改变分子主体骨架、保持分子的基本结构不变的前提下，仅改变分子结构中的某些基团，从而得到性质不同的新分子的过程。",
+      "importance": "掌握",
+      "examples": [
+        "用三个氯原子取代蔗糖分子中的三个羟基得到三氯蔗糖",
+        "对布洛芬分子进行成酯修饰以减弱对胃肠道的刺激"
+      ],
+      "aliases": [
+        "分子结构修饰与性质调控"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt106",
+      "name": "分子内氢键与分子间氢键",
+      "definition": "氢键既可以发生在同一分子内部的供氢基团和受氢原子之间(分子内氢键)，也可以发生在不同分子之间(分子间氢键)，两者对物质的熔沸点和结构有不同影响。",
+      "importance": "掌握",
+      "examples": [
+        "邻羟基苯甲醛只能形成分子内氢键，因而分子间不存在氢键",
+        "对羟基苯甲醛不能形成分子内氢键，只能在分子间形成氢键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt107",
+      "name": "氢键对物质性质的影响",
+      "definition": "氢键的存在显著增强分子间作用力，使物质具有较高的熔点、沸点、较大的相对分子质量测定值等异常性质，并影响物质的溶解性和稳定性。",
+      "importance": "重要",
+      "examples": [
+        "水的熔、沸点较高",
+        "接近沸点水蒸气的相对分子质量测定值大于按H2O计算值",
+        "水比硫化氢稳定",
+        "邻羟基苯甲酸与对羟基苯甲酸沸点差异"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt108",
+      "name": "相似相溶规律",
+      "definition": "从分子结构角度总结出的经验规律：非极性溶质一般能溶于非极性溶剂，极性溶质一般能溶于极性溶剂；溶质与溶剂在极性或分子结构上越相似，溶解性越好。",
+      "importance": "重要",
+      "examples": [
+        "蔗糖、氨易溶于水，难溶于四氯化碳；萘和碘易溶于四氯化碳，难溶于水。",
+        "乙醇与水互溶，而戊醇在水中的溶解度明显减小。"
+      ],
+      "aliases": [
+        "like dissolves like"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt109",
+      "name": "氢键与溶解性的关系",
+      "definition": "当溶质和溶剂之间能形成氢键时，氢键作用越强，溶解性通常越好；对于不能与水形成氢键的溶质，其在水中的溶解度较小。",
+      "importance": "掌握",
+      "examples": [
+        "乙醇与水之间的氢键使其互溶",
+        "无氢键相互作用的溶质在有氢键的水中的溶解度比较小。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt110",
+      "name": "表面活性剂",
+      "definition": "能显著降低水等液体表面张力、具有去污、乳化、起泡等作用的一类物质，肥皂和大多数合成洗涤剂都含有表面活性剂，合成洗涤剂多为阴离子表面活性剂加助剂制成。",
+      "importance": "掌握",
+      "examples": [
+        "烷基磺酸根离子",
+        "肥皂和洗涤剂中的表面活性剂",
+        "肥皂中的高级脂肪酸盐",
+        "阴离子表面活性剂"
+      ],
+      "aliases": [
+        "surfactant"
+      ],
+      "formula": "亲水端(极性) — 疏水端(非极性)"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt111",
+      "name": "胶束",
+      "definition": "表面活性剂在水中自发聚集形成的聚集体，其亲水基团朝向外部水相，疏水基团朝向内腔，可将疏水性污垢包裹其中。",
+      "importance": "掌握",
+      "examples": [
+        "肥皂和洗涤剂通过胶束包裹油渍等疏水污垢实现去污。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt112",
+      "name": "单分子膜与双分子膜",
+      "definition": "表面活性剂在水表面可以排布成疏水基团朝向空气的单分子层（单分子膜），人体细胞和细胞器的膜则是由大量两性分子头向外尾向内排列形成的双分子膜。",
+      "importance": "掌握",
+      "examples": [
+        "水表面的表面活性剂单分子层",
+        "细胞膜的双分子膜结构"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt113",
+      "name": "细胞膜双分子膜的排列原因",
+      "definition": "细胞膜两侧都是水溶液，水是极性分子，而构成膜的两性分子具有极性头基和非极性尾基，因此双分子膜以头向外、尾向内排列以获得能量更低的稳定结构。",
+      "importance": "了解",
+      "examples": [
+        "图2-20所示细胞和细胞器的双分子膜示意"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt114",
+      "name": "手性分子",
+      "definition": "组成和原子连接方式相同，但在三维空间结构上互为镜像且不能重合的一对分子称为手性异构体（对映异构体），具有这种性质的分子称为手性分子。",
+      "importance": "重要",
+      "examples": [
+        "图2-32中一对互为镜像的分子类似于一双手",
+        "酒石酸盐的左右型晶体所对应的分子"
+      ],
+      "aliases": [
+        "手性",
+        "chirality",
+        "手性分子与手性异构体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt115",
+      "name": "手性异构体的药理学意义",
+      "definition": "手性药物中，不同手性异构体在生物体内的作用可能截然不同，一个可能有效，另一个可能无效甚至有害，因此开发和使用单一手性的药物可以提高疗效并降低毒副作用。",
+      "importance": "掌握",
+      "examples": [
+        "现今使用的药物中手性药物超过50%",
+        "无效或不良手性异构体会增加代谢负担和毒副作用"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt116",
+      "name": "手性合成与手性催化剂",
+      "definition": "通过使用手性催化剂，只得到或主要得到一种手性分子的有机合成方法称为手性合成。手性催化剂对不同手性产物表现出选择性催化作用。",
+      "importance": "掌握",
+      "examples": [
+        "2001年诺贝尔化学奖授予三位用手性催化剂生产手性药物的化学家。"
+      ],
+      "aliases": [
+        "不对称合成"
+      ],
+      "formula": "手性催化剂 + 前体 → 主要得到某一手性构型产物"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt117",
+      "name": "光学活性与分子不对称性",
+      "definition": "能使偏振光的偏振面旋转的物质具有光学活性，其根源在于分子或晶体结构的不对称性；生物体往往只合成和利用其中一种取向的手性分子。",
+      "importance": "掌握",
+      "examples": [
+        "巴斯德分离左型和右型酒石酸盐晶体，发现各自具有光学活性。",
+        "霉菌只利用两种晶体之一导致溶液光学活性变化。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt118",
+      "name": "物质的聚集状态",
+      "definition": "物质中微观粒子在空间中的聚集和排列方式，包括气态、液态、固态以及晶态、非晶态、塑晶态、液晶态、等离子态等多种状态。",
+      "importance": "重要",
+      "aliases": [
+        "物质状态",
+        "聚集状态"
+      ],
+      "examples": [
+        "晶态",
+        "非晶态",
+        "塑晶态",
+        "液晶态",
+        "等离子体"
+      ],
+      "formula": ""
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt119",
+      "name": "物质三态模型",
+      "definition": "将物质状态简化为固态、液态和气态三种，并认为三态间的相互转化只涉及分子间距离的变化，固态分子只能振动，气态分子能自由移动，液态介乎二者之间的模型。",
+      "importance": "了解",
+      "aliases": [
+        "三态模型",
+        "传统物质三态模型"
+      ],
+      "examples": [
+        "冰-水-水蒸气之间的转化示意图3-1"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt120",
+      "name": "晶态",
+      "definition": "固体中原子或其它微观粒子在三维空间中呈周期性有序排列、具有自范性和物理性质各向异性的聚集状态。",
+      "importance": "重要",
+      "aliases": [
+        "晶体状态"
+      ],
+      "examples": [
+        "氯化钠晶体",
+        "金属铜晶体",
+        "水晶",
+        "硫酸铜晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt121",
+      "name": "非晶态",
+      "definition": "固体中粒子排列相对无序、不能自发呈现多面体外形、物理性质不表现各向异性的聚集状态。",
+      "importance": "重要",
+      "aliases": [
+        "玻璃态",
+        "无定形体",
+        "非晶体"
+      ],
+      "examples": [
+        "玻璃",
+        "炭黑",
+        "石英玻璃"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt122",
+      "name": "等离子体",
+      "definition": "由电子、阳离子和电中性粒子组成、整体上呈电中性的物质聚集体，属于一种特殊的气态物质，具有良好的导电性和流动性。",
+      "importance": "重要",
+      "aliases": [
+        "等离子态"
+      ],
+      "examples": [
+        "日光灯和霓虹灯灯管中的气体",
+        "蜡烛火焰",
+        "极光和雷电中的物质"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt123",
+      "name": "液晶",
+      "definition": "介于液态和晶态之间的物质状态，既具有液体的流动性、黏度和形变性，又具有晶体的某些物理性质并表现各向异性。",
+      "importance": "重要",
+      "aliases": [
+        "热致液晶",
+        "溶致液晶"
+      ],
+      "examples": [
+        "苯甲酸胆甾酯在熔点与澄清点之间的状态",
+        "手机和电视中的液晶材料"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt124",
+      "name": "热致液晶",
+      "definition": "通过加热纯物质，在熔点与澄清点之间形成的液晶状态。",
+      "importance": "掌握",
+      "examples": [
+        "苯甲酸胆甾酯加热后在熔点至澄清点之间呈现的液晶"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt125",
+      "name": "溶致液晶",
+      "definition": "从溶液中获得的液晶，如由表面活性剂形成的胶束等液晶体系。",
+      "importance": "了解",
+      "examples": [
+        "胶束液晶"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt126",
+      "name": "液晶的各向异性",
+      "definition": "液晶在导热性、光学性质等方面的物理性质依赖于方向的特性，表现出类似晶体的各向异性。",
+      "importance": "掌握",
+      "examples": [
+        "施加不同方向电场时液晶光学性质改变，用于显示数字和图像"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt127",
+      "name": "晶体",
+      "definition": "具有自范性、内部微观粒子在三维空间呈周期性有序排列、物理性质常表现各向异性的固体。",
+      "importance": "重要",
+      "aliases": [
+        "结晶固体"
+      ],
+      "examples": [
+        "氯化钠晶体",
+        "金刚石",
+        "金属",
+        "水晶",
+        "硫酸铜晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt128",
+      "name": "非晶体",
+      "definition": "内部粒子排列相对无序、没有自范性、物理性质不表现各向异性的固体。",
+      "importance": "重要",
+      "aliases": [
+        "玻璃体",
+        "无定形体"
+      ],
+      "examples": [
+        "玻璃",
+        "炭黑",
+        "石英玻璃"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt129",
+      "name": "自范性",
+      "definition": "晶体能在适当条件下自发地呈现多面体外形的性质，是内部粒子周期性有序排列的宏观表象。",
+      "importance": "重要",
+      "aliases": [
+        "自形性"
+      ],
+      "examples": [
+        "天然水晶球内层的水晶呈现规则晶体外形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt130",
+      "name": "冷却速率对晶体形成的影响",
+      "definition": "熔融态物质冷却凝固时，冷却速率不同会导致形成大晶体、细小粉末晶体或非晶态等不同结果。",
+      "importance": "掌握",
+      "examples": [
+        "熔融SiO2快速冷却形成玛瑙或玻璃态，缓慢冷却形成水晶"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt131",
+      "name": "晶体的三种制备途径",
+      "definition": "制备晶体的一般三条途径：熔融态物质凝固；气态物质冷却不经液态直接凝固（凝华）；溶质从溶液中析出。",
+      "importance": "重要",
+      "examples": [
+        "熔融硫结晶",
+        "碘的凝华结晶",
+        "硫酸铜从饱和溶液中析出结晶"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt132",
+      "name": "凝华",
+      "definition": "气态物质冷却时不经过液态直接凝固成固体的相变过程。",
+      "importance": "掌握",
+      "examples": [
+        "碘蒸气在冷表面上直接形成碘晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt133",
+      "name": "晶体的物理性质各向异性",
+      "definition": "晶体在强度、导热性、光学性质等物理性质上随方向不同而不同的现象，反映了内部有序排列的特点。",
+      "importance": "重要",
+      "examples": [
+        "水晶导热性的各向异性导致石蜡在不同方向熔化速度不同"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt134",
+      "name": "非晶体的各向同性",
+      "definition": "非晶体由于内部粒子排列无长程有序，其物理性质在各方向上大致相同，不表现各向异性。",
+      "importance": "掌握",
+      "examples": [
+        "玻璃在不同方向的导热性基本相同"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt135",
+      "name": "熔点判据",
+      "definition": "利用固体的熔点特征来间接判断其是否为晶体：晶体有较固定的熔点，而非晶体没有固定熔点，熔化过程中温度连续变化。",
+      "importance": "掌握",
+      "examples": [
+        "比较晶体食盐和玻璃的熔化温度变化"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt136",
+      "name": "晶胞",
+      "definition": "用来描述晶体结构的基本单元，是一个最小的平行六面体，其内粒子的排列在整个晶体中周期性重复，通过“无隙并置”可以构成整个晶体。",
+      "importance": "重要",
+      "aliases": [
+        "晶格基本单元",
+        "unit cell"
+      ],
+      "examples": [
+        "金属铜的立方晶胞含4个铜原子",
+        "NaCl晶胞"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt137",
+      "name": "晶胞的无隙并置",
+      "definition": "整个晶体可以看作数量巨大的晶胞在微观空间中没有任何间隙、取向相同地平行排列拼接而成的特点。",
+      "importance": "掌握",
+      "examples": [
+        "铜晶体由无数相同立方晶胞无隙并置构成"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt138",
+      "name": "晶胞中原子计数",
+      "definition": "根据原子在晶胞顶角、棱、面和内部所在位置不同，分别按1/8、1/4、1/2和1的占有率计算一个晶胞所含的平均原子数的方法。",
+      "importance": "重要",
+      "examples": [
+        "铜晶胞中原子数=8×1/8+6×1/2=4"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt139",
+      "name": "X射线衍射",
+      "definition": "利用波长约10⁻¹⁰ m的X射线与晶体中原子相互作用产生衍射图，通过计算获得分子结构信息（例如键长、键角）的技术。",
+      "importance": "重要",
+      "examples": [
+        "水晶粉末与石英玻璃粉末的X射线衍射图谱对比",
+        "测定青蒿素的分子结构。"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt140",
+      "name": "X射线衍射仪",
+      "definition": "用来测定晶体结构的仪器，通过记录X射线与晶体相互作用产生的衍射图谱获取晶胞和原子排列信息。",
+      "importance": "掌握",
+      "examples": [
+        "图3-12所示X射线衍射仪"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt141",
+      "name": "X射线衍射图谱",
+      "definition": "X射线通过样品后在记录仪上形成的分立斑点或衍射峰图像，用于分析物质内部结构，晶体与非晶体的图谱具有显著差异。",
+      "importance": "重要",
+      "examples": [
+        "水晶和石英玻璃粉末的衍射图谱对比图3-14"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt142",
+      "name": "晶体结构测定",
+      "definition": "通过X射线衍射实验获取衍射图谱，并经计算求得晶胞形状大小、对称类型、晶胞内原子数目和位置、原子之间的键长和键角等，以确定晶体及分子的空间结构。",
+      "importance": "重要",
+      "examples": [
+        "通过X射线衍射测定乙酸晶体的晶胞和乙酸分子的空间结构"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt143",
+      "name": "晶体与非晶体的本质差异",
+      "definition": "晶体具有自范性且原子在三维空间呈周期性有序排列；非晶体没有自范性且原子排列相对无序。",
+      "importance": "重要",
+      "examples": [
+        "表3-1中晶体与非晶体在自范性和微观结构上的对比"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt144",
+      "name": "晶体内部有序排列",
+      "definition": "晶体中原子或其他微观粒子在三维空间内以一定周期重复的几何方式排列，是自范性和物理性质各向异性的微观原因。",
+      "importance": "重要",
+      "examples": [
+        "晶体SiO2的有序投影示意图3-6左图"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt145",
+      "name": "非晶体内部无序排列",
+      "definition": "非晶体中粒子只具有短程的局部有序而整体上排列无规则，不呈现周期性结构。",
+      "importance": "掌握",
+      "examples": [
+        "非晶体SiO2的投影示意图3-6右图"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt146",
+      "name": "液晶显示原理",
+      "definition": "在液晶显示器中，通过施加电场改变液晶分子长轴的取向，从而改变光学性质以显示数字、文字或图像。",
+      "importance": "掌握",
+      "examples": [
+        "手机、电脑和电视的液晶显示屏工作原理"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt147",
+      "name": "等离子体的宏观性质",
+      "definition": "由于含有能自由运动的带电粒子，等离子体整体上具有良好的导电性和流动性。",
+      "importance": "掌握",
+      "examples": [
+        "用于等离子体显示器、等离子体化学合成和核聚变装置中的等离子体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt148",
+      "name": "晶体制备的工程应用",
+      "definition": "通过熔融拉单晶、溶液结晶和化学气相沉积等方式制备有重要应用的大型晶体。",
+      "importance": "了解",
+      "examples": [
+        "单晶硅芯片基质",
+        "KH2PO4激光晶体",
+        "CVD宝石级金刚石"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt149",
+      "name": "晶体粉末外形与显微晶形",
+      "definition": "许多固体粉末虽然肉眼看不到晶体外形，但在光学显微镜或电子显微镜下仍能观察到规则晶体外形，说明其本质仍为晶体。",
+      "importance": "掌握",
+      "examples": [
+        "粉末状晶体在显微镜下显示的多面体外形"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt150",
+      "name": "晶体的宏观形态与微观结构关系",
+      "definition": "晶体的自范性及物理性质各向异性是其内部粒子在空间中周期性有序排列的宏观表现。",
+      "importance": "重要",
+      "examples": [
+        "晶体SiO2的规则外形和各向异性与其有序结构对应"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt151",
+      "name": "准晶",
+      "definition": "一种介于传统晶体和非晶体之间的新型固体，具有长程有序但不具备传统周期性的结构，其单晶X射线衍射图出现非传统对称性衍射图案，因此引发了对晶体定义的修正。",
+      "importance": "了解",
+      "examples": [],
+      "aliases": [
+        "准晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt152",
+      "name": "分子晶体",
+      "definition": "只含分子的晶体称为分子晶体。在分子晶体中，相邻分子靠分子间作用力相互吸引，通常具有低熔点、低硬度等特性。",
+      "importance": "重要",
+      "examples": [
+        "碘晶体（I₂）",
+        "水冰",
+        "干冰（CO₂ 晶体）",
+        "白磷（P₄）",
+        "硫（S₈）",
+        "氮气（N₂）",
+        "氧气（O₂）",
+        "甲烷（CH₄）",
+        "乙酸",
+        "尿素"
+      ],
+      "aliases": [
+        "molecular crystal"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt153",
+      "name": "共价晶体",
+      "definition": "微观空间里没有分子，整体由大量原子通过共价键构成三维骨架结构的晶体称为共价晶体，通常具有高硬度、高熔点等特性。",
+      "importance": "重要",
+      "examples": [
+        "金刚石",
+        "二氧化硅（SiO₂，石英）",
+        "硼（B）",
+        "硅（Si）",
+        "锗（Ge）",
+        "灰锡（Sn）",
+        "碳化硅（SiC）",
+        "氮化硅（Si₃N₄）"
+      ],
+      "aliases": [
+        "covalent crystal"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt154",
+      "name": "分子密堆积",
+      "definition": "在靠范德华力作用的分子晶体中，若以一个分子为中心，其周围最多有12个紧邻分子，这种排列特征称为分子密堆积。",
+      "importance": "了解",
+      "examples": [
+        "碳60 晶体",
+        "干冰晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt155",
+      "name": "冰的晶体结构",
+      "definition": "冰中水分子之间以氢键为主要作用力，每个水分子周围只有4个紧邻水分子，近似四面体方向排列，空间利用率不高，晶体中留下较大空隙，因此密度比液态水小。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt156",
+      "name": "液态水的结构与反常密度变化",
+      "definition": "冰刚融化为液态水时，部分氢键结构解体，水分子间空隙减小，密度增大；超过 4 ℃ 后，由于热运动加剧，水分子间距离增大，密度逐渐减小。",
+      "importance": "掌握",
+      "aliases": [
+        "水的密度随温度变化",
+        "水的反常膨胀"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt157",
+      "name": "干冰晶体结构与性质",
+      "definition": "干冰是 CO₂ 的分子晶体，分子间存在的只有范德华力，一个分子周围有12个紧邻分子，密堆积导致密度较高，熔点远低于冰，在常压下易升华，在工业上广泛用作制冷剂。",
+      "importance": "掌握",
+      "aliases": [
+        "固态二氧化碳",
+        "干冰"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt158",
+      "name": "分子晶体的熔点与硬度特性",
+      "definition": "由于分子晶体中仅存在分子间作用力而不存在三维共价骨架，多数分子晶体具有低熔点、低硬度的物理特征。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt159",
+      "name": "天然气水合物（甲烷水合物）",
+      "definition": "气体分子（主要是甲烷）被包裹在由氢键相连的水分子构成的笼状结构中的水合物晶体，外形类似冰，在常温常压下迅速分解释放出可燃甲烷，又称“可燃冰”，是一种潜在的重要能源。",
+      "importance": "掌握",
+      "aliases": [
+        "甲烷水合物",
+        "可燃冰",
+        "天然气水合物"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt160",
+      "name": "笼状化合物",
+      "definition": "由若干水分子通过氢键构成笼状骨架，将其他分子（如甲烷、乙烷、氮气、氧气、二氧化碳等）包裹在笼内形成的化合物，又称水合物晶体的笼状结构。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt161",
+      "name": "共价键三维骨架结构",
+      "definition": "由原子之间的共价键在三维空间上延伸、相互连接形成连续网络的结构，是共价晶体的基本构架形式，导致晶体具有高硬度和高熔点。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt162",
+      "name": "金刚石的晶体结构与性质",
+      "definition": "金刚石是典型的共价晶体，每个碳原子以4个共价单键对称地与4个碳原子结合，C—C—C 键角为约 109°28′，形成 sp³ 杂化三维骨架结构；C—C 键长短、键能大，使其硬度在天然矿物中最大，熔点高于 3500 ℃。",
+      "importance": "重要",
+      "aliases": [
+        "钻石（指经琢磨的金刚石）"
+      ],
+      "formula": "C（sp³ 杂化）"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt163",
+      "name": "石英（二氧化硅，SiO₂）的结构与性质",
+      "definition": "SiO₂ 是共价晶体、自然界含量最高的固态二元氧化物，熔点约 1713 ℃。在低温石英中，顶角相连的硅氧四面体构成螺旋上升的长链，使其具有手性（左、右型），被广泛用作压电材料和多种高科技产品的原料。",
+      "importance": "重要",
+      "aliases": [
+        "二氧化硅",
+        "石英",
+        "低温石英"
+      ],
+      "formula": "SiO₂"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt164",
+      "name": "压电材料与石英手表",
+      "definition": "能在受力时产生电压或在加电压时产生形变的材料称为压电材料。低温石英因其结构（螺旋链和手性）具有良好的压电性，被广泛用于制作石英手表等器件。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt165",
+      "name": "共价晶体的熔点和硬度特性",
+      "definition": "由于共价晶体由共价键三维骨架结构构成，键能大，一般具有较高熔点和较大硬度，如金刚石、氮化硼、碳化硅、石英、硅、锗等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt166",
+      "name": "摩氏硬度标度",
+      "definition": "一种以矿物互相刻划是否留痕为依据的画痕硬度标度，以金刚石为 10，滑石为 1，其间用另外 8 种天然矿物作为代表，分成 10 个等级。",
+      "importance": "掌握",
+      "examples": [
+        "金刚石 10",
+        "刚玉 9",
+        "黄玉 8",
+        "石英 7",
+        "正长石 6",
+        "磷灰石 5",
+        "萤石 4",
+        "方解石 3",
+        "石膏 2",
+        "滑石 1"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt167",
+      "name": "硬度与延展性",
+      "definition": "硬度是固体抵抗刻划的能力；延展性是固体抵抗锤击或拉伸而不破碎的能力。硬度大的物质不一定具有好的延展性，例如金刚石硬度最大，却容易被锤击而破碎。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt168",
+      "name": "共价键的方向性与脆性",
+      "definition": "共价晶体中共价键具有方向性，当受到大的外力作用时，晶格容易发生原子错位并断裂，表现出一定的脆性，如金刚石在锤击下易破碎。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt169",
+      "name": "天然金刚石的形成与赋存",
+      "definition": "天然金刚石形成于地幔约 100–200 km 深处，温度 900–1300 ℃、压力 4.5×10⁹–6.0×10⁹ Pa 条件下，由火山喷发的岩浆携带上升，冷却后固结在金伯利岩中；在地表石墨比金刚石更稳定，但快速冷却阻止了金刚石向石墨转化。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt170",
+      "name": "金伯利岩与金刚石资源",
+      "definition": "火山爆发形成的岩浆冷却固结而成的岩石，富含金刚石，被称为金伯利岩。金伯利岩中金刚石含量极低，平均 1000 kg 岩石中仅约 5 g 金刚石，其中多数只能用于工业。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt171",
+      "name": "高压高温合成金刚石",
+      "definition": "以廉价石墨为原料，在高压釜中施加高温高压并加入金属镍等金属催化剂，使石墨转化为金刚石的人工合成方法，也可利用爆炸产生的高温高压，但得到的金刚石颗粒较小。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt172",
+      "name": "低压等离子体沉积合成金刚石",
+      "definition": "将甲烷等简单碳氢化合物与大量氢气混合，在微波炉中形成低温低压等离子体，在硅等基质上沉积形成金刚石薄膜，近年来已能制得宝石级大钻石。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt173",
+      "name": "金刚石的应用领域",
+      "definition": "金刚石因其高硬度、高热导率等特性，被广泛用作切削工具（如钻头）、磨料以及在电子、光学等领域；宝石级金刚石用于珠宝。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt174",
+      "name": "SiO₂ 的高科技应用",
+      "definition": "SiO₂ 作为共价晶体，是制造水泥、玻璃、单晶硅、硅光电池、芯片和光导纤维等重要高科技产品的基础原料。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt175",
+      "name": "氮化硅基发光陶瓷",
+      "definition": "以 Si₃N₄ 为基础，用 Al 取代部分 Si、用 O 取代部分 N 所获得的结构多样化的陶瓷材料，可用作 LED 发光材料的一类共价晶体陶瓷。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt176",
+      "name": "分子晶体的分类和典型实例",
+      "definition": "典型分子晶体包括：所有非金属氢化物（如水、硫化氢、氨、氯化氢、甲烷等）；部分非金属单质（卤素、O₂、S₈、N₂、P₄、C₆₀、稀有气体等）；部分非金属氧化物（CO₂、P₄O₆、P₄O₁₀、SO₂ 等）；几乎所有酸以及绝大多数有机物。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt177",
+      "name": "共价晶体的分类和典型实例",
+      "definition": "常见共价晶体包括：某些单质（B、Si、Ge、灰锡等）；某些非金属化合物（如 SiC、Si₃N₄ 等）。这些晶体通常具有高熔点、高硬度，可制备耐磨、发光等功能材料。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt178",
+      "name": "分子晶体与共价晶体的比较",
+      "definition": "分子晶体由分子通过分子间作用力构成，多表现为低熔点、低硬度；共价晶体由原子通过共价键构成三维网络结构，多表现为高熔点、高硬度且具有方向性导致的脆性，两者在微观结构和宏观性质上有本质区别。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt179",
+      "name": "金属晶体",
+      "definition": "由大量金属原子通过金属键结合而成的晶体，结构好像硬球紧密堆积，每个金属原子周围有较多相同原子围绕，具有良好的导电性和延展性。",
+      "importance": "重要",
+      "examples": [
+        "钠晶体",
+        "钨晶体",
+        "铁及其合金晶体"
+      ],
+      "aliases": [
+        "金属固体"
+      ],
+      "formula": null
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt180",
+      "name": "金属键",
+      "definition": "金属晶体中金属原子之间的化学键，表现为金属原子脱落下来的价电子形成遍布整块晶体的电子气，被所有原子共用，从而把所有金属原子维系在一起。",
+      "importance": "重要",
+      "examples": [
+        "钠、钨、铬晶体中的金属键"
+      ],
+      "aliases": [],
+      "formula": null
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt181",
+      "name": "电子气理论",
+      "definition": "描述金属键本质的理论，把金属原子脱落下来的价电子视为遍布整块晶体、被所有金属原子共用的“电子气”，用以解释金属晶体的键合、本征导电性、延展性等性质。",
+      "importance": "重要",
+      "examples": [
+        "解释金属延展性",
+        "解释金属良好的导电性",
+        "解释金属电导率随温度升高而降低"
+      ],
+      "aliases": [
+        "电子海理论",
+        "自由电子气模型"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt182",
+      "name": "金属电导率随温度变化",
+      "definition": "金属的电导率通常随温度升高而降低的现象，可用电子气中的自由电子在热的作用下与金属原子频繁碰撞来解释。",
+      "importance": "了解",
+      "examples": [
+        "金属加热后电阻增大、电导率降低"
+      ],
+      "aliases": [
+        "金属的电阻温度效应"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt183",
+      "name": "金属材料性能的合金化改变",
+      "definition": "向金属晶体中掺入不同金属或非金属原子形成合金后，金属的延展性、硬度等性能会发生改变。",
+      "importance": "了解",
+      "examples": [
+        "掺入其他原子使金属延展性变差、硬度增大"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt184",
+      "name": "非金属导电体",
+      "definition": "虽然具有良好导电性，但本身不属于金属的物质，如石墨以及一些能导电的有机高分子化合物。",
+      "importance": "了解",
+      "examples": [
+        "石墨",
+        "一大类能导电的有机高分子化合物"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt185",
+      "name": "离子晶体",
+      "definition": "由阳离子和阴离子通过静电作用形成的晶体，通常具有较强的离子键，表现为硬度较大、难于压缩、熔沸点较高等性质。",
+      "importance": "重要",
+      "examples": [
+        "NaCl晶体",
+        "CsCl晶体",
+        "CaCO3",
+        "K2SO4"
+      ],
+      "aliases": [
+        "ionic crystal",
+        "离子固体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt186",
+      "name": "离子晶体的物理性质",
+      "definition": "由于离子间存在较强离子键，离子晶体普遍具有硬度较大、难于压缩、熔点和沸点较高等特征。",
+      "importance": "掌握",
+      "examples": [
+        "NaCl熔点801°C、沸点1413°C",
+        "CsCl熔点645°C、沸点1290°C"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt187",
+      "name": "复杂离子晶体中的多种作用力",
+      "definition": "许多离子晶体中除阴阳离子间的离子键外，还存在共价键、氢键以及范德华力，但贯穿整个晶体的主要作用力仍是阴、阳离子之间的作用力。",
+      "importance": "了解",
+      "examples": [
+        "CaCO3",
+        "K2SO4",
+        "(NH4)2SO4",
+        "CuSO4·5H2O",
+        "Cu(NH3)4SO4·H2O"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt188",
+      "name": "离子液体",
+      "definition": "在室温或稍高于室温呈液态、完全由阳离子和阴离子组成的离子化合物，通常含体积很大的阴、阳离子，具有难挥发、良好导电性等优异性质。",
+      "importance": "掌握",
+      "examples": [
+        "C2H5NH3NO3 (熔点12°C)",
+        "1-丁基-3-甲基咪唑六氟磷酸盐",
+        "蚂蚁毒液相遇生成的有机胺正离子和甲酸根负离子组成的黏稠液体"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt189",
+      "name": "离子液体的组成特点",
+      "definition": "大多数离子液体含有体积很大的阴、阳离子，如四氯铝酸根、六氟磷酸根、四氟硼酸根等阴离子，以及季铵离子、带烃基侧链的咪唑、嘧啶等环状含氮有机胺正离子。",
+      "importance": "了解",
+      "examples": [
+        "AlCl4−",
+        "PF6−",
+        "BF4−",
+        "R4N+",
+        "咪唑阳离子"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt190",
+      "name": "离子液体的低熔点特征",
+      "definition": "引入有机基团后，一些离子化合物的熔点显著降低，部分可在室温或稍高温度下为液态，这类物质被定义为离子液体。",
+      "importance": "了解",
+      "examples": [
+        "C2H5NH3NO3 熔点12°C，比NH4NO3的170°C低158°C"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt191",
+      "name": "离子液体的难挥发性",
+      "definition": "由于离子液体的粒子全部是带电离子，其蒸气压很低，不易挥发，相比传统有机溶剂更安全环保。",
+      "importance": "掌握",
+      "examples": [
+        "与易挥发有毒蒸气的传统有机溶剂对比"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt192",
+      "name": "离子液体的应用",
+      "definition": "离子液体由于具有低挥发性和良好导电性，可用作溶剂、电解质和催化剂，在电化学、有机合成、生物化学等领域应用广泛。",
+      "importance": "了解",
+      "examples": [
+        "溶解纤维素制备天丝纤维",
+        "作为原电池的电解质",
+        "有机合成和药物合成的溶剂与催化剂"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt193",
+      "name": "过渡晶体",
+      "definition": "处于典型分子晶体、共价晶体、金属晶体和离子晶体之间、化学键性质介于两类典型晶体之间的晶体，如离子晶体与共价晶体之间的过渡型。",
+      "importance": "重要",
+      "examples": [
+        "Na2O",
+        "MgO",
+        "Al2O3",
+        "SiO2 等氧化物"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt194",
+      "name": "化学键中离子键成分的百分数",
+      "definition": "根据成键原子间电负性差值计算得到的离子键成分比例，差值越大，离子键的百分数越大，用来判断晶体在离子晶体和共价晶体之间的过渡程度。",
+      "importance": "掌握",
+      "examples": [
+        "Na2O 62%",
+        "MgO 50%",
+        "Al2O3 41%",
+        "SiO2 33%"
+      ],
+      "aliases": [
+        "离子性百分数"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt195",
+      "name": "偏向离子晶体的过渡晶体",
+      "definition": "离子键成分较高，性质上与纯粹离子晶体接近、通常当作离子晶体来处理的过渡晶体。",
+      "importance": "了解",
+      "examples": [
+        "Na2O 等"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt196",
+      "name": "偏向共价晶体的过渡晶体",
+      "definition": "共价键成分较高，在许多性质上更接近共价晶体、通常当作共价晶体来处理的过渡晶体。",
+      "importance": "了解",
+      "examples": [
+        "Al2O3",
+        "SiO2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt197",
+      "name": "混合型晶体",
+      "definition": "在一个晶体中同时具有两类或多类典型晶体性质和键合特征的晶体，例如石墨同时具有共价晶体和平面内类金属导电性等特征。",
+      "importance": "重要",
+      "examples": [
+        "石墨"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt198",
+      "name": "石墨的晶体结构",
+      "definition": "石墨中碳原子呈sp2杂化形成平面六元并环结构，晶体呈层状结构，层内C–C核间距约142 pm，层间距离约335 pm，层间靠范德华力维系。",
+      "importance": "重要",
+      "examples": [],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt199",
+      "name": "石墨的导电性与各向异性",
+      "definition": "石墨中未参与杂化的2p轨道相互平行并重叠，使p电子可在整个碳原子平面中运动，导致沿平面方向具有类似金属的导电性；相邻平面距离较大，电子难以在层间跃迁，因此导电性具有明显各向异性。",
+      "importance": "掌握",
+      "examples": [],
+      "aliases": [
+        "石墨的各向异性导电性"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt200",
+      "name": "典型晶体的四种类型",
+      "definition": "根据晶体中微粒种类和主要作用力，将晶体简单归为分子晶体、共价晶体、金属晶体和离子晶体四类，这四类晶体是考察晶体化学结构的基础。",
+      "importance": "重要",
+      "examples": [],
+      "aliases": [
+        "四类典型晶体"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt201",
+      "name": "硅酸盐阴离子结构多样性",
+      "definition": "硅酸盐中既有由有限数目硅氧四面体构成的简单阴离子，如SiO4^4−、Si2O7^6−、(SiO3)6^12−，也有构成一维、二维、三维无限伸展共价键骨架的硅氧四面体结构。",
+      "importance": "掌握",
+      "examples": [
+        "单链、双链、六元环等结构"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt202",
+      "name": "纳米晶体",
+      "definition": "晶体颗粒尺寸在纳米（10^-9 m）量级的晶体，相对于宏观晶体，在声、光、电、磁、热等性能上常呈现新的特性。",
+      "importance": "掌握",
+      "examples": [
+        "纳米铅晶体"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt203",
+      "name": "纳米晶体熔点降低现象",
+      "definition": "当晶体颗粒小于约200 nm时，其熔点会随晶粒尺寸减小而降低，例如纳米铅晶粒半径从200 nm减小至5 nm时，熔点显著下降。",
+      "importance": "掌握",
+      "examples": [
+        "表3-5和图3-34所示金属铅的晶粒大小与熔点关系"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt204",
+      "name": "纳米效应的表面积原因",
+      "definition": "纳米晶体表现出不同于大块晶体的特性，主要原因是随着颗粒减小，晶体的比表面积显著增大，从而改变表面能及相关物理化学性质。",
+      "importance": "了解",
+      "examples": [],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt205",
+      "name": "晶体具有固定熔点的条件",
+      "definition": "通常纯物质具有固定熔点，但当纯物质晶体的颗粒小于约200–250 nm时，其熔点不再固定，会发生尺寸依赖变化。",
+      "importance": "掌握",
+      "examples": [
+        "纳米铅的熔点随晶粒大小变化"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt206",
+      "name": "晶体生长",
+      "definition": "晶体在溶液等介质中由溶质粒子有序堆积形成晶格的过程，通常包括成核、晶粒长大等阶段，可通过控制温度和溶质浓度等实现晶体的可控生长。",
+      "importance": "掌握",
+      "examples": [
+        "明矾晶体的生长过程"
+      ],
+      "aliases": [
+        "结晶过程"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt207",
+      "name": "明矾晶体",
+      "definition": "化学式为KAl(SO4)2·12H2O的晶体，可通过其饱和溶液在适宜条件下结晶制得，具有规则外形和一定透明度。",
+      "importance": "了解",
+      "examples": [],
+      "aliases": [
+        "钾铝明矾"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt208",
+      "name": "铬钾矾晶体包覆明矾晶体",
+      "definition": "在已制得的明矾晶体表面再生长一层KCr(SO4)2·12H2O晶体，随后再包覆一层明矾晶体，形成具有层状外壳结构的复合晶体。",
+      "importance": "了解",
+      "examples": [],
+      "aliases": []
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt209",
+      "name": "配合物（配位化合物）",
+      "aliases": [
+        "配位化合物",
+        "coordination compound"
+      ],
+      "definition": "通常把金属离子或原子（称为中心离子或原子）与某些分子或离子（称为配体或配位体）以配位键结合形成的化合物称为配位化合物，简称配合物。",
+      "importance": "重要",
+      "examples": [
+        "[Cu(H2O)4]SO4",
+        "[Cu(NH3)4]SO4·H2O",
+        "血红素",
+        "叶绿素",
+        "维生素B12"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt210",
+      "name": "配位键",
+      "definition": "在配合物中，由配体提供孤电子对给予中心离子或原子，中心离子或原子接受孤电子对形成的“电子对给予一接受”键称为配位键。",
+      "importance": "重要",
+      "examples": [
+        "[Cu(H2O)4]2+ 中 Cu2+ 与 H2O 之间的键",
+        "[Cu(NH3)4]2+ 中 Cu2+ 与 NH3 之间的键"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt211",
+      "name": "中心离子（中心原子）",
+      "definition": "在配合物中，与配体以配位键结合形成配离子或配合物的金属离子或原子，称为中心离子或中心原子。",
+      "importance": "掌握",
+      "examples": [
+        "[Cu(H2O)4]2+ 中的 Cu2+",
+        "[Cu(NH3)4]2+ 中的 Cu2+",
+        "血红素中的 Fe2+",
+        "叶绿素中的 Mg2+"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt212",
+      "name": "配体（配位体）",
+      "aliases": [
+        "配位体"
+      ],
+      "definition": "在配合物中，能向中心离子或原子提供孤电子对，通过配位键与之结合的分子或离子称为配体或配位体。",
+      "importance": "掌握",
+      "examples": [
+        "H2O",
+        "NH3",
+        "SCN−",
+        "Cl−",
+        "叶啉大环有机化合物"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt213",
+      "name": "配离子",
+      "definition": "在溶液中作为整体存在、带电荷的配合物粒子，例如 [Fe(CN)6]3-。",
+      "importance": "掌握",
+      "examples": [
+        "[Cu(H2O)4]2+",
+        "[Cu(NH3)4]2+",
+        "硫氰化铁配离子",
+        "[Ag(NH3)2]+（结构式写作 [Ag(NH3)2]Cl 中的阳离子）"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt214",
+      "name": "配位数",
+      "definition": "中心离子与配体形成配位键的数目，反映了配合物中中心离子周围配体的数目。",
+      "importance": "了解",
+      "examples": [
+        "[Cu(H2O)4]2+ 的配位数为4",
+        "[Cu(NH3)4]2+ 的配位数为4"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt215",
+      "name": "四水合铜离子 [Cu(H2O)4]2+",
+      "definition": "水合铜离子的一种形式，由一个 Cu2+ 与4个水分子通过配位键结合形成的配离子，呈蓝色，称为四水合铜离子。",
+      "importance": "掌握",
+      "examples": [
+        "CuSO4·5H2O 晶体中的 [Cu(H2O)4]2+"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt216",
+      "name": "四氨合铜离子 [Cu(NH3)4]2+",
+      "definition": "Cu2+ 与4个 NH3 分子通过配位键结合形成的配离子，呈深蓝色，是 Cu2+ 的一种常见配离子。",
+      "importance": "掌握",
+      "examples": [
+        "[Cu(NH3)4]SO4·H2O 晶体中的 [Cu(NH3)4]2+"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt217",
+      "name": "水合铜离子",
+      "definition": "Cu2+ 在水溶液中与水分子结合形成的配离子统称为水合铜离子，常见形式为 [Cu(H2O)4]2+，溶液呈蓝色。",
+      "importance": "掌握",
+      "examples": [
+        "CuSO4 溶液呈天蓝色是由于存在水合铜离子"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt218",
+      "name": "配合物的颜色",
+      "definition": "许多配合物及其配离子具有特征颜色，例如水合铜离子呈蓝色、四氨合铜离子呈深蓝色、硫氰化铁配离子颜色极似血液。",
+      "importance": "掌握",
+      "examples": [
+        "CuSO4 溶液天蓝色",
+        "[Cu(NH3)4]2+ 深蓝色",
+        "硫氰化铁配离子血红色"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt219",
+      "name": "配合物的稳定性",
+      "definition": "配位键的强度有大有小，有的配合物很稳定，有的很不稳定；许多过渡金属元素的离子对多种配体具有很强的结合力，因此过渡金属配合物远比主族金属配合物多。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt220",
+      "name": "过渡金属配合物",
+      "definition": "由过渡金属离子作为中心离子，与配体形成的配合物。由于过渡金属离子对多种配体具有很强的结合力，这类配合物种类远多于主族金属配合物。",
+      "importance": "了解",
+      "examples": [
+        "Cu2+ 配合物",
+        "Fe2+、Fe3+ 配合物",
+        "Co2+ 配合物"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt221",
+      "name": "配合物在生命体系中的存在",
+      "definition": "配合物广泛存在于自然界中，例如在人和动物体内起输送氧气作用的血红素是 Fe2+ 的配合物，叶绿素、血红素和维生素B12 都是以叶啉为配体的配合物。",
+      "importance": "了解",
+      "examples": [
+        "血红素",
+        "叶绿素",
+        "维生素B12"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt222",
+      "name": "叶啉配合物",
+      "definition": "以一种称为叶啉的大环有机化合物作为配体，与不同中心离子形成的配合物，如叶绿素（中心离子为 Mg2+）、血红素（中心离子为 Fe2+）、维生素B12（中心离子为 Co2+）。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt223",
+      "name": "硫氰化铁配离子",
+      "definition": "Fe3+ 与硫氰酸根离子 SCN− 形成的配离子，溶液颜色极似血液，可用于鉴定 Fe3+ 的存在。",
+      "importance": "掌握",
+      "examples": [
+        "向 FeCl3 溶液中加入 KSCN 后出现血红色"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt224",
+      "name": "氨水与 Cu2+ 反应",
+      "definition": "氨水呈碱性，先与 Cu2+ 生成难溶的 Cu(OH)2 沉淀，继续加入氨水时，沉淀转化为四氨合铜配离子 [Cu(NH3)4]2+，溶液呈深蓝色。",
+      "importance": "掌握",
+      "formula": "Cu2+ + 2 NH3·H2O = Cu(OH)2↓ + 2 NH4+\nCu(OH)2 + 4 NH3 = [Cu(NH3)4](OH)2"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt225",
+      "name": "氨水溶解 AgCl 生成二氨合银配离子",
+      "definition": "白色难溶的 AgCl 沉淀在氨水存在下可与 NH3 反应生成配合物 [Ag(NH3)2]Cl，使沉淀溶解，溶液变为澄清无色。",
+      "importance": "掌握",
+      "formula": "AgCl + 2 NH3 = [Ag(NH3)2]Cl"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt226",
+      "name": "超分子",
+      "aliases": [
+        "supramolecule"
+      ],
+      "definition": "超分子是由两种或两种以上的分子通过分子间相互作用形成的分子聚集体。定义中的分子是广义的，包括离子，可以是有限的或无限伸展的结构。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt227",
+      "name": "超分子中的分子间相互作用",
+      "definition": "形成超分子的作用力常被概括为非共价键或分子间作用力，是不同于共价键的弱相互作用，用以将多个分子或离子聚集成整体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt228",
+      "name": "分子识别",
+      "definition": "超分子的一个重要特征，指主体分子能够通过分子间作用力选择性识别、结合特定大小和形状的客体分子或离子。",
+      "importance": "重要",
+      "examples": [
+        "“杯酚”选择性装下 C60 而不能装下 C70",
+        "不同冠醚对不同碱金属离子的选择性"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt229",
+      "name": "超分子自组装",
+      "definition": "超分子的另一重要特征，指分子在分子间作用力驱动下自发、有序地聚集形成特定结构的过程，如细胞和细胞器的双分子膜。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt230",
+      "name": "杯酚与富勒烯 C60 的超分子",
+      "definition": "杯酚具有适配 C60 的空腔，可像碗一样通过分子间力将 C60 装入而不能装入更大的 C70，形成具有分子识别特征的超分子体系。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt231",
+      "name": "冠醚",
+      "definition": "冠醚是皇冠状的分子，具有不同大小的空穴，可通过分子间作用力识别并包合大小相配的碱金属离子，形成超分子。",
+      "importance": "重要",
+      "examples": [
+        "12-冠-4",
+        "15-冠-5",
+        "18-冠-6",
+        "21-冠-7"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt232",
+      "name": "冠醚对碱金属离子的选择性识别",
+      "definition": "不同空腔直径的冠醚适合不同直径的碱金属离子，如 18-冠-6 适合 K+、Rb+，15-冠-5 适合 Na+，12-冠-4 适合 Li+，21-冠-7 适合 Cs+。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt233",
+      "name": "配合物",
+      "definition": "由中心原子或离子与一定数目的中性分子或阴离子以配位键结合而形成的一类化合物。中心离子形成配合物后性质不同于原来的金属离子，具有新的化学特性。",
+      "importance": "重要",
+      "aliases": [
+        "络合物"
+      ]
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt234",
+      "name": "中心离子",
+      "definition": "在配合物中处于中心位置，与一定数目的配体通过配位键结合形成配离子的金属离子或原子。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt235",
+      "name": "配体",
+      "definition": "在配合物中通过配位键与中心离子相连的中性分子或阴离子，如NH3、CN-、H2O等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt236",
+      "name": "简单配合物",
+      "definition": "由一个中心离子与少数几种配体通过配位键形成的结构相对简单的配合物，常在溶液中通过简单反应生成。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt237",
+      "name": "简单离子",
+      "definition": "由单一元素原子通过得失电子形成的离子，如 Fe3+、Na+，不包含配体结构。",
+      "importance": "了解"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt238",
+      "name": "简单离子与配离子的性质差异",
+      "definition": "同一金属元素形成的简单离子与其配离子在颜色、反应性等化学性质上存在明显差异，例如 Fe3+ 与 [Fe(CN)6]3- 的性质不同。",
+      "importance": "重要"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt239",
+      "name": "K3[Fe(CN)6]的电离",
+      "definition": "K3[Fe(CN)6] 在水中可以电离出配离子 [Fe(CN)6]3- 和 K+ 等离子。",
+      "importance": "掌握",
+      "formula": "K3[Fe(CN)6] ⇌ 3K+ + [Fe(CN)6]3-"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt240",
+      "name": "[Fe(CN)6]3- 的结构要素",
+      "definition": "[Fe(CN)6]3- 中，Fe3+ 为中心离子，CN- 为配体，配位数为6。",
+      "importance": "掌握"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_cpt241",
+      "name": "配合物的颜色与性质变化",
+      "definition": "金属离子形成配合物后，体系颜色、沉淀溶解性和与其他试剂的反应特性发生变化，表现为新的化学特性。",
+      "importance": "重要"
+    }
+  ],
+  "skills": [
+    {
+      "id": "chemistry_xzxbx2_rjb_skl1",
+      "name": "根据构造原理书写基态原子的电子排布式",
+      "description": "利用能层、能级顺序（含能级交错）和每个能级最大容电子数，从氢起随原子序数递增依次填入电子，写出各元素基态原子的电子排布式，并按能层由低到高排列能级。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl2",
+      "name": "画出基态原子的轨道表示式",
+      "description": "根据给定元素或离子的电子数和构造原理，将电子填入各原子轨道，用方框和箭头表示轨道和自旋，遵循泡利原理和洪特规则，画出基态原子或基态离子的轨道表示式。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl3",
+      "name": "利用原子光谱和电子跃迁解释发光现象",
+      "description": "将生活中的焰火、霓虹灯、激光、LED灯等发光现象与原子核外电子跃迁释放能量联系起来，能够用原子光谱和电子跃迁概念对其进行定性解释。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl4",
+      "name": "根据电子排布推断元素在周期表中的位置",
+      "description": "利用构造原理和核外电子排布，判断元素的最外层电子数及次外层d、f电子情况，从而确定其所属周期、族别及所在分区（s、p、d、f或ds区）。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl5",
+      "name": "利用周期律比较和预测元素性质趋势",
+      "description": "基于元素在周期表中的周期、族位置，结合原子半径、电离能、电负性的周期性变化规律，定性比较不同元素的金属性、非金属性、还原性等，并对未知元素的性质进行预测。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl6",
+      "name": "利用电负性和电离能判断金属或非金属性质",
+      "description": "结合元素的电负性数值和第一电离能大小，判断元素的金属性或非金属性强弱及其在化合物中可能表现的价态。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl7",
+      "name": "根据键类型判定σ键和π键数目",
+      "description": "根据“共价单键=1 个 σ 键；共价双键=1 σ+1 π；共价三键=1 σ+2 π”的规则，对分子结构式进行分析，统计分子中 σ 键和 π 键的个数。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl8",
+      "name": "利用键能估算化学反应热效应",
+      "description": "从键能表中查出反应物和生成物中相关化学键的键能，通过对比断键吸收能量与成键释放能量，估算反应的热效应并判断反应为吸热或放热。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl9",
+      "name": "用原子轨道模型解释共价键形成",
+      "description": "利用原子轨道重叠的概念，描述核间电子云增大、负电“桥梁”黏结正核等图像，解释不同类型原子轨道（如 s 与 s、s 与 p、p 与 p）的重叠如何形成 σ 键或 π 键。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl10",
+      "name": "用电负性差判断键类型",
+      "description": "根据两元素电负性大小和它们的差值，预测化学键是以电子对共用为主的共价键，还是以电子完全转移为主的离子键。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl11",
+      "name": "利用红外光谱识别官能团",
+      "description": "根据红外光谱图中的特征吸收峰，判断样品分子中存在的特定化学键和官能团，结合谱图库或量子化学计算进行分析。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl12",
+      "name": "根据质谱图确定相对分子质量",
+      "description": "阅读质谱图，识别分子离子峰及主要碎片峰，利用m/z值和相对丰度信息推算被测物的相对分子质量和可能结构。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl13",
+      "name": "应用VSEPR模型预测分子形状",
+      "description": "通过确定中心原子周围σ键电子对数和孤电子对数，判断电子对排布，再推导分子的空间结构类型和大致键角。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl14",
+      "name": "使用孤电子对数公式",
+      "description": "根据中心原子的价电子数、电荷数和与其结合原子的数目及可接受电子数，利用孤电子对数 = ½(a − x b) 计算中心原子的孤电子对数。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl15",
+      "name": "用杂化轨道解释分子空间结构",
+      "description": "根据已知的分子键角和形状，推断中心原子采用的杂化方式（sp、sp²、sp³），并用杂化轨道方向性说明形成的分子空间结构。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl16",
+      "name": "判定键的极性和分子的极性",
+      "description": "根据成键原子电负性差判断共价键是否为极性键；再结合分子空间结构分析各极性键的方向与合成效果，判断分子正负电中心是否重合，从而判定分子是否为极性分子。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl17",
+      "name": "利用分子间作用力预测物理性质",
+      "description": "从分子质量、是否为极性分子、是否能形成氢键等角度，分析物质分子间作用力的强弱，并据此比较熔点、沸点、常温物态、挥发性等物理性质。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl18",
+      "name": "从分子结构角度分析溶解性",
+      "description": "结合溶质和溶剂的极性、分子结构相似性以及氢键等特定作用，运用“相似相溶”规律判断和解释物质的溶解性和相对溶解度。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl19",
+      "name": "从氢键角度比较物质沸点",
+      "description": "判断物质是否能在分子间或分子内形成氢键，并分析氢键的数量和类型，解释和预测物质沸点的相对高低。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl20",
+      "name": "从分子结构与取代基效应分析酸性变化",
+      "description": "在给定一系列结构相近的酸时，分析其取代基的电子效应（特别是吸电子取代基的诱导效应）和空间位置，判断对酸性强弱的影响趋势并与pKa数据对应。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl21",
+      "name": "利用熔点判断晶体或非晶体",
+      "description": "通过测量固体在加热过程中的温度变化，判断其是否具有固定熔点，从而间接区分晶体和非晶体：熔点固定表明为晶体，熔化温度逐渐变化则为非晶体。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl22",
+      "name": "利用X射线衍射区分晶体与非晶体",
+      "description": "对固体样品进行X射线衍射实验，观察衍射图谱是否出现分立斑点或明锐衍射峰，以判断样品是否为晶体。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl23",
+      "name": "从晶胞图计算原子数",
+      "description": "根据晶胞示意图中原子所在位置，应用顶角1/8、棱上1/4、面上1/2、内部1的分配原则计算一个晶胞中包含的原子总数。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl24",
+      "name": "从X射线衍射图推断晶体结构信息",
+      "description": "根据衍射斑点或衍射峰的位置与强度，结合晶体的化学组成，通过计算确定晶胞形状和大小、晶胞内原子数目和位置，从而推断分子的空间结构。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl25",
+      "name": "从微观结构推断物质宏观性质",
+      "description": "根据物质微观结构信息（如分子间作用力类型、是否为共价三维骨架、密堆积或存在空隙等）分析并推断其宏观物理性质，例如熔点高低、硬度大小、密度差异以及是否易升华。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl26",
+      "name": "利用晶体分类判断典型物质类型",
+      "description": "依据晶体的组成粒子和作用力类型，将物质判断为分子晶体或共价晶体，并能列举出典型分类实例。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl27",
+      "name": "阅读数据和图示理解结构与性质的定量关系",
+      "description": "通过表格数据（如熔点、摩氏硬度）和结构示意图（如晶胞、四面体连接方式），建立定量或半定量的结构—性质联系，用于比较不同晶体的性质差异。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl28",
+      "name": "用电子气理论解释金属性质",
+      "description": "根据电子气理论，从金属晶体中价电子形成电子气、可在晶体中自由运动和起“润滑”作用等角度，解释金属的键合、导电性、延展性以及电导率随温度变化的规律。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl29",
+      "name": "比较不同晶体类型的结构与性质",
+      "description": "根据晶体中微粒种类（原子、离子、分子）及主要作用力（共价键、离子键、金属键、范德华力、氢键等），判断晶体类型，并比较其硬度、熔点、导电性等性质。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl30",
+      "name": "利用电负性差判断键的离子性",
+      "description": "借助电负性差值估算化学键的离子键百分数，以判断物质更接近离子晶体还是共价晶体，从而在解题或分析物性时选择合适的晶体模型。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl31",
+      "name": "控制结晶条件制备大晶体",
+      "description": "通过控制溶液温度、浓度、冷却速率及晶种位置，使溶液缓慢过饱和，促进晶核定向生长，从而制备形状规则的大晶体。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl32",
+      "name": "通过颜色变化鉴别离子或配合物",
+      "description": "利用溶液或沉淀的特征颜色来判断某些离子或配离子的存在，例如根据天蓝色判断水合铜离子，根据血红色判断硫氰化铁配离子。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl33",
+      "name": "通过加入配体生成配合物来溶解沉淀",
+      "description": "向含有难溶沉淀的体系中加入适当配体，使沉淀与配体形成可溶的配合物，从而溶解沉淀。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl34",
+      "name": "利用配合物形成反应进行离子检验",
+      "description": "通过特征配合物形成反应（颜色、沉淀或溶解性变化），来检验溶液中某种离子是否存在。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_skl35",
+      "name": "通过溶液现象判断配合物的形成",
+      "description": "通过溶液颜色变化、沉淀生成或溶解等现象，判断金属离子是否与配体形成了配合物或配离子。例如向含金属离子的溶液中逐渐加入氨水或含配体溶液，观察溶液由浑浊变澄清、颜色改变等现象来推断配合物生成。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "chemistry_xzxbx2_rjb_exp1",
+      "name": "X 射线衍射测定键长和键角",
+      "instrument": [
+        "X 射线衍射仪",
+        "适当晶体样品"
+      ],
+      "is_student": 0,
+      "process": "采用 X 射线照射晶体样品，记录衍射图样，通过晶体衍射数据反演得到原子在晶格中的准确空间位置，从而计算相邻原子之间的核间距和键角。",
+      "phenomena": "在探测器上获得规则的 X 射线衍射斑点或线条，反映晶体内部有序的原子排布。",
+      "conclusion": "可以由 X 射线衍射精确得到分子中键长和键角的数值，从而定量描述共价键的空间几何特征。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp2",
+      "name": "红外光谱测定分子结构",
+      "instrument": [
+        "红外光谱仪"
+      ],
+      "is_student": 0,
+      "process": "让一束红外线透过待测样品分子，记录透射光强随波数或波长变化的光谱图，得到若干吸收峰。",
+      "phenomena": "红外光谱图上出现一系列吸收峰，不同振动方式对应不同位置和强度的峰。",
+      "conclusion": "通过吸收峰位置和强度，可判断分子中含有的化学键和官能团，如出现O–H、C–H、C–O振动吸收，推测含羟基。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp3",
+      "name": "质谱法测定分子的相对分子质量",
+      "instrument": [
+        "质谱仪"
+      ],
+      "is_student": 0,
+      "process": "在质谱仪中使样品分子电离成带正电的分子离子和碎片离子，经高压电场加速后通过狭缝进入磁场，按质荷比分离并在记录仪上形成质谱图。",
+      "phenomena": "记录仪上出现一系列m/z不同的峰，纵坐标为相对丰度，横坐标为质荷比。",
+      "conclusion": "通过分析分子离子峰和主要碎片峰，可确定样品的相对分子质量并推测其结构，如甲苯的分子离子峰m/z=92，对应相对分子质量92。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp4",
+      "name": "制作分子的空间结构模型",
+      "instrument": [
+        "橡皮泥或黏土",
+        "牙签",
+        "气球",
+        "皮筋"
+      ],
+      "is_student": 1,
+      "process": "使用橡皮泥或黏土代表原子，牙签代表化学键，按给定的键长和键角搭建H₂、Cl₂、H₂O、CO₂、NH₃、CH₄等分子的空间结构模型，并用4个气球用皮筋扎在一起模拟甲烷的四面体结构。",
+      "phenomena": "模型直观呈现不同分子的空间形状和键角；四个气球自然排布呈四面体状。",
+      "conclusion": "实物模型有助于直观理解分子的空间结构和键角大小，气球模型说明四个等效键会尽可能远离，形成四面体结构。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp5",
+      "name": "壁虎足黏着力的微观机理研究",
+      "instrument": [
+        "电子显微镜",
+        "计算机模拟软件",
+        "仿生材料制备装置"
+      ],
+      "is_student": 0,
+      "process": "用电子显微镜观察壁虎足的微观结构，发现其覆盖着大量纳米级细毛；通过力学实验测定细毛在单位面积上的吸附力；利用计算机模拟分析细毛与墙体表面的相互作用，判断其本质属于范德华力；再根据这一结构仿制黏着材料。",
+      "phenomena": "在一个分币面积布满约100万条细毛时，可以吊起约20 kg的物体；仿生胶带具有强黏附性。",
+      "conclusion": "壁虎足与墙体之间的吸附力主要来源于细毛与墙体之间的范德华力，仿生设计可以据此制备新型黏着材料。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp6",
+      "name": "熔融硫黄冷却结晶实验",
+      "instrument": [
+        "研钵",
+        "蒸发皿",
+        "三脚架",
+        "铁圈",
+        "酒精灯"
+      ],
+      "is_student": 1,
+      "process": "将硫黄粉末用研钵研细，放入蒸发皿中，置于三脚架铁圈上，用酒精灯加热至硫黄熔融，随后移开酒精灯，让其自然冷却结晶，观察生成固体的外形。",
+      "phenomena": "熔融硫黄冷却后形成具有晶体外形的硫晶体。",
+      "conclusion": "熔融态物质冷却凝固可以形成晶体，是制备晶体的重要途径之一。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp7",
+      "name": "碘的凝华结晶实验",
+      "instrument": [
+        "小烧杯",
+        "表面皿",
+        "冷水",
+        "陶土网",
+        "加热源"
+      ],
+      "is_student": 1,
+      "process": "在小烧杯中加入少量碘，用表面皿盖住并在表面皿上加少量冷水，将小烧杯置于陶土网上小火加热，观察表面皿下表面的变化。",
+      "phenomena": "碘升华为紫色碘蒸气，并在较冷的表面皿下表面直接凝华成具有晶体外形的碘晶体。",
+      "conclusion": "气态物质可以通过凝华直接形成晶体，说明凝华是制备晶体的重要途径。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp8",
+      "name": "氯化钠从溶液中结晶实验",
+      "instrument": [
+        "250 mL烧杯",
+        "滴管",
+        "饱和氯化钠溶液",
+        "浓盐酸"
+      ],
+      "is_student": 1,
+      "process": "在250 mL烧杯中加入半杯饱和氯化钠溶液，用滴管滴入浓盐酸，静置并观察溶液中是否有固体析出。",
+      "phenomena": "随着浓盐酸滴入，氯化钠晶体逐渐从溶液中析出。",
+      "conclusion": "溶质从溶液中析出可以形成晶体，是获得晶体的另一重要途径。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp9",
+      "name": "镁在干冰中燃烧实验",
+      "instrument": [
+        "两块大小相同的干冰",
+        "镁粉",
+        "红热的铁棒",
+        "点火装置（使铁棒红热）"
+      ],
+      "is_student": 0,
+      "process": "取两块大小相同的干冰，在一块干冰中央挖一个小穴，撒入一些镁粉，用红热的铁棒把镁点燃，将另一块干冰盖上，观察镁粉在干冰内的燃烧情况。",
+      "phenomena": "镁粉在干冰中继续燃烧，发出耀眼的白光，类似冰灯中装进一个电灯泡。",
+      "conclusion": "证明金属镁可以与二氧化碳反应生成氧化镁和碳，同时说明干冰在常压下易升华的特性。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp10",
+      "name": "明矾晶体的制备",
+      "instrument": [
+        "玻璃杯",
+        "碗",
+        "筷子",
+        "硬纸片",
+        "细线",
+        "蒸馏水",
+        "明矾晶体 KAl(SO4)2·12H2O",
+        "铬钾矾晶体 KCr(SO4)2·12H2O"
+      ],
+      "is_student": 1,
+      "process": "1) 在玻璃杯中加入比室温高10~20°C的水，加入明矾晶体，搅拌至有少量晶体不能溶解形成热饱和溶液；2) 自然冷却到比室温略高3~5°C，将溶液倒入洁净碗中，盖好静置一夜获得小晶体；3) 选取2~3粒形状完整的小晶体作为晶核，用细线系好；4) 配制新的热饱和明矾溶液并冷却至略高室温，将晶核悬挂于溶液中央，盖好静置过夜；5) 每天取出晶体，重复上述步骤，使晶体逐渐长大；6) 将所得明矾晶体置于铬钾矾饱和溶液中使其表面生长铬钾矾晶体，再放回明矾饱和溶液中使其表面再覆盖一层明矾。",
+      "phenomena": "溶液冷却后析出小明矾晶体；悬挂的晶核随时间逐渐长大，形成外形规整、色彩美观的明矾晶体，可在表面观察到不同颜色或折光的外层。",
+      "conclusion": "通过控制溶液的饱和度、温度及晶核位置，可以实现晶体的定向、缓慢生长，制备出较大且外形良好的明矾晶体，并可通过不同盐类溶液实现晶体表面包覆。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp11",
+      "name": "实验3-2：几种铜盐和钠钾盐溶液颜色比较",
+      "instrument": [
+        "CuSO4 固体",
+        "CuCl2·2H2O",
+        "CuBr2",
+        "NaCl",
+        "K2SO4",
+        "KBr",
+        "水",
+        "试管"
+      ],
+      "is_student": 1,
+      "process": "将表中少量固体分别溶于足量的水中，观察并记录溶液的颜色，填表得出哪些溶液呈天蓝色，并由此判断呈色离子和无色离子。",
+      "phenomena": "含 Cu2+ 的溶液呈天蓝色，而含 Na+、K+、Br−、SO42−、Cl− 等的溶液无色。",
+      "conclusion": "实验证明，呈蓝色的是水合铜离子 [Cu(H2O)4]2+；Na+、K+ 等离子在溶液中通常无色。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp12",
+      "name": "实验3-3：CuSO4 与氨水和乙醇的反应",
+      "instrument": [
+        "0.1 mol/L CuSO4 溶液",
+        "1 mol/L 氨水",
+        "95% 乙醇",
+        "试管",
+        "玻璃棒"
+      ],
+      "is_student": 1,
+      "process": "向盛有 4 mL 0.1 mol/L CuSO4 溶液的试管中滴加几滴 1 mol/L 氨水，观察生成的难溶物；继续添加氨水并振荡观察变为深蓝色溶液；再加入约 8 mL 95% 乙醇，用玻璃棒摩擦试管壁，观察有深蓝色晶体析出。",
+      "phenomena": "先出现蓝色 Cu(OH)2 沉淀；继续加氨水，沉淀溶解，溶液变为深蓝色透明；加入乙醇后析出深蓝色晶体。",
+      "conclusion": "深蓝色溶液和晶体都是由于存在 [Cu(NH3)4]2+，说明 Cu2+ 能与 NH3 形成稳定的四氨合铜配离子，且该配合物可结晶为 [Cu(NH3)4]SO4·H2O。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp13",
+      "name": "实验3-4：Fe3+ 与 KSCN 形成硫氰化铁配离子",
+      "instrument": [
+        "0.1 mol/L FeCl3 溶液或其他含 Fe3+ 溶液",
+        "0.1 mol/L KSCN 溶液",
+        "试管"
+      ],
+      "is_student": 1,
+      "process": "向盛有少量 0.1 mol/L FeCl3 溶液的试管中滴加 1 滴 0.1 mol/L KSCN 溶液，观察溶液颜色变化。",
+      "phenomena": "溶液颜色变为与血液颜色极为相似的红色。",
+      "conclusion": "这是生成硫氰化铁配离子的颜色，可利用该配离子的特征颜色鉴定溶液中是否存在 Fe3+。Fe2+ 与 SCN− 不显红色。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp14",
+      "name": "实验3-5：NaCl 溶液中 AgCl 的生成与在氨水中溶解",
+      "instrument": [
+        "0.1 mol/L NaCl 溶液",
+        "0.1 mol/L AgNO3 溶液",
+        "1 mol/L 氨水",
+        "试管"
+      ],
+      "is_student": 1,
+      "process": "向盛有少量 0.1 mol/L NaCl 溶液的试管中滴加几滴 0.1 mol/L AgNO3 溶液，观察白色 AgCl 沉淀生成；再滴入 1 mol/L 氨水并振荡，观察沉淀变化。",
+      "phenomena": "先生成白色、难溶的 AgCl 沉淀；加入氨水后，白色沉淀逐渐消失，溶液变成澄清无色。",
+      "conclusion": "AgCl 与 NH3 发生反应生成 [Ag(NH3)2]Cl 配合物，使沉淀溶解，说明配合物的形成可以改变物质的溶解性。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp15",
+      "name": "简单配合物的形成（Cu2+与NH3、Ag+与Cl-和NH3）",
+      "instrument": "试管、胶头滴管",
+      "is_student": 1,
+      "process": "（1）向盛有硫酸铜溶液的试管里加入氨水，继续加入氨水，再加入乙醇，观察溶液和沉淀的变化，用以认识Cu2+与NH3形成的配合物；（2）向盛有氯化钠溶液的试管里滴几滴硝酸银溶液，再滴入氨水，观察AgCl沉淀的生成与溶解，认识[Ag(NH3)2]+等配合物的形成。",
+      "phenomena": "步骤（1）中常见现象为先生成浅蓝色沉淀，再溶解生成深蓝色溶液；步骤（2）中先生成白色AgCl沉淀，加入氨水后沉淀逐渐溶解。",
+      "conclusion": "金属离子与具有孤对电子的分子或阴离子（如NH3、Cl-）可形成配合物，溶液颜色和沉淀情况发生改变，表明新物种——配合物的生成。"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exp16",
+      "name": "简单离子与配离子的区别（Fe3+与[Fe(CN)6]3-）",
+      "instrument": "试管、胶头滴管",
+      "is_student": 1,
+      "process": "（1）向盛有少量蒸馏水的试管里滴加2滴氯化铁溶液，然后再滴加2滴硫氰化钾溶液，观察颜色变化；（2）向盛有少量蒸馏水的试管里滴加2滴K3[Fe(CN)6]溶液，然后再滴加2滴硫氰化钾溶液，比较两种溶液的现象差异。",
+      "phenomena": "（1）Fe3+与SCN-形成血红色络合物；（2）[Fe(CN)6]3-与SCN-不显著呈现血红色，现象与（1）明显不同。",
+      "conclusion": "同一金属元素的简单离子（Fe3+）与其配离子（[Fe(CN)6]3-）在与同一试剂（SCN-）反应时表现出不同的性质，说明形成配合物后中心离子的化学性质发生了明显变化。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "chemistry_xzxbx2_rjb_exe1",
+      "type": "选择题",
+      "stem": "元素周期表中铋元素的数据见右图，下列说法中，正确的是（ ）。\n\nA. 铋元素的质量数是 209.0   \nB. 铋原子的价层电子排布是 6s²6p³   \nC. 铋原子的6p能级有一个未成对电子  \nD. 铋原子的最外层有 5 个能量相同的电子",
+      "answer": "B",
+      "analysis": "铋的原子序数为83，基态电子排布为[Xe]4f¹⁴5d¹⁰6s²6p³，价层电子排布为6s²6p³，对应5个价电子。6p³中有3个未成对电子，因此C错误；“质量数209.0”是相对原子质量近似值，不是质量数，A错误；6s²和6p³中的电子能量并不完全相同，D表述不严谨。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe2",
+      "type": "选择题",
+      "stem": "对 Na、Mg、Al 的有关性质的叙述中，错误的是（ ）。\n\nA. 金属性: Na > Mg > Al   \nB. 第一电离能: Na < Mg < Al   \nC. 电负性: Na < Mg < Al   \nD. 还原性: Na > Mg > Al",
+      "answer": "C",
+      "analysis": "Na、Mg、Al在同一周期中从左到右电负性一般增大，常规数据为电负性Na < Al < Mg，因此选项C给出的顺序有误。金属性大小与还原性强弱顺序Na > Mg > Al；第一电离能Na < Mg < Al，A、B、D均正确。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe3",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 所有非金属元素都分布在 p 区  \nB. 最外层电子数为 2 的元素都分布在 s 区  \nC. 元素周期表中从第ⅢB族到第ⅡB族的10个纵列的元素都是金属元素  \nD. 第四周期的金属元素从左到右, 元素的金属性依次减弱",
+      "answer": "C, D",
+      "analysis": "A错误，H、He等非金属不在p区；B错误，He最外层2个电子位于1s，但也在s区且为非金属，且有部分元素外层2电子仍有d、f电子参与成键。ⅢB到ⅡB的10纵列是d区过渡元素，均为金属，C正确；第四周期金属由左到右原子半径减小、电离能增大，金属性总体减弱，D正确。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe4",
+      "type": "应用题",
+      "stem": "已知：共价单键是 σ 键；共价双键中有一个 σ 键，另一个是 π 键；共价三键由一个 σ 键和两个 π 键构成。试判断：\n(1) 乙烷分子 C2H6 中共有多少个 σ 键和多少个 π 键？\n(2) 乙烯分子 C2H4 中共有多少个 σ 键和多少个 π 键？\n(3) 乙炔分子 C2H2 中共有多少个 σ 键和多少个 π 键？",
+      "answer": "(1) 乙烷：C—C 为 1 个 σ 键，6 个 C—H 均为 σ 键，共 7 个 σ 键，0 个 π 键。\n(2) 乙烯：C=C 含 1 个 σ 键和 1 个 π 键，4 个 C—H 均为 σ 键，共 5 个 σ 键，1 个 π 键。\n(3) 乙炔：C≡C 含 1 个 σ 键和 2 个 π 键，2 个 C—H 均为 σ 键，共 3 个 σ 键，2 个 π 键。",
+      "analysis": "先画出乙烷、乙烯和乙炔的结构式，然后根据“单键=1σ；双键=1σ+1π；三键=1σ+2π”的规则，对各分子的 C—C 和 C—H 键进行分类和计数即可。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe5",
+      "type": "简答题",
+      "stem": "从电负性角度解释：为什么 NaCl 中形成的是离子键，而 HCl 和 CO 中主要形成的是共价键？请简要说明你的判断依据。",
+      "answer": "Na 和 Cl 的电负性差很大，Na 容易失去电子而 Cl 容易得电子，电子对不被共用，从而形成离子键；而 H 与 Cl、C 与 O 的电负性虽然不同，但差值没有 Na 与 Cl 那么大，电子对可以在两原子间共用，因此形成的是共价键。",
+      "analysis": "围绕“电负性差大→电子转移→离子键；电负性差不大→电子共用→共价键”的逻辑，并联系题中给出的 NaCl、HCl、CO 三种物质进行对比说明。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe6",
+      "type": "应用题",
+      "stem": "已知SO₂的中心原子为S，S的价电子数为6，与S结合的O的个数为2，每个O原子最多能接受的电子数为2。根据价层电子对互斥模型中的公式：中心原子上的孤电子对数 = ½(a − x b)，求SO₂中S原子上的孤电子对数，并据此判断SO₂分子中S原子周围共有多少个价层电子对。",
+      "answer": "代入a=6, x=2, b=2，孤电子对数 = ½(6 − 2×2) = ½(2) = 1，对应1对孤电子对；SO₂中S与2个O成键有2个σ键电子对，因此S原子周围共有3对价层电子对。",
+      "analysis": "本题考查对孤电子对数公式的理解和应用。先根据题意确定a、x、b的值，再代入公式计算孤电子对数。计算得到1对孤电子对。S与两个O成键形成2个σ键电子对，所以总的价层电子对数为1（孤电子对）+2（键电子对）=3对，为进一步用VSEPR预测SO₂形状提供基础。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe7",
+      "type": "简答题",
+      "stem": "甲烷分子CH₄的键角为109°28′，4个C–H单键完全等价。若仅用1个2s轨道和3个相互垂直的2p轨道分别与4个H原子的1s轨道重叠，能否解释这种结构？应采用哪种杂化方式才能合理解释甲烷分子的键角和形状？",
+      "answer": "不能。2s轨道为球形，3个2p轨道相互垂直，直接用这4个轨道成键不能得到4个方向完全等价且夹角为109°28′的四面体结构。需要采用sp³杂化：碳的1个2s轨道与3个2p轨道杂化形成4个等价的sp³杂化轨道，指向正四面体的4个顶角，从而解释甲烷为正四面体结构、键角为109°28′。",
+      "analysis": "题干引导学生从“原始s、p轨道形状和方向”与“实验观测到的四面体等价键”之间的矛盾出发，得出必须引入杂化概念。指出sp³杂化的构成及其几何方向性，说明其能自然地给出四面体键角。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe8",
+      "type": "选择题",
+      "stem": "下列有关分子的叙述中，错误的是（ ）。\nA. 非极性分子中只含有非极性键，因而分子本身也没有极性  \nB. 非极性分子可以含有极性键, 但分子的正负电荷中心必须重合  \nC. 非极性分子可以含有极性键, 但各个键的极性的向量和必须等于零  \nD. 双原子分子的化合物一定是极性分子",
+      "answer": "A、D",
+      "analysis": "教材指出非极性分子可以含有极性键，只要正负电荷中心重合、键的极性矢量和为零即可，因此A错误，B、C正确。双原子分子如O2、Cl2是非极性分子，所以“化合物一定是极性分子”也不成立，D错误。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe9",
+      "type": "选择题",
+      "stem": "下列关于氢键X—H…Y的说法中，错误的是（ ）。\nA. 氢键是共价键的一种  \nB. 同一分子内也可能形成氢键  \nC. X、Y元素具有很大的电负性, 是氢键形成的基本条件  \nD. 氢键能增大很多物质分子之间的作用力, 导致沸点升高",
+      "answer": "A",
+      "analysis": "教材明确指出氢键与化学键比较，属于较弱的作用力，不属于化学键，因此不是共价键的一种，A错误。B、C、D均与教材对氢键的定义和影响相符。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe10",
+      "type": "选择题",
+      "stem": "下列现象不能用“相似相溶”规律解释的是（ ）。\nA. 氯化氢易溶于水  \nB. 氯气易溶于 NaOH 溶液  \nC. 碘易溶于 CCl4  \nD. 酒精易溶于水",
+      "answer": "B",
+      "analysis": "A、C、D都可用极性/非极性和结构相似性来解释溶解性；B中Cl2溶于NaOH主要是发生化学反应，不是单纯的“相似相溶”现象。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe11",
+      "type": "选择题",
+      "stem": "已知 O3 的空间结构为 V 形, 分子中正电中心和负电中心不重合, 则下列关于 O3 和 O2 在水中的溶解度的叙述中, 正确的是 ( )。\nA. O3 在水中的溶解度和 O2 的一样  \nB. O3 在水中的溶解度比 O2 的小  \nC. O3 在水中的溶解度比 O2 的大  \nD. 无法比较",
+      "answer": "C",
+      "analysis": "根据“相似相溶”，水是极性溶剂，极性溶质比非极性溶质在水中的溶解度大。O3为极性分子，O2为非极性分子，因此O3在水中的溶解度比O2大。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe12",
+      "type": "简答题",
+      "stem": "同样是三原子分子，水分子有极性而二氧化碳分子没有极性，请从分子结构和键的极性角度加以解释。",
+      "answer": "H2O中O—H键为极性键，且分子呈弯曲结构（V形），两个O—H键的偶极矩不能相互抵消，导致分子正负电中心不重合，因此为极性分子。CO2中C—O键也是极性键，但分子为线形结构，两个C=O键方向相反且大小相等，其偶极矩矢量和为零，正负电中心重合，因此CO2为非极性分子。",
+      "analysis": "本题综合考察“键的极性和分子的极性”的判断方法，需同时考虑键的类型和空间构型。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe13",
+      "type": "简答题",
+      "stem": "下列物质中：水晶、玻璃、石英玻璃、食盐晶体、炭黑，哪些属于晶体，哪些属于非晶体？请分类并简要说明判断依据。",
+      "answer": "晶体：水晶、食盐晶体；非晶体：玻璃、石英玻璃、炭黑。\n判断依据：晶体内部粒子在三维空间呈周期性有序排列，具有自范性和较固定的熔点，并在X射线衍射图中出现分立斑点或明锐衍射峰，如水晶和食盐晶体；非晶体内部粒子排列相对无序，没有自范性，没有固定熔点，X射线衍射图谱中没有分立斑点或明锐衍射峰，如玻璃、石英玻璃和炭黑。",
+      "analysis": "根据教材对晶体和非晶体本质差异的定义，从微观排列、自范性、熔点和X射线衍射特征等方面进行判断和归类。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe14",
+      "type": "应用题",
+      "stem": "如图示金属铜的立方晶胞，在每个顶点、每个棱中点和每个面中心各有1个铜原子。试计算：一个铜晶胞中平均含有多少个铜原子？说明计算过程。",
+      "answer": "一个铜晶胞中含有4个铜原子。\n计算过程：顶角有8个原子，每个被8个晶胞共享，贡献8×1/8=1个；6个面中心原子，每个被两个晶胞共享，贡献6×1/2=3个；晶胞内部无额外原子，所以总原子数=1+3=4个铜原子。",
+      "analysis": "应用晶胞原子计数原则：顶角原子按1/8计，棱上按1/4计，面上按1/2计，内部原子按1计。对应教材示例“金属铜的一个晶胞的原子数 = 8×1/8 + 6×1/2 = 4”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe15",
+      "type": "简答题",
+      "stem": "冰和干冰都是无色固体，但它们的结构与性质有明显差异。根据教材内容回答：\n(1) 冰和干冰分别属于哪一类晶体？\n(2) 简要说明冰中水分子与干冰中 CO₂ 分子之间主要作用力的不同。\n(3) 利用微观结构解释：干冰的密度比冰大，但干冰的熔点却比冰低且在常压下易升华。",
+      "answer": "(1) 冰是分子晶体，干冰（固态 CO₂）也是分子晶体。\n(2) 冰中水分子之间的主要作用力是氢键（同时存在范德华力）；干冰中 CO₂ 分子之间只存在范德华力。\n(3) 冰中每个水分子通过具有方向性的氢键与 4 个相邻水分子形成近似四面体结构，空间利用率低、空隙较大，密度偏小；干冰中 CO₂ 分子只靠范德华力相互吸引，分子可以采用密堆积方式，一个分子周围有 12 个紧邻分子，空隙较少，密度较大。另一方面，范德华力比氢键弱，所以干冰的熔点比冰低，在常压下极易升华。",
+      "analysis": "本题考查对分子晶体内部作用力类型、分子密堆积概念以及结构—性质关系的理解。关键是抓住“冰有氢键且为空隙较大的四面体结构、干冰为范德华力密堆积”这两个微观特征，分别联系到密度大小和熔点、升华性。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe16",
+      "type": "简答题",
+      "stem": "根据教材所给分类，判断下列物质在常温常压下形成的晶体属于分子晶体还是共价晶体：SiO₂、C₆₀、SiC、H₂O（冰）、P₄、Si₃N₄。并说明判断依据。",
+      "answer": "SiO₂：共价晶体；C₆₀：分子晶体；SiC：共价晶体；H₂O（冰）：分子晶体；P₄：分子晶体；Si₃N₄：共价晶体。\n判断依据：教材中明确列出典型分子晶体包括部分非金属单质如 C₆₀、P₄ 以及所有非金属氢化物如水等；共价晶体包括某些单质如 Si 及某些非金属化合物如 SiC、Si₃N₄ 和 SiO₂ 等。",
+      "analysis": "先回忆两类晶体各自的典型例子和归类标准：分子晶体由分子组成，如非金属氢化物、部分非金属单质和氧化物等；共价晶体由原子通过共价键构成网络，如 Si、SiO₂、SiC、Si₃N₄。然后逐个比对判定。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe17",
+      "type": "简答题",
+      "stem": "试用电子气理论解释金属具有良好延展性的原因。",
+      "answer": "在金属晶体中，金属原子价电子脱离原子形成遍布整个晶体的电子气，被所有原子共用。当金属受到外力时，晶体中各原子层可以发生相对滑动而不改变整体的排列方式，弥漫在原子间的电子气起到类似润滑剂的作用，维系原子间的结合，因此金属在外力作用下不易断裂，表现出良好的延展性。",
+      "analysis": "本题考查学生对电子气理论的理解和其对金属宏观力学性质解释的能力。答题关键是指出：1) 金属晶体中的价电子形成电子气并被共有；2) 外力作用只导致原子层相对滑动而不破坏整体配位结构；3) 电子气起润滑作用，保证滑动过程金属键未整体断裂，从而体现延展性。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe18",
+      "type": "简答题",
+      "stem": "NaCl 和 CsCl 都是离子晶体，它们为什么具有较高的熔点和沸点？",
+      "answer": "在 NaCl 和 CsCl 晶体中，阳离子和阴离子之间存在较强的离子键作用，使晶体硬度大、难以压缩。要使它们由固态变成液态或气态，必须提供足够能量来破坏这些强的离子键，因此 NaCl 和 CsCl 的熔点和沸点都较高。",
+      "analysis": "本题要求从微观作用力角度解释宏观熔沸点。应说明：离子晶体中带反电荷的离子间存在强静电作用，形成强离子键；熔化和汽化需要克服这种作用力，所以熔沸点高。可联系文本提供的具体数值加深理解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe19",
+      "type": "简答题",
+      "stem": "向 0.1 mol/L FeCl3 溶液中滴加几滴 0.1 mol/L KSCN 溶液，溶液呈血红色。试回答：\n(1) 该现象说明生成了什么类型的粒子？\n(2) 这一现象可用于鉴定哪一种离子？简要写出理由。",
+      "answer": "(1) 生成了硫氰化铁配离子，即 Fe3+ 与 SCN− 形成的配离子。\n(2) 可用于鉴定 Fe3+ 离子。因为只有 Fe3+ 与 SCN− 能形成呈血红色的硫氰化铁配离子，而 Fe2+ 与 SCN− 不显红色，据此可判断溶液中是否存在 Fe3+。",
+      "analysis": "题目考查对配离子概念和硫氰化铁配离子特征颜色的理解，以及利用特征配合物颜色进行离子检验的能力。先从现象对应的粒子类型入手，再联系教材中“Fe3+ 与 SCN− 形成配离子并呈血红色，可鉴定 Fe3+”的表述作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe20",
+      "type": "简答题",
+      "stem": "白色 AgCl 沉淀难溶于水，但在过量氨水中能够溶解。试用配合物的知识解释这一现象，并写出相关的化学方程式。",
+      "answer": "AgCl 在水中难溶，但与 NH3 作用能生成可溶的二氨合银配合物，使沉淀溶解：\nAgCl + 2 NH3 = [Ag(NH3)2]Cl\n这是由于 Ag+ 与 NH3 形成配离子 [Ag(NH3)2]+，从而改变了体系中 AgCl 的溶解平衡，使固体 AgCl 溶解。",
+      "analysis": "抓住“难溶沉淀 + 配体 → 可溶配合物”的核心思想，说明本质是 Ag+ 与 NH3 形成配离子 [Ag(NH3)2]+，改变溶解平衡。方程式必须写出配合物结构形式。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_xzxbx2_rjb_exe21",
+      "type": "简答题",
+      "stem": "K3[Fe(CN)6] 在水中可以电离出配离子 [Fe(CN)6]3- ，该配离子的中心离子、配体是什么？配位数是多少？[Fe(CN)6]3- 和 Fe3+ 的性质一样吗？",
+      "answer": "中心离子是 Fe3+；配体是 CN-；配位数为 6；[Fe(CN)6]3- 和 Fe3+ 的性质不一样，形成配合物后 Fe3+ 的化学性质发生了改变。",
+      "analysis": "本题考查配离子的基本构成要素（中心离子、配体、配位数）以及简单离子与配离子的性质差异。根据“配合物是由中心原子或离子与一定数目的中性分子或阴离子以配位键结合而形成的一类化合物”和“K3[Fe(CN)6] 在水中可以电离出配离子 [Fe(CN)6]3-”可知，Fe3+ 为中心离子，CN- 为配体，每个Fe3+周围有6个CN-，配位数为6。配合物生成后中心离子性质发生改变，因此[Fe(CN)6]3-的性质与Fe3+不同。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t1",
+      "type": "选择题",
+      "stem": "下列各能层中不包含p能级的是（ ）。\n\nA. N\n\nB. M\n\nC. L\n\nD. K",
+      "answer": "D",
+      "analysis": "K、L、M、N能层分别对应主量子数n=1、2、3、4。p能级（l=1）要求n≥2才存在，因此从L层开始才有p能级；K层（n=1）只有s能级，不包含p能级。故选D。",
+      "difficulty": 1,
+      "knowledge_points": [
+        "能层",
+        "能级",
+        "原子轨道"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t2",
+      "type": "选择题",
+      "stem": "以下能级符号正确的是（ ）。\n\nA. 6s\n\nB. 2d\n\nC. 3f\n\nD. 1p",
+      "answer": "A",
+      "analysis": "主量子数n决定角量子数l的取值范围：l=0,1,2,…,n−1；且s、p、d、f分别对应l=0、1、2、3。逐项判断：6s中n=6，l=0满足0≤l≤5，正确；2d中n=2，l=2不满足l≤1，错误；3f中n=3，l=3不满足l≤2，错误；1p中n=1，l=1不满足l≤0，错误。因此正确的是6s。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "能级",
+        "原子轨道"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t3",
+      "type": "选择题",
+      "stem": "下列各能级中轨道数为3的是（ ）。\n\nA. s\n\nB. p\n\nC. d\n\nD. f",
+      "answer": "B",
+      "analysis": "各副能级所含轨道数分别为：s有1个轨道，p有3个轨道，d有5个轨道，f有7个轨道。因此轨道数为3的是p副能级，选B。",
+      "difficulty": 1,
+      "knowledge_points": [
+        "能级",
+        "原子轨道"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t4",
+      "type": "选择题",
+      "stem": "下列各原子或离子的电子排布式中，错误的是（ ）。\n\nA. $\\mathrm{K}^{+}$\n\n1s²2s²2p63s²3p6\n\nB. F\n\n1s2s2p5\n\nC. $\\mathrm{S}^{2-}$\n\n1s²2s²2p63s²3p4\n\nD. Ar\n\n1s²2s²2p63s²3p6",
+      "answer": "C",
+      "analysis": "K的原子序数为19，K+失去1个电子后有18个电子，排布应为1s²2s²2p⁶3s²3p⁶（正确）。F原子序数为9，基态排布为1s²2s²2p⁵（正确）。S原子序数为16，S²⁻得到2个电子后有18个电子，应为1s²2s²2p⁶3s²3p⁶，而题干给出3p⁴，少了2个电子（错误）。Ar原子序数为18，排布为1s²2s²2p⁶3s²3p⁶（正确）。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "电子排布式",
+        "构造原理"
+      ],
+      "skills": [
+        "根据构造原理书写基态原子的电子排布式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t5",
+      "type": "选择题",
+      "stem": "下列轨道表示式能表示基态硫原子最外层结构的是（ ）。\n\nA.\n\nB. $\\frac{3s}{\\downarrow \\uparrow}$\n\nC. $\\frac{3}{\\downarrow}$\n\nD.",
+      "answer": "A",
+      "analysis": "硫原子Z=16，基态电子排布为1s²2s²2p⁶3s²3p⁴，最外层(n=3)为3s²3p⁴。轨道表示式中：3s轨道应成对(↑↓)；3p有3个等能轨道，按洪特规则先各单占再成对，因此3p应为(↑↓)(↑)(↑)（或等价排列）。能同时满足3s成对且3p为“一对+两个单电子”的选项为A。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "基态原子",
+        "构造原理",
+        "泡利原理",
+        "洪特规则",
+        "轨道表示式"
+      ],
+      "skills": [
+        "画出基态原子的轨道表示式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t6",
+      "type": "判断题",
+      "stem": "正误判断，正确的打“√”，错误的打“×”。\n\n（1）从空间角度看，2s轨道比1s轨道大，其空间包含了1s轨道。（ ）  \n(2) p 能级能量一定比 s 能级的能量高。（）  \n(3) $2 \\mathrm{p} 、 3 \\mathrm{p} 、 4 \\mathrm{p}$ 能级的轨道数依次增多。（）  \n(4) $2 \\mathrm{p}$ 和 $3 \\mathrm{p}$ 轨道形状均为哑铃形。（）  \n(5) $2 p_{x} 、 2 p_{y} 、 2 p_{z}$ 轨道相互垂直，但能量相等。（）",
+      "answer": "（1）√  （2）×  （3）×  （4）√  （5）√",
+      "analysis": "（1）2s轨道平均半径更大，电子云总体分布范围比1s大，可包围1s所在区域，故对。 \n（2）p能级不一定比s能级高：氢原子中同一主量子数n的s、p能量相同；多电子原子中同一n时一般s<p，但不同n之间不成立（如2p比3s低），故错。 \n（3）任一p能级（p亚层）轨道数恒为3个，与主量子数n无关，故错。 \n（4）p轨道的角向分布均为哑铃形，3p只是多了径向节点但基本形状仍为哑铃形，故对。 \n（5）2px、2py、2pz沿x、y、z轴取向彼此垂直，且在无外场时能量简并相等，故对。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "能级",
+        "原子轨道",
+        "s轨道和p轨道的形状及取向",
+        "简并轨道"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t7",
+      "type": "填空题",
+      "stem": "基态原子的核外电子填充在 6 个轨道中的元素有____种，填充在 7 个轨道中的元素有____种。",
+      "answer": "2，1",
+      "analysis": "按基态电子排布并依据洪特规则统计“有电子占据的轨道数”。1s占1个轨道，2s占1个，2p满占3个轨道，因此[Ne]共占1+1+3=5个轨道；到第三周期：Na为[Ne]3s1，Mg为[Ne]3s2，均在原有5个基础上再占据3s的1个轨道，共6个轨道；Al为[Ne]3s2 3p1，3p1再额外占据1个p轨道，共7个轨道。故填充在6个轨道中的元素有2种（Na、Mg），填充在7个轨道中的元素有1种（Al）。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "基态原子",
+        "构造原理",
+        "电子排布式",
+        "原子轨道"
+      ],
+      "skills": [
+        "根据构造原理书写基态原子的电子排布式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t8",
+      "type": "填空题",
+      "stem": "基态钾原子中, 其电子占据的最高能层的符号是 ; 基态钾离子的电子占据的最高能级共有 个原子轨道, 其形状是",
+      "answer": "N；3；哑铃形（双叶形）",
+      "analysis": "钾原子(Z=19)基态电子排布为1s²2s²2p⁶3s²3p⁶4s¹，最高能层主量子数n=4，对应N层。钾离子K⁺失去最外层1个4s电子后为1s²2s²2p⁶3s²3p⁶，最高能级为3p；p能级含3个原子轨道(px、py、pz)，轨道形状为哑铃形（双叶形）。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "能层",
+        "能级",
+        "基态原子",
+        "电子排布式",
+        "原子轨道",
+        "s轨道和p轨道的形状及取向"
+      ],
+      "skills": [
+        "根据构造原理书写基态原子的电子排布式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t9",
+      "type": "填空题",
+      "stem": "请写出下列基态粒子的简化电子排布式和价层电子的轨道表示式：\n\n(1)Ti： ，  \n(2) $\\mathrm{Cr}$ ： ，  \n(3) $\\mathrm{Zn}^{2+}$ ：",
+      "answer": "(1)Ti：简化电子排布式：[Ar] 3d^2 4s^2；价层轨道表示式：4s(↑↓)，3d(↑)(↑)( )( )( )\n(2)Cr：简化电子排布式：[Ar] 3d^5 4s^1；价层轨道表示式：4s(↑)，3d(↑)(↑)(↑)(↑)(↑)\n(3)Zn^{2+}：简化电子排布式：[Ar] 3d^{10}；价层轨道表示式：3d(↑↓)(↑↓)(↑↓)(↑↓)(↑↓)",
+      "analysis": "先写出元素或离子的基态简化电子排布：Ti(Z=22)在[Ar]之后依次填4s再填3d得[Ar]3d^2 4s^2；Cr(Z=24)有半充满稳定性，基态为[Ar]3d^5 4s^1；Zn^{2+}由Zn([Ar]3d^{10}4s^2)失去最外层4s的2个电子得到[Ar]3d^{10}。价层轨道表示按洪特规则先单占后成对，d轨道有5个等能轨道。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "基态原子",
+        "构造原理",
+        "电子排布式",
+        "能级交错",
+        "原子轨道",
+        "泡利原理",
+        "轨道表示式",
+        "洪特规则"
+      ],
+      "skills": [
+        "根据构造原理书写基态原子的电子排布式",
+        "画出基态原子的轨道表示式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s1_t10",
+      "type": "填空题",
+      "stem": "A、B、C、D、E、F均为36号以前的元素。请完成下列空白：\n\n(1) A元素基态原子的最外层有 2 个未成对电子, 次外层有 2 个电子, 其元素符号为  \n(2)B元素的原子最外层电子排布式为 $n s^{n} n p^{n+1}$ , 其元素符号为  \n(3) C元素基态的正三价离子的3d轨道为半充满 (即有5个电子), 其元素符号为 , 其基态原子的电子排布式为  \n(4) D元素基态原子的M层全充满; N层没有成对电子, 只有一个未成对电子。D的元素符号为 , 其基态原子的价层电子的轨道表示式为  \n(5) E、F元素的基态原子都只有一个未成对电子; 它们相互作用形成的离子的电子层结构相同,并且最高能级的电子对数等于其最高能层的电子层数。E、F的元素符号分别为",
+      "answer": "(1) C\n(2) N\n(3) Fe；基态原子电子排布式：[Ar]3d^6 4s^2（或1s^2 2s^2 2p^6 3s^2 3p^6 3d^6 4s^2）\n(4) K；价层电子轨道表示式：4s：↑\n(5) E为K，F为Cl",
+      "analysis": "(1) 次外层有2个电子→1s^2，最外层有2个未成对电子→2p^2（2s^2 2p^2），故为C。\n(2) 最外层为ns^n np^{n+1}，s轨道最多容纳2个电子→n=2，得2s^2 2p^3，对应N。\n(3) M^{3+}的3d为半充满3d^5：Fe基态为[Ar]3d^6 4s^2，失去3个电子（先4s后3d）得Fe^{3+}：[Ar]3d^5。\n(4) M层全充满按2,8,8,1的壳层模型→K；N层只有1个未成对电子对应4s^1，价层轨道表示式为4s单占。\n(5) 两元素原子均1个未成对电子，形成离子后等电子层结构且满足“最高能级电子对数=最高能层电子层数”。取Ar型结构：最高能级3p^6有3对电子，离子有3个电子层；可由K→K^+与Cl→Cl^-形成，二者均为2,8,8。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "原子结构",
+        "能层",
+        "能级",
+        "构造原理",
+        "电子排布式",
+        "轨道表示式",
+        "洪特规则",
+        "主族元素与副族元素基态电子排布差异"
+      ],
+      "skills": [
+        "根据构造原理书写基态原子的电子排布式",
+        "画出基态原子的轨道表示式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t11",
+      "type": "选择题",
+      "stem": "对于第 VII A 族元素，从上到下，下列关于其性质变化的叙述中，错误的是（ ）。\n\nA. 原子半径逐渐增大\n\nB. 电负性逐渐减小\n\nC. 第一电离能逐渐减小\n\nD. 氢化物水溶液的酸性逐渐减弱",
+      "answer": "D",
+      "analysis": "第VIIA族（卤素）从上到下：电子层数增多，原子半径增大（A对）；吸引成键电子能力减弱，电负性减小（B对）；最外层电子离核更远且屏蔽增强，第一电离能总体减小（C对）。其氢化物HX（HF、HCl、HBr、HI）中，H—X键由上到下键能减小，HX更易电离，水溶液酸性逐渐增强而非减弱，因此D错误。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t12",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 处于最低能量的原子叫做基态原子\n\nB. $3 \\mathrm{p}^{2}$ 表示 $3 \\mathrm{p}$ 能级有两个轨道\n\nC. 同一原子中, $1 \\mathrm{~s} 、 2 \\mathrm{~s} 、 3 \\mathrm{~s}$ 电子的能量逐渐减小 D. $2 \\mathrm{p} 、 3 \\mathrm{p} 、 4 \\mathrm{p}$ 能级的轨道数依次增多",
+      "answer": "A",
+      "analysis": "A正确：处于最低能量状态的原子称为基态原子。B错误：3p^2表示3p能级(亚层)中有2个电子，而不是有两个轨道；p亚层恒有3个轨道。C错误：同一原子中1s、2s、3s电子能量随主量子数n增大而升高，不是减小。D错误：2p、3p、4p能级的轨道数都为3个，不随n增多。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t13",
+      "type": "选择题",
+      "stem": "下列各组元素中，原子半径依次减小、元素第一电离能逐渐升高的是（ ）。\n\nA. K、Na、Li\n\nB. C、N、O\n\nC. Cl、S、P\n\nD. Al、Mg、Na",
+      "answer": "A",
+      "analysis": "比较同一主族或同一周期的变化趋势：原子半径同族自上而下增大、第一电离能自上而下减小。A中K→Na→Li为同族自下而上，原子半径依次减小，第一电离能依次升高，符合题意。B虽同周期半径减小，但第一电离能N>O（半充满稳定性导致O的第一电离能略低于N），不满足“逐渐升高”。C、D的元素顺序均不是半径依次减小的方向。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t14",
+      "type": "选择题",
+      "stem": "下列各组元素中，电负性依次减小的是（ ）。\n\nA. F、N、O\n\nB. O、Cl、F\n\nC. As、P、H\n\nD. Cl、S、As",
+      "answer": "D",
+      "analysis": "比较电负性大小规律：同周期从左到右增大，同主族从上到下减小。逐项判断：A中F>N但N<O，不是依次减小；B中O>Cl但Cl<F，不是依次减小；C中As<P<H，反而增大；D中Cl（第三周期17族）>S（第三周期16族）且S（上）>As（下），因此Cl>S>As，电负性依次减小。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t15",
+      "type": "选择题",
+      "stem": "现有4种元素的基态原子的电子排布式如下：① $1\\mathrm{s}^{2}2\\mathrm{s}^{2}2\\mathrm{p}^{6}3\\mathrm{s}^{2}3\\mathrm{p}^{4}$ ；② $1\\mathrm{s}^{2}2\\mathrm{s}^{2}2\\mathrm{p}^{6}3\\mathrm{s}^{2}3\\mathrm{p}^{3}$ ；③ $1\\mathrm{s}^{2}2\\mathrm{s}^{2}2\\mathrm{p}^{3}$ ；④ $1\\mathrm{s}^{2}2\\mathrm{s}^{2}2\\mathrm{p}^{5}$ 。则下列比较中，正确的是（ ）。\n\nA. 第一电离能: ④ $>$ ③ $>$ ② $>$ ①\n\nB. 原子半径: ④ $>$ ③ $>$ ② $>$ ①\n\nC. 电负性: ④ $>$ ③ $>$ ② $>$ ①\n\nD. 最高正化合价: ④ $>\\text{③}=\\text{②}>\\text{①}$",
+      "answer": "A",
+      "analysis": "由电子排布判断元素：①[Ne]3s2 3p4为S；②[Ne]3s2 3p3为P；③1s2 2s2 2p3为N；④1s2 2s2 2p5为F。第一电离能同周期从左到右增大、同族从上到下减小，且N的2p3为半充满结构电离能偏高，因此顺序为F > N > P > S，对应④>③>②>①，故选A。其余：原子半径应为P>S>N>F；电负性为F>N>S>P；最高正化合价F无正价、S为+6、N/P为+5，均与选项不符。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t16",
+      "type": "选择题",
+      "stem": "在核电荷数为25的Mn的价层电子排布中\n\n3d 4s A. 141414141\n\n3d 4s B. ↑↓ ↑ ↑ ↑ ↑ ↑ ↑\n\n3d 4s C. ↑↓ ↑↑ ↑ ↑ ↑\n\n3d 4s D. ↑↑↑↑↑↑",
+      "answer": "B",
+      "analysis": "Mn的核电荷数Z=25，基态电子排布为[Ar]3d^5 4s^2。价层电子为4s^2与3d^5：4s轨道填满为↑↓；3d有5个简并轨道，根据洪特规则先单占且自旋平行，应表示为五个↑。因此正确的价层轨道表示对应选项B。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t17",
+      "type": "选择题",
+      "stem": "X、Y、Z三种主族元素的原子，其最外层电子排布分别为 $n\\mathrm{s}^{1}$ 、 $3\\mathrm{s}^{2}3\\mathrm{p}^{2}$ 和 $2\\mathrm{s}^{2}2\\mathrm{p}^{4}$ ，由这三种元素组成的化合物的化学式可能是（ ）。\n\nA. ${\\mathrm{{XYZ}}}_{2}$\n\nB. $X_{2}YZ_{3}$\n\nC. $X_{2}YZ_{2}$\n\nD. $XYZ_{3}$",
+      "answer": "B",
+      "analysis": "X最外层为ns1，属第ⅠA族，常显+1价；Y为3s2 3p2（第14族，如Si），在与O形成化合物时常显+4价；Z为2s2 2p4（第16族，如O），常显−2价。检验各选项电荷守恒：B中X2YZ3对应电荷为2×(+1)+(+4)+3×(−2)=0，可形成中性化合物；其余选项电荷不守恒。故选B。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t18",
+      "type": "选择题",
+      "stem": "2017年5月9日，我国正式向社会发布113号、115号、117号、118号元素的中文名称，至此，全部完成了 $1 \\sim 118$ 号元素的中文命名。已知115号元素的中文名为“镤”，它有多种原子，如 ${ }_{115}^{288} \\mathrm{Mc}$ 、 ${ }_{115}^{290} \\mathrm{Mc}$ 等。下列说法中，正确的是（ ）。\n\nA. $\\mathrm{^{288}Mc}$ 和 $\\mathrm{^{290}Mc}$ 的化学性质几乎相同  \nB. Mc位于周期表的第七周期第VI A族  \nC. 在镁原子中, 最后填入电子的轨道能级符号是 f, 故 Mc 位于周期表中的 f区  \nD. 在周期表中, 假设第八周期按照现有规则填满, 则 115 号元素正下方将是 147 号元素",
+      "answer": "AD",
+      "analysis": "A：^288Mc 与 ^290Mc 互为同位素，核外电子排布相同，化学性质几乎相同，正确。B：115号元素Mc（镆）位于第七周期、第VA族（第15族），不是第VIA族，错误。C：镁原子最后填入的是3s轨道，不是f；且Mc属于p区元素，不在f区，错误。D：若按现有周期表的排布规则（s、p、d、f区）继续填满第八周期，则第八周期与第六、七周期同为32个元素，115号元素正下方对应115+32=147号元素，正确。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t19",
+      "type": "填空题",
+      "stem": "在第四周期中，未成对电子数最多的元素是________（填元素符号）。\n\n（1）它位于 族，属于 区。  \n(2) 它的核外电子排布式是 , 价层电子的轨道表示式为  \n(3) 它有 ______ 个能层, ______ 个能级。  \n（4）价层电子排布式的特点是",
+      "answer": "Cr",
+      "analysis": "第四周期元素中未成对电子数最多的是铬Cr。Cr基态电子排布为1s2 2s2 2p6 3s2 3p6 3d5 4s1，其中3d5为5个未成对电子，4s1为1个未成对电子，共6个未成对电子，最多。\n(1) Cr位于第6族（ⅥB族），属于d区。\n(2) 核外电子排布式：1s2 2s2 2p6 3s2 3p6 3d5 4s1；价层电子轨道表示式：4s(↑)，3d(↑ ↑ ↑ ↑ ↑)。\n(3) 有4个能层；电子占据的能级（亚层）有7个：1s、2s、2p、3s、3p、3d、4s。\n(4) 价层电子排布式特点：3d半充满（3d5）并伴随4s1，属于半充满较稳定结构。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch1_s_t22",
+      "type": "简答题",
+      "stem": "请解释钾与钠产生焰色及焰色不同的原因。",
+      "answer": "钾和钠受热时，原子外层电子被激发到高能级；电子回到低能级时会放出光，形成焰色。由于钾与钠原子的电子能级结构（能级间距）不同，电子跃迁所释放光子的能量不同，因此发射的特征光波长不同：钠主要发出黄光（约589 nm），钾主要呈淡紫色（约404 nm附近，常较弱）。",
+      "analysis": "焰色反应本质是原子发射光谱：受热→电子吸收能量跃迁到高能级→回落到较低能级时发射光子。光子能量E=ΔE=hν=hc/λ，不同元素的能级差ΔE不同，导致发射光的频率/波长不同，从而焰色不同。钠的强谱线在589 nm（黄光）很显著；钾的可见强谱线在紫光区且整体较弱，所以呈淡紫色。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t25",
+      "type": "选择题",
+      "stem": "下列关于 $\\sigma$ 键和 $\\pi$ 键的说法中，错误的是（ ）。\n\nA. $\\sigma$ 键的电子云图形是轴对称的, $\\pi$ 键的电子云图形是镜面对称的  \nB. $\\sigma$ 键是原子轨道 “头碰头” 式重叠, $\\pi$ 键是原子轨道 “肩并肩” 式重叠  \nC. 两个 $\\mathrm{p}$ 轨道不能形成 $\\sigma$ 键, 只能形成 $\\pi$ 键  \nD. H 只能形成 $\\sigma$ 键, O 可以形成 $\\sigma$ 键和 $\\pi$ 键",
+      "answer": "C",
+      "analysis": "A：σ键电子云绕键轴轴对称；π键电子云关于包含键轴的平面对称，正确。B：σ键由“头碰头”重叠形成；π键由“肩并肩”重叠形成，正确。C：两个p轨道既可以端对端重叠形成p–p σ键，也可以侧向重叠形成p–p π键，因此“不能形成σ键只能形成π键”错误。D：H只有1s轨道，只能形成σ键；O可用p轨道形成σ键和π键（如O=O中既有σ又有π），正确。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "σ键",
+        "π键",
+        "p-p σ键",
+        "σ键的轴对称性",
+        "π键的镜面对称性",
+        "原子轨道重叠形成共价键"
+      ],
+      "skills": [
+        "用原子轨道模型解释共价键形成"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t26",
+      "type": "选择题",
+      "stem": "人们常用HX表示卤化氢（X代表F、Cl、Br、I），下列说法中，正确的是（ ）。\n\nA. 形成共价键的两个原子之间的核间距叫做键长  \nB. H—F的键长是H—X中最长的  \nC. H—F是p-pσ键   \nD. H—F的键能是 $\\mathrm{H}-\\mathrm{X}$ 中最小的",
+      "answer": "A",
+      "analysis": "A项：键长指成键原子核间的平衡距离，表述正确。B项：卤化氢中原子半径随F→Cl→Br→I增大，键长增大，HF键长最短而非最长。C项：HF成键为H的1s轨道与F的2p轨道形成的s-pσ键，不是p-pσ键。D项：HF键能在HX中最大（键长最短、键强），不是最小。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "键长",
+        "键能",
+        "键长与键能的关系",
+        "s-p σ键",
+        "p-p σ键",
+        "键参数"
+      ],
+      "skills": [
+        "用原子轨道模型解释共价键形成"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t27",
+      "type": "选择题",
+      "stem": "下列说法中，错误的是（ ）。\n\nA. 键能是衡量化学键稳定性的参数之一, 键能越大, 则化学键就越牢固  \nB. 键长与共价键的稳定性没有关系  \nC. 键角是两个相邻共价键之间的夹角, 说明共价键有方向性  \nD. 共价键是通过原子轨道重叠并共用电子对而形成的, 所以共价键有饱和性",
+      "answer": "B",
+      "analysis": "A正确：键能越大，断键所需能量越多，键越牢固、越稳定。B错误：键长与共价键稳定性有关，一般键长越短，原子核间作用越强，键能越大，键越稳定。C正确：键角体现相邻共价键之间夹角，说明共价键具有方向性。D正确：共价键由原子轨道重叠共用电子对形成，原子价层可形成的共价键数目有限，体现饱和性。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "键参数",
+        "键能",
+        "键长",
+        "键角",
+        "共价键的方向性",
+        "共价键的饱和性"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t28",
+      "type": "选择题",
+      "stem": "下列说法中，错误的是（ ）。\n\nA. 氧原子有两个未成对电子, 因而能形成 2 个共价键  \nB. 氧原子可以形成 $\\mathrm{H}_{2} \\mathrm{O} 、 \\mathrm{H}_{2} \\mathrm{O}_{2}$ , 也可能形成 $\\mathrm{H}_{3} \\mathrm{O}$   \nC. 已知 $\\mathrm{H}_{2} \\mathrm{O}_{2}$ 的分子结构是 $\\mathrm{H}-\\mathrm{O}-\\mathrm{O}-\\mathrm{H}$ , 在 $\\mathrm{H}_{2} \\mathrm{O}_{2}$ 中只有 $\\sigma$ 键没有 $\\pi$ 键  \nD. 已知 $\\mathrm{N}_{2}$ 的分子结构是 $\\mathrm{N} \\equiv \\mathrm{N}$ , 在 $\\mathrm{N}_{2}$ 中有 1 个 $\\sigma$ 键和 2 个 $\\pi$ 键",
+      "answer": "B",
+      "analysis": "A：氧原子价层(2s2 2p4)有2个未成对电子，通常形成2个共价键，正确。B：氧可形成H2O、H2O2；但“氢三氧”应为水合氢离子H3O+，而不是中性分子H3O，故该说法错误。C：H2O2为H–O–O–H，均为单键，只有σ键无π键，正确。D：N2为三键N≡N，包含1个σ键和2个π键，正确。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "共价键的饱和性",
+        "σ键",
+        "π键",
+        "共价键的类型构成规则"
+      ],
+      "skills": [
+        "根据键类型判定σ键和π键数目"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t29",
+      "type": "判断题",
+      "stem": "正误判断，正确的打“√”，错误的打“×”。\n\n（1）共价键的成键原子只能是非金属原子。（）  \n（2）所有的 $\\sigma$ 键的强度都比 $\\pi$ 键的大。（ ）\n\n（3）在所有分子中都存在化学键。（）  \n（4）s-s $\\sigma$ 键与s-p $\\sigma$ 键的电子云形状的对称性相同。（ ）  \n（5） $\\sigma$ 键可以绕键轴旋转， $\\pi$ 键一定不能绕键轴旋转。（ ）  \n（6）碳碳三键和碳碳双键的键能分别是碳碳单键的3倍和2倍。（）  \n（7）键长等于成键两原子的半径之和。（）",
+      "answer": "（1）×  （2）√  （3）√  （4）√  （5）√  （6）×  （7）×",
+      "analysis": "（1）共价键不只发生在非金属原子之间，某些金属/类金属与非金属也可形成共价键，故×。\n（2）一般同条件下σ键由“头碰头”重叠形成，重叠更充分，通常强于π键，故√。\n（3）分子是由原子通过化学键结合形成的微粒，分子内一定存在化学键，故√。\n（4）σ键的电子云对键轴呈圆柱对称；无论s-sσ还是s-pσ都属于σ键，对称性相同，故√。\n（5）σ键沿键轴电子云分布对称，通常可绕键轴旋转；π键侧向重叠，旋转会破坏重叠，通常认为不能自由旋转，故√。\n（6）键能不按“单键×2或×3”成倍增加：C=C与C≡C的键能均小于对应倍数，故×。\n（7）键长只近似等于两原子共价半径之和，受成键类型、杂化、环境等影响，不是严格相等，故×。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "共价键",
+        "σ键",
+        "π键",
+        "s-s σ键",
+        "s-p σ键",
+        "σ键的轴对称性",
+        "π键的镜面对称性",
+        "σ键与π键强度比较",
+        "共价键的类型构成规则",
+        "键参数",
+        "键能",
+        "键长"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t30",
+      "type": "应用题",
+      "stem": "用泡沫塑料制作电子云模型以及 $\\sigma$ 键和 $\\pi$ 键的电子云模型，并用铁丝或竹签等插过泡沫塑料制作这些模型的坐标轴。",
+      "answer": "用泡沫塑料制作出原子电子云模型以及σ键、π键的电子云模型，并用铁丝或竹签穿过泡沫塑料标出相应的坐标轴（如x、y、z轴或键轴）。",
+      "analysis": "根据电子云与成键特征选择泡沫塑料的形状并进行组合：原子电子云可用球形/椭球形表示；σ键模型体现沿键轴方向的头碰头重叠并具有圆柱对称；π键模型体现两侧并列重叠、在键轴所在平面有节点。用铁丝/竹签穿过模型中心或沿键轴插入作为坐标轴，并可标注轴向与节点位置。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "σ键",
+        "π键",
+        "σ键的轴对称性",
+        "π键的镜面对称性"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t31",
+      "type": "简答题",
+      "stem": "怎样理解 $\\mathrm{Cl}_2$ 、 $\\mathrm{Br}_2$ 、 $\\mathrm{I}_2$ 的键能依次下降，键长依次增大？",
+      "answer": "同族卤素单质为非极性共价键 X—X（X=Cl、Br、I）。从 Cl→Br→I，原子半径逐渐增大，最外层 p 轨道更弥散，形成 σ 键时轨道重叠程度减小、有效核电荷对成键电子的吸引相对减弱，因此键长依次增大（Cl—Cl < Br—Br < I—I），键能随之依次下降（Cl—Cl > Br—Br > I—I）。",
+      "analysis": "比较同族元素成键强弱与键长：\n1) 卤素分子均为 X2，通过 p 轨道端对端重叠形成 σ 键。\n2) 族向下电子层数增加→原子半径变大→成键原子间平衡距离变大，所以键长增大。\n3) 原子变大导致 p 轨道重叠变差，成键电子云密度在核间区域降低，键的强度减弱→键能降低。\n因此键长：Cl2 < Br2 < I2；键能：Cl2 > Br2 > I2。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "原子轨道重叠形成共价键",
+        "键参数",
+        "键能",
+        "键长",
+        "键长与键能的关系"
+      ],
+      "skills": [
+        "用原子轨道模型解释共价键形成"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s1_t32",
+      "type": "应用题",
+      "stem": "查出 $\\mathrm{HCl} 、 \\mathrm{HBr}$ 和 $\\mathrm{HI}$ 的键长、键能的数据和热分解温度，考察它们之间的相关性。通过这个例子说明分子的结构如何影响分子的化学性质。",
+      "answer": "参考数据（常见教材/数据库的典型值，具体数值随来源略有差异）：\n- 键长：HCl≈127 pm，HBr≈141 pm，HI≈161 pm\n- 键能（键解离能D）：HCl≈431 kJ·mol⁻¹，HBr≈366 kJ·mol⁻¹，HI≈299 kJ·mol⁻¹\n- 热分解温度（稳定性顺序）：HCl最高，HBr次之，HI最低（即HCl最不易热分解，HI最易热分解）\n\n相关性结论：从HCl→HBr→HI，卤素原子半径增大使H–X键长变长，原子轨道重叠变差导致键能降低；键能越低，分子热稳定性越差，所需热分解温度越低、越容易分解。\n\n结构影响化学性质说明：分子的微观结构（如键长、键能、键极性等）决定键的强弱与断裂难易，从而决定分子的稳定性与反应活性（例如HI键最弱，最容易发生断键反应，热稳定性最差；HCl键更强，较稳定）。",
+      "analysis": "比较同族氢卤酸的H–X键：随X由Cl→Br→I，原子半径增大→键长增大；轨道重叠减小→键能下降。热分解实质是断H–X键，所需能量与键能正相关，因此键能越小越易分解、热分解温度越低。由此归纳“结构参数（键长/键能）→稳定性与反应性”的因果关系。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "键参数",
+        "键能",
+        "键长",
+        "键长与键能的关系"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t33",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 杂化轨道只用于形成 $\\sigma$ 键或用于容纳未参与成键的孤电子对  \nB. 凡是中心原子采取 $\\mathrm{sp}^{3}$ 杂化的分子, 其空间结构都是正四面体形  \nC. 凡是 $\\mathrm{AB}_{2}$ 型的共价化合物, 其中心原子A均采用 $\\mathrm{sp}^{3}$ 杂化轨道成键  \nD. $\\mathrm{SCl}_{3}$ 属于 $\\mathrm{AB}_{2}$ 型共价化合物, 中心原子 $\\mathrm{S}$ 采取sp杂化轨道成键",
+      "answer": "A",
+      "analysis": "A项正确：杂化轨道通常用于形成σ键，或用来容纳未参与成键的孤电子对；而π键一般由未杂化的p轨道（或d轨道）侧向重叠形成。B项错误：中心原子sp3杂化只说明电子对几何为正四面体，若有孤对电子，分子空间构型可为三角锥形（如NH3）或V形（如H2O），不一定是正四面体。C项错误：AB2型分子中心原子可能为sp（如CO2）、sp2（如SO2）等，并非均为sp3。D项错误：该说法中“属于AB2型”及“sp杂化成键”均不符合常见价层电子对互斥与杂化判断。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子空间结构",
+        "价层电子对互斥模型",
+        "孤电子对",
+        "杂化轨道理论",
+        "sp³杂化轨道",
+        "sp杂化轨道"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状",
+        "用杂化轨道解释分子空间结构"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t34",
+      "type": "选择题",
+      "stem": "下列分子中的中心原子是 $\\mathfrak{sp}^2$ 杂化的是（ ）。\n\nA. $\\mathrm{NH}_{3}$\n\nB. $\\mathrm{CH}_{4}$\n\nC. $\\mathrm{BF}_{3}$\n\nD. $\\mathrm{H}_{2} \\mathrm{O}$",
+      "answer": "C",
+      "analysis": "判断中心原子杂化类型看其价层电子对数（成键对+孤对）及分子构型。NH3中N有3个成键对+1个孤对=4对，为sp3；CH4中C有4个成键对=4对，为sp3；BF3中B有3个成键对+0个孤对=3对，呈平面三角形，为sp2；H2O中O有2个成键对+2个孤对=4对，为sp3。故选BF3。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "杂化轨道理论",
+        "sp²杂化轨道",
+        "平面三角形分子结构"
+      ],
+      "skills": [
+        "用杂化轨道解释分子空间结构"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t35",
+      "type": "选择题",
+      "stem": "关于 $\\mathrm{CO}_{2}$ 和 $\\mathrm{SO}_{2}$ 的说法中，正确的是（ ）。\n\nA. C和S上都没有孤电子对  \nB. C和S都是sp ${}^{3}$ 杂化  \nC. 都是 AB 型,所以空间结构都是直线形  \nD. $\\mathrm{CO}_{2}$ 的空间结构是直线形, $\\mathrm{SO}_{2}$ 的空间结构是 $\\mathrm{V}$ 形",
+      "answer": "D",
+      "analysis": "CO2中中心原子C与两端O形成两个电子域（两条双键算两个电子域），且C上无孤电子对，故为sp杂化，分子空间结构为直线形。SO2中中心原子S周围有3个电子域（两条S=O键+1对孤电子对），电子域构型为平面三角形，S为sp2杂化，但由于存在孤电子对，分子空间结构为V形（折线形）。因此选D。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "分子空间结构",
+        "直线形分子结构",
+        "V形（角形）分子结构",
+        "价层电子对互斥模型",
+        "孤电子对",
+        "杂化轨道理论",
+        "sp²杂化轨道",
+        "sp杂化轨道"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状",
+        "使用孤电子对数公式",
+        "用杂化轨道解释分子空间结构"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t36",
+      "type": "选择题",
+      "stem": "下列离子的VSEPR模型与离子的空间结构一致的是（ ）。\n\nA. $\\mathrm{SO}_3^{2-}$\n\nB. $\\mathrm{ClO}_4^-$\n\nC. $\\mathrm{NO}_{2}^{-}$\n\nD. $\\mathrm{ClO}_{3}^{-}$",
+      "answer": "B",
+      "analysis": "VSEPR模型描述的是中心原子周围“价层电子对”的空间排布；而离子的空间结构通常指“原子核（成键原子）”的几何形状。若中心原子存在孤电子对，则电子对排布与原子排布往往不一致。\nA. SO3^2-：中心S有3个成键电子对+1个孤对，电子对排布为四面体，但原子空间结构为三角锥形，不一致。\nB. ClO4^-：中心Cl有4个成键电子对、无孤对，电子对排布为四面体，原子空间结构也为四面体，一致。\nC. NO2^-：中心N有2个成键电子对+1个孤对，电子对排布为平面三角形，但原子空间结构为V形，不一致。\nD. ClO3^-：中心Cl有3个成键电子对+1个孤对，电子对排布为四面体，但原子空间结构为三角锥形，不一致。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子空间结构",
+        "分子空间结构类型",
+        "价层电子对互斥模型",
+        "孤电子对"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状",
+        "使用孤电子对数公式"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t37",
+      "type": "选择题",
+      "stem": "下列粒子的VSEPR模型为四面体且其空间结构为V形的是（ ）。\n\nA. $\\mathrm{SO}_2$\n\nB. $\\mathrm{NF}_{3}$\n\nC. $\\mathrm{H}_{3} \\mathrm{O}^{+}$\n\nD. $\\mathrm{OF}_{2}$",
+      "answer": "D",
+      "analysis": "判断中心原子价层电子对数（成键电子对+孤电子对）：\nA SO2：S有2个成键电子对+1个孤电子对=3对，VSEPR为平面三角形，分子为V形但不是四面体电子对模型。\nB NF3：N有3个成键电子对+1个孤电子对=4对，电子对模型为四面体，空间结构为三角锥形。\nC H3O+：O有3个成键电子对+1个孤电子对=4对，电子对模型为四面体，空间结构为三角锥形。\nD OF2：O有2个成键电子对+2个孤电子对=4对，电子对模型为四面体，空间结构为V形。故选D。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "价层电子对互斥模型",
+        "正四面体形分子结构",
+        "V形（角形）分子结构"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t38",
+      "type": "选择题",
+      "stem": "下列各组粒子的空间结构相同的是（ ）。\n\n$① \\mathrm { N H } _ { 3 }$ 和 $\\mathrm{H}_2\\mathrm{O}$ ； $② \\mathrm { N H } _ { 4 } ^ { + }$ 和 $\\mathrm{H}_3\\mathrm{O}^+$ ； $③ \\mathrm { N H } _ { 3 }$ 和 $\\mathrm{H}_3\\mathrm{O}^+$ ； $④ \\mathrm { O } _ { 3 }$ 和 $\\mathrm{SO}_2$ ； $⑤ \\mathrm { C O } _ { 2 }$ 和 $\\mathrm{BeCl}_2$\n\nA. 全部\n\nB. ①②③⑤\n\nC. ③④⑤\n\nD. ②⑤",
+      "answer": "C",
+      "analysis": "用价层电子对互斥理论判断空间构型：①NH3为三角锥形（3键1孤对），H2O为V形（2键2孤对），不同；②NH4+为正四面体（4键0孤对），H3O+为三角锥形（3键1孤对），不同；③NH3与H3O+均为三角锥形，相同；④O3与SO2中心原子均为2键1孤对，均为V形，相同；⑤CO2与BeCl2均为直线形，相同。故选③④⑤，对应C。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子空间结构",
+        "分子空间结构类型",
+        "价层电子对互斥模型",
+        "直线形分子结构",
+        "V形（角形）分子结构",
+        "三角锥形分子结构",
+        "正四面体形分子结构"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t39",
+      "type": "判断题",
+      "stem": "正误判断，正确的打“√”，错误的打“×”。\n\n（1）杂化轨道只用于形成共价键。（ ）  \n(2) 中心原子若通过 $\\mathrm{sp}^{3}$ 杂化轨道成键, 则该分子一定为正四面体形结构。( )  \n(3) $\\mathrm{NH}_{3}$ 为三角锥形, $\\mathrm{N}$ 发生 $\\mathrm{sp}^{2}$ 杂化。( )  \n(4) 只要分子的空间结构为平面三角形, 中心原子均为 $\\mathrm{sp}^{2}$ 杂化。( )  \n(5) 中心原子是sp杂化的, 其分子的空间结构不一定为直线形。( )  \n(6)价层电子对互斥模型中, $\\pi$ 键电子对数不计入中心原子的价层电子对数。(   )",
+      "answer": "（1）×  （2）×  （3）×  （4）√  （5）×  （6）√",
+      "analysis": "（1）杂化轨道既可用于形成σ键，也可容纳孤对电子，不是“只用于成键”，故×。\n（2）sp3杂化对应的电子对空间构型为正四面体，但分子构型还受孤对电子影响，可能为三角锥形、V形等，故×。\n（3）NH3为三角锥形，中心N为sp3杂化而非sp2，故×。\n（4）平面三角形分子构型对应中心原子3个成键电子对、无孤对电子，通常为sp2杂化，故√。\n（5）sp杂化表示价层电子对数为2，电子对空间构型为直线形，分子构型也为直线形（两键），“不一定为直线形”不符合常规定论，故×。\n（6）价层电子对互斥模型中，多重键按一个电子对域计，π键不单独计入价层电子对数，故√。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "杂化轨道理论",
+        "价层电子对互斥模型",
+        "价层电子对",
+        "σ键电子对数",
+        "孤电子对",
+        "sp³杂化轨道",
+        "sp²杂化轨道",
+        "sp杂化轨道",
+        "平面三角形分子结构",
+        "三角锥形分子结构",
+        "正四面体形分子结构",
+        "直线形分子结构",
+        "分子空间结构"
+      ],
+      "skills": [
+        "应用VSEPR模型预测分子形状",
+        "用杂化轨道解释分子空间结构"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s2_t42",
+      "type": "简答题",
+      "stem": "乙炔分子的碳原子采取什么杂化方式？它的杂化轨道用于形成什么化学键？怎样理解它存在碳碳三键？",
+      "answer": "乙炔（HC≡CH）中每个碳原子采取sp杂化。每个碳的两个sp杂化轨道沿分子轴线成180°分布：一个与H的1s轨道重叠形成C—H的σ键，另一个与另一碳的sp轨道端对端重叠形成C—C的σ键；同时每个碳保留的两个未杂化p轨道彼此侧向重叠，形成两条互相垂直的π键。因此碳碳“三键”可理解为由1个σ键+2个π键组成（C≡C）。",
+      "analysis": "判断杂化方式：乙炔中每个碳与两原子相连（H和另一个C），成键电子域数为2，对应线形结构→sp杂化。成键类型：sp用于形成σ键（C—H σ、C—C σ）；剩余两组p轨道未参与杂化，分别在垂直方向侧向重叠形成两条π键。三键本质：同一对碳原子之间同时存在一条轴向σ键和两条侧向π键，合称C≡C三键。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "sp杂化轨道",
+        "杂化轨道理论",
+        "价键理论",
+        "直线形分子结构"
+      ],
+      "skills": [
+        "用杂化轨道解释分子空间结构"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t43",
+      "type": "选择题",
+      "stem": "下列事实可用氢键解释的是（ ）。\n\nA. 氯气易液化\n\nB. 氨气极易溶于水\n\nC. HF的酸性比HI的弱\n\nD. 水加热到很高的温度都难以分解",
+      "answer": "B",
+      "analysis": "氢键能显著增强分子间作用力并影响溶解性。NH3分子中的N—H键可与水分子中的O形成氢键，使氨气在水中高度溶解，故B可用氢键解释。A氯气液化主要靠分子间范德华力；C HF酸性弱主要与H—F键键能大等因素有关；D水难分解主要与O—H共价键很强有关，均不属于氢键的主要解释。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t44",
+      "type": "选择题",
+      "stem": "下列关于丙烯 $\\mathrm{(CH_3CH = CH_2)}$ 分子的说法中，错误的是（ ）。\n\nA. 有 8 个 $\\sigma$ 键, 1 个 $\\pi$ 键\n\nB. 有 2 个碳原子是 $\\mathrm{sp}^{2}$ 杂化\n\nC. 3 个碳原子在同一平面上\n\nD. 所有原子都在同一平面上",
+      "answer": "D",
+      "analysis": "丙烯结构为CH3—CH=CH2，其中C2、C3参与双键，为sp2杂化；C1为sp3杂化。σ键数：C—H键共3+1+2=6个，C—C σ键有C1—C2 1个、C2=C3中含1个σ键，共2个，因此σ键总数8个；π键只有双键中的1个。sp2杂化原子及其直接相连原子共面，因此3个碳原子在同一平面上；但C1为sp3，C1上的3个H呈四面体分布，不可能全部与其余原子共面，所以“所有原子都在同一平面上”错误。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t45",
+      "type": "选择题",
+      "stem": "氢氰酸（化学式为HCN）分子中所有的原子都通过化学键而达到稳定结构，则下列关于氢氰酸分子结构的表述中，错误的是（）。\n\nA. $\\mathrm{H} - \\mathrm{N} \\equiv \\mathrm{C}$\n\nB. 分子是直线形\n\nC. $\\mathrm{H} - \\mathrm{C} \\equiv \\mathrm{N}$\n\nD. 中心原子是sp杂化",
+      "answer": "A",
+      "analysis": "HCN的稳定结构为H—C≡N，碳为中心原子，形成2个σ键并含1个三键，因此碳原子采取sp杂化，分子呈直线形。选项C、D、B均符合该结构；A将连接顺序写成H—N≡C（对应HNC异构体），与HCN的结构不符，故错误。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t46",
+      "type": "选择题",
+      "stem": "下列物质中，既含有极性共价键，又含有非极性共价键的是（ ）。\n\nA. $\\mathrm{CCl}_4$\n\nB. $\\mathrm{CO}_{2}$\n\nC. $\\mathrm{NH}_4\\mathrm{Cl}$\n\nD. $\\mathrm{C}_{2} \\mathrm{H}_{4}$",
+      "answer": "D",
+      "analysis": "判断物质内部是否同时含有极性共价键和非极性共价键：A中只有C—Cl键（极性共价键）；B中只有C=O键（极性共价键）；C中NH4+与Cl−为离子键，NH4+内部为N—H极性共价键，不含非极性共价键；D中含有C=C键（同种原子成键，为非极性共价键）以及C—H键（电负性有差异，通常视为极性共价键），因此既有极性共价键又有非极性共价键。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t47",
+      "type": "选择题",
+      "stem": "下列各组物质中，都是由极性键构成的极性分子的是（ ）。\n\nA. $\\mathrm{PCl}_3$ 和 $\\mathrm{NCl}_3$\n\nB. $\\mathrm{BeCl}_2(\\mathrm{g})$ 和 $\\mathrm{HCl}$\n\nC. $\\mathrm{NH}_{3}$ 和 $\\mathrm{BH}_{3}$\n\nD. $\\mathrm{CO}_{2}$ 和 $\\mathrm{SO}_{2}$",
+      "answer": "A",
+      "analysis": "判断“由极性键构成的极性分子”需同时满足：①分子内键为极性键；②分子构型使各键偶极矩不能相互抵消，分子整体有偶极矩。\nA：PCl3、NCl3均为三角锥形（中心原子有孤对电子），P–Cl、N–Cl为极性键，分子偶极矩不抵消→均为极性分子。\nB：BeCl2(g)为直线形，Be–Cl虽为极性键但偶极矩抵消→非极性分子；HCl为极性分子→不符合。\nC：NH3为极性分子；BH3为平面三角形，偶极矩抵消→非极性分子→不符合。\nD：CO2为直线形非极性分子；SO2为V形极性分子→不符合。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t48",
+      "type": "选择题",
+      "stem": "下列叙述中，正确的是（ ）。\n\nA. $\\mathrm{NH}_{3} 、 \\mathrm{CO} 、 \\mathrm{CO}_{2}$ 都是极性分子  \nB. $\\mathrm{CH}_{4} 、 \\mathrm{CCl}_{4}$ 都是含有极性键的非极性分子  \nC. HF、HCl、HBr、HI的稳定性依次增强   \nD. $\\mathrm{CS}_{2} 、 \\mathrm{H}_{2} \\mathrm{O} 、 \\mathrm{C}_{2} \\mathrm{H}_{2}$ 都是直线形分子",
+      "answer": "B",
+      "analysis": "A：NH3为极性分子，CO为极性分子，但CO2为直线形对称结构，偶极矩相互抵消，为非极性分子，故A错。B：CH4与CCl4均为正四面体对称结构，分子整体偶极矩为0，属于非极性分子；其中C–H（弱极性）与C–Cl（极性）均可视为极性键，故B对。C：氢卤酸稳定性与H–X键强度有关，键能大小规律为HF>HCl>HBr>HI，稳定性依次减弱，故C错。D：CS2、C2H2为直线形分子，但H2O为V形（折线形）分子，故D错。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t49",
+      "type": "选择题",
+      "stem": "下列描述中，正确的是（ ）。\n\nA. $\\mathrm{CS}_2$ 是空间结构为 $\\mathrm{V}$ 形的极性分子  \nB. $\\mathrm{ClO}_3^-$ 的空间结构为平面三角形  \nC. $\\mathrm{NO}_{3}^{-}$ 中所有的原子不都在一个平面上  \nD. $\\mathrm{SiF}_{4}$ 和 $\\mathrm{SO}_{3}^{2-}$ 的中心原子的杂化轨道类型均为 $\\mathrm{sp}^{3}$ 杂化",
+      "answer": "D",
+      "analysis": "A：CS2为直线形（S=C=S），分子对称，偶极矩相互抵消，为非极性分子，故错。B：ClO3^-中心Cl周围3对成键电子对+1对孤电子对，为三角锥形（非平面三角形），故错。C：NO3^-为sp2杂化，三角平面形，所有原子共面，故错。D：SiF4为正四面体，Si为sp3杂化；SO3^2-为三角锥形，S为sp3杂化，故对。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t50",
+      "type": "填空题",
+      "stem": "锌在工业中有重要作用，也是人体必需的微量元素。请完成下列空白：\n\n(1)Zn的核外电子排布式为  \n(2)《中华本草》等中医典籍中, 记载了炉甘石 $\\left(\\mathrm{ZnCO}_{3}\\right)$ 入药, 可用于治疗皮肤炎症或表面创伤。 $\\mathrm{ZnCO}_{3}$ 中阴离子空间结构为 , C 的杂化方式为",
+      "answer": "(1)1s2 2s2 2p6 3s2 3p6 3d10 4s2（或[Ar]3d10 4s2）\n(2)平面三角形；sp2",
+      "analysis": "(1)Zn的原子序数为30，按能级填充顺序填入30个电子：1s2 2s2 2p6 3s2 3p6 3d10 4s2。\n(2)ZnCO3中的阴离子为CO3^2-，中心C与3个O成键且有离域π键，3个成键电子域呈120°分布，空间结构为平面三角形，故C为sp2杂化。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t51",
+      "type": "简答题",
+      "stem": "运用价层电子对互斥模型预测 $\\mathrm{CCl}_4$ 、 $\\mathrm{NH}_3$ 、 $\\mathrm{H}_2\\mathrm{O}$ 的空间结构。",
+      "answer": "CCl4：正四面体结构（键角约109.5°）；NH3：三角锥形（键角约107°）；H2O：V形/折线形（键角约104.5°）。",
+      "analysis": "按价层电子对互斥(VSEPR)：CCl4中心C有4对成键电子对、无孤对→AX4，正四面体；NH3中心N有3对成键电子对+1对孤对→AX3E，电子对构型为四面体，分子构型为三角锥；H2O中心O有2对成键电子对+2对孤对→AX2E2，电子对构型为四面体，分子构型为V形(折线形)，孤对-孤对/孤对-键对排斥使键角依次减小。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t52",
+      "type": "简答题",
+      "stem": "分析乙烷、乙烯和乙炔的分子结构。其中的碳原子采取什么杂化轨道形成 $\\sigma$ 键? 怎样理解乙烯中的双键和乙炔中的三键? 乙炔加氢变成乙烯和乙烷, 碳原子的杂化轨道发生什么变化?",
+      "answer": "乙烷(C2H6)中每个碳原子为sp3杂化，用sp3轨道与H(1s)及另一碳的sp3轨道重叠形成σ键；乙烯(C2H4)中每个碳原子为sp2杂化，C=C由1个σ键(由sp2–sp2重叠)和1个π键(由未杂化p轨道侧向重叠)组成；乙炔(C2H2)中每个碳原子为sp杂化，C≡C由1个σ键(由sp–sp重叠)和2个互相垂直的π键(由两组未杂化p轨道侧向重叠)组成。乙炔加氢：C原子杂化由sp→sp2(生成乙烯)→sp3(进一步生成乙烷)。",
+      "analysis": "先根据键数与空间构型判断杂化：\n(1) 乙烷中每个C周围有4个σ键(3个C–H+1个C–C)，对应四面体取向→sp3；σ键由杂化轨道端对端重叠形成。\n(2) 乙烯中每个C周围有3个σ键(2个C–H+1个C–C)，平面三角形→sp2；剩余1个未杂化p轨道与另一C的p轨道侧向重叠形成1个π键，因此“双键=1σ+1π”。\n(3) 乙炔中每个C周围有2个σ键(1个C–H+1个C–C)，线形→sp；剩余2个互相垂直的p轨道分别形成2个π键，因此“三键=1σ+2π”。\n(4) 加氢使π键逐步转化为σ键：三键加一分子H2变双键(由sp变sp2)，再加一分子H2变单键(由sp2变sp3)。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t53",
+      "type": "简答题",
+      "stem": "怎样用杂化轨道理论理解乙烯分子中的双键是不能旋转的，因而四个氢原子是在一个平面上？",
+      "answer": "乙烯中每个碳原子采取sp²杂化，形成三个共面的sp²杂化轨道，键角约120°。其中一个sp²与H成σ键，另一个sp²与另一个碳成σ键，使C—C—H等键都在同一平面内；同时每个碳还保留一个未杂化的p轨道，二者彼此平行并垂直于该平面侧向重叠形成π键（电子云分布在平面上下）。若绕C=C旋转，两个p轨道将失去平行而无法有效侧向重叠，π键被破坏（能量显著升高），因此双键不能自由旋转，分子中四个氢原子与两个碳原子共平面。",
+      "analysis": "① 判断杂化：乙烯中C原子周围有3个σ键，适合sp²杂化，几何构型为平面三角形，三个sp²轨道共面、夹角约120°。\n② σ键骨架：每个C用两个sp²分别与两个H成σ键，用另一个sp²与另一C成C—C σ键，因此所有由sp²形成的σ键都位于同一平面，决定了骨架为平面结构。\n③ π键来源：每个C保留一个未杂化p轨道，二者平行且垂直于σ键所在平面，侧向重叠形成π键，π电子云在平面上下。\n④ 解释不能旋转：绕C=C旋转会使两p轨道由平行变为非平行，侧向重叠显著减弱甚至消失，相当于破坏π键，需克服很大能垒，因此双键不能自由旋转。\n⑤ 推论：由于σ骨架本身共面且π键要求p轨道保持平行，乙烯中四个H与两C处于同一平面。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch2_s_t55",
+      "type": "简答题",
+      "stem": "A、B、C、D 4 种短周期元素, 原子序数依次增大。A 的核外电子总数与其周期数相同, B 的价电子层中的未成对电子有 3 个, C 的最外层电子数为其内层电子数的 3 倍, D 与 C 同族。请完成下列空白:\n\n(1) A和B形成的共价化合物, 分子的空间结构呈三角锥形, 该分子的中心原子的杂化轨道类型为 ; A和C形成的共价化合物, 分子中既含有极性共价键, 又含有非极性共价键的化合物是 (填化学式)。  \n(2) 这些元素可以形成哪些含氧酸? 分析每种含氧酸酸根离子的空间结构和中心原子的杂化轨道类型。\n\n*①14. 试从分子的空间结构和原子的电负性、中心原子上的孤电子对等角度，解释为什么与水分子结构十分相似的 $\\mathrm{OF}_2$ 的极性很小。",
+      "answer": "元素判断：A=H，B=N，C=O，D=S。\n(1) A和B形成三角锥形分子为NH3，中心原子N的杂化类型为sp3；A和C形成的共价化合物中既含极性键又含非极性键的是H2O2（含O—H极性键和O—O非极性键）。\n(2) 可形成的常见含氧酸及其酸根结构/杂化：\n① HNO2：酸根NO2−为V形（折线形），中心N为sp2杂化（N上有1对孤对电子）。\n② HNO3：酸根NO3−为平面三角形，中心N为sp2杂化（无孤对电子）。\n③ H2SO3：酸根SO3^2−为三角锥形，中心S为sp3杂化（S上有1对孤对电子）。\n④ H2SO4：酸根SO4^2−为正四面体，中心S为sp3杂化（无孤对电子）。\n*①14：OF2与H2O同为V形且中心原子O均有两对孤对电子，但OF2中O—F键的电负性差(Δχ)较小，键偶极矩较小；且两条O—F键偶极在V形结构中矢量相加后部分抵消，因此分子总偶极矩（极性）很小。",
+      "analysis": "A满足“原子序数=周期数”，仅H(Z=1,第1周期)符合；B价层3个未成对电子，对应N(2p3)；C最外层电子数=内层电子数3倍，O为(内层2，最外层6)；D与C同族且原子序数更大，取短周期元素S。由此：(1) NH3为三角锥形，N为sp3；H与O形成含O—O键且含O—H键的H2O2同时具非极性与极性键。(2) 写出常见含氧酸并用VSEPR判断酸根构型：NO2−为AX2E(sp2)，NO3−为AX3(sp2)，SO3^2−为AX3E(sp3)，SO4^2−为AX4(sp3)。OF2极性小主要因O—F键偶极小且矢量部分抵消。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t56",
+      "type": "选择题",
+      "stem": "区分晶体和非晶体最可靠的科学方法是（ ）。\n\nA. 测定熔、沸点\n\nB. 观察外形\n\nC. 对固体进行X射线衍射测定\n\nD. 通过比较硬度确定",
+      "answer": "C",
+      "analysis": "区分晶体与非晶体的根本依据是内部微观结构是否具有长程有序性。X射线衍射能直接反映固体内部的周期性结构：晶体出现清晰的衍射峰，非晶体呈弥散衍射，因此最可靠的方法是对固体进行X射线衍射测定。熔沸点、外形和硬度受多种因素影响，不能作为最可靠判据。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "X射线衍射",
+        "晶体",
+        "非晶体"
+      ],
+      "skills": [
+        "利用X射线衍射区分晶体与非晶体"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t57",
+      "type": "选择题",
+      "stem": "关于晶体的自范性，下列叙述中，正确的是（ ）。\n\nA. 破损的晶体能够在固态时自动变成规则的多面体  \nB 缺角的氯化钠晶体在饱和NaCl溶液中慢慢变为完美的立方体块   \nC. 圆形容器中结出的冰是圆形的, 体现了晶体的自范性  \nD. 由玻璃制成规则的玻璃球体现了晶体的自范性",
+      "answer": "B",
+      "analysis": "晶体的自范性是指晶体在适当条件下生长时，会自发形成与其内部结构相一致的规则外形。缺角的NaCl晶体放入饱和NaCl溶液中，溶液中的离子会在晶体表面按晶格有序沉积，使其逐渐恢复为规则立方体，因此B正确。A在固态下不能自动恢复规则外形；C冰的形状主要受容器限制，不体现自范性；D玻璃为非晶体（无固定晶格），不具备晶体自范性。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "自范性",
+        "晶体"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t58",
+      "type": "选择题",
+      "stem": "下列叙述中，正确的是（ ）。\n\nA. 石英玻璃和水晶都是晶体  \nB. 晶体与非晶体的根本区别在于固体是否具有规则的几何外形  \nC. 具有各向异性的固体可能是晶体  \nD. 粉末状的固体肯定不是晶体",
+      "answer": "C",
+      "analysis": "A错：石英玻璃是非晶体，水晶是晶体。B错：晶体与非晶体的根本区别在于内部结构是否具有长程有序（而不是是否有规则几何外形）。C对：各向异性是晶体的典型性质之一，具有各向异性的固体可能是晶体。D错：粉末状固体也可能由许多微小晶粒组成，仍然可能是晶体。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "晶体",
+        "非晶体",
+        "晶体的物理性质各向异性",
+        "晶体与非晶体的本质差异",
+        "晶体粉末外形与显微晶形"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t59",
+      "type": "选择题",
+      "stem": "下列有关晶胞的叙述中，正确的是（ ）。\n\nA. 晶胞是晶体结构中最小的重复单元  \nB. 晶胞中的任何一个粒子都属于该晶胞  \nC. 所有晶体都是由平行六面体无限组合而成  \nD. 不同晶体中的晶胞的大小和形状均相同",
+      "answer": "AC",
+      "analysis": "A：晶胞是晶体结构中能通过在三维空间平移重复而构成整个晶体的最小重复单元，正确。B：晶胞边、面、顶点上的粒子常被相邻晶胞共享，不能说“任何一个粒子都属于该晶胞”，错误。C：晶体可看作晶胞（通常用平行六面体表示）在空间中无限重复堆砌形成，正确。D：不同晶体晶胞的参数（大小、形状）不同，错误。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "晶胞",
+        "晶胞的无隙并置"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t60",
+      "type": "判断题",
+      "stem": "正误判断，正确的打“√”，错误的打“×”。\n\n（1）固态物质一定是晶体。（ ）  \n(2) 凡有规则外形的固体一定是晶体。（）  \n(3) 晶体内部的粒子按一定规律周期性地排列。( )  \n(4) 固体 $\\mathrm{SiO}_{2}$ 一定是晶体。( )  \n(5) 晶胞是晶体中最小的平行六面体。( )   \n（6）测定某一固体是否是晶体可用X射线衍射仪进行实验。（ ）",
+      "answer": "（1）×  （2）×  （3）√  （4）×  （5）√  （6）√",
+      "analysis": "（1）固体既有晶体也有非晶体（如玻璃），故错误。 （2）规则外形可能是加工形成（如切割玻璃），不一定是晶体，故错误。 （3）晶体的微粒在空间按一定规律周期性排列，正确。 （4）SiO2既可为晶态（石英）也可为非晶态（石英玻璃），不一定为晶体，错误。 （5）晶胞是能通过平移重复构成晶体的最小重复单元，常用平行六面体表示，正确。 （6）晶体具有X射线衍射特征，可用X射线衍射实验判断，正确。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "晶体",
+        "非晶体",
+        "晶体与非晶体的本质差异",
+        "晶体内部有序排列",
+        "晶胞",
+        "X射线衍射",
+        "X射线衍射仪"
+      ],
+      "skills": [
+        "利用X射线衍射区分晶体与非晶体"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s1_t61",
+      "type": "简答题",
+      "stem": "指出晶体与玻璃体的本质差别。",
+      "answer": "晶体内部质点（原子/离子/分子）呈长程有序、周期性排列；玻璃体为非晶态，只有短程有序而无长程周期性结构（因此晶体常表现各向异性并有固定熔点，玻璃体多为各向同性且无固定熔点、为软化范围）。",
+      "analysis": "抓住“本质差别”即微观结构：晶体具有长程有序的周期性晶格；玻璃体为无定形结构，仅短程有序。由此可推出常见宏观区别（各向异性/各向同性、固定熔点/软化范围），但核心仍是是否存在长程周期性排列。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "晶体与非晶体的本质差异"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t64",
+      "type": "选择题",
+      "stem": "下列说法中，错误的是（ ）。\n\nA. 只含分子的晶体一定是分子晶体  \nB. 碘晶体升华时破坏了共价键   \nC. 几乎所有的酸都属于分子晶体  \nD. 稀有气体中只含原子, 但稀有气体的晶体属于分子晶体",
+      "answer": "B",
+      "analysis": "碘晶体由I2分子通过分子间作用力（范德华力）形成晶体。升华时只需克服分子间作用力使I2分子从晶体中逸出，不破坏I2分子内部的共价键，因此B错误。A“只含分子的晶体”为分子晶体正确；C中多数酸为共价分子物质，固态一般形成分子晶体；D稀有气体晶体由原子间弱作用力维系，教材中通常归为分子晶体。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "分子晶体",
+        "分子间作用力",
+        "范德华力",
+        "分子晶体与共价晶体的比较",
+        "分子晶体的分类和典型实例"
+      ],
+      "skills": [
+        "利用晶体分类判断典型物质类型",
+        "从微观结构推断物质宏观性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t65",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 冰融化时，分子中 $\\mathrm{H}-\\mathrm{O}$ 发生断裂  \nB. 共价晶体中, 共价键越强, 熔点越高  \nC. 分子晶体中, 共价键键能越大, 该分子晶体的熔、沸点一定越高  \nD. 分子晶体中, 分子间作用力越大, 对应的物质越稳定",
+      "answer": "B",
+      "analysis": "A项：冰融化属于物理变化，主要克服的是分子间氢键等分子间作用力，不会断裂水分子内的H—O共价键，错误。\nB项：共价晶体（如金刚石、SiO2）中熔点高低主要取决于共价键强弱及晶体结构，一般共价键越强，熔点越高，正确。\nC项：分子晶体熔、沸点主要由分子间作用力大小决定，与分子内共价键键能大小无必然对应关系（如CO2分子内键较强但熔沸点低），错误。\nD项：分子间作用力增大通常使熔、沸点升高，但“物质越稳定”通常指化学稳定性，不能仅由分子间作用力大小判断，表述不当，错误。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子晶体",
+        "共价晶体",
+        "分子间作用力",
+        "氢键",
+        "冰的晶体结构",
+        "分子晶体与共价晶体的比较"
+      ],
+      "skills": [
+        "从微观结构推断物质宏观性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t66",
+      "type": "选择题",
+      "stem": "下列事实能说明刚玉 $\\left(\\mathrm{Al}_{2} \\mathrm{O}_{3}\\right)$ 是共价晶体的是（ ）。\n\n① $\\mathrm{Al}_{2} \\mathrm{O}_{3}$ 是两性氧化物；② 硬度很大；③ 它的熔点为 $2045 \\mathrm{C}$ ；④ 自然界中的刚玉有红宝石和蓝宝石。\n\nA. ①②\n\nB. ②③\n\nC. ①④\n\nD. ③④",
+      "answer": "B",
+      "analysis": "共价晶体（原子晶体）通常具有键能大、硬度大、熔点高等特征。②“硬度很大”和③“熔点为2045℃”符合共价晶体的典型性质；①“两性氧化物”属于化学性质，不能据此判断晶体类型；④“红宝石和蓝宝石”是颜色/杂质等现象，也不能说明其为共价晶体。故选②③，即B。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "共价晶体",
+        "共价晶体的熔点和硬度特性"
+      ],
+      "skills": [
+        "利用晶体分类判断典型物质类型"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t67",
+      "type": "选择题",
+      "stem": "下列说法中，正确的是（ ）。\n\nA. 分子晶体中一定存在分子间作用力和共价键  \nB. 分子晶体的熔点一般比共价晶体的熔点高  \nC. 稀有气体形成的晶体属于分子晶体  \nD. $\\mathrm{CO}_{2}$ 晶体是分子晶体, 可推测 $\\mathrm{SiO}_{2}$ 晶体也是分子晶体",
+      "answer": "C",
+      "analysis": "A错误：分子晶体一定有分子间作用力，但不一定有共价键（如稀有气体晶体由原子构成，无共价键）。B错误：分子晶体熔点一般低于共价晶体（共价晶体为共价键形成的空间网状结构，熔点高）。C正确：稀有气体形成的晶体主要靠分子间作用力（色散力）结合，通常归为分子晶体。D错误：CO2为分子晶体，而SiO2为共价晶体（原子晶体），结构不同，不能类推。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "分子晶体",
+        "共价晶体",
+        "分子间作用力",
+        "范德华力",
+        "石英（二氧化硅，SiO₂）的结构与性质",
+        "分子晶体的分类和典型实例",
+        "分子晶体与共价晶体的比较"
+      ],
+      "skills": [
+        "利用晶体分类判断典型物质类型",
+        "从微观结构推断物质宏观性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t68",
+      "type": "简答题",
+      "stem": "简要回答构成分子晶体、共价晶体的粒子各是什么。这些粒子通过什么键或作用力结合成晶体？",
+      "answer": "分子晶体：构成粒子是分子（有时也可看作稀有气体原子）；分子间靠分子间作用力（范德华力，若有则含氢键等）结合成晶体。共价晶体：构成粒子是原子；原子间靠共价键结合成空间网状晶体。",
+      "analysis": "判断晶体类型先看“构成微粒”：分子晶体由独立分子（或稀有气体原子）堆积而成，微粒之间不是化学键，而是分子间作用力（包括范德华力、可能的氢键）。共价晶体则由原子通过共价键在三维方向连续连接，形成共价键网络结构。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "分子晶体",
+        "共价晶体",
+        "分子间作用力",
+        "范德华力",
+        "氢键",
+        "共价键三维骨架结构"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t69",
+      "type": "简答题",
+      "stem": "有人说，冰属于共价晶体。这种说法为什么是错误的？",
+      "answer": "冰不是共价晶体，而是分子晶体。冰中每个H2O分子内部为共价键，但分子与分子之间主要靠氢键（分子间作用力）结合形成晶体结构，并未形成贯穿整个晶体的共价键三维网状结构，因此把冰说成共价晶体是错误的。",
+      "analysis": "判断晶体类型要看“晶粒间的主要作用力”。若整个晶体由共价键连接成连续的网状结构（如金刚石、SiO2），属于共价晶体；若晶体由独立分子构成，分子间靠范德华力或氢键等结合，则为分子晶体。冰的结构单元是H2O分子，分子内O—H为共价键，分子间以氢键连接，故为分子晶体而非共价晶体。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子晶体",
+        "氢键",
+        "冰的晶体结构",
+        "分子晶体与共价晶体的比较"
+      ],
+      "skills": [
+        "利用晶体分类判断典型物质类型",
+        "从微观结构推断物质宏观性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t70",
+      "type": "填空题",
+      "stem": "以下晶体是共价晶体还是分子晶体？\n\n金刚石\n\n干冰\n\n冰\n\n可燃冰\n\n硫黄\n\nC60\n\n碘\n\n石英\n\n白磷（ $\\mathrm{P_4}$ ）\n\n苯甲酸\n\n金刚砂（S\n\n稀有气体的晶体\n\n氧气的晶体\n\n氮气的晶体",
+      "answer": "共价晶体：金刚石、石英（SiO2）、金刚砂（SiC）。\n分子晶体：干冰（CO2）、冰（H2O）、可燃冰（甲烷水合物）、硫黄（S8）、C60、碘（I2）、白磷（P4）、苯甲酸、稀有气体晶体（如Ar、Ne等）、氧气晶体（O2）、氮气晶体（N2）。",
+      "analysis": "共价晶体（原子晶体）由原子间以共价键形成空间网状结构，熔点高、硬度大，如金刚石、SiO2、SiC；分子晶体由分子或稀有气体原子以分子间作用力（范德华力/氢键等）结合，熔点较低，如I2、S8、P4、CO2、H2O、C60、苯甲酸以及O2、N2、稀有气体晶体；可燃冰为甲烷分子被水分子笼状结构包合，整体仍属分子晶体。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "分子晶体",
+        "共价晶体",
+        "分子晶体的分类和典型实例",
+        "共价晶体的分类和典型实例",
+        "分子晶体与共价晶体的比较"
+      ],
+      "skills": [
+        "利用晶体分类判断典型物质类型"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t71",
+      "type": "填空题",
+      "stem": "干冰晶体中, 每个 $\\mathrm{CO}_{2}$ 周围等距且紧邻的 $\\mathrm{CO}_{2}$ 有____个。在冰的结构模型中, 每个水分子最多与相邻的____个水分子相连接。同为分子晶体, 但干冰中 $\\mathrm{CO}_{2}$ 的配位数（一个分子周围最邻近的分子的数目）大于冰中水分子的配位数, 其原因是____________________。",
+      "answer": "12；4；冰中水分子之间存在具有方向性的氢键，每个水分子只能最多与4个相邻水分子形成氢键，形成较疏松的四面体网络结构；而干冰中CO2分子间主要是无方向性的分子间作用力（范德华力），分子可更紧密堆积，因此配位数更大。",
+      "analysis": "干冰（固态CO2）中分子中心近似构成立方密堆积/面心立方型排列，每个分子最近邻等距有12个，因此第一空为12。冰的晶体结构中，每个H2O通过氢键以四面体方式与周围分子相连，最多形成4个氢键，因此第二空为4。两者配位数差异源于：水分子间氢键具有强方向性并受供受体数目限制（2个H作供体、2对孤电子对作受体），导致开放结构；CO2分子间作用力近似各向同性，可更紧密堆积，最近邻数更多。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "干冰晶体结构与性质",
+        "冰的晶体结构",
+        "氢键",
+        "范德华力",
+        "分子密堆积",
+        "分子间作用力",
+        "分子晶体"
+      ],
+      "skills": [
+        "从微观结构推断物质宏观性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s2_t72",
+      "type": "应用题",
+      "stem": "用黏土或橡皮泥和牙签等材料制作金刚石晶体模型。",
+      "answer": "用黏土(或橡皮泥)做原子球，用牙签作化学键，按金刚石晶体中每个碳原子与4个碳原子以正四面体方式相连的规律(键角约109.5°)连接，逐层搭建形成三维网状结构并保持整体对称与稳定，即得到金刚石晶体模型。",
+      "analysis": "本题为动手建模题，关键是抓住金刚石晶体的结构特征：①每个碳原子形成4个共价键；②4个相邻原子分布在正四面体方向(键角约109.5°)；③整体为三维空间网状结构。制作时先用黏土做“原子”，再用牙签按正四面体配位连接成基本单元，随后把多个基本单元在空间中继续共享原子/键进行扩展，最终得到稳定的晶格模型。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "金刚石的晶体结构与性质",
+        "共价键三维骨架结构"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t73",
+      "type": "选择题",
+      "stem": "金属晶体的形成是因为晶体中存在（ ）。\n\nA. 金属离子间的相互作用\n\nB. 金属原子间的相互作用\n\nC. 金属离子与自由电子间的相互作用\n\nD. 自由电子间的相互作用",
+      "answer": "C",
+      "analysis": "金属晶体中，金属原子失去部分价电子形成金属阳离子，价电子离域成为自由电子（电子海）。金属晶体的形成与稳定主要来自金属阳离子与离域自由电子之间的静电吸引作用，即金属键，因此选C。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "金属键",
+        "电子气理论"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t74",
+      "type": "选择题",
+      "stem": "金属能导电的原因是（ ）。\n\nA. 金属晶体中金属阳离子与自由电子间的作用较弱  \nB. 金属晶体中的自由电子在外加电场作用下可发生定向移动  \nC. 金属晶体中的金属阳离子在外加电场作用下可发生定向移动  \nD. 金属晶体在外加电场作用下可失去电子",
+      "answer": "B",
+      "analysis": "金属晶体中存在大量可自由移动的电子（自由电子）。在外加电场作用下，自由电子会发生定向移动，从而形成电流，表现为导电性。金属阳离子位于晶格点上只能振动，不能定向移动（排除C）；导电并不等同于失去电子（排除D）；A所述并非导电的直接原因，关键在于自由电子可定向移动。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "金属的导电性",
+        "电子气理论"
+      ],
+      "skills": [
+        "用电子气理论解释金属性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t75",
+      "type": "选择题",
+      "stem": "关于晶体的下列说法中，正确的是（ ）。\n\nA. 共价晶体中可能含有离子键  \nB. 离子晶体中可能含有共价键  \nC. 离子晶体中只含有离子键, 不含有共价键  \nD. 任何晶体中, 若含有阳离子就一定有阴离子",
+      "answer": "B",
+      "analysis": "离子晶体中除了离子键外，常含有多原子离子（如SO4^2−、NO3^−、OH^−等），这些离子内部原子间以共价键结合，因此“离子晶体中可能含有共价键”正确。共价晶体（如金刚石、SiO2等）以共价键形成空间网状结构，一般不含离子键，A错；离子晶体并非只含离子键，C错；金属晶体可看作由金属阳离子与自由电子构成，不一定有阴离子，D错。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "离子晶体",
+        "离子键",
+        "复杂离子晶体中的多种作用力",
+        "典型晶体的四种类型"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t76",
+      "type": "选择题",
+      "stem": "下列物质中，含有极性共价键的离子晶体是（ ）。\n\nA. NaCl\n\nB. ${\\mathrm{{Na}}}_{2}\\mathrm{O}$\n\nC. $\\mathrm{Na}_{2} \\mathrm{O}_{2}$\n\nD. NaOH",
+      "answer": "D",
+      "analysis": "离子晶体中若存在多原子离子，则离子内部可能含共价键。NaCl、Na2O均为由单原子离子构成的离子晶体，不含共价键；Na2O2中O2^2−含O—O键，但为同种原子间的非极性共价键；NaOH为离子晶体（Na+与OH−），而OH−内部的O—H键为极性共价键，因此选D。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "离子晶体",
+        "复杂离子晶体中的多种作用力"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质",
+        "利用电负性差判断键的离子性"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t77",
+      "type": "选择题",
+      "stem": "下列各物质的晶体中，晶体类型相同的是（ ）。\n\nA. $\\mathrm{CO}_{2}$ 和 $\\mathrm{SiO}_{2}$\n\nB. NaCl 和 HCl\n\nC. $\\mathrm{CO}_{2}$ 和 $\\mathrm{CS}_{2}$\n\nD. $\\mathrm{CCl}_{4}$ 和 $\\mathrm{MgCl}_{2}$",
+      "answer": "C",
+      "analysis": "判断晶体类型：CO2（干冰）为分子晶体；SiO2为共价（原子）晶体；NaCl为离子晶体；固态HCl为分子晶体；CS2为分子晶体；CCl4为分子晶体；MgCl2为离子晶体。只有CO2与CS2同为分子晶体，故选C。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "典型晶体的四种类型"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t78",
+      "type": "简答题",
+      "stem": "什么是电子气理论？它怎样定性地解释金属晶体的延展性、导电性和导热性？",
+      "answer": "电子气理论认为：金属晶体中价电子不再束缚于某个原子，而是脱离原子成为在整个晶体中可自由运动的“自由电子”，这些自由电子形成类似气体的“电子气”；原子失去价电子后成为带正电的离子实（正离子），按晶格规则排列，金属键可看作正离子实与电子气之间的静电吸引。\n\n用它可定性解释：\n1）延展性：电子气在离子实滑移、错位时仍能在整体上维持对正离子实的吸引，金属键无明显方向性，不易因局部位移而断裂，因此金属易发生塑性变形，具有良好延展性。\n2）导电性：外加电场时，自由电子可在晶体中定向漂移形成电流，因此金属导电。\n3）导热性：自由电子运动速度大、能量传递快，温度高处的电子把能量迅速带到低温处并与离子实碰撞传递能量，因此金属导热性好。",
+      "analysis": "抓住电子气理论的核心两点：①晶格中有规则排列的正离子实；②大量自由电子在整个晶体中离域运动。然后分别对应性质作定性说明：延展性来自金属键非方向性与电子气“粘结”作用使滑移不致断键；导电性来自自由电子在电场下漂移；导热性来自自由电子高迁移率携带并交换热能（同时离子振动也贡献但电子为主要原因）。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "电子气理论",
+        "金属晶体",
+        "金属键",
+        "金属的延展性",
+        "金属的导电性"
+      ],
+      "skills": [
+        "用电子气理论解释金属性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t79",
+      "type": "简答题",
+      "stem": "举例说明过渡晶体和混合型晶体的特征。",
+      "answer": "过渡晶体：晶体中既有离子键又有较强共价性（离子键与共价键的过渡），性质介于离子晶体与原子晶体之间；如ZnS（闪锌矿）/AgI等，熔点较高、较硬而脆，常表现为半导体等。\n混合型晶体：同一晶体中同时存在两种或多种不同类型的化学键（或既有离子间作用又有共价键等），由不同键共同维系晶体结构；如Na2SO4、CaCO3、KNO3等（晶格中离子间为离子键，而SO4^2−/CO3^2−/NO3^−内部为共价键）。",
+      "analysis": "题目要求“举例说明特征”，因此需分别指出两类晶体的：①结构/键型特征（是否兼有离子性与共价性，是否同时存在多种键）；②由此带来的性质特点（介于哪两类晶体之间或由多种键共同决定）；③给出典型实例支撑说明（过渡晶体如ZnS、AgI；混合型晶体如Na2SO4、CaCO3等）。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "过渡晶体",
+        "混合型晶体"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t80",
+      "type": "简答题",
+      "stem": "按构成晶体的粒子和粒子间作用力的不同，将以下晶体进行分类：\n\n氯化铯、石英、金刚砂、水、苯酚（ $\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{OH}$ ）、铁、氯酸钾、高锰酸钾",
+      "answer": "离子晶体：氯化铯、氯酸钾、高锰酸钾；原子晶体（共价网络晶体）：石英、金刚砂；分子晶体：水、苯酚；金属晶体：铁。",
+      "analysis": "按晶体中粒子类型与作用力分类：由阴、阳离子通过静电作用形成的是离子晶体（CsCl、KClO3、KMnO4）；由原子通过共价键形成空间网状结构的是原子晶体（SiO2石英、SiC金刚砂）；由分子靠分子间作用力（范德华力/氢键等）形成的是分子晶体（冰、苯酚）；由金属阳离子与自由电子形成金属键的是金属晶体（Fe）。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "典型晶体的四种类型",
+        "离子晶体",
+        "金属晶体"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s3_t81",
+      "type": "简答题",
+      "stem": "离子晶体如食盐，很脆，经不起锤击；共价晶体如石英，同样很脆，也经不起锤击。然而食盐和石英的摩氏硬度却相差极大，应如何解释？",
+      "answer": "食盐和石英都脆，是因为它们的晶体中原子/离子被固定在规则位置，受力时难以通过位错滑移产生塑性变形，容易沿晶面断裂。但摩氏硬度差别大：食盐为离子晶体，离子键为非定向作用，受外力时晶层相对错动会使同号离子相对，出现强烈静电斥力而易解理、抗划伤能力较弱；石英为共价晶体（原子晶体），Si—O共价键强且具有定向性，形成三维网状结构，破坏或划伤必须断裂大量共价键，因而硬度很高。",
+      "analysis": "从“脆”和“硬”分别讨论：\n1) 脆性：两者都是刚性晶格，缺乏能让结构逐步滑移的机制，受冲击时应力集中，容易沿特定晶面断裂，所以都经不起锤击。\n2) 硬度：摩氏硬度反映抗划伤能力，与键强度/结构连结程度相关。NaCl中离子键非定向，层错动会导致同号离子相邻产生排斥，容易解理，较易被划伤；石英中Si—O共价键强、定向，三维网状连续，划伤需断多键，故硬度远大于食盐。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "离子晶体的物理性质",
+        "典型晶体的四种类型",
+        "硅酸盐"
+      ],
+      "skills": [
+        "比较不同晶体类型的结构与性质"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t84",
+      "type": "选择题",
+      "stem": "下列物质中，不能作为配合物的配位体的是（ ）。\n\nA. $\\mathrm{NH}_{3}$\n\nB. $\\mathrm{NH}_{4}^{+}$\n\nC. $\\mathrm{H}_{2} \\mathrm{O}$\n\nD. $\\mathrm{SCN}^{-}$",
+      "answer": "B",
+      "analysis": "配位体需要提供孤对电子与中心离子形成配位键。NH3中N有孤对电子，可配位；H2O中O有孤对电子，可配位；SCN−带负电且含有可供给电子的原子（S或N），可配位。NH4+中N与4个H成键且带正电，不再有可供配位的孤对电子，因此不能作为配位体。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "配体（配位体）"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t85",
+      "type": "选择题",
+      "stem": "向盛有硫酸铜溶液的试管里加入氨水, 首先形成难溶物, 继续添加氨水, 难溶物溶解得到深蓝色的透明溶液。下列对此现象的说法中, 正确的是 ( )。\n\nA. 反应后溶液中没有沉淀, 所以反应前后 $\\mathrm{Cu}^{2+}$ 的浓度不变  \nB. 沉淀溶解后, 将生成深蓝色的配离子 $\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$   \nC. 在 $\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$ 中, $\\mathrm{Cu}^{2+}$ 给出孤电子对, $\\mathrm{NH}_{3}$ 提供空轨道  \nD. 向反应后的溶液中加入乙醇, 溶液没有发生任何变化, 因为 $\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$ 不与乙醇发生反应",
+      "answer": "B",
+      "analysis": "向CuSO4溶液中滴加氨水，NH3·H2O电离产生OH−，先生成难溶的Cu(OH)2沉淀；继续加入过量NH3，Cu2+与NH3配位生成深蓝色配合物离子，使沉淀溶解，主要为[Cu(NH3)4]2+（常写作[Cu(NH3)4(H2O)2]2+）。A错误：生成配合物后游离Cu2+浓度改变；C错误：NH3提供孤电子对，Cu2+提供空轨道受电子对；D错误：加入乙醇会改变溶剂性质、可能使配合物溶解度降低而析出，不是“没有任何变化”。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "氨水与 Cu2+ 反应",
+        "四氨合铜离子 [Cu(NH3)4]2+",
+        "配离子",
+        "配体（配位体）",
+        "配位键",
+        "配合物的颜色"
+      ],
+      "skills": [
+        "通过颜色变化鉴别离子或配合物",
+        "通过加入配体生成配合物来溶解沉淀"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t86",
+      "type": "填空题",
+      "stem": "在配合物 $\\mathrm{[Cu(NH_3)_4]SO_4}$ 中，________是中心离子，________是配位原子，________是配位体； $\\mathrm{[Cu(NH_3)_4]^{2+}}$ 的结构式为________。",
+      "answer": "Cu2+；N；NH3；[ (H3N→)4Cu ]2+",
+      "analysis": "配合物[Cu(NH3)4]SO4由配离子[Cu(NH3)4]2+与对离子SO42−组成。配离子中提供空轨道并接受孤对电子的是中心离子Cu2+；NH3中用孤对电子与Cu2+形成配位键的原子是N(配位原子)；NH3整体为配位体。其结构式可表示为四个NH3通过N以配位键“→”指向Cu2+：[(H3N→)4Cu]2+。",
+      "difficulty": 2,
+      "knowledge_points": [
+        "配合物（配位化合物）",
+        "配位键",
+        "中心离子（中心原子）",
+        "配体（配位体）",
+        "四氨合铜离子 [Cu(NH3)4]2+"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t87",
+      "type": "填空题",
+      "stem": "硫酸镍溶于氨水形成 $\\left[\\mathrm{Ni}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right] \\mathrm{SO}_{4}$ 蓝色溶液。在 $\\left[\\mathrm{Ni}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right] \\mathrm{SO}_{4}$ 中，阴离子的空间结构是________。在 $\\left[\\mathrm{Ni}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]^{2+}$ 中， $\\mathrm{Ni}^{2+}$ 与 $\\mathrm{NH}_{3}$ 之间形成的化学键称为________，提供孤电子对的成键原子是________。",
+      "answer": "正四面体；配位键（配价键）；N（氮）原子",
+      "analysis": "该配合物为[Ni(NH3)6]SO4，其中阴离子为SO4^2−，其空间结构为正四面体。在配合离子[Ni(NH3)6]^2+中，NH3作为配体用孤电子对与Ni^2+形成配位键；NH3中提供孤电子对用于成键的原子为氮原子。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "配位键",
+        "中心离子（中心原子）",
+        "配体（配位体）"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t88",
+      "type": "简答题",
+      "stem": "请结合具体例子说明配合物的结构特点。",
+      "answer": "配合物由中心金属原子/离子与配体通过配位键结合而成，具有一定的配位数和空间构型；中心离子周围形成“内界配位层”，外面常有“外界离子/分子”，并可能出现几何异构等结构现象。\n例1：[Co(NH3)6]Cl3 中 Co3+为中心离子，6个NH3为配体形成内界[Co(NH3)6]3+（配位数6，常为正八面体），3个Cl−在外界。\n例2： [Pt(NH3)2Cl2] 中 Pt2+配位数4，常呈平面正方形结构，可形成顺式/反式两种几何异构体。\n例3：[Fe(CN)6]4− 中 Fe2+配位数6，构型常为正八面体，配体CN−与中心离子通过配位键结合。",
+      "analysis": "先指出配合物的组成：中心金属原子/离子+配体，二者以配位键连接；再说明结构要点：存在内界(配位层)与外界、配位数决定空间构型(如配位数6→正八面体，配位数4→四面体或平面正方形)；最后用具体化学式举例说明内外界与构型及可能的几何异构(如[Co(NH3)6]Cl3、[Pt(NH3)2Cl2]顺反异构)。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "配合物（配位化合物）",
+        "配位键",
+        "中心离子（中心原子）",
+        "配体（配位体）",
+        "配离子",
+        "配位数",
+        "四水合铜离子 [Cu(H2O)4]2+",
+        "四氨合铜离子 [Cu(NH3)4]2+"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t89",
+      "type": "简答题",
+      "stem": "向盛有少量 $\\mathrm{NH_4Fe(SO_4)_2}$ 溶液的试管中滴入几滴KSCN溶液，溶液呈血红色。请解释上述现象。",
+      "answer": "KSCN中的SCN⁻能与Fe³⁺形成血红色的硫氰合铁(III)络合物（如[FeSCN]²⁺）。(NH₄)₂Fe(SO₄)₂溶液中的Fe²⁺在空气/溶解氧作用下部分被氧化为Fe³⁺，因此滴加KSCN后出现血红色。反应：Fe³⁺ + SCN⁻ ⇌ [FeSCN]²⁺（血红色）。",
+      "analysis": "观察到“血红色”是Fe³⁺与SCN⁻的特征显色反应；而(NH₄)₂Fe(SO₄)₂本为亚铁盐，需先说明Fe²⁺在溶液中易被空气中O₂氧化生成少量Fe³⁺，随后Fe³⁺与SCN⁻络合生成血红色配离子，故溶液显血红色。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "硫氰化铁配离子",
+        "配合物的颜色",
+        "配合物（配位化合物）"
+      ],
+      "skills": [
+        "利用配合物形成反应进行离子检验",
+        "通过颜色变化鉴别离子或配合物"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t90",
+      "type": "简答题",
+      "stem": "指出下列各配合物中的配离子、中心离子、配位体、配位数和配位原子。\n\n(1) $\\mathrm{K}_2[\\mathrm{Cu}(\\mathrm{CN})_4]$ ; (2) $(\\mathrm{NH}_4)_2[\\mathrm{PtCl}_6]$ ; (3) $[\\mathrm{Cd}(\\mathrm{NH}_3)_4](\\mathrm{OH})_2$ 。",
+      "answer": "（1）K2[Cu(CN)4]：配离子[Cu(CN)4]2−；中心离子Cu2+；配位体CN−（4个）；配位数4；配位原子C（氰根以C端配位）。\n（2）（NH4）2[PtCl6]：配离子[PtCl6]2−；中心离子Pt4+；配位体Cl−（6个）；配位数6；配位原子Cl。\n（3）[Cd(NH3)4](OH)2：配离子[Cd(NH3)4]2+；中心离子Cd2+；配位体NH3（4个）；配位数4；配位原子N。",
+      "analysis": "先确定配离子为括号“[ ]”内的整体（或与外界阴/阳离子配平电荷后的络离子）；由“配离子总电荷=中心离子电荷+各配位体电荷之和”求中心离子价态；配位体为与中心离子直接相连的分子/离子；配位数等于配位体提供的配位原子数之和；配位原子为配位体中与中心离子形成配位键的原子（如CN−常以C配位，NH3以N配位）。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "配合物（配位化合物）",
+        "中心离子（中心原子）",
+        "配体（配位体）",
+        "配离子",
+        "配位数"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t91",
+      "type": "简答题",
+      "stem": "在酸溶液中， $\\mathrm{H}^{+}$ 能与 $\\mathrm{H}_{2} \\mathrm{O}$ 结合成 $\\mathrm{H}_{3} \\mathrm{O}^{+}$ ，试从配位键来解释 $\\mathrm{H}_{3} \\mathrm{O}^{+}$ 的形成。",
+      "answer": "H2O中氧原子含有一对孤电子对，H+没有电子对可供成键。氧原子用这对孤电子对提供给H+形成O→H的配位键，从而生成H3O+（水合氢离子）。",
+      "analysis": "配位键的本质是共用电子对由同一原子提供。H2O分子中O原子带有两对孤电子对，H+为缺电子体。O原子将一对孤电子对提供给H+，形成O→H配位键，得到三根O—H键的H3O+，整体带+1电荷。",
+      "difficulty": 3,
+      "knowledge_points": [
+        "配位键"
+      ],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s4_t92",
+      "type": "简答题",
+      "stem": "工业盐酸（俗称粗盐酸）呈亮黄色，已证明了这是配合物 $\\left[\\mathrm{FeCl}_{4}\\right]^{-}$ 的颜色。请用实验定性证明这种配合物只有在高浓度 $\\mathrm{Cl}^{-}$ 的条件下才是稳定的。",
+      "answer": "取少量亮黄色粗盐酸于试管中，加入大量蒸馏水稀释，黄色明显变浅甚至褪去；再向该稀释液中加入浓盐酸或固体NaCl（提高Cl−浓度），溶液黄色又恢复/加深。或向黄色盐酸中逐滴加入AgNO3溶液生成AgCl沉淀（降低Cl−浓度），黄色随之消失；再补加浓盐酸/NaCl使Cl−浓度升高，黄色可再出现。由此定性证明[FeCl4]−只在高浓度Cl−条件下稳定，Cl−浓度降低则配合物解离。",
+      "analysis": "思路是用“改变Cl−浓度—观察颜色变化”的可逆现象证明稳定性条件。[FeCl4]−呈黄色且其形成需要较高Cl−浓度：\n1）稀释粗盐酸会显著降低Cl−浓度，平衡向解离方向移动，[FeCl4]−减少，黄色褪去；\n2）再加入浓盐酸或NaCl提高Cl−浓度，平衡向生成[FeCl4]−方向移动，黄色恢复/加深；\n3）用AgNO3沉淀Cl−同样能降低Cl−浓度并使黄色消失，进一步验证“只有高Cl−才稳定”。\n通过上述可逆对比即可定性证明稳定性依赖高浓度Cl−。",
+      "difficulty": 4,
+      "knowledge_points": [
+        "配合物（配位化合物）",
+        "配合物的颜色",
+        "配合物的稳定性",
+        "过渡金属配合物"
+      ],
+      "skills": [
+        "通过颜色变化鉴别离子或配合物",
+        "利用配合物形成反应进行离子检验"
+      ],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t93",
+      "type": "选择题",
+      "stem": "在单质的晶体中，一定不存在（ ）。\n\nA. 离子键\n\nB. 分子间作用力\n\nC. 共价键\n\nD. 金属离子与自由电子间的作用",
+      "answer": "A",
+      "analysis": "单质晶体由同种元素构成，可能形成分子晶体（存在分子间作用力）、原子晶体（存在共价键）或金属晶体（存在金属离子与自由电子间的作用）。离子键需要由阳离子和阴离子组成，通常来自不同元素形成的离子化合物，因此在单质晶体中一定不存在离子键。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t94",
+      "type": "选择题",
+      "stem": "下列有关晶体的叙述中，错误的是（ ）。\n\nA. 干冰晶体中, 每个 $\\mathrm{CO}_{2}$ 周围紧邻 12 个 $\\mathrm{CO}_{2}$   \nB. 氯化钠晶体中, 每个 $\\mathrm{Na}^{+}$ 周围紧邻且距离相等的 $\\mathrm{Na}^{+}$ 共有 6 个  \nC. 氯化铯晶体中, 每个 $\\mathrm{Cs}^{+}$ 周围紧邻 8 个 $\\mathrm{Cl}^{-}$   \nD. 金刚石为三维骨架结构, 由共价键形成的碳原子环中, 最小的环上有 6 个碳原子",
+      "answer": "B",
+      "analysis": "NaCl晶体中，Na+与Cl-构成两套互穿的面心立方点阵：每个Na+周围最近的异号离子Cl-为6个（配位数6），而同号离子Na+在其所属的面心立方子点阵中最近同号离子数为12个，因此“每个Na+周围紧邻且距离相等的Na+共有6个”错误。A中干冰分子晶体可视作密堆积结构，最近邻分子数为12；C中CsCl结构每个Cs+周围紧邻8个Cl-；D中金刚石为三维共价骨架，最小碳环为6元环。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t95",
+      "type": "选择题",
+      "stem": "下列物质中属于分子晶体的是（ ）。\n\n①二氧化硅；②碘；③镁；④蔗糖；⑤冰。\n\nA. ①②④\n\nB. ②③⑤\n\nC. ②④⑤\n\nD. ①②④⑤",
+      "answer": "C",
+      "analysis": "分子晶体由分子构成，微粒间主要靠分子间作用力（如范德华力、氢键）结合。①二氧化硅为共价网络晶体（原子晶体），不属于分子晶体；②碘(I2)为分子晶体；③镁为金属晶体；④蔗糖为分子晶体；⑤冰(H2O)为分子晶体（以氢键为主）。因此属于分子晶体的是②④⑤，选C。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t96",
+      "type": "选择题",
+      "stem": "下列各组物质中，化学键类型相同，晶体类型也相同的是（ ）。\n\nA. C（金刚石）和 $\\mathrm{CO}_{2}$\n\nB. NaBr 和 HBr\n\nC. $\\mathrm{CH}_4$ 和 $\\mathrm{H}_2\\mathrm{O}$\n\nD. $\\mathrm{Cl}_{2}$ 和 $\\mathrm{KCl}$",
+      "answer": "C",
+      "analysis": "判断“化学键类型”和“晶体类型”是否都相同：A 金刚石为共价键形成的原子晶体，CO2为分子内共价键、分子晶体，不同；B NaBr为离子键、离子晶体，HBr为共价键、分子晶体，不同；C CH4和H2O分子内均以共价键形成分子，固态时都属于分子晶体（H2O还存在分子间氢键，但晶体类型仍为分子晶体），相同；D Cl2为分子晶体，KCl为离子晶体，不同。故选C。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t97",
+      "type": "选择题",
+      "stem": "下列叙述中，正确的是（ ）。\n\nA. 离子晶体都是化合物\n\nB. 共价晶体都是单质\n\nC. 金属在常温下都以晶体形式存在\n\nD. 分子晶体在常温下不可能为固态",
+      "answer": "A",
+      "analysis": "A正确：离子晶体由阳离子和阴离子按一定比例构成，属于化合物。B错误：共价晶体既可能是单质（如金刚石、晶体硅），也可能是化合物（如SiO2、SiC）。C错误：并非所有金属常温下都是晶体，汞常温为液态。D错误：分子晶体常温下可以是固态（如碘、萘）。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t98",
+      "type": "选择题",
+      "stem": "具有下列原子序数的各组元素, 能组成化学式为 $\\mathrm{AB}_{2}$ 型化合物, 并且该化合物在固态时为共价晶体的是 ( )。\n\nA. 6和8\n\nB. 20和17\n\nC. 14和6\n\nD. 14 和 8",
+      "answer": "D",
+      "analysis": "先由原子序数确定元素：6为C，8为O，20为Ca，17为Cl，14为Si。判断能否形成AB2且固态为共价晶体：A中C与O形成CO2(AB2)，但固态CO2为分子晶体；B中Ca与Cl形成CaCl2(AB2)，为离子晶体；C中Si与C常见化合物为SiC(AB型)，不符合AB2；D中Si与O形成SiO2(AB2)，固态为共价晶体(原子晶体，如石英)。因此选D。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t99",
+      "type": "选择题",
+      "stem": "X 和 Y 两种元素的核电荷数之和为 22, X 元素原子的核外电子数比 Y 的少 6 个。下列说法中, 错误的是 ( )。\n\nA. X 的单质固态时为分子晶体\n\nB. Y的单质为共价晶体\n\nC. X与Y形成的化合物固态时为分子晶体\n\nD. X 与碳形成的化合物为分子晶体",
+      "answer": "C",
+      "analysis": "由题意：设X、Y核电荷数分别为ZX、ZY，则ZX+ZY=22，且ZX=ZY−6。联立得ZY=14，ZX=8，所以Y为Si，X为O。\n逐项判断：\nA O2(固态)由分子构成，为分子晶体，正确。\nB Si单质为共价晶体(原子晶体)，正确。\nC Si与O形成SiO2，固态为共价晶体(原子晶体)，不是分子晶体，故该说法错误。\nD C与O形成CO2，固态(干冰)为分子晶体，正确。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t100",
+      "type": "选择题",
+      "stem": "下列各组物质熔化或升华时, 所克服的粒子间作用属于同种类型的是 ( )。\n\nA. $\\mathrm{Na}_{2} \\mathrm{O}$ 和 $\\mathrm{SiO}_{2}$ 熔化\n\nB. $\\mathrm{Mg}$ 和S熔化\n\nC. 氯化钠和蔗糖熔化\n\nD. 碘和干冰升华",
+      "answer": "D",
+      "analysis": "判断熔化/升华时需克服的作用力类型：\nA Na2O为离子晶体（离子键），SiO2为共价网络晶体（共价键），不同；\nB Mg为金属晶体（金属键），S为分子晶体（分子间作用力），不同；\nC NaCl为离子晶体（离子键），蔗糖为分子晶体（以氢键等分子间作用力为主），不同；\nD 碘(I2)和干冰(CO2)均为分子晶体，升华时主要克服分子间的范德华力，属于同种类型。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t101",
+      "type": "简答题",
+      "stem": "常用的硫粉是一种硫的小晶体, 熔点 $112.8 \\mathrm{C}$ , 溶于 $\\mathrm{CS}_{2} 、 \\mathrm{CCl}_{4}$ 等溶剂, 试推断它可能属于哪一类晶体。",
+      "answer": "分子晶体（由S8等硫分子构成的晶体）",
+      "analysis": "硫粉熔点112.8℃较低，说明晶体中作用力不强；且能溶于CS2、CCl4等非极性溶剂，符合“相似相溶”的规律，表明其以非极性分子（如S8）存在并以分子间作用力结合成晶体。因此它可能属于分子晶体。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t102",
+      "type": "简答题",
+      "stem": "干冰熔化或升华时, ${\\mathrm{{CO}}}_{2}$ 内的 $\\mathrm{C} = \\mathrm{O}$ 是否受到破坏?",
+      "answer": "不受破坏。干冰熔化或升华属于物理变化，只是二氧化碳分子间距离和排列方式改变，分子内的C=O化学键不发生断裂。",
+      "analysis": "熔化、升华是物质状态变化，发生的是分子间作用力的改变；二氧化碳分子本身仍为CO₂，分子内化学键（C=O）未断裂，因此不被破坏。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t103",
+      "type": "简答题",
+      "stem": "怎样理解水的密度在 $4^{\\circ} \\mathrm{C}$ 时最大？水的这一特殊性对水生生物有什么重要意义？",
+      "answer": "水的密度在4℃时最大，表示在0～4℃范围内水温升高体积反而减小、密度增大；而在4℃以上温度升高时体积增大、密度减小。因而当水体降温时，4℃的水最重会下沉，表层继续降到0℃的水密度反而变小留在上层并先结冰，冰又浮在水面起保温作用。其重要意义是：冬季湖泊/河流不易从底部开始冻结，深层水常保持接近4℃的较稳定环境，使水生生物能在水下越冬生存。",
+      "analysis": "抓住“密度最大→最重下沉”的含义：\n1) 说明0～4℃密度随温度升高而增大，4℃达到最大；4℃以上则随温度升高而减小。\n2) 推出冷却过程中的分层：水温降到4℃时形成最密水并下沉；表层继续冷却到接近0℃时密度变小，仍在上层。\n3) 上层先结冰且冰浮水面，起隔热保温，使下层水维持在约4℃，保障水生生物越冬。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "chemistry_highschool_rjb_xzxbx2_ch3_s_t107",
+      "type": "综合题",
+      "stem": "元素周期表中的四种元素 A、B、E、F，原子序数依次增大。A 的基态原子价层电子排布为 $n s^{n} n p^{n}$ ；B 的基态原子 2p 能级有 3 个单电子； $\\mathrm{E}^{2+}$ 的 3d 轨道中有 10 个电子；F 单质在金属活动性顺序中排在最末位。\n\n(1) 写出E的基态原子的电子排布式:  \n(2) A、B形成的 $\\mathrm{AB}^{-}$ 常作为配位化合物中的配体。在 $\\mathrm{AB}^{-}$ 中, 元素A的原子采取sp杂化, 则A与B形成的化学键中含有的 $\\sigma$ 键与 $\\pi$ 键的数目之比为  \n(3) E、F均能与 $\\mathrm{AB}^{-}$ 形成配离子, 已知 $\\mathrm{E}^{2+}$ 与 $\\mathrm{AB}^{-}$ 形成配离子时, 配位数为 $4 ; \\mathrm{~F}^{+}$ 与 $\\mathrm{AB}^{-}$ 形成配离子时, 配位数为 2 。工业上常用 $\\mathrm{F}^{+}$ 和 $\\mathrm{AB}^{-}$ 形成的配离子与 $\\mathrm{E}$ 单质反应, 生成 $\\mathrm{E}^{2+}$ 与 $\\mathrm{AB}^{-}$ 形成的配离子和 $\\mathrm{F}$ 单质来提取 $\\mathrm{F}$ , 写出上述反应的离子方程式:",
+      "answer": "(1) E(Zn)基态原子电子排布式：[Ar]3d^10 4s^2（或1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^2）\n(2) σ键∶π键 = 1∶2\n(3) Zn + 2[Au(CN)2]^- → [Zn(CN)4]^{2-} + 2Au",
+      "analysis": "由B的2p能级有3个单电子知B为N(2p^3，Z=7)；A价层ns^2np^2且原子序数小于N，故A为C(Z=6)，AB^-为CN^-。E^{2+}的3d有10e^-，对应Zn^{2+}为[Ar]3d^{10}，故E为Zn。F金属活动性最末位为Au，且原子序数大于Zn，符合。CN^-中C为sp杂化，C≡N为三键：1个σ、2个π，故σ:π=1:2。配离子：Zn^{2+}配位数4为[Zn(CN)4]^{2-}，Au^+配位数2为[Au(CN)2]^-；用Zn置换还原Au：Zn + 2[Au(CN)2]^- → [Zn(CN)4]^{2-} + 2Au。",
+      "difficulty": 4,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 241,
+    "skill_count": 35,
+    "experiment_count": 16,
+    "question_count": 114
+  }
+}

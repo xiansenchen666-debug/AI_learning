@@ -1,0 +1,703 @@
+{
+  "id": "math_5b_rjb",
+  "stage": "小学",
+  "grade": "五年级下册",
+  "subject": "数学",
+  "title": "数学五年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_5b_rjb_cpt1",
+      "name": "从不同方向观察几何体",
+      "definition": "从前面、左面、上面等不同方向观察由小正方体搭成的几何体，会看到不同的平面图形。",
+      "importance": "掌握",
+      "examples": [
+        "从前面看到的是两个方块高的形状，从左面看到可能是一列方块"
+      ],
+      "pages": "观察物体（三）第1-3页"
+    },
+    {
+      "id": "math_5b_rjb_cpt2",
+      "name": "倍数",
+      "definition": "在整数除法中，如果一个整数能够被另一个整数整除，那么前者是后者的倍数。",
+      "importance": "掌握",
+      "examples": [
+        "12是2的倍数，因为12÷2=6",
+        "12是2的倍数"
+      ],
+      "pages": "因数和倍数 第1页"
+    },
+    {
+      "id": "math_5b_rjb_cpt3",
+      "name": "偶数",
+      "definition": "能被2整除的整数叫偶数（0也是偶数）。",
+      "importance": "了解",
+      "examples": [
+        "0, 2, 4, 6, 8"
+      ],
+      "pages": "2、5、3 的倍数 第3页"
+    },
+    {
+      "id": "math_5b_rjb_cpt4",
+      "name": "奇数",
+      "definition": "不能被2整除的整数叫奇数。",
+      "importance": "了解",
+      "examples": [
+        "1,3,5,7,9"
+      ],
+      "pages": "2、5、3 的倍数 第3页"
+    },
+    {
+      "id": "math_5b_rjb_cpt5",
+      "name": "3的倍数特征",
+      "definition": "一个整数各位数字之和是3的倍数，则该数是3的倍数。",
+      "importance": "重要",
+      "pages": "2、5、3 的倍数 第4页"
+    },
+    {
+      "id": "math_5b_rjb_cpt6",
+      "name": "质数",
+      "definition": "只有1和它本身两个因数的数叫质数。",
+      "importance": "重要",
+      "examples": [
+        "2,3,5,7,11"
+      ],
+      "pages": "质数和合数 第1页"
+    },
+    {
+      "id": "math_5b_rjb_cpt7",
+      "name": "合数",
+      "definition": "除了1和本身外还有其他因数的自然数。",
+      "importance": "重要",
+      "examples": [
+        "4,6,8,9"
+      ],
+      "pages": "质数和合数 第1页"
+    },
+    {
+      "id": "math_5b_rjb_cpt8",
+      "name": "因数的个数有限",
+      "definition": "一个数的因数只有有限个。",
+      "importance": "了解",
+      "pages": "因数与倍数小结"
+    },
+    {
+      "id": "math_5b_rjb_cpt9",
+      "name": "倍数的个数无限",
+      "definition": "一个数的倍数有无限多个。",
+      "importance": "了解",
+      "pages": "因数与倍数小结"
+    },
+    {
+      "id": "math_5b_rjb_cpt10",
+      "name": "5的倍数特征",
+      "definition": "个位上是0或5的整数都是5的倍数。",
+      "importance": "掌握",
+      "pages": "5的倍数特点部分"
+    },
+    {
+      "id": "math_5b_rjb_cpt11",
+      "name": "2的倍数特征",
+      "definition": "个位上是0、2、4、6或8的整数都是2的倍数。",
+      "importance": "掌握",
+      "pages": "2的倍数特点部分"
+    },
+    {
+      "id": "math_5b_rjb_cpt12",
+      "name": "完全数",
+      "definition": "等于除自身外全部因数之和的数叫完全数。",
+      "importance": "了解",
+      "pages": "完全数介绍",
+      "examples": [
+        "6，28"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt13",
+      "name": "长方体的长宽高",
+      "definition": "在长方体中，相交于同一顶点的三条棱分别称为长、宽、高。",
+      "importance": "理解",
+      "pages": "第1节"
+    },
+    {
+      "id": "math_5b_rjb_cpt14",
+      "name": "表面积",
+      "definition": "长方体或正方体6个面的面积之和叫做它的表面积。",
+      "importance": "掌握",
+      "pages": "第2节"
+    },
+    {
+      "id": "math_5b_rjb_cpt15",
+      "name": "体积",
+      "definition": "物体所占空间的大小叫做物体的体积，体积单位包括立方厘米、立方分米和立方米。",
+      "importance": "掌握",
+      "pages": "第3节"
+    },
+    {
+      "id": "math_5b_rjb_cpt16",
+      "name": "长方体体积公式",
+      "definition": "长方体体积=长×宽×高，也可写为V=a·b·h。",
+      "importance": "掌握",
+      "formula": "V=a·b·h",
+      "pages": "第3节"
+    },
+    {
+      "id": "math_5b_rjb_cpt17",
+      "name": "正方体体积公式",
+      "definition": "正方体体积=棱长×棱长×棱长，写作V=a³。",
+      "importance": "掌握",
+      "formula": "V=a³",
+      "pages": "第3节"
+    },
+    {
+      "id": "math_5b_rjb_cpt18",
+      "name": "分数的意义",
+      "definition": "把单位“1”平均分成若干份，其中一份或若干份用分数表示。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt19",
+      "name": "单位1",
+      "definition": "表示一个整体，可以是一个物体、一个计量单位或一些物体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt20",
+      "name": "分数单位",
+      "definition": "把单位1平均分成若干份后，其中一份表示的分数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt21",
+      "name": "分数与除法的关系",
+      "definition": "a ÷ b = a/b（b ≠ 0），除法的商可以用分数表示。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5b_rjb_cpt22",
+      "name": "真分数",
+      "definition": "分子小于分母的分数，数值小于1。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt23",
+      "name": "假分数",
+      "definition": "分子大于或等于分母的分数，数值大于或等于1。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt24",
+      "name": "带分数",
+      "definition": "由整数和真分数组成的数，如2又1/5。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_5b_rjb_cpt25",
+      "name": "分数的基本性质",
+      "definition": "分子和分母同时乘或除以相同的数（0除外），分数大小不变。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5b_rjb_cpt26",
+      "name": "约分",
+      "definition": "将分子和分母同时除以它们的公因数，使分数变成最简分数。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5b_rjb_cpt27",
+      "name": "通分",
+      "definition": "把几个分数化成同分母的分数以便比较大小或进行运算。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5b_rjb_cpt28",
+      "name": "最大公因数",
+      "definition": "同时是两个或多个数的因数的最大值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt29",
+      "name": "最小公倍数",
+      "definition": "同时是两个或多个数的倍数的最小值。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt30",
+      "name": "分数与小数互化",
+      "definition": "分数可通过除法化成小数，小数可按位值写成分数并化简。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt31",
+      "name": "旋转中心",
+      "definition": "图形旋转时保持不动的点，其他点都围绕该点运动。",
+      "importance": "掌握",
+      "pages": "例题与做一做中多次出现",
+      "examples": [
+        "钟表的表盘中心",
+        "风车叶片的固定点"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt32",
+      "name": "旋转方向",
+      "definition": "指图形旋转时的方向，包括顺时针方向和逆时针方向。",
+      "importance": "掌握",
+      "aliases": [
+        "顺时针旋转",
+        "逆时针旋转"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt33",
+      "name": "旋转角度",
+      "definition": "图形围绕旋转中心转动的角度大小，如90°、180°等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5b_rjb_cpt34",
+      "name": "旋转的性质",
+      "definition": "旋转保持图形形状和大小不变，对应点到中心的距离相等，对应线段与中心的夹角等于旋转角。",
+      "importance": "了解",
+      "examples": [
+        "旋转前后两三角形ABC与A'B'C'全等"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt35",
+      "name": "异分母分数加减法",
+      "definition": "分母不同的分数相加减，需要先通分为同分母分数，再按同分母分数加减法计算。",
+      "importance": "掌握",
+      "pages": "教材第6章",
+      "examples": [
+        "1/8+1/4",
+        "5/8+1/3"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt36",
+      "name": "分数加法运算律",
+      "definition": "分数加法满足交换律和结合律。",
+      "importance": "了解",
+      "examples": [
+        "a/b+c/d=c/d+a/b",
+        "(a/b+c/d)+e/f=a/b+(c/d+e/f)"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt37",
+      "name": "分数混合运算",
+      "definition": "分数加减混合运算的顺序与整数加减相同，需要先通分再按运算顺序计算。",
+      "importance": "重要",
+      "examples": [
+        "1/2+3/10-1/5"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt38",
+      "name": "折线统计图",
+      "definition": "用高低不同的点表示数据的大小，通过点与点的连线显示数据的变化趋势。",
+      "importance": "重要",
+      "pages": "教材第7章开头",
+      "examples": [
+        "1998—2021年全国总人口数折线统计图"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt39",
+      "name": "复式折线统计图",
+      "definition": "在同一坐标系内用两条或多条折线对比不同数据的变化情况。",
+      "importance": "重要",
+      "examples": [
+        "出生人口数和死亡人口数统计图"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt40",
+      "name": "数据变化趋势",
+      "definition": "通过统计图观察数据随时间的增减变化规律。",
+      "importance": "掌握",
+      "examples": [
+        "人口逐年上升但幅度变小"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt41",
+      "name": "人口自然增长数",
+      "definition": "出生人口数减去死亡人口数得到的数值。",
+      "importance": "了解",
+      "pages": "教材后段",
+      "examples": [
+        "教材示例给出的计算示意"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt42",
+      "name": "天平比较质量的基本原理",
+      "definition": "利用天平两端物体质量的比较结果（平衡或不平衡）来判断物体质量是否相同及谁更重。",
+      "importance": "重要",
+      "pages": "第8章开头",
+      "examples": [
+        "天平平衡表示两边质量相等，不平衡表示一边更重。"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt43",
+      "name": "用天平寻找次品",
+      "definition": "通过对给定物品进行合理分组并称量，利用每次称量的结果逐步缩小范围，最终找出质量与其他物品不同的次品。",
+      "importance": "重要",
+      "pages": "第8章找次品任务",
+      "examples": [
+        "3瓶钙片中1瓶少3片，通过1次称量即可找到次品。"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt44",
+      "name": "最少称量次数",
+      "definition": "在已知只有1个次品（且明确比正常物品重或轻）的情况下，为保证一定能找出次品所需的最少称量次数。",
+      "importance": "掌握",
+      "pages": "第8章“至少称几次能保证找出次品”",
+      "examples": [
+        "8个零件中1个较重的次品，至少需要2次称量。"
+      ]
+    },
+    {
+      "id": "math_5b_rjb_cpt45",
+      "name": "物品数量与最少称量次数的关系",
+      "definition": "在使用天平寻找单个次品时，能在 k 次称量内保证找到次品的物品数量有上限。教材给出的关系：2~3个需1次，4~9个需2次，10~27个需3次，28~81个需4次……",
+      "importance": "重要",
+      "pages": "“你知道吗？”表格",
+      "examples": [
+        "若有27个物品，3次称量足够；若有28个，则至少需要4次。"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_5b_rjb_skl1",
+      "name": "根据视图搭建几何体",
+      "description": "根据从多个方向看到的视图，推断并搭建由小正方体构成的立体几何体。"
+    },
+    {
+      "id": "math_5b_rjb_skl2",
+      "name": "根据特征判断倍数",
+      "description": "利用个位特征或数字和特征判断一个数是否为2、5、3的倍数。"
+    },
+    {
+      "id": "math_5b_rjb_skl3",
+      "name": "寻找因数",
+      "description": "通过除法或系统枚举的方法找出一个数的全部因数。"
+    },
+    {
+      "id": "math_5b_rjb_skl4",
+      "name": "对立体图形特征的观察与分类",
+      "description": "通过观察面、棱、顶点等要素判断立体图形的类型及特征，例如判断形状是否为长方体或正方体。"
+    },
+    {
+      "id": "math_5b_rjb_skl5",
+      "name": "将立体图形展开与还原",
+      "description": "根据展开图判断是否能围成给定的长方体或正方体。"
+    },
+    {
+      "id": "math_5b_rjb_skl6",
+      "name": "比较分数大小的方法",
+      "description": "通过通分、同分母比分子、同分子比分母等方法比较分数大小。"
+    },
+    {
+      "id": "math_5b_rjb_skl7",
+      "name": "判断图形的旋转关系",
+      "description": "通过观察图形变化前后的方向、位置、角度，判断图形是否是旋转得到的，以及旋转的中心、方向和角度。"
+    },
+    {
+      "id": "math_5b_rjb_skl8",
+      "name": "画出旋转后的图形",
+      "description": "根据给定的旋转中心、方向和角度，将原图形准确画出旋转后的对应图形。"
+    },
+    {
+      "id": "math_5b_rjb_skl9",
+      "name": "通分方法",
+      "description": "将异分母分数化为同分母分数，通常把分母化为它们的最小公倍数。"
+    },
+    {
+      "id": "math_5b_rjb_skl10",
+      "name": "画图理解分数运算",
+      "description": "通过条形图或面积图帮助理解分数加减法的意义与过程。"
+    },
+    {
+      "id": "math_5b_rjb_skl11",
+      "name": "绘制折线统计图",
+      "description": "根据统计表中的数据确定点的位置并用折线连接，完成折线图的绘制。"
+    },
+    {
+      "id": "math_5b_rjb_skl12",
+      "name": "分析统计图趋势",
+      "description": "通过观察折线或条形的变化判断数据的增减、对比和变化特点。"
+    },
+    {
+      "id": "math_5b_rjb_skl13",
+      "name": "分组策略",
+      "description": "根据天平每次称量的三种可能结果（左重、右重、平衡）设计最优分组，使一次称量区分尽可能多的情况。"
+    },
+    {
+      "id": "math_5b_rjb_skl14",
+      "name": "树形图表示思考过程",
+      "description": "使用分支结构表示称量步骤以及每种结果对应的推理过程。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_5b_rjb_exe1",
+      "type": "应用题",
+      "stem": "下面是从三个方向观察同一个几何体看到的图形，你能摆出这个几何体吗？",
+      "answer": "根据三个方向的视图搭建出对应高度和位置的小正方体组合，得到唯一确定的几何体。",
+      "analysis": "需同时满足三个方向的投影关系，考察立体结构想象能力。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe2",
+      "type": "判断题",
+      "stem": "判断：因为 36÷9=4，所以36是9的倍数。这句话是否正确？",
+      "answer": "正确。因为商是整数且没有余数。",
+      "analysis": "对应倍数定义。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe3",
+      "type": "选择题",
+      "stem": "下面哪些数是3的倍数？92，75，36，206，65，3051，779，99999",
+      "answer": "75, 36, 3051, 99999 是 3 的倍数。",
+      "analysis": "考察3的倍数特征：各位数字之和是3的倍数。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe4",
+      "type": "判断题",
+      "stem": "判断：因为36÷9=4，所以36是9的倍数。这个说法是否正确？",
+      "answer": "正确，因为被除数能被除数整除说明它是对方的倍数。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe5",
+      "type": "判断题",
+      "stem": "6的因数有1,2,3,6，因数之和为1+2+3=6，6是不是完全数？",
+      "answer": "是完全数，因为它等于除自身外全部因数之和。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe6",
+      "type": "应用题",
+      "stem": "一个正方体的棱长为3 dm，求它的体积。",
+      "answer": "V=3×3×3=27 dm³",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe7",
+      "type": "应用题",
+      "stem": "一个长方体纸箱长40 cm、宽30 cm、高20 cm，在所有棱上粘一圈胶带，至少需要多长的胶带？",
+      "answer": "长方体棱长总和=4×(40+30+20)=360 cm",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe8",
+      "type": "应用题",
+      "stem": "把1个月饼平均分给4人，每人分得多少？",
+      "answer": "1 ÷ 4 = 1/4",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe9",
+      "type": "填空题",
+      "stem": "把分数3/5与1/4通分。",
+      "answer": "3/5 = 12/20，1/4 = 5/20",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe10",
+      "type": "填空题",
+      "stem": "把分数24/30约分成最简分数。",
+      "answer": "4/5",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe11",
+      "type": "填空题",
+      "stem": "从“3”到“6”，指针绕点 O 按顺时针方向旋转了多少度？",
+      "answer": "90°",
+      "analysis": "钟面上每大格为30°，从3到6跨越3个大格，因此旋转角度为3×30°=90°。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe12",
+      "type": "应用题",
+      "stem": "画出三角形AOB绕点O按顺时针方向旋转90°后的图形。",
+      "answer": "A、O、B三点分别绕O顺时针旋转90°后连成的新三角形。",
+      "analysis": "保持O点不动，将A、B分别按顺时针旋转90°到新位置，再连接形成新的三角形。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe13",
+      "type": "填空题",
+      "stem": "计算：3/8 + 1/8 = ?",
+      "answer": "4/8 = 1/2",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe14",
+      "type": "填空题",
+      "stem": "计算：1/8 + 1/4 = ?",
+      "answer": "1/8 + 2/8 = 3/8",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe15",
+      "type": "应用题",
+      "stem": "森林部分比草地部分多占公园面积的几分之几？计算：1/2 + 3/10 - 1/5",
+      "answer": "3/5",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe16",
+      "type": "简答题",
+      "stem": "根据1998—2021年全国总人口数折线统计图，回答：我国总人口数是怎样变化的？",
+      "answer": "总人口数总体呈逐年上升趋势，但上升幅度逐渐减小。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe17",
+      "type": "简答题",
+      "stem": "观察1998—2021年出生人口数和死亡人口数的复式折线统计图，你能得出什么结论？",
+      "answer": "出生人口数呈下降趋势，死亡人口数略有上升；两者差距逐年缩小，人口自然增长数减少。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe18",
+      "type": "简答题",
+      "stem": "8个零件里有1个是次品（次品重一些）。假如用天平称，至少称几次能保证找出次品？",
+      "answer": "至少需要2次称量。",
+      "analysis": "第一次将物品分成3份称量，根据结果确定范围，第二次定位次品。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5b_rjb_exe19",
+      "type": "简答题",
+      "stem": "9个零件中有1个较重的次品，至少称几次能保证找出次品？",
+      "answer": "至少需要2次称量。",
+      "analysis": "因为4~9个物品均可在2次称量内确定次品。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 45,
+    "skill_count": 14,
+    "experiment_count": 0,
+    "question_count": 19
+  }
+}

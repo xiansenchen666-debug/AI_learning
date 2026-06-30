@@ -1,0 +1,686 @@
+{
+  "id": "math_4b_rjb",
+  "stage": "小学",
+  "grade": "四年级下册",
+  "subject": "数学",
+  "title": "数学四年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_4b_rjb_cpt1",
+      "name": "加数",
+      "definition": "参加加法运算的两个数叫作加数。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4b_rjb_cpt2",
+      "name": "和",
+      "definition": "加法运算得到的结果叫作和。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt3",
+      "name": "被减数",
+      "definition": "减法中已知的和叫作被减数。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4b_rjb_cpt4",
+      "name": "减数",
+      "definition": "减法中已知的加数叫作减数。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4b_rjb_cpt5",
+      "name": "差",
+      "definition": "减法运算得到的结果叫作差。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt6",
+      "name": "因数",
+      "definition": "在整数除法中，如果一个整数能够整除另一个整数，那么前者是后者的因数。",
+      "importance": "了解",
+      "examples": [
+        "2是12的因数，因为12÷2=6",
+        "12÷2=6中2是12的因数"
+      ],
+      "pages": "因数和倍数 第1页"
+    },
+    {
+      "id": "math_4b_rjb_cpt7",
+      "name": "积",
+      "definition": "乘法运算得到的结果叫作积。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt8",
+      "name": "除法",
+      "definition": "已知两个因数的积与其中一个因数，求另一个因数的运算叫作除法。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt9",
+      "name": "余数",
+      "definition": "有余数的除法中，被除数不能被除数整除，剩下的部分叫作余数。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_4b_rjb_cpt10",
+      "name": "0的运算规律",
+      "definition": "一个数加0得原数；被减数等于减数时差为0；一个数与0相乘得0；0除以非0的数得0；0不能作除数。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_4b_rjb_cpt11",
+      "name": "四则运算顺序",
+      "definition": "四则混合运算中先乘除后加减；有括号时先算括号内；小括号优先于中括号。",
+      "importance": "重要",
+      "examples": [
+        "96÷(12+4)×2"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt12",
+      "name": "从前面看",
+      "definition": "从物体的正前方观察时所看到的平面图形。",
+      "importance": "重要",
+      "pages": "教材第2章多处",
+      "examples": [
+        "从前面看积木摆出的形状"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt13",
+      "name": "从左面看",
+      "definition": "从物体的左侧方向观察时所看到的平面图形。",
+      "importance": "重要",
+      "pages": "教材第2章多处",
+      "examples": [
+        "从左面看不同摆法得到的图形"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt14",
+      "name": "从上面看",
+      "definition": "从物体的正上方向下观察时所看到的平面图形。",
+      "importance": "重要",
+      "pages": "教材第2章多处",
+      "examples": [
+        "从上面看三个物体时图形相同的情形"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt15",
+      "name": "不同方向观察同一物体",
+      "definition": "从前面、左面、上面等不同方向观察同一物体，会得到不同的或相同的平面图形。",
+      "importance": "掌握",
+      "pages": "教材出现于多个“摆一摆，看一看”环节",
+      "examples": [
+        "三个物体从上面看相同，但从前面看不同"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt16",
+      "name": "加法结合律",
+      "definition": "三个数相加，先加哪两个结果都不变，即 (a + b) + c = a + (b + c)。",
+      "importance": "重要",
+      "formula": "(a + b) + c = a + (b + c)"
+    },
+    {
+      "id": "math_4b_rjb_cpt17",
+      "name": "乘法交换律",
+      "definition": "两个数相乘，交换两个因数的位置，积不变。",
+      "importance": "重要",
+      "formula": "a × b = b × a"
+    },
+    {
+      "id": "math_4b_rjb_cpt18",
+      "name": "乘法结合律",
+      "definition": "三个数相乘，先乘前两个数或先乘后两个数，积不变。",
+      "importance": "重要",
+      "formula": "(a × b) × c = a × (b × c)"
+    },
+    {
+      "id": "math_4b_rjb_cpt19",
+      "name": "乘法分配律",
+      "definition": "两个数的和与一个数相乘，可以先分别与该数相乘，再相加。",
+      "importance": "重要",
+      "formula": "(a + b) × c = a × c + b × c"
+    },
+    {
+      "id": "math_4b_rjb_cpt20",
+      "name": "小数的意义",
+      "definition": "在测量和计算中不能正好得到整数的结果时，用小数表示不足整数的部分。",
+      "importance": "掌握",
+      "examples": [
+        "1米不足部分用小数表示"
+      ],
+      "pages": "小数的意义部分"
+    },
+    {
+      "id": "math_4b_rjb_cpt21",
+      "name": "小数的计数单位",
+      "definition": "小数部分的计数单位是十分之一、百分之一、千分之一等，分别写作0.1、0.01、0.001。",
+      "importance": "掌握",
+      "pages": "分母为10、100、1000…的分数可写成小数"
+    },
+    {
+      "id": "math_4b_rjb_cpt22",
+      "name": "小数的数位顺序",
+      "definition": "小数由整数部分、小数点和小数部分组成，小数部分从左到右依次是十分位、百分位、千分位等。",
+      "importance": "掌握",
+      "pages": "小数的数位顺序表"
+    },
+    {
+      "id": "math_4b_rjb_cpt23",
+      "name": "小数的性质",
+      "definition": "小数末尾添0或去掉末尾的0，小数的大小不变。",
+      "importance": "重要",
+      "pages": "小数的性质"
+    },
+    {
+      "id": "math_4b_rjb_cpt24",
+      "name": "小数点移动规律",
+      "definition": "小数点向右移动一位，相当于乘10；向左移动一位，相当于除以10。",
+      "importance": "重要",
+      "pages": "小数点移动引起的小数变化"
+    },
+    {
+      "id": "math_4b_rjb_cpt25",
+      "name": "小数的近似数（四舍五入）",
+      "definition": "根据需要保留指定位数，用四舍五入法得到小数的近似值。",
+      "importance": "重要",
+      "pages": "小数的近似数"
+    },
+    {
+      "id": "math_4b_rjb_cpt26",
+      "name": "小数与单位换算",
+      "definition": "利用进率关系，通过乘或除10、100、1000等进行单位间换算。",
+      "importance": "掌握",
+      "pages": "小数与单位换算"
+    },
+    {
+      "id": "math_4b_rjb_cpt27",
+      "name": "三角形的底和高",
+      "definition": "从三角形的一个顶点向其对边作垂线，顶点与垂足之间的线段叫做高，该对边叫做底。",
+      "importance": "掌握",
+      "pages": "三角形的特性页"
+    },
+    {
+      "id": "math_4b_rjb_cpt28",
+      "name": "三角形的稳定性",
+      "definition": "三角形结构在受力情况下不易发生形变，因此具有结构稳定性。",
+      "importance": "重要",
+      "pages": "三角形稳定性页",
+      "examples": [
+        "屋顶钢架",
+        "斜撑窗框"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt29",
+      "name": "两点之间的距离",
+      "definition": "两点间所有连线中线段最短，这条线段的长度叫作两点间的距离。",
+      "importance": "掌握",
+      "pages": "两点距离页"
+    },
+    {
+      "id": "math_4b_rjb_cpt30",
+      "name": "三角形两边之和大于第三边",
+      "definition": "三角形任意两边的和大于第三边。",
+      "importance": "重要",
+      "pages": "两边和大于第三边页"
+    },
+    {
+      "id": "math_4b_rjb_cpt31",
+      "name": "锐角三角形",
+      "definition": "三个角都是锐角的三角形。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt32",
+      "name": "直角三角形",
+      "definition": "含有一个90°角的三角形。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt33",
+      "name": "钝角三角形",
+      "definition": "有一个角是钝角的三角形。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_4b_rjb_cpt34",
+      "name": "等腰三角形",
+      "definition": "有两条边相等的三角形。",
+      "importance": "掌握",
+      "pages": "等腰三角形页",
+      "examples": [
+        "腰、底边、顶角、底角等概念与其相关"
+      ],
+      "aliases": [
+        "isosceles triangle"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt35",
+      "name": "等边三角形",
+      "definition": "三条边都相等的三角形，是特殊的等腰三角形。",
+      "importance": "掌握",
+      "pages": "等边三角形页",
+      "aliases": [
+        "equilateral triangle"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt36",
+      "name": "三角形的内角和",
+      "definition": "三角形三个内角的和是180°。",
+      "importance": "重要",
+      "pages": "内角和页"
+    },
+    {
+      "id": "math_4b_rjb_cpt37",
+      "name": "小数加法",
+      "definition": "对小数进行加法运算时，先把小数点对齐，再按照整数加法法则相加，最后在得数中点上小数点。",
+      "importance": "重要",
+      "pages": "教材第6章",
+      "examples": [
+        "16.45+14.29=30.74"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt38",
+      "name": "小数减法",
+      "definition": "对小数进行减法运算时，先把小数点对齐，再按照整数减法法则相减，最后在得数中点上小数点。",
+      "importance": "重要",
+      "pages": "教材第6章",
+      "examples": [
+        "16.45−14.29=2.16"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt39",
+      "name": "小数点对齐",
+      "definition": "小数加减法时必须将相同数位上的数字对齐，即把小数点上下对齐。",
+      "importance": "掌握",
+      "examples": [
+        "16.45 与 14.29 竖式对齐计算"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt40",
+      "name": "小数加法的交换律",
+      "definition": "两个小数相加，交换加数的位置，和不变。",
+      "importance": "了解",
+      "examples": [
+        "3.2+0.5 = 0.5+3.2"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt41",
+      "name": "小数加法的结合律",
+      "definition": "三个小数相加，可以先把前两个相加，也可以先把后两个相加，和不变。",
+      "importance": "了解",
+      "examples": [
+        "(4.7+2.6)+7.4 = 4.7+(2.6+7.4)"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt42",
+      "name": "对称轴",
+      "definition": "抛物线上对应点对称所在的直线，对 y=ax^2 为 y 轴，对 y=a(x-h)^2+k 为 x=h。",
+      "importance": "重要",
+      "examples": [
+        "正方形的四条对称轴",
+        "等腰三角形的一条对称轴"
+      ],
+      "pages": "轴对称图形配套插图页",
+      "aliases": [
+        "axis of symmetry"
+      ]
+    },
+    {
+      "id": "math_4b_rjb_cpt43",
+      "name": "对应点到对称轴的距离相等",
+      "definition": "在轴对称图形中，对应的两个点到对称轴的距离相等。",
+      "importance": "掌握",
+      "examples": [
+        "点A与A'到对称轴距离都是3格"
+      ],
+      "pages": "点A和A'示意图页"
+    },
+    {
+      "id": "math_4b_rjb_cpt44",
+      "name": "利用平移计算图形面积",
+      "definition": "把不规则图形的一部分进行平移，使其转化为规则图形，从而便于计算面积的方法。",
+      "importance": "掌握",
+      "examples": [
+        "把弧形边的图形平移组合成长方形求面积"
+      ],
+      "pages": "图形面积计算示例页"
+    },
+    {
+      "id": "math_4b_rjb_cpt45",
+      "name": "平均数",
+      "importance": "重要",
+      "definition": "把一组数据的总和平均分成若干份，每一份的数值叫做平均数，计算方法是：总和÷数量。",
+      "examples": [
+        "(19+15+16+20+15)÷5=17",
+        "平均每人捐书多少本"
+      ],
+      "pages": "平均数章节开头",
+      "formula": "x̄ = (x1 + x2 + … + xn) / n"
+    },
+    {
+      "id": "math_4b_rjb_cpt46",
+      "name": "单式条形统计图",
+      "importance": "重要",
+      "definition": "用若干条形的高度或长度表示数据大小的统计图，一幅统计图只表示一组数据。",
+      "examples": [
+        "某地区城镇人口数统计图（单组数据）"
+      ],
+      "pages": "统计图相关内容"
+    },
+    {
+      "id": "math_4b_rjb_cpt47",
+      "name": "复式条形统计图",
+      "importance": "重要",
+      "definition": "在同一个类别下用两条或多条并列的条形表示不同组数据，便于比较。",
+      "examples": [
+        "城乡人口数统计图",
+        "男女生喜欢运动人数统计图"
+      ],
+      "pages": "统计图综合内容"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_4b_rjb_skl1",
+      "name": "根据四则运算关系进行逆向求解",
+      "description": "通过加减法、乘除法各部分关系推求未知数，如和-加数=另一个加数，积÷因数=另一个因数。"
+    },
+    {
+      "id": "math_4b_rjb_skl2",
+      "name": "理解并应用四则运算顺序",
+      "description": "在混合运算中按照先乘除后加减、有括号先算括号的规则进行计算。"
+    },
+    {
+      "id": "math_4b_rjb_skl3",
+      "name": "空间想象能力",
+      "description": "在头脑中对物体进行旋转、移动，判断从不同方向观察物体所呈现的形状。"
+    },
+    {
+      "id": "math_4b_rjb_skl4",
+      "name": "观察与比较",
+      "description": "比较从不同方向看到的图形的异同，从而判断物体摆放结构。"
+    },
+    {
+      "id": "math_4b_rjb_skl5",
+      "name": "运用运算律进行简便计算",
+      "description": "根据题目的结构，选择合适的加法或乘法运算律，对算式重新组合，使计算更简便。"
+    },
+    {
+      "id": "math_4b_rjb_skl6",
+      "name": "比较小数大小的方法",
+      "description": "先比较整数部分，整数相同再比较十分位、百分位……"
+    },
+    {
+      "id": "math_4b_rjb_skl7",
+      "name": "将分数转换成小数的方法",
+      "description": "把分母为10、100、1000…的分数直接写成小数。"
+    },
+    {
+      "id": "math_4b_rjb_skl8",
+      "name": "将不同单位化为同一单位的方法",
+      "description": "利用单位进率，将不同计量单位的量转换成相同单位以便比较或计算。"
+    },
+    {
+      "id": "math_4b_rjb_skl9",
+      "name": "识别和分类三角形",
+      "description": "根据角或边的特征判断三角形的类型，如锐角、直角、钝角、等腰等。"
+    },
+    {
+      "id": "math_4b_rjb_skl10",
+      "name": "作三角形的高",
+      "description": "从指定顶点向对应底边作垂线并标注高。"
+    },
+    {
+      "id": "math_4b_rjb_skl11",
+      "name": "列竖式计算小数加减法",
+      "description": "按照整数加减法的步骤列竖式，并确保小数点对齐，逐位计算。"
+    },
+    {
+      "id": "math_4b_rjb_skl12",
+      "name": "运用运算律进行简便运算",
+      "description": "在小数加法中利用交换律、结合律调整加数顺序，使计算更简便。"
+    },
+    {
+      "id": "math_4b_rjb_skl13",
+      "name": "根据对称轴补全图形",
+      "description": "根据图形给出的对称轴，将已知半边的每个点按相同距离在对称轴另一侧找到对应点，绘制出完整图形。"
+    },
+    {
+      "id": "math_4b_rjb_skl14",
+      "name": "根据方向与格数进行平移绘图",
+      "description": "按照指定的方向和格数进行平移，得到最终图形，保持形状和大小不变。"
+    },
+    {
+      "id": "math_4b_rjb_skl15",
+      "name": "通过平移化归求面积",
+      "description": "将形状复杂的图形分割并平移组合成规则图形，使面积计算更简便。"
+    },
+    {
+      "id": "math_4b_rjb_skl16",
+      "name": "计算平均数的方法",
+      "description": "将一组数据求和后再除以数据的个数，用于求平均水平。"
+    },
+    {
+      "id": "math_4b_rjb_skl17",
+      "name": "统计图的解读与比较",
+      "description": "通过读取条形统计图或复式条形统计图中的数据，比较不同类别的数量差异。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_4b_rjb_exe1",
+      "type": "填空题",
+      "stem": "根据2468+575=3043，直接写出：3043−2468和3043−575的得数。",
+      "answer": "3043−2468=575；3043−575=2468",
+      "analysis": "利用加减法互逆关系求解，考察加减法关系。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe2",
+      "type": "应用题",
+      "stem": "计算96÷(12+4)×2。",
+      "answer": "12",
+      "analysis": "先算括号内，再按乘除顺序计算，考察四则混合运算顺序。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe3",
+      "type": "简答题",
+      "stem": "从上面看这3个物体，图形相同吗？从左面和前面看呢？",
+      "answer": "从上面看相同；从左面看相同；从前面看不同。",
+      "analysis": "考察学生区分不同观察方向所得图形的能力，并比较异同。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe4",
+      "type": "简答题",
+      "stem": "摆一摆，看一看：这3个物体，从哪面看到的图形相同？从哪面看到的图形不同？",
+      "answer": "需观察：部分方向相同，部分方向不同，答案根据图形而定。",
+      "analysis": "训练学生从三个方向观察物体并进行分类判断。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe5",
+      "type": "填空题",
+      "stem": "用字母表示加法交换律：a + b = （  ） + （  ）",
+      "answer": "b + a",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe6",
+      "type": "应用题",
+      "stem": "根据乘法结合律计算：(25 × 5) × 2",
+      "answer": "250",
+      "analysis": "先算5×2更简便，利用乘法结合律 (25×5)×2 = 25×(5×2) = 25×10 = 250。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe7",
+      "type": "应用题",
+      "stem": "根据乘法分配律，计算：25 × (4 + 2)",
+      "answer": "150",
+      "analysis": "25×(4+2)=25×4+25×2=100+50=150。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe8",
+      "type": "作图题",
+      "stem": "画出下列三角形指定底边上的高。",
+      "answer": "从指定顶点向底边作垂线，并标注垂足形成高。",
+      "analysis": "考察学生对三角形底和高概念的理解及作图能力。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe9",
+      "type": "填空题",
+      "stem": "一个三角形的三个角分别为40°、60°和x°，求x的值。",
+      "answer": "x = 180° − 40° − 60° = 80°。",
+      "analysis": "利用三角形内角和为180°求未知角。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe10",
+      "type": "简答题",
+      "stem": "画出下面图形的对称轴，并说明对应点到对称轴的距离有什么特点。",
+      "answer": "该图为轴对称图形，对称轴是一条竖直直线。对应点到对称轴的距离相等。",
+      "analysis": "考察学生识别对称轴并理解对应点到对称轴的等距特性。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe11",
+      "type": "应用题",
+      "stem": "把图形左半部分剪下，再向右平移6格，得到的图形是什么？并求面积。",
+      "answer": "平移后组成一个长方形，面积为 6×4 = 24 平方厘米。",
+      "analysis": "利用平移将复杂图形转化为规则图形进行面积计算。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe12",
+      "type": "操作题",
+      "stem": "将箭头向右平移4格，并在得到的图形上涂色。",
+      "answer": "向右平移4格后图形形状不变，仅位置右移4格，按此结果涂色。",
+      "analysis": "考查学生对平移方向与格数的理解。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe13",
+      "type": "应用题",
+      "stem": "男生队与女生队踢毽比赛，男生队平均每人踢17个，女生队平均19个，哪个队成绩更好？",
+      "answer": "女生队成绩更好，因为平均数19大于17。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_4b_rjb_exe14",
+      "type": "应用题",
+      "stem": "四年级学生喜欢各项运动的人数如下表，请判断喜欢哪个项目的人最多？",
+      "answer": "跳绳项目人数最多（男生7人，女生16人，共23人）。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 47,
+    "skill_count": 17,
+    "experiment_count": 0,
+    "question_count": 14
+  }
+}

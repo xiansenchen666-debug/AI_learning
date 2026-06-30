@@ -1,0 +1,3132 @@
+{
+  "id": "biology_bx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "生物",
+  "title": "生物必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/biology.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "biology_bx1_rjb_cpt1",
+      "name": "细胞是生命活动的基本单位",
+      "definition": "生物的生长、发育、生殖以及各种生理现象等生命活动的基础都需要到细胞层面去解释，生命活动离不开细胞。",
+      "importance": "重要",
+      "examples": [
+        "动植物以细胞代谢为基础的各种生理活动",
+        "以细胞增殖、分化为基础的生长发育",
+        "以细胞内基因传递和变化为基础的遗传与变异"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt2",
+      "name": "细胞是基本的生命系统",
+      "definition": "细胞是由多种组分相互作用、相互配合构成的有生命的系统，并且在各层次生命系统中处于最基本层次；更高层次生命系统的形成、维持和运转以细胞为基础。",
+      "importance": "重要",
+      "examples": [
+        "单细胞生物可独立完成生命活动",
+        "多细胞生物依赖分化细胞密切合作完成复杂生命活动"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt3",
+      "name": "生命系统的结构层次",
+      "definition": "从系统视角看生命世界，存在从细胞到生物圈的不同层次：细胞、组织、器官（系统）、个体、种群、群落、生态系统、生物圈。",
+      "importance": "掌握",
+      "examples": [
+        "细胞构成组织，组织构成器官，器官构成个体",
+        "同种个体形成种群，不同种群形成群落，群落与无机环境构成生态系统，所有生态系统构成生物圈",
+        "细胞→组织→器官（系统）→个体→种群→群落→生态系统→生物圈"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt4",
+      "name": "个体",
+      "definition": "由多个器官（及系统）组成、能够进行完整生命活动的生物体。",
+      "importance": "了解",
+      "examples": [
+        "冷箭竹个体由叶、根、茎等器官构成",
+        "大熊猫个体由循环、消化、运动、泌尿等系统组成"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt5",
+      "name": "种群",
+      "definition": "在一定区域内，同种生物的所有个体形成的整体。",
+      "importance": "了解",
+      "examples": [
+        "一定区域内所有大熊猫个体形成大熊猫种群",
+        "一定区域内所有冷箭竹个体形成冷箭竹种群"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt6",
+      "name": "群落",
+      "definition": "在同一区域内，不同种群相互作用形成的更大整体。",
+      "importance": "了解",
+      "examples": [
+        "同一区域内的大熊猫、冷箭竹和其他生物共同形成群落"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt7",
+      "name": "细胞的多样性",
+      "definition": "不同生物的细胞在形态、结构与功能上存在差异；在同一多细胞生物体内，由于细胞结构和功能的分化，细胞也呈现多样性。",
+      "importance": "重要",
+      "examples": [
+        "真菌（酵母菌）细胞、低等植物（水绵）细胞、高等植物（保卫细胞）、动物（鱼红细胞）",
+        "原核细胞（如大肠杆菌、蓝细菌）与真核细胞差异"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt8",
+      "name": "细胞的统一性",
+      "definition": "不同生物的细胞具有相似的基本结构模式与共同特征，如具有细胞膜、细胞质，以及遗传物质集中存在的区域（细胞核或拟核）；原核细胞与真核细胞都以DNA作为遗传物质。",
+      "importance": "重要",
+      "examples": [
+        "细胞膜、细胞质为原核与真核共有结构",
+        "遗传物质集中存在区域：细胞核或拟核"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt9",
+      "name": "真核细胞",
+      "definition": "细胞内具有以核膜为界限的成形细胞核的一类细胞。",
+      "importance": "掌握",
+      "aliases": [
+        "eukaryotic cell"
+      ],
+      "examples": [
+        "植物细胞",
+        "动物细胞",
+        "真菌细胞（如酵母菌）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt10",
+      "name": "原核细胞",
+      "definition": "细胞内没有由核膜包被的成形细胞核的一类细胞；一般无染色体，但有环状DNA分子，位于拟核区域。",
+      "importance": "掌握",
+      "aliases": [
+        "prokaryotic cell"
+      ],
+      "examples": [
+        "大肠杆菌",
+        "蓝细菌（旧称蓝藻）",
+        "其他细菌细胞"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt11",
+      "name": "细胞的基本结构",
+      "definition": "细胞普遍具有的结构成分与结构模式，如细胞膜、细胞质，以及遗传物质集中存在的区域（细胞核或拟核）。",
+      "importance": "掌握",
+      "examples": [
+        "细胞膜",
+        "细胞质",
+        "细胞核（真核）",
+        "拟核（原核）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt12",
+      "name": "核膜包被的细胞核",
+      "definition": "以核膜为界限的成形细胞核；它的有无是区分真核细胞与原核细胞的主要依据。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt13",
+      "name": "拟核",
+      "definition": "原核细胞中环状DNA分子位于细胞内特定的区域，该区域称为拟核。",
+      "importance": "掌握",
+      "examples": [
+        "细菌细胞的DNA集中区域"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt14",
+      "name": "DNA是遗传物质",
+      "definition": "原核细胞和真核细胞都以DNA作为遗传物质。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt15",
+      "name": "细胞是结构和功能的基本单位",
+      "definition": "除病毒以外，生物体都以细胞作为结构和功能的基本单位，生命活动离不开细胞。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt16",
+      "name": "蓝细菌",
+      "definition": "一类原核生物（旧称蓝藻）；细胞内含有藻蓝素和叶绿素，能够进行光合作用，为自养生物；可在富营养化水域大量繁殖形成水华。",
+      "importance": "了解",
+      "aliases": [
+        "蓝藻"
+      ],
+      "examples": [
+        "颤蓝细菌",
+        "水华现象相关"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt17",
+      "name": "水华",
+      "definition": "淡水水域污染后富营养化，导致蓝细菌和绿藻等大量繁殖而形成的现象，会影响水质和水生动物生活。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt18",
+      "name": "细胞中的化学元素",
+      "definition": "组成细胞的化学元素在无机自然界中都能够找到，没有一种化学元素为细胞所特有，但细胞中各种元素的相对含量与无机自然界大不相同；常见的有20多种。",
+      "importance": "重要",
+      "examples": [
+        "C、H、O、N、P、S、K、Ca、Mg",
+        "Fe、Mn、Zn、Cu、B、Mo"
+      ],
+      "aliases": [
+        "组成细胞的元素"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt19",
+      "name": "大量元素（macroelement）",
+      "definition": "细胞中常见的化学元素中，含量较多的一类元素，称为大量元素。",
+      "importance": "掌握",
+      "examples": [
+        "C、H、O、N、P、S、K、Ca、Mg"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt20",
+      "name": "微量元素（microelement）",
+      "definition": "细胞中常见的化学元素中，含量很少的一类元素，称为微量元素。",
+      "importance": "掌握",
+      "examples": [
+        "Fe、Mn、Zn、Cu、B、Mo"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt21",
+      "name": "细胞的主要化合物",
+      "definition": "组成细胞的各种元素大多以化合物的形式存在，如水、蛋白质、核酸、糖类、脂质等。",
+      "importance": "重要",
+      "examples": [
+        "水",
+        "蛋白质",
+        "核酸",
+        "糖类",
+        "脂质"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt22",
+      "name": "水（细胞内含量最多的化合物）",
+      "definition": "细胞内含量最多的化合物是水。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt23",
+      "name": "蛋白质（细胞内含量最多的有机化合物）",
+      "definition": "细胞内含量最多的有机化合物是蛋白质。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt24",
+      "name": "还原糖",
+      "definition": "糖类中的一类，如葡萄糖，能与斐林试剂发生作用并产生特定现象（砖红色沉淀）。",
+      "importance": "掌握",
+      "examples": [
+        "葡萄糖"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt25",
+      "name": "斐林试剂",
+      "definition": "用于检测还原糖的化学试剂；与还原糖反应生成砖红色沉淀。",
+      "importance": "掌握",
+      "examples": [
+        "甲液与乙液等量混合后使用"
+      ],
+      "unit": null
+    },
+    {
+      "id": "biology_bx1_rjb_cpt26",
+      "name": "苏丹Ⅲ染液",
+      "definition": "用于检测脂肪的染色试剂，能将脂肪染成橘黄色。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt27",
+      "name": "双缩脲试剂",
+      "definition": "用于检测蛋白质的化学试剂；与蛋白质作用产生紫色反应。",
+      "importance": "掌握",
+      "examples": [
+        "A液：NaOH溶液；B液：CuSO4溶液"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt28",
+      "name": "颜色反应（化学试剂检测有机物的依据）",
+      "definition": "某些化学试剂能使生物组织中的相关化合物产生特定的颜色变化或沉淀，据此可判断糖类、脂肪、蛋白质等的存在。",
+      "importance": "重要",
+      "examples": [
+        "还原糖+斐林试剂→砖红色沉淀",
+        "脂肪+苏丹Ⅲ→橘黄色",
+        "蛋白质+双缩脲→紫色"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt29",
+      "name": "细胞中的水",
+      "definition": "水是构成细胞的重要成分，也是活细胞中含量最多的化合物；在细胞生命活动中承担溶剂、参与反应、运输等作用，并以自由水和结合水两种形式存在。",
+      "importance": "掌握",
+      "examples": [
+        "生物体含水量一般为60%~95%，水母含水量可达97%",
+        "多细胞生物体的绝大多数细胞必须浸润在以水为基础的液体环境中"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt30",
+      "name": "水的极性（极性分子）",
+      "definition": "由于氧原子对共用电子的吸引能力强于氢原子，水分子中电子分布不对称，导致氧端带部分负电、氢端带部分正电，使水分子成为极性分子。",
+      "importance": "掌握",
+      "examples": [
+        "带正电或负电的分子（或离子）容易与水结合，因此水是良好的溶剂"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt31",
+      "name": "水是良好的溶剂",
+      "definition": "许多物质能够在水中溶解；细胞内许多生物化学反应需要水的参与，水作为溶剂为反应与物质运输提供介质。",
+      "importance": "重要",
+      "examples": [
+        "带电分子（或离子）容易与水结合，从而易在水中溶解"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt32",
+      "name": "氢键",
+      "definition": "当一个水分子的氧端（负电性区）靠近另一个水分子的氢端（正电性区）时形成的弱的静电吸引作用称为氢键；氢键不断断裂与形成，使水在常温下保持液体与流动性，并与水较高比热容等性质相关。",
+      "importance": "掌握",
+      "examples": [
+        "氢键较弱、易被破坏、维持时间短",
+        "氢键存在使水具有较高的比热容"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt33",
+      "name": "水的比热容较高（温度稳定性）",
+      "definition": "由于氢键的存在，水具有较高的比热容，意味着水的温度相对不容易发生改变；该特性对维持生命系统稳定性重要。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt34",
+      "name": "自由水",
+      "definition": "细胞内绝大部分呈游离状态、可以自由流动的水，称为自由水；自由水是细胞内良好的溶剂，并参与物质运输等过程。",
+      "importance": "掌握",
+      "examples": [
+        "正常情况下，自由水比例越大，细胞代谢越旺盛",
+        "将种子晒干减少自由水量可降低代谢水平便于储藏"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt35",
+      "name": "结合水",
+      "definition": "与细胞内其他物质相结合而失去流动性与溶解性的水，称为结合水；是细胞结构的重要组成部分，约占细胞内全部水分的4.5%。",
+      "importance": "掌握",
+      "examples": [
+        "结合水主要与蛋白质、多糖等物质结合",
+        "结合水比例增加有利于增强细胞抵抗干旱、寒冷等不良环境的能力"
+      ],
+      "formula": "结合水约占细胞内全部水分的4.5%"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt36",
+      "name": "细胞中的无机盐",
+      "definition": "细胞中含量很少的无机物，仅占细胞鲜重的1%~1.5%；多数以离子形式存在，对维持生命活动具有重要作用。",
+      "importance": "掌握",
+      "formula": "无机盐约占细胞鲜重的1%~1.5%"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt37",
+      "name": "无机盐以离子形式存在",
+      "definition": "细胞中大多数无机盐以离子形式存在，常见阳离子有Na+、K+、Ca2+、Mg2+、Fe2+、Fe3+等，常见阴离子有Cl-、SO4^2-、PO4^3-、HCO3-等。",
+      "importance": "了解",
+      "examples": [
+        "阳离子：Na+、K+、Ca2+、Mg2+、Fe2+、Fe3+",
+        "阴离子：Cl-、SO4^2-、PO4^3-、HCO3-"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt38",
+      "name": "无机盐的生理作用（元素构成与生命活动）",
+      "definition": "多种无机盐离子对维持细胞与生物体生命活动必不可少：部分元素是重要生物分子结构成分；部分离子影响神经肌肉兴奋性、血液生理状态等；某些无机盐离子需保持一定含量以维持酸碱平衡。",
+      "importance": "掌握",
+      "examples": [
+        "Mg是叶绿素的构成元素",
+        "Fe是血红素的构成元素",
+        "P是细胞膜、细胞核的重要成分，也是许多必需化合物的成分",
+        "Na+缺乏会引起神经、肌肉细胞兴奋性降低",
+        "血液中Ca2+过低会出现抽搐",
+        "无机盐离子维持细胞酸碱平衡"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt39",
+      "name": "糖类（碳水化合物）",
+      "definition": "糖类分子一般由C、H、O三种元素构成；多数糖类分子中H与O之比为2:1，类似水分子，因此又称“碳水化合物”，简写为（CH2O）。糖类是细胞的主要能源物质。",
+      "importance": "掌握",
+      "aliases": [
+        "carbohydrate",
+        "碳水化合物"
+      ],
+      "formula": "（CH2O）"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt40",
+      "name": "单糖",
+      "definition": "不能水解、可直接被细胞吸收的糖类。",
+      "importance": "掌握",
+      "examples": [
+        "葡萄糖",
+        "果糖",
+        "半乳糖",
+        "核糖",
+        "脱氧核糖"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt41",
+      "name": "葡萄糖",
+      "definition": "一种单糖（C6H12O6），是细胞生命活动所需要的主要能源物质，常被形容为“生命的燃料”；不能水解，可直接被细胞吸收。",
+      "importance": "重要",
+      "formula": "C6H12O6",
+      "examples": [
+        "静脉输液成分中含葡萄糖"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt42",
+      "name": "二糖",
+      "definition": "由两分子单糖脱水缩合形成（常见分子式C12H22O11），一般要水解成单糖才能被细胞吸收。",
+      "importance": "掌握",
+      "formula": "C12H22O11",
+      "examples": [
+        "蔗糖",
+        "麦芽糖",
+        "乳糖"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt43",
+      "name": "多糖",
+      "definition": "生物体内糖类绝大多数以多糖形式存在（[(C6H10O5)n]），由许多单糖（如葡萄糖）连接而成。",
+      "importance": "掌握",
+      "formula": "[(C6H10O5)n]",
+      "examples": [
+        "淀粉",
+        "糖原",
+        "纤维素",
+        "几丁质"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt44",
+      "name": "淀粉",
+      "definition": "最常见的多糖；绿色植物通过光合作用产生淀粉，作为植物体内的储能物质存在于植物细胞中；人体摄入淀粉必须消化分解成葡萄糖才能被细胞吸收利用。",
+      "importance": "重要",
+      "examples": [
+        "玉米、小麦、水稻种子富含淀粉",
+        "马铃薯、山药、甘薯等块茎/块根含淀粉"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt45",
+      "name": "糖原",
+      "definition": "动物多糖；以葡萄糖为基本单位合成，主要分布在人和动物的肝脏和肌肉中，是人和动物细胞的储能物质；血液中葡萄糖低于正常时，肝脏糖原分解产生葡萄糖补充。",
+      "importance": "重要",
+      "examples": [
+        "肝糖原",
+        "肌糖原"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt46",
+      "name": "纤维素",
+      "definition": "一种多糖，是植物细胞壁等纤维结构的主要成分；不溶于水，在人和动物体内很难被消化，草食动物也需借助某些微生物作用才能分解；由许多葡萄糖连接而成。",
+      "importance": "了解",
+      "examples": [
+        "棉、棕榈、麻类植物纤维",
+        "植物细胞壁"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt47",
+      "name": "几丁质（壳多糖）",
+      "definition": "一种多糖（又称壳多糖），广泛存在于甲壳类动物和昆虫的外骨骼中；可与溶液中的重金属离子有效结合等，具有多种用途。",
+      "importance": "了解",
+      "aliases": [
+        "壳多糖"
+      ],
+      "examples": [
+        "甲壳类外骨骼",
+        "昆虫外骨骼",
+        "废水处理（结合重金属离子）",
+        "人造皮肤等材料"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt48",
+      "name": "脂质",
+      "definition": "存在于所有细胞中、组成细胞和生物体的重要有机化合物；主要由C、H、O构成，有些含P和N；与糖类相比氧含量低、氢含量更高；通常不溶于水而溶于脂溶性有机溶剂。",
+      "importance": "掌握",
+      "aliases": [
+        "lipid"
+      ],
+      "examples": [
+        "脂肪",
+        "磷脂",
+        "固醇"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt49",
+      "name": "脂肪（甘油三酯/三酰甘油）",
+      "definition": "最常见的脂质；由三分子脂肪酸与一分子甘油反应形成的酯（又称甘油三酯/三酰甘油）。脂肪是良好的储能物质，也具有保温（绝热）、缓冲减压保护内脏等作用。",
+      "importance": "重要",
+      "aliases": [
+        "三酰甘油",
+        "甘油三酯"
+      ],
+      "examples": [
+        "动物脂肪细胞中储存的脂肪",
+        "食用植物油的主要成分"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt50",
+      "name": "脂肪酸",
+      "definition": "构成脂肪的重要组分；其“骨架”为由碳原子组成的长链，碳原子以共价键连接；可分为饱和脂肪酸和不饱和脂肪酸。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt51",
+      "name": "饱和脂肪酸",
+      "definition": "脂肪酸长链上碳原子之间均为单键，每个碳原子可连接足量氢原子而达到“饱和”；熔点较高，容易凝固；动物脂肪多含饱和脂肪酸，室温多为固态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt52",
+      "name": "不饱和脂肪酸",
+      "definition": "脂肪酸长链中存在双键，碳原子连接的氢原子数目不能达到饱和；熔点较低，不容易凝固；植物脂肪多含不饱和脂肪酸，室温多为液态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt53",
+      "name": "磷脂",
+      "definition": "与脂肪相比，甘油的一个羟基不与脂肪酸结合成酯，而与磷酸及其他衍生物结合；除C、H、O外还含P甚至N；是构成细胞膜及多种细胞器膜的重要成分。",
+      "importance": "重要",
+      "examples": [
+        "细胞膜的重要成分",
+        "细胞器膜的重要成分",
+        "脑、卵细胞、肝脏以及大豆种子中含量丰富"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt54",
+      "name": "固醇",
+      "definition": "一类脂质，包括胆固醇、性激素和维生素D等；胆固醇是动物细胞膜的重要成分并参与血液中脂质运输；性激素促进生殖器官发育和生殖细胞形成；维生素D促进肠道对钙磷吸收。",
+      "importance": "了解",
+      "examples": [
+        "胆固醇",
+        "性激素",
+        "维生素D"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt55",
+      "name": "糖类与脂质的相互转化",
+      "definition": "细胞中的糖类和脂质可以相互转化：血液中葡萄糖多余部分可合成糖原储存；葡萄糖仍富余可转变成脂肪（及某些氨基酸）。脂肪一般在糖代谢障碍供能不足时才分解供能，且不能大量转化为糖类。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt56",
+      "name": "蛋白质的功能",
+      "definition": "蛋白质作为细胞的基本组成成分，具有参与组成细胞结构、催化、运输、信息传递、防御等重要功能，细胞的各项生命活动都离不开蛋白质。",
+      "importance": "掌握",
+      "examples": [
+        "结构蛋白（肌肉、头发、羽毛、蛛丝等主要成分）",
+        "调节生命活动（胰岛素）",
+        "酶的催化（绝大多数酶是蛋白质，如胃蛋白酶）",
+        "运输（血红蛋白运输氧）",
+        "免疫（抗体抵御抗原）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt57",
+      "name": "结构蛋白",
+      "definition": "构成细胞和生物体结构的重要蛋白质。",
+      "importance": "了解",
+      "examples": [
+        "肌肉中的蛋白质",
+        "头发、羽毛中的蛋白质",
+        "蛛丝中的蛋白质"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt58",
+      "name": "酶（多数为蛋白质）",
+      "definition": "催化细胞中化学反应的物质；细胞中的化学反应离不开酶的催化，且绝大多数酶都是蛋白质。",
+      "importance": "了解",
+      "examples": [
+        "胃蛋白酶"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt59",
+      "name": "蛋白质的多样性（结构多样性）",
+      "definition": "蛋白质分子的种类与结构极其多样，来源于氨基酸数目可能成千上万、氨基酸排列顺序千变万化，以及肽链盘曲折叠与空间结构千差万别。",
+      "importance": "掌握",
+      "examples": [
+        "人体内有数万种不同的蛋白质",
+        "生物界蛋白质种类估计多达10^10~10^12种"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt60",
+      "name": "氨基酸",
+      "definition": "组成蛋白质的基本单位；每种氨基酸至少含有一个氨基（-NH2）和一个羧基（-COOH），且二者连接在同一个碳原子上，该碳原子还连有氢原子和侧链基团R；不同氨基酸的差别主要在R基不同。",
+      "importance": "掌握",
+      "aliases": [
+        "amino acid"
+      ],
+      "formula": "通式：H2N-CH(R)-COOH",
+      "examples": [
+        "甘氨酸（R=H）",
+        "丙氨酸（R=CH3）",
+        "缬氨酸",
+        "亮氨酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt61",
+      "name": "必需氨基酸",
+      "definition": "组成人体蛋白质的氨基酸中，有些人体细胞不能合成，必须从外界获取，称为必需氨基酸。",
+      "importance": "了解",
+      "examples": [
+        "赖氨酸",
+        "色氨酸",
+        "苯丙氨酸",
+        "蛋（甲硫）氨酸",
+        "苏氨酸",
+        "异亮氨酸",
+        "亮氨酸",
+        "缬氨酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt62",
+      "name": "非必需氨基酸",
+      "definition": "人体细胞能够合成的氨基酸，称为非必需氨基酸。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt63",
+      "name": "脱水缩合",
+      "definition": "一个氨基酸分子的羧基（-COOH）与另一个氨基酸分子的氨基（-NH2）相连接，同时脱去一分子水的结合方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt64",
+      "name": "肽键",
+      "definition": "连接两个氨基酸分子的化学键（由脱水缩合形成）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt65",
+      "name": "二肽",
+      "definition": "由两个氨基酸缩合而成的化合物。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt66",
+      "name": "多肽",
+      "definition": "由多个氨基酸缩合而成、含有多个肽键的化合物。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt67",
+      "name": "肽链",
+      "definition": "多肽通常呈链状结构，称为肽链。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt68",
+      "name": "蛋白质的空间结构（盘曲与折叠）",
+      "definition": "肽链由于氨基酸之间能形成氢键等作用而盘曲、折叠，形成具有一定空间结构的蛋白质分子；许多蛋白质含两条或多条肽链，通过二硫键等化学键结合形成更复杂的空间结构。",
+      "importance": "掌握",
+      "examples": [
+        "血红蛋白含4条多肽链",
+        "蛋白质分子可含二硫键"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt69",
+      "name": "蛋白质结构与功能的关系",
+      "definition": "每一种蛋白质分子都有与其功能相适应的独特结构；氨基酸序列改变或蛋白质空间结构改变，可能影响蛋白质功能。",
+      "importance": "重要",
+      "examples": [
+        "血红蛋白某处谷氨酸被缬氨酸取代，可能形成异常血红蛋白，导致运输氧能力削弱"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt70",
+      "name": "蛋白质变性",
+      "definition": "蛋白质在某些物理和化学因素作用下其特定的空间构象被破坏，从而导致理化性质改变和生物活性丧失的现象。",
+      "importance": "掌握",
+      "examples": [
+        "鸡蛋、肉类煮熟后蛋白质变性且不能恢复原来状态",
+        "加热、加酸、加酒精引起细菌和病毒蛋白质变性用于消毒灭菌"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt71",
+      "name": "核酸",
+      "definition": "从细胞核中提取的具有酸性的物质，是细胞内携带遗传信息的物质，包括DNA和RNA两大类，在遗传、变异和蛋白质的生物合成中具有重要作用。",
+      "importance": "重要",
+      "aliases": [
+        "nucleic acid"
+      ],
+      "examples": [
+        "DNA",
+        "RNA"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt72",
+      "name": "脱氧核糖核酸（DNA）",
+      "definition": "由脱氧核苷酸连接而成的长链，一般由两条脱氧核苷酸链构成；生物的遗传信息主要储存在DNA分子中，DNA是储存、传递遗传信息的生物大分子。",
+      "importance": "掌握",
+      "aliases": [
+        "DNA",
+        "deoxyribonucleic acid"
+      ],
+      "examples": [
+        "真核细胞中DNA主要分布在细胞核中，线粒体、叶绿体中也有少量DNA"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt73",
+      "name": "核糖核酸（RNA）",
+      "definition": "由核糖核苷酸连接而成的长链，一般由一条核糖核苷酸链构成；部分病毒的遗传信息储存在RNA中，RNA在细胞中主要分布在细胞质。",
+      "importance": "掌握",
+      "aliases": [
+        "RNA",
+        "ribonucleic acid"
+      ],
+      "examples": [
+        "HIV、SARS病毒的遗传信息储存在RNA中"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt74",
+      "name": "核苷酸",
+      "definition": "核酸的基本组成单位（单体），由一分子含氮碱基、一分子五碳糖和一分子磷酸组成。",
+      "importance": "掌握",
+      "examples": [
+        "脱氧核苷酸",
+        "核糖核苷酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt75",
+      "name": "脱氧核糖核苷酸（脱氧核苷酸）",
+      "definition": "五碳糖为脱氧核糖的核苷酸；DNA由脱氧核苷酸连接而成。",
+      "importance": "了解",
+      "aliases": [
+        "脱氧核苷酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt76",
+      "name": "核糖核苷酸",
+      "definition": "五碳糖为核糖的核苷酸；RNA由核糖核苷酸连接而成。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt77",
+      "name": "核苷酸排列顺序（核苷酸序列）",
+      "definition": "核苷酸在长链中连接时的排列先后顺序；在DNA中脱氧核苷酸的排列顺序储存遗传信息，不同个体的序列具有特点从而信息容量巨大。",
+      "importance": "掌握",
+      "aliases": [
+        "核苷酸序列",
+        "脱氧核苷酸序列"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt78",
+      "name": "DNA指纹技术（DNA指纹检测）",
+      "definition": "通过提取并比较不同样品的DNA差异（本质与个体DNA的脱氧核苷酸序列特异性有关）以提供个体识别证据的技术。",
+      "importance": "了解",
+      "aliases": [
+        "DNA指纹检测",
+        "DNA鉴定技术"
+      ],
+      "examples": [
+        "案件侦破中比较现场样品（血液、头发等）与嫌疑人DNA"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt79",
+      "name": "生物大分子",
+      "definition": "细胞中分子量较大的化合物，如多糖、蛋白质、核酸等；由许多单体连接成多聚体，因此以碳链为基本骨架。",
+      "importance": "了解",
+      "examples": [
+        "多糖",
+        "蛋白质",
+        "核酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt80",
+      "name": "单体",
+      "definition": "构成生物大分子的基本单位，如单糖、氨基酸、核苷酸等；每个单体都以若干个相连的碳原子构成的碳链为基本骨架。",
+      "importance": "了解",
+      "examples": [
+        "单糖",
+        "氨基酸",
+        "核苷酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt81",
+      "name": "多聚体",
+      "definition": "由许多单体连接而成的聚合物；生物大分子属于多聚体。",
+      "importance": "了解",
+      "aliases": [
+        "聚合物"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt82",
+      "name": "碳链骨架",
+      "definition": "由多个碳原子通过共价键相互连接形成的稳定碳链；单体以碳链为基本骨架，因而生物大分子也以碳链为基本骨架。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt83",
+      "name": "共价键",
+      "definition": "原子间通过共用电子对而形成的化学键；碳原子之间可形成共价键从而构成稳定碳链。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt84",
+      "name": "细胞膜（质膜）",
+      "definition": "细胞作为基本生命系统的边界结构，将细胞内部与外界环境分隔开，并参与物质交换与信息交流等生命活动。",
+      "importance": "掌握",
+      "aliases": [
+        "质膜",
+        "cell membrane",
+        "plasma membrane"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt85",
+      "name": "细胞膜的功能",
+      "definition": "细胞膜作为细胞边界所体现的主要作用，包括分隔内外环境、控制物质进出、进行细胞间信息交流等。",
+      "importance": "掌握",
+      "examples": [
+        "活细胞不易被台盼蓝染色而死细胞会被染色（反映选择透过性/控制物质进出）",
+        "激素与靶细胞膜受体结合传递信息",
+        "胞间连丝形成通道进行信息交流"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt86",
+      "name": "细胞膜分隔内外环境并维持内环境相对稳定",
+      "definition": "细胞膜将细胞内部与外界环境分隔，使细胞成为相对独立的系统，从而保障细胞内部环境的相对稳定。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt87",
+      "name": "细胞膜控制物质进出（选择透过性）",
+      "definition": "细胞膜对进出细胞的物质具有控制作用：细胞需要的物质较易进入，不需要的物质不易进入；细胞合成的分泌物与废物可排出，而有用成分不易流失，但这种控制是相对的。",
+      "importance": "掌握",
+      "aliases": [
+        "选择透过性"
+      ],
+      "examples": [
+        "抗体、激素等分泌到细胞外",
+        "细胞产生的废物排到细胞外",
+        "环境中有害物质、病毒病菌也可能进入细胞"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt88",
+      "name": "细胞间信息交流",
+      "definition": "多细胞生物体内细胞之间为保持功能协调而进行的信息传递过程，常与细胞膜结构有关。",
+      "importance": "掌握",
+      "examples": [
+        "激素随血液到达靶细胞，与受体结合传递信息",
+        "相邻细胞膜接触传递信息（如精子与卵细胞识别结合）",
+        "相邻细胞形成通道（如胞间连丝）使信息物质进入另一细胞"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt89",
+      "name": "细胞膜的化学组成（脂质、蛋白质、糖类）",
+      "definition": "细胞膜主要由脂质和蛋白质组成，另含少量糖类；脂质约占总质量50%，蛋白质约40%，糖类约2%~10%。脂质中磷脂最丰富，另有少量胆固醇。",
+      "importance": "掌握",
+      "examples": [
+        "功能越复杂的细胞膜，蛋白质的种类与数量越多"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt90",
+      "name": "磷脂分子的两亲性结构",
+      "definition": "磷脂分子一端为亲水的头部，另一端为两条脂肪酸疏水尾部，因而在水环境中具有特定的自组装行为。",
+      "importance": "掌握",
+      "examples": [
+        "多个磷脂分子在水中总是自发地形成双分子层"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt91",
+      "name": "磷脂双分子层",
+      "definition": "由磷脂分子在水环境中自发形成的两层结构：疏水尾部朝内、亲水头部朝外，是生物膜的重要结构基础。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt92",
+      "name": "细胞膜的流动性",
+      "definition": "细胞膜不是静止结构；构成膜的磷脂分子可侧向自由移动，膜中大多数蛋白质也能运动。流动性对物质运输、生长、分裂、运动等功能很重要。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt93",
+      "name": "流动镶嵌模型",
+      "definition": "认为细胞膜主要由磷脂分子和蛋白质分子构成：磷脂双分子层为基本支架并具有屏障作用；蛋白质以不同方式镶嵌其中并参与物质运输等；膜整体具有流动性。",
+      "importance": "掌握",
+      "aliases": [
+        "fluid mosaic model"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt94",
+      "name": "膜的屏障作用（疏水内核阻隔水溶性分子/离子）",
+      "definition": "磷脂双分子层内部为疏水环境，使水溶性分子或离子不能自由通过，从而体现膜的屏障作用。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt95",
+      "name": "膜蛋白的镶嵌方式与功能",
+      "definition": "膜蛋白可位于磷脂双分子层表面、部分/全部嵌入双分子层、或贯穿双分子层；这些蛋白质在物质运输等方面具有重要作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt96",
+      "name": "糖被（glycocalyx）",
+      "definition": "细胞膜外表面的糖类分子层：糖与蛋白质形成糖蛋白，或与脂质形成糖脂；与细胞识别、细胞间信息传递等功能密切相关。",
+      "importance": "掌握",
+      "examples": [
+        "细胞表面的识别",
+        "细胞间的信息传递"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt97",
+      "name": "细胞器",
+      "definition": "细胞质中具有一定结构、在功能上各有分工的“部门”，如线粒体、叶绿体、内质网、高尔基体、溶酶体、核糖体等的统称。",
+      "importance": "掌握",
+      "examples": [
+        "线粒体",
+        "叶绿体",
+        "内质网",
+        "高尔基体",
+        "溶酶体",
+        "核糖体"
+      ],
+      "aliases": [
+        "organelle"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt98",
+      "name": "细胞质基质",
+      "definition": "细胞质中呈溶胶状的部分，细胞器分布在其中。",
+      "importance": "了解",
+      "aliases": [
+        "细胞质基质（溶胶状）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt99",
+      "name": "核糖体",
+      "definition": "蛋白质合成的“装配机器”，与mRNA结合并沿mRNA移动，形成tRNA结合位点以完成肽链合成。",
+      "importance": "掌握",
+      "examples": [
+        "附着于粗面内质网的核糖体",
+        "游离核糖体"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt100",
+      "name": "中心体",
+      "definition": "分布在动物与低等植物细胞中，由两个互相垂直排列的中心粒及周围物质组成，与细胞的有丝分裂有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt101",
+      "name": "溶酶体",
+      "definition": "主要分布在动物细胞中，是细胞的“消化车间”，内部含多种水解酶，可分解衰老、损伤细胞器，并吞噬、杀死侵入细胞的病毒或细菌。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt102",
+      "name": "分泌蛋白",
+      "definition": "在细胞内合成后分泌到细胞外起作用的蛋白质。",
+      "importance": "掌握",
+      "examples": [
+        "消化酶",
+        "抗体",
+        "一部分激素"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt103",
+      "name": "分泌蛋白的合成与运输过程",
+      "definition": "分泌蛋白先在核糖体以氨基酸为原料开始多肽链合成；合成一段后与核糖体一起转移到粗面内质网上继续合成并进入内质网腔内加工折叠；内质网形成囊泡运至高尔基体进一步修饰加工；高尔基体形成分泌囊泡运至细胞膜并融合，将蛋白质分泌到细胞外；过程需能量主要来自线粒体。",
+      "importance": "重要",
+      "examples": [
+        "核糖体→粗面内质网→囊泡→高尔基体→囊泡→细胞膜→胞外"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt104",
+      "name": "囊泡运输",
+      "definition": "由膜构成的囊泡在细胞中穿梭往来运输“货物”，在分泌蛋白等物质运输中起作用。",
+      "importance": "掌握",
+      "examples": [
+        "内质网膜鼓出形成囊泡将蛋白质运至高尔基体",
+        "高尔基体形成囊泡运至细胞膜并融合分泌"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt105",
+      "name": "高尔基体的交通枢纽作用",
+      "definition": "高尔基体在细胞内囊泡运输中起重要交通枢纽作用，能对蛋白质进一步修饰加工并形成运输囊泡。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt106",
+      "name": "生物膜系统",
+      "definition": "细胞中由多种膜结构共同构成的系统，包括内质网、高尔基体、线粒体、叶绿体、溶酶体等细胞器膜以及细胞膜、核膜等；这些膜的组成成分和结构相似，在结构和功能上紧密联系。",
+      "importance": "掌握",
+      "aliases": [
+        "biomembrane system",
+        "biomembranesystem"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt107",
+      "name": "生物膜系统的功能",
+      "definition": "生物膜系统在生命活动中极为重要：①细胞膜维持相对稳定的内部环境，并在物质运输、能量转化、信息传递中起决定性作用；②广阔膜面积为多种酶提供附着位点；③将细胞内分隔成区室，使多种化学反应同时进行而互不干扰，保证生命活动高效有序。",
+      "importance": "重要",
+      "examples": [
+        "区室化",
+        "酶附着位点",
+        "物质运输/能量转化/信息传递"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt108",
+      "name": "细胞质的流动",
+      "definition": "活细胞中细胞质处于不断流动的状态，可用细胞质基质中叶绿体的运动作为观察标志，是一种生命现象。",
+      "importance": "了解",
+      "examples": [
+        "观察黑藻叶肉细胞中叶绿体随细胞质流动"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt109",
+      "name": "细胞核的功能（控制中心）",
+      "definition": "细胞核控制着细胞的代谢和遗传，因此被比喻为细胞的“大脑”、细胞的“控制中心”；较全面表述为：细胞核是遗传信息库，是细胞代谢和遗传的控制中心。",
+      "importance": "掌握",
+      "aliases": [
+        "遗传信息库",
+        "细胞代谢和遗传的控制中心"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt110",
+      "name": "核膜",
+      "definition": "细胞核的双层膜结构，把核内物质与细胞质分开。",
+      "importance": "了解",
+      "formula": "双层膜"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt111",
+      "name": "核孔",
+      "definition": "核膜上的结构，实现核质之间频繁的物质交换和信息交流。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt112",
+      "name": "核仁",
+      "definition": "细胞核内结构，与某种RNA的合成以及核糖体的形成有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt113",
+      "name": "染色质",
+      "definition": "细胞核内由DNA和蛋白质组成的丝状物，DNA是遗传信息的载体；在细胞分裂间期等呈细丝状。",
+      "importance": "掌握",
+      "aliases": [
+        "chromatin"
+      ],
+      "formula": "染色质≈DNA+蛋白质"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt114",
+      "name": "染色质与染色体的关系",
+      "definition": "染色质和染色体是同一物质在细胞不同时期的两种存在状态：分裂时为染色体，分裂结束后解螺旋为染色质。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt115",
+      "name": "DNA（遗传信息载体）",
+      "definition": "DNA上储存着遗传信息；细胞分裂时DNA携带的遗传信息从亲代细胞传递给子代细胞，保证亲子代细胞遗传性状的一致性。",
+      "importance": "掌握",
+      "aliases": [
+        "遗传信息载体"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt116",
+      "name": "遗传信息（细胞生命活动“蓝图”）",
+      "definition": "遗传信息储存在DNA上，像细胞生命活动的“蓝图”，细胞依据该“蓝图”进行物质合成、能量转化和信息交流，完成生长、发育、衰老和凋亡。",
+      "importance": "重要",
+      "aliases": [
+        "蓝图"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt117",
+      "name": "细胞分裂对遗传信息传递的意义",
+      "definition": "细胞分裂时DNA携带的遗传信息从亲代传递到子代，保证亲子代细胞遗传性状一致。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt118",
+      "name": "体细胞核移植（克隆）",
+      "definition": "将体细胞的细胞核移植入去核卵细胞，使其发育形成胚胎并产生与供核个体性状高度相似的个体（克隆）。",
+      "importance": "了解",
+      "examples": [
+        "克隆牛",
+        "体细胞克隆猴“中中”“华华”"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt119",
+      "name": "模型（科学模型）",
+      "definition": "人们为特定目的对认识对象作简化、概括性描述的表达形式，可定性或定量，可借助实物/图画或抽象形式表达，包括物理模型、概念模型、数学模型等。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt120",
+      "name": "物理模型",
+      "definition": "以实物或图画形式直观表达认识对象特征的模型；如DNA双螺旋结构模型、真核细胞三维结构模型。",
+      "importance": "了解",
+      "examples": [
+        "DNA双螺旋结构模型",
+        "细胞三维结构模型"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt121",
+      "name": "半透膜",
+      "definition": "只允许某些分子（如水分子）通过，而不允许另一些分子（如蔗糖分子）通过的膜。",
+      "importance": "掌握",
+      "examples": [
+        "玻璃纸（赛璐玢）对水分子可透、对蔗糖分子不可透"
+      ],
+      "aliases": [
+        "选择透过性膜（在本节语境中）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt122",
+      "name": "渗透作用",
+      "definition": "水分子（或其他溶剂分子）通过半透膜的扩散过程；当半透膜两侧存在浓度差时，水分子从水的相对含量高的一侧向相对含量低的一侧渗透。",
+      "importance": "掌握",
+      "aliases": [
+        "渗透"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt123",
+      "name": "原生质层",
+      "definition": "成熟植物细胞中，细胞膜和液泡膜以及两层膜之间的细胞质合称原生质层；教材中水进出细胞主要指水经过原生质层进出液泡。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt124",
+      "name": "质壁分离",
+      "definition": "植物细胞失水时，由于原生质层伸缩性大于细胞壁，原生质层与细胞壁逐渐分离开的现象。",
+      "importance": "掌握",
+      "examples": [
+        "洋葱鳞片叶外表皮细胞在蔗糖溶液中出现原生质层与细胞壁分离"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt125",
+      "name": "质壁分离复原",
+      "definition": "当外界溶液浓度降低（细胞液浓度大于外界溶液浓度）时，水进入细胞液，原生质层逐渐恢复到原来状态的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt126",
+      "name": "被动运输",
+      "definition": "物质以扩散方式进行跨膜运输，不需要消耗细胞内化学反应所释放的能量的跨膜运输方式。",
+      "importance": "掌握",
+      "aliases": [
+        "passive transport"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt127",
+      "name": "自由扩散",
+      "definition": "物质通过简单的扩散作用直接穿过细胞膜进出细胞的方式，不借助转运蛋白。",
+      "importance": "掌握",
+      "aliases": [
+        "简单扩散",
+        "simple diffusion",
+        "free diffusion"
+      ],
+      "examples": [
+        "氧气、二氧化碳通过细胞膜",
+        "甘油、乙醇、苯等脂溶性小分子通过细胞膜"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt128",
+      "name": "协助扩散",
+      "definition": "借助膜上的转运蛋白，使物质顺浓度梯度跨膜运输的扩散方式，不消耗能量。",
+      "importance": "掌握",
+      "aliases": [
+        "易化扩散",
+        "facilitated diffusion"
+      ],
+      "examples": [
+        "葡萄糖、氨基酸等借助膜蛋白跨膜"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt129",
+      "name": "转运蛋白",
+      "definition": "镶嵌在膜上的特殊蛋白质，能够协助某些离子或小分子有机物顺浓度梯度跨膜运输。",
+      "importance": "掌握",
+      "examples": [
+        "载体蛋白",
+        "通道蛋白"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt130",
+      "name": "载体蛋白",
+      "definition": "转运蛋白的一种，只允许与其结合部位相适应的分子或离子通过，并且每次转运会发生构象改变。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt131",
+      "name": "通道蛋白",
+      "definition": "转运蛋白的一种，只允许与其通道直径和形状相适配、大小和电荷相适宜的分子或离子通过；通过时不需要与通道蛋白结合。",
+      "importance": "了解",
+      "examples": [
+        "钾离子通道"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt132",
+      "name": "水通道蛋白",
+      "definition": "细胞膜上的一种通道蛋白，水分子更多借助它以协助扩散方式进出细胞。",
+      "importance": "重要",
+      "aliases": [
+        "aquaporin（教材未给出英文，此处为常用名）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt133",
+      "name": "浓度梯度",
+      "definition": "膜两侧物质浓度存在差异所形成的梯度，是自由扩散和协助扩散进行的方向依据并影响运输速率。",
+      "importance": "掌握",
+      "examples": [
+        "甲状腺滤泡上皮细胞内碘浓度比血液高20~25倍",
+        "红细胞内K+浓度比血浆高30倍",
+        "轮藻细胞内K+浓度比周围水环境高63倍"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt134",
+      "name": "细胞壁（对水的通透性）",
+      "definition": "对水分子全透性，水分子可自由通过；主要作用是保护和支持细胞，伸缩性较小。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt135",
+      "name": "跨膜运输",
+      "definition": "物质通过细胞膜从膜的一侧到另一侧的运输过程，包括小分子扩散、借助转运蛋白的运输以及胞吞、胞吐等方式。",
+      "importance": "掌握",
+      "examples": [
+        "小肠上皮细胞吸收氨基酸、葡萄糖",
+        "红细胞维持较高的K+浓度",
+        "变形虫摄取有机物颗粒"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt136",
+      "name": "逆浓度梯度运输",
+      "definition": "物质从低浓度一侧向高浓度一侧跨膜运输的过程，单靠扩散不能实现，通常需要能量和膜蛋白参与。",
+      "importance": "掌握",
+      "examples": [
+        "小肠上皮细胞从较低浓度的小肠液中吸收氨基酸、葡萄糖",
+        "甲状腺滤泡上皮细胞吸收碘使细胞内碘浓度高于血液"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt137",
+      "name": "载体蛋白（转运蛋白）",
+      "definition": "位于细胞膜上的膜蛋白，能与特定离子或分子结合并发生构象变化，从而促进其跨膜转运；通常具有特异性。",
+      "importance": "掌握",
+      "aliases": [
+        "转运蛋白",
+        "载体"
+      ],
+      "examples": [
+        "转运Na+、K+、Ca2+等离子",
+        "囊性纤维化相关的氯离子载体蛋白"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt138",
+      "name": "主动运输",
+      "definition": "物质逆浓度梯度跨膜运输时，在载体蛋白协助下，消耗细胞内化学反应释放的能量（常由ATP水解提供）完成的运输方式。",
+      "importance": "重要",
+      "aliases": [
+        "active transport"
+      ],
+      "examples": [
+        "Na+、K+、Ca2+等离子逆浓度梯度跨膜转运",
+        "甲状腺滤泡上皮细胞吸收碘（提示为逆浓度梯度）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt139",
+      "name": "ATP水解供能",
+      "definition": "ATP水解为ADP和Pi时释放能量，可为主动运输以及胞吞、胞吐等耗能过程提供能量。",
+      "importance": "了解",
+      "formula": "ATP → ADP + Pi + 能量"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt140",
+      "name": "选择透过性",
+      "definition": "细胞膜对不同物质通过的选择性；其结构基础在于膜上转运蛋白的种类和数量、转运蛋白构象变化，以及磷脂双分子层的特性。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt141",
+      "name": "胞吞",
+      "definition": "细胞摄取大分子时，大分子与膜蛋白结合引发细胞膜内陷形成小囊并脱离成囊泡进入细胞内部的过程，通常需要消耗细胞呼吸释放的能量。",
+      "importance": "掌握",
+      "aliases": [
+        "endocytosis"
+      ],
+      "examples": [
+        "变形虫摄取水中的有机物颗粒",
+        "细胞摄入特定大分子"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt142",
+      "name": "胞吐",
+      "definition": "细胞将需要外排的大分子先在细胞内形成囊泡，囊泡移动到细胞膜并与之融合，将大分子排出细胞的过程，通常需要消耗细胞呼吸释放的能量。",
+      "importance": "掌握",
+      "aliases": [
+        "exocytosis"
+      ],
+      "examples": [
+        "乳腺细胞分泌蛋白质",
+        "内分泌腺分泌细胞分泌蛋白质类激素",
+        "消化腺细胞分泌消化酶"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt143",
+      "name": "生物大分子的跨膜运输",
+      "definition": "蛋白质、多糖等生物大分子通常不能通过转运蛋白直接跨膜，而主要通过胞吞或胞吐实现进出细胞。",
+      "importance": "掌握",
+      "examples": [
+        "蛋白质、多糖的进出细胞依赖胞吞/胞吐"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt144",
+      "name": "磷脂双分子层的流动性",
+      "definition": "细胞膜磷脂双分子层具有一定流动性，为膜的形变、囊泡形成与融合（胞吞、胞吐）提供结构基础。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt145",
+      "name": "转运蛋白的特异性",
+      "definition": "一种载体/转运蛋白通常只适合与一种或一类离子或分子结合并转运，源于蛋白质空间结构与底物大小、性质的匹配。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt146",
+      "name": "细胞代谢",
+      "definition": "细胞中每时每刻进行着许多化学反应的总和。",
+      "importance": "掌握",
+      "aliases": [
+        "cellular metabolism"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt147",
+      "name": "酶的催化作用",
+      "definition": "酶通过降低化学反应的活化能来加快反应速率，使细胞内化学反应在温和条件下顺利进行。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt148",
+      "name": "活化能",
+      "definition": "分子从常态转变为容易发生化学反应的活跃状态所需要的能量。",
+      "importance": "掌握",
+      "aliases": [
+        "activation energy"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt149",
+      "name": "催化剂",
+      "definition": "能改变化学反应速率而自身不提供反应物分子能量的一类物质；在本节中强调其通过降低活化能促进反应。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt150",
+      "name": "无机催化剂",
+      "definition": "不属于生物大分子的催化剂；本节以Fe3+（来自FeCl3溶液）为例，可促进过氧化氢分解，但催化效率不及酶。",
+      "importance": "了解",
+      "examples": [
+        "Fe3+（FeCl3溶液）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt151",
+      "name": "过氧化氢酶",
+      "definition": "细胞中能将过氧化氢及时分解为氧气和水的一种酶。",
+      "importance": "掌握",
+      "aliases": [
+        "catalase"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt152",
+      "name": "过氧化氢分解反应",
+      "definition": "过氧化氢在一定条件下分解生成氧气和水的化学反应。",
+      "importance": "了解",
+      "formula": "2H2O2 → 2H2O + O2↑"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt153",
+      "name": "酶的本质（主要是蛋白质，少数为RNA）",
+      "definition": "多数酶是蛋白质（如脲酶、胃蛋白酶、胰蛋白酶等均被结晶并证明为蛋白质），但少数RNA也具有生物催化功能。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt154",
+      "name": "变量",
+      "definition": "实验过程中会发生变化的因素的统称。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt155",
+      "name": "自变量",
+      "definition": "实验中人为控制、对实验对象进行处理的因素。",
+      "importance": "掌握",
+      "examples": [
+        "温度（加热）",
+        "加入FeCl3溶液",
+        "加入肝脏研磨液（含过氧化氢酶）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt156",
+      "name": "因变量",
+      "definition": "因自变量改变而变化的变量。",
+      "importance": "掌握",
+      "examples": [
+        "过氧化氢分解速率"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt157",
+      "name": "无关变量",
+      "definition": "除自变量外，实验过程中可能影响实验结果的可变因素。",
+      "importance": "掌握",
+      "examples": [
+        "反应物的浓度",
+        "反应时间"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt158",
+      "name": "对照组与实验组",
+      "definition": "对照实验中用于比较的两类组别：对照组不进行特定处理，实验组接受自变量处理。",
+      "importance": "了解",
+      "examples": [
+        "1号试管为对照组，2/3/4号试管为实验组"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt159",
+      "name": "空白对照",
+      "definition": "对照组未作任何处理的一种对照方式。",
+      "importance": "了解",
+      "examples": [
+        "本实验1号试管"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt160",
+      "name": "ATP（腺苷三磷酸）",
+      "definition": "细胞内驱动生命活动的直接能源物质，可在水解释放能量并在合成时储存能量，被形象地比喻为细胞能量“货币”。",
+      "importance": "掌握",
+      "aliases": [
+        "adenosinetriphosphate",
+        "能量“货币”"
+      ],
+      "examples": [
+        "主动运输",
+        "肌纤维收缩",
+        "大脑思考",
+        "电鳐发电",
+        "萤火虫发光"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt161",
+      "name": "高能磷酸化合物",
+      "definition": "含有不稳定的特殊化学键（如磷酸之间的键），水解时可释放较多能量、具有较高转移势能的一类化合物。",
+      "importance": "了解",
+      "examples": [
+        "ATP"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt162",
+      "name": "ATP的结构简式（A—P～P～P）",
+      "definition": "ATP分子结构可简写为A—P～P～P，其中A代表腺苷，P代表磷酸基团，～代表一种特殊的化学键。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt163",
+      "name": "ATP水解",
+      "definition": "ATP在酶作用下脱离末端磷酸基团，转化为ADP并释放能量；脱离的磷酸基团可转移并与其他分子结合。",
+      "importance": "掌握",
+      "formula": "ATP → ADP + Pi + 能量（在酶作用下）",
+      "unit": "kJ/mol",
+      "examples": [
+        "1 mol ATP水解释放能量约30.54 kJ"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt164",
+      "name": "ADP（腺苷二磷酸）",
+      "definition": "ATP水解后形成的较稳定化合物，可在有关酶作用下接受能量并与Pi结合重新形成ATP。",
+      "importance": "掌握",
+      "aliases": [
+        "adenosinediphosphate"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt165",
+      "name": "无机磷酸（Pi）",
+      "definition": "ATP水解时脱离的磷酸基团若未转移给其他分子，则成为游离的无机磷酸，用Pi表示，可与ADP结合生成ATP。",
+      "importance": "了解",
+      "aliases": [
+        "游离磷酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt166",
+      "name": "ATP与ADP相互转化（ATP-ADP循环）",
+      "definition": "ATP水解生成ADP（并可伴随Pi），ADP在酶作用下接受能量与Pi结合生成ATP；该过程在细胞中时刻不停并处于动态平衡，是普遍的能量供应机制。",
+      "importance": "掌握",
+      "formula": "ATP ⇌ ADP + Pi（伴随能量的释放/储存）"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt167",
+      "name": "ATP供能机制（能量“货币”）",
+      "definition": "许多吸能反应与ATP水解相联系，由ATP水解释放能量直接供能；许多放能反应与ATP合成相联系，释放的能量储存在ATP中，从而使能量通过ATP在吸能反应与放能反应之间流通。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt168",
+      "name": "吸能反应",
+      "definition": "细胞内需要吸收能量才能进行的化学反应，如蛋白质合成等，常与ATP水解相联系以获得能量。",
+      "importance": "了解",
+      "examples": [
+        "蛋白质的合成"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt169",
+      "name": "放能反应",
+      "definition": "细胞内释放能量的化学反应，如葡萄糖的氧化分解等，其释放的能量可用于ATP的合成并储存在ATP中。",
+      "importance": "了解",
+      "examples": [
+        "葡萄糖的氧化分解"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt170",
+      "name": "主动运输需要ATP供能",
+      "definition": "细胞中主动运输等需要能量的生命活动通常由ATP水解释放能量直接提供。",
+      "importance": "掌握",
+      "examples": [
+        "Ca2+的主动运输"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt171",
+      "name": "蛋白质磷酸化（由ATP提供磷酸基团）",
+      "definition": "ATP水解释放的磷酸基团可使蛋白质等分子磷酸化，导致其空间结构变化、活性改变，从而参与各种化学反应。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt172",
+      "name": "ATP合成的能量来源（光能/呼吸作用）",
+      "definition": "ADP转化为ATP所需能量：绿色植物可来自光能或呼吸作用释放的能量；动物、人、真菌和大多数细菌主要来自呼吸作用中有机物分解释放的能量。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt173",
+      "name": "荧光素-荧光素酶发光（ATP参与激活）",
+      "definition": "萤火虫发光细胞中，荧光素接受ATP提供的能量后被激活，在荧光素酶催化下与氧反应生成氧化荧光素并发光；该原理可用于构建发光转基因植物。",
+      "importance": "了解",
+      "examples": [
+        "萤火虫发光",
+        "“荧光树”"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt174",
+      "name": "细胞呼吸（呼吸作用）",
+      "definition": "细胞内的有机物经过一系列氧化分解，释放能量并生成ATP的过程；实质是有机物氧化分解并释放能量。",
+      "importance": "掌握",
+      "aliases": [
+        "呼吸作用",
+        "cell respiration"
+      ],
+      "examples": [
+        "酵母菌用于做馒头、面包、酿酒等都是利用其呼吸作用"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt175",
+      "name": "有氧呼吸",
+      "definition": "细胞在氧的参与下，通过多种酶催化，把葡萄糖等有机物彻底氧化分解，产生二氧化碳和水，释放能量，生成大量ATP的过程。",
+      "importance": "掌握",
+      "formula": "C6H12O6 + 6H2O + 6O2 —(酶)→ 6CO2 + 12H2O + 能量",
+      "examples": [
+        "酵母菌在有氧条件下产生大量CO2和水"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt176",
+      "name": "无氧呼吸",
+      "definition": "在没有氧气参与的情况下，葡萄糖等有机物经过不完全分解，释放少量能量，生成少量ATP的过程；产物可为酒精和二氧化碳或乳酸。",
+      "importance": "掌握",
+      "formula": "C6H12O6 —(酶)→ 2C3H6O3(乳酸) + 少量能量；或 C6H12O6 —(酶)→ 2C2H5OH(酒精) + 2CO2 + 少量能量",
+      "examples": [
+        "酵母菌在无氧条件下产生酒精并产生少量CO2",
+        "人体肌细胞缺氧时产生乳酸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt177",
+      "name": "酒精发酵",
+      "definition": "在酵母菌等微生物作用下（通常在无氧条件下），将糖类转化为酒精和二氧化碳并释放能量的过程。",
+      "importance": "了解",
+      "formula": "C6H12O6 —(酶)→ 2C2H5OH + 2CO2 + 少量能量",
+      "examples": [
+        "葡萄汁发酵成果酒"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt178",
+      "name": "乳酸发酵",
+      "definition": "无氧条件下，丙酮酸在特定酶催化下转化生成乳酸的发酵类型。",
+      "importance": "了解",
+      "formula": "C6H12O6 —(酶)→ 2C3H6O3 + 少量能量"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt179",
+      "name": "线粒体（有氧呼吸主要场所）",
+      "definition": "真核细胞中有氧呼吸的主要场所，具有内外两层膜，内膜形成嵴以增大表面积；内膜和基质中含有与有氧呼吸有关的酶。",
+      "importance": "重要",
+      "examples": [
+        "有氧呼吸的第二阶段在线粒体基质中进行，第三阶段在线粒体内膜上进行"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt180",
+      "name": "细胞质基质（呼吸相关场所）",
+      "definition": "细胞内进行部分细胞呼吸反应的场所：有氧呼吸第一阶段在此进行；无氧呼吸的两个阶段都在此进行。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt181",
+      "name": "有氧呼吸三个阶段",
+      "definition": "有氧呼吸全过程可概括为三个阶段：①葡萄糖分解成丙酮酸（细胞质基质，少量能量，产生少量[H]，不需氧）；②丙酮酸和水分解成CO2与[H]（线粒体基质，少量能量，不需氧直接参与）；③[H]与氧结合形成水并释放大量能量（线粒体内膜，需要氧）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt182",
+      "name": "ATP（能量储存形式）",
+      "definition": "细胞呼吸释放的能量有相当一部分储存在ATP中；有氧呼吸生成大量ATP，无氧呼吸生成少量ATP。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt183",
+      "name": "[H]的含义（NAD+ / NADH）",
+      "definition": "教材中[H]是简化表示，实际上指氧化型辅酶I（NAD+）转化成还原型辅酶I（NADH）的过程。",
+      "importance": "了解",
+      "aliases": [
+        "还原氢"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt184",
+      "name": "兼性厌氧菌",
+      "definition": "能在有氧和无氧条件下都能生存并进行细胞呼吸的一类生物；酵母菌属于兼性厌氧菌。",
+      "importance": "了解",
+      "examples": [
+        "酵母菌在有氧和无氧条件下都能进行细胞呼吸"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt185",
+      "name": "细胞呼吸是代谢枢纽",
+      "definition": "细胞呼吸除提供能量外还是代谢的枢纽：呼吸中间产物可转化为甘油、氨基酸等；蛋白质、糖类和脂质代谢可通过细胞呼吸过程联系起来。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt186",
+      "name": "光能的捕获与转化",
+      "definition": "太阳光能（或人工光源光能）的输入、被生物捕获并转化为可用于生命活动的能量形式的过程；教材强调其是生物圈维持运转的基础，并由光合作用实现。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt187",
+      "name": "光合作用色素",
+      "definition": "存在于叶绿体类囊体薄膜上、能吸收特定波长可见光并用于光合作用的一类色素分子；绿叶中色素不止一种，吸收光谱不同但都可用于光合作用。",
+      "importance": "掌握",
+      "examples": [
+        "叶绿素a",
+        "叶绿素b",
+        "胡萝卜素",
+        "叶黄素"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt188",
+      "name": "叶绿素a",
+      "definition": "绿叶中的一种光合作用色素，实验结果表明其主要吸收蓝紫光和红光，可用于光合作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt189",
+      "name": "叶绿素b",
+      "definition": "绿叶中的一种光合作用色素，实验结果表明其主要吸收蓝紫光和红光，可用于光合作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt190",
+      "name": "胡萝卜素",
+      "definition": "绿叶中的一种光合作用色素（类胡萝卜素之一），实验结果表明其主要吸收蓝紫光，可用于光合作用。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt191",
+      "name": "叶黄素",
+      "definition": "绿叶中的一种光合作用色素（类胡萝卜素之一），实验结果表明其主要吸收蓝紫光，可用于光合作用。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt192",
+      "name": "吸收光谱",
+      "definition": "用不同颜色（不同波长）的光照射色素溶液，得到色素对不同波长光吸收强弱的谱图，用于比较不同色素的吸光差异。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt193",
+      "name": "光谱",
+      "definition": "复合光（如阳光）通过三棱镜后，不同波长的光分散形成不同颜色的光带。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt194",
+      "name": "可见光波长范围",
+      "definition": "可见光的波长为400～760 nm；波长小于400 nm为紫外光，大于760 nm为红外光；一般情况下光合作用所利用的光都是可见光。",
+      "importance": "了解",
+      "unit": "nm",
+      "formula": "400～760 nm"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt195",
+      "name": "叶绿体的结构适于光合作用",
+      "definition": "叶绿体由双层膜包被，内部含大量基粒与类囊体，类囊体薄膜上分布吸光色素，类囊体膜和基质中含多种光合作用必需的酶；大量膜结构极大扩展受光面积，是捕获光能、进行光合作用的结构基础。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt196",
+      "name": "类囊体",
+      "definition": "叶绿体内圆饼状的囊状结构，堆叠形成基粒；吸收光能的4种色素分布在类囊体的薄膜上。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt197",
+      "name": "类囊体薄膜",
+      "definition": "类囊体的膜结构，是光合作用色素分布的部位，且与光合作用相关的膜上过程有关（教材指出色素分布于其上，且类囊体膜含有多种必需的酶）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt198",
+      "name": "基粒",
+      "definition": "叶绿体内部由多个类囊体堆叠形成的结构，数量众多可显著扩大受光面积。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt199",
+      "name": "叶绿体基质",
+      "definition": "充满于基粒之间的液态基质部分；教材指出在类囊体膜上和叶绿体基质中含有多种进行光合作用所必需的酶。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt200",
+      "name": "纸层析分离色素原理（溶解度差异）",
+      "definition": "绿叶中色素都能溶解在层析液中，但不同色素溶解度不同：溶解度高的随层析液在滤纸上扩散得快，反之则慢，从而实现分离。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt201",
+      "name": "细胞增殖",
+      "definition": "细胞通过细胞分裂增加细胞数量的过程。",
+      "importance": "重要",
+      "aliases": [
+        "cell proliferation"
+      ],
+      "examples": [
+        "单细胞生物通过细胞增殖而繁衍",
+        "多细胞生物从受精卵开始，经细胞增殖和分化发育为成体",
+        "机体内衰老、死亡细胞需要通过细胞增殖补充"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt202",
+      "name": "细胞周期",
+      "definition": "连续分裂的细胞，从一次分裂完成时开始，到下一次分裂完成时为止的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "cell cycle"
+      ],
+      "examples": [
+        "一个细胞周期包括分裂间期和分裂期"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt203",
+      "name": "分裂间期",
+      "definition": "从细胞一次分裂结束到下一次分裂之前的时期；为分裂期进行活跃的物质准备，完成DNA复制和有关蛋白质合成，并有适度生长。",
+      "importance": "掌握",
+      "aliases": [
+        "interphase"
+      ],
+      "examples": [
+        "分裂间期占细胞周期的90%~95%"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt204",
+      "name": "分裂期",
+      "definition": "分裂间期结束后进入的时期，细胞开始进行细胞分裂；真核生物主要通过有丝分裂完成遗传物质的平均分配。",
+      "importance": "掌握",
+      "aliases": [
+        "mitotic phase"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt205",
+      "name": "有丝分裂",
+      "definition": "真核细胞进行细胞分裂的主要方式，通过一系列连续变化将分裂前复制的染色体精确、平均分配到两个子细胞中；过程分为前期、中期、后期、末期。",
+      "importance": "掌握",
+      "aliases": [
+        "mitosis"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt206",
+      "name": "有丝分裂前期",
+      "definition": "染色质螺旋化成为染色体；每条染色体含两条由着丝粒连接的姐妹染色单体；核仁解体、核膜消失；形成纺锤体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt207",
+      "name": "有丝分裂中期",
+      "definition": "纺锤丝附着于染色体着丝粒两侧并牵引其运动，使着丝粒排列在细胞中央的一个平面（赤道板）上。",
+      "importance": "掌握",
+      "aliases": [
+        "赤道板期（对应中期特征）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt208",
+      "name": "有丝分裂后期",
+      "definition": "着丝粒分裂，姐妹染色单体分开成为两条染色体，在纺锤丝牵引下分别移向细胞两极，使两极各获得形态和数目完全相同的一套染色体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt209",
+      "name": "有丝分裂末期（植物细胞）",
+      "definition": "染色体到达两极后逐渐变为染色质；纺锤丝消失，核膜与核仁重新出现形成两个细胞核；赤道板位置形成细胞板并扩展形成新的细胞壁。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt210",
+      "name": "子细胞染色体数目保持不变",
+      "definition": "有丝分裂后形成的每个子细胞所含染色体数目与亲代细胞相等。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt211",
+      "name": "有丝分裂的生物学意义（遗传稳定性）",
+      "definition": "将亲代细胞复制后的染色体（关键是DNA复制）精确平均分配到两个子细胞中，使亲代与子代之间保持遗传的稳定性。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt212",
+      "name": "动物细胞与植物细胞有丝分裂的差异",
+      "definition": "动物细胞有中心体（中心粒）参与纺锤体形成，末期不形成细胞板而通过细胞膜内凹缢裂成两个子细胞；植物细胞末期形成细胞板与细胞壁。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt213",
+      "name": "中心体（中心粒）",
+      "definition": "动物细胞中由一对中心粒构成的结构；中心粒在间期倍增为两组，进入分裂期后移向两极并与星射线共同参与纺锤体形成。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt214",
+      "name": "细胞板（植物细胞胞质分裂特征）",
+      "definition": "植物细胞有丝分裂末期在赤道板位置出现并逐渐扩展，最终形成新的细胞壁的结构。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt215",
+      "name": "无丝分裂",
+      "definition": "一种较简单的细胞分裂方式：细胞核先延长并在中部内凹缢裂为两个细胞核，随后细胞从中部缢裂成两部分形成两个子细胞；分裂过程中不出现纺锤丝和染色体变化。",
+      "importance": "了解",
+      "examples": [
+        "蛙的红细胞的无丝分裂"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt216",
+      "name": "癌细胞（恶性增殖细胞）",
+      "definition": "细胞受致癌因子作用导致遗传物质发生变化，变成不受机体控制、连续进行分裂的恶性增殖细胞。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt217",
+      "name": "表面积/体积比与物质运输效率",
+      "definition": "细胞大小影响物质运输效率，可用表面积与体积的比值变化来解释细胞不能无限长大；细胞越小通常越有利于与外界进行物质交换。",
+      "importance": "重要",
+      "aliases": [
+        "表面积与体积的比值（S/V）"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt218",
+      "name": "细胞分化的持久性",
+      "definition": "细胞分化是一种持久性的变化，分化的细胞一般将一直保持分化后的状态，直到死亡。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt219",
+      "name": "细胞分化的生物学意义",
+      "definition": "细胞分化是生物个体发育的基础；仅有细胞增殖而没有细胞分化，就不能形成具有特定形态、结构和功能的组织和器官，生物体也不可能正常发育；细胞分化使细胞趋向专门化，提高各种生理功能效率。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt220",
+      "name": "基因选择性表达",
+      "definition": "在个体发育过程中，不同种类的细胞中遗传信息的表达情况不同，是各种细胞遗传信息相同但形态、结构和功能差异很大的原因。",
+      "importance": "掌握",
+      "examples": [
+        "红细胞：与血红蛋白合成有关的基因处于活动状态，与抗体合成有关的基因处于关闭状态",
+        "B细胞：与抗体合成有关的基因处于活动状态（与红细胞相反）",
+        "芽原基细胞只能发育为芽",
+        "叶原基细胞只能发育为叶"
+      ],
+      "aliases": [
+        "选择性基因表达"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt221",
+      "name": "细胞全能性",
+      "definition": "细胞经分裂和分化后，仍具有产生完整有机体或分化成其他各种细胞的潜能和特性。",
+      "importance": "掌握",
+      "aliases": [
+        "totipotency"
+      ],
+      "examples": [
+        "高度分化的植物细胞在适宜条件下可发育成完整植株",
+        "已分化的动物体细胞的细胞核在去核卵细胞中可发育成新个体（如克隆羊、多莉；体细胞克隆猴）",
+        "利用一片花瓣、一粒花粉，甚至一个细胞繁殖出新的植株"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt222",
+      "name": "干细胞",
+      "definition": "具有自我更新能力及分化潜能的细胞，在一定条件下可以分化成其他类型的细胞。",
+      "importance": "掌握",
+      "aliases": [
+        "stem cell"
+      ],
+      "examples": [
+        "骨髓中的造血干细胞",
+        "脐带血中的干细胞",
+        "与组织、器官的发育、再生和修复密切相关"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt223",
+      "name": "造血干细胞",
+      "definition": "研究最多、应用最成熟的一类成体干细胞，主要存在于成体骨髓、外周血和脐带血中，可用于恢复造血和免疫功能。",
+      "importance": "重要",
+      "examples": [
+        "骨髓中造血干细胞不断补充血液中的血细胞",
+        "用于骨髓移植治疗白血病",
+        "移植治疗白血病及放疗/化疗后造血与免疫功能障碍"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt224",
+      "name": "植物组织培养",
+      "definition": "利用植物细胞的全能性，在含植物激素等条件下培养植物细胞/组织，使其分裂、生长并分化形成完整植株的方法，可用于快速繁殖作物、培养微型观赏植株、拯救濒危物种等。",
+      "importance": "了解",
+      "examples": [
+        "胡萝卜韧皮部细胞在培养液中形成细胞团块并分化出根、茎、叶，移栽后长成新植株",
+        "菊花的组织培养"
+      ],
+      "aliases": [
+        "plant tissue culture"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt225",
+      "name": "核移植（去核卵细胞重建）",
+      "definition": "将体细胞（或其细胞核）移植到去核的卵细胞中，利用卵细胞细胞质环境使其发育成新个体的技术路线，用以说明分化细胞核具有全能性。",
+      "importance": "了解",
+      "examples": [
+        "非洲爪蟾：肠上皮细胞核移植到去核卵细胞，获得新个体",
+        "克隆羊“多莉”、体细胞克隆猴“中中”“华华”"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt226",
+      "name": "白血病",
+      "definition": "由骨髓造血干细胞恶性增殖引起的疾病，患者血液和骨髓中的白细胞及其前体细胞异常增殖并出现分化障碍，形成白血病细胞；白血病细胞抑制正常造血功能并可侵入肝、脾等器官，危及生命。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt227",
+      "name": "骨髓移植（造血干细胞移植）",
+      "definition": "将正常人的骨髓（含造血干细胞）移植到患者体内，以重建正常造血功能并治疗相关血液系统疾病（如白血病）。",
+      "importance": "了解",
+      "examples": [
+        "将正常人的骨髓移植到白血病患者体内可以治疗白血病"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt228",
+      "name": "细胞衰老",
+      "definition": "细胞衰老是细胞的生理状态和化学反应发生复杂变化的过程，最终表现为细胞的形态、结构和功能发生变化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt229",
+      "name": "细胞衰老的特征",
+      "definition": "衰老细胞在形态、结构和功能上出现的一系列典型变化，包括膜通透性改变、水分减少与萎缩、细胞核变化、酶活性和代谢下降、色素积累等。",
+      "importance": "掌握",
+      "examples": [
+        "细胞膜通透性改变，使物质运输功能降低",
+        "细胞内的水分减少，细胞萎缩，体积变小",
+        "细胞核体积增大，核膜内折，染色质收缩、染色加深",
+        "细胞内多种酶的活性降低，呼吸速率减慢，新陈代谢速率减慢",
+        "细胞内的色素逐渐积累，妨碍细胞内物质的交流和传递"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt230",
+      "name": "细胞衰老的原因（机制假说）",
+      "definition": "关于细胞衰老机制的解释中，目前普遍接受的主要包括自由基学说和端粒学说等。",
+      "importance": "掌握",
+      "examples": [
+        "自由基学说",
+        "端粒学说"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt231",
+      "name": "自由基",
+      "definition": "异常活泼的带电分子或基团，含有未配对电子，表现出高度的反应活泼性。",
+      "importance": "掌握",
+      "examples": [
+        "水在电离辐射下会产生自由基"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt232",
+      "name": "自由基学说",
+      "definition": "自由基在细胞氧化反应、辐射或有害物质刺激下产生后，会攻击并破坏生物分子（如磷脂、DNA、蛋白质），引发连锁反应，导致膜损伤、基因突变或蛋白质活性下降，从而促使细胞衰老。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt233",
+      "name": "端粒",
+      "definition": "位于染色体两端的一段特殊序列的DNA—蛋白质复合体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt234",
+      "name": "端粒学说",
+      "definition": "端粒DNA序列在每次细胞分裂后会缩短；当端粒缩短到一定程度，会导致端粒内侧正常基因DNA序列受损，使细胞活动渐趋异常，进而引起细胞衰老。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt235",
+      "name": "细胞衰老与个体衰老的关系",
+      "definition": "单细胞生物中细胞衰老/死亡即个体衰老/死亡；多细胞生物中细胞衰老/死亡与个体衰老/死亡不完全等同，但总体上个体衰老也是组成个体的细胞普遍衰老的过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt236",
+      "name": "细胞分裂次数与细胞衰老（复制性衰老）",
+      "definition": "体外培养的人体某种细胞最多分裂约50次左右就停止分裂并丧失正常功能；随着年龄增长，细胞可继续分裂次数逐渐减少，说明细胞会随分裂次数增多而衰老。",
+      "importance": "掌握",
+      "examples": [
+        "胎儿/中年/老年肺成纤维细胞增殖代数分别约为50/20/2~4"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt237",
+      "name": "细胞凋亡",
+      "definition": "由基因所决定的细胞自动结束生命的过程；由于受到严格的由遗传机制决定的程序性调控，因此是一种程序性死亡。",
+      "importance": "掌握",
+      "aliases": [
+        "apoptosis",
+        "程序性死亡（programmed cell death）"
+      ],
+      "examples": [
+        "人胚胎时期尾部细胞自动死亡使尾消失",
+        "蝌蚪尾的消失",
+        "胎儿手指形成过程中指间细胞自动死亡"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt238",
+      "name": "细胞坏死",
+      "definition": "在极端物理、化学因素或严重病理性刺激等不利因素影响下，由细胞正常代谢活动受损或中断引起的细胞损伤和死亡。",
+      "importance": "了解",
+      "aliases": [
+        "necrosis"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt239",
+      "name": "细胞死亡",
+      "definition": "细胞死亡包括凋亡和坏死等方式，其中凋亡是细胞死亡的一种主要方式。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_bx1_rjb_cpt240",
+      "name": "细胞自噬",
+      "definition": "细胞将受损或功能退化的细胞结构等通过溶酶体降解后再利用的过程；在营养缺乏、细胞损伤、微生物入侵或细胞衰老等情况下可清除受损或衰老细胞器及感染的微生物和毒素，从而维持细胞内部环境稳定；部分强烈自噬可能诱导细胞凋亡。",
+      "importance": "掌握",
+      "aliases": [
+        "autophagy"
+      ]
+    },
+    {
+      "id": "biology_bx1_rjb_cpt241",
+      "name": "细胞更新（自我更新）",
+      "definition": "机体通过新细胞产生并替代衰老细胞、以及通过凋亡等方式清除细胞来实现组织细胞的自然更替，从而维持正常生理功能。",
+      "importance": "了解",
+      "examples": [
+        "皮肤生发层细胞不断分裂产生新的细胞以替代衰老的细胞",
+        "血液中的红细胞快速更新保障氧气供应"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "biology_bx1_rjb_skl1",
+      "name": "归纳法",
+      "description": "由一系列具体事实推出一般结论的思维方法；分为完全归纳法（考察所有类型后下结论）与不完全归纳法（基于部分事实作一般化结论，可信但需注意例外）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl2",
+      "name": "显微观察获取证据",
+      "description": "借助显微镜对组织/细胞进行观察与记录，用可观察事实为科学结论提供证据基础。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl3",
+      "name": "科学观察与归纳概括相结合形成理论",
+      "description": "在大量观察资料积累基础上，通过分析、比较与概括，形成可解释广泛现象的理论（如细胞学说）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl4",
+      "name": "使用高倍显微镜观察细胞",
+      "description": "在低倍镜下先找到并观察清楚目标，将物像移至视野中央，再换用高倍物镜，并用细准焦螺旋调焦获得清晰像；同时调节反光镜使视野明亮。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl5",
+      "name": "比较与归纳细胞结构异同并解释原因",
+      "description": "通过观察多种细胞，归纳结构共同点与差异，并分析差异产生的可能原因，以理解细胞的多样性与统一性。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl6",
+      "name": "比较分析（基于数据表的含量比较）",
+      "description": "通过表格数据比较不同对象（如地壳与细胞、玉米细胞与人体细胞）中元素种类与含量，提出问题并解释差异。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl7",
+      "name": "预测—验证（实验前预测样品成分并用实验验证）",
+      "description": "在检测前根据材料来源预测其可能含有的有机物，设计记录表格并用“+”“-”记录实测结果，通过实验检验预测。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl8",
+      "name": "用特异性颜色反应检测有机物",
+      "description": "依据有机物与特定试剂产生的颜色变化/沉淀来判断生物组织中糖类（还原糖）、脂肪、蛋白质的存在。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl9",
+      "name": "从成分表识别无机盐并解释添加原因",
+      "description": "阅读物质成分表，区分有机物与无机盐（通常表现为离子化合物/盐类名称，如氯化钠、碳酸氢钠等），并能联系生理功能解释在饮料中添加无机盐的原因（补充随出汗丢失的无机盐、维持生命活动与酸碱平衡等）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl10",
+      "name": "基于结构解释性质（结构决定性质）",
+      "description": "从分子结构与电荷分布出发解释物质性质与功能：如水分子极性导致良好溶剂性；水分子间氢键解释水的液态与较高比热容等特性。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl11",
+      "name": "按结构与性质对有机物进行分类",
+      "description": "依据分子组成、聚合程度及是否可水解等标准对糖类进行分类（单糖/二糖/多糖），并据此推断吸收利用方式（如二糖需水解为单糖才能被吸收）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl12",
+      "name": "基于结构差异解释物质的物理性质与功能",
+      "description": "利用分子结构特征（如脂肪酸是否含双键、脂质含氧量差异、是否亲水/疏水）解释熔点、常温状态、溶解性以及在生物体内的作用差异。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl13",
+      "name": "从分子结构归纳共同特征（比较归纳法）",
+      "description": "通过观察多个代表性分子结构，找出它们的共同组成与连接方式，并据此概括通式与关键差异来源（如以R基差异解释氨基酸种类差别）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl14",
+      "name": "由组成与结构解释生物大分子多样性（结构-多样性推理）",
+      "description": "从基本单体种类有限但可形成长链、序列排列可变、并可产生多级空间折叠的角度，解释宏观上分子种类与功能的多样性。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl15",
+      "name": "比较分析（DNA样品比对）",
+      "description": "通过对来自不同来源的样品信息进行对照比较，从差异或一致性中得出结论；在DNA鉴定中体现为比较现场样品DNA与嫌疑人DNA以提供证据。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl16",
+      "name": "提出假说并用证据修正",
+      "description": "根据已有知识与信息提出解释问题的假说，再通过进一步观察与实验对假说进行修正和补充；假说能否被接受取决于其与后续证据是否吻合。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl17",
+      "name": "差速离心法分离细胞器",
+      "description": "将细胞破碎制成匀浆后置于离心管中，通过逐渐提高离心速率，使不同大小的颗粒依次沉降并分步收集沉淀/上清，从而达到分离不同大小细胞器的目的。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl18",
+      "name": "同位素标记法（示踪法）",
+      "description": "利用具有特殊物理性质的同位素标记化学反应中原子的去向，通过追踪标记物质来研究物质的运行和变化规律，从而弄清反应过程的细节。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl19",
+      "name": "基于实验事实归纳生物学结论",
+      "description": "根据核移植、去核与再植核、切割等实验现象，对“细胞核控制代谢和遗传”等结论进行归纳与论证。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl20",
+      "name": "建构并评价三维结构模型",
+      "description": "通过讨论确定模型类型与规格、选择材料、设计并分工制作、组装检查修补，并在科学性优先的原则下进行表达交流与评价。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl21",
+      "name": "基于变量控制的实验设计与推断",
+      "description": "围绕假设设置对照与处理条件（如外界溶液浓度高/低），通过可观察指标（液泡大小、原生质层位置等）记录结果并据此验证或修正假设。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl22",
+      "name": "显微镜下临时装片的制作与观察",
+      "description": "利用载玻片、盖玻片等制作临时装片，在低倍镜下定位并观察细胞结构与变化（如液泡大小、原生质层位置）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl23",
+      "name": "基于浓度差判断运输方式",
+      "description": "通过比较物质在细胞内外的浓度，判断其跨膜运输是否可能为被动扩散；若为逆浓度梯度，则推断需要能量并常与载体蛋白相关（主动运输等）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl24",
+      "name": "从结构-功能角度解释膜运输现象",
+      "description": "用细胞膜结构要素（转运蛋白的种类/数量/构象变化、磷脂双分子层流动性等）解释运输方式、选择透过性以及胞吞/胞吐的发生。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl25",
+      "name": "控制变量法",
+      "description": "在研究某一因素影响时，仅改变一个自变量，保持其他无关变量尽量一致，从而使观察到的因变量变化可归因于自变量。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl26",
+      "name": "用“能量耦联”解释生命活动供能",
+      "description": "将吸能反应与ATP水解相联系、将放能反应与ATP合成相联系，解释能量如何在细胞内通过ATP实现转移、储存与利用，从而说明ATP是能量“货币”。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl27",
+      "name": "基于过程图解读机制（结构—功能—过程）",
+      "description": "利用示意图按步骤梳理生物过程中的关键分子、能量变化与结构变化（如载体蛋白磷酸化导致构象改变并完成离子跨膜运输）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl28",
+      "name": "对比实验（相互对照实验）设计",
+      "description": "设置两个或两个以上实验组，通过控制变量并对结果进行比较分析，以探究某种因素对实验对象的影响；本节以设置有氧与无氧条件对照来探究氧气条件对酵母菌细胞呼吸方式的影响。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl29",
+      "name": "控制变量：控制有氧/无氧条件",
+      "description": "在实验中通过通气/密封等操作控制氧气供应，形成有氧与无氧条件，并保证除氧气条件外其他条件尽可能相同（如温度、培养液成分、酵母菌数量等），以比较差异。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl30",
+      "name": "用指示反应检测CO2并比较产生量",
+      "description": "利用CO2使澄清石灰水变浑浊或使溴麝香草酚蓝溶液由蓝变绿再变黄的反应，根据浑浊程度或变色所需时间长短，检测并比较CO2产生情况。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl31",
+      "name": "用酸性重铬酸钾检测乙醇",
+      "description": "橙色重铬酸钾溶液在酸性条件下与乙醇反应变为灰绿色；为避免葡萄糖干扰，应延长培养时间以耗尽葡萄糖后再检测。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl32",
+      "name": "证据与逻辑评价科学论点",
+      "description": "针对某一科学解释/论点，辨别哪些证据支持、哪些不支持，并基于证据链进行推理与判断；本节以线粒体起源假说的证据评价为例。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl33",
+      "name": "控制变量进行探究",
+      "description": "在探究中通过改变或设置单一因素（如不同颜色光、是否照光），并尽量保持其他条件一致，从观察结果推断因果关系（如恩格尔曼实验通过不同照光条件与不同色光比较细菌聚集）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl34",
+      "name": "使用纸层析法进行分离与鉴别",
+      "description": "将混合物点样在滤纸起始线处，使展开剂（层析液）上升（或扩散）带动各组分因溶解度/亲和性差异而形成不同色带，据色带数目、颜色与位置进行分离与初步鉴别。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl35",
+      "name": "从吸收光谱解释现象",
+      "description": "利用物质对不同波长光的吸收强弱差异，解释其在特定光照条件下表现出的效率差异（如红光、蓝紫光更易被相关色素吸收，从而与光合作用效果相关）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl36",
+      "name": "运用模型作解释（用数学模型解释生物现象）",
+      "description": "用简化的“细胞模型”进行计算与比较（如计算表面积/体积比、估算扩散可达体积比例），据此解释细胞大小与物质运输效率、细胞不能无限长大的原因。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl37",
+      "name": "显微观察与分期判定（依据染色体形态分布识别时期）",
+      "description": "在显微镜下观察染色体的存在状态、形态与分布特征，判定细胞处于分裂间期或有丝分裂各时期（前期、中期、后期、末期）。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl38",
+      "name": "用计数法估计各时期持续时间（细胞周期时间比例法）",
+      "description": "在随机取样视野内统计各时期细胞数，用“某时期细胞数/计数总数”近似该时期在细胞周期中所占时间比例，并据细胞周期总时长估算各时期持续时间。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl39",
+      "name": "从现象归纳生物学结论（证据推理）",
+      "description": "根据实验或事实材料（如细胞培养、核移植、疾病治疗）概括可支持的生物学结论，并指出结论成立的条件与范围。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl40",
+      "name": "比较分析（同中求异、异中求因）",
+      "description": "比较不同细胞或不同实验条件下的异同，分析差异产生的原因，并建立与概念（如分化、基因选择性表达、全能性）的对应关系。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl41",
+      "name": "对照实验与控制变量分析",
+      "description": "在相同条件下改变单一因素（如年龄来源），比较结果差异，以推断该因素对细胞衰老/分裂能力的影响。"
+    },
+    {
+      "id": "biology_bx1_rjb_skl42",
+      "name": "根据实验结果进行归纳推理",
+      "description": "从数据或现象中概括规律、提出结论，并用证据支撑结论。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "biology_bx1_rjb_exp1",
+      "name": "使用高倍显微镜观察几种细胞",
+      "instrument": "显微镜、载玻片、盖玻片、镊子、滴管、清水、生理盐水（需要染色时加常用染色液）以及观察材料（如酵母菌、水绵、保卫细胞、鱼红细胞等）",
+      "is_student": 1,
+      "process": [
+        "转动反光镜使视野明亮",
+        "在低倍镜下观察清楚后，把要放大观察的物像移至视野中央",
+        "转动转换器，换成高倍物镜",
+        "用细准焦螺旋调焦并观察",
+        "制作不同材料的临时装片并观察；再观察永久切片和血涂片"
+      ],
+      "conclusion": "可观察并比较不同细胞的结构异同，从而认识细胞的多样性与统一性。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp2",
+      "name": "检测生物组织中的糖类、脂肪和蛋白质",
+      "instrument": [
+        "刀片",
+        "试管（最好是刻度试管）",
+        "试管架",
+        "试管夹",
+        "大烧杯",
+        "小烧杯",
+        "小量筒",
+        "滴管",
+        "酒精灯",
+        "三脚架",
+        "陶土网",
+        "火柴",
+        "载玻片",
+        "盖玻片",
+        "毛笔",
+        "吸水纸",
+        "显微镜"
+      ],
+      "is_student": 1,
+      "process": "选择1~2种材料并预测其含有的有机物；设计记录表格；按步骤分别进行还原糖、脂肪、蛋白质的检测并记录“+/-”。其中还原糖检测：取2 mL待测液+1 mL斐林试剂（甲乙等量混合），50~65℃水浴加热约2 min，观察颜色变化/沉淀。",
+      "phenomena": "还原糖与斐林试剂反应出现砖红色沉淀；脂肪被苏丹Ⅲ染成橘黄色；蛋白质与双缩脲试剂出现紫色反应。",
+      "conclusion": "可根据特异性颜色反应判断生物组织中糖类（还原糖）、脂肪、蛋白质是否存在。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp3",
+      "name": "台盼蓝染色鉴别细胞死活",
+      "instrument": "台盼蓝染液、细胞样本、显微镜（约200倍）",
+      "is_student": 0,
+      "phenomena": "死细胞被染成蓝色，活细胞不着色。",
+      "conclusion": "活细胞的细胞膜对物质进入细胞具有控制作用；死亡后膜完整性/选择性丧失导致染料进入。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp4",
+      "name": "欧文顿（Overton）细胞通透性比较实验",
+      "instrument": "多种化学物质（500多种）、植物细胞材料、通透性检测条件",
+      "is_student": 0,
+      "phenomena": "溶于脂质的物质更容易穿过细胞膜，不溶于脂质的物质不容易穿过。",
+      "conclusion": "据通透性差异推测细胞膜含脂质成分。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp5",
+      "name": "戈特与格伦德尔红细胞脂质铺展实验（单分子层面积法）",
+      "instrument": "人红细胞、丙酮、空气-水界面铺展装置、面积测量",
+      "is_student": 0,
+      "phenomena": "提取的脂质在空气-水界面形成单分子层，其面积约为红细胞表面积的2倍。",
+      "conclusion": "推断细胞膜中的磷脂分子排列为连续的两层（双分子层）。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp6",
+      "name": "丹尼利-戴维森细胞表面张力研究",
+      "instrument": "细胞样本、表面张力测量装置（原文未细述）",
+      "is_student": 0,
+      "phenomena": "细胞表面张力明显低于油-水界面的表面张力。",
+      "conclusion": "推测细胞膜除脂质外可能还附有蛋白质成分。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp7",
+      "name": "荧光标记的人-鼠细胞融合实验（膜蛋白侧向扩散）",
+      "instrument": "人细胞、小鼠细胞、绿色/红色荧光标记染料、细胞融合技术、37℃培养条件、荧光显微观察",
+      "is_student": 0,
+      "process": "分别用不同颜色荧光标记两种细胞表面蛋白质，融合后观察随时间的荧光分布变化（37℃ 40 min）。",
+      "phenomena": "融合初期一半绿色一半红色，40 min后两色均匀分布。",
+      "conclusion": "细胞膜具有流动性，膜蛋白可发生侧向运动/扩散。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp8",
+      "name": "用高倍显微镜观察叶绿体和细胞质的流动",
+      "instrument": "高倍显微镜、载玻片、盖玻片、滴管、镊子、刀片、培养皿、台灯、铅笔；材料：藓类叶（或菠菜叶等）、新鲜黑藻",
+      "is_student": 1,
+      "process": "制作藓类叶片临时装片：滴水—放叶—盖盖玻片—先低倍后高倍观察叶绿体形态与分布；制作黑藻叶片临时装片：取幼嫩小叶制片—先低倍后高倍观察叶绿体随细胞质流动并比较方向。",
+      "phenomena": "叶肉细胞叶绿体呈绿色、扁平椭球或球形并散布于细胞质中；可观察到叶绿体随细胞质不断流动。",
+      "conclusion": "细胞质的流动是活细胞的一种生命现象；可用叶绿体运动作为细胞质流动的标志。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp9",
+      "name": "3H-亮氨酸示踪分泌蛋白合成与分泌（胰腺腺泡细胞）",
+      "instrument": "3H标记亮氨酸、豚鼠胰腺腺泡细胞（及放射性检测相关设备）",
+      "is_student": 0,
+      "process": "向豚鼠胰腺腺泡细胞注射3H标记亮氨酸；分别在3 min、17 min、117 min观察放射性标记物在细胞内的位置变化。",
+      "phenomena": "3 min放射性物质出现在附着核糖体的内质网中；17 min出现在高尔基体中；117 min出现在靠近细胞膜内侧的运输囊泡及细胞外分泌物中。",
+      "conclusion": "分泌蛋白沿内质网→高尔基体→囊泡→细胞膜→胞外的途径进行加工与运输。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp10",
+      "name": "美西螈胚胎细胞核移植实验（黑核→白去核卵）",
+      "instrument": "显微操作工具（取核与核移植）",
+      "is_student": 0,
+      "process": "取出黑色美西螈胚胎细胞的细胞核，移植到白色美西螈的去核卵细胞中，观察发育结果。",
+      "phenomena": "移植后发育长大的美西螈全部是黑色。",
+      "conclusion": "性状（如体色相关的黑色素合成特征）主要受细胞核控制，体现细胞核与遗传的关系。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp11",
+      "name": "蝾螈受精卵横缢有核/无核及再植核实验",
+      "instrument": "头发（横缢）、显微操作工具（挤入细胞核）",
+      "is_student": 0,
+      "process": "用头发将受精卵横缢成有核与无核两半并保持少量细胞质相连；观察分裂；在有核半分裂到16~32个细胞时，将一个细胞核挤到无核半。",
+      "phenomena": "有核半能分裂，无核半停止分裂；再植核后无核半开始分裂，最终两半均可发育成正常胚胎（原无核半发育较慢）。",
+      "conclusion": "细胞核与细胞分裂、发育密切相关，是分裂启动与持续的关键。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp12",
+      "name": "变形虫切割去核/有核及再植核实验",
+      "instrument": "切割工具、显微钩针（钩出细胞核）、显微操作工具（植入细胞核）",
+      "is_student": 0,
+      "process": "将变形虫切成有核与无核两半；观察摄食、对刺激反应、细胞器状态；再钩出有核半的核；及时植入同种变形虫细胞核。",
+      "phenomena": "无核半可消化已吞噬食物但不能摄取食物、对刺激无反应且细胞器退化；有核半可正常摄食、反应、生长和分裂；钩出细胞核后行为变得像无核半；植入核后生命活动恢复。",
+      "conclusion": "细胞核控制细胞代谢等生命活动，缺核导致生命活动紊乱且结构退化。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp13",
+      "name": "伞藻嫁接与核移植实验（不同帽形）",
+      "instrument": "嫁接与核移植操作工具（未具体说明）",
+      "is_student": 0,
+      "process": "对伞形帽与菊花形帽两种伞藻进行嫁接与核移植，对比后代形态。",
+      "conclusion": "伞藻形态结构特点主要取决于细胞核（教材以讨论题形式引导得出）。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp14",
+      "name": "长颈漏斗-玻璃纸渗透实验",
+      "instrument": "长颈漏斗、玻璃纸（赛璐玢）、蔗糖溶液、烧杯、清水",
+      "is_student": 0,
+      "process": "漏斗口外密封玻璃纸，向漏斗内注入蔗糖溶液，将漏斗浸入清水中并使管内外液面等高，静置观察液面变化。",
+      "phenomena": "一段时间后漏斗管内液面升高。",
+      "conclusion": "水分子通过半透膜向溶液侧扩散，发生渗透作用。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp15",
+      "name": "红细胞在不同浓度NaCl溶液中的吸水/失水观察",
+      "instrument": "哺乳动物红细胞、不同浓度氯化钠溶液（低渗/高渗/等渗）、显微观察条件（教材图示）",
+      "is_student": 0,
+      "phenomena": "低浓度外液：红细胞吸水膨胀；高浓度外液：红细胞失水皱缩；等浓度：形态不变。",
+      "conclusion": "动物细胞水进出遵循渗透作用，取决于膜两侧溶液浓度差。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp16",
+      "name": "洋葱鳞片叶表皮细胞质壁分离与复原实验",
+      "instrument": "紫色洋葱鳞片叶、刀片、镊子、滴管、载玻片、盖玻片、吸水纸、显微镜、0.3 g/mL蔗糖溶液、清水",
+      "is_student": 1,
+      "process": "制作洋葱表皮临时装片并观察；用吸水纸引流滴加蔗糖溶液观察变化；再引流滴加清水观察复原。",
+      "phenomena": "蔗糖溶液中液泡变小、原生质层向内收缩并与细胞壁分离；清水中液泡变大、原生质层恢复贴近细胞壁。",
+      "conclusion": "原生质层相当于半透膜；植物细胞通过渗透作用吸水失水，失水可致质壁分离，吸水可复原。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp17",
+      "name": "比较过氧化氢在不同条件下的分解",
+      "instrument": "新鲜20%肝脏研磨液；量筒、试管、滴管、试管架、卫生香、火柴、酒精灯、试管夹、大烧杯、三脚架、陶土网、温度计；3%过氧化氢溶液；3.5% FeCl3溶液",
+      "is_student": 1,
+      "process": "4支试管各加2 mL过氧化氢溶液；2号在约90℃水浴加热并与1号比较；3号加2滴FeCl3溶液；4号加2滴肝脏研磨液；将点燃的卫生香分别置于3号和4号液面上方观察。",
+      "phenomena": "加热、加入FeCl3或肝脏研磨液条件下产生气泡更明显；卫生香在3号、4号试管上方表现出氧气存在的现象（助燃）。",
+      "conclusion": "Fe3+和过氧化氢酶均能促进过氧化氢分解；酶的催化效率更高；酶通过降低活化能使反应在温和条件下快速进行。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp18",
+      "name": "酵母菌有氧与无氧细胞呼吸的对比实验（检测CO2与酒精）",
+      "instrument": "酵母菌、5%葡萄糖溶液、锥形瓶A/B(500 mL)、橡皮球或气泵、连接导管、澄清石灰水或溴麝香草酚蓝溶液、试管、滤液、重铬酸钾、浓硫酸（配制酸性重铬酸钾）、可选CO2传感器",
+      "is_student": 1,
+      "process": "将酵母菌分装入A、B两瓶并加入5%葡萄糖溶液；通过通气/密封控制有氧与无氧条件；培养后检测CO2（石灰水/溴麝香草酚蓝或传感器）并比较量；检测酒精（酸性重铬酸钾变色）。",
+      "phenomena": "有氧条件下CO2产生较多；无氧条件下产生酒精并产生少量CO2；石灰水浑浊或溴麝香草酚蓝变黄；酸性重铬酸钾由橙变灰绿。",
+      "conclusion": "酵母菌在有氧和无氧条件下都能进行细胞呼吸：有氧呼吸产物主要为CO2和水且能量释放多；无氧呼吸产物为酒精+CO2或乳酸且能量释放少。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp19",
+      "name": "绿叶中色素的提取和分离（纸层析）",
+      "instrument": "新鲜绿叶（如菠菜）、定性滤纸、试管/小烧杯与培养皿盖、棉塞、试管架、研钵、玻璃漏斗、尼龙布、毛细吸管、剪刀、量筒、天平、无水乙醇（或95%乙醇+无水碳酸钠）、层析液（石油醚/丙酮/苯混合）、二氧化硅、碳酸钙",
+      "is_student": 1,
+      "process": "研磨绿叶（加二氧化硅助研磨、碳酸钙防色素破坏）并用无水乙醇提取后过滤；剪滤纸条画起始线并点样成细线；将滤纸条插入层析液展开（起始线不触及层析液）；观察记录色素带条数、颜色、宽窄与分布次序。",
+      "phenomena": "滤纸条上出现多条不同颜色的色素带，并按一定次序分布。",
+      "conclusion": "绿叶中色素不止一种，可被分离；不同色素因溶解度差异迁移速度不同。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp20",
+      "name": "恩格尔曼实验（用需氧细菌指示水绵放氧部位）",
+      "instrument": "载有水绵和需氧细菌的临时装片、无空气小室、极细光束、三棱镜（用于分光）",
+      "is_student": 0,
+      "process": "实验1：在无空气小室内，黑暗中用极细光束照射水绵，观察需氧细菌聚集位置；再将装置放在光下观察细菌分布。实验2：用透过三棱镜的光照射水绵装片，观察需氧细菌在不同色光区域的聚集情况。",
+      "phenomena": "实验1中细菌集中在被光束照射到的叶绿体部位；在光下细菌分布在叶绿体所有受光部位。实验2中大量细菌聚集在红光和蓝紫光区域。",
+      "conclusion": "直接证明叶绿体能吸收光能用于光合作用放氧；且红光与蓝紫光更能引起放氧（与色素吸收相符）。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp21",
+      "name": "观察根尖分生区组织细胞的有丝分裂（洋葱根尖装片）",
+      "instrument": "洋葱（或葱、蒜）；显微镜；载玻片、盖玻片；玻璃皿；剪刀、镊子、滴管；甲紫溶液或醋酸洋红液；15%盐酸；95%酒精；清水（及可选固定装片）",
+      "is_student": 1,
+      "process": "洋葱根尖培养（3~4天，根长约5cm）→剪取根尖2~3mm；解离（盐酸:酒精=1:1，3~5min）→漂洗（清水约10min）→染色（甲紫0.01~0.02g/mL或醋酸洋红，3~5min）→制片（加水、捣碎、加盖、轻压）→低倍找分生区→高倍找各分裂时期→统计各时期细胞数→绘制中期简图。",
+      "phenomena": "不同细胞处于不同分裂时期；染色体易被碱性染料着色；中期染色体排列于赤道板等典型形态特征可见。",
+      "conclusion": "可依据染色体形态与分布识别细胞周期各时期，并用统计结果比较不同时期时间长短。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp22",
+      "name": "胡萝卜韧皮部细胞组织培养实验（Steward, 1958）",
+      "instrument": "胡萝卜韧皮部细胞（材料）、含植物激素/无机盐/糖类的培养液、培养容器与无菌操作条件、花盆（移栽）",
+      "is_student": 0,
+      "process": "取胡萝卜韧皮部细胞→置于含植物激素、无机盐和糖类的培养液中培养→细胞旺盛分裂生长形成细胞团块→分化出根、茎和叶→移栽后长成新植株。",
+      "phenomena": "细胞先大量分裂形成团块，后分化形成根茎叶，最终形成完整植株。",
+      "conclusion": "高度分化的植物细胞在适宜条件下仍能发育成完整植株，体现细胞全能性。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp23",
+      "name": "非洲爪蟾体细胞核移植获得新个体实验",
+      "instrument": "非洲爪蟾蝌蚪肠上皮细胞核、去核卵细胞、显微操作与移植装置、培养条件",
+      "is_student": 0,
+      "process": "将蝌蚪肠上皮细胞的核移植到去核的卵细胞中培养发育。",
+      "phenomena": "获得新的个体。",
+      "conclusion": "已分化的动物体细胞的细胞核具有全能性（在卵细胞细胞质条件下可支持个体发育）。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp24",
+      "name": "不同年龄来源肺成纤维细胞体外培养比较增殖代数",
+      "instrument": "细胞培养设备与耗材（培养皿/培养瓶、培养基、恒温培养箱等）",
+      "is_student": 0,
+      "process": "在相同条件下分别单独培养胎儿、中年人和老年人的肺成纤维细胞，记录其可增殖的代数。",
+      "phenomena": "胎儿细胞增殖代数约50，中年人约20，老年人约2~4。",
+      "conclusion": "随着年龄增长，细胞可继续分裂的次数逐渐减少，提示细胞随分裂次数增多而衰老。"
+    },
+    {
+      "id": "biology_bx1_rjb_exp25",
+      "name": "细胞核-细胞质互换融合实验（年轻/老年）",
+      "instrument": "显微操作/细胞融合相关装置与细胞培养设备（去核操作工具、融合手段、培养基、培养箱等）",
+      "is_student": 0,
+      "process": "将年轻人的体细胞去核后与老年人的细胞核融合；将老年人的体细胞去核后与年轻人的细胞核融合，分别体外培养观察分裂情况。",
+      "phenomena": "年轻细胞质+老年细胞核不分裂；老年细胞质+年轻细胞核分裂旺盛。",
+      "conclusion": "细胞核对细胞分裂能力的影响更大（相对细胞质）。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "biology_bx1_rjb_exe1",
+      "type": "简答题",
+      "stem": "细胞学说的要点包括哪些？（写出三条）",
+      "answer": "（1）一切动植物都由细胞发育而来，并由细胞和细胞产物所构成；（2）细胞是相对独立的单位，既有自己的生命，又对整体生命起作用；（3）新细胞由老细胞分裂产生。",
+      "analysis": "直接回忆教材对细胞学说“三要点”的表述，注意第三条强调“分裂”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe2",
+      "type": "判断题",
+      "stem": "判断：根据部分植物细胞都有细胞核就得出“植物细胞都有细胞核”的结论，属于完全归纳法。（对/错，并说明属于哪类归纳）",
+      "answer": "错。属于不完全归纳法，因为只观察了部分植物细胞就推出一般性结论。",
+      "analysis": "完全归纳要求观察所有类型对象；部分到一般是典型不完全归纳。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe3",
+      "type": "选择题",
+      "stem": "草履虫、衣藻、变形虫和细菌都是单细胞生物。尽管它们的大小和形状各不相同，但它们都有相似的结构，即都具有（ ）\nA. 细胞膜、细胞质、细胞核、液泡\nB. 细胞壁、细胞膜、细胞质、细胞核\nC. 细胞膜、细胞质、细胞核、染色体\nD. 细胞膜、细胞质、储存遗传物质的场所",
+      "answer": "D",
+      "analysis": "草履虫、衣藻、变形虫属于真核生物，细菌为原核生物，四者共同点应概括为：都有细胞膜、细胞质，以及遗传物质集中存在的场所（真核为细胞核，原核为拟核），故选D。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe4",
+      "type": "选择题",
+      "stem": "判断沙眼衣原体是原核生物的主要依据是（ ）\nA. 有细胞壁\nB. 有细胞膜\nC. 没有线粒体\nD. 没有以核膜包被的细胞核",
+      "answer": "D",
+      "analysis": "教材指出区分真核/原核细胞的主要依据是“有无以核膜为界限的细胞核”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe5",
+      "type": "选择题",
+      "stem": "细胞学说为生物学的发展起到了奠基的作用，主要原因是它揭示了（ ）\nA. 植物细胞与动物细胞的区别\nB. 原核细胞和真核细胞的区别\nC. 生物体结构的统一性\nD. 生物界细胞的多样性",
+      "answer": "C",
+      "analysis": "教材“本章小结”强调细胞学说阐明动植物都由细胞构成、细胞为基本单位，并据此认识到生物界具有统一性。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe6",
+      "type": "简答题",
+      "stem": "用斐林试剂检测某植物组织匀浆中的还原糖。操作为：取2 mL待测液于试管中，加入1 mL斐林试剂（甲乙等量混合），将试管置于50~65℃温水中加热约2 min。若含有还原糖，应观察到什么现象？据此结论是什么？",
+      "answer": "现象：出现砖红色沉淀（伴随颜色由蓝色向砖红色变化）。结论：该组织匀浆中含有还原糖（如葡萄糖）。",
+      "analysis": "题干给出斐林试剂与水浴加热条件，关键是识记并解释“还原糖+斐林试剂→砖红色沉淀”的颜色反应及其指示意义。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe7",
+      "type": "简答题",
+      "stem": "细胞中的水以哪两种形式存在？分别说明它们在细胞中的主要作用差异，并指出结合水大约占细胞内全部水分的百分比。",
+      "answer": "两种形式：自由水和结合水。自由水呈游离状态、可自由流动，是细胞内良好的溶剂，并有利于物质运输与代谢进行；结合水与蛋白质、多糖等物质结合，失去流动性和溶解性，是细胞结构的重要组成部分，并有助于增强细胞抗旱、抗寒等能力。结合水约占细胞内全部水分的4.5%。",
+      "analysis": "抓住教材原句：水以自由水/结合水两种形式存在；自由水“良好溶剂”；结合水“结构组成部分”且“约占4.5%”，并结合其与抗逆/代谢强弱关系概括。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe8",
+      "type": "简答题",
+      "stem": "解释：为什么大量出汗后，适当饮用淡盐水有助于维持人体正常生命活动？（至少写出一种离子缺乏的影响）",
+      "answer": "大量出汗会排出较多无机盐离子；Na+等离子对生命活动必不可少。Na+缺乏会引起神经、肌肉细胞兴奋性降低，出现肌肉酸痛、无力等症状，因此出汗后适当补充淡盐水有助于补充丢失的无机盐并维持正常生命活动（也有助于维持体液相关平衡）。",
+      "analysis": "基于“Na+缺乏→神经/肌肉兴奋性降低→酸痛无力”与“出汗排出过多无机盐后应多喝淡盐水”的因果链作答。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe9",
+      "type": "判断题",
+      "stem": "判断正误：二糖一般要水解成单糖才能被细胞吸收。",
+      "answer": "正确。",
+      "analysis": "教材指出“二糖……一般要水解成单糖才能被细胞吸收”。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe10",
+      "type": "选择题",
+      "stem": "选择题：下列关于脂肪酸的叙述，正确的是（  ）\nA. 饱和脂肪酸长链中存在双键，熔点较低\nB. 不饱和脂肪酸长链中存在双键，熔点较低\nC. 不饱和脂肪酸长链中只有单键，熔点较高\nD. 饱和脂肪酸与不饱和脂肪酸的差异与碳链上氢原子数无关",
+      "answer": "B",
+      "analysis": "教材给出：有双键→不能达到饱和→不饱和脂肪酸→熔点较低、不易凝固；单键→饱和→熔点较高、易凝固。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe11",
+      "type": "简答题",
+      "stem": "蛋白质由氨基酸构成。一个氨基酸分子的羧基（—COOH）与另一个氨基酸分子的氨基（—NH2）相连接并脱去一分子水，这种结合方式叫什么？连接两个氨基酸分子的化学键叫什么？由两个氨基酸缩合而成的化合物叫什么？",
+      "answer": "这种结合方式叫脱水缩合；连接两个氨基酸分子的化学键叫肽键；由两个氨基酸缩合而成的化合物叫二肽。",
+      "analysis": "依据教材对“脱水缩合—肽键—二肽”的定义直接对应作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe12",
+      "type": "简答题",
+      "stem": "为什么蛋白质种类繁多？请从氨基酸组成与蛋白质结构特点角度概括两点原因。",
+      "answer": "原因包括：①组成一种蛋白质的氨基酸数目可能成千上万，且不同种类氨基酸的排列顺序千变万化；②肽链会发生盘曲、折叠并形成多种空间结构（多肽链还可通过二硫键等结合），空间结构差异进一步造成蛋白质结构多样，从而种类繁多。",
+      "analysis": "将“序列多样性”和“空间结构多样性”作为核心要点。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe13",
+      "type": "简答题",
+      "stem": "核酸的两大类分别是什么？在真核细胞中DNA和RNA主要分布在哪里？",
+      "answer": "核酸包括DNA（脱氧核糖核酸）和RNA（核糖核酸）两大类。真核细胞的DNA主要分布在细胞核中（线粒体、叶绿体也含少量DNA），RNA主要分布在细胞质中。",
+      "analysis": "直接回忆“核酸的种类及其分布”的表述。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe14",
+      "type": "简答题",
+      "stem": "说明“DNA指纹技术能够提供个体信息”的根本原因，并指出与DNA分子哪一结构特征相关。",
+      "answer": "根本原因是遗传信息储存在DNA分子中，并且每个个体DNA的脱氧核苷酸序列各有特点；相关的结构特征是DNA长链中脱氧核苷酸的排列顺序（核苷酸序列）。",
+      "analysis": "把“遗传信息储存在DNA中”与“脱氧核苷酸排列顺序储存遗传信息、个体有差异”联系起来作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe15",
+      "type": "判断题",
+      "stem": "（判断题）构成细胞膜的磷脂分子具有流动性，而蛋白质是固定不动的。",
+      "answer": "错误。蛋白质大多也能运动，膜具有流动性。",
+      "analysis": "流动镶嵌模型指出磷脂可侧向移动，膜中蛋白质大多也能运动。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe16",
+      "type": "选择题",
+      "stem": "（选择题）细胞膜的特性和功能是由其结构决定的。下列相关叙述错误的是（ ）\nA. 细胞膜的脂质结构使溶于脂质的物质容易通过细胞膜\nB. 由于磷脂双分子层内部是疏水的，因此水分子不能通过细胞膜\nC. 细胞膜的蛋白质分子有物质运输功能\nD. 细胞的生长现象不支持细胞膜的静态结构模型",
+      "answer": "B",
+      "analysis": "疏水内核限制水溶性分子/离子自由通过，但水分子仍可通过（如经水通道蛋白等），因此“水分子不能通过”表述错误；A、C、D与原文一致。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe17",
+      "type": "简答题",
+      "stem": "在“3H标记亮氨酸”示踪分泌蛋白实验中，注射后3 min、17 min、117 min分别在细胞的哪些结构中先后检测到放射性标记物？据此写出分泌蛋白从合成到分泌到细胞外的大致运输路径。",
+      "answer": "3 min：附着有核糖体的内质网（粗面内质网）；17 min：高尔基体；117 min：靠近细胞膜内侧的运输囊泡以及细胞外分泌物。路径：核糖体/粗面内质网 →（内质网囊泡）→ 高尔基体 →（分泌囊泡）→ 细胞膜 → 细胞外。",
+      "analysis": "按时间顺序读取标记物出现位置，即可推断分泌蛋白在膜性细胞器间的转运顺序。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe18",
+      "type": "简答题",
+      "stem": "简述差速离心法分离细胞器的基本思路：为什么要“逐渐提高离心速率”，每一步应如何收集材料？",
+      "answer": "差速离心利用不同大小（质量）颗粒在不同离心速率下沉降速度不同的特点。先用较低转速使较大颗粒沉淀，收集沉淀；保留上清再提高转速使较小颗粒沉淀，继续收集沉淀，如此逐级提高转速即可分离不同大小的细胞器/颗粒。",
+      "analysis": "关键点是“由低到高”的分级离心，以及每轮离心后对沉淀与上清的分步处理。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe19",
+      "type": "选择题",
+      "stem": "细胞核内行使遗传功能的结构是 (   )\nA. 核膜\nB. 核孔\nC. 染色质\nD. 核仁",
+      "answer": "C",
+      "analysis": "染色质主要由DNA和蛋白质组成，其中DNA是遗传信息的载体，因此细胞核内行使遗传功能的结构是染色质。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe20",
+      "type": "选择题",
+      "stem": "细胞核是细胞的控制中心, 下列各项不能作为这一结论的论据的是 ( )\nA. DNA主要存在于细胞核内\nB. 细胞核控制细胞的代谢和遗传\nC. 细胞核是遗传物质储存和复制的场所\nD. 细胞核位于细胞的正中央",
+      "answer": "D",
+      "analysis": "“位于正中央”是位置描述，不能证明控制功能；A/C涉及遗传信息储存，B直接表述控制作用，均可作为论据。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe21",
+      "type": "判断题",
+      "stem": "判断正误：控制细胞器进行物质合成、能量转化等的指令，主要通过核孔从细胞核送到细胞质。( )",
+      "answer": "正确",
+      "analysis": "教材指出核孔“实现核质之间频繁的物质交换和信息交流”，与细胞核对细胞质活动的调控相一致。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe22",
+      "type": "简答题",
+      "stem": "玻璃纸是一种半透膜，水分子可以自由透过，而蔗糖分子不能。将装有蔗糖溶液并用玻璃纸密封漏斗口的长颈漏斗浸入清水中并使内外液面等高。问：过一段时间后漏斗管内液面为何升高？渗透方向由什么决定？",
+      "answer": "液面升高是因为清水侧的水分子通过半透膜向蔗糖溶液侧扩散，发生渗透作用，使漏斗内溶液体积增大并推动液面上升。渗透方向由半透膜两侧的浓度差（或水的相对含量差）决定：水从水相对含量高（溶质浓度低）的一侧向水相对含量低（溶质浓度高）的一侧渗透。",
+      "analysis": "抓住“半透膜+浓度差”两个条件；用渗透定义解释液面变化，并说明方向判据。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe23",
+      "type": "简答题",
+      "stem": "将哺乳动物红细胞分别置于：A. 外液浓度低于细胞质；B. 外液浓度高于细胞质；C. 外液浓度等于细胞质。分别判断红细胞体积/形态变化，并说明原因。",
+      "answer": "A：吸水膨胀（外液低渗，水通过细胞膜渗入细胞）；B：失水皱缩（外液高渗，水渗出细胞）；C：形态不变（等渗，水进出动态平衡、无净渗透）。",
+      "analysis": "用渗透方向与外液相对浓度关系判断水的净移动方向。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe24",
+      "type": "简答题",
+      "stem": "甲状腺滤泡上皮细胞内碘浓度比血液中的高20~25倍。判断该细胞吸收碘主要采用哪种跨膜运输方式，并说明理由。",
+      "answer": "主要采用主动运输。因为细胞内碘浓度高于血液，吸收碘属于逆浓度梯度运输，需要载体蛋白协助并消耗细胞内化学反应释放的能量（如ATP水解供能）。",
+      "analysis": "先比较膜两侧浓度判断是否逆浓度梯度；再对应主动运输定义：载体蛋白+能量消耗。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe25",
+      "type": "选择题",
+      "stem": "下列关于胞吞和胞吐的叙述，正确的是（可多选）：A. 胞吞是细胞膜外陷形成囊泡进入细胞  B. 胞吐时囊泡与细胞膜融合将大分子排出  C. 胞吞、胞吐都需要消耗细胞呼吸释放的能量  D. 蛋白质、多糖等大分子主要通过胞吞/胞吐进出细胞",
+      "answer": "B、C、D。",
+      "analysis": "胞吞是细胞膜内陷形成小囊并脱离成囊泡；胞吐为囊泡与膜融合外排；二者为普遍跨膜运输现象且耗能；大分子主要靠胞吞/胞吐。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe26",
+      "type": "简答题",
+      "stem": "在“比较过氧化氢在不同条件下的分解”实验中：加热、加入FeCl3溶液、加入肝脏研磨液分别属于哪一类变量？实验中应观测的因变量是什么？",
+      "answer": "加热（温度）、加入FeCl3溶液（催化剂）、加入肝脏研磨液（含过氧化氢酶）均属于自变量；应观测的因变量是过氧化氢分解速率（可用气泡产生快慢、氧气使卫生香更易燃烧等表征）。",
+      "analysis": "依据教材对变量的定义：人为控制处理的是自变量；随之改变的是因变量。本实验比较不同处理下反应快慢，故因变量为分解速率。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe27",
+      "type": "简答题",
+      "stem": "解释“酶能降低化学反应活化能”这句话的含义，并说明这对细胞代谢有什么意义。",
+      "answer": "含义：酶不直接给反应物分子提供能量，而是使反应所需跨越的能量“门槛”（活化能）降低，从而加快反应速率。意义：细胞代谢中的化学反应因此能在温和条件下快速、有序地进行，保证生命活动正常进行。",
+      "analysis": "将活化能定义与酶的作用句子对应：降低活化能→反应更易发生→温和条件下也能快速进行→细胞代谢离不开酶。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe28",
+      "type": "简答题",
+      "stem": "ATP水解后生成哪些产物？并说明该过程与能量变化的关系（写出简式反应式即可）。",
+      "answer": "产物为ADP和无机磷酸Pi，并释放能量。简式：ATP → ADP + Pi + 能量（在酶作用下）。",
+      "analysis": "依据教材：ATP水解转化为ADP，脱离的磷酸基团若未转移则为Pi；ATP水解是释放能量的过程。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe29",
+      "type": "简答题",
+      "stem": "为什么说ATP是细胞内流通的能量“货币”？请用“吸能反应/放能反应”与ATP合成、ATP水解之间的联系来说明。",
+      "answer": "许多吸能反应需要能量，常与ATP水解相联系，由ATP水解释放的能量直接供能；许多放能反应释放能量，常与ATP合成相联系，释放的能量储存在ATP中。能量因此通过ATP在吸能反应与放能反应之间流通，所以ATP可比喻为能量“货币”。",
+      "analysis": "抓住教材原句：吸能反应—ATP水解供能；放能反应—能量储存在ATP；能量通过ATP分子在两类反应间流通。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe30",
+      "type": "选择题",
+      "stem": "酵母菌在有氧条件下细胞呼吸的主要产物是（ ）。\nA. 酒精和二氧化碳\nB. 乳酸\nC. 二氧化碳和水\nD. 水和酒精",
+      "answer": "C",
+      "analysis": "教材指出：有氧条件下酵母菌产生大量二氧化碳和水；无氧条件下产生酒精并产生少量二氧化碳。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe31",
+      "type": "填空题",
+      "stem": "在探究酵母菌细胞呼吸方式的对比实验中，若用澄清石灰水检测CO2，则观察到石灰水变浑浊说明（ ）。",
+      "answer": "说明有CO2产生。",
+      "analysis": "教材明确：CO2可使澄清石灰水变浑浊。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe32",
+      "type": "简答题",
+      "stem": "在“绿叶中色素的提取和分离”实验中，为什么不能让滤液细线触及层析液？",
+      "answer": "因为若滤液细线触及层析液，细线中的色素会被层析液直接溶解，不能在滤纸上随层析液扩散形成分离的色素带，从而无法实现分离。",
+      "analysis": "题干对应教材原句“不能让滤液细线触及层析液，否则滤液细线中的色素会被层析液溶解，而不能在滤纸上扩散”。考查纸层析分离的操作要点与原理。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe33",
+      "type": "简答题",
+      "stem": "实验结果表明：叶绿素a和叶绿素b主要吸收蓝紫光和红光，胡萝卜素和叶黄素主要吸收蓝紫光。解释：植物工厂里为什么通常不用发绿光的光源作为主要补光？",
+      "answer": "因为绿叶中的主要光合色素对绿光吸收较弱，而主要吸收的是红光和蓝紫光；因此以绿光为主的光源不利于色素有效吸收光能，光合作用效率较低。",
+      "analysis": "用色素吸收光谱解释光源选择：红光、蓝紫光更易被吸收并用于光合作用，绿光相对不易被吸收。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe34",
+      "type": "简答题",
+      "stem": "连续分裂的细胞，一个细胞周期包括哪两个阶段？分裂间期的主要任务是什么？",
+      "answer": "一个细胞周期包括分裂间期和分裂期。分裂间期主要进行活跃的物质准备，完成DNA分子的复制和有关蛋白质的合成，同时细胞有适度生长。",
+      "analysis": "直接回忆细胞周期定义及教材对间期任务的表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe35",
+      "type": "简答题",
+      "stem": "在有丝分裂后期发生了哪些关键变化？这些变化对保证子细胞遗传物质相同有什么意义？",
+      "answer": "后期着丝粒分裂，姐妹染色单体分开成为两条染色体，并在纺锤丝牵引下分别移向细胞两极，使两极各获得形态和数目完全相同的一套染色体；从而保证两个子细胞得到相同的染色体组，遗传物质保持一致。",
+      "analysis": "抓住“着丝粒分裂—姐妹染色单体分离—移向两极—两极各一套相同染色体”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe36",
+      "type": "判断题",
+      "stem": "判断下列有关细胞分化与细胞全能性关系的表述是否正确。\n（1）受精卵没有分化，所以没有全能性。（）\n（2）细胞的分化程度越高，表现出来的全能性就越弱。（）",
+      "answer": "（1）错误。（2）正确。",
+      "analysis": "受精卵未分化但具有全能性；一般分化程度越高，细胞表现出的全能性越弱（教材“分化程度越高，表现出来的全能性就越弱”作为检测点）。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe37",
+      "type": "选择题",
+      "stem": "将自体骨髓干细胞植入胰腺组织后可分化为“胰岛样”细胞，以替代损伤的胰岛B细胞，达到治疗糖尿病的目的。下列叙述正确的是（）\nA. 骨髓干细胞与“胰岛样”细胞的基因组成不同，基因表达情况不同\nB. “胰岛样”细胞与胰岛B细胞基因组成不同，基因表达情况相同\nC. 骨髓干细胞与“胰岛样”细胞基因组成相同，基因表达情况也相同\nD. 骨髓干细胞与胰岛B细胞的基因组成相同，基因表达情况不同",
+      "answer": "D",
+      "analysis": "同一个体的不同细胞基因组成相同；分化的本质是基因选择性表达不同。骨髓干细胞分化形成胰岛样细胞/胰岛B细胞过程中，基因表达发生改变。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe38",
+      "type": "选择题",
+      "stem": "在一个多细胞的生物体内，存在着各种在形态、结构和生理功能上具有差异的细胞，这是因为（）\nA. 细胞发生了变异\nB. 不同细胞的基因不同\nC. 某些细胞失去了全能性\nD. 不同细胞中的基因选择性地表达",
+      "answer": "D",
+      "analysis": "教材明确指出：各种细胞遗传信息相同但差异巨大，原因是基因选择性表达。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe39",
+      "type": "简答题",
+      "stem": "根据表中数据：在相同条件下培养胎儿、中年人和老年人的肺成纤维细胞，其增殖代数分别为50、20、2~4。请写出一条关于“年龄因素与细胞衰老/分裂能力关系”的结论。",
+      "answer": "随着年龄增长，细胞可继续分裂的次数显著减少；细胞会随分裂次数增多而衰老（或：细胞分裂能力与个体年龄呈负相关）。",
+      "analysis": "同条件对照下仅年龄来源不同，增殖代数随年龄增大而降低，可归纳出年龄与分裂潜能/衰老程度相关。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_bx1_rjb_exe40",
+      "type": "简答题",
+      "stem": "某研究将年轻人的体细胞去核后与老年人的细胞核融合培养，发现细胞不分裂；将老年人的体细胞去核后与年轻人的细胞核融合培养，发现细胞分裂旺盛。由此判断：对细胞分裂能力影响更大的是细胞核还是细胞质？并说明依据。",
+      "answer": "细胞核影响更大。依据：当细胞核来自老年人时即使细胞质年轻也不分裂；当细胞核来自年轻人时即使细胞质老年也能分裂旺盛。",
+      "analysis": "比较互换后唯一关键差异在细胞核来源，分裂结果随细胞核来源改变而改变。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 241,
+    "skill_count": 42,
+    "experiment_count": 25,
+    "question_count": 40
+  }
+}

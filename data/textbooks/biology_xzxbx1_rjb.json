@@ -1,0 +1,3099 @@
+{
+  "id": "biology_xzxbx1_rjb",
+  "stage": "高中",
+  "grade": "高中",
+  "subject": "生物",
+  "title": "生物选择性必修一",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/biology.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "biology_xzxbx1_rjb_cpt1",
+      "name": "体液",
+      "definition": "人体内大量以水为基础的液体的总称，除水外还含有许多离子和化合物。",
+      "importance": "掌握",
+      "examples": [
+        "血浆",
+        "组织液",
+        "淋巴液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt2",
+      "name": "细胞外液",
+      "definition": "存在于细胞外、为细胞提供直接生活环境的体液部分，主要包括血浆、组织液和淋巴液。",
+      "importance": "掌握",
+      "examples": [
+        "血浆",
+        "组织液",
+        "淋巴液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt3",
+      "name": "内环境",
+      "definition": "由细胞外液构成的液体环境，是机体内细胞生活的直接环境，用以区别于个体生活的外界环境。",
+      "importance": "掌握",
+      "aliases": [
+        "internal environment",
+        "细胞外液环境（语境中）"
+      ],
+      "examples": [
+        "血浆",
+        "组织液",
+        "淋巴液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt4",
+      "name": "组织液",
+      "definition": "存在于组织细胞间隙的液体，主要由血浆通过毛细血管壁渗出形成；为细胞提供营养物质并接受代谢产物，是体内绝大多数细胞直接生活的环境。",
+      "importance": "掌握",
+      "aliases": [
+        "tissue fluid",
+        "组织间隙液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt5",
+      "name": "淋巴液",
+      "definition": "存在于淋巴管中的液体，由一部分组织液进入毛细淋巴管形成，最终汇入血浆；含有大量淋巴细胞等，协助机体抵御疾病。",
+      "importance": "掌握",
+      "aliases": [
+        "lymph fluid"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt6",
+      "name": "渗透压",
+      "definition": "溶液中溶质微粒对水的吸引力；其大小取决于单位体积溶液中溶质微粒数目，溶质微粒越多（浓度越高）渗透压越高。",
+      "importance": "掌握",
+      "unit": "kPa",
+      "examples": [
+        "人血浆渗透压约770 kPa（约37°C）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt7",
+      "name": "酸碱度（pH）",
+      "definition": "溶液酸碱性程度的量度；pH是溶液中自由氢离子浓度的负对数。正常人血浆近中性，pH为7.35~7.45。",
+      "importance": "掌握",
+      "unit": "无",
+      "formula": "pH = -log10[H+]",
+      "examples": [
+        "血浆pH 7.35~7.45"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt8",
+      "name": "细胞外液的温度",
+      "definition": "人体细胞外液温度一般维持在37°C左右，是细胞外液理化性质的重要方面之一。",
+      "importance": "了解",
+      "unit": "°C",
+      "examples": [
+        "约37°C"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt9",
+      "name": "内环境稳态（理化性质相对稳定）",
+      "definition": "细胞外液的渗透压、pH和温度等理化性质保持在一定范围内，使细胞能够正常生活；偏离（过稀/过浓、过酸/过碱、温度过高/过低）会影响细胞生存。",
+      "importance": "重要",
+      "examples": [
+        "红细胞在清水中吸水破裂",
+        "红细胞在高浓度溶液中失水死亡"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt10",
+      "name": "Na+和Cl-对细胞外液渗透压的主要贡献",
+      "definition": "在细胞外液无机盐离子中Na+和Cl-含量占明显优势，细胞外液渗透压的90%以上来源于Na+和Cl-。",
+      "importance": "重要",
+      "examples": [
+        "Na+",
+        "Cl-"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt11",
+      "name": "HCO3-/H2CO3缓冲系统维持血浆pH",
+      "definition": "血浆pH能够保持稳定，与其中含有HCO3-、H2CO3等物质有关。",
+      "importance": "重要",
+      "examples": [
+        "HCO3-",
+        "H2CO3"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt12",
+      "name": "细胞与内环境的物质交换",
+      "definition": "细胞作为开放系统，直接与内环境进行物质交换：获取生命活动所需物质并排出代谢废物，以维持正常生命活动。",
+      "importance": "掌握",
+      "examples": [
+        "获取营养物质和O2",
+        "排出尿素、CO2等代谢废物"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt13",
+      "name": "内环境与外界环境的物质交换",
+      "definition": "内环境与外界环境之间的物质交换需要机体多个系统参与：消化系统摄入营养物质，呼吸系统吸入O2排出CO2，泌尿系统排出代谢废物/水/无机盐，循环系统运输各种物质到相应部位。",
+      "importance": "掌握",
+      "examples": [
+        "消化系统",
+        "呼吸系统",
+        "泌尿系统",
+        "循环系统"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt14",
+      "name": "内环境的稳态（稳态）",
+      "definition": "内环境的各种成分和理化性质会随外界因素和体内细胞代谢活动的变化而变化，这种变化会引发机体的自动调节，使其维持在相对稳定的范围内的状态；即正常机体通过调节作用，使各个器官、系统协调活动，共同维持内环境的相对稳定状态。",
+      "importance": "掌握",
+      "aliases": [
+        "稳态",
+        "homeostasis"
+      ],
+      "examples": [
+        "体温接近37℃且波动幅度一般不超过1%",
+        "血糖、血脂处于一定范围内",
+        "渗透压处于一定范围内",
+        "血浆pH维持在一定范围内"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt15",
+      "name": "内环境的理化性质",
+      "definition": "内环境中能表征其物理化学状态并影响生命活动的性质，如渗透压、pH、温度等，通常维持在相对稳定范围内。",
+      "importance": "了解",
+      "examples": [
+        "渗透压",
+        "pH",
+        "温度"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt16",
+      "name": "血浆pH",
+      "definition": "血浆的酸碱度指标，内环境中有缓冲对等机制使其在酸或碱性物质进入后仍能维持在一定范围内。",
+      "importance": "重要",
+      "unit": "pH（无量纲）",
+      "examples": [
+        "酸性物质（如碳酸等）进入内环境可能影响pH",
+        "加入HCl或NaOH后pH发生变化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt17",
+      "name": "缓冲对/缓冲系统",
+      "definition": "由一对能够相互转化的弱酸及其共轭碱（或弱碱及其共轭酸）构成，能减弱溶液在加入酸或碱时pH的变化。",
+      "importance": "掌握",
+      "examples": [
+        "HPO4^2-/H2PO4^-",
+        "HCO3^-/H2CO3"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt18",
+      "name": "HCO3-/H2CO3缓冲对",
+      "definition": "人体内环境中最重要的缓冲对之一，当一定量酸性或碱性物质进入后，有助于使内环境pH仍维持在一定范围内。",
+      "importance": "重要",
+      "formula": "HCO3^- / H2CO3"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt19",
+      "name": "HPO4^2-/H2PO4^-缓冲对",
+      "definition": "人体内环境中的缓冲对之一，可减弱加入酸或碱引起的pH变化。",
+      "importance": "了解",
+      "formula": "HPO4^2- / H2PO4^-"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt20",
+      "name": "稳态调节机制（神经-体液-免疫调节网络）",
+      "definition": "内环境稳态在神经调节和体液调节的共同作用下，并在免疫系统参与下，通过机体器官、系统分工合作、协调统一而实现的调节机制。",
+      "importance": "掌握",
+      "aliases": [
+        "神经—体液—免疫调节网络"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt21",
+      "name": "稳态失调",
+      "definition": "当外界环境变化过于剧烈或人体自身调节功能出现障碍时，内环境稳态被破坏、危及健康的状态。",
+      "importance": "重要",
+      "examples": [
+        "肾功能衰竭导致水和无机盐代谢紊乱，出现尿毒症",
+        "高温导致中暑（体温调节功能紊乱）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt22",
+      "name": "内环境稳态的重要意义（生命活动的必要条件）",
+      "definition": "内环境稳态为细胞代谢及酶促反应提供适宜的物质与条件（如血糖浓度、含氧量、温度、pH等在正常范围），因此是机体进行正常生命活动的必要条件。",
+      "importance": "掌握",
+      "examples": [
+        "血糖浓度和血液含氧量保持正常范围以保证氧化分解葡萄糖供能",
+        "温度、pH在适宜范围内以保证酶活性"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt23",
+      "name": "神经系统",
+      "definition": "人体内由中枢神经系统和外周神经系统构成的调节控制系统，通过对信息的分析处理和指令传递，使机体对刺激作出反应并保持协调一致与稳定。",
+      "importance": "重要",
+      "examples": [
+        "阅读、理解和记忆依靠神经系统（特别是大脑）完成",
+        "呼吸、心跳等受到神经系统调控"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt24",
+      "name": "中枢神经系统",
+      "definition": "神经系统的组成部分之一，包括脑和脊髓；在其中大量神经细胞聚集形成不同神经中枢，分别负责调控特定生理功能。",
+      "importance": "掌握",
+      "aliases": [
+        "central nervous system"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt25",
+      "name": "外周神经系统",
+      "definition": "神经系统的组成部分之一，分布全身各处，包括脑神经和脊神经；含有传入神经和传出神经，用于在中枢与效应器之间传递信息与指令。",
+      "importance": "掌握",
+      "aliases": [
+        "peripheral nervous system"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt26",
+      "name": "脑",
+      "definition": "中枢神经系统的组成部分，位于颅腔内，包括大脑、脑干和小脑等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt27",
+      "name": "脊髓",
+      "definition": "中枢神经系统的组成部分，位于椎管内；是脑与躯干、内脏之间的联系通路，也是调节运动的低级中枢。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt28",
+      "name": "神经中枢",
+      "definition": "对传入的信息进行分析和综合，并发出传出信息的中枢结构（如脊髓相应中枢；以及参与感觉形成的大脑皮层）。",
+      "importance": "了解",
+      "examples": [
+        "脊髓中的膝跳反射中枢",
+        "脑干中的呼吸中枢",
+        "下丘脑中的体温调节中枢",
+        "脊髓中相应中枢",
+        "大脑皮层"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt29",
+      "name": "大脑皮层",
+      "definition": "含有大量神经元并组成许多神经中枢的结构，是整个神经系统中最高级的部位，承担高级功能与分级调控中的最高级中枢作用。",
+      "importance": "重要",
+      "aliases": [
+        "皮层"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt30",
+      "name": "小脑",
+      "definition": "位于大脑后下方，能够协调运动并维持身体平衡。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt31",
+      "name": "下丘脑",
+      "definition": "脑的重要组成部分，含有体温调节中枢、水平衡调节中枢等，并与生物节律等控制有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt32",
+      "name": "脑干",
+      "definition": "连接脊髓和脑其他部分的重要通路，含有维持生命的必要中枢，如调节呼吸、心脏功能的基本活动中枢。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt33",
+      "name": "脑神经",
+      "definition": "与脑相连的神经，共12对，主要分布在头面部，负责管理头面部的感觉和运动，并含有支配内脏器官的神经成分。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt34",
+      "name": "脊神经",
+      "definition": "与脊髓相连的神经，共31对，主要分布在躯干、四肢，负责管理躯干、四肢的感觉和运动，并含有支配内脏器官的神经成分。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt35",
+      "name": "传入神经",
+      "definition": "将感受器产生的兴奋向神经中枢传导的神经通路（反射弧中的传入部分）。",
+      "importance": "掌握",
+      "aliases": [
+        "感觉神经",
+        "感觉神经（通路）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt36",
+      "name": "传出神经",
+      "definition": "中枢神经系统发出指令信息后，将指令信息传输到相应器官使机体作出反应的神经，属于运动神经。",
+      "importance": "掌握",
+      "aliases": [
+        "运动神经"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt37",
+      "name": "躯体运动神经",
+      "definition": "传出神经的一类，支配躯体运动，其活动明显受到意识支配，可随意控制如奔跑等身体运动。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt38",
+      "name": "内脏运动神经",
+      "definition": "传出神经的一类，支配内脏器官，其活动不随意，通常不受意识支配，可引起心跳、呼吸等变化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt39",
+      "name": "自主神经系统",
+      "definition": "支配内脏器官活动的神经系统；在排尿反射中支配膀胱扩大和缩小，但其活动并非完全不受高级中枢影响，大脑皮层可对各级中枢活动起调整作用，使其“不完全自主”。",
+      "importance": "重要",
+      "aliases": [
+        "autonomic nervous system",
+        "植物性神经系统（教材未出现，谨慎不作别名）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt40",
+      "name": "交感神经",
+      "definition": "自主神经系统的一部分；人体处于兴奋状态时其活动占优势，使心跳加快、支气管扩张，并使胃肠蠕动和消化腺分泌减弱。",
+      "importance": "掌握",
+      "aliases": [
+        "sympathetic nerve"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt41",
+      "name": "副交感神经",
+      "definition": "自主神经系统的一部分；人体处于安静状态时其活动占优势，使心跳减慢，并使胃肠蠕动和消化液分泌加强，有利于消化和吸收。",
+      "importance": "掌握",
+      "aliases": [
+        "parasympathetic nerve"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt42",
+      "name": "神经胶质细胞",
+      "definition": "广泛分布于神经元之间、数量为神经元的10~50倍的辅助细胞，具有支持、保护、营养和修复神经元等功能；在外周神经系统中参与构成髓鞘。",
+      "importance": "掌握",
+      "aliases": [
+        "neuroglia"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt43",
+      "name": "树突",
+      "definition": "神经元细胞体向外伸出的树枝状突起，通常短而粗，用来接受信息并将其传导到细胞体。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt44",
+      "name": "轴突",
+      "definition": "神经元细胞体伸出的长而较细的突起，将信息从细胞体传向其他神经元、肌肉或腺体；外表多套有髓鞘并构成神经纤维。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt45",
+      "name": "髓鞘",
+      "definition": "多包裹在轴突外表的一层结构，使轴突呈神经纤维的组成部分；在外周神经系统中由神经胶质细胞参与构成。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt46",
+      "name": "神经调节",
+      "definition": "通过神经系统（反射弧等）对生命活动进行调节的方式，特点是反应迅速、作用准确但范围较局限、持续时间短暂。",
+      "importance": "了解",
+      "examples": [
+        "缩手反射",
+        "膝跳反射",
+        "温度感受器兴奋传至下丘脑体温调节中枢并引起皮肤血管收缩/舒张"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt47",
+      "name": "效应器",
+      "definition": "对刺激作出应答的结构，由传出神经末梢和其所支配的肌肉或腺体等构成。",
+      "importance": "掌握",
+      "examples": [
+        "骨骼肌（缩手、膝跳）",
+        "腺体（唾液腺）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt48",
+      "name": "兴奋",
+      "definition": "动物体或人体内的某些细胞或组织（如神经组织）感受外界刺激后，由相对静止状态变为显著活跃状态的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "excitation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt49",
+      "name": "非条件反射",
+      "definition": "出生后无须训练就具有的反射（与生俱来）。",
+      "importance": "掌握",
+      "examples": [
+        "缩手反射",
+        "膝跳反射",
+        "喂食引起唾液分泌反射"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt50",
+      "name": "条件反射",
+      "definition": "出生后在生活过程中通过学习和训练而形成的反射。",
+      "importance": "掌握",
+      "examples": [
+        "铃声单独出现引起狗分泌唾液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt51",
+      "name": "非条件刺激",
+      "definition": "能自然引起非条件反射的刺激（如食物）。",
+      "importance": "了解",
+      "examples": [
+        "食物"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt52",
+      "name": "无关刺激",
+      "definition": "起初与某一反射无关、单独出现不能引起相应反射的刺激（如未与食物结合前的铃声）。",
+      "importance": "了解",
+      "examples": [
+        "最初的铃声（不给食物时）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt53",
+      "name": "条件刺激",
+      "definition": "通过与非条件刺激反复结合后，能够单独引起条件反射的刺激（由原先的无关刺激转化而来）。",
+      "importance": "掌握",
+      "examples": [
+        "与食物多次结合后的铃声"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt54",
+      "name": "条件反射的消退",
+      "definition": "条件反射建立后，如果反复应用条件刺激而不给予非条件刺激强化，条件反射会逐渐减弱直至不出现；其实质是中枢将原先引起兴奋性效应的信号转变为产生抑制性效应的信号，是新的学习过程，需要大脑皮层参与。",
+      "importance": "重要",
+      "examples": [
+        "铃声反复单独出现而没有食物，唾液分泌量逐渐减少直至没有"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt55",
+      "name": "兴奋（神经兴奋）",
+      "definition": "神经系统受到刺激后产生的可传导的活动状态，在反射活动中需要沿神经纤维传导并在神经元之间传递。",
+      "importance": "重要",
+      "aliases": [
+        "神经兴奋"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt56",
+      "name": "神经冲动（电信号）",
+      "definition": "兴奋在神经系统中以电信号形式沿神经纤维传导，这种电信号称为神经冲动。",
+      "importance": "掌握",
+      "aliases": [
+        "neural impulse"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt57",
+      "name": "静息电位",
+      "definition": "神经纤维处于静息状态时，由于膜内外特异的离子分布与膜对离子通透性差异，细胞膜两侧电位表现为内负外正，称为静息电位。",
+      "importance": "掌握",
+      "aliases": [
+        "resting potential"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt58",
+      "name": "动作电位",
+      "definition": "神经纤维某部位受刺激后，膜对Na+通透性增加、Na+内流，引起该部位膜两侧出现暂时性电位变化，表现为内正外负的兴奋状态，此时膜电位称为动作电位。",
+      "importance": "掌握",
+      "aliases": [
+        "action potential"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt59",
+      "name": "局部电流",
+      "definition": "在兴奋部位（动作电位）与邻近未兴奋部位（静息电位）之间因电位差发生电荷移动而形成的电流，可刺激相近未兴奋部位产生同样电位变化并推动兴奋向前传导。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt60",
+      "name": "突触",
+      "definition": "由突触前膜、突触间隙和突触后膜构成的神经元之间（或神经元与效应器细胞之间）的信息传递结构单位。",
+      "importance": "掌握",
+      "aliases": [
+        "synapse"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt61",
+      "name": "神经递质",
+      "definition": "轴突末梢的突触小泡在神经冲动到达时释放的化学物质，扩散通过突触间隙，与突触后膜受体结合并改变其离子通透性，引发突触后膜电位变化，从而实现神经元之间信号传递。",
+      "importance": "掌握",
+      "aliases": [
+        "neurotransmitter"
+      ],
+      "examples": [
+        "乙酰胆碱",
+        "谷氨酸",
+        "甘氨酸",
+        "5-羟色胺",
+        "多巴胺",
+        "去甲肾上腺素",
+        "肾上腺素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt62",
+      "name": "突触传递的单向性",
+      "definition": "由于神经递质只存在于突触小泡中、只能由突触前膜释放并作用于突触后膜，因此神经元之间兴奋的传递只能是单方向的。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt63",
+      "name": "突触传递的化学本质与相对慢速",
+      "definition": "突触处兴奋传递需要电信号与化学信号的转换（递质释放、扩散、受体结合等），因此其传递速度比在神经纤维上以电信号传导更慢。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt64",
+      "name": "兴奋剂/毒品对神经系统的作用位点（突触）",
+      "definition": "一些化学物质（兴奋剂、毒品等）常通过突触影响神经系统功能，例如促进递质合成与释放、干扰递质与受体结合、影响分解递质的酶活性等。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt65",
+      "name": "可卡因成瘾的神经机制（多巴胺回收受阻）",
+      "definition": "正常情况下多巴胺发挥作用后会被突触前膜转运蛋白回收；吸食可卡因使转运蛋白失去回收多巴胺功能，导致多巴胺在突触间隙持续作用并使突触后膜多巴胺受体减少，药效消失后正常神经活动受影响，从而产生必须继续使用的恶性循环。",
+      "importance": "了解",
+      "examples": [
+        "可卡因影响与愉悦传递有关的神经元"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt66",
+      "name": "神经系统的分级调节",
+      "definition": "中枢神经系统的不同部位（如脊髓、脑干、下丘脑和大脑皮层等）存在着控制同一生理活动的中枢，通过分工与协作对机体活动进行协调调节；高级中枢可对低级中枢活动进行调整，使调节更精准并可受意识影响。",
+      "importance": "掌握",
+      "examples": [
+        "躯体运动（膝跳反射、缩手反射）",
+        "眨眼反射",
+        "排尿反射"
+      ],
+      "aliases": [
+        "分级调控"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt67",
+      "name": "躯体运动的分级调节",
+      "definition": "躯体运动不仅受脊髓等低级中枢控制，也受大脑皮层等高级中枢调节；脑干等结构连接高级与低级中枢，高级中枢发出指令不断调整低级中枢活动，使运动更有条不紊与精准。",
+      "importance": "掌握",
+      "examples": [
+        "膝跳反射受脊髓控制并受大脑调节",
+        "缩手反射受大脑皮层相应区域调控"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt68",
+      "name": "内脏活动的分级调节",
+      "definition": "内脏活动的调节也通过反射进行，在脊髓、脑干、下丘脑和大脑皮层等不同中枢存在相应调节中枢；低级中枢可完成基本反射，但需高级中枢调整才能更好适应生理需要并实现意识控制。",
+      "importance": "掌握",
+      "examples": [
+        "排尿反射",
+        "排便反射",
+        "血管舒缩"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt69",
+      "name": "脊髓（低级中枢）",
+      "definition": "机体运动与部分内脏活动调节的低级中枢所在部位，可完成膝跳反射等躯体反射及排尿、排便、血管舒缩等简单内脏反射，但其调节是初级的，需要高级中枢调控。",
+      "importance": "重要",
+      "examples": [
+        "膝跳反射的神经中枢位于脊髓",
+        "排尿反射的低级中枢在脊髓"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt70",
+      "name": "脑干（连接与基本中枢）",
+      "definition": "连接大脑与脊髓的结构，可将大脑指令传至脊髓；同时含有多种调节内脏活动的基本中枢（如呼吸中枢、心血管中枢），损伤可导致生命活动失调甚至停止。",
+      "importance": "重要",
+      "examples": [
+        "眨眼反射由脑干参与",
+        "脑干调节呼吸和心血管活动"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt71",
+      "name": "下丘脑（较高级内脏中枢）",
+      "definition": "调节内脏活动的较高级中枢，使内脏活动与其他生理活动相联系，调节体温、水平衡、摄食等主要生理过程。",
+      "importance": "了解",
+      "examples": [
+        "体温调节",
+        "水平衡调节",
+        "摄食调节"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt72",
+      "name": "大脑皮层（最高级中枢）",
+      "definition": "调节人体生命活动的最高级中枢；对许多低级中枢活动起高级调节与调整作用，使机体活动更精确并可受意识影响。",
+      "importance": "重要",
+      "examples": [
+        "可参与眨眼反射，从而实现长时间不眨眼的训练效果",
+        "对排尿反射进行调控，使排尿可受意识控制"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt73",
+      "name": "第一运动区（中央前回）",
+      "definition": "大脑皮层中与躯体运动功能密切相关的区域；刺激中央前回不同部位可引起相应躯体部位运动，躯体各部分在该区内有代表区且位置关系呈倒置分布。",
+      "importance": "掌握",
+      "examples": [
+        "刺激中央前回顶部→引起下肢运动",
+        "刺激中央前回下部→引起头部器官运动"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt74",
+      "name": "皮层运动代表区（倒置分布）",
+      "definition": "躯体各部分运动机能在大脑皮层第一运动区内各有代表区，且代表区在皮层上的位置与躯体各部分的对应关系是倒置的。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt75",
+      "name": "眨眼反射",
+      "definition": "物体在眼前突然出现时出现的迅速眨眼反射；由脑干参与即可完成，但大脑也可以参与并对其进行调控，从而可能在训练后抑制眨眼。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt76",
+      "name": "膝跳反射",
+      "definition": "典型躯体反射之一，其神经中枢位于脊髓，同时躯体运动也可受大脑调节。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt77",
+      "name": "缩手反射",
+      "definition": "典型躯体反射之一，受脊髓等低级中枢控制，同时可受大脑皮层相应区域调控。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt78",
+      "name": "排尿反射",
+      "definition": "内脏反射之一；低级中枢在脊髓，成年人能有意识控制排尿是由于大脑皮层对脊髓的调控；自主神经系统参与膀胱扩大与缩小的控制。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt79",
+      "name": "反馈调节（在分级调节中的存在）",
+      "definition": "在躯体运动及排尿反射的分级调节过程中还存在反馈调节（教材提示该概念另见其他章节）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt80",
+      "name": "人脑的高级功能",
+      "definition": "大脑皮层作为神经系统最高级部位，除感知外部世界与控制反射活动外，还具有语言、学习与记忆、情绪等复杂功能，使人类能主动适应环境。",
+      "importance": "重要",
+      "examples": [
+        "阿尔茨海默病患者语言能力、认路能力受损"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt81",
+      "name": "语言功能",
+      "definition": "人脑特有的高级功能，语言文字是信息传递主要形式与思维主要工具；语言功能包括与语言、文字相关的全部智能活动，涉及听、说、读、写。",
+      "importance": "掌握",
+      "aliases": [
+        "言语功能"
+      ],
+      "examples": [
+        "听、说、读、写"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt82",
+      "name": "言语区（大脑皮层语言中枢）",
+      "definition": "大脑皮层中与语言活动相关的特定区域集合；其损伤会导致特有的各种言语活动功能障碍。",
+      "importance": "掌握",
+      "examples": [
+        "W区障碍：不能写字",
+        "V区障碍：不能看懂文字",
+        "S区障碍：不能讲话",
+        "H区障碍：不能听懂话"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt83",
+      "name": "大脑半球功能分工（左、右半球）",
+      "definition": "大多数人主导语言功能的区域在左半球；逻辑思维主要由左半球负责；右半球主要负责形象思维（如音乐、绘画、空间识别等）。",
+      "importance": "了解",
+      "examples": [
+        "右半球：音乐、绘画、空间识别"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt84",
+      "name": "学习与记忆",
+      "definition": "脑的高级功能之一，指神经系统不断接受刺激，获得新的行为、习惯并积累经验的过程；条件反射的建立是动物学习的过程；学习和记忆由多个脑区与神经通路共同参与而非单一区控制。",
+      "importance": "掌握",
+      "examples": [
+        "条件反射的建立"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt85",
+      "name": "记忆的四个阶段",
+      "definition": "人类记忆过程分为感觉性记忆、第一级记忆、第二级记忆、第三级记忆；前两者相当于短时记忆，后两者相当于长时记忆。",
+      "importance": "掌握",
+      "examples": [
+        "第一级记忆：临时记住验证码",
+        "第三级记忆：对自己姓名的记忆"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt86",
+      "name": "短时记忆",
+      "definition": "与记忆四阶段中感觉性记忆与第一级记忆相当，保留时间短：感觉性记忆常不超过1秒，第一级记忆从数秒到数分钟。",
+      "importance": "了解",
+      "unit": "秒/分钟"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt87",
+      "name": "长时记忆",
+      "definition": "与记忆四阶段中第二级记忆与第三级记忆相当，持续时间较长：第二级记忆可从数分钟到数年且可能受干扰遗忘；第三级记忆为永久记忆。",
+      "importance": "了解",
+      "unit": "分钟/年"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt88",
+      "name": "海马与短时记忆",
+      "definition": "短时记忆可能与神经元之间即时信息交流有关，尤其可能与大脑皮层下形状像海马的脑区有关。",
+      "importance": "了解",
+      "aliases": [
+        "海马体"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt89",
+      "name": "长时记忆的突触机制",
+      "definition": "长时记忆可能与突触形态及功能的改变以及新突触的建立有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt90",
+      "name": "情绪",
+      "definition": "大脑的高级功能之一，是人对环境作出的反应，具有相反的两类表现（如开心/失落）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt91",
+      "name": "抑郁",
+      "definition": "当消极情绪达到一定程度时出现的状态，通常是短期的，可通过自我调适、他人支持或心理咨询好转；若持续不缓解可能发展为抑郁症。",
+      "importance": "了解",
+      "examples": [
+        "一般抑郁不超过两周"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt92",
+      "name": "抑郁症",
+      "definition": "抑郁持续两周以上等情况下可能形成的疾病，会影响工作学习生活，严重时可致自残或自杀等消极行为，需要专业治疗。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt93",
+      "name": "脑机接口",
+      "definition": "利用大脑神经元产生的电信号控制外部设备的技术；“接口”用于对脑信号进行编码与解码，可分为植入式与非植入式。",
+      "importance": "了解",
+      "examples": [
+        "采集神经元电信号并转换为控制电动假肢的命令",
+        "头皮采集脑电波的非植入式脑机接口"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt94",
+      "name": "外分泌腺",
+      "definition": "分泌物经由导管而流出体外或流到消化腔的腺体。",
+      "importance": "掌握",
+      "examples": [
+        "汗腺",
+        "唾液腺",
+        "胃腺"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt95",
+      "name": "激素（hormone）",
+      "definition": "由内分泌器官或细胞分泌、直接进入血液并随血流运输到全身各处、对机体生理活动起调节作用的化学物质。",
+      "importance": "掌握",
+      "examples": [
+        "促胰液素",
+        "胰岛素",
+        "生长激素",
+        "睾酮"
+      ],
+      "aliases": [
+        "hormone"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt96",
+      "name": "激素调节（hormonal regulation）",
+      "definition": "机体通过内分泌器官或细胞分泌激素来调节生理活动的一种调节方式，与神经调节并存。",
+      "importance": "掌握",
+      "aliases": [
+        "hormonal regulation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt97",
+      "name": "促胰液素",
+      "definition": "在盐酸作用下由小肠黏膜产生、进入血液并促进胰腺分泌胰液的化学物质；是人们发现的第一种激素。",
+      "importance": "重要",
+      "examples": [
+        "小肠黏膜提取液注射可促进胰液分泌"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt98",
+      "name": "胰岛",
+      "definition": "胰腺组织中聚集成岛状的细胞堆，是胰岛素的分泌部位。",
+      "importance": "掌握",
+      "examples": [
+        "胰腺萎缩后胰岛仍保持完好"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt99",
+      "name": "血糖",
+      "definition": "血液中的糖称为血糖，主要是葡萄糖。",
+      "importance": "了解",
+      "aliases": [
+        "血液中的葡萄糖"
+      ],
+      "unit": "mmol/L",
+      "examples": [
+        "正常人的血糖含量为3.9～6.1 mmol/L"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt100",
+      "name": "糖尿病",
+      "definition": "与胰岛功能异常有关的一类代谢性疾病；切除胰腺的狗会出现与人的糖尿病类似的表现。",
+      "importance": "了解",
+      "examples": [
+        "多饮、多尿、多食是其共同外在表现",
+        "1型：胰岛功能减退、分泌胰岛素减少所致",
+        "2型：与遗传、环境、生活方式等密切相关，能量摄入过多、运动量过少、肥胖是常见危险因素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt101",
+      "name": "内分泌系统",
+      "definition": "由相对独立的内分泌腺以及兼有内分泌功能的细胞共同构成的系统，是机体整体功能的重要调节系统。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt102",
+      "name": "内分泌细胞",
+      "definition": "具有内分泌功能、可分泌激素的细胞，既可聚集成内分泌腺体，也可分散在器官组织中，部分神经细胞也具有内分泌功能。",
+      "importance": "了解",
+      "examples": [
+        "小肠黏膜上分泌促胰液素的细胞",
+        "下丘脑中具有内分泌功能的某些神经细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt103",
+      "name": "睾酮",
+      "definition": "从动物睾丸中提取并证实的雄激素，是睾丸分泌的性激素之一。",
+      "importance": "了解",
+      "aliases": [
+        "雄激素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt104",
+      "name": "激素的化学本质多样性",
+      "definition": "不同激素的化学组成不同，例如胰岛素是由51个氨基酸组成的蛋白质，而性激素主要是类固醇。",
+      "importance": "了解",
+      "examples": [
+        "胰岛素：蛋白质（51个氨基酸）",
+        "性激素：类固醇"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt105",
+      "name": "血糖平衡（血糖稳态）",
+      "definition": "通过调节血糖的来源和去向，使血糖浓度维持在一定水平的状态。",
+      "importance": "掌握",
+      "examples": [
+        "无论是在运动还是安静的状态下，人体的血糖浓度总是维持在一定的水平"
+      ],
+      "aliases": [
+        "血糖含量的稳定",
+        "血糖浓度的稳定"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt106",
+      "name": "血糖的来源",
+      "definition": "血糖进入血液的途径：食物糖类消化吸收进入血液；肝糖原分解成葡萄糖进入血液（空腹时重要来源）；非糖物质转化为葡萄糖进入血液。",
+      "importance": "掌握",
+      "examples": [
+        "食物中的糖类经消化、吸收进入血液",
+        "肝糖原分解成葡萄糖进入血液",
+        "非糖物质转化为葡萄糖进入血液"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt107",
+      "name": "血糖的去向",
+      "definition": "血糖在体内的主要去路：被组织细胞摄取并氧化分解；在肝和骨骼肌细胞内合成肝糖原和肌糖原储存；在脂肪组织和肝转变为非糖物质（如甘油三酯）。",
+      "importance": "掌握",
+      "examples": [
+        "组织细胞摄取，氧化分解",
+        "合成肝糖原和肌糖原储存",
+        "转变为甘油三酯等非糖物质"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt108",
+      "name": "胰高血糖素",
+      "definition": "由胰岛A细胞分泌的激素；当血糖浓度降低时分泌增加，主要作用于肝，促进肝糖原分解成葡萄糖进入血液，并促进非糖物质转变成糖，从而升高血糖浓度。",
+      "importance": "掌握",
+      "aliases": [
+        "glucagon"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt109",
+      "name": "反馈调节",
+      "definition": "在一个系统中，系统本身工作的效果反过来又作为信息调节该系统的工作的一种调节方式；对维持稳态具有重要意义。",
+      "importance": "掌握",
+      "aliases": [
+        "feedback regulation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt110",
+      "name": "神经系统对血糖的调节",
+      "definition": "神经系统可参与血糖调节：如血糖降低时，下丘脑某区域兴奋，通过交感神经促使胰岛A细胞分泌胰高血糖素；并可通过控制甲状腺和肾上腺的分泌活动影响血糖。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt111",
+      "name": "促甲状腺激素释放激素（TRH）",
+      "definition": "由下丘脑分泌的激素，可促使垂体分泌促甲状腺激素（TSH）。",
+      "importance": "了解",
+      "aliases": [
+        "TRH"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt112",
+      "name": "促甲状腺激素（TSH）",
+      "definition": "由垂体分泌的激素，随血液到达甲状腺，促使甲状腺增加甲状腺激素的合成和分泌。",
+      "importance": "了解",
+      "aliases": [
+        "TSH"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt113",
+      "name": "下丘脑—垂体—甲状腺轴",
+      "definition": "甲状腺激素分泌调节的通路：寒冷等刺激→神经冲动传到下丘脑→下丘脑分泌TRH→TRH作用于垂体→垂体分泌TSH→TSH作用于甲状腺→甲状腺分泌甲状腺激素；并受甲状腺激素对下丘脑、垂体的反馈抑制。",
+      "importance": "掌握",
+      "aliases": [
+        "HPT轴"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt114",
+      "name": "分级调节",
+      "definition": "下丘脑、垂体和靶腺体之间存在分层调控的调节方式；可放大激素的调节效应，形成多级反馈调节，有利于精细调控并维持稳态。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt115",
+      "name": "靶器官与靶细胞",
+      "definition": "能被特定激素作用的器官、细胞称为该激素的靶器官、靶细胞；激素通过与靶细胞上的特异性受体识别并特异性结合实现选择性作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt116",
+      "name": "激素的作用特点",
+      "definition": "激素经体液运输；作用于靶器官、靶细胞；作为信使传递信息且作用后失活需持续产生；微量而高效；多种激素可共同调节同一生理功能，存在协同或拮抗。",
+      "importance": "重要",
+      "examples": [
+        "血液中激素浓度一般为10^-12～10^-9 mol/L",
+        "胰高血糖素、甲状腺激素、肾上腺素等升高血糖具有协同作用；胰岛素降低血糖与其相抗衡"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt117",
+      "name": "体液调节",
+      "definition": "激素等化学物质通过体液传送的方式对生命活动进行调节的过程。",
+      "importance": "掌握",
+      "examples": [
+        "激素调节属于体液调节的主要内容",
+        "CO2作为体液因子参与呼吸运动调节"
+      ],
+      "aliases": [
+        "体液因子调节（广义）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt118",
+      "name": "激素调节",
+      "definition": "由内分泌腺分泌的激素通过体液运输，作用于靶细胞/靶器官从而调节生命活动的方式，是体液调节的主要内容。",
+      "importance": "掌握",
+      "examples": [
+        "肾上腺素升高使心跳和呼吸加快",
+        "甲状腺激素影响代谢产热与神经系统兴奋性"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt119",
+      "name": "体液因子",
+      "definition": "除激素外，也能通过体液对细胞、组织和器官功能起调节作用的化学物质，如组胺、NO、CO、CO2及某些代谢产物。",
+      "importance": "了解",
+      "examples": [
+        "CO2是调节呼吸运动的重要体液因子",
+        "NO、CO等气体分子也可作为体液因子"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt120",
+      "name": "神经一体液调节",
+      "definition": "通过神经影响激素的分泌，再由激素对机体功能实施调节的方式。",
+      "importance": "掌握",
+      "examples": [
+        "寒冷刺激→下丘脑兴奋→相关神经兴奋→甲状腺激素、肾上腺素释放↑→代谢增强→产热增加",
+        "交感神经兴奋→肾上腺髓质分泌肾上腺素→靶细胞产生反应"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt121",
+      "name": "体液调节与神经调节的协调",
+      "definition": "在人体和高等动物中，神经调节与体液调节相辅相成：神经系统可调控内分泌腺分泌，激素也可影响神经系统发育与功能，从而共同维持机体协调与稳态。",
+      "importance": "重要",
+      "examples": [
+        "体温调节由神经调节和体液调节共同实现",
+        "水和无机盐平衡在神经调节和激素调节共同作用下实现"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt122",
+      "name": "体温相对恒定",
+      "definition": "人的体温在不同环境与活动状态下通常保持相对恒定，其本质是产热与散热过程保持动态平衡。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt123",
+      "name": "体温调节",
+      "definition": "机体通过调节产热器官与散热器官的活动，使产热与散热动态平衡，从而维持体温相对恒定的调节过程，且由神经调节与体液调节共同实现。",
+      "importance": "重要",
+      "examples": [
+        "寒冷：皮肤血管收缩、汗腺分泌减少、战栗、激素分泌促进代谢",
+        "炎热：皮肤血管舒张、汗液分泌增多以增加散热"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt124",
+      "name": "产热",
+      "definition": "机体通过代谢等过程产生热量的过程；代谢产热是主要来源，安静时主要由肝、脑等器官提供，运动时骨骼肌成为主要产热器官。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt125",
+      "name": "散热",
+      "definition": "机体向外界散失热量的过程，皮肤是主要散热器官，散热方式包括辐射、传导、对流和蒸发。",
+      "importance": "了解",
+      "examples": [
+        "辐射：以红外线等形式将热量传到外界",
+        "蒸发：汗液蒸发带走热量"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt126",
+      "name": "下丘脑体温调节中枢",
+      "definition": "接收来自温度感受器的兴奋并进行分析综合，发出神经调节信号以调控皮肤血管、汗腺、骨骼肌等效应器活动，从而参与体温调节的中枢。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt127",
+      "name": "温度感受器",
+      "definition": "分布在皮肤中、能感受温度变化并产生兴奋的感受器，包括冷觉感受器和热觉感受器。",
+      "importance": "了解",
+      "examples": [
+        "寒冷环境：冷觉感受器兴奋",
+        "炎热环境：热觉感受器兴奋"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt128",
+      "name": "皮肤血管舒缩调节",
+      "definition": "通过皮肤血管舒张增加皮肤血流量以促进散热；通过血管收缩减少皮肤血流量以减少散热的调节机制。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt129",
+      "name": "汗腺分泌调节（蒸发散热）",
+      "definition": "通过调节汗液分泌量影响蒸发散热：分泌增多则蒸发散热增加，分泌减少则蒸发散热减少。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt130",
+      "name": "战栗产热",
+      "definition": "寒冷刺激使下丘脑体温调节中枢兴奋后引起骨骼肌战栗，从而增加产热的生理反应。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt131",
+      "name": "水和无机盐平衡",
+      "definition": "机体通过调节摄入与排出，使体内水与无机盐含量保持相对稳定的状态。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt132",
+      "name": "水平衡",
+      "definition": "机体通过调节排尿量等使水的排出量与摄入量相适应，从而维持体内水含量相对稳定。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt133",
+      "name": "盐平衡（以Na+为例）",
+      "definition": "机体使Na+等无机盐的摄入与排出保持相对平衡；Na+主要来源于食盐，经小肠吸收，主要经肾随尿排出，排出量几乎等于摄入量。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt134",
+      "name": "细胞外液渗透压",
+      "definition": "细胞外液因溶质（主要与Na+浓度相关）而形成的渗透压力；维持其相对稳定对内环境稳态重要。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt135",
+      "name": "渗透压调节",
+      "definition": "以保持细胞外液Na+浓度（从而保持细胞外液渗透压）相对稳定为基础的水和无机盐调节过程，主要通过肾完成。",
+      "importance": "重要",
+      "examples": [
+        "饮水不足/食物过咸→渗透压升高→渴觉+抗利尿激素↑→重吸收水↑→尿量↓",
+        "饮水过多/盐分丢失过多→渗透压下降→抗利尿激素↓→排水↑"
+      ],
+      "aliases": [
+        "水盐平衡调节（在本段语境下）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt136",
+      "name": "下丘脑渗透压感受器",
+      "definition": "位于下丘脑、能感受细胞外液渗透压变化并产生调节信号的感受器，参与渴觉产生及抗利尿激素分泌调节。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt137",
+      "name": "渴觉（调节饮水行为）",
+      "definition": "渗透压升高时刺激信号传至大脑皮层而产生的主观感觉，从而直接调节水的摄入量。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt138",
+      "name": "抗利尿激素（ADH）",
+      "definition": "由下丘脑分泌、垂体释放的激素；其增加可促进肾小管和集合管对水分的重吸收、减少尿量，从而使细胞外液渗透压趋向恢复正常。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt139",
+      "name": "醛固酮",
+      "definition": "由肾上腺皮质分泌的激素；在细胞外液量减少或血钠含量降低时分泌增加，促进肾小管和集合管对Na+的重吸收，以维持血钠含量平衡。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt140",
+      "name": "肾（通过尿量和尿成分调节）",
+      "definition": "水盐平衡与渗透压调节的主要完成器官，通过调节尿量及尿的成分实现水和无机盐的排出与保留。",
+      "importance": "重要",
+      "examples": [
+        "肾排尿是人体排出水的最主要途径",
+        "肾小管和集合管可对水与Na+进行重吸收调节"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt141",
+      "name": "内环境稳态",
+      "definition": "机体内环境的理化性质保持相对稳定的状态；依赖神经与体液等多种调节方式的协调，稳态破坏会导致功能紊乱甚至危及生命。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt142",
+      "name": "肾上腺素",
+      "definition": "肾上腺髓质分泌的激素之一，可使心跳和呼吸加快，并可增强代谢活动以增加产热；其分泌受交感神经调控。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt143",
+      "name": "CO2对呼吸运动的调节",
+      "definition": "CO2作为重要体液因子，其在体液中的浓度变化会刺激相关感受器，从而通过神经系统对呼吸运动进行调节。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt144",
+      "name": "免疫系统",
+      "definition": "由免疫器官、免疫细胞和免疫活性物质共同组成的人体防卫系统，是免疫调节的结构和物质基础。",
+      "importance": "掌握",
+      "examples": [
+        "骨髓、胸腺、脾、淋巴结等免疫器官",
+        "淋巴细胞、树突状细胞、巨噬细胞等免疫细胞",
+        "抗体、细胞因子、溶菌酶等免疫活性物质"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt145",
+      "name": "免疫器官",
+      "definition": "主要由淋巴组织构成，并借助血液循环和淋巴循环相互联系的器官，包括骨髓、胸腺、脾、淋巴结、扁桃体等。",
+      "importance": "掌握",
+      "examples": [
+        "骨髓",
+        "胸腺",
+        "脾",
+        "淋巴结",
+        "扁桃体"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt146",
+      "name": "骨髓",
+      "definition": "位于骨髓腔或骨松质内，是各种免疫细胞的发生地，也是B细胞分化、发育、成熟的场所，是机体重要的免疫器官。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt147",
+      "name": "胸腺",
+      "definition": "位于胸骨后面，随年龄变化（青春期高峰、后逐渐退化），是T细胞分化、发育、成熟的场所。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt148",
+      "name": "脾",
+      "definition": "位于胃的左侧，内含大量淋巴细胞；参与制造新的血细胞与清除衰老的血细胞等。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt149",
+      "name": "淋巴结",
+      "definition": "呈圆形或豆状，是淋巴细胞集中的地方；沿淋巴管遍布全身，能阻止和消灭侵入体内的微生物。",
+      "importance": "掌握",
+      "examples": [
+        "颈部",
+        "腋窝部",
+        "腹股沟部"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt150",
+      "name": "扁桃体",
+      "definition": "通常指咽腭部的扁桃体，左右各一，内部有很多免疫细胞，具有防御功能。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt151",
+      "name": "免疫细胞",
+      "definition": "执行免疫功能的细胞，来自骨髓的造血干细胞，包括淋巴细胞、树突状细胞、巨噬细胞等多种白细胞类型。",
+      "importance": "掌握",
+      "examples": [
+        "淋巴细胞",
+        "树突状细胞",
+        "巨噬细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt152",
+      "name": "淋巴细胞",
+      "definition": "在机体免疫反应中起非常重要作用的免疫细胞，包括B淋巴细胞和T淋巴细胞等。",
+      "importance": "掌握",
+      "aliases": [
+        "B细胞和T细胞所属细胞类群"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt153",
+      "name": "B淋巴细胞（B细胞）",
+      "definition": "淋巴细胞的一类；与体液免疫相关（教材在本节指出其可参与摄取和加工处理抗原，并可作为抗原呈递细胞）。",
+      "importance": "了解",
+      "aliases": [
+        "B细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt154",
+      "name": "T淋巴细胞（T细胞）",
+      "definition": "淋巴细胞的一类；胸腺是其分化、发育、成熟的场所；可分为辅助性T细胞、细胞毒性T细胞等。",
+      "importance": "了解",
+      "aliases": [
+        "T细胞"
+      ],
+      "examples": [
+        "辅助性T细胞",
+        "细胞毒性T细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt155",
+      "name": "树突状细胞",
+      "definition": "分布于皮肤、消化道、呼吸道等上皮组织及淋巴器官内，具有强大的吞噬、抗原处理和呈递抗原功能。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt156",
+      "name": "巨噬细胞",
+      "definition": "几乎分布于机体各种组织中，具有吞噬消化、抗原处理和呈递功能。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt157",
+      "name": "抗原呈递细胞（APC）",
+      "definition": "能摄取并加工处理抗原，并将抗原信息暴露在细胞表面以呈递给其他免疫细胞的一类细胞；包括B细胞、树突状细胞和巨噬细胞等。",
+      "importance": "掌握",
+      "aliases": [
+        "APC",
+        "antigen presenting cell"
+      ],
+      "examples": [
+        "B细胞",
+        "树突状细胞",
+        "巨噬细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt158",
+      "name": "免疫活性物质",
+      "definition": "由免疫细胞或其他细胞产生并发挥免疫作用的物质，包括抗体、溶菌酶、细胞因子等。",
+      "importance": "掌握",
+      "examples": [
+        "抗体",
+        "溶菌酶",
+        "细胞因子"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt159",
+      "name": "细胞因子",
+      "definition": "由辅助性T细胞等分泌的信号分子，可促进B细胞分裂分化等免疫过程；也是神经-内分泌-免疫相互作用网络中的信息分子之一。",
+      "importance": "了解",
+      "examples": [
+        "白细胞介素",
+        "干扰素",
+        "肿瘤坏死因子",
+        "促进B细胞分裂、分化的细胞因子"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt160",
+      "name": "三道防线",
+      "definition": "人体抵御病原体攻击的三层防御体系：第一道防线为皮肤、黏膜；第二道防线为体液中的杀菌物质和吞噬细胞；第三道防线为与病原体接触后获得、针对特定抗原起作用的特异性免疫。",
+      "importance": "掌握",
+      "examples": [
+        "皮肤和黏膜",
+        "溶菌酶与吞噬细胞",
+        "特异性免疫"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt161",
+      "name": "非特异性免疫",
+      "definition": "人人生来就有、在进化过程中遗传下来的免疫方式，不针对某一类特定病原体，而对多种病原体都有防御作用；对应第一、第二道防线。",
+      "importance": "掌握",
+      "aliases": [
+        "先天免疫（本段未出现该别名，仅作理解性别名不添加）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt162",
+      "name": "特异性免疫",
+      "definition": "当病原体突破机体前两道防线后，第三道防线紧急动员，由淋巴细胞等参与，对特定抗原发生的具有特异性的免疫反应；可分为体液免疫和细胞免疫。",
+      "importance": "掌握",
+      "aliases": [
+        "获得性免疫（本节语境下）"
+      ],
+      "examples": [
+        "流感病毒侵入机体后引发的免疫反应"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt163",
+      "name": "免疫防御",
+      "definition": "机体排除外来抗原性异物的一种免疫防护作用，是免疫系统最基本的功能；正常可抵抗病原体入侵，异常可致组织损伤或易感染等。",
+      "importance": "掌握",
+      "aliases": [
+        "immune defense"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt164",
+      "name": "免疫自稳",
+      "definition": "机体清除衰老或损伤细胞、进行自身调节、维持内环境稳态的功能；正常情况下对自身抗原物质不产生免疫反应，异常易发生自身免疫病。",
+      "importance": "掌握",
+      "aliases": [
+        "immune homeostasis"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt165",
+      "name": "免疫监视",
+      "definition": "机体识别和清除突变细胞、防止肿瘤发生的功能；功能低下或失调可导致肿瘤发生或持续病毒感染。",
+      "importance": "掌握",
+      "aliases": [
+        "immune surveillance"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt166",
+      "name": "体液免疫",
+      "definition": "B细胞活化后产生抗体，主要依靠抗体在体液中与抗原结合发挥作用、清除细胞外病原体的特异性免疫方式。",
+      "importance": "掌握",
+      "examples": [
+        "浆细胞分泌抗体与流感病毒结合后促进其被吞噬消化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt167",
+      "name": "细胞免疫",
+      "definition": "当病原体进入细胞内部时，主要依靠T细胞直接接触靶细胞进行作用，通过裂解被感染靶细胞清除细胞内病原体的特异性免疫方式。",
+      "importance": "掌握",
+      "examples": [
+        "细胞毒性T细胞裂解被同样病原体感染的靶细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt168",
+      "name": "B细胞",
+      "definition": "参与体液免疫的淋巴细胞；活化需要两个信号刺激并在细胞因子作用下增殖分化，主要分化为浆细胞和记忆B细胞。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt169",
+      "name": "浆细胞",
+      "definition": "B细胞活化后分化形成的效应细胞，主要功能是产生并分泌抗体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt170",
+      "name": "记忆B细胞",
+      "definition": "B细胞活化后少部分分化形成的记忆细胞，可在抗原消失后长期存活；再次接触同种抗原时迅速增殖分化并快速产生大量抗体。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt171",
+      "name": "辅助性T细胞",
+      "definition": "在体液免疫与细胞免疫中均起关键辅助作用的T细胞；在体液免疫中提供激活B细胞的第二信号并分泌细胞因子，在细胞免疫中参与细胞毒性T细胞活化。",
+      "importance": "掌握",
+      "aliases": [
+        "辅助T细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt172",
+      "name": "细胞毒性T细胞",
+      "definition": "细胞免疫中的效应T细胞，活化后能识别并裂解被同样病原体感染的靶细胞，从而清除细胞内病原体的寄生基础。",
+      "importance": "掌握",
+      "aliases": [
+        "CTL"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt173",
+      "name": "靶细胞",
+      "definition": "在细胞免疫中被病原体感染、会被细胞毒性T细胞识别并裂解的宿主细胞。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt174",
+      "name": "免疫记忆",
+      "definition": "特异性免疫过程中形成的记忆细胞可长期存活；再次遇到相同抗原时引发更快速、更强烈的免疫反应现象与机制基础。",
+      "importance": "掌握",
+      "examples": [
+        "再次接触同种抗原时迅速产生大量抗体或迅速分化为细胞毒性T细胞"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt175",
+      "name": "受体-配体特异性结合",
+      "definition": "信号分子（如神经递质、激素、细胞因子等）通过与受体直接接触而起作用；受体一般是蛋白质分子，不同受体结构各异，因此结合具有特异性。",
+      "importance": "重要",
+      "aliases": [
+        "信号分子与受体的特异性结合"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt176",
+      "name": "机体稳态（内环境稳态）",
+      "definition": "机体内环境相对稳定的状态；神经、内分泌与免疫系统通过信息分子相互调节，共同维持稳态，任一系统都不能取代其他系统。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt177",
+      "name": "流感病毒抗原变异（HA/NA改变）",
+      "definition": "流感病毒易突变，表现为病毒表面蛋白质分子（特别是HA、NA）改变，从而可能形成免疫系统“没有记忆”的新抗原类型，降低既有免疫保护效果并增加流行风险。",
+      "importance": "了解",
+      "examples": [
+        "H1N1、H3N2、H7N9、H5N1等由HA/NA不同组合形成"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt178",
+      "name": "疫苗接种（预防流感）",
+      "definition": "通过接种疫苗使机体产生针对相应病原体的特异性免疫记忆与免疫应答能力，是国际上普遍采用的预防流感措施，但对新发突变株存在局限。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt179",
+      "name": "PD-1/PD-L1免疫检查点",
+      "definition": "活化T细胞表面的PD-1与正常细胞表面的PD-L1结合可抑制T细胞触发免疫反应；肿瘤细胞可通过过量表达PD-L1逃避免疫系统，阻断该通路可增强抗肿瘤免疫。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt180",
+      "name": "免疫失调",
+      "definition": "免疫系统功能发生异常，可能表现为过强（过敏）、“敌我不分”（自身免疫）、功能不足或缺乏（免疫缺陷）等，从而引发相关疾病或症状。",
+      "importance": "重要",
+      "examples": [
+        "过敏反应",
+        "自身免疫病",
+        "免疫缺陷病"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt181",
+      "name": "过敏反应发生机理",
+      "definition": "过敏原刺激使B细胞活化产生抗体；抗体吸附在皮肤、呼吸道或消化道黏膜及血液中某些细胞（如肥大细胞）表面；再次进入的相同过敏原与细胞表面抗体结合，促使细胞释放组胺等，引起毛细血管扩张、通透性增强、平滑肌收缩、腺体分泌增多等，出现相应过敏症状。",
+      "importance": "掌握",
+      "examples": [
+        "皮肤红肿、发疹",
+        "流涕、打喷嚏",
+        "哮喘、呼吸困难"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt182",
+      "name": "组胺",
+      "definition": "过敏反应中由相关细胞释放的一类物质，可引起毛细血管扩张、血管壁通透性增强等生理效应，从而导致过敏症状。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt183",
+      "name": "肥大细胞",
+      "definition": "血液中某些细胞，过敏反应中其表面可吸附相应抗体；当过敏原与抗体结合后可促使其释放组胺等物质。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt184",
+      "name": "自身免疫病",
+      "definition": "在某些特殊情况下，免疫系统对自身成分发生免疫反应；若该自身免疫反应对组织和器官造成损伤并出现症状，则称为自身免疫病。",
+      "importance": "掌握",
+      "examples": [
+        "风湿性心脏病",
+        "类风湿关节炎",
+        "系统性红斑狼疮"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt185",
+      "name": "风湿性心脏病（自身免疫病示例）",
+      "definition": "某些链球菌表面抗原分子与心脏瓣膜某物质结构相似，感染后免疫系统在攻击病菌的同时也攻击心脏瓣膜，导致心脏损伤的疾病。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt186",
+      "name": "系统性红斑狼疮",
+      "definition": "一种累及多个器官的疾病，病程可缓解与发作交替；主要症状可包括发热、关节痛、红斑、大量脱发、白细胞减少等；病因尚未完全清楚，与遗传、免疫失调、内分泌异常、环境等多因素有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt187",
+      "name": "免疫缺陷病",
+      "definition": "由机体免疫功能不足或缺乏而引起的疾病。",
+      "importance": "掌握",
+      "examples": [
+        "先天性免疫缺陷病：重症联合免疫缺陷病",
+        "获得性免疫缺陷病：艾滋病"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt188",
+      "name": "先天性免疫缺陷病",
+      "definition": "由于遗传而生来就有免疫缺陷的免疫缺陷病类型。",
+      "importance": "了解",
+      "examples": [
+        "重症联合免疫缺陷病"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt189",
+      "name": "获得性免疫缺陷病",
+      "definition": "由疾病和其他因素引起的免疫缺陷病类型。",
+      "importance": "掌握",
+      "examples": [
+        "艾滋病"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt190",
+      "name": "重症联合免疫缺陷病（SCID）",
+      "definition": "与淋巴细胞发育有关的基因突变或缺陷引起，患者多为新生儿和婴幼儿，存在严重体液免疫和细胞免疫缺陷，病原体感染可致命。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt191",
+      "name": "HIV（人类免疫缺陷病毒）",
+      "definition": "能够攻击人体免疫系统的病毒，主要侵染辅助性T细胞；可在人体内潜伏2~10年甚至更长，复制导致T细胞数量持续下降，免疫功能减退。",
+      "importance": "掌握",
+      "aliases": [
+        "human immunodeficiency virus"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt192",
+      "name": "抗HIV抗体（HIV检测依据）",
+      "definition": "HIV感染后，机体免疫反应可分泌抗HIV的抗体，是目前HIV检测的重要依据之一；艾滋病病发时机体仍可继续分泌该抗体。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt193",
+      "name": "艾滋病传播途径",
+      "definition": "艾滋病主要通过性接触传播、血液传播和母婴传播三种途径传播。",
+      "importance": "掌握",
+      "examples": [
+        "性接触传播",
+        "血液传播",
+        "母婴传播"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt194",
+      "name": "艾滋病预防措施（切断传播途径）",
+      "definition": "通过切断传播途径来预防艾滋病传播的做法，如安全性行为、避免血液传播、检测并治疗相关感染、不共用可能带血的个人用品、不使用未经消毒器械等。",
+      "importance": "重要",
+      "examples": [
+        "使用避孕套等安全性行为",
+        "不吸毒、避免注射时经血液传播",
+        "接受检测并积极治疗HIV等性传播感染",
+        "不共用牙刷和剃须刀",
+        "不用未经消毒器械文眉、穿耳"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt195",
+      "name": "免疫反应的特异性",
+      "definition": "免疫系统对外源抗原产生的反应具有针对性，表现为对特定抗原产生相应反应（如产生相应抗体）。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt196",
+      "name": "免疫记忆（免疫反应的记忆性）",
+      "definition": "免疫系统具有记忆性，使免疫力能够维持较长时间。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt197",
+      "name": "免疫预防",
+      "definition": "利用免疫学原理预防疾病的应用方式；疫苗的应用是根据免疫反应规律设计，以促进对机体有利的免疫反应，维护健康。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt198",
+      "name": "器官移植",
+      "definition": "用正常的器官置换丧失功能的器官，以重建其生理功能的技术。",
+      "importance": "掌握",
+      "aliases": [
+        "organ transplantation"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt199",
+      "name": "免疫排斥反应",
+      "definition": "器官移植后免疫系统把来自他人的器官当作“非己”成分进行攻击，导致移植容易失败的免疫学原因。",
+      "importance": "掌握",
+      "aliases": [
+        "免疫排斥"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt200",
+      "name": "组织相容性抗原（HLA）",
+      "definition": "每个人细胞表面带有的一组与别人不同的蛋白质，是标明细胞身份的标签物质；白细胞能识别其差异并据此发起免疫攻击。",
+      "importance": "掌握",
+      "aliases": [
+        "人类白细胞抗原",
+        "HLA"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt201",
+      "name": "组织相容性配型（HLA匹配）",
+      "definition": "在器官移植或骨髓移植前检查供体和受体之间组织相容性（主要看HLA是否一致或相近）的过程；移植成败主要取决于此。",
+      "importance": "掌握",
+      "aliases": [
+        "配型"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt202",
+      "name": "免疫抑制剂",
+      "definition": "用于抑制免疫反应的药物；其应用可大大提高器官移植成活率，但会使淋巴细胞减少，增加感染风险。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt203",
+      "name": "免疫学的临床应用",
+      "definition": "免疫学在临床实践中的应用，除了免疫预防，还包括免疫诊断和免疫治疗。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt204",
+      "name": "免疫诊断",
+      "definition": "利用抗原-抗体反应高度特异性的原理进行临床诊断，如检测病原体和肿瘤标志物等。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt205",
+      "name": "免疫治疗",
+      "definition": "与手术、化学疗法、放射疗法并列的重要治疗方法；可对免疫功能低下者用免疫增强疗法，对某些疾病用免疫抑制疗法。",
+      "importance": "了解",
+      "examples": [
+        "类风湿关节炎常使用免疫抑制剂",
+        "系统性红斑狼疮常使用免疫抑制剂"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt206",
+      "name": "抗原-抗体反应的高度特异性",
+      "definition": "抗原与抗体的反应具有高度特异性，因此免疫学技术和制剂可用于临床诊断（如检测病原体、肿瘤标志物）。",
+      "importance": "重要",
+      "aliases": [
+        "抗原和抗体反应的高度特异性"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt207",
+      "name": "向光性",
+      "definition": "植物在光刺激作用下改变生长方向、趋向光源的生长反应，属于植物对光刺激的反应。",
+      "importance": "掌握",
+      "aliases": [
+        "phototropism",
+        "向光性生长"
+      ],
+      "examples": [
+        "金丝雀草胚芽鞘在单侧光照射下向光弯曲生长",
+        "植物的向光性生长是对光刺激的反应"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt208",
+      "name": "胚芽鞘",
+      "definition": "单子叶植物（特别是禾本科植物）胚芽外的锥形套状物，能保护生长中的胚芽；出土后还能进行光合作用。",
+      "importance": "了解",
+      "examples": [
+        "燕麦胚芽鞘",
+        "金丝雀草胚芽鞘",
+        "玉米胚芽鞘"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt209",
+      "name": "生长素",
+      "definition": "一种植物激素；在细胞分裂调控中主要促进细胞核分裂；当其浓度升高到一定值时可促进乙烯合成，而乙烯升高又会抑制其作用。",
+      "importance": "掌握",
+      "aliases": [
+        "auxin"
+      ],
+      "examples": [
+        "吲哚乙酸（IAA）",
+        "苯乙酸（PAA）",
+        "吲哚丁酸（IBA）",
+        "与细胞分裂素协同促进细胞分裂完成",
+        "促进乙烯合成（浓度升高到一定值时）"
+      ],
+      "unit": "浓度/用量（教材未给出具体单位）"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt210",
+      "name": "吲哚乙酸",
+      "definition": "与生长素作用相同并被确认是主要生长素成分的化学物质，简称IAA。",
+      "importance": "了解",
+      "aliases": [
+        "IAA"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt211",
+      "name": "植物激素",
+      "definition": "植物体内含量微少、但对植物生长发育调节作用非常重要的一类物质；通常通过调控细胞分裂、细胞伸长、细胞分化和细胞死亡等方式实现对生长发育的调控。",
+      "importance": "掌握",
+      "aliases": [
+        "phytohormone"
+      ],
+      "examples": [
+        "生长素",
+        "赤霉素",
+        "细胞分裂素",
+        "脱落酸",
+        "乙烯",
+        "油菜素内酯"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt212",
+      "name": "极性运输",
+      "definition": "在胚芽鞘、芽、幼叶和幼根中，生长素只能从形态学上端运输到形态学下端、不能反向运输的单方向运输方式；属于主动运输。",
+      "importance": "掌握",
+      "aliases": [
+        "polar transport"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt213",
+      "name": "非极性运输",
+      "definition": "在成熟组织中，生长素通过输导组织进行的运输方式；与其他有机物的运输没有区别。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt214",
+      "name": "生长素作用特点（浓度效应与器官差异）",
+      "definition": "生长素作用因浓度、细胞成熟情况和器官种类不同而差异较大：一般浓度较低时促进生长，浓度过高时抑制生长；不同器官的最适促进浓度不相同，敏感程度也不同。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt215",
+      "name": "顶端优势",
+      "definition": "顶芽产生的生长素向下运输，使枝条上部侧芽处生长素浓度较高而侧芽发育受抑制的现象；去掉顶芽后侧芽处生长素浓度降低，侧芽萌动并加快生长。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt216",
+      "name": "生长素分布不均匀导致生长不均匀",
+      "definition": "单侧光照射后，胚芽鞘背光侧生长素含量多于向光侧，导致两侧生长速度不同，从而产生向光弯曲。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt217",
+      "name": "乙烯",
+      "definition": "成熟果实释放出的、能促进其他果实成熟的一种植物激素；乙烯含量升高还会反过来抑制生长素的作用。",
+      "importance": "掌握",
+      "examples": [
+        "木瓜催熟柿子（成熟果实释放乙烯促进邻近果实成熟）",
+        "草莓果实发育和成熟过程中乙烯含量发生动态变化"
+      ],
+      "aliases": [
+        "Ethylene"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt218",
+      "name": "赤霉素（GA）",
+      "definition": "最初从赤霉菌培养基滤液中分离得到、能导致水稻出现恶苗病症状并在被子植物体内普遍存在的一类植物激素；在种子萌发过程中可促进萌发。",
+      "importance": "掌握",
+      "examples": [
+        "水稻恶苗病：植株疯长、比正常植株高50%以上、结实率降低",
+        "调节种子萌发：促进萌发"
+      ],
+      "aliases": [
+        "GA"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt219",
+      "name": "细胞分裂素",
+      "definition": "植物激素之一，与生长素一起是启动细胞分裂、脱分化和再分化的关键激素，其浓度与比例影响植物细胞发育方向。",
+      "importance": "掌握",
+      "examples": [
+        "与生长素协同促进细胞分裂完成"
+      ],
+      "unit": "浓度/用量（教材未给出具体单位）"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt220",
+      "name": "脱落酸",
+      "definition": "一种植物激素；在调节种子萌发过程中抑制萌发，并且其与其他激素的相对含量（如与赤霉素的比值）会影响器官分化（如黄瓜雌雄花分化）。",
+      "importance": "掌握",
+      "examples": [
+        "种子萌发：抑制萌发",
+        "黄瓜茎端：脱落酸/赤霉素比值高有利于雌花分化，比值低有利于雄花分化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt221",
+      "name": "油菜素内酯",
+      "definition": "被正式认定为第六类植物激素的天然物质；能促进茎、叶细胞的扩展和分裂，促进花粉管生长、种子萌发等。",
+      "importance": "了解",
+      "examples": [
+        "促进茎、叶细胞扩展和分裂",
+        "促进花粉管生长",
+        "促进种子萌发"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt222",
+      "name": "多种植物激素共同调控（调节网络）",
+      "definition": "各种植物激素并不是孤立起作用，而是通过协同、拮抗以及代谢互作等方式形成调节网络，共同调控植物生长发育和对环境的适应。",
+      "importance": "重要",
+      "examples": [
+        "生长素与细胞分裂素协同促进细胞分裂完成",
+        "赤霉素与脱落酸对种子萌发呈相反作用",
+        "生长素促进乙烯合成、乙烯反过来抑制生长素作用"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt223",
+      "name": "协同作用（植物激素）",
+      "definition": "两种或多种植物激素在同一生理过程中的作用方向一致、相互配合，从而共同增强或完成某一生理效应。",
+      "importance": "掌握",
+      "examples": [
+        "生长素促进细胞核分裂、细胞分裂素促进细胞质分裂，二者协调促进细胞分裂完成"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt224",
+      "name": "拮抗作用（植物激素）",
+      "definition": "两种植物激素在同一生理过程中的作用效果相反，一方促进、另一方抑制。",
+      "importance": "掌握",
+      "examples": [
+        "种子萌发：赤霉素促进萌发，脱落酸抑制萌发"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt225",
+      "name": "激素代谢互作",
+      "definition": "不同植物激素在代谢层面相互影响：一种激素的含量变化可促进或抑制另一种激素的合成或作用。",
+      "importance": "掌握",
+      "examples": [
+        "生长素浓度升高到一定值促进乙烯合成；乙烯升高反过来抑制生长素作用"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt226",
+      "name": "激素相对含量决定效应",
+      "definition": "决定器官生长、发育的往往不是某种激素的绝对含量，而是不同激素的相对含量（如比值）。",
+      "importance": "掌握",
+      "examples": [
+        "黄瓜茎端：脱落酸/赤霉素比值高利于雌花分化，比值低利于雄花分化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt227",
+      "name": "激素调节的顺序性（接力式高峰）",
+      "definition": "在生长发育过程中，不同种激素的调节常表现出一定的时间顺序：多种激素含量像接力一样按次序出现高峰，共同调节器官发育成熟。",
+      "importance": "了解",
+      "examples": [
+        "猕猴桃果实发育过程中：细胞分裂素、生长素、赤霉素、脱落酸等含量按次序出现高峰"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt228",
+      "name": "植物生长调节剂",
+      "definition": "由人工合成的、对植物的生长和发育有调节作用的化学物质，具有与植物激素相似的化学性质或生理效应。",
+      "importance": "掌握",
+      "examples": [
+        "赤霉素",
+        "细胞分裂素类物质",
+        "吲哚丁酸",
+        "α-萘乙酸（NAA）",
+        "矮壮素",
+        "乙烯利",
+        "青鲜素",
+        "2,4-二氯苯氧乙酸（2,4-D）"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt229",
+      "name": "植物生长调节剂的类型（按分子结构）",
+      "definition": "从分子结构看，植物生长调节剂主要分为两大类：一类分子结构和生理效应与植物激素类似；另一类分子结构与植物激素完全不同，但具有与植物激素类似的生理效应。",
+      "importance": "了解",
+      "examples": [
+        "结构和生理效应与植物激素类似：吲哚丁酸（IBA）",
+        "结构不同但生理效应类似：α-萘乙酸（NAA）、矮壮素"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt230",
+      "name": "植物生长调节剂的施用原则（理性评估与规范使用）",
+      "definition": "在具体生产中是否施用、如何施用植物生长调节剂需要理性评估；使用效果与浓度、使用时期、使用方法等密切相关，应配合浇水施肥等措施并关注残留、毒性及对健康和环境的负面影响，同时遵守国家登记、许可与管理规定。",
+      "importance": "重要",
+      "examples": [
+        "选择恰当调节剂并综合考虑施用目的、效果和毒性、残留、价格与便利性",
+        "控制施用浓度、时间、部位、植物生理状态与气候条件",
+        "只使用取得农药登记并获得生产许可的产品"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt231",
+      "name": "植物生长调节剂浓度-效应关系（两重性）",
+      "definition": "某些植物生长调节剂对植物的生理作用与其浓度密切相关：适当浓度可促进特定生理过程，浓度过高可能抑制甚至产生毒害作用。",
+      "importance": "掌握",
+      "examples": [
+        "适当浓度2,4-D促进插条生根",
+        "浓度过高抑制生根；高浓度2,4-D甚至会杀死双子叶植物"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt232",
+      "name": "最适浓度",
+      "definition": "在一定条件下，使某一生理效应（如插条生根）达到最佳的植物生长调节剂浓度范围。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt233",
+      "name": "乙烯利释放乙烯（pH依赖分解）",
+      "definition": "乙烯利在溶液pH<3.5时较稳定；随着溶液pH升高会分解释放乙烯。",
+      "importance": "了解",
+      "formula": "pH < 3.5 稳定；pH升高 → 分解 → 释放乙烯"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt234",
+      "name": "乙烯的催熟作用（及诱导自身乙烯产生）",
+      "definition": "乙烯能促进水果成熟，并可诱导水果自身进一步产生乙烯，从而加速成熟过程。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt235",
+      "name": "实验变量（自变量、因变量与无关变量控制）",
+      "definition": "在探究实验中，自变量是研究者主动改变的因素（如调节剂浓度）；因变量是用于反映效应的检测指标（如根的数目）；无关变量需尽量控制（如处理时间一致、材料条件相同）。",
+      "importance": "掌握",
+      "examples": [
+        "自变量：生长素类调节剂浓度",
+        "因变量：根的数目",
+        "无关变量：处理时间、插条材料条件等"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt236",
+      "name": "环境因素调节植物生命活动",
+      "definition": "高等植物的生长发育会受到环境因素（如光、温度、重力等）的影响与调控，环境因素作为信号参与调节植物的萌发、生长、开花、衰老等过程。",
+      "importance": "重要",
+      "examples": [
+        "幼苗横放后茎弯曲向上、根弯曲向下",
+        "种子萌发受光调控",
+        "植物开花与昼夜长短相关"
+      ],
+      "aliases": [
+        "环境因素参与调节植物的生命活动"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt237",
+      "name": "光对植物生长发育的调节",
+      "definition": "光不仅是光合作用能量来源，还作为信号调控植物种子萌发、形态建成、开花等生长发育过程。",
+      "importance": "重要",
+      "examples": [
+        "莴苣种子在有光条件下才能萌发或萌发更好",
+        "豆芽见光后发生形态变化并长成豆苗",
+        "部分植物开花受昼夜长短影响"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt238",
+      "name": "光信号",
+      "definition": "光作为一种环境信号，能够被植物感知并通过信息传递影响基因表达，从而调控植物生长发育全过程。",
+      "importance": "掌握",
+      "examples": [
+        "红光、蓝光对植物生长发育关键"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt239",
+      "name": "光敏色素",
+      "definition": "植物体内能接受光信号的一类蛋白质（色素-蛋白复合体），主要吸收红光和远红光；受光后结构变化并经信息传递影响细胞核特定基因表达，从而产生生物学效应。",
+      "importance": "掌握",
+      "examples": [
+        "莴苣种子对红光/远红光处理的可逆萌发反应"
+      ],
+      "unit": null
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt240",
+      "name": "温度参与植物生长发育的调节",
+      "definition": "植物的生理活动在一定温度范围内进行，温度可通过影响种子萌发、植株生长、开花结果、叶的衰老和脱落等生命活动参与调节植物生长发育，并影响植物分布的地域性。",
+      "importance": "重要",
+      "examples": [
+        "季节温度变化导致发芽、开花、落叶、休眠的节律变化",
+        "昼夜温差导致代谢旺盛与缓慢差异"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt241",
+      "name": "年轮",
+      "definition": "温带地区树木随季节周期性变化形成的圈层结构，春夏细胞分裂快、体积大形成浅色带，秋冬细胞分裂慢、体积小形成深色带。",
+      "importance": "了解",
+      "examples": [
+        "树干上一圈圈年轮反映季节变化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt242",
+      "name": "春化作用",
+      "definition": "某些植物在生长期需要经历一段低温后才能开花的现象，低温诱导促进开花的作用称为春化作用。",
+      "importance": "掌握",
+      "examples": [
+        "冬小麦、冬大麦、蕙兰需要春化后开花"
+      ],
+      "aliases": [
+        "低温诱导开花"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt243",
+      "name": "重力对植物生长发育的调节",
+      "definition": "重力是调节植物生长发育和形态建成的重要环境因素；植物能感受重力并将重力信号转换为影响生长素运输的信号，导致生长素不均匀分布，进而调节生长方向。",
+      "importance": "重要",
+      "examples": [
+        "根向地生长、茎背地生长"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt244",
+      "name": "向地性",
+      "definition": "植物器官在重力刺激下朝向地心方向生长的反应，根通常表现为向地性。",
+      "importance": "掌握",
+      "examples": [
+        "幼苗横放后根弯曲向下"
+      ],
+      "aliases": [
+        "根向地生长"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt245",
+      "name": "背地性",
+      "definition": "植物器官在重力刺激下背离地心方向生长的反应，茎通常表现为背地性。",
+      "importance": "掌握",
+      "examples": [
+        "幼苗横放后茎弯曲向上"
+      ],
+      "aliases": [
+        "茎背地生长"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt246",
+      "name": "淀粉—平衡石假说",
+      "definition": "解释植物重力感受机制的普遍观点：植物通过富含淀粉体的平衡石细胞感受重力；当重力方向改变时淀粉体沿重力方向沉降，引发信号分子变化并影响生长素运输，导致生长素不对称分布，从而引起生长反应。",
+      "importance": "掌握",
+      "examples": [
+        "根尖中的平衡石细胞与淀粉体沉降"
+      ],
+      "aliases": [
+        "平衡石假说"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt247",
+      "name": "植物生长发育的整体调控",
+      "definition": "植物生长发育的调控由基因表达调控、激素调节和环境因素调节共同完成；细胞/器官间协调依赖激素传递信息，激素影响基因表达，且激素产生与分布受基因表达调控并受环境影响。",
+      "importance": "重要",
+      "examples": [
+        "植物响应环境变化，调控基因表达及激素产生、分布，最终表现为器官与个体水平变化"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt248",
+      "name": "激素调节（植物激素传递信息）",
+      "definition": "在多细胞植物体内，细胞与器官间的协调需要通过激素传递信息；激素作为信息分子影响细胞基因表达从而起调节作用，且激素产生与分布受基因表达调控并受环境因素影响。",
+      "importance": "掌握",
+      "aliases": [
+        "植物激素调节"
+      ]
+    },
+    {
+      "id": "biology_xzxbx1_rjb_cpt249",
+      "name": "昼夜长短（光周期）影响开花",
+      "definition": "许多植物的开花与昼夜长短有关，植物可依据白天时长是否超过或短于某一阈值来“决定”是否开花。",
+      "importance": "掌握",
+      "examples": [
+        "菠菜白天长度超过13小时才开花",
+        "菊、水稻白天短于一定时长才开花"
+      ],
+      "aliases": [
+        "光周期"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "biology_xzxbx1_rjb_skl1",
+      "name": "分类归纳（对复杂成分分类）",
+      "description": "面对血浆等复杂组成信息，依据物质性质或功能进行归类（如水、蛋白质、无机盐、营养物质、激素、代谢废物等），以把握主要成分与结构层次。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl2",
+      "name": "构建模式图/流程图表达系统关系",
+      "description": "用文字与箭头把血浆、组织液、淋巴液之间的动态联系，以及内环境与外界环境之间的物质交换关系进行结构化表示。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl3",
+      "name": "对照实验与比较分析",
+      "description": "设置不同材料/处理条件作为对照，通过比较实验结果（如pH变化幅度、曲线形态）来推断原因或机制。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl4",
+      "name": "数据记录与作图分析（曲线图）",
+      "description": "将实验测量数据系统记录在表格中，并以自变量为横坐标、因变量为纵坐标作图，通过曲线特征分析变化规律与差异。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl5",
+      "name": "用信息传递-处理-反应模型解释神经调节",
+      "description": "将神经调节过程抽象为：感觉器官获取信息→传入神经传至中枢→中枢分析处理并发出指令→传出神经将指令传至效应器（肌肉/腺体）→产生反应，用于解释快速而协调的生命活动调节。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl6",
+      "name": "比较法归纳自主与随意活动差异",
+      "description": "通过对两种情境（如惊恐与安静、运动与静坐）下心跳、呼吸、胃肠蠕动等变化进行比较，归纳其是否受意识支配及对应的神经调控类型（躯体运动神经/内脏运动神经、自主神经系统）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl7",
+      "name": "用“反射弧”分析反射过程",
+      "description": "将某一反射活动按环节分解为感受器→传入神经→神经中枢→传出神经→效应器，并据此判断某环节受损将导致反射不能完成。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl8",
+      "name": "分析条件反射形成与消退的因果过程",
+      "description": "基于“非条件反射为基础+条件刺激与非条件刺激反复结合+强化/不强化”的逻辑，判断条件反射是否建立、是否消退及其意义。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl9",
+      "name": "依据实验现象推断信号传递形式",
+      "description": "通过记录刺激前后电位变化或效应器反应，并结合对照条件，判断神经信号在某结构间以电信号还是化学信号形式传递。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl10",
+      "name": "依据现象推断神经中枢损伤部位（功能定位思维）",
+      "description": "根据“外周结构正常但功能缺失”的表现，推断调控该功能的中枢部位可能受损，并分析高级中枢—低级中枢之间的联系（如脑卒中导致运动不能、成人出现不受意识控制的排尿等）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl11",
+      "name": "用“分级中枢—通路—效应器”框架分析反射调控",
+      "description": "在分析某反射（如缩手反射、排尿反射）时，从低级中枢与高级中枢的分工协作出发，推测高级中枢通过脑干/脊髓等通路对低级中枢进行调整与控制，从而解释意识控制与精细调节的来源。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl12",
+      "name": "基于脑区功能定位解释功能障碍",
+      "description": "根据大脑皮层特定区域受损与相应功能缺失之间的对应关系，分析症状并推断可能受损的脑区（如言语区不同区域对应听、说、读、写障碍）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl13",
+      "name": "提出假设并设计对照实验检验",
+      "description": "围绕某影响因素提出可检验的假设，设计实验并设置对照、控制变量、记录数据以验证假设（如比较不同环境对记忆效果的影响）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl14",
+      "name": "运用记忆规律改进学习策略",
+      "description": "依据记忆由短时到长时的转化规律，通过注意、重复、强化及将新信息与已有知识整合等策略提高记忆保持与学习效率。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl15",
+      "name": "提出假说并用实验验证（验证假说）",
+      "description": "针对现象提出可检验的解释（假说），设计对照与操作，获得结果以支持或否定假说，并据结果修正认识。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl16",
+      "name": "控制变量与排除干扰（对照思想）",
+      "description": "在实验中通过切除神经、保留血管或设置不同处理组，排除无关因素干扰，使结果能归因于关键变量。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl17",
+      "name": "预测结果（基于假说进行推演）",
+      "description": "根据给定假说推导在不同处理条件下应出现的实验结果，并用真实结果对照检验假说。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl18",
+      "name": "分析稳态调节的“来源—去向”框架",
+      "description": "为解释某种体内物质浓度的稳定性，先明确该物质的主要来源与主要去向，再分析调节因素如何改变来源/去向的速率以实现动态平衡。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl19",
+      "name": "用负反馈模型解释内环境稳态",
+      "description": "识别“刺激—调节—效应—反向影响调节环节”的闭环结构，并用其解释变量回到正常范围的原因与意义。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl20",
+      "name": "建立分级调节（轴）因果链",
+      "description": "将“上级中枢（下丘脑）→垂体→靶腺→激素→靶细胞/生理效应”的层级关系串联，并标注反馈作用点。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl21",
+      "name": "比较分析（体液调节 vs 神经调节）",
+      "description": "从作用途径、反应速度、作用范围、作用时间等维度对两种调节方式进行对比，概括各自优势与适用情境。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl22",
+      "name": "调节过程链条构建（刺激—感受器—中枢—效应器—结果）",
+      "description": "把生理调节过程按“刺激→感受器→中枢→传出途径→效应器→生理效应→稳态结果”的因果链条进行结构化表达，用于解释体温、水盐等稳态的维持。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl23",
+      "name": "依据免疫学概念进行判断与归类",
+      "description": "能根据免疫系统的组成与功能等概念，对表述作正误判断，或将实例归入相应防线/免疫类型/免疫功能。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl24",
+      "name": "从病例情境解释免疫器官的反应",
+      "description": "能从免疫系统结构与功能角度解释生活/临床现象，如局部感染引起近端淋巴结肿大、扁桃体反复炎症与防御功能的关系等。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl25",
+      "name": "从“过程图/流程”建模免疫反应",
+      "description": "根据教材提供的免疫过程示意图，将免疫反应拆解为“参与细胞/信号—活化条件（信号1、信号2、细胞因子）—增殖分化—效应作用—形成记忆—恢复稳态”的流程，并用流程化语言表述。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl26",
+      "name": "对比分析两类免疫方式并归纳协同关系",
+      "description": "围绕“作用对象（细胞外/细胞内）—主要效应分子/细胞（抗体/细胞毒性T细胞）—关键调控细胞（辅助性T细胞）—共同目标（清除抗原、维持稳态）”进行比较，并归纳两者的衔接与互补。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl27",
+      "name": "基于免疫记忆解释“首次与再次应答差异”",
+      "description": "利用记忆细胞长期存活、再次遇同一抗原快速增殖分化的机制，解释或预测抗体水平曲线在首次/再次接触抗原时的差异，并能进行定性推断。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl28",
+      "name": "基于因果链解释生物学过程",
+      "description": "将“刺激/原因→细胞/分子反应→生理效应→临床表现”的因果链条串联起来解释生命现象或疾病机制，如用过敏原—抗体—细胞释放组胺—血管/平滑肌反应—症状来解释过敏反应。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl29",
+      "name": "基于传播途径制定预防策略",
+      "description": "先识别疾病传播途径（如性接触、血液、母婴），再针对每条途径提出可操作的切断措施并澄清非传播情境（如一般接触不传播）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl30",
+      "name": "基于免疫反应规律解释疫苗作用",
+      "description": "能用“外源抗原→免疫系统产生反应（特异性）→产生相应抗体→形成较持久免疫力（记忆性）”的链条解释疫苗为何能预防特定疾病，并能据此讨论接种后可能出现轻微反应等现象。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl31",
+      "name": "基于HLA差异解释器官移植排斥与配型必要性",
+      "description": "能用“细胞表面HLA作为身份标签→白细胞识别HLA差异→将移植物当作非己攻击→发生免疫排斥→通过HLA配型与免疫抑制提高成活率”的逻辑解释器官移植成败因素。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl32",
+      "name": "基于对照的实验设计与变量控制",
+      "description": "通过设置对照组/处理组、控制单一变量（如遮盖部位、去尖端、是否放置含生长素琼脂等），比较结果以推断因果关系。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl33",
+      "name": "从实验现象到机制模型的推理",
+      "description": "根据实验现象提出可检验的机制假说（如“尖端产生影响并向下传递”“影响为可扩散化学物质且分布不均导致弯曲”），并用后续实验逐步验证与修正。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl34",
+      "name": "评价实验结论的严密性（证据链与排他性）",
+      "description": "检查实验是否排除其他解释、结论是否由数据必然推出；必要时提出改进方案（如增加反向放置、无胚芽鞘对照、标记追踪等）以验证运输方向等结论。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl35",
+      "name": "基于证据推断因果（现象—原因）",
+      "description": "从观察到的现象或事实出发，借助实验/技术证据推断背后的原因或机制（例如由“催熟现象”推断“乙烯促进成熟”）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl36",
+      "name": "分析多因素共同调控与相互作用",
+      "description": "在同一生理过程中，综合比较多种激素的作用方向、强弱及相互关系（协同/拮抗/互作），形成对“调节网络”的解释框架。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl37",
+      "name": "用相对量（比值）解释生物学效应",
+      "description": "用不同激素的相对含量或比值来解释发育结果，而不是只看单一激素的绝对含量。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl38",
+      "name": "读取并解读激素含量动态变化图",
+      "description": "从随时间变化的曲线/图表中提取趋势与关键点（高峰、变化阶段），并据此推断激素在发育过程中的调控时序与作用。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl39",
+      "name": "预实验（先导试验）设计与实施",
+      "description": "在正式实验前先进行预实验，用于摸索条件并检验实验设计的科学性与可行性；例如先确定有效浓度的大致范围，再进一步细化梯度确定最适浓度。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl40",
+      "name": "浓度梯度设计",
+      "description": "根据天然含量或查阅资料设定一系列浓度水平；若信息不足可先用较大梯度预实验摸索，再在此基础上设计更合理的梯度用于正式实验。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl41",
+      "name": "数据可视化与曲线分析确定最适范围",
+      "description": "将实验数据作图（如以浓度为横坐标、效应指标为纵坐标）并依据曲线趋势确定最佳（最适）浓度范围。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl42",
+      "name": "设计对照实验验证因果关系",
+      "description": "围绕待验证的影响因素设置实验组与对照组，控制无关变量一致，通过比较结果判断该因素是否为原因或关键部位/条件。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_skl43",
+      "name": "基于证据的归纳推理（由现象/数据得出结论）",
+      "description": "从观察到的现象或实验数据出发，归纳出一般性结论，并用证据限定结论的适用范围。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "biology_xzxbx1_rjb_exp1",
+      "name": "模拟生物体维持pH的稳定（比较自来水、缓冲液和肝匀浆的pH变化）",
+      "instrument": [
+        "防护手套",
+        "护目镜",
+        "50 mL烧杯",
+        "50 mL量筒",
+        "pH计或pH试纸",
+        "镊子",
+        "自来水",
+        "0.1 mol/L HCl（滴瓶）",
+        "0.1 mol/L NaOH（滴瓶）",
+        "pH=7的磷酸盐缓冲液",
+        "肝匀浆"
+      ],
+      "is_student": 1,
+      "process": [
+        "分别取自来水/缓冲液/肝匀浆25 mL，测初始pH",
+        "分别逐滴加入0.1 mol/L HCl（0~30滴），每加一定滴数测pH并记录",
+        "分别逐滴加入0.1 mol/L NaOH（0~30滴），每加一定滴数测pH并记录",
+        "以滴数- pH作图，比较三者曲线差异"
+      ],
+      "phenomena": [
+        "加入酸或碱后，缓冲液的pH变化减弱；生物组织匀浆更类似于缓冲液"
+      ],
+      "conclusion": "缓冲对可减弱pH变化；生物体可能依赖内环境中的缓冲系统维持pH相对稳定。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp2",
+      "name": "蛙坐骨神经表面电位差实验（微电极记录）",
+      "instrument": "蛙的坐骨神经、两个微电极、电表（电位记录装置）、刺激装置",
+      "is_student": 0,
+      "process": "在蛙坐骨神经上放置两个微电极连接电表；静息时观察电表读数；在神经左侧一端给予刺激，依次观察靠近刺激端电极(a处)与另一电极(b处)的电位变化。",
+      "phenomena": "静息时电表无电位变化；刺激后a处先变为负电位后恢复为正，随后b处也变为负电位后恢复为正。",
+      "conclusion": "兴奋以电信号形式沿神经纤维传导，该电信号称神经冲动。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp3",
+      "name": "蛙心脏A-B营养液转移实验（判断神经-心肌信号性质）",
+      "instrument": "两个蛙心脏A、B（保持活性）、成分相同的营养液、刺激交感神经装置、移液工具",
+      "is_student": 0,
+      "process": "将A、B心脏置于相同营养液中，A受某副交感神经支配、B不受该神经支配；刺激该神经观察A心跳；取A心脏营养液注入B心脏营养液，观察B心跳变化。",
+      "phenomena": "刺激神经后A心脏跳动减慢；将A营养液注入B后B心脏跳动也减慢。",
+      "conclusion": "神经对心脏的作用可通过释放可扩散的化学物质实现（提示化学信号）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp4",
+      "name": "促胰液素发现实验（小肠黏膜提取液注射促胰液分泌）",
+      "instrument": [
+        "狗",
+        "手术器械（剪取小肠、刮取黏膜）",
+        "稀盐酸",
+        "研磨/制备提取液器具",
+        "注射器（静脉注射）"
+      ],
+      "is_student": 0,
+      "process": "剪下狗的一段小肠，刮下黏膜；将稀盐酸加入黏膜磨碎并制成提取液；将提取液注射到同一条狗的静脉中，观察胰腺分泌胰液情况。",
+      "phenomena": "注射提取液后能促进胰腺分泌胰液。",
+      "conclusion": "小肠黏膜在盐酸作用下产生可经血液运输并促进胰液分泌的化学物质——促胰液素，存在化学调节（激素调节）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp5",
+      "name": "胰岛素来源与降血糖作用验证实验（结扎胰管-提取液治疗糖尿病狗）",
+      "instrument": [
+        "狗",
+        "胰管结扎手术器械",
+        "胰腺摘除手术器械",
+        "胰腺提取液制备器具",
+        "注射器",
+        "血糖测定相关方法/器具（教材未细述）"
+      ],
+      "is_student": 0,
+      "process": "先将一只狗的胰管结扎使胰腺萎缩；摘除另一只健康狗的胰腺造成实验性糖尿病；从结扎狗取出萎缩后主要剩胰岛的胰腺制成提取液，注入糖尿病狗体内并观察血糖变化。",
+      "phenomena": "患病狗的血糖迅速下降，数天治疗后恢复正常。",
+      "conclusion": "胰腺中的胰岛分泌能降低血糖、治疗糖尿病的物质（胰岛素）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp6",
+      "name": "阉割与睾丸移植对雄性性征影响实验（睾丸分泌雄激素证据）",
+      "instrument": [
+        "公鸡（或其他雄性家禽/家畜）",
+        "摘除睾丸手术器械",
+        "性腺移植相关器械"
+      ],
+      "is_student": 0,
+      "process": "摘除公鸡睾丸，观察雄性性征变化；再将睾丸移植回体内，观察性征是否恢复。",
+      "phenomena": "摘除睾丸后雄性性征逐渐消失；移植回去后特征逐步恢复。",
+      "conclusion": "睾丸分泌影响雄性性征的激素（后被提取并证实为睾酮/雄激素）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp7",
+      "name": "达尔文胚芽鞘向光性实验（去尖端/遮盖尖端）",
+      "instrument": "金丝雀草胚芽鞘；锡箔罩（遮光材料）；单侧光源",
+      "is_student": 0,
+      "process": "在单侧光条件下，分别处理胚芽鞘：去掉尖端；用锡箔罩遮住尖端；遮住尖端下面一段；观察是否弯曲向光。",
+      "phenomena": "去尖端或遮住尖端则不弯曲；遮住尖端下面一段仍弯向光源。",
+      "conclusion": "尖端感受单侧光刺激并向下传递某种“影响”，导致伸长区背光面生长更快而弯曲。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp8",
+      "name": "鲍森·詹森实验（琼脂片传递影响）",
+      "instrument": "胚芽鞘；琼脂片；单侧光源",
+      "is_student": 0,
+      "process": "在尖端与下部之间放置琼脂片，观察尖端产生的“影响”是否可传递到下部。",
+      "phenomena": "尖端产生的“影响”可透过琼脂片传递给下部。",
+      "conclusion": "该“影响”具有可扩散、可通过琼脂传递的性质，提示可能为化学物质。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp9",
+      "name": "拜尔实验（影响分布不均导致弯曲）",
+      "instrument": "胚芽鞘；遮挡/放置装置（按图示）",
+      "is_student": 0,
+      "process": "通过处理使尖端产生的影响在下部两侧分布不均，观察弯曲方向与分布关系。",
+      "phenomena": "弯曲生长与尖端产生的影响在下部分布不均对应。",
+      "conclusion": "胚芽鞘弯曲源于尖端产生的化学影响在下部两侧分布不均匀。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp10",
+      "name": "温特实验（琼脂块携带生长素诱导弯曲）",
+      "instrument": "燕麦胚芽鞘尖端；琼脂块；切割工具",
+      "is_student": 0,
+      "process": "将切下的胚芽鞘尖端放在琼脂块上数小时后移去尖端；将处理过的琼脂块放在切去尖端的胚芽鞘一侧；对照为未接触尖端的琼脂块；观察生长与弯曲。",
+      "phenomena": "放置处理过的琼脂块时胚芽鞘朝对侧弯曲；放置未接触尖端的琼脂块则既不生长也不弯曲。",
+      "conclusion": "尖端产生的化学物质可被琼脂吸收并引起生长与弯曲；该物质被命名为生长素。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp11",
+      "name": "检测生长素运输方向的玉米胚芽鞘琼脂块实验（教材“评价实验设计和结论”）",
+      "instrument": "玉米胚芽鞘（切去顶端2mm）；含生长素琼脂块；不含生长素琼脂块",
+      "is_student": 1,
+      "process": "切去胚芽鞘顶端2mm；在形态学上端放含生长素琼脂、下端放不含生长素琼脂；一段时间后检测下端琼脂是否出现生长素。",
+      "phenomena": "检测发现下端琼脂块逐渐有了生长素。",
+      "conclusion": "（待评价）据此推断生长素从上端向下端运输，并且只能由上端到下端运输。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp12",
+      "name": "喷施赤霉菌培养基滤液诱导水稻幼苗出现恶苗病症状",
+      "instrument": "赤霉菌培养基滤液、喷施装置/喷壶、水稻幼苗（对照幼苗可选）",
+      "is_student": 0,
+      "process": "将赤霉菌培养基的滤液喷施到水稻幼苗上，观察幼苗是否出现与感染赤霉菌相似的恶苗病症状。",
+      "phenomena": "幼苗虽未感染赤霉菌但出现恶苗病症状（疯长等）。",
+      "conclusion": "培养基滤液中存在能致恶苗病的活性物质（后被分离命名为赤霉素）。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp13",
+      "name": "探索生长素类调节剂促进插条生根的最适浓度",
+      "instrument": "一年生枝条（插条）、蒸馏水、花盆、细沙、生长素类调节剂（NAA/2,4-D/吲哚丙酸/IBA之一）及说明书所列材料",
+      "is_student": 1,
+      "process": "设计浓度梯度（可先做预实验确定有效范围）；选用浸泡法或沾蘸法处理插条；扦插并记录生根情况；以浓度为横坐标、根数为纵坐标绘制曲线并确定最适浓度范围。",
+      "phenomena": "不同浓度处理下插条生根数量不同，可能出现促进、抑制甚至毒害差异。",
+      "conclusion": "存在使某植物插条生根效果最佳的生长素类调节剂最适浓度范围；浓度过高可抑制生根甚至产生毒害。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp14",
+      "name": "尝试利用乙烯利催熟水果",
+      "instrument": "实验用水果、乙烯利（液体）、必要防护用品、通风环境（及实验方案所需器材）",
+      "is_student": 1,
+      "process": "小组确定水果材料与实验方案；用乙烯利处理并与对照比较成熟变化；完成探究报告（注意防护与通风、防火）。",
+      "phenomena": "乙烯利处理可促进水果成熟，成熟速度可能快于对照。",
+      "conclusion": "乙烯利可通过分解释放乙烯而促进水果成熟，并可诱导水果自身产生乙烯加速成熟。"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exp15",
+      "name": "验证植物根向地性的感受部位在根冠",
+      "instrument": "刚萌发的玉米粒（种子/颖果）、培养皿、湿棉花（或等效保湿基质）",
+      "is_student": 1,
+      "process": "以刚萌发玉米粒为材料在湿棉花上培养；设计实验组与对照组以检验“是否由根冠感受重力引起根向地生长”，比较不同处理下根生长方向的差异。",
+      "conclusion": "（待学生实验验证）若根冠受损/隔离导致向地性减弱或消失，而对照正常，则支持根冠为重力感受部位。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "biology_xzxbx1_rjb_exe1",
+      "type": "简答题",
+      "stem": "血浆、组织液和淋巴液通过动态的有机联系，共同构成机体内细胞生活的直接环境。为了区别于个体生活的外界环境，人们把这个由细胞外液构成的液体环境叫什么？并写出其主要组成成分。",
+      "answer": "叫“内环境”；其主要由细胞外液构成，细胞外液主要包括血浆、组织液和淋巴液。",
+      "analysis": "抓住教材原句：内环境=由细胞外液构成的液体环境；细胞外液包括血浆、组织液、淋巴液。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe2",
+      "type": "简答题",
+      "stem": "简述渗透压的含义，并说明细胞外液渗透压大小主要与哪些成分有关；在细胞外液无机盐离子中，对渗透压贡献最大的离子是什么？",
+      "answer": "渗透压是溶液中溶质微粒对水的吸引力，取决于单位体积溶液中溶质微粒数目；血浆渗透压大小主要与无机盐、蛋白质含量有关；细胞外液渗透压90%以上来源于Na+和Cl-。",
+      "analysis": "按定义—决定因素—具体到血浆—指出主要离子贡献的结构作答。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe3",
+      "type": "判断题",
+      "stem": "稳态是生命系统的特征，也是机体存活的条件。判断下列与人体稳态有关的表述是否正确：\n(1) 人吃进酸性或碱性的食物会使血浆pH发生紊乱。( )\n(2) 有的人常吃咸鱼、咸菜，但他细胞外液的渗透压仍能保持相对稳定。( )\n(3) 在正常情况下，一个人的体温是恒定不变的。( )\n(4) CO2是人体细胞呼吸产生的废物，不参与维持内环境的稳态。( )",
+      "answer": "(1) 错；(2) 对；(3) 错；(4) 错。",
+      "analysis": "稳态是动态平衡：pH、渗透压、体温等在一定范围内波动但可维持相对稳定；CO2参与HCO3-/H2CO3缓冲系统，与pH稳态相关。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe4",
+      "type": "选择题",
+      "stem": "在长跑比赛时，运动员体内大量产热、出汗等。下列相关叙述正确的是( )\nA. 大量产热会使体温急剧升高\nB. 大量出汗会使血浆的pH下降\nC. 大量出汗可使血浆渗透压降低\nD. 大量出汗有利于机体体温的稳定",
+      "answer": "D",
+      "analysis": "出汗通过蒸发散热有利于维持体温稳态；其余选项表述为“必然/急剧/一定”不符合稳态的动态调节特征或因果不充分。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe5",
+      "type": "判断题",
+      "stem": "判断题：传入神经把信息从中枢神经系统传到效应器，传出神经把信息从感觉器官传到中枢神经系统。（  ）",
+      "answer": "错。传入神经将接受到的信息传递到中枢神经系统；传出神经将中枢发出的指令信息传输到相应器官。",
+      "analysis": "考查传入神经与传出神经的功能方向。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe6",
+      "type": "简答题",
+      "stem": "简答题：为什么人可以随意控制奔跑等四肢运动，却不能随意控制心跳加快或胃肠蠕动？",
+      "answer": "奔跑等躯体运动由躯体运动神经支配，明显受意识支配；心跳、呼吸、胃肠蠕动等由内脏运动神经（自主神经系统）控制，其活动不受意识支配，通常是非随意的。",
+      "analysis": "将随意运动与自主调节对照，落实躯体运动神经、内脏运动神经与自主神经系统概念。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe7",
+      "type": "简答题",
+      "stem": "反射弧通常由哪些结构组成？若反射弧中某一环节在结构或功能上受损，会出现什么结果？",
+      "answer": "反射弧通常由感受器、传入神经、神经中枢、传出神经和效应器组成；如果反射弧中任何环节在结构或功能上受损，反射就不能完成。",
+      "analysis": "直接依据教材对反射弧组成与“完整反射弧”要求的表述作答。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe8",
+      "type": "判断题",
+      "stem": "判断题：缩手反射和膝跳反射都属于条件反射。（  ）并说明理由。",
+      "answer": "错误。缩手反射和膝跳反射都是与生俱来的反射，属于非条件反射。",
+      "analysis": "依据教材“缩手反射和膝跳反射都是与生俱来的……出生后无须训练就具有的反射叫作非条件反射”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe9",
+      "type": "简答题",
+      "stem": "在“铃声—唾液分泌”实验中：最初铃声属于什么刺激？经过多次“先铃声后喂食”的配对训练后，铃声转化为什么刺激？如果之后只给铃声不喂食，反射会怎样变化？",
+      "answer": "最初铃声属于无关刺激；配对训练后铃声转化为条件刺激并能引起条件反射；之后只给铃声不喂食，条件反射会逐渐减弱直至消退。",
+      "analysis": "按教材图2-5与“强化/不强化导致维持/消退”的描述逐步回答。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe10",
+      "type": "简答题",
+      "stem": "在蛙坐骨神经上放置两个微电极a、b并连接电表。静息时电表无电位变化；刺激神经左端后，先在a处记录到“负电位→恢复正电位”，随后在b处也记录到“负电位→恢复正电位”。据此判断：兴奋在神经纤维上主要以什么形式传导？这种信号叫什么？",
+      "answer": "以电信号形式沿神经纤维传导；这种电信号叫神经冲动。",
+      "analysis": "两电极处电位变化先后出现，说明信号沿神经纤维传播且伴随膜电位改变，因此为电信号；教材将其命名为神经冲动。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe11",
+      "type": "简答题",
+      "stem": "神经纤维某部位受刺激后，膜对Na+通透性增加、Na+内流，膜两侧出现暂时性电位变化。问：此时该部位膜电位称为什么？与静息电位相比，膜两侧电位表现有何不同？",
+      "answer": "称为动作电位；静息电位为内负外正，而动作电位表现为内正外负（暂时性）。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe12",
+      "type": "判断题",
+      "stem": "基于对神经系统分级调节的理解，判断下列表述是否正确：\n（1）脑与脊髓中的神经中枢分工明确，独立地调控机体的生命活动。（ ）\n（2）自主神经系统是不受意识控制的，因此它对机体活动的调节与大脑皮层无关。（ ）",
+      "answer": "（1）错误。（2）错误。",
+      "analysis": "（1）教材指出不同部位中枢对同一生理活动分工合作、共同调控，并非“独立”。（2）教材指出“大脑皮层是许多低级中枢活动的高级调节者…这就使得自主神经系统并不完全自主”，因此与大脑皮层有关。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe13",
+      "type": "选择题",
+      "stem": "因交通事故，某人的脊髓不幸从胸部折断了，一般情况下会表现出（ ）\nA. 膝跳反射存在, 针刺足部有感觉\nB. 膝跳反射存在, 针刺足部无感觉\nC. 膝跳反射不存在, 针刺足部有感觉\nD. 膝跳反射不存在, 针刺足部无感觉",
+      "answer": "B",
+      "analysis": "膝跳反射的神经中枢位于脊髓（通常在腰段），胸段折断一般不破坏该反射弧，因此膝跳反射仍可存在；但胸段脊髓折断会阻断来自足部的感觉传导通路向上传至大脑，通常表现为针刺足部无感觉。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe14",
+      "type": "判断题",
+      "stem": "判断：人类语言活动中的听、说、读、写分别由大脑皮层不同的区域控制，它们相互独立。（ ）",
+      "answer": "错误。听、说、读、写虽由言语区不同区域分别负责，但语言活动是与大脑皮层某些特定区域相关的整体活动，相关脑区通过神经通路相互联系，不是相互独立。",
+      "analysis": "题干将“分区负责”误解为“相互独立”。教材强调言语区损伤会出现不同障碍，提示分工；同时语言活动依赖多个脑区与通路协同，不能认为互不相关。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe15",
+      "type": "判断题",
+      "stem": "判断：经常运用已学过的生物学概念去解释相关的生命现象，概念就不容易遗忘。（ ）",
+      "answer": "正确。反复运用与强化可延长信息在记忆阶段中的停留并更易转入长时记忆；将新信息与已有信息整合也有利于长久保持。",
+      "analysis": "对应教材中“反复运用、强化”“将新信息与已有的信息整合”“长年累月运用则不易遗忘”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe16",
+      "type": "简答题",
+      "stem": "促胰液素调节胰液分泌的方式与神经调节的方式有哪些不同？",
+      "answer": "促胰液素调节属于化学调节：小肠黏膜产生化学物质进入血液，随血流到达胰腺引起胰液分泌；神经调节则依赖神经兴奋的传导，通过神经通路迅速作用于效应器官。两者信息传递载体不同（激素/血液 vs 神经冲动/神经）、途径不同（体液运输 vs 神经传导），作用特点通常也不同（体液调节相对较慢但作用较持久，神经调节较快而相对短暂）。",
+      "analysis": "从教材中“化学调节——…进入血液后…到达胰腺”与此前学界“胃酸刺激小肠的神经…传给胰腺”两段对照概括差异。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe17",
+      "type": "简答题",
+      "stem": "根据思维训练表格：在胚胎生殖系统分化之前摘除将发育为卵巢或睾丸的组织后，XY个体外生殖器表现为雌性，XX个体外生殖器仍为雌性。该结果验证了假说1还是假说2？",
+      "answer": "验证了假说1。因为XY个体在缺失睾丸来源激素信号时发育为雌性外生殖器，符合“发育出雄性器官需要来自睾丸提供的激素信号，当这一信号缺失时，胚胎发育出雌性器官”。",
+      "analysis": "用“结果与假说预测一致”进行判定：关键证据是XY在摘除性腺组织后由雄转雌。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe18",
+      "type": "应用题",
+      "stem": "马拉松运动员每小时至少消耗300 g糖类。正常人的血糖浓度为3.9～6.1 mmol/L，全身血量约5 L。若仅靠血液中的葡萄糖供能，按血糖浓度取6.1 mmol/L、葡萄糖摩尔质量180 g/mol 估算，运动员大约能维持运动多长时间？",
+      "answer": "血液中葡萄糖的物质的量≈6.1 mmol/L×5 L=30.5 mmol=0.0305 mol；质量≈0.0305 mol×180 g/mol≈5.49 g。可维持时间≈5.49 g÷(300 g/h)≈0.0183 h≈1.1 min（约1分钟）。",
+      "analysis": "将血糖浓度换算为全血中葡萄糖总量，再与单位时间消耗量比较得到可维持时间。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe19",
+      "type": "判断题",
+      "stem": "根据表3-1关于体液调节与神经调节特点的比较，判断下列说法正误：\n(1) 体液调节反应速度通常比神经调节快。\n(2) 神经调节作用范围通常较局限、作用时间较短。\n(3) 体液调节主要通过体液运输，作用范围较广泛、作用时间较长。",
+      "answer": "(1) 错；(2) 对；(3) 对。",
+      "analysis": "依据表3-1：体液调节“较缓慢、较广泛、比较长”，神经调节“迅速、准确且比较局限、短暂”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe20",
+      "type": "简答题",
+      "stem": "当人饮水不足导致细胞外液渗透压升高时，机体通过哪些途径使渗透压趋向恢复正常？请按“刺激—感受器/中枢—效应—结果”简要表述。",
+      "answer": "刺激：细胞外液渗透压升高；感受器/中枢：下丘脑渗透压感受器受刺激；效应：一方面刺激传至大脑皮层产生渴觉使饮水增加；另一方面促使下丘脑分泌、垂体释放抗利尿激素增加，使肾小管和集合管对水重吸收增强、尿量减少；结果：体内水分保留/摄入增加，使细胞外液渗透压趋向恢复正常。",
+      "analysis": "题干对应教材对渗透压调节的两条通路：渴觉与ADH途径，并以肾为主要执行器官。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe21",
+      "type": "选择题",
+      "stem": "被免疫细胞识别的外来分子是 (   )\nA. 抗体\nB. 抗原\nC. 细胞因子\nD. 溶菌酶",
+      "answer": "B",
+      "analysis": "抗原是“能引发免疫反应的物质”，可与免疫细胞表面受体结合并被识别；抗体、细胞因子、溶菌酶属于免疫活性物质。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe22",
+      "type": "选择题",
+      "stem": "某患者被确诊为肿瘤，这与该患者免疫系统某功能低下有关。这项功能是 （）\nA. 免疫防御\nB. 免疫自稳\nC. 免疫监视\nD. 免疫识别",
+      "answer": "C",
+      "analysis": "免疫监视的定义是识别并清除突变细胞、防止肿瘤发生；功能低下或失调会出现肿瘤发生。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe23",
+      "type": "判断题",
+      "stem": "依据免疫系统组成和功能的知识判断下列表述是否正确：\n（1）细胞因子可以由免疫细胞合成并分泌。（）\n（2）人体内的白细胞可以抗击多种细菌，因此属于人体的第三道防线。（）",
+      "answer": "（1）正确。（2）错误。",
+      "analysis": "（1）教材指出“淋巴细胞分泌的细胞因子”等，说明细胞因子可由免疫细胞合成分泌；（2）第一、二道防线属于非特异性免疫，可对多种病原体防御；第三道防线为特异性免疫，针对特定抗原。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe24",
+      "type": "选择题",
+      "stem": "关于浆细胞和细胞毒性T细胞在免疫反应中的作用，叙述正确的是( )\nA. 前者参与细胞免疫，后者参与体液免疫\nB. 前者直接杀死病原体，后者杀死靶细胞\nC. 前者分泌抗体，后者杀死受病原体感染的细胞\nD. 病原体首次进入机体时，前者发挥作用；再次进入机体时，后者发挥作用",
+      "answer": "C",
+      "analysis": "浆细胞由B细胞分化而来，功能是分泌抗体（体液免疫）；细胞毒性T细胞是细胞免疫效应细胞，能裂解被感染的靶细胞。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe25",
+      "type": "判断题",
+      "stem": "依据特异性免疫的基本过程，判断下列表述是否正确：\n(1) T细胞只参与细胞免疫，B细胞只参与体液免疫。( )\n(2) B细胞只要接受了相应抗原的直接刺激就会分泌特异性抗体。( )",
+      "answer": "(1) 错；(2) 错",
+      "analysis": "(1) 辅助性T细胞在体液免疫中为B细胞活化提供第二信号并分泌细胞因子，因此T细胞不只参与细胞免疫。(2) B细胞活化需要两个信号刺激且需要细胞因子作用，活化后分化为浆细胞才分泌抗体。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe26",
+      "type": "简答题",
+      "stem": "过敏反应为何常发生在“再次接触相同抗原”时？请用教材所述机理简要解释。",
+      "answer": "首次接触过敏原时，在其刺激下B细胞活化产生相应抗体，抗体可吸附在皮肤、呼吸道或消化道黏膜以及血液中某些细胞（如肥大细胞）表面；当相同过敏原再次进入机体时，与细胞表面相应抗体结合，促使细胞释放组胺等，引起血管扩张、通透性增强、平滑肌收缩和腺体分泌增多，从而出现过敏症状。",
+      "analysis": "考查对“已免疫个体再次接触相同抗原→抗体已预先存在并吸附于细胞表面→介质释放→症状”的因果链理解。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe27",
+      "type": "判断题",
+      "stem": "判断题：与HIV感染者握手、拥抱等一般接触会使人感染HIV。（对/错）",
+      "answer": "错。教材指出与HIV感染者的一般接触，如握手、拥抱等，不会使人感染HIV。",
+      "analysis": "考查对艾滋病传播途径与非传播情境的区分。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe28",
+      "type": "简答题",
+      "stem": "疫苗（vaccine）通常用什么材料制成？接种疫苗后为什么能对特定传染病具有抵抗力？",
+      "answer": "疫苗通常用灭活的或减毒的病原体制成。接种后相当于给机体输入外源抗原，免疫系统产生具有特异性的免疫反应，产生相应抗体，并形成一定的免疫记忆，从而对特定传染病具有抵抗力。",
+      "analysis": "对应教材对“疫苗”的定义及“免疫反应具有特异性、记忆性”的表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe29",
+      "type": "简答题",
+      "stem": "器官移植为什么容易失败？在进行器官移植前为什么要做配型（检查组织相容性）？",
+      "answer": "移植后免疫系统会把来自他人的器官当作“非己”成分进行攻击，发生免疫排斥反应，导致移植容易失败。每个人细胞表面的组织相容性抗原（HLA）不同，白细胞能识别HLA差异并发起攻击；因此移植前需做配型，使供者与受者HLA尽量一致或相近，以提高成活率（必要时配合免疫抑制剂）。",
+      "analysis": "抓住“非己识别—HLA—免疫排斥—配型”的因果链。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe30",
+      "type": "简答题",
+      "stem": "在单侧光照射下，某禾本科植物胚芽鞘出现向光弯曲。达尔文实验中：A. 去掉胚芽鞘尖端；B. 用锡箔罩住尖端；C. 用锡箔罩住尖端下面一段。问：哪几种处理会使胚芽鞘不发生向光弯曲？并简述由此可以推断尖端在向光性中的作用。",
+      "answer": "处理A和B不发生向光弯曲；处理C仍会向光弯曲。推断：胚芽鞘尖端负责感受单侧光刺激并产生/传递某种“影响”到下部伸长区，导致两侧生长不均从而弯曲。",
+      "analysis": "对照三种处理的结果：只有当尖端被去除或被遮光时弯曲消失，说明尖端是感光与产生信号（影响）的关键部位；遮住尖端下方不影响弯曲，说明下部本身不是感光中心。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe31",
+      "type": "简答题",
+      "stem": "温特实验中，将接触过胚芽鞘尖端的琼脂块放在切去尖端的胚芽鞘一侧，胚芽鞘会朝对侧弯曲；若换成未接触过尖端的琼脂块，则既不生长也不弯曲。问：这一对照说明了什么？",
+      "answer": "说明胚芽鞘尖端能产生一种可扩散到琼脂中的化学物质，该物质能促进伸长并在一侧分布较多时引起两侧生长不均而弯曲；未接触尖端的琼脂不含该物质，因此不引起生长和弯曲。该物质即生长素。",
+      "analysis": "对照的关键是“是否接触尖端”这一单一变量。只有处理过的琼脂产生效应，排除了琼脂本身导致弯曲的可能，支持“化学物质引起生长”的结论。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe32",
+      "type": "简答题",
+      "stem": "在调节种子萌发的过程中，若某激素促进萌发、另一激素抑制萌发，则这两种激素之间属于哪种作用关系？请举出教材中的一对激素作为例子。",
+      "answer": "属于拮抗作用。例子：赤霉素促进种子萌发，脱落酸抑制种子萌发。",
+      "analysis": "同一过程作用效果相反即为拮抗；教材明确给出赤霉素与脱落酸在种子萌发中的相反作用。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe33",
+      "type": "简答题",
+      "stem": "说明生长素与细胞分裂素在细胞分裂调控中的分工与关系。",
+      "answer": "生长素主要促进细胞核分裂，细胞分裂素主要促进细胞质分裂，二者协调促进细胞分裂的完成，表现为协同作用。",
+      "analysis": "题干要求“分工+关系”，对应教材对两者作用部位与协同的表述。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe34",
+      "type": "简答题",
+      "stem": "某小组用2,4-D处理同种插条探究生根效果。结果发现：低浓度时根数增加，高浓度时根数减少，极高浓度时插条死亡。请概括2,4-D对插条生根作用与浓度的关系，并说明在生产上为什么要寻找“最适浓度范围”。",
+      "answer": "关系：2,4-D对插条生根的作用与浓度密切相关，适当浓度促进生根，浓度过高抑制生根，极高浓度会产生毒害甚至致死。原因：不同浓度效果差异大，只有找到最适浓度范围才能在保证安全的前提下获得最佳促根效果，避免因浓度过高造成减产或损失。",
+      "analysis": "抓住“促进—抑制—毒害”的两重性，并联系生产应用中追求最大效益与风险控制。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe35",
+      "type": "简答题",
+      "stem": "乙烯利溶液在pH<3.5时较稳定，pH升高会分解释放乙烯。请解释乙烯利能催熟水果的原理，并指出一个使用乙烯利时需要注意的安全事项。",
+      "answer": "原理：乙烯利在一定条件下分解释放乙烯，乙烯对水果有催熟作用，并可诱导水果自身产生乙烯，从而加速成熟。安全事项：乙烯利对皮肤、黏膜有刺激性，操作需做好防护并在通风良好处进行；且遇明火可燃烧需防火（答出其一即可）。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe36",
+      "type": "简答题",
+      "stem": "科学家用红光和红外光依次照射的方法，对一批莴苣种子进行处理，然后置于暗处。一段时间后，发芽情况：对照组（无光）不发芽；组1（红光）发芽；组2（红光→红外光）不发芽；组3（红光→红外光→红光）发芽；组4（红光→红外光→红光→红外光）不发芽。(1) 由上述实验结果可以得出什么结论？",
+      "answer": "莴苣种子萌发受光信号调控：红光可促进萌发，而远红光（红外光）可抵消/逆转红光促进萌发的效应；且这种促进与抑制可随最后一次照射光质（红光或远红光）而可逆转换，说明存在可在红光/远红光间转化的光受体（光敏色素）参与调控。",
+      "analysis": "比较各组发现：只要最后一次处理是红光则发芽，最后一次是远红光则不发芽；体现红光与远红光的拮抗与可逆性，指向光敏色素介导的光调控。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_xzxbx1_rjb_exe37",
+      "type": "判断题",
+      "stem": "判断下列表述是否正确：(1) 植物的生长发育完全由植物激素控制。(2) 调控植物生长发育的环境因素有光照、温度、重力等。(3) 植物的生长发育受基因表达的调控。",
+      "answer": "(1) 错。(2) 对。(3) 对。",
+      "analysis": "教材指出植物生长发育的调控由基因表达调控、激素调节和环境因素调节共同完成，因此“完全由激素控制”错误，其余两项与原文一致。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 249,
+    "skill_count": 43,
+    "experiment_count": 15,
+    "question_count": 37
+  }
+}

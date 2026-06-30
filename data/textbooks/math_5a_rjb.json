@@ -1,0 +1,700 @@
+{
+  "id": "math_5a_rjb",
+  "stage": "小学",
+  "grade": "五年级上册",
+  "subject": "数学",
+  "title": "数学五年级上册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/math.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "math_5a_rjb_cpt1",
+      "name": "小数乘整数",
+      "definition": "用一个小数与一个整数相乘，先按整数乘法计算，再根据因数中的小数位数确定积中的小数点位置。",
+      "importance": "重要",
+      "examples": [
+        "9.5×3=28.5"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt2",
+      "name": "小数乘小数",
+      "definition": "小数与小数相乘时，先按整数相乘，再根据两个因数中小数位数之和确定积中的小数点位置。",
+      "importance": "重要",
+      "examples": [
+        "2.4×0.8=1.92"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt3",
+      "name": "小数点位置确定规则",
+      "definition": "在小数乘法中，积的小数位数等于两个因数小数位数之和。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5a_rjb_cpt4",
+      "name": "小数乘法中的数量关系",
+      "definition": "一个数（0除外）乘大于1的数，积比原数大；乘小于1的数，积比原数小。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5a_rjb_cpt5",
+      "name": "乘法运算律在小数中的适用",
+      "definition": "小数乘法同样满足交换律、结合律和分配律，可用于简便计算。",
+      "importance": "掌握",
+      "examples": [
+        "0.65×202 = 0.65×200 + 0.65×2"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt6",
+      "name": "数对",
+      "definition": "用一对按照先后顺序排列的数来表示位置，通常第一个数表示列（或横向距离），第二个数表示行（或纵向距离）。",
+      "importance": "重要",
+      "examples": [
+        "张亮的位置用数对（2,3）表示。教材原文第1页"
+      ],
+      "pages": "第1页"
+    },
+    {
+      "id": "math_5a_rjb_cpt7",
+      "name": "在方格图上确定位置",
+      "definition": "通过横向和纵向的格子数量来确定某个点或物体在方格图上的准确位置。",
+      "importance": "掌握",
+      "examples": [
+        "动物园示意图、识字表中的点位标注"
+      ],
+      "pages": "多页"
+    },
+    {
+      "id": "math_5a_rjb_cpt8",
+      "name": "位置的描述",
+      "definition": "根据方向和距离描述物体的位置，例如‘以东400米，再往北300米’。",
+      "importance": "了解",
+      "examples": [
+        "图书馆的位置：以东400m，再往北300m"
+      ],
+      "pages": "第8题"
+    },
+    {
+      "id": "math_5a_rjb_cpt9",
+      "name": "平移与位置变化",
+      "definition": "图形中的点按相同方向和距离移动，所有点的数对同时进行相应变化。",
+      "importance": "掌握",
+      "examples": [
+        "三角形各顶点平移5个单位"
+      ],
+      "pages": "第6题"
+    },
+    {
+      "id": "math_5a_rjb_cpt10",
+      "name": "除数是整数的小数除法",
+      "definition": "在除数为整数的情况下，用竖式按整数除法的方法进行小数除法计算，按照商中小数点与被除数对齐的规则进行。",
+      "importance": "重要",
+      "pages": "教材第3章前半部分"
+    },
+    {
+      "id": "math_5a_rjb_cpt11",
+      "name": "除数是小数的小数除法",
+      "definition": "通过同时将除数和被除数乘以相同的10、100等，使除数化为整数，再按除数是整数的小数除法进行计算。",
+      "importance": "重要",
+      "pages": "教材第3章中段"
+    },
+    {
+      "id": "math_5a_rjb_cpt12",
+      "name": "小数点移动规则",
+      "definition": "当将除数变为整数时，除数的小数点向右移动几位，被除数的小数点也向右移动相同的位数。",
+      "importance": "掌握"
+    },
+    {
+      "id": "math_5a_rjb_cpt13",
+      "name": "有限小数",
+      "definition": "小数部分的位数有限的十进制小数。",
+      "importance": "了解"
+    },
+    {
+      "id": "math_5a_rjb_cpt14",
+      "name": "循环小数",
+      "definition": "小数部分从某一位起，数字按一定节奏无限重复出现的小数。",
+      "importance": "掌握",
+      "examples": [
+        "5.333…",
+        "7.14545…"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt15",
+      "name": "商的近似数",
+      "definition": "对除法的结果根据需要按“四舍五入”规则保留指定位数的小数。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5a_rjb_cpt16",
+      "name": "可能性",
+      "definition": "在一个随机事件中，不同结果发生的机会大小。",
+      "importance": "重要",
+      "examples": [
+        "从盒子里随机摸球，摸出不同颜色球的可能性大小不同。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt17",
+      "name": "一定事件",
+      "definition": "在给定情境中必然发生的事件。",
+      "importance": "掌握",
+      "examples": [
+        "盒子里全是黄球，摸出的一定是黄球。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt18",
+      "name": "不可能事件",
+      "definition": "在一定条件下必然不会发生的事件。",
+      "importance": "掌握",
+      "examples": [
+        "盒子里没有蓝球，摸出蓝球是不可能的。",
+        "抽到的数字是0",
+        "骰子点数为7"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt19",
+      "name": "可能事件",
+      "definition": "在给定情境中可能发生也可能不发生的事件。",
+      "importance": "掌握",
+      "examples": [
+        "盒子里有红球也有黄球，摸出任一种颜色都属于可能事件。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt20",
+      "name": "可能性大小比较",
+      "definition": "通过数量、面积等方式比较不同结果的发生机会大小。",
+      "importance": "重要",
+      "examples": [
+        "转盘某颜色区域越大，停在该颜色的可能性越大。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt21",
+      "name": "用字母表示数",
+      "definition": "用字母表示任意数值或数量关系，如a+30表示爸爸年龄。",
+      "importance": "重要",
+      "examples": [
+        "a+30",
+        "6x"
+      ],
+      "pages": "第5章开头"
+    },
+    {
+      "id": "math_5a_rjb_cpt22",
+      "name": "运算律的字母表示",
+      "definition": "用字母简明表示加法、乘法的交换律、结合律和分配律。",
+      "importance": "掌握",
+      "examples": [
+        "a+b=b+a",
+        "a(b+c)=ab+ac"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt23",
+      "name": "等式的性质",
+      "definition": "等式两边同时加、减、乘、除同一个数（除0外）仍保持相等。",
+      "importance": "重要",
+      "examples": [
+        "a=b → a+3=b+3"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt24",
+      "name": "方程",
+      "definition": "含有未知数的等式，由已知数与用字母表示的未知数组成，表达数量之间的相等关系。",
+      "importance": "重要",
+      "examples": [
+        "100+x=250",
+        "3x=18"
+      ],
+      "aliases": [
+        "equation"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt25",
+      "name": "解方程",
+      "definition": "利用等式性质求使方程成立的未知数的值。",
+      "importance": "重要",
+      "examples": [
+        "3x=18 → x=6"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt26",
+      "name": "用方程解决实际问题",
+      "definition": "根据问题中的数量关系列出方程并求解。",
+      "importance": "重要"
+    },
+    {
+      "id": "math_5a_rjb_cpt27",
+      "name": "平行四边形的面积",
+      "definition": "平行四边形的面积等于它的底乘以高。",
+      "importance": "重要",
+      "formula": "S = a × h",
+      "pages": "教材第6章前半部分"
+    },
+    {
+      "id": "math_5a_rjb_cpt28",
+      "name": "三角形的面积",
+      "definition": "三角形的面积等于底乘以高再除以2。",
+      "importance": "重要",
+      "formula": "S = a × h ÷ 2",
+      "pages": "教材第6章中部"
+    },
+    {
+      "id": "math_5a_rjb_cpt29",
+      "name": "梯形的面积",
+      "definition": "梯形的面积等于上底与下底的和乘以高再除以2。",
+      "importance": "重要",
+      "formula": "S = (a + b) × h ÷ 2",
+      "pages": "教材第6章后部"
+    },
+    {
+      "id": "math_5a_rjb_cpt30",
+      "name": "面积转化方法",
+      "definition": "通过分割、平移、拼合等方式将复杂图形转化为已知面积公式的简单图形，面积保持不变。",
+      "importance": "掌握",
+      "pages": "多个示例，如三角形、梯形面积的推导"
+    },
+    {
+      "id": "math_5a_rjb_cpt31",
+      "name": "数方格估计面积",
+      "definition": "利用方格纸，通过数满格和半格近似估计不规则图形面积的方法。",
+      "importance": "了解",
+      "pages": "不规则图形面积估计部分"
+    },
+    {
+      "id": "math_5a_rjb_cpt32",
+      "name": "植树问题",
+      "definition": "在一定长度的道路或周长上按固定间隔设置物体（如树、灯、旗等），根据是否在两端放置来确定数量的数学问题。",
+      "importance": "重要",
+      "examples": [
+        "在100米长的路一侧每隔5米栽一棵树，两端都要栽。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt33",
+      "name": "间隔数与棵树数的关系",
+      "definition": "在线段上若两端都放物体，则物体数量 = 间隔数 + 1；若两端都不放，则物体数量 = 间隔数 - 1；若只放一端，则物体数量 = 间隔数。",
+      "importance": "掌握",
+      "examples": [
+        "20个间隔，两端都栽，共21棵树。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt34",
+      "name": "闭合图形的均匀布点",
+      "definition": "在圆周等封闭曲线周围按固定间隔放置物体时，由于不存在“端点”，物体数量等于间隔数量。",
+      "importance": "了解",
+      "examples": [
+        "圆形池塘周长120米，每隔10米栽树，共12棵。"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt35",
+      "name": "小数的乘除法",
+      "definition": "将小数的乘除法转化为整数的乘除法进行计算。",
+      "importance": "掌握",
+      "pages": "总复习段落",
+      "examples": [
+        "2.7×3，2.4÷6"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt36",
+      "name": "用字母表示式子",
+      "definition": "用含有字母的式子表示运算律、计算公式和数量关系。",
+      "importance": "掌握",
+      "pages": "总复习段落",
+      "examples": [
+        "a(b+c)=ab+ac",
+        "s=vt"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt37",
+      "name": "面积计算公式",
+      "definition": "将平行四边形、三角形和梯形转化为学过的图形推导面积公式。",
+      "importance": "重要",
+      "pages": "成长小档案"
+    },
+    {
+      "id": "math_5a_rjb_cpt38",
+      "name": "方程及其解法",
+      "definition": "用字母表示未知数，根据等量关系列方程并求解。",
+      "importance": "重要",
+      "pages": "成长小档案",
+      "examples": [
+        "2x+7=13"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt39",
+      "name": "数对与确定位置",
+      "definition": "用两个数的有序数对表示平面上的位置。",
+      "importance": "掌握",
+      "pages": "学习中最有趣的事情是什么？"
+    },
+    {
+      "id": "math_5a_rjb_cpt40",
+      "name": "可能性问题",
+      "definition": "比较事件发生的可能性大小。",
+      "importance": "了解",
+      "pages": "成长小档案",
+      "examples": [
+        "指针落在不同颜色区域的可能性"
+      ]
+    },
+    {
+      "id": "math_5a_rjb_cpt41",
+      "name": "直角三角形与平方关系",
+      "definition": "直角三角形三边为a、b、c（c为斜边）时，三个对应正方形的面积满足a²+b²=c²的关系。",
+      "importance": "重要",
+      "pages": "练习中“正方形面积关系”部分"
+    }
+  ],
+  "skills": [
+    {
+      "id": "math_5a_rjb_skl1",
+      "name": "列竖式计算小数乘法",
+      "description": "将小数乘法转换为整数竖式计算，再根据小数位数确定小数点位置。"
+    },
+    {
+      "id": "math_5a_rjb_skl2",
+      "name": "小数乘法估算",
+      "description": "将小数按实际情境取近似值，进行快速判断或估算。"
+    },
+    {
+      "id": "math_5a_rjb_skl3",
+      "name": "根据运算律进行简便计算",
+      "description": "利用交换律、结合律、分配律对小数乘法进行化简，提高计算效率。"
+    },
+    {
+      "id": "math_5a_rjb_skl4",
+      "name": "用数对表示位置的方法",
+      "description": "根据给定的图或坐标体系，依次确定横向位置（列）与纵向位置（行），并写成（x, y）形式。"
+    },
+    {
+      "id": "math_5a_rjb_skl5",
+      "name": "根据数对在图上定位点",
+      "description": "根据给定的数对，在方格图中找到对应的横向与纵向位置并标出。"
+    },
+    {
+      "id": "math_5a_rjb_skl6",
+      "name": "小数除法竖式计算方法",
+      "description": "根据除数是否为整数选择不同策略，并按位计算商，必要时在被除数后补0。"
+    },
+    {
+      "id": "math_5a_rjb_skl7",
+      "name": "四舍五入取近似数",
+      "description": "将结果计算到需要保留的小数位后一位，再按“四舍五入”规则确定最终位数。"
+    },
+    {
+      "id": "math_5a_rjb_skl8",
+      "name": "通过实验估计可能性",
+      "description": "通过多次重复试验记录结果，根据频率估计不同结果的可能性。"
+    },
+    {
+      "id": "math_5a_rjb_skl9",
+      "name": "将数量关系转化为代数表达",
+      "description": "把实际情境中的数量关系抽象成含字母的式子或方程。"
+    },
+    {
+      "id": "math_5a_rjb_skl10",
+      "name": "依据等式性质进行变形",
+      "description": "运用等式的性质进行移项、化简，求出未知数。"
+    },
+    {
+      "id": "math_5a_rjb_skl11",
+      "name": "图形转化求面积",
+      "description": "将复杂或不规则图形转化为长方形、平行四边形、三角形等基本图形，以便计算面积。"
+    },
+    {
+      "id": "math_5a_rjb_skl12",
+      "name": "利用底和高计算面积",
+      "description": "根据图形的底与高，套用相应面积公式进行计算。"
+    },
+    {
+      "id": "math_5a_rjb_skl13",
+      "name": "利用方格估计面积",
+      "description": "通过数方格的方法估计规则或不规则图形的面积。"
+    },
+    {
+      "id": "math_5a_rjb_skl14",
+      "name": "画线段图或示意图检验数量关系",
+      "description": "通过画线段图、点与间隔的关系图来验证计算是否正确，直观理解间隔数与点数的对应关系。"
+    },
+    {
+      "id": "math_5a_rjb_skl15",
+      "name": "转化思想",
+      "description": "利用已经学过的知识解决新问题，将复杂问题转化为熟悉的问题来解决。"
+    },
+    {
+      "id": "math_5a_rjb_skl16",
+      "name": "用字母符号表达数量关系",
+      "description": "用字母建立数量关系式，包括运算律、公式及实际问题关系式。"
+    },
+    {
+      "id": "math_5a_rjb_skl17",
+      "name": "列方程解决问题",
+      "description": "根据题意设未知数，利用等量关系列方程求解实际问题。"
+    },
+    {
+      "id": "math_5a_rjb_skl18",
+      "name": "图形变换与位置缩放",
+      "description": "将数对的坐标进行倍数变化，理解放大或缩小图形的效果。"
+    }
+  ],
+  "experiments": [],
+  "questions": [
+    {
+      "id": "math_5a_rjb_exe1",
+      "type": "应用题",
+      "stem": "9.5元一瓶的饮料，买3瓶需要多少钱？",
+      "answer": "28.5元",
+      "analysis": "按整数算95×3=285，再根据小数位数还原为28.5。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe2",
+      "type": "计算题",
+      "stem": "计算 2.4×0.8。",
+      "answer": "1.92",
+      "analysis": "按整数24×8=192，两因数共两位小数，积为1.92。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe3",
+      "type": "应用题",
+      "stem": "一只鸵鸟的最高速度是非洲野狗的1.3倍，已知非洲野狗速度为56千米/时，鸵鸟的速度是多少？",
+      "answer": "72.8千米/时",
+      "analysis": "56×1.3=72.8，比原数大，符合“大于1时积变大”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe4",
+      "type": "应用题",
+      "stem": "估算：妈妈带100元买2袋30.6元大米和0.8kg、26.5元/kg的肉，钱够买吗？",
+      "answer": "够（共约99元）",
+      "analysis": "用估算法：30.6≈31，2袋<62；肉0.8×26.5≈20；合计<99。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe5",
+      "type": "填空题",
+      "stem": "王艳的位置用数对表示是（ ），赵雪的位置用数对表示是（ ）。",
+      "answer": "王艳在第1列第4行（1,4）；赵雪在第6列第5行（6,5）。（根据教材图示推断）",
+      "analysis": "根据图中每个人所在的列与行确定数对。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe6",
+      "type": "应用题",
+      "stem": "三角形的顶点先用数对表示，再分别画出向右和向上平移5个单位后的图形，并写出平移后顶点的位置。",
+      "answer": "若原点为A(x,y)，向右平移后为(x+5, y)，向上平移后为(x, y+5)。",
+      "analysis": "理解平移会改变数对的横坐标或纵坐标。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe7",
+      "type": "简答题",
+      "stem": "从一个装有15个红球和5个黄球的盒子里随机摸一个球，摸出红球的可能性与摸出黄球的可能性相比，哪个更大？",
+      "answer": "摸出红球的可能性更大，因为红球数量更多。",
+      "analysis": "比较两种颜色球的数量即可判断可能性大小。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe8",
+      "type": "判断题",
+      "stem": "一个转盘分成红色区域和蓝色区域，其中红色区域比蓝色区域大。指针停在什么颜色的可能性更大？",
+      "answer": "停在红色区域的可能性更大。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe9",
+      "type": "简答题",
+      "stem": "掷一次标有1至6的正方体骰子，可能掷出哪些数字？是否可能掷出7？",
+      "answer": "可能掷出1、2、3、4、5、6；不可能掷出7。",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe10",
+      "type": "简答题",
+      "stem": "100+x=250，求x。",
+      "answer": "x=150",
+      "analysis": "利用等式性质，两边同时减去100。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe11",
+      "type": "应用题",
+      "stem": "学校原跳远纪录是x m，小明跳4.21m，比原纪录多0.06m，求原纪录。",
+      "answer": "x=4.15",
+      "analysis": "根据“原纪录+0.06=4.21”列方程解。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe12",
+      "type": "应用题",
+      "stem": "同学们在长100米的小路一边植树，每隔5米栽一棵，两端都要栽。一共要栽多少棵树？",
+      "answer": "21棵。",
+      "analysis": "100÷5=20个间隔，两端都栽，因此树棵数=20+1=21。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe13",
+      "type": "应用题",
+      "stem": "圆形池塘周长120米，每隔10米栽一棵树。一共要栽多少棵？",
+      "answer": "12棵。",
+      "analysis": "圆形无端点，棵数=间隔数=120÷10=12。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe14",
+      "type": "应用题",
+      "stem": "一条32米长走廊，每隔4米放一盆植物，两端不放。一共要放多少盆？",
+      "answer": "7盆。",
+      "analysis": "间隔数=32÷4=8，两端都不放，所以盆数=8-1=7。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe15",
+      "type": "计算题",
+      "stem": "计算：2.7 × 0.3",
+      "answer": "0.81",
+      "analysis": "将小数转化为整数计算 27×3=81，再调整小数位。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe16",
+      "type": "填空题",
+      "stem": "用字母表示数量关系：王叔叔每小时加工 a 个零件，t 小时共加工多少个零件？",
+      "answer": "at",
+      "analysis": "",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe17",
+      "type": "应用题",
+      "stem": "解方程：5x + 7 = 42",
+      "answer": "x = 7",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "math_5a_rjb_exe18",
+      "type": "简答题",
+      "stem": "一个直角三角形三边分别为3cm、4cm、5cm，三个正方形的面积之间有什么关系？",
+      "answer": "9 + 16 = 25",
+      "analysis": "验证a²+b²=c²",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "cmm_math",
+      "name": "CMM-Math",
+      "url": "https://huggingface.co/datasets/ecnu-icalk/cmm-math",
+      "license": "BSD-3-Clause",
+      "usage": "1-12 年级中文数学题，含解析和图文题；适合作为数学题库补充源。"
+    },
+    {
+      "id": "cmath",
+      "name": "CMATH",
+      "url": "https://huggingface.co/datasets/weitianwen/cmath",
+      "license": "CC BY 4.0",
+      "usage": "小学数学应用题数据集，适合小学数学题库补充。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 41,
+    "skill_count": 18,
+    "experiment_count": 0,
+    "question_count": 18
+  }
+}

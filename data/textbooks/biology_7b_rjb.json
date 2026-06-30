@@ -1,0 +1,1913 @@
+{
+  "id": "biology_7b_rjb",
+  "stage": "初中",
+  "grade": "七年级下册",
+  "subject": "生物",
+  "title": "生物七年级下册",
+  "publisher": "人教版-人民教育出版社",
+  "schema_version": "1.0",
+  "source_license": "CC BY-NC-SA 4.0",
+  "sources": [
+    {
+      "id": "k12_kgraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph/resolve/main/K12-KGraph/subject_specific_KG/biology.json"
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "biology_7b_rjb_cpt1",
+      "name": "森林古猿",
+      "definition": "被认为是现代类人猿和人类的共同祖先的一类古猿，距今1200多万年前曾广泛分布于非洲、亚洲、欧洲，主要生活在热带丛林中，以树栖为主。",
+      "importance": "重要",
+      "aliases": [
+        "森林古猿共同祖先"
+      ],
+      "examples": [
+        "距今1200多万年前广泛分布于非洲、亚洲、欧洲，尤其是非洲热带丛林"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt2",
+      "name": "现代类人猿",
+      "definition": "生活在热带或亚热带丛林中、适于树栖生活的人类近亲类群，能下地但不能真正直立行走，手不如人类灵巧，大脑与智力逊于人类。",
+      "importance": "了解",
+      "examples": [
+        "教材提示观察的四种类人猿（配图未给出具体名称）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt3",
+      "name": "人类起源（进化起源）",
+      "definition": "人类并非由神创造，而是与现代类人猿有共同祖先（森林古猿），在环境变化影响下经历从猿到人的长期演化过程，逐渐形成直立行走、使用工具、用火、语言等特征。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt4",
+      "name": "东非大裂谷地区（人类起源重要地区）",
+      "definition": "地壳剧烈运动形成的全长6000多千米的大裂谷地带；在地形与气候剧烈变化影响下，部分热带丛林变成稀树草原，多数古人类学家认为人类起源于此地，并发现大量早期古人类化石。",
+      "importance": "掌握",
+      "aliases": [
+        "东非大裂谷地带"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt5",
+      "name": "化石",
+      "definition": "生物的遗体、遗物或生活痕迹，因某种原因被埋藏在地层中，经过若干万年的复杂变化形成；是研究生物进化的重要证据。",
+      "importance": "掌握",
+      "aliases": [
+        "fossil"
+      ],
+      "examples": [
+        "露西的骨骼化石",
+        "古人类遗物石器",
+        "牙齿化石用于推测饮食",
+        "骨骼化石用于推测体型与运动方式",
+        "植物化石用于推测形态结构与分类地位"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt6",
+      "name": "直立行走（演化特征）",
+      "definition": "从部分森林古猿下地生活后逐渐形成的关键运动方式特征；相关骨骼变化表现为下肢更粗壮、有利于直立行走等。",
+      "importance": "掌握",
+      "examples": [
+        "露西下肢骨更粗壮，有利于直立行走"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt7",
+      "name": "工具使用（石器等）",
+      "definition": "古人类能够使用并逐渐制造更复杂工具（如石器），相当于使四肢得以延伸，从而增强捕猎和御敌能力。",
+      "importance": "掌握",
+      "examples": [
+        "距今175万年前的石器"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt8",
+      "name": "用火",
+      "definition": "古人类能够用火并用火烧烤食物，从而改善营养，有利于脑的发育，也推动人类在生存斗争中变得更强大。",
+      "importance": "了解",
+      "examples": [
+        "用火烧烤食物，改善营养，有利于脑的发育"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt9",
+      "name": "语言的产生",
+      "definition": "随着大脑发达与群体生活需要，古人类产生语言并促进交流与合作，使群体更好解决困难。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt10",
+      "name": "生殖系统",
+      "definition": "完成新个体产生过程的系统，主要负责产生与输送生殖细胞并支持受精、胚胎发育与分娩等过程；男性和女性生殖系统结构不同。",
+      "importance": "重要",
+      "aliases": [
+        "reproductive system"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt11",
+      "name": "睾丸",
+      "definition": "男性主要生殖器官，功能是产生精子并分泌雄性激素。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt12",
+      "name": "精子",
+      "definition": "由睾丸产生的男性生殖细胞，含有男性遗传物质，可在女性生殖道内游动并参与受精。",
+      "importance": "掌握",
+      "aliases": [
+        "sperm"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt13",
+      "name": "卵巢",
+      "definition": "女性主要生殖器官，功能是产生卵细胞并分泌雌性激素。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt14",
+      "name": "卵细胞",
+      "definition": "由卵巢产生的女性生殖细胞，含有女性遗传物质，可在输卵管内与精子相遇并参与受精。",
+      "importance": "掌握",
+      "aliases": [
+        "egg cell"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt15",
+      "name": "受精卵",
+      "definition": "一个精子进入卵细胞并与之结合形成的细胞，是个体发育的起点，之后不断细胞分裂并发育。",
+      "importance": "重要",
+      "aliases": [
+        "fertilized egg"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt16",
+      "name": "胚泡",
+      "definition": "受精卵不断细胞分裂后形成的早期结构，可缓慢移动到子宫并最终附着在子宫内膜上。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt17",
+      "name": "子宫",
+      "definition": "女性生殖器官之一，是胚胎发育的场所；胚泡最终附着于子宫内膜并继续发育。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt18",
+      "name": "子宫内膜",
+      "definition": "子宫内壁的组织层，胚泡可附着其上继续发育；其周期性变化与月经来潮相关。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt19",
+      "name": "胚胎",
+      "definition": "胚泡附着于子宫内膜后，细胞继续分裂和分化形成的早期个体发育阶段；约8周左右发育成胎儿。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt20",
+      "name": "胎儿",
+      "definition": "胚胎在约8周左右已呈现人的形态的阶段；在子宫内羊水中生活，并通过胎盘、脐带与母体进行物质交换，约第38周发育成熟。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt21",
+      "name": "胎盘",
+      "definition": "胎儿与母体交换物质的器官，呈扁圆形，靠近胎儿一面附有脐带，靠近母体一面与子宫内膜相连，通过绒毛进行物质交换。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt22",
+      "name": "脐带",
+      "definition": "连接胎儿与胎盘的结构，与胎儿相连，脐带内血管与胎盘绒毛内毛细血管相通，用于物质交换通路。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt23",
+      "name": "羊水",
+      "definition": "胎儿在子宫内生活的半透明液体环境。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt24",
+      "name": "分娩",
+      "definition": "成熟胎儿和胎盘从母体阴道产出的过程，标志新生儿诞生。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt25",
+      "name": "青春期",
+      "definition": "生长发育发生重要变化的时期；身高突增明显，性器官迅速发育，身体与心理均出现显著变化，是身体发育和智力发展的黄金时期。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt26",
+      "name": "身高突增",
+      "definition": "青春期的显著特点之一，男女开始身高快速增长的年龄存在差别。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt27",
+      "name": "第二性征",
+      "definition": "除性器官方面差异外，男性与女性各自特有的外貌与体态等征象；男性如胡须腋毛生长、喉结突出、声音变粗等，女性如骨盆宽大、乳房增大、声调较高等。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt28",
+      "name": "遗精",
+      "definition": "男孩子进入青春期后，有时在睡梦中精液自尿道排出的现象；因精液不断产生、积存多了自然排出。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt29",
+      "name": "月经",
+      "definition": "与卵巢和子宫内膜周期性变化有关的生理现象：卵细胞排出后若未受精，卵巢雌激素和孕激素分泌减少，引起子宫内膜坏死脱落并出血，内膜碎片与血液经阴道排出即为月经。",
+      "importance": "重要",
+      "examples": [
+        "月经初潮年龄一般为12~18岁",
+        "每次月经出血持续5天左右",
+        "一般每次月经量为10~100毫升，平均50毫升"
+      ],
+      "unit": [
+        "天",
+        "毫升"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt30",
+      "name": "激素",
+      "definition": "由内分泌腺分泌并直接进入血液、输送到全身，对生命活动起重要调节作用的物质；含量少但作用大。",
+      "importance": "了解",
+      "unit": "微克（每100毫升血液中仅几微克）"
+    },
+    {
+      "id": "biology_7b_rjb_cpt31",
+      "name": "雄性激素",
+      "definition": "由睾丸分泌的激素，与青春期男孩体形变化及性器官发育等有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt32",
+      "name": "雌性激素",
+      "definition": "由卵巢分泌的激素，与青春期女孩体形变化及子宫内膜变化等有关。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt33",
+      "name": "孕激素",
+      "definition": "卵巢分泌的激素之一，与子宫内膜增厚等周期性变化有关；未受精时其分泌减少可引起子宫内膜脱落与月经。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt34",
+      "name": "六类营养物质",
+      "definition": "食物中含有糖类、脂肪、蛋白质、水、无机盐和维生素等六类营养物质。",
+      "importance": "掌握",
+      "examples": [
+        "糖类",
+        "脂肪",
+        "蛋白质",
+        "水",
+        "无机盐",
+        "维生素"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt35",
+      "name": "糖类",
+      "definition": "糖类是组成细胞的主要有机物之一，并能为生命活动提供能量；人体生命活动所需要的能量主要由糖类提供。",
+      "importance": "掌握",
+      "examples": [
+        "葡萄糖",
+        "蔗糖",
+        "淀粉"
+      ],
+      "aliases": [
+        "carbohydrate"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt36",
+      "name": "脂肪",
+      "definition": "脂肪是组成细胞的主要有机物之一，并能为生命活动提供能量；贮存在人体内的脂肪是重要的备用能源物质。",
+      "importance": "掌握",
+      "examples": [
+        "肥肉",
+        "大豆",
+        "花生"
+      ],
+      "aliases": [
+        "fat"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt37",
+      "name": "蛋白质",
+      "definition": "组成细胞的有机物中含量最多的物质之一，也是目前已知结构最复杂、功能最多样的分子；细胞核中的遗传信息往往要表达成蛋白质才能起作用，是生命活动的主要承担者。",
+      "importance": "掌握",
+      "examples": [
+        "奶",
+        "蛋",
+        "鱼",
+        "肉",
+        "胶原蛋白",
+        "胰岛素",
+        "胃蛋白酶",
+        "血红蛋白",
+        "抗体"
+      ],
+      "aliases": [
+        "protein"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt38",
+      "name": "水",
+      "definition": "水是人体细胞的主要成分之一，约占体重的60%~70%；人体各项生命活动离不开水，营养物质和尿素等废物需溶解在水中才能运输。",
+      "importance": "掌握",
+      "formula": "约占体重的60%~70%",
+      "unit": "%"
+    },
+    {
+      "id": "biology_7b_rjb_cpt39",
+      "name": "无机盐",
+      "definition": "无机盐在人体中的作用多种多样，例如含钙的无机盐是骨骼和牙齿的重要组成成分；缺乏某些无机盐会出现相应症状。",
+      "importance": "了解",
+      "examples": [
+        "含钙无机盐",
+        "含磷无机盐",
+        "含铁无机盐",
+        "含碘无机盐",
+        "含锌无机盐",
+        "NaCl"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt40",
+      "name": "维生素",
+      "definition": "维生素是一类比较简单的有机物，种类很多；大多数人体自身不能制造，只能从食物中摄取；维生素不是构成细胞的主要原料，不为人体提供能量，但其作用不可替代，缺乏会影响生长发育甚至患病。",
+      "importance": "掌握",
+      "examples": [
+        "维生素A",
+        "维生素B1",
+        "维生素C",
+        "维生素D"
+      ],
+      "aliases": [
+        "vitamin"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt41",
+      "name": "维生素C",
+      "definition": "维生素C又叫抗坏血酸；缺乏会导致坏血病等症状。",
+      "importance": "重要",
+      "aliases": [
+        "抗坏血酸"
+      ],
+      "examples": [
+        "新鲜水果和蔬菜（如柑橘）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt42",
+      "name": "消化",
+      "definition": "食物在消化道内分解成可以被细胞吸收的物质的过程叫做消化。",
+      "importance": "掌握",
+      "aliases": [
+        "digestion"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt43",
+      "name": "消化系统",
+      "definition": "消化系统由消化道和消化腺组成，完成食物的消化。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt44",
+      "name": "消化道",
+      "definition": "消化道包括口腔、咽、食道、胃、小肠、大肠、肛门等器官，是食物通过并发生消化变化的通道。",
+      "importance": "了解",
+      "examples": [
+        "口腔",
+        "咽",
+        "食道",
+        "胃",
+        "小肠",
+        "大肠",
+        "肛门"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt45",
+      "name": "消化腺",
+      "definition": "消化腺包括唾液腺、肝、胰等器官以及分布在消化道壁内的小腺体，分泌消化液参与消化。",
+      "importance": "了解",
+      "examples": [
+        "唾液腺",
+        "肝",
+        "胰",
+        "肠腺",
+        "胃腺"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt46",
+      "name": "消化酶",
+      "definition": "消化液中含有能消化糖类、蛋白质和脂肪的酶；在其作用下，大分子有机物分解为可被细胞吸收的小分子有机物。",
+      "importance": "掌握",
+      "examples": [
+        "唾液淀粉酶",
+        "蛋白酶",
+        "脂肪酶"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt47",
+      "name": "酶",
+      "definition": "在细胞内起催化作用、能降低化学反应活化能，从而使细胞代谢在温和条件下快速有序进行的生物催化剂；多数酶是蛋白质，少数RNA也具有催化功能。",
+      "importance": "了解",
+      "aliases": [
+        "enzyme"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt48",
+      "name": "唾液淀粉酶",
+      "definition": "唾液中的唾液淀粉酶在口腔内发挥作用，可使淀粉分解为麦芽糖。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt49",
+      "name": "淀粉分解为麦芽糖",
+      "definition": "淀粉没有甜味，但淀粉分解形成的麦芽糖有甜味；在口腔中在唾液淀粉酶作用下可发生淀粉→麦芽糖的分解。",
+      "importance": "掌握",
+      "formula": "淀粉 → 麦芽糖"
+    },
+    {
+      "id": "biology_7b_rjb_cpt50",
+      "name": "淀粉最终分解为葡萄糖",
+      "definition": "在多种消化酶的作用下，淀粉最终分解为葡萄糖，成为可被细胞直接吸收的小分子有机物。",
+      "importance": "掌握",
+      "formula": "淀粉 →（多种消化酶）→ 葡萄糖"
+    },
+    {
+      "id": "biology_7b_rjb_cpt51",
+      "name": "蛋白质最终分解为氨基酸",
+      "definition": "在多种消化酶作用下，蛋白质最终分解为氨基酸，成为可被细胞直接吸收的小分子有机物。",
+      "importance": "掌握",
+      "formula": "蛋白质 →（多种消化酶）→ 氨基酸"
+    },
+    {
+      "id": "biology_7b_rjb_cpt52",
+      "name": "脂肪最终分解为甘油和脂肪酸",
+      "definition": "脂肪在消化过程中最终被分解为甘油和脂肪酸。",
+      "importance": "掌握",
+      "formula": "脂肪 → 甘油 + 脂肪酸"
+    },
+    {
+      "id": "biology_7b_rjb_cpt53",
+      "name": "胆汁的乳化作用",
+      "definition": "肝脏分泌的胆汁中没有消化酶，但能使脂肪变成微小颗粒，增加脂肪酶与脂肪的接触面积，从而促进脂肪分解。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt54",
+      "name": "食物的消化过程的两个方面",
+      "definition": "食物的消化过程包括两个方面：一是将食物切断、磨碎、与消化液充分混合；二是食物中的大分子有机物在消化酶作用下分解为能被细胞吸收的小分子有机物。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt55",
+      "name": "营养物质的吸收",
+      "definition": "消化后形成的葡萄糖、氨基酸等以及大量的水和无机盐等物质被消化道吸收并进入血液运往全身；未被吸收的残渣形成粪便排出。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt56",
+      "name": "小肠是吸收营养物质的主要器官",
+      "definition": "小肠的长度和内壁结构特点使其具有巨大的表面积来吸收营养物质；葡萄糖、氨基酸以及大量的水和无机盐等被小肠绒毛壁的一层上皮细胞吸收并进入毛细血管。",
+      "importance": "重要",
+      "examples": [
+        "皱襞",
+        "小肠绒毛",
+        "毛细血管"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt57",
+      "name": "大肠的吸收作用",
+      "definition": "未被小肠消化和吸收的物质进入大肠，其中一部分水、无机盐和维生素被大肠吸收，其余残渣形成粪便排出。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt58",
+      "name": "合理营养",
+      "definition": "合理营养是指全面而平衡的营养：全面指摄取的营养素（六类营养物质和膳食纤维）种类齐全；平衡指摄取量合适、比例适当，与身体需要保持平衡。",
+      "importance": "掌握",
+      "aliases": [
+        "rational nutrition"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt59",
+      "name": "平衡膳食宝塔",
+      "definition": "营养学家将食物分为五类并设计“平衡膳食宝塔”，提倡每天均衡摄入五类食物以避免营养不良或营养过剩。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt60",
+      "name": "三餐能量分配",
+      "definition": "为保持健康，在每日摄入的总能量中，早、中、晚餐能量应分别占30%、40%、30%左右。",
+      "importance": "了解",
+      "formula": "早:中:晚 ≈ 30%:40%:30%",
+      "unit": "%"
+    },
+    {
+      "id": "biology_7b_rjb_cpt61",
+      "name": "食品安全",
+      "definition": "食品安全贯穿于生产、运输、加工、储存、烹饪等全过程；应关注许可证编号、检疫合格、保质期等并采取减少农药残留等措施。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt62",
+      "name": "绿色食品",
+      "definition": "产自良好生态环境、无污染、安全、优质的食品统称为绿色食品，分为A级和AA级两类。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt63",
+      "name": "呼吸系统",
+      "definition": "人体的呼吸系统由呼吸道和肺组成，具有适合与外界进行气体交换的结构。",
+      "importance": "掌握",
+      "aliases": [],
+      "examples": "由呼吸道（鼻、咽、喉、气管、支气管等）与肺构成"
+    },
+    {
+      "id": "biology_7b_rjb_cpt64",
+      "name": "呼吸道",
+      "definition": "呼吸系统中鼻、咽、喉、气管、支气管等气体进出肺的通道。",
+      "importance": "掌握",
+      "aliases": [
+        "respiratory tract"
+      ],
+      "examples": "鼻、咽、喉、气管、支气管"
+    },
+    {
+      "id": "biology_7b_rjb_cpt65",
+      "name": "肺",
+      "definition": "呼吸系统的主要器官，位于胸腔内，左右各一个，能与外界进行气体交换。",
+      "importance": "掌握",
+      "examples": "左肺两叶，右肺三叶"
+    },
+    {
+      "id": "biology_7b_rjb_cpt66",
+      "name": "呼吸道对空气的处理",
+      "definition": "呼吸道不仅保证气体顺畅通过，还能使到达肺部的气体温暖、湿润、清洁；但处理能力有限。",
+      "importance": "重要",
+      "examples": "鼻毛、黏液、毛细血管、纤毛等结构共同起作用"
+    },
+    {
+      "id": "biology_7b_rjb_cpt67",
+      "name": "呼吸道支架（骨或软骨）",
+      "definition": "呼吸道具有骨或软骨做支架，以保证气流通畅、通道不易塌陷。",
+      "importance": "了解",
+      "examples": "气管、支气管等管壁有支撑结构"
+    },
+    {
+      "id": "biology_7b_rjb_cpt68",
+      "name": "鼻腔结构与功能（鼻毛、黏膜、毛细血管）",
+      "definition": "鼻腔前部有鼻毛；鼻腔黏膜分泌黏液且富含毛细血管，有助于过滤、湿润并温暖吸入空气。",
+      "importance": "掌握",
+      "examples": "黏膜分泌黏液；黏膜中分布丰富毛细血管"
+    },
+    {
+      "id": "biology_7b_rjb_cpt69",
+      "name": "气管/支气管纤毛运动与排痰",
+      "definition": "气管壁纤毛向咽喉方向不停摆动，将尘粒、细菌等与黏液一起送到咽部，经咳嗽排出体外形成痰。",
+      "importance": "掌握",
+      "examples": "痰由外来颗粒/病原体与黏液混合并被运送至咽部后排出"
+    },
+    {
+      "id": "biology_7b_rjb_cpt70",
+      "name": "腺细胞分泌黏液的防御作用",
+      "definition": "腺细胞分泌黏液使气管内湿润；黏液中含有能抵抗细菌和病毒的物质。",
+      "importance": "了解",
+      "examples": "黏液保持湿润并具有抗病原体成分"
+    },
+    {
+      "id": "biology_7b_rjb_cpt71",
+      "name": "会厌软骨与吞咽/呼吸",
+      "definition": "呼吸时喉口开放；吞咽时会厌软骨像盖子一样盖住喉口，防止食物进入气管。",
+      "importance": "掌握",
+      "examples": "边吃饭边说笑可能导致食物误入气管引起剧烈咳嗽"
+    },
+    {
+      "id": "biology_7b_rjb_cpt72",
+      "name": "发声与声带振动",
+      "definition": "声音由喉部声带发出；呼气气流使拉紧且间隙变小的声带振动而发声；呼吸时两条声带分开。",
+      "importance": "了解",
+      "examples": "声带拉紧/松开对应不同状态"
+    },
+    {
+      "id": "biology_7b_rjb_cpt73",
+      "name": "肺与外界的气体交换（通气）",
+      "definition": "肋间肌和膈肌收缩/舒张引起胸腔容积变化，导致肺内气体压力改变，从而实现吸气和呼气。",
+      "importance": "掌握",
+      "examples": "胸腔容积扩大→肺扩张→肺内压力降低→吸气；胸腔容积缩小→肺收缩→肺内压力增大→呼气"
+    },
+    {
+      "id": "biology_7b_rjb_cpt74",
+      "name": "胸廓容积变化",
+      "definition": "胸廓的扩张与收缩由肋间肌收缩和舒张以及膈的运动共同导致，从而改变胸腔容积。",
+      "importance": "掌握",
+      "examples": "吸气时肋骨向上向外运动、胸廓扩大；呼气时肋骨向下向内运动、胸廓缩小"
+    },
+    {
+      "id": "biology_7b_rjb_cpt75",
+      "name": "肋间肌运动",
+      "definition": "肋间肌的收缩与舒张引起肋骨运动，导致胸廓扩大或缩小。",
+      "importance": "了解",
+      "examples": "深吸气时肋骨向上向外；深呼气时肋骨向下向内"
+    },
+    {
+      "id": "biology_7b_rjb_cpt76",
+      "name": "膈（膈肌）运动",
+      "definition": "膈位于胸腔底部，主要由肌肉组织构成；吸气时膈肌收缩，膈顶部下降使胸廓上下径增大；呼气时膈肌舒张回升。",
+      "importance": "掌握",
+      "aliases": [
+        "膈肌"
+      ],
+      "examples": "吸气：下降；呼气：回升"
+    },
+    {
+      "id": "biology_7b_rjb_cpt77",
+      "name": "肺泡与血液的气体交换",
+      "definition": "肺泡壁与毛细血管壁都很薄（单层扁平上皮细胞），氧气从肺泡进入血液，二氧化碳从血液进入肺泡并随呼气排出。",
+      "importance": "掌握",
+      "examples": "肺泡外包绕丰富毛细血管；吸气时肺泡鼓起促进交换"
+    },
+    {
+      "id": "biology_7b_rjb_cpt78",
+      "name": "吸入气体与呼出气体成分差异",
+      "definition": "呼出气体中氧气含量减少、二氧化碳和水的含量增加（氮气基本不变），反映肺内与血液发生了气体交换。",
+      "importance": "了解",
+      "examples": "大气：O2约21%、CO2约0.03%；呼出：O2约16%、CO2约4%"
+    },
+    {
+      "id": "biology_7b_rjb_cpt79",
+      "name": "肺活量",
+      "definition": "人尽力吸气后再尽力呼气所能呼出的气体量。",
+      "importance": "了解",
+      "unit": "mL（教材提示用气球估算时）",
+      "formula": "若用C代表圆气球最大周长（cm），则体积= (1/6) × C^3 / 3.14^2（单位mL）"
+    },
+    {
+      "id": "biology_7b_rjb_cpt80",
+      "name": "血液",
+      "definition": "血液是由血浆和血细胞（包括红细胞、白细胞、血小板）构成的“流动的组织”，具有运输、防御和保护等作用。",
+      "importance": "重要",
+      "aliases": [
+        "流动的组织"
+      ],
+      "examples": [
+        "血浆",
+        "血细胞"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt81",
+      "name": "血浆",
+      "definition": "血浆是血液中的液态部分，上层淡黄色半透明液体，约占血液总量的55%；血浆90%是水，其余为溶解的营养物质、代谢废物及与凝血、抵御疾病相关的血浆蛋白等。",
+      "importance": "掌握",
+      "formula": "约占血液总量55%；其中水约占90%",
+      "aliases": [
+        "plasma"
+      ],
+      "examples": [
+        "水约90%",
+        "蛋白质7%~9%",
+        "无机盐约1%",
+        "葡萄糖、激素、代谢废物等"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt82",
+      "name": "血细胞",
+      "definition": "血细胞是血液中的有形成分，包括红细胞、白细胞和血小板。",
+      "importance": "掌握",
+      "examples": [
+        "红细胞",
+        "白细胞",
+        "血小板"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt83",
+      "name": "红细胞",
+      "definition": "数量最多的血细胞，呈两面凹的圆盘状；成熟红细胞无细胞核，寿命约120天，富含血红蛋白，具有运输氧的功能。",
+      "importance": "掌握",
+      "formula": "寿命约120天",
+      "examples": [
+        "肺部获取氧，在全身毛细血管释放氧供细胞利用"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt84",
+      "name": "血红蛋白",
+      "definition": "红细胞中富含的含铁蛋白质，在含氧量高的地方容易与氧结合，在含氧量低的地方又容易与氧分离，使红细胞具有运输氧的功能。",
+      "importance": "掌握",
+      "examples": [
+        "正常血红蛋白（空间结构呈球状）",
+        "异常血红蛋白（可聚合成纤维状）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt85",
+      "name": "白细胞",
+      "definition": "体积较大、数量较少且具有细胞核的血细胞，是人体与疾病斗争的“卫士”，能通过变形穿过毛细血管壁，在入侵部位包围、吞噬病菌。",
+      "importance": "掌握",
+      "examples": [
+        "白细胞吞噬细菌"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt86",
+      "name": "血小板",
+      "definition": "最小的血细胞，无细胞核，形状不规则；受伤时在伤口处聚集，释放与血液凝固有关的物质，形成凝血块堵塞伤口而止血。",
+      "importance": "掌握",
+      "examples": [
+        "形成凝血块止血"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt87",
+      "name": "凝血",
+      "definition": "在血小板等因素作用下，血液发生凝固形成凝血块以止血的过程。",
+      "importance": "了解",
+      "examples": [
+        "伤口处形成凝血块堵塞而止血"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt88",
+      "name": "血管类型（动脉、静脉、毛细血管）",
+      "definition": "人体内血管分为动脉、静脉和毛细血管三类，它们结构与功能各具特点，共同构成血液流通的管道。",
+      "importance": "掌握",
+      "examples": [
+        "动脉",
+        "静脉",
+        "毛细血管"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt89",
+      "name": "动脉",
+      "definition": "把血液从心脏送到身体各部分去的血管；管壁较厚、弹性大、血流速度快，通常分布较深；最小动脉分支成毛细血管。",
+      "importance": "掌握",
+      "examples": [
+        "颈部及腕部内侧可摸到搏动的浅表动脉"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt90",
+      "name": "静脉",
+      "definition": "将血液从身体各部分送回心脏的血管；管壁较薄、弹性较小，血流速度较慢；四肢静脉内表面常有防止血液倒流的静脉瓣。",
+      "importance": "掌握",
+      "examples": [
+        "手臂上的“青筋”是浅表静脉"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt91",
+      "name": "毛细血管",
+      "definition": "连通于最小的动脉与静脉之间的血管；数量最多、分布最广；内径小只允许红细胞单行通过；管壁极薄仅一层扁平上皮细胞；血流速度最慢，便于与组织细胞进行物质交换。",
+      "importance": "掌握",
+      "examples": [
+        "红细胞单行通过毛细血管"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt92",
+      "name": "物质交换（血液与组织细胞）",
+      "definition": "血液在组织细胞周围的毛细血管网中与组织细胞进行物质交换：营养物质与氧进入组织细胞被利用，二氧化碳与其他废物进入血液被运走。",
+      "importance": "掌握",
+      "examples": [
+        "氧和营养物质穿过毛细血管壁到达组织细胞",
+        "二氧化碳和废物进入血液被运走"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt93",
+      "name": "静脉瓣",
+      "definition": "位于四肢静脉内表面的瓣膜结构，作用是防止血液倒流。",
+      "importance": "了解",
+      "examples": [
+        "静脉瓣老化失去功能可能导致静脉曲张"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt94",
+      "name": "静脉曲张",
+      "definition": "静脉瓣膜老化失去功能，血流变慢导致血液在静脉中滞留、静脉膨胀的情形，多见于老年人腿部，也可能发生于长期站立/久坐或重体力劳动的中青年人。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt95",
+      "name": "心脏",
+      "definition": "主要由肌肉组成的中空器官，是血液流动的动力来源；心脏内部由肌肉壁分隔成左右不相通两部分，每部分有心房与心室各一腔，通过收缩与舒张把血液泵出并回流。",
+      "importance": "重要",
+      "examples": [
+        "一次心跳包括收缩与舒张过程"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt96",
+      "name": "心房",
+      "definition": "心脏上部的腔室；心房收缩时将血液压出，穿过瓣膜进入心室。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt97",
+      "name": "心室",
+      "definition": "心脏下部的腔室；心室收缩时将血液泵出，左心室经主动脉送往全身，右心室经肺动脉送往肺部。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt98",
+      "name": "心脏瓣膜",
+      "definition": "位于心房与心室之间、心室与动脉之间的能开闭结构，只能朝一个方向开，能防止血液倒流。",
+      "importance": "掌握",
+      "aliases": [
+        "瓣膜",
+        "valve"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt99",
+      "name": "血液循环",
+      "definition": "血液在体内按一定途径循环流动的过程，由体循环和肺循环共同构成完整的血液循环途径；另有为心肌供血的冠脉循环。",
+      "importance": "重要",
+      "aliases": [
+        "blood circulation"
+      ],
+      "examples": [
+        "体循环",
+        "肺循环",
+        "冠脉循环"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt100",
+      "name": "体循环",
+      "definition": "血液由左心室进入主动脉，经全身各级动脉、毛细血管网、各级静脉，最后汇集到上腔静脉和下腔静脉回到右心房；在组织毛细血管处释放氧和营养、带走二氧化碳和废物，使动脉血变为静脉血。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt101",
+      "name": "肺循环",
+      "definition": "血液从右心室进入肺动脉，经肺部毛细血管网，再由肺静脉回到左心房；在肺部进行气体交换，使静脉血变为动脉血。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt102",
+      "name": "冠脉循环",
+      "definition": "血液由主动脉基部的冠状动脉流向心肌内部毛细血管网，再由静脉回到右心房的循环，为心脏自身输送氧和营养并运走废物。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt103",
+      "name": "动脉血",
+      "definition": "含氧丰富、颜色鲜红的血液；在肺循环后形成，在体循环组织处可变为静脉血。",
+      "importance": "掌握",
+      "examples": [
+        "含氧丰富、颜色鲜红"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt104",
+      "name": "静脉血",
+      "definition": "含氧较少、颜色暗红的血液；在体循环组织处形成，在肺循环后可变为动脉血。",
+      "importance": "掌握",
+      "examples": [
+        "含氧较少、颜色暗红"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt105",
+      "name": "心率",
+      "definition": "每分钟心脏跳动的次数。",
+      "importance": "了解",
+      "unit": "次/分"
+    },
+    {
+      "id": "biology_7b_rjb_cpt106",
+      "name": "脉搏",
+      "definition": "随心脏节律性收缩和舒张，动脉血管壁出现相应扩张与回缩，在体表浅动脉可触到的搏动；一分钟内脉搏次数与心率一致。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt107",
+      "name": "血压",
+      "definition": "血液对血管壁的侧压力，可用血压计在上臂肱动脉处测得；包括收缩压与舒张压，常用“收缩压/舒张压”表示。",
+      "importance": "掌握",
+      "unit": "千帕(kPa)",
+      "examples": [
+        "健康成人收缩压12~18.6 kPa，舒张压8~11.9 kPa"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt108",
+      "name": "收缩压",
+      "definition": "心脏收缩时，动脉血压达到的最高数值。",
+      "importance": "了解",
+      "unit": "千帕(kPa)"
+    },
+    {
+      "id": "biology_7b_rjb_cpt109",
+      "name": "舒张压",
+      "definition": "心脏舒张时，动脉血压下降到的最低数值。",
+      "importance": "了解",
+      "unit": "千帕(kPa)"
+    },
+    {
+      "id": "biology_7b_rjb_cpt110",
+      "name": "血量",
+      "definition": "成年人体内血量大致相当于本人体重的7%~8%；血量稳定对维持生命活动正常进行很重要；一次大量失血可能危及生命。",
+      "importance": "掌握",
+      "formula": "血量约为体重的7%~8%"
+    },
+    {
+      "id": "biology_7b_rjb_cpt111",
+      "name": "输血",
+      "definition": "将血液输入病人体内以抢救或治疗（如大出血或缺乏某些血液成分）的方法；大量失血时需要及时输血。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt112",
+      "name": "血型（ABO血型）",
+      "definition": "依据红细胞在某些血浆中是否发生凝集等差异，将人的血液分为A型、B型、AB型和O型四种类型的血型系统。",
+      "importance": "重要",
+      "aliases": [
+        "ABO血型"
+      ],
+      "examples": [
+        "A型、B型、AB型、O型"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt113",
+      "name": "凝集",
+      "definition": "红细胞遇到某些人的血浆时黏结在一起的现象。",
+      "importance": "掌握",
+      "examples": [
+        "红细胞凝集"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt114",
+      "name": "安全输血原则（同型输血）",
+      "definition": "安全输血应以输同型血为原则；紧急且无同型血时可缓慢输入少量O型血，AB型血者除少量O型外也可少量A或B型；大量输血仍需同型输血。",
+      "importance": "重要",
+      "examples": [
+        "紧急时任何血型可少量输入O型血"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt115",
+      "name": "成分输血",
+      "definition": "根据病人需要以“缺什么补什么”的原则选择性输入某一血液成分（如只输血小板而非全血），以提高疗效并降低不良反应和浪费。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt116",
+      "name": "排泄（excretion）",
+      "definition": "人体将二氧化碳、尿素，以及多余的水和无机盐等排出体外的过程。",
+      "importance": "掌握",
+      "aliases": [
+        "excretion"
+      ],
+      "examples": [
+        "排出二氧化碳",
+        "排出尿素",
+        "排出多余的水和无机盐"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt117",
+      "name": "泌尿系统（urinary system）",
+      "definition": "人体中主要排出尿素、多余的水和无机盐等废物的系统。",
+      "importance": "掌握",
+      "aliases": [
+        "urinary system"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt118",
+      "name": "肾脏（kidney）",
+      "definition": "形成尿液的器官。",
+      "importance": "掌握",
+      "aliases": [
+        "kidney"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt119",
+      "name": "肾单位",
+      "definition": "肾脏的结构和功能单位；每个肾脏包括大约100万个肾单位。",
+      "importance": "掌握",
+      "examples": [
+        "由肾小球、肾小囊和肾小管等部分组成"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt120",
+      "name": "肾小球",
+      "definition": "由入球小动脉分出的许多毛细血管相互缠绕形成的血管球，毛细血管汇集成出球小动脉；与肾小囊内壁共同起过滤作用。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt121",
+      "name": "肾小囊",
+      "definition": "套在肾小球外面、下接肾小管的结构；其内壁紧贴肾小球并参与过滤，囊内液体称为原尿。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt122",
+      "name": "肾小管",
+      "definition": "细长而曲折、周围缠绕大量毛细血管的结构；原尿流经肾小管时，发生重吸收（如葡萄糖全部被吸收）。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt123",
+      "name": "过滤作用（肾小球-肾小囊壁）",
+      "definition": "当血液流经肾小球时，除血细胞和大分子蛋白质外，血浆中的一部分水、无机盐、葡萄糖和尿素等可通过肾小球过滤到肾小囊中。",
+      "importance": "掌握",
+      "examples": [
+        "蛋白质和血细胞不能通过过滤进入肾小囊"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt124",
+      "name": "原尿",
+      "definition": "由肾小球过滤进入肾小囊中的液体。",
+      "importance": "掌握",
+      "unit": "升/天",
+      "examples": [
+        "人体每天形成的原尿大约有180升"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt125",
+      "name": "重吸收作用（肾小管）",
+      "definition": "原尿流经肾小管时，全部葡萄糖、大部分水和部分无机盐等被肾小管重新吸收进入肾小管外的毛细血管并回到血液中。",
+      "importance": "掌握",
+      "examples": [
+        "尿液中不含葡萄糖"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt126",
+      "name": "尿液",
+      "definition": "原尿经肾小管重吸收后，剩下的水和无机盐、尿素等形成的液体；由肾脏形成，经输尿管进入膀胱储存，排尿时经尿道排出体外。",
+      "importance": "掌握",
+      "unit": "升/天",
+      "examples": [
+        "人体每天排出的尿液约1.5升"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt127",
+      "name": "尿的形成与排出过程",
+      "definition": "尿的形成主要与肾单位有关：肾小球和肾小囊内壁过滤形成原尿；原尿经肾小管重吸收后形成尿液；尿液经输尿管入膀胱储存，排尿时经尿道排出体外。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt128",
+      "name": "排尿的意义（调节水盐平衡）",
+      "definition": "人体排尿不仅排出废物，而且对调节体内水和无机盐的平衡、维持组织细胞正常生理功能有重要作用。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt129",
+      "name": "其他排泄途径：汗腺排汗",
+      "definition": "尿素、多余的水分和无机盐除通过尿液排出外，也能通过皮肤中的汗腺分泌汗液排出；汗液主要成分是水，含少量尿素和无机盐（如氯化钠）。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt130",
+      "name": "汗腺",
+      "definition": "分布于全身皮肤的腺体，由分泌部和导管组成；分泌部位于真皮或皮下组织内，产生的汗液经导管排到皮肤表面。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt131",
+      "name": "汗腺调节体温",
+      "definition": "汗液蒸发能带走身体一部分热量，因此汗腺具有调节体温的作用。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt132",
+      "name": "呼吸系统排出二氧化碳",
+      "definition": "人体产生的二氧化碳由呼吸系统排出体外。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt133",
+      "name": "感受器",
+      "definition": "人体中感受外界刺激的结构，分布在身体不同部位，用于获取外界信息。",
+      "importance": "掌握",
+      "examples": [
+        "皮肤里的感觉神经末梢",
+        "视网膜上对光线敏感的细胞",
+        "耳蜗内对声波敏感的感觉细胞"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt134",
+      "name": "感觉器官",
+      "definition": "带有附属结构的一类感受器，通常称为感觉器官，如眼和耳等。",
+      "importance": "了解",
+      "examples": [
+        "眼是视觉器官",
+        "耳是听觉器官"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt135",
+      "name": "视觉的形成",
+      "definition": "光线进入眼内，经角膜、瞳孔、晶状体、玻璃体等折射在视网膜成像，视网膜感光细胞将信息经视觉神经传至大脑特定区域处理，从而产生视觉。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt136",
+      "name": "视网膜成像",
+      "definition": "外界物体反射来的光线经眼球折射后在视网膜上形成物像的过程；物像落到视网膜上才能清晰视物。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt137",
+      "name": "近视",
+      "definition": "由于眼球前后径过长或晶状体曲度过大且不易恢复，远处物体成像落在视网膜前方，导致看不清远处物体。",
+      "importance": "掌握",
+      "aliases": [
+        "近视眼"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt138",
+      "name": "凹透镜矫正近视",
+      "definition": "近视眼可通过配戴近视镜（凹透镜）使成像位置后移，矫正视物不清。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt139",
+      "name": "透镜的会聚与发散",
+      "definition": "凸透镜对光有会聚作用；凹透镜对光有发散作用。",
+      "importance": "了解",
+      "examples": [
+        "远视眼镜的镜片多为凸透镜",
+        "近视眼镜的镜片多为凹透镜"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt140",
+      "name": "听觉的形成",
+      "definition": "声波经外耳道到鼓膜，引起鼓膜振动并经听小骨传至内耳，刺激耳蜗感觉细胞，信息经听觉神经传至大脑一定区域，产生听觉。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt141",
+      "name": "噪声",
+      "definition": "外界环境中影响人们学习、工作和休息的声音。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt142",
+      "name": "神经系统的组成",
+      "definition": "神经系统由脑、脊髓和它们发出的神经组成；脑和脊髓为中枢部分，脑神经和脊神经为周围部分。",
+      "importance": "掌握"
+    },
+    {
+      "id": "biology_7b_rjb_cpt143",
+      "name": "神经元",
+      "definition": "神经系统结构与功能的基本单位，由细胞体、树突和轴突等部分构成；接受、传导并传递信息。",
+      "importance": "掌握",
+      "aliases": [
+        "神经细胞",
+        "neuron"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt144",
+      "name": "神经纤维",
+      "definition": "轴突呈纤维状且外表多套有髓鞘形成的结构；许多神经纤维集结成束并由包膜包裹形成神经。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt145",
+      "name": "神经",
+      "definition": "由许多神经纤维集结成束并由包膜包裹形成的结构；包括脑神经和脊神经。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt146",
+      "name": "神经末梢",
+      "definition": "树突和轴突末端的细小分支，分布在全身各处。",
+      "importance": "了解"
+    },
+    {
+      "id": "biology_7b_rjb_cpt147",
+      "name": "反射",
+      "definition": "神经系统对机体活动进行调节的一种基本方式；躯体运动和内脏活动的分级调节都可通过反射实现。",
+      "importance": "掌握",
+      "aliases": [
+        "reflex"
+      ],
+      "examples": [
+        "缩手反射",
+        "眨眼反射",
+        "膝跳反射",
+        "排尿反射"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt148",
+      "name": "反射弧",
+      "definition": "完成反射的神经结构基础，由感受器、传入神经、神经中枢、传出神经和效应器构成。",
+      "importance": "掌握",
+      "aliases": [
+        "reflex arc"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt149",
+      "name": "简单反射",
+      "definition": "人生来就有的反射，只要出现刺激正常人体即可作出反应，不需要先经大脑分析判断。",
+      "importance": "了解",
+      "examples": [
+        "缩手反射",
+        "眨眼反射",
+        "排尿反射",
+        "膝跳反射"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt150",
+      "name": "复杂反射",
+      "definition": "通过长期生活经验积累形成的反射；与语言文字有关的反射最复杂且为人类特有。",
+      "importance": "了解",
+      "examples": [
+        "听到上课铃声迅速走进教室",
+        "望梅止渴（谈论梅子也分泌唾液）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt151",
+      "name": "内分泌腺",
+      "definition": "没有导管的腺体，其分泌物（激素）直接进入腺体内的毛细血管，并随血液循环输送到全身各处。",
+      "importance": "掌握",
+      "examples": [
+        "垂体",
+        "甲状腺",
+        "肾上腺",
+        "胰岛",
+        "性腺（睾丸、卵巢）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt152",
+      "name": "生长激素",
+      "definition": "由垂体分泌，对生长发育起调节作用；幼年分泌不足导致侏儒症，分泌过多导致巨人症。",
+      "importance": "了解",
+      "examples": [
+        "侏儒症与幼年生长激素分泌不足有关"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt153",
+      "name": "甲状腺激素",
+      "definition": "由甲状腺分泌，可促进代谢、促进生长发育、提高神经系统兴奋性；能促进蝌蚪发育；缺碘致其分泌不足可引发地方性甲状腺肿。",
+      "importance": "掌握",
+      "aliases": [
+        "thyroxine"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt154",
+      "name": "胰岛素",
+      "definition": "由胰岛B细胞分泌的激素；当血糖浓度升高时分泌增加，促进血糖进入组织细胞氧化分解与合成糖原、转变为甘油三酯，并抑制肝糖原分解和非糖物质转化为葡萄糖，从而降低血糖浓度。",
+      "importance": "掌握",
+      "examples": [
+        "胰岛素用于治疗糖尿病"
+      ],
+      "unit": "",
+      "aliases": [
+        "insulin"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt155",
+      "name": "神经调节与激素调节的关系",
+      "definition": "人体生命活动主要受神经系统调节，但也受到激素调节影响；在神经系统调节控制下，激素参与调节生命活动。",
+      "importance": "重要"
+    },
+    {
+      "id": "biology_7b_rjb_cpt156",
+      "name": "人口增长",
+      "definition": "人口数量在一定时间内持续增加的现象，会对资源消耗与环境压力产生影响。",
+      "importance": "了解",
+      "examples": [
+        "世界人口从19世纪初10亿增长到2011年突破70亿",
+        "我国历年人口数据（如1949年5.42亿，2009年13.35亿）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt157",
+      "name": "人口问题",
+      "definition": "由人口数量过多或增长过快等带来的资源、环境和社会压力问题。",
+      "importance": "重要",
+      "examples": [
+        "“我国是世界第一人口大国，人口问题非常突出”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt158",
+      "name": "可持续发展",
+      "definition": "在不破坏生态学规律、避免资源过度消耗和环境污染的前提下，实现经济与生态效益同步、长期稳定的发展目标。",
+      "importance": "重要",
+      "examples": [
+        "“为了人类的可持续发展，人类必须控制人口的增长”",
+        "“人与自然的和谐发展问题，因为这是人类社会可持续发展的基础”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt159",
+      "name": "计划生育",
+      "definition": "为控制人口数量、提高人口素质而实施的基本国策。",
+      "importance": "了解",
+      "examples": [
+        "“我国已经把计划生育列为一项基本国策”"
+      ],
+      "aliases": [
+        "控制人口增长的基本国策（语境中）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt160",
+      "name": "生态环境",
+      "definition": "生物与其周围环境相互作用形成的整体环境状态，受人类活动影响可恶化或改善。",
+      "importance": "掌握",
+      "examples": [
+        "森林被砍伐导致环境恶化",
+        "河湖爆发水华、水质恶化变臭"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt161",
+      "name": "人类活动对生态环境的影响",
+      "definition": "人类社会生活和生产活动对生态环境产生的作用，既可能破坏也可能改善，且可影响整个生物圈。",
+      "importance": "掌握",
+      "examples": [
+        "滥伐森林",
+        "工厂排放烟雾",
+        "垃圾围城",
+        "植树造林、救治放归野鸟"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt162",
+      "name": "环境污染",
+      "definition": "人类活动产生的有害物质进入环境（大气、水、土壤等）并造成危害的现象。",
+      "importance": "掌握",
+      "examples": [
+        "核污染（福岛核电站放射性物质泄漏）",
+        "大气污染、固体废弃物污染",
+        "雾霾",
+        "酸雨"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt163",
+      "name": "酸雨",
+      "definition": "pH小于5.6的雨水；主要由人为向大气排放大量酸性物质造成。",
+      "importance": "掌握",
+      "formula": "pH < 5.6",
+      "examples": [
+        "“正常雨水的pH不小于5.6，pH小于5.6的雨水则是酸雨”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt164",
+      "name": "pH（酸碱度）",
+      "definition": "表示溶液酸碱性的量，常温下范围0～14；pH=7为中性，pH<7为酸性。",
+      "importance": "掌握",
+      "formula": "0 ≤ pH ≤ 14；pH=7中性；pH<7酸性",
+      "unit": "无量纲"
+    },
+    {
+      "id": "biology_7b_rjb_cpt165",
+      "name": "水污染",
+      "definition": "有毒有害物质进入水体导致水质恶化并危害生物与人体健康的污染。",
+      "importance": "掌握",
+      "examples": [
+        "“排入水中的有毒有害物质接触人体…诱发癌症”",
+        "“与水污染有关的疾病”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt166",
+      "name": "水华（蓝藻大量滋生）",
+      "definition": "湖泊等水体污染后藻类（如蓝藻）大量繁殖形成的现象，可致水体发臭、鱼虾难以生存。",
+      "importance": "了解",
+      "examples": [
+        "“导致蓝藻等大量滋生，形成水华…鱼虾难以生存”"
+      ],
+      "aliases": [
+        "藻华（常见表述，教材中用“水华”）"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt167",
+      "name": "食物链积累（重金属生物富集）",
+      "definition": "汞、镉、砷等重金属污染物在生物体内逐级积累，最终危害人体健康的过程。",
+      "importance": "了解",
+      "examples": [
+        "“汞、镉、砷，还会通过食物链积累，最终危害人体健康”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt168",
+      "name": "水污染防治原则",
+      "definition": "水污染防治应坚持预防为主、防治结合、综合治理；优先保护饮用水水源，严格控制污染物进入河流湖泊。",
+      "importance": "了解",
+      "examples": [
+        "“水污染防治应当坚持预防为主、防治结合、综合治理的原则…”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt169",
+      "name": "退耕还林还草",
+      "definition": "从保护和改善生态环境出发，将易造成水土流失的坡耕地有计划停止耕种，按宜乔则乔、宜灌则灌、宜草则草、乔灌草结合恢复植被的措施。",
+      "importance": "了解",
+      "examples": [
+        "“实施退耕还林还草…恢复植被”"
+      ]
+    },
+    {
+      "id": "biology_7b_rjb_cpt170",
+      "name": "水土流失",
+      "definition": "土壤被水等外力侵蚀并流失的现象，西部地区突出；与毁林毁草开荒、陡坡种粮等有关。",
+      "importance": "了解",
+      "examples": [
+        "“造成这些问题的重要原因，就是毁林毁草开荒和陡坡种粮”"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "biology_7b_rjb_skl1",
+      "name": "基于化石证据进行推断",
+      "description": "利用化石呈现的形态结构特征等事实证据，推断古人类的运动方式、生活方式与演化方向等结论。"
+    },
+    {
+      "id": "biology_7b_rjb_skl2",
+      "name": "区分事实和观点",
+      "description": "在科学探究中，将可直接依据证据确认的陈述作为事实，将基于事实提出的解释性、推断性陈述作为观点；并认识到不同事实与方法可能导致不同观点。"
+    },
+    {
+      "id": "biology_7b_rjb_skl3",
+      "name": "读图与资料分析（趋势与对比）",
+      "description": "通过曲线图或结构示意图提取信息，比较男女差异与变化趋势，并结合生物学知识解释原因。"
+    },
+    {
+      "id": "biology_7b_rjb_skl4",
+      "name": "作出假设",
+      "description": "作出假设需要根据已有的知识和经验来进行；针对不同问题作出的假设不同，有的问题可能不需要作出假设。"
+    },
+    {
+      "id": "biology_7b_rjb_skl5",
+      "name": "设置重复组并取平均值",
+      "description": "实验测得数据往往存在误差，需要设置重复组，即同一实验在相同条件下重复做几次；若数据相近说明排除了偶然因素影响；结果应取各重复组的平均值。"
+    },
+    {
+      "id": "biology_7b_rjb_skl6",
+      "name": "解读曲线图",
+      "description": "根据曲线随消化道不同部位变化的趋势，判断不同营养物质（如淀粉、脂肪、蛋白质）的消化过程及其开始消化的部位，并推断相关部位含有哪些消化酶。"
+    },
+    {
+      "id": "biology_7b_rjb_skl7",
+      "name": "模拟实验探究（建立模型并类比解释）",
+      "description": "用装置模型模拟人体结构，观察变量变化并据此解释真实系统的工作原理（如胸腔容积变化与吸/呼气的关系）。"
+    },
+    {
+      "id": "biology_7b_rjb_skl8",
+      "name": "数据比较与解释（表格分析）",
+      "description": "通过比较不同条件下数据的差异，提出变化原因并用相关生理过程解释（如吸入/呼出气体成分变化）。"
+    },
+    {
+      "id": "biology_7b_rjb_skl9",
+      "name": "测量与计算（用公式估算生理指标）",
+      "description": "通过测量可获得的量并代入公式进行计算，从而估算难以直接测得的生理量。"
+    },
+    {
+      "id": "biology_7b_rjb_skl10",
+      "name": "使用显微镜观察永久涂片并识别细胞",
+      "description": "在低倍显微镜下观察永久涂片，对照图示识别红细胞和白细胞，并比较它们的形态特征与数量差异。"
+    },
+    {
+      "id": "biology_7b_rjb_skl11",
+      "name": "观察并分辨血管类型及血流特点",
+      "description": "在显微镜下观察活体组织（如小鱼尾鳍）血液流动，依据管径、分支与汇入关系、血流速度、红细胞是否单行通过等特征分辨动脉、毛细血管和静脉。"
+    },
+    {
+      "id": "biology_7b_rjb_skl12",
+      "name": "设计表格记录并分析实验数据",
+      "description": "将不同条件下获得的数据用表格记录，便于比较与分析，从数据中归纳规律并提出进一步探究问题。"
+    },
+    {
+      "id": "biology_7b_rjb_skl13",
+      "name": "测量血压",
+      "description": "使用血压计与听诊器在肱动脉处测量血压：充气至听不到搏动声后缓慢放气，首次出现搏动声读数为收缩压，声音突变时读数为舒张压。"
+    },
+    {
+      "id": "biology_7b_rjb_skl14",
+      "name": "资料分析与比较（表格数据）",
+      "description": "通过比较不同样本（如血浆、肾小囊中液体、尿液）的成分数据差异，推断结构功能（如过滤、重吸收）的存在及其特点。"
+    },
+    {
+      "id": "biology_7b_rjb_skl15",
+      "name": "观察与测量对比",
+      "description": "对观察得到的判断用工具测量进行验证与修正，理解观察与测量的区别，并认识在很多情况下需要用工具测量以获得可靠结果。"
+    },
+    {
+      "id": "biology_7b_rjb_skl16",
+      "name": "设计对照实验",
+      "description": "设置对照组与实验组（必要时为空白对照），使除自变量外的条件尽可能一致，通过对比结果判断自变量对因变量的影响。"
+    },
+    {
+      "id": "biology_7b_rjb_skl17",
+      "name": "提出问题—作出假设—制订计划—实施记录—分析结论的探究流程",
+      "description": "基于生活经验提出可探究问题，提出假设，制定可操作的测量方案，进行重复测量与一致读数，记录并分析数据得出结论，并对不一致情况分析原因。"
+    },
+    {
+      "id": "biology_7b_rjb_skl18",
+      "name": "资料分析与图表表达（绘制柱形图）",
+      "description": "阅读给定数据，选择合适的图表形式（如柱形图）表示变化趋势，并据图或据数据进行解释与推断。"
+    },
+    {
+      "id": "biology_7b_rjb_skl19",
+      "name": "科学探究：设计对照实验与重复测量",
+      "description": "在实验室条件下模拟变量影响，设置实验组与对照组；进行数量统计并通过多组重复提高结论可靠性。"
+    },
+    {
+      "id": "biology_7b_rjb_skl20",
+      "name": "实地调查与行动计划制定",
+      "description": "围绕真实情境收集信息（实地调查、咨询、查阅资料），分析原因，形成调查报告，并提出可行的保护生态环境行动计划与评价改进。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "biology_7b_rjb_exp1",
+      "name": "测定某种食物中的能量",
+      "instrument": [
+        "锥形瓶（50毫升）",
+        "水（30毫升）",
+        "铁架台",
+        "温度计",
+        "火焰/点燃装置",
+        "花生种子/核桃种子",
+        "天平/称量工具"
+      ],
+      "is_student": 1,
+      "process": "锥形瓶加水并固定，放入温度计测初温；称量干燥花生种子质量并点燃；将燃烧的花生种子置于锥形瓶底部使其完全燃烧；测量燃烧后水温，根据水温升高计算放出热量。",
+      "conclusion": "通过测量食物燃烧放出热能的多少，可测定食物中确实含有能量。"
+    },
+    {
+      "id": "biology_7b_rjb_exp2",
+      "name": "探究馒头在口腔中的变化（唾液对淀粉的消化作用）",
+      "instrument": [
+        "馒头块A/B/C",
+        "刀",
+        "消毒棉絮",
+        "镊子",
+        "小烧杯",
+        "试管3支",
+        "唾液",
+        "清水",
+        "温水浴（约37℃）",
+        "碘液"
+      ],
+      "is_student": 1,
+      "process": "A、B切碎，C不处理；收集唾液；①A+唾液并搅拌，②B+清水并搅拌，③C+唾液不搅拌；三管置37℃温水中5~10分钟；各加碘液观察颜色变化以判断淀粉是否分解。",
+      "phenomena": "含唾液且充分混合的组更易出现“碘液不变蓝/变浅”等指示淀粉减少的现象。",
+      "conclusion": "牙齿咀嚼和舌搅拌使淀粉与唾液充分混合，唾液中的唾液淀粉酶发挥作用，使淀粉分解为麦芽糖，从而产生甜味。"
+    },
+    {
+      "id": "biology_7b_rjb_exp3",
+      "name": "呼吸运动与通气机制模拟实验（胸廓-膈-肺模型）",
+      "instrument": "玻璃罩、玻璃管、气球、橡皮膜（按教材装置）",
+      "is_student": 0,
+      "process": "一手拿模型，另一手向上推橡皮膜后再放松，观察气球体积变化与橡皮膜位置变化的关系。",
+      "phenomena": "橡皮膜位置改变时，气球会出现胀大或回缩等体积变化；若漏气或密封不严，变化异常或不明显。",
+      "conclusion": "胸腔容积变化可引起肺内压力变化，从而导致吸气和呼气。"
+    },
+    {
+      "id": "biology_7b_rjb_exp4",
+      "name": "用显微镜观察人血的永久涂片",
+      "instrument": "人血的永久涂片、显微镜",
+      "is_student": 1,
+      "process": "将人血永久涂片置于低倍显微镜下观察；对照图示认识红细胞、白细胞并比较形态和数量。",
+      "conclusion": "涂片中数量最多的是红细胞；白细胞体积较大且有细胞核，可据此与红细胞区分。"
+    },
+    {
+      "id": "biology_7b_rjb_exp5",
+      "name": "观察小鱼尾鳍内血液的流动",
+      "instrument": "尾鳍色素少的活小鱼、显微镜、培养皿、滴管、棉絮（纱布）、载玻片",
+      "is_student": 1,
+      "process": "湿棉絮包裹鱼体露出口和尾部，使尾鳍平贴培养皿；盖载玻片后低倍显微镜观察血流；找到最小管径血管并追踪其来自与汇入的血管。",
+      "phenomena": "可见三种血管；在毛细血管中红细胞常呈单行通过，血流速度最慢。",
+      "conclusion": "存在动脉、静脉、毛细血管三类血管；毛细血管管径小、管壁薄，适于物质交换。"
+    },
+    {
+      "id": "biology_7b_rjb_exp6",
+      "name": "观察明暗环境中瞳孔大小变化",
+      "instrument": [
+        "明亮与较暗环境（或遮光条件）",
+        "同伴（互相观察）"
+      ],
+      "is_student": 1,
+      "process": "在明亮与黑暗（或较暗）环境下分别观察（或互相观察）瞳孔大小并记录，比较差异并解释。",
+      "conclusion": "瞳孔大小会随环境明暗改变以调节进入眼内的光量（教材以猫为例引导类比到人）。"
+    },
+    {
+      "id": "biology_7b_rjb_exp7",
+      "name": "膝跳反射实验",
+      "instrument": [
+        "椅子",
+        "手掌（叩击用）"
+      ],
+      "is_student": 1,
+      "process": "两人一组，受试者坐姿一腿着地另一腿自然搭放；实验者用手掌内侧边缘迅速叩击膝盖下方韧带，观察小腿反应。",
+      "phenomena": "大腿部分肌肉迅速收缩，小腿突然抬起。",
+      "conclusion": "膝跳反射是人生来就有的反射；医生可用其检测神经系统对刺激反应状况。"
+    },
+    {
+      "id": "biology_7b_rjb_exp8",
+      "name": "录音回放比较自我声音",
+      "instrument": [
+        "录音设备（手机/录音机）",
+        "播放设备"
+      ],
+      "is_student": 1,
+      "process": "录下自己说话或唱歌的声音，再回放并与平时听到的自己声音进行对比，思考差异原因。",
+      "conclusion": "回放听到的声音可能与平时自己听到的不同（教材提问引导解释）。"
+    },
+    {
+      "id": "biology_7b_rjb_exp9",
+      "name": "用尺测定反应速度（接尺子）",
+      "instrument": [
+        "带刻度尺",
+        "同伴"
+      ],
+      "is_student": 1,
+      "process": "同伴手捏尺子刻度大端；被试拇指食指对准0刻度端并保持约1厘米间距，盯住同伴手；同伴松手瞬间被试尽快夹住尺子；记录夹住处刻度，多次重复并比较不同状态/不同人。",
+      "conclusion": "夹住尺子的刻度值大小可反映反应速度；可用于探究反应速度与状态、注意力、练习等因素关系。"
+    },
+    {
+      "id": "biology_7b_rjb_exp10",
+      "name": "模拟探究：酸雨对生物（植物）的影响",
+      "instrument": "食醋、清水、pH测定工具（可选）、种子或幼苗、容器、记录表格",
+      "is_student": 1,
+      "process": "用食醋与清水按比例配制模拟酸雨；设置酸雨处理组与对照组；测定种子发芽率或幼苗生长状况；进行数量统计，重复多组实验并记录现象与结果。",
+      "phenomena": "酸雨条件下发芽率降低或幼苗生长受抑（可能出现枯萎等）。",
+      "conclusion": "酸雨对生物（植物）有不利影响；合理的实验设计（对照、统计、重复）可提高结论可靠性。"
+    },
+    {
+      "id": "biology_7b_rjb_exp11",
+      "name": "测定当地雨水pH判断是否为酸雨",
+      "instrument": "雨水样品、pH试纸（或pH计）、取样容器",
+      "is_student": 1,
+      "process": "收集当地雨水样品；用pH试纸测定pH；与5.6阈值比较判断是否为酸雨；若为酸雨尝试分析成因。",
+      "conclusion": "若pH<5.6则可判定为酸雨；结合污染排放等因素可进行成因分析。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "biology_7b_rjb_exe1",
+      "type": "简答题",
+      "stem": "根据教材短文内容，判断下列陈述中哪些是事实，哪些是观点：\n（1）古人类露西的化石是在非洲发现的。\n（2）露西生活在300万年前。\n（3）其他地区没有发现200万～300万年前的古人类化石。\n（4）亚洲的直立人是从非洲迁徙过来的。",
+      "answer": "（1）事实。（2）事实。（3）事实（短文表述为“其他地区一直没有发现这么古老的古人类化石”，属于基于当时发现情况的事实陈述）。（4）观点（由研究证据推出的解释性结论）。",
+      "analysis": "抓住“事实=可由发现与记录直接支持的陈述”“观点=对证据的解释或推断”。（4）属于学术界形成的看法，且涉及迁徙解释，归为观点。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe2",
+      "type": "简答题",
+      "stem": "馒头在口腔中细嚼会逐渐变甜。请解释馒头变甜的原因，并写出涉及的主要物质变化。",
+      "answer": "馒头主要成分是淀粉。牙齿咀嚼和舌搅拌使馒头与唾液充分混合，唾液中的唾液淀粉酶将部分淀粉分解为有甜味的麦芽糖，因此会感觉变甜。主要变化：淀粉→麦芽糖。",
+      "analysis": "从“甜味出现”追溯到“淀粉本无甜味、分解产物麦芽糖有甜味”，再指出条件为“充分混合+唾液淀粉酶”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe3",
+      "type": "简答题",
+      "stem": "根据教材信息，说明“合理营养”的两层含义，并各举一条日常饮食中的做法作为例子。",
+      "answer": "合理营养是全面而平衡的营养。全面：摄取的营养素种类要齐全（六类营养物质和膳食纤维）。例：每天同时摄入谷类、蔬菜水果、奶类/豆制品、适量鱼禽蛋瘦肉等多种食物。平衡：各种营养素摄取量要合适、比例适当，与身体需要保持平衡。例：三餐按时进食，不暴饮暴食，并使早中晚能量约30%:40%:30%。",
+      "analysis": "按定义拆分为“全面/平衡”，再用教材提供的宝塔与三餐能量分配作例证。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe4",
+      "type": "简答题",
+      "stem": "呼吸道除了是气体进出肺的通道外，还能对吸入的气体进行哪些处理？这些处理分别主要依靠哪些结构实现？",
+      "answer": "处理包括：使空气清洁、湿润、温暖。清洁主要依靠鼻毛与黏液黏附尘粒/细菌，以及气管纤毛将含杂质的黏液送至咽部咳出；湿润主要依靠呼吸道黏膜/腺细胞分泌黏液保持湿润；温暖主要依靠鼻腔黏膜中丰富的毛细血管使空气升温。",
+      "analysis": "将“处理功能”分解为清洁/湿润/温暖三类，再在文本中对应结构证据：鼻毛、黏液、毛细血管、纤毛摆动。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe5",
+      "type": "简答题",
+      "stem": "简述吸气与呼气时胸腔容积、肺内气体压力以及气体进出的变化关系。",
+      "answer": "吸气时肋间肌和膈肌收缩使胸腔容积扩大，肺扩张，肺内气体压力降低，外界气体被吸入；呼气时肋间肌和膈肌舒张使胸腔容积缩小，肺收缩，肺内气体压力升高，气体被呼出。",
+      "analysis": "",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe6",
+      "type": "简答题",
+      "stem": "含有抗凝剂的血液离心后出现分层：上层淡黄色半透明液体约占血液总量的55%，下层红色部分为红细胞，两层交界处有薄薄的白色层。请写出三层分别主要是什么，并概括血液由哪几部分构成。",
+      "answer": "上层为血浆（约55%）；下层红色部分主要为红细胞；交界处白色薄层为白细胞与血小板。血液由血浆和血细胞（红细胞、白细胞、血小板）构成。",
+      "analysis": "根据教材对血液分层图的文字说明直接对应各层成分，并总结血液组成。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe7",
+      "type": "简答题",
+      "stem": "为什么在毛细血管中红细胞常呈单行通过？这说明毛细血管在结构上具有什么特点，并与其功能有什么关系？",
+      "answer": "红细胞单行通过是因为毛细血管内径很小，只允许红细胞单行通过；毛细血管管壁非常薄（仅一层扁平上皮细胞），血流速度最慢。这些特点有利于血液与组织细胞充分进行物质交换（氧和营养进入组织，二氧化碳和废物进入血液）。",
+      "analysis": "从“现象→结构特征→功能意义”进行解释：内径小与管壁薄对应交换效率。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe8",
+      "type": "简答题",
+      "stem": "安全输血的基本原则是什么？在紧急情况下没有同型血时，哪些血型的人可以少量输入O型血？AB型血的人在紧急情况下还可以少量输入哪些血型的血？",
+      "answer": "基本原则是同型输血。在紧急且无同型血时，任何血型的人都可以缓慢输入少量O型血；AB型血的人除可少量输入O型血外，还可少量输入A型或B型血（大量输血仍需同型输血）。",
+      "analysis": "直接依据教材“安全输血”段落与表格信息作答，并强调“大量输血仍需同型”。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe9",
+      "type": "简答题",
+      "stem": "根据教材给出的成分数据：血浆和肾小囊中液体都含有葡萄糖（0.1克/100毫升），但尿液中葡萄糖为0。由此可以推断肾单位中哪一结构具有怎样的作用？",
+      "answer": "肾小管具有重吸收作用：原尿流经肾小管时，葡萄糖被全部重新吸收进入血液，因此尿液中不含葡萄糖。",
+      "analysis": "题干信息指向“原尿有葡萄糖而尿液无葡萄糖”，说明葡萄糖在形成尿液过程中被回收；教材明确指出“当原尿流经肾小管时，全部葡萄糖……被肾小管重新吸收”。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe10",
+      "type": "判断题",
+      "stem": "判断题：人体排尿的作用只是排出废物，与维持内环境稳定无关。（  ）",
+      "answer": "错误。排尿不仅排出废物，而且能调节体内水和无机盐平衡，维持组织细胞正常生理功能。",
+      "analysis": "教材原文指出排尿“对调节体内水和无机盐的平衡，维持组织细胞的正常生理功能，也有重要的作用”。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe11",
+      "type": "简答题",
+      "stem": "近视是怎样形成的？近视眼配戴眼镜前后，眼球的成像情况各有什么特点？应使用哪种透镜矫正？",
+      "answer": "近视形成原因：眼球前后径过长或晶状体曲度过大且不易恢复，导致远处物体成像落在视网膜前方而看不清远处。配镜前：物像在视网膜前方；配戴近视镜后：利用凹透镜的发散作用使光线适当发散，成像后移落在视网膜上，从而看清远处物体。矫正透镜：凹透镜。",
+      "analysis": "抓住“清晰成像必须落到视网膜上”的条件，判断近视为“落在视网膜前”，再用凹透镜“发散使成像后移”实现矫正。",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe12",
+      "type": "简答题",
+      "stem": "请按顺序写出听觉形成的大致过程（从声波进入耳开始到产生听觉为止）。",
+      "answer": "声波经外耳道传到鼓膜→鼓膜振动经听小骨传到内耳→刺激耳蜗内对声波敏感的感觉细胞→感觉细胞将声音信息通过听觉神经传到大脑一定区域→产生听觉。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe13",
+      "type": "简答题",
+      "stem": "什么是反射？反射弧由哪些基本结构组成？",
+      "answer": "反射：人体通过神经系统，对外界或内部各种刺激所发生的有规律的反应。反射弧的基本结构：感受器、传入神经、神经中枢、传出神经、效应器。",
+      "analysis": "",
+      "difficulty": 2,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe14",
+      "type": "简答题",
+      "stem": "常温下，某雨水样品用pH试纸测得pH=5.2。该雨水是否属于酸雨？说明判断依据。",
+      "answer": "属于酸雨。依据：正常雨水pH不小于5.6，pH小于5.6的雨水为酸雨；该样品pH=5.2<5.6。",
+      "analysis": "识记并应用酸雨判定阈值pH<5.6。",
+      "difficulty": 1,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    },
+    {
+      "id": "biology_7b_rjb_exe15",
+      "type": "简答题",
+      "stem": "在实验室模拟探究“酸雨对植物种子发芽的影响”。请写出实验中至少一项关键设计：对照组应如何设置？以及为什么需要重复多组并进行数量统计？",
+      "answer": "对照组可用接近正常雨水酸度的清水（或pH≥5.6的溶液）浇灌，其他条件与实验组相同。需要重复多组并进行数量统计（如计算发芽率），以减少偶然误差、提高结果可靠性与可比性。",
+      "analysis": "考查对照实验思想与用统计、重复提高可靠性的科学探究方法。",
+      "difficulty": 3,
+      "knowledge_points": [],
+      "skills": [],
+      "source": "K12-KGraph"
+    }
+  ],
+  "question_bank_sources": [
+    {
+      "id": "k12_kgraph",
+      "name": "K12-KGraph",
+      "url": "https://huggingface.co/datasets/lhpku20010120/K12-KGraph",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "按人教版 K12 教材整理知识图谱、知识点、技能、实验与部分课后练习；适合非商业知识点/题库底座。"
+    },
+    {
+      "id": "e_eval",
+      "name": "E-EVAL",
+      "url": "https://huggingface.co/datasets/E-EVAL/E-EVAL",
+      "license": "Apache-2.0",
+      "usage": "小学、初中、高中多学科选择题，可作为语文/英语/历史/地理/政治等题库补充源。"
+    },
+    {
+      "id": "eduqs",
+      "name": "EduQS",
+      "url": "https://huggingface.co/datasets/chaosY/EduQS",
+      "license": "Apache-2.0",
+      "usage": "初高中多模态教育题库，含答案、解析、知识点与图片字段；适合初高中理科/文综题库补充。"
+    },
+    {
+      "id": "ceval",
+      "name": "C-Eval",
+      "url": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0",
+      "usage": "初高中到大学多学科选择题评测集；适合非商业测评与补充题。"
+    },
+    {
+      "id": "m3ke",
+      "name": "M3KE",
+      "url": "https://github.com/tjunlp-lab/M3KE",
+      "license": "请以仓库 LICENSE 为准",
+      "usage": "小学到高中多学科四选一题目；适合作为补充题库来源。"
+    }
+  ],
+  "summary": {
+    "knowledge_point_count": 170,
+    "skill_count": 20,
+    "experiment_count": 11,
+    "question_count": 15
+  }
+}
