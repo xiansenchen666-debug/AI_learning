@@ -2943,35 +2943,58 @@ const SUBJECT_STAGE_CONFIGS = {
   "初中": {
     label: "初中",
     en: "JUNIOR",
-    index: "02",
+    index: "03",
     className: "stage-junior",
   },
   "高中": {
     label: "高中",
     en: "SENIOR",
-    index: "03",
+    index: "04",
     className: "stage-senior",
+  },
+  "小升初衔接": {
+    label: "小升初",
+    en: "BRIDGE",
+    index: "02",
+    className: "stage-bridge",
   },
 };
 
 const SUBJECT_GRADE_ORDER = [
-  "一年级",
-  "二年级",
-  "三年级",
-  "四年级",
-  "五年级",
-  "六年级",
-  "初一",
-  "初二",
-  "初三",
-  "高一",
-  "高二",
-  "高三",
+  ["一年级", 10],
+  ["二年级", 20],
+  ["三年级", 30],
+  ["四年级", 40],
+  ["五年级", 50],
+  ["六年级", 60],
+  ["六升七", 65],
+  ["七年级", 70],
+  ["初一", 70],
+  ["八年级", 80],
+  ["初二", 80],
+  ["九年级", 90],
+  ["初三", 90],
+  ["高一", 100],
+  ["高二", 110],
+  ["高三", 120],
+  ["高中", 100],
 ];
 
 function subjectGradeIndex(grade) {
-  const index = SUBJECT_GRADE_ORDER.indexOf(grade);
-  return index === -1 ? 999 : index;
+  const text = String(grade || "").trim();
+  const match = SUBJECT_GRADE_ORDER.find(([name]) => text.includes(name));
+  if (!match) {
+    return 999;
+  }
+  let offset = 0;
+  if (text.includes("下册")) {
+    offset = 0.4;
+  } else if (text.includes("全一册")) {
+    offset = 0.2;
+  } else if (text.includes("选修")) {
+    offset = 0.6;
+  }
+  return match[1] + offset;
 }
 
 function buildSubjectCatalogModel(stages = []) {
@@ -3007,9 +3030,30 @@ function buildSubjectCatalogModel(stages = []) {
     (subjectGradeIndex(a.grade) - subjectGradeIndex(b.grade)) ||
     String(a.stage || "").localeCompare(String(b.stage || ""), "zh-CN")
   );
+  const stageGroups = [
+    ...gradeGroups.reduce((groups, group) => {
+      const key = group.stage || "其他";
+      if (!groups.has(key)) {
+        groups.set(key, {
+          stage: key,
+          grades: [],
+          courses: [],
+        });
+      }
+      const stageGroup = groups.get(key);
+      stageGroup.grades.push(group);
+      stageGroup.courses.push(...group.courses);
+      return groups;
+    }, new Map()).values(),
+  ].sort((a, b) =>
+    (SUBJECT_STAGE_CONFIGS[a.stage]?.index || "99").localeCompare(
+      SUBJECT_STAGE_CONFIGS[b.stage]?.index || "99",
+    ) || String(a.stage || "").localeCompare(String(b.stage || ""), "zh-CN")
+  );
   return {
     allCourses,
     gradeGroups,
+    stageGroups,
     totalStages: stages.length,
     totalSubjects: new Set(allCourses.map((course) => `${course.stage}/${course.subject}`))
       .size,
@@ -3028,24 +3072,54 @@ function renderSubjectCourseItem(course) {
         <span class="subject-course-name">${escapeHtml(cleanCourseDisplayTitle(course.title))}</span>
         <span class="subject-course-meta">${course.lesson_count || 0} 个知识点 · ${course.question_count || 0} 道练习</span>
       </span>
-      <span class="subject-enter-chip">${isUnlocked ? "学习" : "未开通"}</span>
+      <span class="subject-enter-chip">${isUnlocked ? "进入" : "未开通"}</span>
     </${tag}>
   `;
 }
 
-function renderGradePicker(model) {
-  return model.gradeGroups.map((group) => {
-    const config = SUBJECT_STAGE_CONFIGS[group.stage] ||
+function renderGradePicker(model, user = {}) {
+  const userStage = String(user.stage || "").trim();
+  const userGrade = String(user.grade || "").trim();
+  return model.stageGroups.map((stageGroup) => {
+    const config = SUBJECT_STAGE_CONFIGS[stageGroup.stage] ||
       SUBJECT_STAGE_CONFIGS["小学"];
-    const subjects = new Set(group.courses.map((course) => course.subject));
-    const unlocked = group.courses.filter((course) => course.purchased).length;
+    const stageCourses = stageGroup.courses || [];
+    const stageSubjects = new Set(stageCourses.map((course) => course.subject));
+    const stageUnlocked = stageCourses.filter((course) => course.purchased).length;
     return `
-      <a class="grade-entry-card ${config.className}" href="${escapeHtml(buildGradeHref(group.stage, group.grade))}">
-        <span class="grade-entry-stage">${escapeHtml(config.label)} · ${escapeHtml(config.en)}</span>
-        <strong>${escapeHtml(group.grade)}</strong>
-        <span>${subjects.size} 个科目 · ${group.courses.length} 本课本</span>
-        <em>${unlocked}/${group.courses.length} 已开通</em>
-      </a>
+      <section class="grade-stage-section ${config.className}">
+        <div class="grade-stage-rail">
+          <span class="stage-index">${escapeHtml(config.index)}</span>
+          <div>
+            <p class="stage-eyebrow">${escapeHtml(config.en)}</p>
+            <h3>${escapeHtml(config.label)}</h3>
+          </div>
+          <span class="grade-stage-count">${stageGroup.grades.length} 个年级 · ${stageSubjects.size} 个科目 · ${stageUnlocked}/${stageCourses.length} 已开通</span>
+        </div>
+        <div class="grade-entry-grid">
+          ${stageGroup.grades.map((group) => {
+            const subjects = [...new Set(group.courses.map((course) => course.subject))];
+            const unlocked = group.courses.filter((course) => course.purchased).length;
+            const progress = group.courses.length ? Math.round((unlocked / group.courses.length) * 100) : 0;
+            const isCurrent = group.stage === userStage && group.grade === userGrade;
+            return `
+              <a class="grade-entry-card ${config.className} ${isCurrent ? "is-current" : ""}" href="${escapeHtml(buildGradeHref(group.stage, group.grade))}">
+                <span class="grade-entry-topline">
+                  <span class="grade-entry-stage">${escapeHtml(config.label)} · ${escapeHtml(config.en)}</span>
+                  ${isCurrent ? '<span class="grade-current-chip">当前</span>' : ""}
+                </span>
+                <strong>${escapeHtml(group.grade)}</strong>
+                <span class="grade-entry-subjects">${subjects.slice(0, 4).map((subject) => `<b>${escapeHtml(subject)}</b>`).join("")}</span>
+                <span class="grade-progress-line"><i style="width: ${progress}%"></i></span>
+                <span class="grade-entry-foot">
+                  <em>${unlocked}/${group.courses.length} 已开通</em>
+                  <span>查看科目</span>
+                </span>
+              </a>
+            `;
+          }).join("")}
+        </div>
+      </section>
     `;
   }).join("") ||
     '<div class="subject-empty"><p>当前还没有可学习的课程。请先把课本放入 resources 后重新生成课程。</p></div>';
@@ -3061,8 +3135,38 @@ function renderGradeDetail(group) {
       return groups;
     }, new Map()).entries(),
   ].sort((a, b) => String(a[0]).localeCompare(String(b[0]), "zh-CN"));
-  return subjectGroups.map(([subjectName, subjectCourses]) => `
-    <section class="subject-column subject-directory-card">
+  if (!subjectGroups.length) {
+    return '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
+  }
+  const config = SUBJECT_STAGE_CONFIGS[group.stage] || SUBJECT_STAGE_CONFIGS["小学"];
+  const subjects = subjectGroups.map(([subjectName]) => subjectName);
+  const unlocked = group.courses.filter((course) => course.purchased).length;
+  const progress = group.courses.length ? Math.round((unlocked / group.courses.length) * 100) : 0;
+  return `
+    <section class="grade-overview-panel ${config.className}">
+      <div class="grade-overview-copy">
+        <span class="grade-entry-stage">${escapeHtml(config.label)} · ${escapeHtml(config.en)}</span>
+        <h2>${escapeHtml(group.grade)}学习地图</h2>
+        <p>先选科目，再进入已开通课本；每本课本里会按知识点继续拆成学习和练习。</p>
+      </div>
+      <div class="grade-overview-meter" aria-label="已开通课本进度">
+        <strong>${unlocked}/${group.courses.length}</strong>
+        <span>课本已开通</span>
+        <i><b style="width: ${progress}%"></b></i>
+      </div>
+      <div class="grade-overview-subjects">
+        ${subjects.map((subject) => `<span>${escapeHtml(subject)}</span>`).join("")}
+      </div>
+    </section>
+    <div class="grade-directory-head">
+      <div>
+        <p class="stage-eyebrow">SUBJECTS</p>
+        <h2 class="section-title">选择科目</h2>
+      </div>
+      <span>${subjectGroups.length} 个科目 · ${group.courses.length} 本课本</span>
+    </div>
+    ${subjectGroups.map(([subjectName, subjectCourses]) => `
+      <section class="subject-column subject-directory-card ${config.className}">
       <div class="subject-directory-head">
         <span class="subject-mark">${escapeHtml(subjectName.slice(0, 1))}</span>
         <div class="subject-directory-copy">
@@ -3074,8 +3178,8 @@ function renderGradeDetail(group) {
         ${subjectCourses.map(renderSubjectCourseItem).join("")}
       </div>
     </section>
-  `).join("") ||
-    '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
+    `).join("")}
+  `;
 }
 
 async function initSubjectsPage() {
@@ -3138,7 +3242,7 @@ async function initSubjectsPage() {
     gradeSummaryNode.textContent = `${model.gradeGroups.length} 个年级 · ${model.totalCourses} 本课本`;
   }
   if (gradeGrid) {
-    gradeGrid.innerHTML = renderGradePicker(model);
+    gradeGrid.innerHTML = renderGradePicker(model, user);
   }
   subjectsRoot.classList.remove("is-hidden");
   wireNavigationTransitions();

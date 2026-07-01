@@ -994,6 +994,30 @@ body.is-route-transitioning .page-scroll {
     left: 50%;
     width: min(300px, calc(100vw - 28px));
   }
+
+  .grade-stage-rail,
+  .grade-overview-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-stage-rail {
+    align-items: start;
+  }
+
+  .grade-directory-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grade-stage-count,
+  .grade-directory-head span {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .grade-overview-meter {
+    width: 100%;
+  }
 }
 
 @keyframes loadingRail {
@@ -1208,6 +1232,71 @@ body.is-route-transitioning .page-scroll {
   gap: 16px;
 }
 
+.grade-entry-shell > .grade-entry-grid[data-grade-grid] {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.grade-stage-section {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(26, 43, 60, 0.08);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.82)),
+    linear-gradient(90deg, var(--stage-bg, rgba(30, 64, 175, 0.08)), transparent 48%);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.06);
+}
+
+.grade-stage-section.stage-primary,
+.grade-overview-panel.stage-primary {
+  --stage-color: var(--accent);
+  --stage-bg: rgba(232, 168, 56, 0.13);
+}
+
+.grade-stage-section.stage-junior,
+.grade-overview-panel.stage-junior {
+  --stage-color: var(--sky);
+  --stage-bg: rgba(14, 165, 233, 0.11);
+}
+
+.grade-stage-section.stage-bridge,
+.grade-overview-panel.stage-bridge {
+  --stage-color: var(--emerald);
+  --stage-bg: rgba(16, 185, 129, 0.11);
+}
+
+.grade-stage-section.stage-senior,
+.grade-overview-panel.stage-senior {
+  --stage-color: var(--purple);
+  --stage-bg: rgba(139, 92, 246, 0.11);
+}
+
+.grade-stage-rail {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.grade-stage-rail h3 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.grade-stage-count {
+  justify-self: end;
+  color: var(--text-subtle);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: right;
+}
+
 .grade-entry-card {
   --stage-color: var(--primary);
   --stage-bg: rgba(30, 64, 175, 0.08);
@@ -1226,8 +1315,8 @@ body.is-route-transitioning .page-scroll {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(26, 54, 93, 0.08);
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(28, 30, 38, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(28, 30, 38, 0.05);
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -1247,9 +1336,30 @@ body.is-route-transitioning .page-scroll {
   --stage-bg: rgba(14, 165, 233, 0.11);
 }
 
+.grade-entry-card.stage-bridge {
+  --stage-color: var(--emerald);
+  --stage-bg: rgba(16, 185, 129, 0.11);
+}
+
 .grade-entry-card.stage-senior {
   --stage-color: var(--purple);
   --stage-bg: rgba(139, 92, 246, 0.11);
+}
+
+.grade-entry-card.is-current {
+  border-color: color-mix(in srgb, var(--stage-color), transparent 62%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--stage-color), transparent 76%),
+    0 16px 34px rgba(15, 23, 42, 0.08);
+}
+
+.grade-entry-topline,
+.grade-entry-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
 }
 
 .grade-entry-stage {
@@ -1264,6 +1374,15 @@ body.is-route-transitioning .page-scroll {
   font-weight: 850;
 }
 
+.grade-current-chip {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--stage-color);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .grade-entry-card strong {
   display: block;
   font-size: 30px;
@@ -1271,7 +1390,7 @@ body.is-route-transitioning .page-scroll {
   letter-spacing: 0;
 }
 
-.grade-entry-card span:not(.grade-entry-stage),
+.grade-entry-card span:not(.grade-entry-stage):not(.grade-current-chip),
 .grade-entry-card em {
   color: var(--text-subtle);
   font-size: 13px;
@@ -1281,6 +1400,147 @@ body.is-route-transitioning .page-scroll {
 
 .grade-entry-card em {
   color: var(--stage-color);
+}
+
+.grade-entry-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.grade-entry-subjects b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(26, 43, 60, 0.06);
+  color: #334155;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.grade-progress-line {
+  display: block;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(26, 43, 60, 0.08);
+}
+
+.grade-progress-line i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--stage-color), var(--sky));
+}
+
+.grade-entry-foot span {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.grade-overview-panel {
+  --stage-color: var(--primary);
+  --stage-bg: rgba(30, 64, 175, 0.08);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(26, 43, 60, 0.08);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.84)),
+    linear-gradient(90deg, var(--stage-bg), transparent 52%);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.grade-overview-copy h2 {
+  margin: 12px 0 8px;
+  color: var(--text-main);
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.grade-overview-copy p {
+  margin: 0;
+  color: var(--text-subtle);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.grade-overview-meter {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(26, 43, 60, 0.07);
+}
+
+.grade-overview-meter strong {
+  color: var(--stage-color);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.grade-overview-meter span {
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.grade-overview-meter i {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(26, 43, 60, 0.08);
+}
+
+.grade-overview-meter b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--stage-color), var(--sky));
+}
+
+.grade-overview-subjects {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.grade-overview-subjects span {
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(26, 43, 60, 0.06);
+  color: #334155;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.grade-directory-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 4px;
+  padding: 0 4px;
+}
+
+.grade-directory-head span {
+  color: var(--text-subtle);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: right;
 }
 
 .grade-detail-head {
@@ -1300,6 +1560,11 @@ body.is-route-transitioning .page-scroll {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.grade-subject-board > .grade-overview-panel,
+.grade-subject-board > .grade-directory-head {
+  grid-column: 1 / -1;
+}
+
 .stage-primary .stage-index,
 .stage-primary .subject-mark {
   color: var(--accent);
@@ -1310,6 +1575,12 @@ body.is-route-transitioning .page-scroll {
 .stage-junior .subject-mark {
   color: var(--sky);
   background: rgba(14, 165, 233, 0.11);
+}
+
+.stage-bridge .stage-index,
+.stage-bridge .subject-mark {
+  color: var(--emerald);
+  background: rgba(16, 185, 129, 0.11);
 }
 
 .stage-senior .stage-index,
