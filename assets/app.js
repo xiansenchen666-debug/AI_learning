@@ -3139,25 +3139,7 @@ function renderGradeDetail(group) {
     return '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
   }
   const config = SUBJECT_STAGE_CONFIGS[group.stage] || SUBJECT_STAGE_CONFIGS["小学"];
-  const subjects = subjectGroups.map(([subjectName]) => subjectName);
-  const unlocked = group.courses.filter((course) => course.purchased).length;
-  const progress = group.courses.length ? Math.round((unlocked / group.courses.length) * 100) : 0;
   return `
-    <section class="grade-overview-panel ${config.className}">
-      <div class="grade-overview-copy">
-        <span class="grade-entry-stage">${escapeHtml(config.label)} · ${escapeHtml(config.en)}</span>
-        <h2>${escapeHtml(group.grade)}学习地图</h2>
-        <p>先选科目，再进入已开通课本；每本课本里会按知识点继续拆成学习和练习。</p>
-      </div>
-      <div class="grade-overview-meter" aria-label="已开通课本进度">
-        <strong>${unlocked}/${group.courses.length}</strong>
-        <span>课本已开通</span>
-        <i><b style="width: ${progress}%"></b></i>
-      </div>
-      <div class="grade-overview-subjects">
-        ${subjects.map((subject) => `<span>${escapeHtml(subject)}</span>`).join("")}
-      </div>
-    </section>
     <div class="grade-directory-head">
       <div>
         <p class="stage-eyebrow">SUBJECTS</p>
