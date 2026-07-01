@@ -6451,6 +6451,49 @@ body[data-page="course"] .lesson-inline-media figcaption {
   .subject-course-meta {
     font-size: 11px;
   }
+
+  body[data-page="course"] {
+    overflow: hidden;
+  }
+
+  body[data-page="course"] .content {
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  body[data-page="course"] .course-workspace {
+    height: 100dvh;
+    min-height: 0;
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+    padding-bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+
+  body[data-page="course"] .learning-desk-sandbox {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  body[data-page="course"] .learning-pane,
+  body[data-page="course"] .lecture-pane,
+  body[data-page="course"] .chapter-tree-panel,
+  body[data-page="course"] .study-coach-panel {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  body[data-page="course"] .lecture-document {
+    min-height: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
