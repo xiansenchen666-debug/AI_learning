@@ -6203,6 +6203,27 @@ body[data-page="course"] .lesson-inline-media figcaption {
     padding: 16px 14px calc(100px + env(safe-area-inset-bottom)) !important;
   }
 
+  .page {
+    max-width: none;
+  }
+
+  .card,
+  .hero-card,
+  .growth-stat-card,
+  .growth-rule-item,
+  .growth-activity-item,
+  .timeline-content,
+  .mistake-box,
+  .question-bank-toolbar,
+  .question-bank-empty {
+    border-radius: 12px;
+  }
+
+  .card,
+  .hero-card {
+    padding: 18px;
+  }
+
   .page-title,
   .page-title-lg {
     font-size: 28px;
@@ -6211,6 +6232,271 @@ body[data-page="course"] .lesson-inline-media figcaption {
 
   .growth-header {
     margin-bottom: 4px;
+  }
+
+  .login-page {
+    min-height: 100dvh;
+    padding-bottom: 0;
+    overflow: auto;
+  }
+
+  .login-page .ambient {
+    display: none;
+  }
+
+  .login-top-brand {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 18px 16px 0;
+  }
+
+  .login-top-brand .brand-title {
+    font-size: 27px;
+  }
+
+  .login-stage {
+    width: 100%;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 14px 14px 28px;
+  }
+
+  .login-container {
+    order: 1;
+    max-width: none;
+    padding: 24px 18px 20px;
+    border-radius: 18px;
+  }
+
+  .login-showcase {
+    order: 2;
+  }
+
+  .login-brand-area {
+    max-width: none;
+  }
+
+  .sparkle-icon {
+    display: none;
+  }
+
+  .login-headline {
+    margin: 0 0 10px;
+    font-size: 28px;
+  }
+
+  .login-copy {
+    margin: 0 0 14px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .premium-tsinghua-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .premium-watermark {
+    display: none;
+  }
+
+  .premium-card-content {
+    gap: 12px;
+  }
+
+  .premium-icon-box {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .premium-title {
+    font-size: 16px;
+  }
+
+  .premium-title-accent {
+    font-size: 17px;
+  }
+
+  .premium-desc {
+    font-size: 12px;
+  }
+
+  .login-card-header {
+    margin-bottom: 18px;
+  }
+
+  .login-card-title {
+    font-size: 25px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-input {
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    min-height: 48px;
+    margin-top: 8px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .notice {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .dashboard-grid-top,
+  .dashboard-grid-main,
+  .growth-stats-grid,
+  .growth-rule-grid,
+  .grid-2,
+  .grid-3,
+  .course-grid,
+  .subject-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .mt-24 {
+    margin-top: 14px;
+  }
+
+  .hero-body,
+  .section-head,
+  .practice-session-head,
+  .practice-session-footer,
+  .practice-session-summary,
+  .question-bank-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 1.24;
+  }
+
+  .hero-desc,
+  .hero-copy,
+  .helper-text {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .ghost-btn,
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .timeline-review-button,
+  .practice-review-button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .achievement {
+    min-height: 0;
+  }
+
+  .achievement-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .timeline {
+    gap: 12px;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .timeline-dot {
+    position: static;
+    width: 38px;
+    height: 38px;
+    border-width: 3px;
+    transform: none;
+    font-size: 12px;
+  }
+
+  .timeline-content {
+    min-width: 0;
+    padding: 14px;
+  }
+
+  .timeline-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .timeline-title {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .mistake-box {
+    padding: 14px;
+  }
+
+  .mistake-question-preview,
+  .mistake-context-text,
+  .mistake-explanation-text {
+    font-size: 13px;
+  }
+
+  .growth-ai-hero {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .growth-ai-title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .growth-ai-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .growth-highlight-row {
+    gap: 7px;
+  }
+
+  .growth-stat-card {
+    padding: 16px;
+  }
+
+  .growth-stat-value {
+    font-size: 30px;
+  }
+
+  .radar-container {
+    width: min(260px, 78vw);
+    height: min(260px, 78vw);
+    margin: 10px auto 0;
   }
 
   .subjects-hero-card {
@@ -6450,6 +6736,128 @@ body[data-page="course"] .lesson-inline-media figcaption {
 
   .subject-course-meta {
     font-size: 11px;
+  }
+
+  .question-bank-workspace {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .question-bank-page-root {
+    padding: 0 0 calc(96px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .question-bank-toolbar,
+  .question-bank-empty {
+    margin-bottom: 12px;
+    padding: 14px;
+  }
+
+  .question-bank-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .question-bank-list {
+    gap: 12px;
+  }
+
+  .practice-question-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .question-option {
+    align-items: flex-start;
+    min-height: 48px;
+    padding: 11px 12px;
+    border-radius: 10px;
+  }
+
+  .question-option-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+  }
+
+  .question-option-text {
+    font-size: 13px;
+  }
+
+  .practice-session-meter,
+  .practice-session-footer > span {
+    width: 100%;
+  }
+
+  .question-bank-entry {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .question-bank-entry b {
+    width: 100%;
+  }
+
+  .teacher-admin-panel {
+    margin-top: 14px;
+  }
+
+  .student-create-form,
+  .student-edit-form,
+  .admin-subject-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .student-create-actions,
+  .student-edit-actions,
+  .admin-actions,
+  .admin-enrollment-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin-student-card {
+    margin-bottom: 12px;
+  }
+
+  .admin-student-toggle {
+    gap: 10px;
+  }
+
+  .admin-student-title,
+  .admin-student-summary {
+    white-space: normal;
+  }
+
+  .admin-student-toggle-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-student-body {
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .admin-student-section {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .admin-section-heading {
+    gap: 10px;
+  }
+
+  .admin-section-index {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
   }
 
   body[data-page="course"] {
