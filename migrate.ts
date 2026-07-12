@@ -55,11 +55,27 @@ try {
 
   const defaultPasswords: Record<string, string> = catalog.default_passwords ||
     {};
+  const deploymentTeacherPassword = String(
+    Deno.env.get("DEFAULT_TEACHER_PASSWORD") || "",
+  ).trim();
+  if (Deno.env.get("DENO_DEPLOY") && !deploymentTeacherPassword) {
+    throw new Error(
+      "DEFAULT_TEACHER_PASSWORD is required for Deno Deploy migrations.",
+    );
+  }
+  if (deploymentTeacherPassword && deploymentTeacherPassword.length < 12) {
+    throw new Error(
+      "DEFAULT_TEACHER_PASSWORD must contain at least 12 characters.",
+    );
+  }
   const users = await Promise.all(
     (catalog.users || []).map(async (user: CatalogRow) => {
       const username = String(user.username || "");
-      const password = defaultPasswords[username.toLowerCase()] ||
+      const catalogPassword = defaultPasswords[username.toLowerCase()] ||
         (user.role === "teacher" ? "1" : "123456");
+      const password = user.role === "teacher" && deploymentTeacherPassword
+        ? deploymentTeacherPassword
+        : catalogPassword;
       return [
         Number(user.id),
         username,
@@ -92,6 +108,35 @@ try {
     ],
     users,
   );
+
+  if (deploymentTeacherPassword) {
+    const secureTeacherHash = await hashPassword(deploymentTeacherPassword);
+    for (
+      const user of (catalog.users || []).filter((item: CatalogRow) =>
+        item.role === "teacher"
+      )
+    ) {
+      const username = String(user.username || "");
+      const legacyPassword = defaultPasswords[username.toLowerCase()] || "1";
+      await pool.query(
+        `WITH upgraded AS (
+           UPDATE ai_users
+           SET password_hash = $1, updated_at = NOW()
+           WHERE LOWER(username) = LOWER($2)
+             AND role IN ('teacher', 'admin')
+             AND password_hash = $3
+           RETURNING id
+         )
+         DELETE FROM ai_sessions
+         WHERE user_id IN (SELECT id FROM upgraded)`,
+        [
+          secureTeacherHash,
+          username,
+          await hashPassword(legacyPassword),
+        ],
+      );
+    }
+  }
 
   await insertBatch(
     "ai_course_enrollments",

@@ -87,6 +87,7 @@
                     <option value="小学">小学</option>
                     <option value="初中">初中</option>
                     <option value="高中">高中</option>
+                    <option value="所有阶段">所有阶段</option>
                   </select>
                 </label>
                 <label class="form-group form-group-compact">
@@ -105,6 +106,60 @@
                 <div class="student-create-actions">
                   <button class="primary-btn" type="submit" data-create-student>创建学生</button>
                   <span class="muted text-sm" id="student-create-status"></span>
+                </div>
+              </form>
+            </section>
+            <section class="card mt-24 model-settings-panel" data-model-settings-panel>
+              <div class="section-head">
+                <div>
+                  <h2 class="section-title">AI 模型配置</h2>
+                  <p class="muted text-sm">配置学习助手使用的大模型服务，仅教师账号可以修改。</p>
+                </div>
+                <span class="save-feedback" data-model-settings-state aria-live="polite">正在读取配置...</span>
+              </div>
+              <form id="model-settings-form" class="student-create-form model-settings-form" data-model-settings-form>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">接口 URL</span>
+                  <input
+                    class="form-input"
+                    name="base_url"
+                    type="url"
+                    inputmode="url"
+                    autocomplete="url"
+                    placeholder="https://example.com"
+                    required
+                  />
+                </label>
+                <div class="form-group form-group-compact">
+                  <span class="form-label">API Key</span>
+                  <div class="password-field">
+                    <input
+                      class="form-input"
+                      name="api_key"
+                      type="password"
+                      autocomplete="new-password"
+                      placeholder="留空表示保留当前 API Key"
+                    />
+                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示 API Key">
+                      <span aria-hidden="true">👁</span>
+                    </button>
+                  </div>
+                  <span class="form-help">出于安全考虑，已保存的 API Key 不会在此显示。</span>
+                </div>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">模型</span>
+                  <input
+                    class="form-input"
+                    name="model"
+                    autocomplete="off"
+                    placeholder="例如：gpt-5.2"
+                    required
+                  />
+                </label>
+                <div class="student-create-actions model-settings-actions">
+                  <button class="secondary-btn" type="button" data-test-model-settings>测试连接</button>
+                  <button class="primary-btn" type="submit" data-save-model-settings>保存配置</button>
+                  <span class="save-feedback" data-model-settings-status aria-live="polite"></span>
                 </div>
               </form>
             </section>
@@ -138,7 +193,7 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260701-08"></script>
+    <script src="assets/app.js?v=20260711-01"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initTeacherPage().catch((error) => console.warn(error));

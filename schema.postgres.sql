@@ -16,6 +16,40 @@ CREATE TABLE IF NOT EXISTS ai_users (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS ai_model_settings (
+  id SMALLINT PRIMARY KEY CHECK (id = 1),
+  base_url TEXT NOT NULL,
+  model TEXT NOT NULL,
+  api_key_ciphertext TEXT NOT NULL DEFAULT '',
+  api_key_hint TEXT NOT NULL DEFAULT '',
+  updated_by BIGINT REFERENCES ai_users (id) ON DELETE SET NULL,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS ai_model_usage_daily (
+  usage_date DATE NOT NULL,
+  scope VARCHAR(20) NOT NULL CHECK (scope IN ('global', 'user')),
+  scope_id BIGINT NOT NULL DEFAULT 0,
+  request_count INTEGER NOT NULL DEFAULT 0 CHECK (request_count >= 0),
+  prompt_tokens BIGINT NOT NULL DEFAULT 0 CHECK (prompt_tokens >= 0),
+  completion_tokens BIGINT NOT NULL DEFAULT 0 CHECK (completion_tokens >= 0),
+  total_tokens BIGINT NOT NULL DEFAULT 0 CHECK (total_tokens >= 0),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (usage_date, scope, scope_id)
+);
+CREATE INDEX IF NOT EXISTS idx_ai_model_usage_daily_date
+  ON ai_model_usage_daily (usage_date DESC);
+
+CREATE TABLE IF NOT EXISTS ai_model_usage_reservations (
+  id UUID PRIMARY KEY,
+  usage_date DATE NOT NULL,
+  user_id BIGINT NOT NULL,
+  reserved_tokens BIGINT NOT NULL CHECK (reserved_tokens > 0),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_ai_model_usage_reservations_active
+  ON ai_model_usage_reservations (usage_date, user_id, created_at);
+
 CREATE TABLE IF NOT EXISTS ai_sessions (
   session_id UUID PRIMARY KEY,
   user_id BIGINT NOT NULL,

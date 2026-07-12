@@ -3501,6 +3501,54 @@ a.full-width-button {
   margin-top: 24px;
 }
 
+.model-settings-panel {
+  border-color: rgba(37, 99, 235, 0.14);
+  background:
+    linear-gradient(135deg, rgba(239, 246, 255, 0.72), rgba(255, 255, 255, 0.96) 46%),
+    #fff;
+}
+
+.model-settings-panel .section-head {
+  align-items: flex-start;
+}
+
+.model-settings-panel .section-head p {
+  margin: 7px 0 0;
+  line-height: 1.6;
+}
+
+.model-settings-form {
+  grid-template-columns: minmax(260px, 1.35fr) minmax(230px, 1fr) minmax(190px, 0.72fr);
+}
+
+.model-settings-actions {
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  min-height: auto;
+  padding-top: 2px;
+}
+
+.model-settings-actions .save-feedback {
+  flex: 1 1 240px;
+}
+
+.model-settings-panel [data-model-settings-state] {
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+  white-space: nowrap;
+}
+
+.model-settings-panel [data-model-settings-state].is-success {
+  background: rgba(16, 185, 129, 0.10);
+}
+
+.model-settings-panel [data-model-settings-state].is-error {
+  background: rgba(239, 68, 68, 0.08);
+}
+
 .admin-student-card {
   margin-bottom: 18px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -5712,6 +5760,129 @@ body[data-page="course"] .study-coach-panel {
   line-height: 1.65;
 }
 
+.tutor-chat-card {
+  border-color: rgba(37, 99, 235, 0.18);
+  background: linear-gradient(180deg, #F8FBFF 0%, #FFFFFF 44%);
+}
+
+.tutor-message-list {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 92px;
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2px 3px 2px 0;
+  scrollbar-width: thin;
+}
+
+.tutor-message {
+  display: grid;
+  gap: 4px;
+  padding: 9px 10px;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 10px;
+  background: #F8FAFC;
+}
+
+.tutor-message-user {
+  margin-left: 18px;
+  border-color: rgba(37, 99, 235, 0.16);
+  background: #EFF6FF;
+}
+
+.tutor-message-assistant {
+  margin-right: 8px;
+}
+
+.tutor-message-role {
+  color: #1D4ED8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.tutor-message-content {
+  margin: 0 !important;
+  color: #263142 !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.tutor-quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tutor-quick-question {
+  min-height: 30px;
+  padding: 6px 9px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 8px;
+  background: rgba(239, 246, 255, 0.76);
+  color: #1A365D;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.tutor-compose-form {
+  display: grid;
+  gap: 8px;
+}
+
+.tutor-message-input {
+  min-height: 68px;
+  max-height: 160px;
+  padding: 10px 11px;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.tutor-compose-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tutor-compose-actions [data-tutor-status] {
+  min-width: 0;
+  color: #64748B;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.tutor-compose-actions [data-tutor-status][data-state="success"] {
+  color: #047857;
+}
+
+.tutor-compose-actions [data-tutor-status][data-state="error"] {
+  color: #B91C1C;
+}
+
+.tutor-send-button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 8px 13px;
+}
+
+.tutor-chat-card[aria-busy="true"] .tutor-message-list {
+  opacity: 0.78;
+}
+
+.tutor-chat-card button:disabled,
+.tutor-chat-card textarea:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
 .coach-advice-list,
 .lesson-plan-list {
   display: grid;
@@ -6981,6 +7152,35 @@ body[data-page="course"] .lesson-inline-media figcaption {
 
   body[data-page="course"] .lecture-document {
     min-height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .model-settings-panel .section-head {
+    gap: 12px;
+  }
+
+  .model-settings-panel [data-model-settings-state] {
+    align-self: flex-start;
+    white-space: normal;
+  }
+
+  .model-settings-actions .primary-btn,
+  .model-settings-actions .secondary-btn {
+    width: 100%;
+  }
+
+  .tutor-message-list {
+    max-height: 360px;
+  }
+
+  .tutor-compose-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tutor-send-button {
+    width: 100%;
   }
 }
 

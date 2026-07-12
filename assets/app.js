@@ -2368,6 +2368,204 @@ function pickLessonIndex(lessons, lessonId) {
   ].find((index) => index >= 0) ?? 0;
 }
 
+const TUTOR_HISTORY_LIMIT = 12;
+const TUTOR_HISTORY_CHARACTER_LIMIT = 8000;
+
+function recentTutorHistory(messages) {
+  const recent = messages.slice(-TUTOR_HISTORY_LIMIT);
+  let totalLength = recent.reduce(
+    (total, message) => total + String(message.content || "").length,
+    0,
+  );
+  while (recent.length > 1 && totalLength > TUTOR_HISTORY_CHARACTER_LIMIT) {
+    totalLength -= String(recent.shift()?.content || "").length;
+  }
+  const firstUserIndex = recent.findIndex((message) =>
+    message.role === "user"
+  );
+  return firstUserIndex > 0 ? recent.slice(firstUserIndex) : recent;
+}
+
+function createLessonTutor(root) {
+  const card = root?.querySelector("[data-tutor-card]");
+  const messagesRoot = card?.querySelector("[data-tutor-messages]");
+  const form = card?.querySelector("[data-tutor-form]");
+  const input = card?.querySelector("[data-tutor-input]");
+  const sendButton = card?.querySelector("[data-tutor-send]");
+  const status = card?.querySelector("[data-tutor-status]");
+  const quickButtons = [
+    ...(card?.querySelectorAll("[data-tutor-prompt]") || []),
+  ];
+  if (!card || !messagesRoot || !form || !input || !sendButton) {
+    return { reset() {} };
+  }
+
+  let history = [];
+  let activeLessonId = null;
+  let activeLessonTitle = "";
+  let requestSequence = 0;
+  let activeController = null;
+  const sendButtonLabel = sendButton.textContent || "发送";
+
+  const setStatus = (message, state = "idle") => {
+    if (!status) {
+      return;
+    }
+    status.textContent = message;
+    status.dataset.state = state;
+  };
+
+  const setBusy = (isBusy) => {
+    card.setAttribute("aria-busy", String(isBusy));
+    input.disabled = isBusy;
+    sendButton.disabled = isBusy;
+    sendButton.textContent = isBusy ? "思考中..." : sendButtonLabel;
+    quickButtons.forEach((button) => {
+      button.disabled = isBusy;
+    });
+  };
+
+  const appendMessageNode = (message) => {
+    const role = message.role === "user" ? "user" : "assistant";
+    const item = document.createElement("article");
+    item.className = `tutor-message tutor-message-${role}`;
+    item.dataset.tutorRole = role;
+
+    const label = document.createElement("strong");
+    label.className = "tutor-message-role";
+    label.textContent = role === "user" ? "你" : "AI 助手";
+
+    const content = document.createElement("p");
+    content.className = "tutor-message-content";
+    content.textContent = message.content;
+
+    item.append(label, content);
+    messagesRoot.append(item);
+  };
+
+  const renderMessages = () => {
+    messagesRoot.replaceChildren();
+    if (history.length === 0) {
+      appendMessageNode({
+        role: "assistant",
+        content: activeLessonTitle
+          ? `你好！我会围绕“${activeLessonTitle}”回答问题。你可以让我讲解、提示或举例。`
+          : "你好！你可以就本节内容向我提问。",
+      });
+    } else {
+      history.forEach(appendMessageNode);
+    }
+    messagesRoot.scrollTop = messagesRoot.scrollHeight;
+  };
+
+  const reset = (lesson) => {
+    requestSequence += 1;
+    activeController?.abort();
+    activeController = null;
+    activeLessonId = lesson?.id == null ? null : String(lesson.id);
+    activeLessonTitle = String(lesson?.title || "").trim();
+    history = [];
+    input.value = "";
+    card.dataset.tutorLessonId = activeLessonId || "";
+    setBusy(false);
+    setStatus("可围绕本节内容提问");
+    renderMessages();
+  };
+
+  const sendMessage = async (rawMessage) => {
+    const content = String(rawMessage || "").trim();
+    if (!content) {
+      setStatus("请输入问题后再发送", "error");
+      input.focus();
+      return;
+    }
+    if (!activeLessonId) {
+      setStatus("当前知识点不可用，请刷新页面后重试", "error");
+      return;
+    }
+    if (card.getAttribute("aria-busy") === "true") {
+      return;
+    }
+
+    history.push({ role: "user", content });
+    history = recentTutorHistory(history);
+    input.value = "";
+    renderMessages();
+
+    const requestLessonId = activeLessonId;
+    const controller = new AbortController();
+    const requestId = ++requestSequence;
+    activeController = controller;
+    setBusy(true);
+    setStatus("AI 正在思考...", "loading");
+
+    try {
+      const numericLessonId = Number(requestLessonId);
+      const result = await apiFetch("/api/ai/tutor", {
+        method: "POST",
+        signal: controller.signal,
+        body: JSON.stringify({
+          lesson_id: Number.isFinite(numericLessonId)
+            ? numericLessonId
+            : requestLessonId,
+          messages: recentTutorHistory(history).map((message) => ({
+            role: message.role,
+            content: message.content,
+          })),
+        }),
+      });
+      if (
+        controller.signal.aborted || requestId !== requestSequence ||
+        requestLessonId !== activeLessonId
+      ) {
+        return;
+      }
+      const answer = String(result.data?.answer || "").trim();
+      if (!answer) {
+        throw new Error("AI 暂时没有返回内容，请稍后再试");
+      }
+      history.push({ role: "assistant", content: answer });
+      history = recentTutorHistory(history);
+      renderMessages();
+      const model = String(result.data?.model || "").trim();
+      setStatus(model ? `回答完成 · ${model}` : "回答完成", "success");
+    } catch (error) {
+      if (controller.signal.aborted || requestId !== requestSequence) {
+        return;
+      }
+      setStatus(`发送失败：${error.message}`, "error");
+    } finally {
+      if (requestId === requestSequence) {
+        activeController = null;
+        setBusy(false);
+        input.focus();
+      }
+    }
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendMessage(input.value);
+  });
+  input.addEventListener("keydown", (event) => {
+    if (
+      event.key !== "Enter" || event.shiftKey || event.isComposing ||
+      event.defaultPrevented
+    ) {
+      return;
+    }
+    event.preventDefault();
+    form.requestSubmit();
+  });
+  quickButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sendMessage(button.dataset.tutorPrompt || "");
+    });
+  });
+
+  return { reset };
+}
+
 async function initCoursePage() {
   setPageLoading(true, "正在加载知识点，请稍候");
   const user = await requireSession();
@@ -2454,6 +2652,8 @@ async function initCoursePage() {
   };
 
   const studyTimer = createLessonStudyTimer();
+  const tutor = createLessonTutor(root);
+  tutor.reset(lesson);
 
   const renderTree = () =>
     data.lessons
@@ -2701,6 +2901,7 @@ async function initCoursePage() {
     studyTimer.flush(true);
     activeIndex = nextIndex;
     lesson = nextLesson;
+    tutor.reset(lesson);
     renderCourseLesson({ contentHtml: nextContentHtml, scrollToTop: true });
     if (pushHistory && window.history?.pushState) {
       window.history.pushState(
@@ -2959,6 +3160,19 @@ const SUBJECT_STAGE_CONFIGS = {
     className: "stage-bridge",
   },
 };
+
+const STUDENT_STAGE_OPTIONS = ["小学", "初中", "高中", "所有阶段"];
+
+function renderStudentStageOptions(selectedStage = "") {
+  const selected = String(selectedStage || "").trim();
+  const options = STUDENT_STAGE_OPTIONS.includes(selected) || !selected
+    ? STUDENT_STAGE_OPTIONS
+    : [...STUDENT_STAGE_OPTIONS, selected];
+  return options.map((stage) => {
+    const selectedAttr = selected === stage ? " selected" : "";
+    return `<option value="${escapeHtml(stage)}"${selectedAttr}>${escapeHtml(stage)}</option>`;
+  }).join("");
+}
 
 const SUBJECT_GRADE_ORDER = [
   ["一年级", 10],
@@ -3305,7 +3519,158 @@ async function initTeacherPage() {
   wireLogoutButton();
   wirePasswordToggles();
   wireStudentCreateForm(user);
-  await initTeacherEnrollmentPanel(user);
+  await Promise.all([
+    initModelSettingsPanel(user),
+    initTeacherEnrollmentPanel(user),
+  ]);
+}
+
+function modelSettingsSourceLabel(source) {
+  const labels = {
+    database: "教师配置",
+    db: "教师配置",
+    environment: "环境变量",
+    env: "环境变量",
+    mixed: "混合配置",
+    missing: "未配置",
+    default: "系统默认",
+  };
+  const key = String(source || "").trim().toLowerCase();
+  return labels[key] || String(source || "").trim();
+}
+
+async function initModelSettingsPanel(user) {
+  const panel = document.querySelector("[data-model-settings-panel]");
+  const form = panel?.querySelector("[data-model-settings-form]");
+  const baseUrlInput = form?.querySelector('[name="base_url"]');
+  const apiKeyInput = form?.querySelector('[name="api_key"]');
+  const modelInput = form?.querySelector('[name="model"]');
+  const state = panel?.querySelector("[data-model-settings-state]");
+  const status = panel?.querySelector("[data-model-settings-status]");
+  const testButton = panel?.querySelector("[data-test-model-settings]");
+  const saveButton = panel?.querySelector("[data-save-model-settings]");
+  if (
+    !isTeacherUser(user) || !panel || !form || !baseUrlInput ||
+    !apiKeyInput || !modelInput || !testButton || !saveButton ||
+    form.dataset.modelSettingsInitialized === "1"
+  ) {
+    return;
+  }
+  form.dataset.modelSettingsInitialized = "1";
+
+  const testButtonLabel = testButton.textContent || "测试连接";
+  const saveButtonLabel = saveButton.textContent || "保存配置";
+  const setFeedback = (message, feedbackState = "") => {
+    if (!status) {
+      return;
+    }
+    status.textContent = message;
+    status.className = `save-feedback${feedbackState ? ` is-${feedbackState}` : ""}`;
+    status.dataset.state = feedbackState;
+  };
+  const setBusy = (isBusy, action = "") => {
+    form.setAttribute("aria-busy", String(isBusy));
+    testButton.disabled = isBusy;
+    saveButton.disabled = isBusy;
+    testButton.textContent = isBusy && action === "test"
+      ? "测试中..."
+      : testButtonLabel;
+    saveButton.textContent = isBusy && action === "save"
+      ? "保存中..."
+      : saveButtonLabel;
+  };
+  const renderConfiguredState = (settings = {}) => {
+    if (typeof settings.base_url === "string") {
+      baseUrlInput.value = settings.base_url;
+    }
+    if (typeof settings.model === "string") {
+      modelInput.value = settings.model;
+    }
+    apiKeyInput.value = "";
+    const configured = Boolean(settings.api_key_configured);
+    const sourceLabel = modelSettingsSourceLabel(settings.source);
+    apiKeyInput.placeholder = configured
+      ? "已配置，留空表示保留当前 API Key"
+      : "请输入 API Key";
+    if (state) {
+      state.className = `save-feedback ${configured ? "is-success" : "is-error"}`;
+      state.dataset.configured = configured ? "true" : "false";
+      state.textContent = configured
+        ? `API Key 已配置${sourceLabel ? ` · ${sourceLabel}` : ""}`
+        : "API Key 尚未配置";
+    }
+  };
+  const readPayload = () => {
+    const payload = {
+      base_url: baseUrlInput.value.trim(),
+      model: modelInput.value.trim(),
+    };
+    const apiKey = apiKeyInput.value.trim();
+    if (apiKey) {
+      payload.api_key = apiKey;
+    }
+    return payload;
+  };
+
+  testButton.addEventListener("click", async () => {
+    if (!form.reportValidity()) {
+      return;
+    }
+    setBusy(true, "test");
+    setFeedback("正在测试模型连接...", "saving-text");
+    try {
+      const result = await apiFetch("/api/admin/model-settings/test", {
+        method: "POST",
+        body: JSON.stringify(readPayload()),
+      });
+      const testedModel = String(result.data?.model || modelInput.value).trim();
+      setFeedback(
+        testedModel ? `连接成功，模型 ${testedModel} 可用` : "连接测试成功",
+        "success",
+      );
+    } catch (error) {
+      setFeedback(`连接失败：${error.message}`, "error");
+    } finally {
+      setBusy(false);
+    }
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) {
+      return;
+    }
+    setBusy(true, "save");
+    setFeedback("正在保存模型配置...", "saving-text");
+    try {
+      const result = await apiFetch("/api/admin/model-settings", {
+        method: "PUT",
+        body: JSON.stringify(readPayload()),
+      });
+      renderConfiguredState(result.data || {});
+      setFeedback("模型配置已保存", "success");
+    } catch (error) {
+      setFeedback(`保存失败：${error.message}`, "error");
+    } finally {
+      setBusy(false);
+    }
+  });
+
+  setBusy(true);
+  setFeedback("正在读取模型配置...", "saving-text");
+  try {
+    const result = await apiFetch("/api/admin/model-settings");
+    renderConfiguredState(result.data || {});
+    setFeedback("", "");
+  } catch (error) {
+    if (state) {
+      state.className = "save-feedback is-error";
+      state.textContent = "配置状态读取失败";
+    }
+    setFeedback(`读取失败：${error.message}`, "error");
+  } finally {
+    setBusy(false);
+  }
 }
 
 function wireStudentCreateForm(user) {
@@ -3492,7 +3857,7 @@ async function initTeacherEnrollmentPanel(user) {
                 <label class="form-group form-group-compact">
                   <span class="form-label">阶段</span>
                   <select class="form-input" name="stage">
-                    ${["小学", "初中", "高中"].map((stage) => `<option value="${stage}" ${student.stage === stage ? "selected" : ""}>${stage}</option>`).join("")}
+                    ${renderStudentStageOptions(student.stage)}
                   </select>
                 </label>
                 <label class="form-group form-group-compact">

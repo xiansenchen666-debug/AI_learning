@@ -118,6 +118,33 @@
               </div>
 
               <div class="coach-stack">
+                <section class="coach-card tutor-chat-card" data-tutor-card aria-label="AI 学习问答">
+                  <div class="coach-card-head">
+                    <span>AI CHAT</span>
+                    <strong>本节问答</strong>
+                  </div>
+                  <div class="tutor-message-list" data-tutor-messages aria-live="polite" aria-relevant="additions"></div>
+                  <div class="tutor-quick-questions" data-tutor-quick-questions aria-label="快捷问题">
+                    <button class="ghost-btn tutor-quick-question" type="button" data-tutor-prompt="帮我讲懂这个知识点">讲懂知识点</button>
+                    <button class="ghost-btn tutor-quick-question" type="button" data-tutor-prompt="给我一个解题提示，不要直接告诉我答案">给我提示</button>
+                    <button class="ghost-btn tutor-quick-question" type="button" data-tutor-prompt="请用一个简单例子帮我理解">举个例子</button>
+                  </div>
+                  <form class="tutor-compose-form" data-tutor-form>
+                    <textarea
+                      class="form-input tutor-message-input"
+                      data-tutor-input
+                      rows="2"
+                      maxlength="2000"
+                      placeholder="输入关于本节的问题..."
+                      aria-label="向 AI 学习助手提问"
+                    ></textarea>
+                    <div class="tutor-compose-actions">
+                      <span class="muted text-sm" data-tutor-status aria-live="polite">可围绕本节内容提问</span>
+                      <button class="primary-btn tutor-send-button" type="submit" data-tutor-send>发送</button>
+                    </div>
+                  </form>
+                </section>
+
                 <section class="coach-card coach-card-primary">
                   <div class="coach-card-head">
                     <span data-coach-status></span>
@@ -164,6 +191,6 @@
       </main>
     </div>
 
-    <script src="assets/app.js?v=20260701-08"></script>
+    <script src="assets/app.js?v=20260711-01"></script>
   </body>
 </html>
