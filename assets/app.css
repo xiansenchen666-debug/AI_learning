@@ -4519,6 +4519,41 @@ body[data-page="question-bank"] .content::before {
   box-shadow: 0 10px 24px rgba(26, 54, 93, 0.10);
 }
 
+.admin-assignment-section {
+  display: grid;
+  grid-template-columns: minmax(220px, 420px) minmax(260px, 1fr);
+  gap: 14px 20px;
+  align-items: end;
+}
+
+.admin-assignment-section .admin-section-heading {
+  grid-column: 1 / -1;
+}
+
+.assignment-save-actions {
+  min-height: 42px;
+  margin-top: 0;
+}
+
+.assignment-save-actions .save-feedback:not(:empty) {
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
+.assignment-save-actions .save-feedback.is-saving-text {
+  background: #eff6ff;
+}
+
+.assignment-save-actions .save-feedback.is-success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.assignment-save-actions .save-feedback.is-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
 .workspace-back-link span {
   white-space: nowrap;
 }
@@ -7060,7 +7095,8 @@ body[data-page="course"] .lesson-inline-media figcaption {
 
   .student-create-form,
   .student-edit-form,
-  .admin-subject-grid {
+  .admin-subject-grid,
+  .admin-assignment-section {
     grid-template-columns: 1fr !important;
   }
 

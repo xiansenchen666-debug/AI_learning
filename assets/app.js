@@ -3923,9 +3923,32 @@ async function initTeacherEnrollmentPanel(user) {
           `;
     }).join("");
     const studentName = student.full_name || student.username || "";
-    const teacherOptions = teachers.length
-      ? `<label class="form-group form-group-compact"><span class="form-label">所属教师</span><select class="form-input" name="teacher_id" data-teacher-select><option value="">未分配</option>${teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`).join("")}</select><button class="secondary-btn" type="button" data-save-assignment>保存教师分配</button><span class="save-feedback" data-assignment-status aria-live="polite"></span></label>`
-      : "";
+    const assignedTeacher = teachers.find((teacher) =>
+      Number(student.teacher_id) === Number(teacher.id)
+    );
+    const assignedTeacherName = assignedTeacher?.full_name ||
+      assignedTeacher?.username || "未分配";
+    const teacherOptions = `
+      <section class="admin-student-section admin-assignment-section">
+        <div class="admin-section-heading">
+          <span class="admin-section-index">01</span>
+          <div>
+            <h3>所属教师</h3>
+            <p>选择负责这名学生的教师，保存后立即生效。</p>
+          </div>
+        </div>
+        <label class="form-group form-group-compact admin-assignment-field">
+          <span class="form-label">负责教师</span>
+          <select class="form-input" name="teacher_id" data-teacher-select>
+            <option value="">未分配</option>
+            ${teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`).join("")}
+          </select>
+        </label>
+        <div class="admin-actions assignment-save-actions">
+          <button class="primary-btn" type="button" data-save-assignment>保存教师分配</button>
+          <span class="save-feedback" data-assignment-status aria-live="polite"></span>
+        </div>
+      </section>`;
     return `
           <article class="subject-column subject-directory-card admin-student-card" data-admin-student-id="${student.id}">
             <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student aria-expanded="false">
@@ -3933,6 +3956,7 @@ async function initTeacherEnrollmentPanel(user) {
               <span class="subject-directory-copy">
                 <span class="subject-title admin-student-title">${escapeHtml(studentName)}（${escapeHtml(student.username || "")}）</span>
                 <span class="subject-course-meta admin-student-summary" data-student-enrollment-summary>${escapeHtml(student.stage || "")} · ${escapeHtml(student.grade || "")} · 已开通 ${selectedSubjectCount(student.course_ids)} 个科目</span>
+                <span class="subject-course-meta admin-student-summary" data-student-teacher-summary>负责教师：${escapeHtml(assignedTeacherName)}</span>
               </span>
               <span class="subject-enter-chip admin-student-toggle-chip" data-student-toggle-chip>
                 <span class="admin-toggle-icon" aria-hidden="true">⌄</span>
@@ -3943,7 +3967,7 @@ async function initTeacherEnrollmentPanel(user) {
               ${teacherOptions}
               <section class="admin-student-section admin-profile-section">
                 <div class="admin-section-heading">
-                  <span class="admin-section-index">01</span>
+                  <span class="admin-section-index">02</span>
                   <div>
                     <h3>学生资料</h3>
                     <p>修改这个学生的账号、年级和可使用天数。</p>
@@ -4000,7 +4024,7 @@ async function initTeacherEnrollmentPanel(user) {
               </section>
               <section class="admin-student-section admin-enrollment-section">
                 <div class="admin-section-heading">
-                  <span class="admin-section-index">02</span>
+                  <span class="admin-section-index">03</span>
                   <div>
                     <h3>购课选择</h3>
                     <p>下面所有课程都属于当前学生：${escapeHtml(studentName)}。</p>
@@ -4269,16 +4293,38 @@ async function initTeacherEnrollmentPanel(user) {
     button.addEventListener("click", async () => {
       const card = button.closest("[data-admin-student-id]");
       const studentId = Number(card?.dataset.adminStudentId);
-      const teacherId = card?.querySelector("[data-teacher-select]")?.value || "";
+      const teacherSelect = card?.querySelector("[data-teacher-select]");
+      const teacherId = teacherSelect?.value || "";
       const status = card?.querySelector("[data-assignment-status]");
+      const summary = card?.querySelector("[data-student-teacher-summary]");
+      const buttonLabel = button.textContent || "保存教师分配";
       if (!studentId) return;
       button.disabled = true;
+      button.classList.add("is-saving");
+      button.textContent = "正在保存教师分配...";
+      if (status) {
+        status.className = "save-feedback is-saving-text";
+        status.textContent = "正在保存，请稍候...";
+      }
       try {
         await apiFetch("/api/admin/assignments", { method: "POST", body: JSON.stringify({ student_id: studentId, teacher_id: teacherId || null }) });
-        if (status) status.textContent = "教师分配已保存";
+        const teacherName = teacherSelect?.selectedOptions?.[0]?.textContent
+          ?.trim() || "未分配";
+        if (summary) summary.textContent = `负责教师：${teacherName}`;
+        if (status) {
+          status.className = "save-feedback is-success";
+          status.textContent = `✓ 教师分配已保存：${teacherName}`;
+        }
       } catch (error) {
-        if (status) status.textContent = error.message;
-      } finally { button.disabled = false; }
+        if (status) {
+          status.className = "save-feedback is-error";
+          status.textContent = `保存失败：${error.message}`;
+        }
+      } finally {
+        button.disabled = false;
+        button.classList.remove("is-saving");
+        button.textContent = buttonLabel;
+      }
     });
   });
 }
