@@ -1877,6 +1877,138 @@ body.is-teacher-portal .teacher-growth-panel {
   margin: 16px auto 0;
 }
 
+/* Super administrator portal */
+body.is-admin-portal {
+  overflow: hidden;
+  background: #f5f8fd;
+  color: #14254a;
+}
+
+body.is-admin-portal .ambient,
+body.is-admin-portal .sidebar,
+body.is-admin-portal #teacher-page > .growth-header,
+body.is-admin-portal #teacher-page > .management-menu {
+  display: none !important;
+}
+
+body.is-admin-portal .content {
+  width: 100%;
+  min-height: calc(100vh - 74px);
+  height: calc(100vh - 74px);
+  margin-left: 0;
+  overflow: hidden;
+}
+
+body.is-admin-portal .content::before {
+  display: none;
+}
+
+body.is-admin-portal .page-scroll {
+  gap: 0;
+  padding: 28px 34px 40px;
+  background:
+    linear-gradient(145deg, rgba(231, 240, 255, 0.62), transparent 38%),
+    #f5f8fd;
+}
+
+body.is-admin-portal .page {
+  max-width: 1480px;
+}
+
+body.is-admin-portal [data-management-view-panel] {
+  margin-top: 0 !important;
+}
+
+body.is-admin-portal .card,
+body.is-admin-portal .subject-directory-card {
+  border-color: #dfe7f3;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(35, 67, 125, 0.05);
+}
+
+body.is-admin-portal .section-title {
+  color: #142b59;
+}
+
+/* Student portal header */
+.student-portal-topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 260px;
+  z-index: 55;
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
+  border-bottom: 1px solid #e4eaf3;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 3px 16px rgba(35, 67, 125, 0.04);
+}
+
+.student-portal-topbar > strong {
+  color: #536584;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.student-portal-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-topbar-avatar {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1465ed;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.student-topbar-name {
+  color: #20355d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.student-portal-account a {
+  padding: 7px 9px;
+  border-radius: 6px;
+  color: #71809b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.student-portal-account a:hover {
+  background: #f1f5fb;
+  color: #174fae;
+}
+
+body.is-student-portal {
+  background: #f7f9fd;
+}
+
+body.is-student-portal .content {
+  height: 100vh;
+  padding-top: 68px;
+  background:
+    linear-gradient(145deg, rgba(235, 242, 255, 0.55), transparent 34%),
+    #f7f9fd;
+}
+
+body.is-student-portal .page-scroll {
+  padding-top: 28px;
+}
+
 @media (max-width: 1320px) {
   .teacher-analytics-grid {
     grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
@@ -1949,6 +2081,14 @@ body.is-teacher-portal .teacher-growth-panel {
     display: none !important;
   }
 
+  body.is-admin-portal {
+    padding-bottom: 0;
+  }
+
+  body.is-admin-portal .sidebar {
+    display: none !important;
+  }
+
   .teacher-portal-topbar {
     grid-template-columns: minmax(0, 1fr) auto;
     min-height: 112px;
@@ -1995,6 +2135,17 @@ body.is-teacher-portal .teacher-growth-panel {
   body.is-teacher-portal .content {
     min-height: calc(100vh - 112px);
     height: auto;
+    overflow: visible;
+  }
+
+  body.is-admin-portal .content {
+    min-height: calc(100vh - 112px);
+    height: auto;
+    overflow: visible;
+  }
+
+  body.is-admin-portal .page-scroll {
+    padding: 12px 10px 24px !important;
     overflow: visible;
   }
 
@@ -7671,6 +7822,36 @@ body[data-page="course"] .lesson-inline-media figcaption {
     overflow: auto;
   }
 
+  .student-portal-topbar {
+    right: 0;
+    left: 0;
+    min-height: 58px;
+    padding: 0 14px;
+  }
+
+  .student-portal-topbar > strong {
+    font-size: 12px;
+  }
+
+  .student-topbar-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .student-topbar-name {
+    max-width: 96px;
+    overflow: hidden;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  body.is-student-portal .content {
+    height: auto;
+    padding-top: 58px;
+  }
+
   .sidebar {
     display: block !important;
     position: fixed;
@@ -7695,6 +7876,10 @@ body[data-page="course"] .lesson-inline-media figcaption {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6px;
     margin: 0;
+  }
+
+  body.is-student-portal .nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .nav-btn {

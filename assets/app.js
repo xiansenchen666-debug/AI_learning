@@ -742,9 +742,45 @@ function hydrateCachedUserProfile() {
 }
 
 function setUserProfile(user) {
+  ensureStudentPortalTopbar(user);
   applyUserProfile(user);
   cacheUserProfile(user);
   document.body.classList.add("profile-ready");
+}
+
+function ensureStudentPortalTopbar(user) {
+  const page = document.body.dataset.page || "";
+  const supportedPages = new Set([
+    "dashboard",
+    "subjects",
+    "grade",
+    "mistakes",
+    "growth",
+    "question-bank",
+  ]);
+  if (user?.role !== "student" || !supportedPages.has(page)) return;
+  document.body.classList.add("is-student-portal");
+  if (document.querySelector("[data-student-portal-topbar]")) return;
+  const pageLabels = {
+    dashboard: "学习中心",
+    subjects: "全部课程",
+    grade: "年级课程",
+    mistakes: "智能错题本",
+    growth: "成长轨迹",
+    "question-bank": "题库练习",
+  };
+  const header = document.createElement("header");
+  header.className = "student-portal-topbar";
+  header.setAttribute("data-student-portal-topbar", "");
+  header.innerHTML = `
+    <strong>${escapeHtml(pageLabels[page] || "学习中心")}</strong>
+    <div class="student-portal-account">
+      <span class="student-topbar-avatar" data-avatar-text></span>
+      <span class="student-topbar-name" data-user-name></span>
+      <a href="/login" data-action="logout">退出</a>
+    </div>`;
+  const shell = document.querySelector(".app-shell");
+  document.body.insertBefore(header, shell || document.body.firstChild);
 }
 
 function clearUserProfile() {
@@ -3587,9 +3623,14 @@ async function initTeacherPage() {
   wireLogoutButton();
   wirePasswordToggles();
   document.body.classList.toggle("is-teacher-portal", user.role === "teacher");
+  document.body.classList.toggle("is-admin-portal", user.role === "admin");
   document.querySelector("[data-teacher-portal-topbar]")?.classList.toggle(
     "is-hidden",
     user.role !== "teacher",
+  );
+  document.querySelector("[data-admin-portal-topbar]")?.classList.toggle(
+    "is-hidden",
+    user.role !== "admin",
   );
   document.querySelectorAll("[data-admin-only]").forEach((node) => {
     node.classList.toggle("is-hidden", user.role !== "admin");

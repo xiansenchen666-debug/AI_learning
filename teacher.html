@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260713-10" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-11" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -22,6 +22,24 @@
         <button type="button" data-management-view-link="overview" data-teacher-management-link>学生总览</button>
         <button type="button" data-management-view-link="records" data-teacher-management-link>课后记录</button>
         <button type="button" data-management-view-link="growth" data-teacher-management-link>成长规划</button>
+      </nav>
+      <div class="teacher-portal-account">
+        <span class="teacher-topbar-avatar" data-avatar-text></span>
+        <span class="teacher-topbar-name" data-user-name></span>
+        <a class="teacher-topbar-logout" href="/login" data-action="logout">退出</a>
+      </div>
+    </header>
+
+    <header class="teacher-portal-topbar admin-portal-topbar is-hidden" data-admin-portal-topbar>
+      <a class="teacher-portal-brand" href="/teacher?view=teachers" aria-label="启航教育超级管理员">
+        <span class="teacher-brand-mark" aria-hidden="true">✦</span>
+        <span>启航教育</span>
+      </a>
+      <nav class="teacher-portal-tabs" aria-label="超级管理员工作台">
+        <button type="button" data-management-view-link="teachers" data-admin-management-link>教师管理</button>
+        <button type="button" data-management-view-link="students" data-admin-management-link>学生管理</button>
+        <button type="button" data-management-view-link="enrollments" data-admin-management-link>课程管理</button>
+        <button type="button" data-management-view-link="models" data-admin-management-link>系统设置</button>
       </nav>
       <div class="teacher-portal-account">
         <span class="teacher-topbar-avatar" data-avatar-text></span>
@@ -253,6 +271,6 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260713-07"></script>
+    <script src="assets/app.js?v=20260713-11"></script>
   </body>
 </html>
