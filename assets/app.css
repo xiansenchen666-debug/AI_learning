@@ -7260,6 +7260,68 @@ body[data-page="course"] .lesson-inline-media figcaption {
   resize: vertical;
 }
 
+.record-analysis-progress {
+  display: grid;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 14px 0 2px;
+  border-top: 1px solid #dbe3ee;
+}
+
+.record-analysis-progress.is-hidden {
+  display: none;
+}
+
+.record-analysis-progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #344054;
+  font-size: 13px;
+}
+
+.record-analysis-progress-head span {
+  flex: 0 0 auto;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.record-analysis-progress-track {
+  height: 5px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.record-analysis-progress-track span {
+  display: block;
+  width: 42%;
+  height: 100%;
+  background: #16a34a;
+  animation: record-analysis-loading 1.2s ease-in-out infinite;
+}
+
+.record-analysis-progress[data-state="success"] .record-analysis-progress-track span {
+  width: 100%;
+  animation: none;
+}
+
+.record-analysis-progress[data-state="error"] .record-analysis-progress-head span {
+  color: #b45309;
+}
+
+.record-analysis-progress[data-state="error"] .record-analysis-progress-track span {
+  width: 100%;
+  animation: none;
+  background: #f59e0b;
+}
+
+@keyframes record-analysis-loading {
+  from { transform: translateX(-105%); }
+  to { transform: translateX(245%); }
+}
+
 .growth-focus-report,
 .growth-empty-report {
   width: min(100%, 1040px);
@@ -7344,22 +7406,49 @@ body[data-page="course"] .lesson-inline-media figcaption {
   border-left: 4px solid #16a34a;
 }
 
-.growth-teacher-history {
-  padding: 30px 0 0;
-}
-
-.growth-teacher-history .section-head {
-  padding-bottom: 14px;
+.growth-record-disclosure {
+  margin-top: 26px;
+  border-top: 1px solid #dbe3ee;
   border-bottom: 1px solid #dbe3ee;
 }
 
-.growth-teacher-history .section-head h3,
-.growth-teacher-history .section-head p {
-  margin: 0;
+.growth-record-disclosure summary {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #344054;
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
 }
 
-.growth-teacher-history .section-head p {
-  margin-top: 4px;
+.growth-record-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.growth-record-disclosure summary::after {
+  content: "+";
+  color: #64748b;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.growth-record-disclosure[open] summary::after {
+  content: "−";
+}
+
+.growth-record-disclosure summary small {
+  margin-left: auto;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.growth-record-loading {
+  margin: 0;
+  padding: 20px 0;
   color: #6b7280;
   font-size: 13px;
 }
@@ -7423,8 +7512,10 @@ body[data-page="course"] .lesson-inline-media figcaption {
 
 @media (max-width: 760px) {
   .growth-report-hero,
-  .growth-record-meta {
+  .growth-record-meta,
+  .record-analysis-progress-head {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .growth-focus-columns,

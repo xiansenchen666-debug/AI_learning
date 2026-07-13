@@ -923,7 +923,10 @@ function warmAllPageCache(user) {
   });
   warmStudentApiCache(user);
   if (isTeacherUser(user)) {
-    apiFetch(user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {});
+    apiFetch(
+      user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students",
+      { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS },
+    ).catch(() => {});
   }
 }
 
@@ -2418,9 +2421,7 @@ function recentTutorHistory(messages) {
   while (recent.length > 1 && totalLength > TUTOR_HISTORY_CHARACTER_LIMIT) {
     totalLength -= String(recent.shift()?.content || "").length;
   }
-  const firstUserIndex = recent.findIndex((message) =>
-    message.role === "user"
-  );
+  const firstUserIndex = recent.findIndex((message) => message.role === "user");
   return firstUserIndex > 0 ? recent.slice(firstUserIndex) : recent;
 }
 
@@ -2486,9 +2487,7 @@ function createLessonTutor(root) {
     if (history.length === 0) {
       appendMessageNode({
         role: "assistant",
-        content: activeLessonTitle
-          ? `你好！我会围绕“${activeLessonTitle}”回答问题。你可以让我讲解、提示或举例。`
-          : "你好！你可以就本节内容向我提问。",
+        content: activeLessonTitle ? `你好！我会围绕“${activeLessonTitle}”回答问题。你可以让我讲解、提示或举例。` : "你好！你可以就本节内容向我提问。",
       });
     } else {
       history.forEach(appendMessageNode);
@@ -2543,9 +2542,7 @@ function createLessonTutor(root) {
         method: "POST",
         signal: controller.signal,
         body: JSON.stringify({
-          lesson_id: Number.isFinite(numericLessonId)
-            ? numericLessonId
-            : requestLessonId,
+          lesson_id: Number.isFinite(numericLessonId) ? numericLessonId : requestLessonId,
           messages: recentTutorHistory(history).map((message) => ({
             role: message.role,
             content: message.content,
@@ -3047,16 +3044,22 @@ async function initQuestionBankPage() {
   }
   if (!lessonId) {
     try {
-      const subjects = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+      const subjects = await apiFetch("/api/subjects", {
+        cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+      });
       const firstCourse = (subjects.data?.stages || []).flatMap((stage) => (stage.subjects || []).flatMap((subject) => subject.courses || [])).find((course) => course.purchased !== false);
       if (firstCourse) {
-        const courseResult = await apiFetch(`/api/course/${firstCourse.id}`, { cacheTtlMs: API_COURSE_CACHE_TTL_MS });
+        const courseResult = await apiFetch(`/api/course/${firstCourse.id}`, {
+          cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+        });
         const firstLesson = courseResult.data?.lessons?.[0];
         courseId = String(firstCourse.id);
         lessonId = firstLesson ? String(firstLesson.id) : "";
       }
     } catch (error) {
-      if (listRoot) listRoot.innerHTML = `<div class="card"><p class="muted mistakes-empty-text">${escapeHtml(error.message)}</p></div>`;
+      if (listRoot) {
+        listRoot.innerHTML = `<div class="card"><p class="muted mistakes-empty-text">${escapeHtml(error.message)}</p></div>`;
+      }
     }
   }
   if (!lessonId) {
@@ -3221,9 +3224,7 @@ const STUDENT_STAGE_OPTIONS = ["小学", "初中", "高中", "所有阶段"];
 
 function renderStudentStageOptions(selectedStage = "") {
   const selected = String(selectedStage || "").trim();
-  const options = STUDENT_STAGE_OPTIONS.includes(selected) || !selected
-    ? STUDENT_STAGE_OPTIONS
-    : [...STUDENT_STAGE_OPTIONS, selected];
+  const options = STUDENT_STAGE_OPTIONS.includes(selected) || !selected ? STUDENT_STAGE_OPTIONS : [...STUDENT_STAGE_OPTIONS, selected];
   return options.map((stage) => {
     const selectedAttr = selected === stage ? " selected" : "";
     return `<option value="${escapeHtml(stage)}"${selectedAttr}>${escapeHtml(stage)}</option>`;
@@ -3367,19 +3368,26 @@ function renderGradePicker(model, user = {}) {
           <span class="grade-stage-count">${stageGroup.grades.length} 个年级 · ${stageSubjects.size} 个科目 · ${stageUnlocked}/${stageCourses.length} 已开通</span>
         </div>
         <div class="grade-entry-grid">
-          ${stageGroup.grades.map((group) => {
-            const subjects = [...new Set(group.courses.map((course) => course.subject))];
-            const unlocked = group.courses.filter((course) => course.purchased).length;
-            const progress = group.courses.length ? Math.round((unlocked / group.courses.length) * 100) : 0;
-            const isCurrent = group.stage === userStage && group.grade === userGrade;
-            return `
+          ${
+      stageGroup.grades.map((group) => {
+        const subjects = [
+          ...new Set(group.courses.map((course) => course.subject)),
+        ];
+        const unlocked = group.courses.filter((course) => course.purchased).length;
+        const progress = group.courses.length ? Math.round((unlocked / group.courses.length) * 100) : 0;
+        const isCurrent = group.stage === userStage &&
+          group.grade === userGrade;
+        return `
               <a class="grade-entry-card ${config.className} ${isCurrent ? "is-current" : ""}" href="${escapeHtml(buildGradeHref(group.stage, group.grade))}">
                 <span class="grade-entry-topline">
                   <span class="grade-entry-stage">${escapeHtml(config.label)} · ${escapeHtml(config.en)}</span>
                   ${isCurrent ? '<span class="grade-current-chip">当前</span>' : ""}
                 </span>
                 <strong>${escapeHtml(group.grade)}</strong>
-                <span class="grade-entry-subjects">${subjects.slice(0, 4).map((subject) => `<b>${escapeHtml(subject)}</b>`).join("")}</span>
+                <span class="grade-entry-subjects">${
+          subjects.slice(0, 4).map((subject) => `<b>${escapeHtml(subject)}</b>`)
+            .join("")
+        }</span>
                 <span class="grade-progress-line"><i style="width: ${progress}%"></i></span>
                 <span class="grade-entry-foot">
                   <em>${unlocked}/${group.courses.length} 已开通</em>
@@ -3387,7 +3395,8 @@ function renderGradePicker(model, user = {}) {
                 </span>
               </a>
             `;
-          }).join("")}
+      }).join("")
+    }
         </div>
       </section>
     `;
@@ -3408,7 +3417,8 @@ function renderGradeDetail(group) {
   if (!subjectGroups.length) {
     return '<div class="subject-empty"><p>当前年级还没有可学习的课程。</p></div>';
   }
-  const config = SUBJECT_STAGE_CONFIGS[group.stage] || SUBJECT_STAGE_CONFIGS["小学"];
+  const config = SUBJECT_STAGE_CONFIGS[group.stage] ||
+    SUBJECT_STAGE_CONFIGS["小学"];
   return `
     <div class="grade-directory-head">
       <div>
@@ -3417,7 +3427,8 @@ function renderGradeDetail(group) {
       </div>
       <span>${subjectGroups.length} 个科目 · ${group.courses.length} 本课本</span>
     </div>
-    ${subjectGroups.map(([subjectName, subjectCourses]) => `
+    ${
+    subjectGroups.map(([subjectName, subjectCourses]) => `
       <section class="subject-column subject-directory-card ${config.className}">
       <div class="subject-directory-head">
         <span class="subject-mark">${escapeHtml(subjectName.slice(0, 1))}</span>
@@ -3430,7 +3441,8 @@ function renderGradeDetail(group) {
         ${subjectCourses.map(renderSubjectCourseItem).join("")}
       </div>
     </section>
-    `).join("")}
+    `).join("")
+  }
   `;
 }
 
@@ -3597,9 +3609,14 @@ function wireTeacherCreateForm() {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = new FormData(form);
-    const payload = Object.fromEntries([...data.entries()].map(([key, value]) => [key, String(value).trim()]));
+    const payload = Object.fromEntries(
+      [...data.entries()].map(([key, value]) => [key, String(value).trim()]),
+    );
     try {
-      await apiFetch("/api/admin/teachers", { method: "POST", body: JSON.stringify(payload) });
+      await apiFetch("/api/admin/teachers", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
       form.reset();
       if (status) status.textContent = "教师账号已创建";
       await initTeacherEnrollmentPanel(readCachedUserProfile());
@@ -3626,7 +3643,11 @@ async function initTeacherRecordPanel(user) {
         <label class="form-group form-group-compact"><span class="form-label">学生</span><select class="form-input" name="student_id" required>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select></label>
         <label class="form-group form-group-compact"><span class="form-label">课程主题</span><input class="form-input" name="title" placeholder="例如：一次函数复习" required /></label>
         <label class="form-group form-group-compact"><span class="form-label">课堂记录</span><textarea class="form-input" name="notes" rows="6" placeholder="记录本次辅导内容、学生表现、作业反馈和疑问" required></textarea></label>
-        <div class="student-create-actions"><button class="primary-btn" type="submit">提交记录并生成分析</button><span class="muted text-sm" data-record-status></span></div>
+        <div class="student-create-actions"><button class="primary-btn" type="submit">保存课后记录</button><span class="muted text-sm" data-record-status></span></div>
+        <div class="record-analysis-progress is-hidden" data-record-analysis-progress aria-live="polite">
+          <div class="record-analysis-progress-head"><strong data-analysis-progress-label>AI 分析中，可以继续其他操作</strong><span data-analysis-progress-state>处理中</span></div>
+          <div class="record-analysis-progress-track"><span></span></div>
+        </div>
       </form>`;
     const form = root.querySelector("[data-lesson-record-form]");
     form?.addEventListener("submit", async (event) => {
@@ -3634,26 +3655,71 @@ async function initTeacherRecordPanel(user) {
       const data = new FormData(form);
       const button = form.querySelector("button[type=submit]");
       const status = form.querySelector("[data-record-status]");
+      const progress = form.querySelector("[data-record-analysis-progress]");
       button.disabled = true;
-      if (status) status.textContent = "正在请求 AI 分析...";
+      if (status) status.textContent = "正在保存记录...";
       try {
         const studentId = Number(data.get("student_id"));
-        const saved = await apiFetch(`/api/teacher/students/${studentId}/records`, { method: "POST", body: JSON.stringify({ title: data.get("title"), notes: data.get("notes") }) });
+        await apiFetch(`/api/teacher/students/${studentId}/records`, {
+          method: "POST",
+          body: JSON.stringify({
+            title: data.get("title"),
+            notes: data.get("notes"),
+          }),
+        });
         form.reset();
-        if (status) {
-          status.textContent = saved.data?.growth_ready
-            ? "记录已保存，AI 成长规划已固定更新"
-            : "记录已保存，成长规划将在查看时继续生成";
-        }
-        window.dispatchEvent(new CustomEvent("teacher-growth-updated", {
-          detail: { studentId },
-        }));
+        if (status) status.textContent = "记录已保存";
+        runTeacherGrowthAnalysis(studentId, progress);
       } catch (error) {
         if (status) status.textContent = error.message;
-      } finally { button.disabled = false; }
+      } finally {
+        button.disabled = false;
+      }
     });
   } catch (error) {
     root.innerHTML = `<p class="muted">${escapeHtml(error.message)}</p>`;
+  }
+}
+
+async function runTeacherGrowthAnalysis(studentId, progress) {
+  if (!studentId || !progress) return;
+  const runId = `${Date.now()}-${Math.random()}`;
+  progress.dataset.runId = runId;
+  progress.dataset.state = "running";
+  progress.classList.remove("is-hidden");
+  const label = progress.querySelector("[data-analysis-progress-label]");
+  const state = progress.querySelector("[data-analysis-progress-state]");
+  if (label) label.textContent = "AI 分析中，可以继续其他操作";
+  if (state) state.textContent = "处理中";
+  try {
+    const response = await fetch(
+      `/api/teacher/students/${studentId}/growth/generate`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        keepalive: true,
+        body: "{}",
+      },
+    );
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.message || "AI 分析暂未完成");
+    if (progress.dataset.runId !== runId) return;
+    progress.dataset.state = "success";
+    if (label) label.textContent = "AI 成长分析已完成并保存";
+    if (state) state.textContent = "已完成";
+    clearApiPrefetchCache(false);
+    window.dispatchEvent(
+      new CustomEvent("teacher-growth-updated", {
+        detail: { studentId },
+      }),
+    );
+  } catch (error) {
+    if (progress.dataset.runId !== runId) return;
+    progress.dataset.state = "error";
+    if (label) label.textContent = "记录已保存，AI 分析可稍后继续";
+    if (state) state.textContent = "暂未完成";
+    console.warn(error);
   }
 }
 
@@ -3694,10 +3760,17 @@ async function initTeacherGrowthPanel(user) {
       }
       report.innerHTML = '<div class="growth-analysis-buffer"><div class="page-transition-mark"></div><strong>AI 分析中...</strong><span>正在读取教师课后记录</span></div>';
       try {
-        const growth = await apiFetch(`/api/teacher/students/${studentId}/growth`, {
-          cacheTtlMs: 60 * 1000,
-        });
-        report.innerHTML = renderFocusedGrowth(growth.data || {});
+        const growth = await apiFetch(
+          `/api/teacher/students/${studentId}/growth`,
+          {
+            cacheTtlMs: 60 * 1000,
+          },
+        );
+        report.innerHTML = renderFocusedGrowth(
+          growth.data || {},
+          `/api/teacher/students/${studentId}/records`,
+        );
+        wireGrowthRecordDisclosure(report);
         if (status) {
           status.className = "save-feedback is-success";
           status.textContent = growth.data?.ai_cached ? "已读取固定成长规划" : "AI 成长规划已生成并固定";
@@ -3715,7 +3788,9 @@ async function initTeacherGrowthPanel(user) {
     };
     button.addEventListener("click", () => loadGrowth());
     window.addEventListener("teacher-growth-updated", (event) => {
-      if (String(event.detail?.studentId || "") === String(select?.value || "")) {
+      if (
+        String(event.detail?.studentId || "") === String(select?.value || "")
+      ) {
         loadGrowth(event.detail.studentId);
       }
     });
@@ -3771,12 +3846,8 @@ async function initModelSettingsPanel(user) {
     form.setAttribute("aria-busy", String(isBusy));
     testButton.disabled = isBusy;
     saveButton.disabled = isBusy;
-    testButton.textContent = isBusy && action === "test"
-      ? "测试中..."
-      : testButtonLabel;
-    saveButton.textContent = isBusy && action === "save"
-      ? "保存中..."
-      : saveButtonLabel;
+    testButton.textContent = isBusy && action === "test" ? "测试中..." : testButtonLabel;
+    saveButton.textContent = isBusy && action === "save" ? "保存中..." : saveButtonLabel;
   };
   const renderConfiguredState = (settings = {}) => {
     if (typeof settings.base_url === "string") {
@@ -3788,15 +3859,11 @@ async function initModelSettingsPanel(user) {
     apiKeyInput.value = "";
     const configured = Boolean(settings.api_key_configured);
     const sourceLabel = modelSettingsSourceLabel(settings.source);
-    apiKeyInput.placeholder = configured
-      ? "已配置，留空表示保留当前 API Key"
-      : "请输入 API Key";
+    apiKeyInput.placeholder = configured ? "已配置，留空表示保留当前 API Key" : "请输入 API Key";
     if (state) {
       state.className = `save-feedback ${configured ? "is-success" : "is-error"}`;
       state.dataset.configured = configured ? "true" : "false";
-      state.textContent = configured
-        ? `API Key 已配置${sourceLabel ? ` · ${sourceLabel}` : ""}`
-        : "API Key 尚未配置";
+      state.textContent = configured ? `API Key 已配置${sourceLabel ? ` · ${sourceLabel}` : ""}` : "API Key 尚未配置";
     }
   };
   const readPayload = () => {
@@ -4010,9 +4077,7 @@ async function initTeacherEnrollmentPanel(user) {
           `;
     }).join("");
     const studentName = student.full_name || student.username || "";
-    const assignedTeacher = teachers.find((teacher) =>
-      Number(student.teacher_id) === Number(teacher.id)
-    );
+    const assignedTeacher = teachers.find((teacher) => Number(student.teacher_id) === Number(teacher.id));
     const assignedTeacherName = assignedTeacher?.full_name ||
       assignedTeacher?.username || "未分配";
     const teacherOptions = `
@@ -4028,7 +4093,10 @@ async function initTeacherEnrollmentPanel(user) {
           <span class="form-label">负责教师</span>
           <select class="form-input" name="teacher_id" data-teacher-select>
             <option value="">未分配</option>
-            ${teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`).join("")}
+            ${
+      teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`)
+        .join("")
+    }
           </select>
         </label>
         <div class="admin-actions assignment-save-actions">
@@ -4394,7 +4462,13 @@ async function initTeacherEnrollmentPanel(user) {
         status.textContent = "正在保存，请稍候...";
       }
       try {
-        await apiFetch("/api/admin/assignments", { method: "POST", body: JSON.stringify({ student_id: studentId, teacher_id: teacherId || null }) });
+        await apiFetch("/api/admin/assignments", {
+          method: "POST",
+          body: JSON.stringify({
+            student_id: studentId,
+            teacher_id: teacherId || null,
+          }),
+        });
         const teacherName = teacherSelect?.selectedOptions?.[0]?.textContent
           ?.trim() || "未分配";
         if (summary) summary.textContent = `负责教师：${teacherName}`;
@@ -4416,9 +4490,9 @@ async function initTeacherEnrollmentPanel(user) {
   });
 }
 
-function renderFocusedGrowth(data) {
-  const records = data.teacher_records || [];
-  if (!data.has_teacher_records || !records.length) {
+function renderFocusedGrowth(data, recordsUrl = "/api/growth/records") {
+  const recordCount = Number(data.record_count || 0);
+  if (!data.has_teacher_records || !recordCount) {
     return `
       <section class="growth-empty-report">
         <p class="growth-report-kicker">成长规划</p>
@@ -4439,29 +4513,68 @@ function renderFocusedGrowth(data) {
       <div class="growth-focus-columns">
         <section>
           <h3>做得好的地方</h3>
-          <ul>${(data.strengths || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          <ul>${
+    (data.strengths || []).map((item) => `<li>${escapeHtml(item)}</li>`).join(
+      "",
+    )
+  }</ul>
         </section>
         <section>
           <h3>重点改进</h3>
-          <ul>${(data.improvements || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          <ul>${
+    (data.improvements || []).map((item) => `<li>${escapeHtml(item)}</li>`)
+      .join("")
+  }</ul>
         </section>
       </div>
       <section class="growth-next-plan">
         <h3>下一步计划</h3>
-        <ol>${(data.next_steps || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+        <ol>${
+    (data.next_steps || []).map((item) => `<li>${escapeHtml(item)}</li>`).join(
+      "",
+    )
+  }</ol>
       </section>
-      <section class="growth-teacher-history">
-        <div class="section-head"><div><h3>教师课后记录</h3><p>成长规划仅依据以下记录生成。</p></div><span>${records.length} 次</span></div>
-        <div class="growth-record-timeline">
-          ${records.map((record) => `
+      <details class="growth-record-disclosure" data-growth-records data-records-url="${escapeHtml(recordsUrl)}">
+        <summary><span>查看课后记录</span><small>${recordCount} 次</small></summary>
+        <div class="growth-record-timeline" data-growth-record-list></div>
+      </details>
+    </section>`;
+}
+
+function wireGrowthRecordDisclosure(root) {
+  root?.querySelectorAll("[data-growth-records]").forEach((details) => {
+    if (details.dataset.bound === "1") return;
+    details.dataset.bound = "1";
+    details.addEventListener("toggle", async () => {
+      if (
+        !details.open || details.dataset.loaded === "1" ||
+        details.dataset.loading === "1"
+      ) return;
+      const list = details.querySelector("[data-growth-record-list]");
+      const recordsUrl = details.dataset.recordsUrl;
+      if (!list || !recordsUrl) return;
+      details.dataset.loading = "1";
+      list.innerHTML = '<p class="growth-record-loading">正在读取已保存的课后记录...</p>';
+      try {
+        const result = await apiFetch(recordsUrl, { cacheTtlMs: 0 });
+        const records = result.data?.records || [];
+        list.innerHTML = records.length
+          ? records.map((record) => `
             <article>
               <div class="growth-record-meta"><strong>${escapeHtml(record.title || "课后辅导")}</strong><span>${escapeHtml(record.created_at || "")}</span></div>
               <p>${escapeHtml(record.notes || "")}</p>
               <small>${escapeHtml(record.teacher_name || "教师")}</small>
-            </article>`).join("")}
-        </div>
-      </section>
-    </section>`;
+            </article>`).join("")
+          : '<p class="growth-record-loading">暂无课后记录</p>';
+        details.dataset.loaded = "1";
+      } catch (error) {
+        list.innerHTML = `<p class="growth-record-loading">${escapeHtml(error.message)}</p>`;
+      } finally {
+        delete details.dataset.loading;
+      }
+    });
+  });
 }
 
 async function initGrowthPage() {
@@ -4492,125 +4605,6 @@ async function initGrowthPage() {
   }
 
   root.innerHTML = renderFocusedGrowth(data);
-  setPageLoading(false);
-  return;
-
-  const studyHours = `${Math.floor((data.metrics.study_minutes || 0) / 60)}h ${String((data.metrics.study_minutes || 0) % 60).padStart(2, "0")}m`;
-  const radarLabelMap = ["l1", "l2", "l3", "l4", "l5"];
-  const radarLabels = data.radar
-    .map(
-      (item, index) => `<div class="radar-label ${radarLabelMap[index] || ""}">${escapeHtml(item.label)} ${item.value}%</div>`,
-    )
-    .join("");
-  const polygonStyle = data.radar
-    .map((item, index) => {
-      const angle = (-90 + index * 72) * (Math.PI / 180);
-      const radius = item.value / 2;
-      const x = 50 + Math.cos(angle) * radius;
-      const y = 50 + Math.sin(angle) * radius;
-      return `${x}% ${y}%`;
-    })
-    .join(", ");
-
-  root.innerHTML = `
-    <div class="growth-ai-hero">
-      <div class="growth-ai-text">
-        <div class="ai-badge">AI 全量生成${data.ai_model ? ` · ${escapeHtml(data.ai_model)}` : ""}</div>
-        <h2 class="growth-ai-title">${escapeHtml(data.headline)}</h2>
-        <p class="growth-ai-desc">${escapeHtml(data.summary)}</p>
-        <div class="growth-highlight-row">
-          <span class="mini-chip">优势学科：${escapeHtml(data.strong_subject)}</span>
-          <span class="mini-chip">重点回流：${escapeHtml(data.weak_subject)}</span>
-        </div>
-      </div>
-      <div class="radar-container">
-        <div class="radar-ring"></div>
-        <div class="radar-ring"></div>
-        <div class="radar-ring"></div>
-        <div class="radar-polygon" data-radar-polygon="${escapeHtml(polygonStyle)}"></div>
-        ${radarLabels}
-      </div>
-    </div>
-
-    <div class="growth-rule-grid mt-24">
-      <article class="card">
-        <div class="section-head"><h2 class="section-title">AI 识别的优势</h2><span class="stat-chip">做得好的地方</span></div>
-        <div class="growth-rule-list">${(data.strengths || []).map((item) => `<div class="growth-rule-item growth-rule-strength">${escapeHtml(item)}</div>`).join("")}</div>
-      </article>
-      <article class="card">
-        <div class="section-head"><h2 class="section-title">AI 识别的改进方向</h2><span class="stat-chip">重点提升</span></div>
-        <div class="growth-rule-list">${(data.improvements || []).map((item) => `<div class="growth-rule-item growth-rule-improvement">${escapeHtml(item)}</div>`).join("")}</div>
-      </article>
-    </div>
-
-    <div class="growth-stats-grid">
-      <div class="growth-stat-card">
-        <div class="growth-stat-label">近阶段学习时长</div>
-        <div class="growth-stat-value">${studyHours}</div>
-        <div class="muted growth-stat-note">依据课程页实际学习停留记录</div>
-      </div>
-      <div class="growth-stat-card">
-        <div class="growth-stat-label">AI 评估掌握率</div>
-        <div class="growth-stat-value">${data.metrics.mastery_rate}<span class="growth-stat-unit is-percent">%</span></div>
-        <div class="muted growth-stat-note">基于完成节点与复习状态测算</div>
-      </div>
-      <div class="growth-stat-card">
-        <div class="growth-stat-label">最近平均得分</div>
-        <div class="growth-stat-value">${data.metrics.avg_score}<span class="growth-stat-unit">分</span></div>
-        <div class="muted growth-stat-note">当前错题 ${data.metrics.mistake_count} 道</div>
-      </div>
-    </div>
-
-    <div class="growth-rule-grid">
-      <article class="card">
-        <div class="section-head">
-          <h2 class="section-title">AI 下一步建议</h2>
-          <span class="stat-chip">AI 生成</span>
-        </div>
-        <div class="growth-rule-list">
-          ${(data.next_steps || data.focus_rules || []).map((rule) => `<div class="growth-rule-item">${escapeHtml(rule)}</div>`).join("")}
-        </div>
-      </article>
-      <article class="card">
-        <div class="section-head">
-          <h2 class="section-title">最近学习行为</h2>
-          <span class="stat-chip">学习记录</span>
-        </div>
-        <div class="growth-activity-list">
-          ${
-    data.recent_actions.length
-      ? data.recent_actions
-        .map(
-          (item) => `
-                    <div class="growth-activity-item">
-                      <div class="growth-activity-dot"></div>
-                      <div>
-                        <strong>${escapeHtml(item.title)}</strong>
-                        <p>${escapeHtml(item.summary)}</p>
-                        <span>${escapeHtml(item.time)}</span>
-                      </div>
-                    </div>
-                  `,
-        )
-        .join("")
-      : '<p class="muted compact-empty-text">暂无最近学习行为。</p>'
-  }
-        </div>
-      </article>
-    </div>
-    <section class="card mt-24">
-      <div class="section-head"><div><h2 class="section-title">教师课后记录与 AI 分析</h2><p class="muted text-sm">每次辅导记录都会自动沉淀到这里，帮助你看到优势和下一步。</p></div><span class="stat-chip">${(data.teacher_records || []).length} 次记录</span></div>
-      <div class="growth-activity-list">
-        ${(data.teacher_records || []).length ? data.teacher_records.map((record) => `<article class="growth-activity-item"><div class="growth-activity-dot"></div><div><strong>${escapeHtml(record.title || "课后辅导")}</strong><p>${escapeHtml(record.notes || "")}</p><p class="growth-ai-analysis">${escapeHtml(record.ai_analysis || "")}</p><span>${escapeHtml(record.teacher_name || "教师")} · ${escapeHtml(record.created_at || "")}</span></div></article>`).join("") : '<p class="muted compact-empty-text">教师提交课程记录后，这里会显示 AI 分析。</p>'}
-      </div>
-    </section>
-  `;
-  const radarPolygon = root.querySelector(".radar-polygon");
-  if (radarPolygon) {
-    radarPolygon.style.setProperty(
-      "--radar-polygon",
-      `polygon(${polygonStyle})`,
-    );
-  }
+  wireGrowthRecordDisclosure(root);
   setPageLoading(false);
 }

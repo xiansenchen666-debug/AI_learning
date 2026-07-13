@@ -2583,9 +2583,7 @@ async function api(request: Request, user: User | null, pathname: string) {
       const created = result.rows[0] || null;
       return json({
         ok: true,
-        data: created
-          ? { ...created, analysis_status: "pending" }
-          : null,
+        data: created ? { ...created, analysis_status: "pending" } : null,
       });
     } catch (error) {
       return aiErrorResponse(error, true);
