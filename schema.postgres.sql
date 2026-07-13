@@ -27,6 +27,16 @@ CREATE TABLE IF NOT EXISTS ai_model_settings (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS ai_growth_analyses (
+  student_id BIGINT PRIMARY KEY REFERENCES ai_users (id) ON DELETE CASCADE,
+  source_hash CHAR(64) NOT NULL,
+  model VARCHAR(200) NOT NULL DEFAULT '',
+  payload JSONB NOT NULL,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_ai_growth_analyses_updated
+  ON ai_growth_analyses (updated_at DESC);
+
 CREATE TABLE IF NOT EXISTS ai_model_usage_daily (
   usage_date DATE NOT NULL,
   scope VARCHAR(20) NOT NULL CHECK (scope IN ('global', 'user')),

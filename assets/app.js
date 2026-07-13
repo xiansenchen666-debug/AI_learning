@@ -4296,7 +4296,7 @@ async function initGrowthPage() {
   let result;
   try {
     result = await apiFetch("/api/growth", {
-      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+      cacheTtlMs: 60 * 1000,
     });
   } catch (error) {
     setPageLoading(false);
@@ -4330,7 +4330,7 @@ async function initGrowthPage() {
   root.innerHTML = `
     <div class="growth-ai-hero">
       <div class="growth-ai-text">
-        <div class="ai-badge">✨ 星途 AI 学情引擎</div>
+        <div class="ai-badge">AI 全量生成${data.ai_model ? ` · ${escapeHtml(data.ai_model)}` : ""}</div>
         <h2 class="growth-ai-title">${escapeHtml(data.headline)}</h2>
         <p class="growth-ai-desc">${escapeHtml(data.summary)}</p>
         <div class="growth-highlight-row">
@@ -4345,6 +4345,17 @@ async function initGrowthPage() {
         <div class="radar-polygon" data-radar-polygon="${escapeHtml(polygonStyle)}"></div>
         ${radarLabels}
       </div>
+    </div>
+
+    <div class="growth-rule-grid mt-24">
+      <article class="card">
+        <div class="section-head"><h2 class="section-title">AI 识别的优势</h2><span class="stat-chip">做得好的地方</span></div>
+        <div class="growth-rule-list">${(data.strengths || []).map((item) => `<div class="growth-rule-item growth-rule-strength">${escapeHtml(item)}</div>`).join("")}</div>
+      </article>
+      <article class="card">
+        <div class="section-head"><h2 class="section-title">AI 识别的改进方向</h2><span class="stat-chip">重点提升</span></div>
+        <div class="growth-rule-list">${(data.improvements || []).map((item) => `<div class="growth-rule-item growth-rule-improvement">${escapeHtml(item)}</div>`).join("")}</div>
+      </article>
     </div>
 
     <div class="growth-stats-grid">
@@ -4368,11 +4379,11 @@ async function initGrowthPage() {
     <div class="growth-rule-grid">
       <article class="card">
         <div class="section-head">
-          <h2 class="section-title">AI 判断规则结果</h2>
-          <span class="stat-chip">动态生成</span>
+          <h2 class="section-title">AI 下一步建议</h2>
+          <span class="stat-chip">AI 生成</span>
         </div>
         <div class="growth-rule-list">
-          ${data.focus_rules.map((rule) => `<div class="growth-rule-item">${escapeHtml(rule)}</div>`).join("")}
+          ${(data.next_steps || data.focus_rules || []).map((rule) => `<div class="growth-rule-item">${escapeHtml(rule)}</div>`).join("")}
         </div>
       </article>
       <article class="card">

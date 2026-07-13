@@ -818,7 +818,7 @@ async function mistakePayload(userId: number) {
   return await listMistakes(userId);
 }
 
-async function growthPayload(user: User) {
+async function legacyGrowthPayload(user: User) {
   const snapshot = await loadDashboardData(user.id);
   const progress = snapshot.progress;
   const mistakes = snapshot.mistakes;
@@ -892,6 +892,265 @@ async function growthPayload(user: User) {
     weak_subject: mistakes[0]?.subject || "暂无",
     strong_subject: "暂无",
   };
+}
+
+function growthStringList(value: unknown, fallback: string[] = []) {
+  if (!Array.isArray(value)) return fallback;
+  const items = value.map((item) => String(item || "").trim()).filter(Boolean)
+    .slice(0, 6);
+  return items.length ? items : fallback;
+}
+
+function parseAiGrowthPayload(answer: string, metrics: Dict) {
+  const unfenced = answer.replace(/^```(?:json)?\s*/i, "").replace(
+    /\s*```$/i,
+    "",
+  )
+    .trim();
+  const start = unfenced.indexOf("{");
+  const end = unfenced.lastIndexOf("}");
+  if (start < 0 || end <= start) {
+    throw new AiUpstreamError("AI 成长分析返回格式不正确，请稍后重试。", 502);
+  }
+  let raw: Dict;
+  try {
+    raw = JSON.parse(unfenced.slice(start, end + 1)) as Dict;
+  } catch {
+    throw new AiUpstreamError("AI 成长分析返回格式不正确，请稍后重试。", 502);
+  }
+  const radar = Array.isArray(raw.radar)
+    ? raw.radar.map((item) => {
+      const entry = item && typeof item === "object" ? item as Dict : {};
+      return {
+        label: String(entry.label || "").trim(),
+        value: Math.max(0, Math.min(100, Math.round(Number(entry.value) || 0))),
+      };
+    }).filter((item) => item.label).slice(0, 5)
+    : [];
+  if (radar.length !== 5) {
+    throw new AiUpstreamError("AI 成长分析缺少完整能力评估，请稍后重试。", 502);
+  }
+  const strengths = growthStringList(raw.strengths);
+  const improvements = growthStringList(raw.improvements);
+  const nextSteps = growthStringList(raw.next_steps);
+  if (!strengths.length || !improvements.length || !nextSteps.length) {
+    throw new AiUpstreamError("AI 成长分析内容不完整，请稍后重试。", 502);
+  }
+  const recentActions = Array.isArray(raw.recent_actions)
+    ? raw.recent_actions.map((item) => {
+      const entry = item && typeof item === "object" ? item as Dict : {};
+      return {
+        title: String(entry.title || "").trim(),
+        summary: String(entry.summary || "").trim(),
+        time: String(entry.time || "").trim(),
+      };
+    }).filter((item) => item.title && item.summary).slice(0, 6)
+    : [];
+  return {
+    headline: String(raw.headline || "").trim(),
+    summary: String(raw.summary || "").trim(),
+    strong_subject: String(raw.strong_subject || "综合能力").trim(),
+    weak_subject: String(raw.weak_subject || "持续巩固").trim(),
+    strengths,
+    improvements,
+    next_steps: nextSteps,
+    focus_rules: nextSteps,
+    radar,
+    recent_actions: recentActions,
+    metrics,
+    ai_generated: true,
+  };
+}
+
+async function generateAiGrowthAnalysis(
+  user: User,
+  facts: Dict,
+  metrics: Dict,
+) {
+  const settings = await effectiveAiModelSettings();
+  const messages: AiChatMessage[] = [
+    {
+      role: "system",
+      content:
+        "你是学生成长轨迹分析引擎。所有判断必须只依据输入事实，不得编造。请用中文输出严格 JSON，不要输出 Markdown。字段必须包含：headline、summary、strong_subject、weak_subject、strengths（字符串数组）、improvements（字符串数组）、next_steps（字符串数组）、radar（恰好5项，每项含label和0到100的value）、recent_actions（数组，每项含title、summary、time）。分析要具体、温和、可执行；教师记录的权重高于自动答题数据。",
+    },
+    {
+      role: "user",
+      content: JSON.stringify({
+        student: {
+          name: user.full_name || user.username,
+          stage: user.stage || "未填写",
+          grade: user.grade || "未填写",
+        },
+        facts,
+      }),
+    },
+  ];
+  const maxCompletionTokens = 1_600;
+  const reservation = await reserveAiDailyQuota(
+    user.id,
+    estimateAiTokenReservation(messages, maxCompletionTokens),
+  );
+  try {
+    const completion = await callAiChatCompletion(
+      settings,
+      messages,
+      maxCompletionTokens,
+    );
+    await finishAiQuotaReservation(reservation, user.id, completion.usage);
+    return {
+      analysis: parseAiGrowthPayload(completion.answer, metrics),
+      model: settings.model,
+    };
+  } catch (error) {
+    await finishAiQuotaReservation(reservation, user.id, null).catch(() =>
+      undefined
+    );
+    throw error;
+  }
+}
+
+async function growthPayload(user: User) {
+  const snapshot = await loadDashboardData(user.id);
+  const progress = snapshot.progress;
+  const mistakes = snapshot.mistakes;
+  const attemptedCount = progress.length;
+  const completedCount =
+    progress.filter((item) => item.status === "completed").length;
+  const reviewCount =
+    progress.filter((item) => item.status === "review_required").length;
+  const avgScore = attemptedCount
+    ? Math.round(
+      progress.reduce((sum, item) => sum + Number(item.score || 0), 0) /
+        attemptedCount,
+    )
+    : 0;
+  const studyMinutes = Math.round(Number(snapshot.study_seconds || 0) / 60);
+  const masteryRate = attemptedCount
+    ? Math.round((completedCount / attemptedCount) * 100)
+    : 0;
+  const metrics: Dict = {
+    study_minutes: studyMinutes,
+    mastery_rate: masteryRate,
+    avg_score: avgScore,
+    mistake_count: mistakes.length,
+    review_count: reviewCount,
+  };
+  const activityFacts = progress.slice(0, 30).map((item) => {
+    const lesson = lessonById.get(Number(item.lesson_id));
+    const course = lesson ? courseById.get(lesson.course_id) : null;
+    return {
+      subject: course?.subject || "",
+      course: course?.title || "",
+      lesson: lesson?.title || "",
+      score: Math.round(Number(item.score || 0)),
+      status: String(item.status || ""),
+      time: String(item.updated_at || ""),
+    };
+  });
+  const teacherRecords = await dbRows<Dict>(
+    `SELECT r.id, r.title, r.notes, r.ai_analysis,
+            TO_CHAR(r.created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at,
+            t.full_name AS teacher_name, t.username AS teacher_username
+     FROM ai_lesson_records AS r
+     JOIN ai_users AS t ON t.id = r.teacher_id
+     WHERE r.student_id = ?
+     ORDER BY r.created_at DESC
+     LIMIT 100`,
+    [user.id],
+  );
+  const facts: Dict = {
+    metrics,
+    recent_learning: activityFacts,
+    recent_mistakes: mistakes.slice(0, 30).map((item) => ({
+      subject: item.subject || "",
+      course: item.course_title || "",
+      lesson: item.lesson_title || "",
+      question: String(item.question_text || "").slice(0, 500),
+      time: item.created_at || "",
+    })),
+    teacher_records: teacherRecords.slice(0, 30).map((item) => ({
+      title: item.title,
+      notes: String(item.notes || "").slice(0, 3_000),
+      teacher_analysis: String(item.ai_analysis || "").slice(0, 3_000),
+      teacher: item.teacher_name,
+      time: item.created_at,
+    })),
+  };
+  const settingsRow = await loadAiModelSettingsRow();
+  const model = String(settingsRow?.model || "").trim() ||
+    aiEnvironmentValue("AI_MODEL");
+  const sourceHash = await hashPassword(
+    JSON.stringify({ version: 1, model, facts }),
+  );
+  const cachedRows = await dbRows<{
+    source_hash: string;
+    model: string;
+    payload: Dict | string;
+    updated_at: string;
+  }>(
+    `SELECT source_hash, model, payload,
+            TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS updated_at
+     FROM ai_growth_analyses WHERE student_id = ? LIMIT 1`,
+    [user.id],
+  );
+  const cached = cachedRows[0] || null;
+  const cachedPayload = cached
+    ? (typeof cached.payload === "string"
+      ? JSON.parse(cached.payload)
+      : cached.payload)
+    : null;
+  if (cached && cached.source_hash === sourceHash && cachedPayload) {
+    return {
+      ...cachedPayload,
+      user: userPayload(user),
+      metrics,
+      teacher_records: teacherRecords,
+      ai_model: cached.model,
+      ai_updated_at: cached.updated_at,
+      ai_cached: true,
+    };
+  }
+  try {
+    const generated = await generateAiGrowthAnalysis(user, facts, metrics);
+    await dbExec(
+      `INSERT INTO ai_growth_analyses (student_id, source_hash, model, payload, updated_at)
+       VALUES (?, ?, ?, ?::jsonb, NOW())
+       ON CONFLICT (student_id) DO UPDATE SET
+         source_hash = EXCLUDED.source_hash,
+         model = EXCLUDED.model,
+         payload = EXCLUDED.payload,
+         updated_at = NOW()`,
+      [
+        user.id,
+        sourceHash,
+        generated.model,
+        JSON.stringify(generated.analysis),
+      ],
+    );
+    return {
+      ...generated.analysis,
+      user: userPayload(user),
+      teacher_records: teacherRecords,
+      ai_model: generated.model,
+      ai_updated_at: now(),
+      ai_cached: false,
+    };
+  } catch (error) {
+    if (cachedPayload) {
+      return {
+        ...cachedPayload,
+        user: userPayload(user),
+        metrics,
+        teacher_records: teacherRecords,
+        ai_model: cached.model,
+        ai_updated_at: cached.updated_at,
+        ai_cached: true,
+        ai_stale: true,
+      };
+    }
+    throw error;
+  }
 }
 
 async function adminPayload() {
@@ -2334,7 +2593,11 @@ async function api(request: Request, user: User | null, pathname: string) {
     return json({ ok: true, data: await mistakePayload(user.id) });
   }
   if (pathname === "/api/growth") {
-    return json({ ok: true, data: await growthPayload(user) });
+    try {
+      return json({ ok: true, data: await growthPayload(user) });
+    } catch (error) {
+      return aiErrorResponse(error, isTeacher(user));
+    }
   }
   if (
     pathname === "/api/admin/enrollments" && request.method === "GET" &&
