@@ -206,7 +206,7 @@ function defaultApiCacheTtl(url) {
   if (
     /^\/api\/course\/\d+/.test(path) ||
     /^\/api\/lessons\/\d+\/question-bank/.test(path) ||
-    /^\/api\/teacher\/students\/\d+\/growth/.test(path)
+    /^\/api\/teacher\/students\/\d+\/(growth|overview)/.test(path)
   ) {
     return API_COURSE_CACHE_TTL_MS;
   }
@@ -3586,6 +3586,11 @@ async function initTeacherPage() {
   setUserProfile(user);
   wireLogoutButton();
   wirePasswordToggles();
+  document.body.classList.toggle("is-teacher-portal", user.role === "teacher");
+  document.querySelector("[data-teacher-portal-topbar]")?.classList.toggle(
+    "is-hidden",
+    user.role !== "teacher",
+  );
   document.querySelectorAll("[data-admin-only]").forEach((node) => {
     node.classList.toggle("is-hidden", user.role !== "admin");
   });
@@ -3597,9 +3602,17 @@ async function initTeacherPage() {
   await Promise.all([
     initModelSettingsPanel(user),
     initTeacherEnrollmentPanel(user),
+    initTeacherStudentSwitcher(user),
+    initTeacherOverview(user),
     initTeacherRecordPanel(user),
     initTeacherGrowthPanel(user),
   ]);
+  syncTeacherStudentSelection();
+  window.dispatchEvent(new CustomEvent("teacher-management-view-changed", {
+    detail: {
+      view: new URL(window.location.href).searchParams.get("view"),
+    },
+  }));
 }
 
 function initTeacherManagementTabs(user) {
@@ -3610,7 +3623,7 @@ function initTeacherManagementTabs(user) {
   if (!menu || !links.length || !panels.length) return;
 
   const adminViews = ["teachers", "students", "enrollments", "models"];
-  const teacherViews = ["records", "growth"];
+  const teacherViews = ["overview", "records", "growth"];
   const allowedViews = user.role === "admin" ? adminViews : teacherViews;
   const defaultView = allowedViews[0];
   const viewLabels = {
@@ -3618,6 +3631,7 @@ function initTeacherManagementTabs(user) {
     students: "学生账号管理",
     enrollments: "学生分配与购课",
     models: "AI 模型配置",
+    overview: "学生总览",
     records: "课后辅导记录",
     growth: "学生成长规划",
   };
@@ -3656,6 +3670,9 @@ function initTeacherManagementTabs(user) {
     const nextUrl = `${url.pathname}${url.search}${url.hash}`;
     if (updateHistory) history.pushState({ managementView: view }, "", nextUrl);
     else history.replaceState({ managementView: view }, "", nextUrl);
+    window.dispatchEvent(new CustomEvent("teacher-management-view-changed", {
+      detail: { view },
+    }));
   };
 
   if (menu.dataset.bound !== "1") {
@@ -3673,6 +3690,78 @@ function initTeacherManagementTabs(user) {
   }
 
   activateView(new URL(window.location.href).searchParams.get("view"), false);
+}
+
+function syncTeacherStudentSelection(studentId = "") {
+  const topSelect = document.querySelector("[data-teacher-student-select]");
+  if (!topSelect || topSelect.disabled) return "";
+  const requestedId = String(
+    studentId || new URL(window.location.href).searchParams.get("student") ||
+      topSelect.value || "",
+  );
+  const validId = [...topSelect.options].some((option) =>
+      option.value === requestedId
+    )
+    ? requestedId
+    : String(topSelect.options[0]?.value || "");
+  if (!validId) return "";
+  topSelect.value = validId;
+
+  const recordSelect = document.querySelector("[data-record-student-select]");
+  const growthSelect = document.querySelector("[data-growth-student-select]");
+  if (recordSelect) recordSelect.value = validId;
+  if (growthSelect) growthSelect.value = validId;
+
+  const selectedName = topSelect.selectedOptions[0]?.textContent?.trim() ||
+    "当前学生";
+  document.querySelectorAll("[data-current-teacher-student]").forEach((node) => {
+    node.textContent = `当前学生：${selectedName}`;
+  });
+  return validId;
+}
+
+async function initTeacherStudentSwitcher(user) {
+  const switcher = document.querySelector("[data-teacher-student-switcher]");
+  const select = switcher?.querySelector("[data-teacher-student-select]");
+  if (!switcher || !select || user.role !== "teacher") return;
+  switcher.classList.remove("is-hidden");
+  try {
+    const result = await apiFetch("/api/teacher/students");
+    const students = result.data?.students || [];
+    if (!students.length) {
+      select.innerHTML = '<option value="">暂无分配学生</option>';
+      select.disabled = true;
+      return;
+    }
+    select.innerHTML = students.map((student) =>
+      `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`
+    ).join("");
+    select.disabled = false;
+    const selectedId = syncTeacherStudentSelection();
+    const url = new URL(window.location.href);
+    url.searchParams.set("student", selectedId);
+    history.replaceState(history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    if (switcher.dataset.bound !== "1") {
+      switcher.dataset.bound = "1";
+      select.addEventListener("change", () => {
+        const studentId = syncTeacherStudentSelection(select.value);
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set("student", studentId);
+        history.replaceState(
+          history.state,
+          "",
+          `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`,
+        );
+        window.dispatchEvent(new CustomEvent("teacher-student-selected", {
+          detail: { studentId },
+        }));
+      });
+    }
+  } catch (error) {
+    select.innerHTML = '<option value="">学生读取失败</option>';
+    select.disabled = true;
+    console.warn(error);
+  }
 }
 
 function wireTeacherCreateForm() {
@@ -3737,6 +3826,300 @@ function renderTeacherAccountDirectory(teachers, students) {
   }).join("");
 }
 
+function formatTeacherOverviewDate(value, fallback = "") {
+  const date = new Date(String(value || ""));
+  if (Number.isNaN(date.getTime())) return fallback;
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+
+function teacherOverviewTrendSvg(trend = []) {
+  const items = trend.slice(0, 6);
+  const samples = items
+    .map((item, index) => ({
+      ...item,
+      index,
+      value: Math.max(0, Math.min(100, Number(item.value || 0))),
+    }))
+    .filter((item) => Number(item.samples || 0) > 0);
+  if (!samples.length) {
+    return '<div class="teacher-chart-empty"><strong>暂无趋势数据</strong><span>学生完成课程或练习后，这里会显示最近 6 个月的变化。</span></div>';
+  }
+  const xFor = (index) => 54 + index * 110;
+  const yFor = (value) => 190 - value * 1.45;
+  const points = samples.map((item) => ({
+    ...item,
+    x: xFor(item.index),
+    y: yFor(item.value),
+  }));
+  const path = points.map((point, index) =>
+    `${index ? "L" : "M"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`
+  ).join(" ");
+  const area = points.length > 1
+    ? `${path} L ${points.at(-1).x.toFixed(1)} 190 L ${points[0].x.toFixed(1)} 190 Z`
+    : "";
+  const grid = [0, 25, 50, 75, 100].map((value) => {
+    const y = yFor(value);
+    return `<line x1="50" y1="${y}" x2="606" y2="${y}" class="teacher-chart-grid"/><text x="40" y="${y + 4}" text-anchor="end" class="teacher-chart-axis">${value}</text>`;
+  }).join("");
+  const labels = items.map((item, index) =>
+    `<text x="${xFor(index)}" y="218" text-anchor="middle" class="teacher-chart-axis">${escapeHtml(item.label || "")}</text>`
+  ).join("");
+  const dots = points.map((point) => `
+    <g class="teacher-trend-point">
+      <circle cx="${point.x}" cy="${point.y}" r="5"></circle>
+      <text x="${point.x}" y="${point.y - 12}" text-anchor="middle">${point.value}</text>
+    </g>`).join("");
+  return `
+    <svg class="teacher-trend-svg" viewBox="0 0 640 230" role="img" aria-label="最近六个月学习趋势">
+      ${grid}
+      ${area ? `<path d="${area}" class="teacher-trend-area"></path>` : ""}
+      <path d="${path}" class="teacher-trend-line"></path>
+      ${dots}
+      ${labels}
+    </svg>`;
+}
+
+function teacherOverviewRadarSvg(radar = []) {
+  const items = radar.slice(0, 5);
+  if (items.length < 3) return "";
+  const center = 150;
+  const radius = 92;
+  const pointAt = (index, scale = 1) => {
+    const angle = -Math.PI / 2 + index * (Math.PI * 2 / items.length);
+    return {
+      x: center + Math.cos(angle) * radius * scale,
+      y: center + Math.sin(angle) * radius * scale,
+    };
+  };
+  const polygon = (scale) => items.map((_, index) => {
+    const point = pointAt(index, scale);
+    return `${point.x.toFixed(1)},${point.y.toFixed(1)}`;
+  }).join(" ");
+  const valuePolygon = items.map((item, index) => {
+    const value = Math.max(0, Math.min(100, Number(item.value || 0))) / 100;
+    const point = pointAt(index, value);
+    return `${point.x.toFixed(1)},${point.y.toFixed(1)}`;
+  }).join(" ");
+  const axes = items.map((_, index) => {
+    const point = pointAt(index);
+    return `<line x1="${center}" y1="${center}" x2="${point.x}" y2="${point.y}"></line>`;
+  }).join("");
+  const labels = items.map((item, index) => {
+    const point = pointAt(index, 1.25);
+    const anchor = point.x < center - 8 ? "end" : point.x > center + 8
+      ? "start"
+      : "middle";
+    return `<text x="${point.x}" y="${point.y + 4}" text-anchor="${anchor}">${escapeHtml(item.label || "")} ${Math.round(Number(item.value || 0))}</text>`;
+  }).join("");
+  return `
+    <svg class="teacher-radar-svg" viewBox="0 0 300 300" role="img" aria-label="学生综合能力雷达图">
+      <g class="teacher-radar-grid">
+        <polygon points="${polygon(1)}"></polygon>
+        <polygon points="${polygon(0.75)}"></polygon>
+        <polygon points="${polygon(0.5)}"></polygon>
+        <polygon points="${polygon(0.25)}"></polygon>
+        ${axes}
+      </g>
+      <polygon points="${valuePolygon}" class="teacher-radar-value"></polygon>
+      <g class="teacher-radar-labels">${labels}</g>
+    </svg>`;
+}
+
+function renderTeacherOverview(data) {
+  const student = data.student || {};
+  const profile = data.profile || {};
+  const metrics = data.metrics || [];
+  const summary = data.summary || {};
+  const observation = data.observation;
+  const timeline = data.timeline || [];
+  const subjectSummary = (data.subjects || []).filter((item) =>
+    Number(item.samples || 0) > 0
+  ).slice(0, 4);
+  return `
+    <div class="teacher-overview-detail">
+      <section class="teacher-student-hero" aria-labelledby="teacher-current-student-name">
+        <div class="teacher-student-avatar" aria-hidden="true">${escapeHtml(student.avatar_text || String(student.full_name || student.username || "学").slice(0, 2))}</div>
+        <div class="teacher-student-profile-copy">
+          <div class="teacher-student-name-row">
+            <h2 id="teacher-current-student-name">${escapeHtml(student.full_name || student.username || "学生")}</h2>
+            <span class="teacher-student-account">${escapeHtml(student.username ? `(${student.username})` : "")}</span>
+            <span class="teacher-student-grade">${escapeHtml([student.stage, student.grade].filter(Boolean).join(" · ") || "年级未填写")}</span>
+          </div>
+          <div class="teacher-profile-tags">${(profile.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+          <p>${escapeHtml(profile.summary || "暂无学生画像说明。")}</p>
+        </div>
+        <div class="teacher-hero-signal" aria-hidden="true">
+          <span class="teacher-signal-bar bar-one"></span>
+          <span class="teacher-signal-bar bar-two"></span>
+          <span class="teacher-signal-bar bar-three"></span>
+          <span class="teacher-signal-line"></span>
+        </div>
+      </section>
+
+      <div class="teacher-analytics-grid">
+        <section class="teacher-dashboard-card teacher-trend-card">
+          <header><h3>学习趋势</h3><span>近 6 个月</span></header>
+          ${teacherOverviewTrendSvg(data.trend || [])}
+          <p class="teacher-card-caption">综合课程得分与练习正确率</p>
+        </section>
+        <section class="teacher-dashboard-card teacher-radar-card">
+          <header><h3>综合能力雷达图</h3><span>当前画像</span></header>
+          ${teacherOverviewRadarSvg(data.radar || [])}
+          ${subjectSummary.length ? `<div class="teacher-subject-summary">${subjectSummary.map((item) => `<span><i></i>${escapeHtml(item.label)} ${Math.round(Number(item.value || 0))}</span>`).join("")}</div>` : '<p class="teacher-card-caption">暂无可用的学科练习数据</p>'}
+        </section>
+        <section class="teacher-dashboard-card teacher-metrics-card">
+          <header><h3>关键成长指标</h3><span>数据库实时汇总</span></header>
+          <div class="teacher-metric-grid">
+            ${metrics.map((metric) => `
+              <div class="teacher-metric-item tone-${escapeHtml(metric.tone || "blue")}">
+                <span class="teacher-metric-icon" aria-hidden="true"></span>
+                <div>
+                  <span class="teacher-metric-label">${escapeHtml(metric.label || "")}</span>
+                  <strong>${Math.round(Number(metric.value || 0))}<small>%</small></strong>
+                  <p>${escapeHtml(metric.note || "")}</p>
+                </div>
+              </div>`).join("")}
+          </div>
+        </section>
+      </div>
+
+      <div class="teacher-narrative-grid">
+        <section class="teacher-dashboard-card teacher-summary-card">
+          <header><h3>${escapeHtml(summary.headline || "近期成长总结")}</h3><span>${escapeHtml(formatTeacherOverviewDate(summary.updated_at, "实时汇总"))}</span></header>
+          <div class="teacher-summary-group is-strength">
+            <strong>优势表现</strong>
+            <ul>${(summary.strengths || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+          <div class="teacher-summary-group is-improvement">
+            <strong>待提升方向</strong>
+            <ul>${(summary.improvements || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+        </section>
+        <section class="teacher-dashboard-card teacher-observation-card">
+          <header><h3>教师观察</h3><span>${escapeHtml(observation ? formatTeacherOverviewDate(observation.date) : "暂无记录")}</span></header>
+          ${observation ? `
+            <h4>${escapeHtml(observation.title || "最新课后观察")}</h4>
+            <p>${escapeHtml(observation.content || "")}</p>
+            <footer><span>${escapeHtml(observation.teacher || "教师")}</span></footer>
+          ` : '<div class="teacher-panel-empty"><strong>还没有课后观察</strong><span>在“课后记录”中提交内容后会显示在这里。</span></div>'}
+        </section>
+        <section class="teacher-dashboard-card teacher-timeline-card">
+          <header><h3>成长轨迹</h3><span>${timeline.length} 条近期记录</span></header>
+          ${timeline.length ? `<ol class="teacher-timeline-list">${timeline.map((item) => `
+            <li class="tone-${escapeHtml(item.tone || "progress")}">
+              <time>${escapeHtml(formatTeacherOverviewDate(item.date, ""))}</time>
+              <div><strong>${escapeHtml(item.title || "成长记录")}</strong><p>${escapeHtml(item.description || "")}</p></div>
+            </li>`).join("")}</ol>` : '<div class="teacher-panel-empty"><strong>暂无成长轨迹</strong><span>课程学习和教师记录会按时间汇总在这里。</span></div>'}
+        </section>
+      </div>
+    </div>`;
+}
+
+async function initTeacherOverview(user) {
+  const panel = document.getElementById("teacher-overview-panel");
+  const root = document.getElementById("teacher-overview-root");
+  if (!panel || !root || user.role !== "teacher") return;
+  try {
+    const result = await apiFetch("/api/teacher/students");
+    const students = result.data?.students || [];
+    if (!students.length) {
+      root.innerHTML = '<section class="teacher-overview-empty"><h2>暂无分配学生</h2><p>超级管理员分配学生后，学生画像和学习数据会显示在这里。</p></section>';
+      return;
+    }
+    const requestedId = new URL(window.location.href).searchParams.get(
+      "student",
+    );
+    let currentStudentId = students.some((student) =>
+        String(student.id) === String(requestedId)
+      )
+      ? String(requestedId)
+      : String(students[0].id);
+    root.innerHTML = `
+      <div class="teacher-overview-layout">
+        <aside class="teacher-student-directory" aria-label="学生列表">
+          <header><h2>学生列表</h2><span>${students.length} 名学生</span></header>
+          <p>选择学生查看成长分析</p>
+          <div class="teacher-student-list">
+            ${students.map((student) => {
+              const name = student.full_name || student.username || "学生";
+              return `
+                <button type="button" data-overview-student-id="${student.id}" aria-pressed="false">
+                  <span class="teacher-directory-avatar" aria-hidden="true">${escapeHtml(student.avatar_text || name.slice(0, 2))}</span>
+                  <span class="teacher-directory-copy">
+                    <strong>${escapeHtml(name)} <small>(${escapeHtml(student.username || "")})</small></strong>
+                    <span>${escapeHtml([student.stage, student.grade].filter(Boolean).join(" · ") || "年级未填写")}</span>
+                  </span>
+                  <span class="teacher-directory-check" aria-hidden="true">✓</span>
+                </button>`;
+            }).join("")}
+          </div>
+        </aside>
+        <div class="teacher-overview-report" data-teacher-overview-report></div>
+      </div>`;
+    const report = root.querySelector("[data-teacher-overview-report]");
+    let requestId = 0;
+    const setActiveStudent = (studentId) => {
+      currentStudentId = String(studentId);
+      root.querySelectorAll("[data-overview-student-id]").forEach((button) => {
+        const active = button.dataset.overviewStudentId === currentStudentId;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    };
+    const loadOverview = async (studentId) => {
+      if (!studentId || !report) return;
+      const thisRequest = ++requestId;
+      setActiveStudent(studentId);
+      report.innerHTML = '<div class="teacher-overview-loading"><div class="page-transition-mark"></div><strong>正在读取学生数据</strong><span>汇总学习记录、练习和教师观察...</span></div>';
+      try {
+        const overview = await apiFetch(
+          `/api/teacher/students/${studentId}/overview`,
+          { cacheTtlMs: 60 * 1000 },
+        );
+        if (thisRequest !== requestId) return;
+        report.innerHTML = renderTeacherOverview(overview.data || {});
+      } catch (error) {
+        if (thisRequest !== requestId) return;
+        report.innerHTML = `<section class="teacher-overview-empty"><h2>暂时无法读取</h2><p>${escapeHtml(error.message)}</p></section>`;
+      }
+    };
+    root.querySelectorAll("[data-overview-student-id]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const studentId = button.dataset.overviewStudentId;
+        if (!studentId || studentId === currentStudentId) return;
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set("student", studentId);
+        history.replaceState(
+          history.state,
+          "",
+          `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`,
+        );
+        syncTeacherStudentSelection(studentId);
+        window.dispatchEvent(new CustomEvent("teacher-student-selected", {
+          detail: { studentId },
+        }));
+      });
+    });
+    window.addEventListener("teacher-student-selected", (event) => {
+      const studentId = String(event.detail?.studentId || "");
+      if (!studentId || studentId === currentStudentId) return;
+      loadOverview(studentId);
+    });
+    window.addEventListener("teacher-management-view-changed", (event) => {
+      if (event.detail?.view === "overview" && !report?.children.length) {
+        loadOverview(currentStudentId);
+      }
+    });
+    await loadOverview(currentStudentId);
+  } catch (error) {
+    root.innerHTML = `<section class="teacher-overview-empty"><h2>学生列表读取失败</h2><p>${escapeHtml(error.message)}</p></section>`;
+  }
+}
+
 async function initTeacherRecordPanel(user) {
   const panel = document.getElementById("teacher-record-panel");
   const root = document.getElementById("teacher-record-root");
@@ -3750,7 +4133,8 @@ async function initTeacherRecordPanel(user) {
     }
     root.innerHTML = `
       <form class="student-create-form" data-lesson-record-form>
-        <label class="form-group form-group-compact"><span class="form-label">学生</span><select class="form-input" name="student_id" required>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select></label>
+        <label class="form-group form-group-compact teacher-local-student-field is-hidden"><span class="form-label">学生</span><select class="form-input" name="student_id" data-record-student-select required>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select></label>
+        <p class="teacher-current-student" data-current-teacher-student></p>
         <label class="form-group form-group-compact"><span class="form-label">课程主题</span><input class="form-input" name="title" placeholder="例如：一次函数复习" required /></label>
         <label class="form-group form-group-compact"><span class="form-label">课堂记录</span><textarea class="form-input" name="notes" rows="6" placeholder="记录本次辅导内容、学生表现、作业反馈和疑问" required></textarea></label>
         <div class="student-create-actions"><button class="primary-btn" type="submit">保存课后记录</button><span class="muted text-sm" data-record-status></span></div>
@@ -3778,6 +4162,7 @@ async function initTeacherRecordPanel(user) {
           }),
         });
         form.reset();
+        syncTeacherStudentSelection(studentId);
         if (status) status.textContent = "记录已保存";
         runTeacherGrowthAnalysis(studentId, progress);
       } catch (error) {
@@ -3785,6 +4170,11 @@ async function initTeacherRecordPanel(user) {
       } finally {
         button.disabled = false;
       }
+    });
+    window.addEventListener("teacher-student-selected", (event) => {
+      const studentId = String(event.detail?.studentId || "");
+      const select = form?.querySelector("[data-record-student-select]");
+      if (select && studentId) select.value = studentId;
     });
   } catch (error) {
     root.innerHTML = `<p class="muted">${escapeHtml(error.message)}</p>`;
@@ -3846,10 +4236,8 @@ async function initTeacherGrowthPanel(user) {
     }
     root.innerHTML = `
       <div class="teacher-growth-toolbar">
-        <label class="form-group form-group-compact">
-          <span class="form-label">选择学生</span>
-          <select class="form-input" data-growth-student-select>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select>
-        </label>
+        <select class="is-hidden" data-growth-student-select aria-hidden="true">${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select>
+        <strong class="teacher-growth-current" data-current-teacher-student></strong>
         <button class="primary-btn" type="button" data-load-student-growth>查看成长规划</button>
         <span class="save-feedback" data-growth-load-status aria-live="polite"></span>
       </div>
@@ -3860,7 +4248,12 @@ async function initTeacherGrowthPanel(user) {
     const report = root.querySelector("[data-teacher-growth-report]");
     if (!select || !button || !report) return;
     const loadGrowth = async (studentId = select?.value) => {
-      if (!studentId || !report || button.disabled) return;
+      if (!studentId || !report) return;
+      const requestedStudentId = String(studentId);
+      if (button.disabled) {
+        report.dataset.pendingStudentId = requestedStudentId;
+        return;
+      }
       button.disabled = true;
       button.classList.add("is-saving");
       if (status) {
@@ -3870,14 +4263,15 @@ async function initTeacherGrowthPanel(user) {
       report.innerHTML = '<div class="growth-analysis-buffer"><div class="page-transition-mark"></div><strong>AI 分析中...</strong><span>正在读取教师课后记录</span></div>';
       try {
         const growth = await apiFetch(
-          `/api/teacher/students/${studentId}/growth`,
+          `/api/teacher/students/${requestedStudentId}/growth`,
           {
             cacheTtlMs: 60 * 1000,
           },
         );
+        if (String(select.value) !== requestedStudentId) return;
         report.innerHTML = renderFocusedGrowth(
           growth.data || {},
-          `/api/teacher/students/${studentId}/records`,
+          `/api/teacher/students/${requestedStudentId}/records`,
         );
         wireGrowthRecordDisclosure(report);
         if (status) {
@@ -3885,6 +4279,7 @@ async function initTeacherGrowthPanel(user) {
           status.textContent = growth.data?.ai_cached ? "已读取固定成长规划" : "AI 成长规划已生成并固定";
         }
       } catch (error) {
+        if (String(select.value) !== requestedStudentId) return;
         report.innerHTML = `<section class="growth-empty-report"><h2>暂时无法读取</h2><p>${escapeHtml(error.message)}</p></section>`;
         if (status) {
           status.className = "save-feedback is-error";
@@ -3893,6 +4288,11 @@ async function initTeacherGrowthPanel(user) {
       } finally {
         button.disabled = false;
         button.classList.remove("is-saving");
+        const pendingStudentId = report.dataset.pendingStudentId;
+        delete report.dataset.pendingStudentId;
+        if (pendingStudentId && pendingStudentId !== requestedStudentId) {
+          loadGrowth(pendingStudentId);
+        }
       }
     };
     button.addEventListener("click", () => loadGrowth());
@@ -3902,6 +4302,15 @@ async function initTeacherGrowthPanel(user) {
       ) {
         loadGrowth(event.detail.studentId);
       }
+    });
+    window.addEventListener("teacher-student-selected", (event) => {
+      const studentId = String(event.detail?.studentId || "");
+      if (!studentId) return;
+      select.value = studentId;
+      if (!panel.classList.contains("is-hidden")) loadGrowth(studentId);
+    });
+    window.addEventListener("teacher-management-view-changed", (event) => {
+      if (event.detail?.view === "growth") loadGrowth(select.value);
     });
   } catch (error) {
     root.innerHTML = `<section class="growth-empty-report"><p>${escapeHtml(error.message)}</p></section>`;

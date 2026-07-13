@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260713-06" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-10" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -12,6 +12,23 @@
       <div class="blob two"></div>
       <div class="blob three"></div>
     </div>
+
+    <header class="teacher-portal-topbar is-hidden" data-teacher-portal-topbar>
+      <a class="teacher-portal-brand" href="/teacher?view=overview" aria-label="启航教育学生管理">
+        <span class="teacher-brand-mark" aria-hidden="true">✦</span>
+        <span>启航教育</span>
+      </a>
+      <nav class="teacher-portal-tabs" aria-label="教师工作台">
+        <button type="button" data-management-view-link="overview" data-teacher-management-link>学生总览</button>
+        <button type="button" data-management-view-link="records" data-teacher-management-link>课后记录</button>
+        <button type="button" data-management-view-link="growth" data-teacher-management-link>成长规划</button>
+      </nav>
+      <div class="teacher-portal-account">
+        <span class="teacher-topbar-avatar" data-avatar-text></span>
+        <span class="teacher-topbar-name" data-user-name></span>
+        <a class="teacher-topbar-logout" href="/login" data-action="logout">退出</a>
+      </div>
+    </header>
 
     <div class="app-shell">
                   <aside class="sidebar">
@@ -64,8 +81,15 @@
               <a href="/teacher?view=students" data-management-view-link="students" data-admin-management-link>学生账号</a>
               <a href="/teacher?view=enrollments" data-management-view-link="enrollments" data-admin-management-link>学生分配与购课</a>
               <a href="/teacher?view=models" data-management-view-link="models" data-admin-management-link>AI 模型</a>
+              <a href="/teacher?view=overview" data-management-view-link="overview" data-teacher-management-link>学生总览</a>
               <a href="/teacher?view=records" data-management-view-link="records" data-teacher-management-link>课后记录</a>
               <a href="/teacher?view=growth" data-management-view-link="growth" data-teacher-management-link>成长规划</a>
+              <label class="management-student-switcher is-hidden" data-teacher-student-switcher>
+                <span>当前学生</span>
+                <select data-teacher-student-select aria-label="选择学生" disabled>
+                  <option value="">正在读取学生...</option>
+                </select>
+              </label>
             </nav>
             <section class="card mt-24 is-hidden" data-admin-only data-management-view-panel="students">
               <div class="section-head">
@@ -194,6 +218,9 @@
               </div>
               <div id="teacher-admin-root"></div>
             </section>
+            <section class="teacher-overview-panel is-hidden" id="teacher-overview-panel" data-management-view-panel="overview">
+              <div id="teacher-overview-root"></div>
+            </section>
             <section class="card mt-24 teacher-record-panel is-hidden" id="teacher-record-panel" data-management-view-panel="records">
               <div class="section-head"><div><h2 class="section-title">课后辅导记录</h2><p class="muted text-sm">提交后系统会自动分析学生做得好的地方和下一步改进方向。</p></div></div>
               <div id="teacher-record-root"></div>
@@ -226,6 +253,6 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260713-06"></script>
+    <script src="assets/app.js?v=20260713-07"></script>
   </body>
 </html>

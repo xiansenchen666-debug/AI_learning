@@ -1438,6 +1438,297 @@ async function teacherStudents(user: User) {
   return rows.map(userPayload);
 }
 
+function overviewPercent(value: number) {
+  return Math.max(0, Math.min(100, Math.round(value || 0)));
+}
+
+function overviewDateValue(value: unknown) {
+  const timestamp = Date.parse(String(value || ""));
+  return Number.isFinite(timestamp) ? timestamp : 0;
+}
+
+async function teacherStudentOverviewPayload(student: User) {
+  const [progress, attempts, mistakes, study, teacherRecords, cachedRows] =
+    await Promise.all([
+      listProgress(student.id),
+      listAttempts(student.id),
+      listMistakes(student.id),
+      listStudyTime(student.id),
+      lessonRecordsPayload(student.id),
+      dbRows<{ payload: Dict | string; updated_at: string }>(
+        `SELECT payload,
+                TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS updated_at
+         FROM ai_growth_analyses
+         WHERE student_id = ?
+         LIMIT 1`,
+        [student.id],
+      ),
+    ]);
+
+  const completedCount = progress.filter((item) =>
+    item.status === "completed"
+  ).length;
+  const reviewCount = progress.filter((item) =>
+    item.status === "review_required"
+  ).length;
+  const avgScore = progress.length
+    ? Math.round(
+      progress.reduce((sum, item) => sum + Number(item.score || 0), 0) /
+        progress.length,
+    )
+    : 0;
+  const correctCount = attempts.filter((item) => Boolean(item.correct)).length;
+  const accuracy = attempts.length
+    ? Math.round((correctCount / attempts.length) * 100)
+    : 0;
+  const studyMinutes = Math.round(
+    study.reduce((sum, item) => sum + Number(item.seconds || 0), 0) / 60,
+  );
+  const activeDays = new Set(
+    [...progress, ...attempts]
+      .map((item) => String(item.updated_at || "").slice(0, 10))
+      .filter(Boolean),
+  ).size;
+  const completionRate = progress.length
+    ? Math.round((completedCount / progress.length) * 100)
+    : 0;
+  const activeScore = overviewPercent((activeDays / 12) * 100);
+  const focusScore = overviewPercent(
+    studyMinutes ? (studyMinutes / Math.max(activeDays, 1) / 45) * 100 : 0,
+  );
+  const participationScore = overviewPercent(
+    (teacherRecords.length / 8) * 100,
+  );
+  const knowledgeScore = overviewPercent(
+    progress.length && attempts.length
+      ? (avgScore + accuracy) / 2
+      : progress.length
+      ? avgScore
+      : accuracy,
+  );
+  const correctionScore = attempts.length
+    ? overviewPercent(accuracy)
+    : mistakes.length
+    ? overviewPercent(100 - mistakes.length * 10)
+    : 0;
+
+  const monthBuckets = Array.from({ length: 6 }, (_, index) => {
+    const date = new Date();
+    date.setDate(1);
+    date.setMonth(date.getMonth() - (5 - index));
+    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    return {
+      key,
+      label: `${date.getMonth() + 1}月`,
+      progressScores: [] as number[],
+      attemptCount: 0,
+      correctCount: 0,
+    };
+  });
+  const bucketByKey = new Map(monthBuckets.map((item) => [item.key, item]));
+  progress.forEach((item) => {
+    const bucket = bucketByKey.get(String(item.updated_at || "").slice(0, 7));
+    if (bucket) bucket.progressScores.push(Number(item.score || 0));
+  });
+  attempts.forEach((item) => {
+    const bucket = bucketByKey.get(String(item.updated_at || "").slice(0, 7));
+    if (!bucket) return;
+    bucket.attemptCount += 1;
+    if (item.correct) bucket.correctCount += 1;
+  });
+  const trend = monthBuckets.map((bucket) => {
+    const progressScore = bucket.progressScores.length
+      ? bucket.progressScores.reduce((sum, value) => sum + value, 0) /
+        bucket.progressScores.length
+      : null;
+    const attemptScore = bucket.attemptCount
+      ? (bucket.correctCount / bucket.attemptCount) * 100
+      : null;
+    const samples = bucket.progressScores.length + bucket.attemptCount;
+    const value = progressScore !== null && attemptScore !== null
+      ? Math.round((progressScore + attemptScore) / 2)
+      : Math.round(progressScore ?? attemptScore ?? 0);
+    return { key: bucket.key, label: bucket.label, value, samples };
+  });
+
+  const subjectStats = new Map<string, {
+    label: string;
+    scoreTotal: number;
+    scoreCount: number;
+    attemptCount: number;
+    correctCount: number;
+  }>();
+  const getSubjectStat = (lessonId: number) => {
+    const lesson = lessonById.get(lessonId);
+    const course = lesson ? courseById.get(lesson.course_id) : null;
+    const label = String(course?.subject || "综合");
+    const current = subjectStats.get(label) || {
+      label,
+      scoreTotal: 0,
+      scoreCount: 0,
+      attemptCount: 0,
+      correctCount: 0,
+    };
+    subjectStats.set(label, current);
+    return current;
+  };
+  progress.forEach((item) => {
+    const stat = getSubjectStat(Number(item.lesson_id));
+    stat.scoreTotal += Number(item.score || 0);
+    stat.scoreCount += 1;
+  });
+  attempts.forEach((item) => {
+    const stat = getSubjectStat(Number(item.lesson_id));
+    stat.attemptCount += 1;
+    if (item.correct) stat.correctCount += 1;
+  });
+  const subjects = [...subjectStats.values()].map((item) => {
+    const score = item.scoreCount ? item.scoreTotal / item.scoreCount : null;
+    const attemptScore = item.attemptCount
+      ? (item.correctCount / item.attemptCount) * 100
+      : null;
+    return {
+      label: item.label,
+      value: overviewPercent(
+        score !== null && attemptScore !== null
+          ? (score + attemptScore) / 2
+          : score ?? attemptScore ?? 0,
+      ),
+      samples: item.scoreCount + item.attemptCount,
+    };
+  }).sort((a, b) => b.samples - a.samples || b.value - a.value);
+
+  let cachedGrowth: Dict | null = null;
+  const cached = cachedRows[0] || null;
+  if (cached) {
+    try {
+      cachedGrowth = typeof cached.payload === "string"
+        ? JSON.parse(cached.payload) as Dict
+        : cached.payload;
+    } catch {
+      cachedGrowth = null;
+    }
+  }
+  const strongestSubject = subjects.find((item) => item.samples > 0);
+  const weakestSubject = [...subjects]
+    .filter((item) => item.samples > 0)
+    .sort((a, b) => a.value - b.value)[0];
+  const fallbackStrengths = [
+    strongestSubject
+      ? `${strongestSubject.label}当前综合表现 ${strongestSubject.value} 分`
+      : "继续积累学习数据后可识别优势学科",
+    completedCount
+      ? `已完成 ${completedCount} 个学习任务`
+      : "完成首个学习任务后可跟踪掌握情况",
+    studyMinutes
+      ? `已累计专注学习 ${studyMinutes} 分钟`
+      : "开始课程学习后可记录专注时长",
+  ];
+  const fallbackImprovements = [
+    reviewCount
+      ? `有 ${reviewCount} 个学习任务需要优先复习`
+      : "保持定期复习，巩固已学内容",
+    mistakes.length
+      ? `当前错题本有 ${mistakes.length} 道题待整理`
+      : "完成练习后及时回顾答题情况",
+    weakestSubject && weakestSubject !== strongestSubject
+      ? `${weakestSubject.label}可作为下一阶段重点`
+      : "持续完成练习以形成更准确的能力画像",
+  ];
+  const strengths = growthStringList(
+    cachedGrowth?.strengths,
+    fallbackStrengths,
+  ).slice(0, 3);
+  const improvements = growthStringList(
+    cachedGrowth?.improvements,
+    fallbackImprovements,
+  ).slice(0, 3);
+  const nextSteps = growthStringList(cachedGrowth?.next_steps, [
+    reviewCount ? "先完成待复习任务" : "按当前课程继续学习",
+    mistakes.length ? "复盘错题并完成同类练习" : "完成一次随堂练习",
+    "由教师补充最新课后观察",
+  ]).slice(0, 4);
+
+  const timeline = [
+    ...progress.slice(0, 5).map((item) => {
+      const lesson = lessonById.get(Number(item.lesson_id));
+      const course = lesson ? courseById.get(lesson.course_id) : null;
+      return {
+        date: String(item.updated_at || ""),
+        title: `${course?.subject || "课程"}学习记录`,
+        description: `${lesson?.title || "学习任务"}，得分 ${Math.round(Number(item.score || 0))} 分`,
+        tone: item.status === "review_required" ? "attention" : "progress",
+      };
+    }),
+    ...teacherRecords.slice(0, 4).map((item) => ({
+      date: String(item.created_at || ""),
+      title: String(item.title || "教师课后记录"),
+      description: String(item.notes || "").slice(0, 120),
+      tone: "teacher",
+    })),
+  ].sort((a, b) => overviewDateValue(b.date) - overviewDateValue(a.date)).slice(
+    0,
+    5,
+  );
+  const latestRecord = teacherRecords[0] || null;
+  const profileTags = [
+    activeDays >= 5 ? "学习持续" : activeDays ? "开始积累" : "等待开启",
+    knowledgeScore >= 80 ? "掌握扎实" : knowledgeScore >= 60
+      ? "表现稳定"
+      : "持续巩固",
+    reviewCount ? "复习优先" : "节奏平稳",
+  ];
+  const summary = String(cachedGrowth?.summary || student.bio || "").trim() ||
+    (progress.length
+      ? `已形成 ${progress.length} 条学习进度，当前综合得分 ${knowledgeScore} 分。`
+      : "当前还没有学习记录，完成课程与练习后会逐步形成学生画像。");
+
+  return {
+    student: userPayload(student),
+    profile: { summary, tags: profileTags },
+    trend,
+    radar: [
+      { label: "知识掌握", value: knowledgeScore },
+      { label: "学习习惯", value: activeScore },
+      { label: "专注投入", value: focusScore },
+      { label: "任务完成", value: completionRate },
+      { label: "纠错能力", value: correctionScore },
+    ],
+    subjects: subjects.slice(0, 6),
+    metrics: [
+      { label: "学习积极性", value: activeScore, note: `累计活跃 ${activeDays} 天`, tone: "blue" },
+      { label: "专注度", value: focusScore, note: `累计学习 ${studyMinutes} 分钟`, tone: "green" },
+      { label: "任务完成率", value: completionRate, note: `已完成 ${completedCount}/${progress.length}`, tone: "violet" },
+      { label: "课堂参与度", value: participationScore, note: `教师记录 ${teacherRecords.length} 次`, tone: "orange" },
+    ],
+    summary: {
+      headline: String(cachedGrowth?.headline || "近期成长总结"),
+      strengths,
+      improvements,
+      next_steps: nextSteps,
+      updated_at: cached?.updated_at || "",
+    },
+    observation: latestRecord
+      ? {
+        title: String(latestRecord.title || "最新教师观察"),
+        content: String(latestRecord.notes || ""),
+        teacher: String(latestRecord.teacher_name || "教师"),
+        date: String(latestRecord.created_at || ""),
+      }
+      : null,
+    timeline,
+    totals: {
+      progress_count: progress.length,
+      attempt_count: attempts.length,
+      mistake_count: mistakes.length,
+      review_count: reviewCount,
+      avg_score: avgScore,
+      accuracy,
+      study_minutes: studyMinutes,
+    },
+  };
+}
+
 async function analyzeLessonRecord(
   student: User,
   title: string,
@@ -2472,6 +2763,31 @@ async function api(request: Request, user: User | null, pathname: string) {
       });
     }
     return json({ ok: true, data: { students: await teacherStudents(user) } });
+  }
+
+  const teacherOverviewMatch = pathname.match(
+    /^\/api\/teacher\/students\/(\d+)\/overview$/,
+  );
+  if (teacherOverviewMatch && request.method === "GET") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以查看学生总览" }, {
+        status: 403,
+      });
+    }
+    const studentId = Number(teacherOverviewMatch[1]);
+    if (!await teacherCanAccessStudent(user, studentId)) {
+      return json({ ok: false, message: "该学生不属于当前教师" }, {
+        status: 403,
+      });
+    }
+    const student = await loadUserById(studentId);
+    if (!student || student.role !== "student") {
+      return json({ ok: false, message: "未找到学生" }, { status: 404 });
+    }
+    return json({
+      ok: true,
+      data: await teacherStudentOverviewPayload(student),
+    });
   }
 
   const teacherGrowthMatch = pathname.match(
