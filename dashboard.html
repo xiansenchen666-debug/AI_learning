@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260701-08" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-01" />
 </head>
   <body class="profile-ready" data-page="dashboard">
     <div class="ambient">
@@ -31,6 +31,7 @@
           <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
           <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
           <a href="/growth" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
         </nav>
 
         <div class="sidebar-footer">
@@ -69,7 +70,7 @@
                     <p class="hero-desc" id="dashboard-hero-desc">这里只展示当前学生已经购买并由老师开通的课程，以及这些课程产生的学习记录。</p>
                     <p class="account-access-status" id="dashboard-access-status"></p>
                   </div>
-                  <a href="/subjects" class="primary-btn">查看全部课程</a>
+                  <div class="student-create-actions"><a href="/question-bank" class="primary-btn">进入题库练习</a><a href="/subjects" class="secondary-btn">查看全部课程</a></div>
                 </div>
               </div>
 
@@ -119,7 +120,7 @@
       </main>
     </div>
 
-    <script src="assets/app.js?v=20260701-08"></script>
+    <script src="assets/app.js?v=20260713-01"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initDashboardPage().catch((error) => console.warn(error));

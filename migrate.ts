@@ -52,6 +52,30 @@ try {
   await pool.query(
     "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
   );
+  await pool.query(
+    "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS teacher_id BIGINT REFERENCES ai_users (id) ON DELETE SET NULL",
+  );
+  await pool.query(
+    "CREATE INDEX IF NOT EXISTS idx_ai_users_teacher ON ai_users (teacher_id)",
+  );
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS ai_lesson_records (
+      id BIGSERIAL PRIMARY KEY,
+      teacher_id BIGINT NOT NULL REFERENCES ai_users (id) ON DELETE CASCADE,
+      student_id BIGINT NOT NULL REFERENCES ai_users (id) ON DELETE CASCADE,
+      title VARCHAR(255) NOT NULL DEFAULT '',
+      notes TEXT NOT NULL DEFAULT '',
+      ai_analysis TEXT NOT NULL DEFAULT '',
+      created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+  await pool.query(
+    "CREATE INDEX IF NOT EXISTS idx_ai_lesson_records_student ON ai_lesson_records (student_id, created_at DESC)",
+  );
+  await pool.query(
+    "CREATE INDEX IF NOT EXISTS idx_ai_lesson_records_teacher ON ai_lesson_records (teacher_id, created_at DESC)",
+  );
 
   const defaultPasswords: Record<string, string> = catalog.default_passwords ||
     {};
@@ -107,6 +131,9 @@ try {
       "role",
     ],
     users,
+  );
+  await pool.query(
+    "UPDATE ai_users SET role = 'admin' WHERE LOWER(username) = '1'",
   );
 
   if (deploymentTeacherPassword) {

@@ -144,7 +144,7 @@ function renderMistakeReviewAction(
 async function apiFetch(url, options = {}) {
   const method = String(options.method || "GET").toUpperCase();
   if (method !== "GET") {
-    clearApiPrefetchCache();
+    clearApiPrefetchCache(/^\/api\/(admin|login|logout)/.test(String(url)));
   }
   const cacheTtlMs = Number(
     options.cacheTtlMs ??
@@ -201,19 +201,30 @@ function defaultApiCacheTtl(url) {
     path === "/api/subjects" ||
     path === "/api/mistakes" ||
     path === "/api/growth" ||
-    path === "/api/session"
+    path === "/api/session" ||
+    path === "/api/teacher/students" ||
+    path === "/api/admin/enrollments"
   ) {
     return API_PREFETCH_CACHE_TTL_MS;
   }
   return 0;
 }
 
-function clearApiPrefetchCache() {
+function clearApiPrefetchCache(includeStatic = true) {
   try {
     const keys = [];
     for (let index = 0; index < sessionStorage.length; index += 1) {
       const key = sessionStorage.key(index);
       if (key?.startsWith(API_PREFETCH_CACHE_PREFIX)) {
+        const apiPath = key.slice(API_PREFETCH_CACHE_PREFIX.length);
+        if (
+          !includeStatic &&
+          (apiPath === "/api/subjects" ||
+            /^\/api\/course\/\d+/.test(apiPath) ||
+            /^\/api\/lessons\/\d+\/question-bank/.test(apiPath))
+        ) {
+          continue;
+        }
         keys.push(key);
       }
     }
@@ -664,7 +675,7 @@ async function requireSession() {
     return null;
   }
   cacheUserProfile(result.user);
-  warmStudentApiCache(result.user);
+  warmAllPageCache(result.user);
   return result.user;
 }
 
@@ -887,6 +898,21 @@ function warmStudentApiCache(user) {
       })
       .catch(() => {});
   }, 250);
+}
+
+function warmAllPageCache(user) {
+  const pages = ["/dashboard", "/subjects", "/mistakes", "/growth", "/question-bank"];
+  pages.forEach((path, index) => {
+    scheduleBackgroundTask(() => {
+      const url = new URL(path, window.location.origin);
+      prefetchPage(url);
+      prefetchApiForPage(url);
+    }, 120 + index * 120);
+  });
+  warmStudentApiCache(user);
+  if (isTeacherUser(user)) {
+    scheduleBackgroundTask(() => apiFetch(user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {}), 300);
+  }
 }
 
 function prefetchCourseQuestionBanks(lessons = []) {
@@ -2997,13 +3023,31 @@ async function initQuestionBankPage() {
   wireLogoutButton();
 
   const params = new URLSearchParams(window.location.search);
-  const lessonId = params.get("lesson");
-  const courseId = params.get("course");
+  let lessonId = params.get("lesson");
+  let courseId = params.get("course");
   const root = document.getElementById("question-bank-root");
   const listRoot = root?.querySelector("[data-question-bank-list]");
   const emptyRoot = root?.querySelector("[data-question-bank-empty]");
   const countNode = root?.querySelector("[data-question-bank-count]");
-  if (!lessonId || !root) {
+  if (!root) {
+    setPageLoading(false);
+    return;
+  }
+  if (!lessonId) {
+    try {
+      const subjects = await apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS });
+      const firstCourse = (subjects.data?.stages || []).flatMap((stage) => (stage.subjects || []).flatMap((subject) => subject.courses || [])).find((course) => course.purchased !== false);
+      if (firstCourse) {
+        const courseResult = await apiFetch(`/api/course/${firstCourse.id}`, { cacheTtlMs: API_COURSE_CACHE_TTL_MS });
+        const firstLesson = courseResult.data?.lessons?.[0];
+        courseId = String(firstCourse.id);
+        lessonId = firstLesson ? String(firstLesson.id) : "";
+      }
+    } catch (error) {
+      if (listRoot) listRoot.innerHTML = `<div class="card"><p class="muted mistakes-empty-text">${escapeHtml(error.message)}</p></div>`;
+    }
+  }
+  if (!lessonId) {
     if (listRoot) {
       listRoot.innerHTML = '<div class="card"><p class="muted mistakes-empty-text">未找到要练习的知识点。</p></div>';
       root.classList.remove("is-hidden");
@@ -3518,11 +3562,79 @@ async function initTeacherPage() {
   setUserProfile(user);
   wireLogoutButton();
   wirePasswordToggles();
-  wireStudentCreateForm(user);
+  document.querySelectorAll("[data-admin-only]").forEach((node) => {
+    node.classList.toggle("is-hidden", user.role !== "admin");
+  });
+  if (user.role === "admin") {
+    wireStudentCreateForm(user);
+    wireTeacherCreateForm();
+  }
   await Promise.all([
     initModelSettingsPanel(user),
     initTeacherEnrollmentPanel(user),
+    initTeacherRecordPanel(user),
   ]);
+}
+
+function wireTeacherCreateForm() {
+  const form = document.getElementById("teacher-create-form");
+  const status = document.getElementById("teacher-create-status");
+  if (!form || form.dataset.bound === "1") return;
+  form.dataset.bound = "1";
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const payload = Object.fromEntries([...data.entries()].map(([key, value]) => [key, String(value).trim()]));
+    try {
+      await apiFetch("/api/admin/teachers", { method: "POST", body: JSON.stringify(payload) });
+      form.reset();
+      if (status) status.textContent = "教师账号已创建";
+      await initTeacherEnrollmentPanel(readCachedUserProfile());
+    } catch (error) {
+      if (status) status.textContent = error.message;
+    }
+  });
+}
+
+async function initTeacherRecordPanel(user) {
+  const panel = document.getElementById("teacher-record-panel");
+  const root = document.getElementById("teacher-record-root");
+  if (!panel || !root || user.role !== "teacher") return;
+  panel.classList.remove("is-hidden");
+  try {
+    const result = await apiFetch("/api/teacher/students");
+    const students = result.data?.students || [];
+    if (!students.length) {
+      root.innerHTML = '<p class="muted">暂时没有分配给你的学生。</p>';
+      return;
+    }
+    root.innerHTML = `
+      <form class="student-create-form" data-lesson-record-form>
+        <label class="form-group form-group-compact"><span class="form-label">学生</span><select class="form-input" name="student_id" required>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select></label>
+        <label class="form-group form-group-compact"><span class="form-label">课程主题</span><input class="form-input" name="title" placeholder="例如：一次函数复习" required /></label>
+        <label class="form-group form-group-compact"><span class="form-label">课堂记录</span><textarea class="form-input" name="notes" rows="6" placeholder="记录本次辅导内容、学生表现、作业反馈和疑问" required></textarea></label>
+        <div class="student-create-actions"><button class="primary-btn" type="submit">提交记录并生成分析</button><span class="muted text-sm" data-record-status></span></div>
+      </form>`;
+    const form = root.querySelector("[data-lesson-record-form]");
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const button = form.querySelector("button[type=submit]");
+      const status = form.querySelector("[data-record-status]");
+      button.disabled = true;
+      if (status) status.textContent = "正在请求 AI 分析...";
+      try {
+        const studentId = Number(data.get("student_id"));
+        await apiFetch(`/api/teacher/students/${studentId}/records`, { method: "POST", body: JSON.stringify({ title: data.get("title"), notes: data.get("notes") }) });
+        form.reset();
+        if (status) status.textContent = "记录已保存，成长轨迹已更新";
+      } catch (error) {
+        if (status) status.textContent = error.message;
+      } finally { button.disabled = false; }
+    });
+  } catch (error) {
+    root.innerHTML = `<p class="muted">${escapeHtml(error.message)}</p>`;
+  }
 }
 
 function modelSettingsSourceLabel(source) {
@@ -3735,7 +3847,7 @@ async function initTeacherEnrollmentPanel(user) {
   if (!panel || !root) {
     return;
   }
-  if (!isTeacherUser(user)) {
+  if (user?.role !== "admin") {
     panel.classList.add("is-hidden");
     return;
   }
@@ -3750,7 +3862,7 @@ async function initTeacherEnrollmentPanel(user) {
     return;
   }
 
-  const { students = [], courses = [] } = result.data || {};
+  const { students = [], teachers = [], courses = [] } = result.data || {};
   const subjectGroups = [
     ...courses
       .reduce((groups, course) => {
@@ -3811,6 +3923,9 @@ async function initTeacherEnrollmentPanel(user) {
           `;
     }).join("");
     const studentName = student.full_name || student.username || "";
+    const teacherOptions = teachers.length
+      ? `<label class="form-group form-group-compact"><span class="form-label">所属教师</span><select class="form-input" name="teacher_id" data-teacher-select><option value="">未分配</option>${teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`).join("")}</select><button class="secondary-btn" type="button" data-save-assignment>保存教师分配</button><span class="save-feedback" data-assignment-status aria-live="polite"></span></label>`
+      : "";
     return `
           <article class="subject-column subject-directory-card admin-student-card" data-admin-student-id="${student.id}">
             <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student aria-expanded="false">
@@ -3825,6 +3940,7 @@ async function initTeacherEnrollmentPanel(user) {
               </span>
             </button>
             <div class="admin-student-body is-hidden" data-admin-student-body>
+              ${teacherOptions}
               <section class="admin-student-section admin-profile-section">
                 <div class="admin-section-heading">
                   <span class="admin-section-index">01</span>
@@ -4148,6 +4264,23 @@ async function initTeacherEnrollmentPanel(user) {
       }
     });
   });
+
+  root.querySelectorAll("[data-save-assignment]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const card = button.closest("[data-admin-student-id]");
+      const studentId = Number(card?.dataset.adminStudentId);
+      const teacherId = card?.querySelector("[data-teacher-select]")?.value || "";
+      const status = card?.querySelector("[data-assignment-status]");
+      if (!studentId) return;
+      button.disabled = true;
+      try {
+        await apiFetch("/api/admin/assignments", { method: "POST", body: JSON.stringify({ student_id: studentId, teacher_id: teacherId || null }) });
+        if (status) status.textContent = "教师分配已保存";
+      } catch (error) {
+        if (status) status.textContent = error.message;
+      } finally { button.disabled = false; }
+    });
+  });
 }
 
 async function initGrowthPage() {
@@ -4269,6 +4402,12 @@ async function initGrowthPage() {
         </div>
       </article>
     </div>
+    <section class="card mt-24">
+      <div class="section-head"><div><h2 class="section-title">教师课后记录与 AI 分析</h2><p class="muted text-sm">每次辅导记录都会自动沉淀到这里，帮助你看到优势和下一步。</p></div><span class="stat-chip">${(data.teacher_records || []).length} 次记录</span></div>
+      <div class="growth-activity-list">
+        ${(data.teacher_records || []).length ? data.teacher_records.map((record) => `<article class="growth-activity-item"><div class="growth-activity-dot"></div><div><strong>${escapeHtml(record.title || "课后辅导")}</strong><p>${escapeHtml(record.notes || "")}</p><p class="growth-ai-analysis">${escapeHtml(record.ai_analysis || "")}</p><span>${escapeHtml(record.teacher_name || "教师")} · ${escapeHtml(record.created_at || "")}</span></div></article>`).join("") : '<p class="muted compact-empty-text">教师提交课程记录后，这里会显示 AI 分析。</p>'}
+      </div>
+    </section>
   `;
   const radarPolygon = root.querySelector(".radar-polygon");
   if (radarPolygon) {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260701-08" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-01" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -59,7 +59,7 @@
 <div class="page-scroll">
           <section class="page active" id="teacher-page">
             <div class="growth-header"><div><h1 class="section-title page-title-lg">老师管理</h1></div></div>
-            <section class="card mt-24">
+            <section class="card mt-24" data-admin-only>
               <div class="section-head">
                 <h2 class="section-title">创建学生账号</h2>
               </div>
@@ -109,11 +109,21 @@
                 </div>
               </form>
             </section>
+            <section class="card mt-24" data-admin-only>
+              <div class="section-head"><div><h2 class="section-title">创建教师账号</h2><p class="muted text-sm">超级管理员可以创建并管理教师账号。</p></div></div>
+              <form id="teacher-create-form" class="student-create-form">
+                <label class="form-group form-group-compact"><span class="form-label">账号</span><input class="form-input" name="username" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">密码</span><input class="form-input" name="password" type="password" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">姓名</span><input class="form-input" name="full_name" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">邮箱</span><input class="form-input" name="email" type="email" /></label>
+                <div class="student-create-actions"><button class="primary-btn" type="submit">创建教师</button><span class="muted text-sm" id="teacher-create-status"></span></div>
+              </form>
+            </section>
             <section class="card mt-24 model-settings-panel" data-model-settings-panel>
               <div class="section-head">
                 <div>
                   <h2 class="section-title">AI 模型配置</h2>
-                  <p class="muted text-sm">配置学习助手使用的大模型服务，仅教师账号可以修改。</p>
+                  <p class="muted text-sm">配置课后记录与成长轨迹自动分析使用的大模型服务。</p>
                 </div>
                 <span class="save-feedback" data-model-settings-state aria-live="polite">正在读取配置...</span>
               </div>
@@ -152,7 +162,7 @@
                     class="form-input"
                     name="model"
                     autocomplete="off"
-                    placeholder="例如：gpt-5.2"
+                    placeholder="例如：gpt-5.4"
                     required
                   />
                 </label>
@@ -168,6 +178,10 @@
                 <h2 class="section-title">学生购课管理</h2>
               </div>
               <div id="teacher-admin-root"></div>
+            </section>
+            <section class="card mt-24 teacher-record-panel is-hidden" id="teacher-record-panel">
+              <div class="section-head"><div><h2 class="section-title">课后辅导记录</h2><p class="muted text-sm">提交后系统会自动分析学生做得好的地方和下一步改进方向。</p></div></div>
+              <div id="teacher-record-root"></div>
             </section>
           </section>
         </div>
@@ -193,7 +207,7 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260711-01"></script>
+    <script src="assets/app.js?v=20260713-01"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initTeacherPage().catch((error) => console.warn(error));

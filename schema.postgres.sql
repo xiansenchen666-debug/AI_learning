@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS ai_users (
   school VARCHAR(255) NOT NULL DEFAULT '',
   bio TEXT,
   role VARCHAR(50) NOT NULL DEFAULT 'student',
+  teacher_id BIGINT REFERENCES ai_users (id) ON DELETE SET NULL,
   access_expires_on DATE,
   deleted_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -76,6 +77,21 @@ CREATE TABLE IF NOT EXISTS ai_progress (
   PRIMARY KEY (user_id, lesson_id)
 );
 CREATE INDEX IF NOT EXISTS idx_ai_progress_user_updated ON ai_progress (user_id, updated_at DESC);
+
+CREATE INDEX IF NOT EXISTS idx_ai_users_teacher ON ai_users (teacher_id);
+
+CREATE TABLE IF NOT EXISTS ai_lesson_records (
+  id BIGSERIAL PRIMARY KEY,
+  teacher_id BIGINT NOT NULL REFERENCES ai_users (id) ON DELETE CASCADE,
+  student_id BIGINT NOT NULL REFERENCES ai_users (id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  ai_analysis TEXT NOT NULL DEFAULT '',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_ai_lesson_records_student ON ai_lesson_records (student_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_ai_lesson_records_teacher ON ai_lesson_records (teacher_id, created_at DESC);
 
 CREATE TABLE IF NOT EXISTS ai_question_attempts (
   user_id BIGINT NOT NULL,

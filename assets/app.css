@@ -5583,7 +5583,7 @@ body[data-page="course"] .workspace-badge {
 }
 
 body[data-page="course"] .learning-desk-sandbox {
-  grid-template-columns: 230px minmax(390px, 1fr) 250px;
+  grid-template-columns: 230px minmax(390px, 1fr);
   gap: 14px;
   height: calc(100vh - 124px);
 }
@@ -7198,4 +7198,28 @@ body[data-page="course"] .lesson-inline-media figcaption {
     transform: none;
     filter: none;
   }
+}
+.question-bank-nav {
+  background: #fff7ed;
+  border: 1px solid #fb923c;
+  color: #9a3412;
+  font-weight: 700;
+}
+
+.question-bank-nav .icon-badge {
+  background: #f97316;
+  color: #fff;
+}
+
+.growth-ai-analysis {
+  margin-top: 10px;
+  padding: 12px;
+  border-left: 3px solid #16a34a;
+  background: #f0fdf4;
+  white-space: pre-wrap;
+}
+
+.teacher-record-panel textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
 }

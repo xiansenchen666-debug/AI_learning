@@ -13,6 +13,7 @@ type User = {
   school: string;
   bio?: string;
   role: string;
+  teacher_id?: number | null;
   password_hash?: string;
   access_expires_on?: string | Date | null;
 };
@@ -286,10 +287,10 @@ function contentType(pathname: string) {
 
 function staticCacheControl(pathname: string) {
   if (pathname.startsWith("/assets/")) {
-    return "public, max-age=300, stale-while-revalidate=86400";
+    return "public, max-age=86400, stale-while-revalidate=604800";
   }
   if (pathname.endsWith(".html")) {
-    return "public, max-age=60, stale-while-revalidate=300";
+    return "public, max-age=3600, stale-while-revalidate=86400";
   }
   return "public, max-age=300, stale-while-revalidate=86400";
 }
@@ -303,7 +304,7 @@ async function loadUserById(userId: number): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT id, username, password_hash, full_name, stage, grade, level_label,
-           email, school, bio, role, access_expires_on
+           email, school, bio, role, teacher_id, access_expires_on
     FROM ai_users
     WHERE id = ? AND deleted_at IS NULL
     LIMIT 1
@@ -318,7 +319,7 @@ async function loadUserByUsername(username: string): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT id, username, password_hash, full_name, stage, grade, level_label,
-           email, school, bio, role, access_expires_on
+           email, school, bio, role, teacher_id, access_expires_on
     FROM ai_users
     WHERE LOWER(username) = ? AND deleted_at IS NULL
     LIMIT 1
@@ -335,6 +336,7 @@ function userPayload(user: User) {
     username: user.username,
     full_name: fullName,
     role: user.role || "student",
+    teacher_id: user.teacher_id ? Number(user.teacher_id) : null,
     stage: user.stage || "",
     grade: user.grade || "",
     level_label: user.level_label || "",
@@ -353,7 +355,7 @@ async function currentUser(request: Request): Promise<User | null> {
   const rows = await dbRows<User>(
     `
     SELECT u.id, u.username, u.password_hash, u.full_name, u.stage, u.grade,
-           u.level_label, u.email, u.school, u.bio, u.role,
+           u.level_label, u.email, u.school, u.bio, u.role, u.teacher_id,
            u.access_expires_on
     FROM ai_sessions AS s
     JOIN ai_users AS u ON u.id = s.user_id
@@ -372,6 +374,10 @@ async function currentUser(request: Request): Promise<User | null> {
 
 function isTeacher(user: User | null) {
   return Boolean(user && ["teacher", "admin"].includes(user.role));
+}
+
+function isAdmin(user: User | null) {
+  return Boolean(user && user.role === "admin");
 }
 
 async function getEnrollments(user: User) {
@@ -842,6 +848,19 @@ async function growthPayload(user: User) {
       time: item.updated_at || "",
     };
   });
+  const teacherRecords = await dbRows<Dict>(
+    `
+    SELECT r.id, r.title, r.notes, r.ai_analysis,
+           TO_CHAR(r.created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at,
+           t.full_name AS teacher_name, t.username AS teacher_username
+    FROM ai_lesson_records AS r
+    JOIN ai_users AS t ON t.id = r.teacher_id
+    WHERE r.student_id = ?
+    ORDER BY r.created_at DESC
+    LIMIT 100
+    `,
+    [user.id],
+  );
   return {
     user: userPayload(user),
     headline: `${user.full_name || user.username} 的成长记录`,
@@ -869,6 +888,7 @@ async function growthPayload(user: User) {
       { label: "语言感知", value: Math.max(30, avgScore - 2) },
     ],
     recent_actions: recent,
+    teacher_records: teacherRecords,
     weak_subject: mistakes[0]?.subject || "暂无",
     strong_subject: "暂无",
   };
@@ -877,10 +897,10 @@ async function growthPayload(user: User) {
 async function adminPayload() {
   const users = await dbRows<User>(
     `
-    SELECT id, username, full_name, stage, grade, level_label, email, school, bio, role
-           , access_expires_on
+    SELECT id, username, full_name, stage, grade, level_label, email, school, bio, role,
+           teacher_id, access_expires_on
     FROM ai_users
-    WHERE deleted_at IS NULL AND role NOT IN ('teacher', 'admin')
+    WHERE deleted_at IS NULL AND role = 'student'
     ORDER BY id
     `,
   );
@@ -891,13 +911,67 @@ async function adminPayload() {
       course_ids: await getEnrollments(item),
     });
   }
+  const teachers = await dbRows<User>(
+    `SELECT id, username, full_name, stage, grade, level_label, email, school, bio,
+            role, teacher_id, access_expires_on
+     FROM ai_users WHERE deleted_at IS NULL AND role = 'teacher' ORDER BY id`,
+  );
   return {
+    teachers: teachers.map(userPayload),
     students,
     courses: courses.map((course) => ({
       ...course,
       lesson_count: (lessonsByCourse.get(course.id) || []).length,
     })),
   };
+}
+
+async function teacherCanAccessStudent(user: User, studentId: number) {
+  if (isAdmin(user)) return true;
+  if (user.role !== "teacher") return false;
+  const rows = await dbRows<{ id: number }>(
+    "SELECT id FROM ai_users WHERE id = ? AND role = 'student' AND teacher_id = ? AND deleted_at IS NULL LIMIT 1",
+    [studentId, user.id],
+  );
+  return Boolean(rows[0]);
+}
+
+async function teacherStudents(user: User) {
+  const rows = await dbRows<User>(
+    `SELECT id, username, full_name, stage, grade, level_label, email, school, bio,
+            role, teacher_id, access_expires_on
+     FROM ai_users
+     WHERE deleted_at IS NULL AND role = 'student'
+       AND (? = 'admin' OR teacher_id = ?)
+     ORDER BY full_name, id`,
+    [user.role, user.id],
+  );
+  return rows.map(userPayload);
+}
+
+async function analyzeLessonRecord(
+  student: User,
+  title: string,
+  notes: string,
+) {
+  const settings = await effectiveAiModelSettings();
+  const messages: AiChatMessage[] = [
+    {
+      role: "system",
+      content:
+        "你是学习成长分析师。请根据教师课后记录，用中文输出简洁、可执行的分析，必须包含：做得好的地方、值得改进的地方、下一步建议。不要编造教师没有提供的事实。",
+    },
+    {
+      role: "user",
+      content: `学生：${student.full_name || student.username}\n阶段：${
+        student.stage || "未填写"
+      }\n年级：${
+        student.grade || "未填写"
+      }\n课程标题：${title}\n教师记录：${notes}`,
+    },
+  ];
+  const completion = await callAiChatCompletion(settings, messages, 700);
+  return completion.answer;
 }
 
 async function parseBody(request: Request) {
@@ -1902,6 +1976,129 @@ async function api(request: Request, user: User | null, pathname: string) {
 
   if (!user) return json({ ok: false, message: "请先登录。" }, { status: 401 });
 
+  if (pathname === "/api/teacher/students" && request.method === "GET") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以查看学生" }, {
+        status: 403,
+      });
+    }
+    return json({ ok: true, data: { students: await teacherStudents(user) } });
+  }
+
+  const recordMatch = pathname.match(
+    /^\/api\/teacher\/students\/(\d+)\/records$/,
+  );
+  if (recordMatch && request.method === "POST") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以记录课程" }, {
+        status: 403,
+      });
+    }
+    const studentId = Number(recordMatch[1]);
+    if (!await teacherCanAccessStudent(user, studentId)) {
+      return json({ ok: false, message: "该学生不属于当前教师" }, {
+        status: 403,
+      });
+    }
+    const student = await loadUserById(studentId);
+    if (!student) {
+      return json({ ok: false, message: "未找到学生" }, { status: 404 });
+    }
+    const body = await readAiJsonBody(request);
+    const title = String(body.title || "课后辅导记录").trim().slice(0, 255);
+    const notes = String(body.notes || "").trim().slice(0, 20_000);
+    if (!notes) {
+      return json({ ok: false, message: "请填写课程记录" }, { status: 400 });
+    }
+    try {
+      let analysis = "";
+      try {
+        analysis = await analyzeLessonRecord(student, title, notes);
+      } catch {
+        analysis = "AI 分析暂未生成，教师课堂记录已正常保存。";
+      }
+      const result = await dbExec<Dict>(
+        `INSERT INTO ai_lesson_records (teacher_id, student_id, title, notes, ai_analysis, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, NOW(), NOW())
+         RETURNING id, title, notes, ai_analysis,
+                   TO_CHAR(created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at`,
+        [user.id, studentId, title, notes, analysis],
+      );
+      return json({ ok: true, data: result.rows[0] || null });
+    } catch (error) {
+      return aiErrorResponse(error, true);
+    }
+  }
+
+  if (pathname === "/api/admin/teachers" && request.method === "POST") {
+    if (!isAdmin(user)) {
+      return json({ ok: false, message: "仅超级管理员可以创建教师" }, {
+        status: 403,
+      });
+    }
+    const body = await request.json();
+    const username = String(body.username || "").trim();
+    const password = String(body.password || "").trim();
+    const fullName = String(body.full_name || username).trim();
+    if (!username || !password || !fullName) {
+      return json({ ok: false, message: "账号、密码和姓名不能为空" }, {
+        status: 400,
+      });
+    }
+    try {
+      const result = await dbExec<{ id: number }>(
+        `INSERT INTO ai_users (username, password_hash, full_name, stage, grade, level_label, email, school, bio, role)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'teacher') RETURNING id`,
+        [
+          username,
+          await hashPassword(password),
+          fullName,
+          String(body.stage || ""),
+          String(body.grade || ""),
+          "教师",
+          String(body.email || ""),
+          user.school || "",
+          "",
+        ],
+      );
+      const created = await loadUserById(Number(result.rows[0]?.id));
+      return json({ ok: true, data: created ? userPayload(created) : null });
+    } catch (error) {
+      return json({
+        ok: false,
+        message: error instanceof Error ? error.message : "教师创建失败",
+      }, { status: 400 });
+    }
+  }
+
+  if (pathname === "/api/admin/assignments" && request.method === "POST") {
+    if (!isAdmin(user)) {
+      return json({ ok: false, message: "仅超级管理员可以分配学生" }, {
+        status: 403,
+      });
+    }
+    const body = await request.json();
+    const studentId = Number(body.student_id);
+    const teacherId = body.teacher_id ? Number(body.teacher_id) : null;
+    if (!studentId) {
+      return json({ ok: false, message: "学生不能为空" }, { status: 400 });
+    }
+    if (teacherId) {
+      const teacher = await dbRows<{ id: number }>(
+        "SELECT id FROM ai_users WHERE id = ? AND role = 'teacher' AND deleted_at IS NULL",
+        [teacherId],
+      );
+      if (!teacher[0]) {
+        return json({ ok: false, message: "教师不存在" }, { status: 404 });
+      }
+    }
+    await dbExec(
+      "UPDATE ai_users SET teacher_id = ?, updated_at = NOW() WHERE id = ? AND role = 'student' AND deleted_at IS NULL",
+      [teacherId, studentId],
+    );
+    return json({ ok: true });
+  }
+
   if (pathname === "/api/admin/model-settings") {
     if (!isTeacher(user)) {
       return json({ ok: false, message: "仅教师可以管理模型配置。" }, {
@@ -2037,6 +2234,11 @@ async function api(request: Request, user: User | null, pathname: string) {
   }
 
   if (pathname === "/api/ai/tutor") {
+    return json({
+      ok: false,
+      message: "学习助手已关闭，请查看成长轨迹中的系统分析",
+    }, { status: 403 });
+    /* Disabled: students no longer have a direct AI chat endpoint.
     if (request.method !== "POST") {
       return json({ ok: false, message: "Method Not Allowed" }, {
         status: 405,
@@ -2119,6 +2321,7 @@ async function api(request: Request, user: User | null, pathname: string) {
     } finally {
       releaseRateLimit?.();
     }
+    */
   }
 
   if (pathname === "/api/dashboard") {
@@ -2137,11 +2340,20 @@ async function api(request: Request, user: User | null, pathname: string) {
     pathname === "/api/admin/enrollments" && request.method === "GET" &&
     isTeacher(user)
   ) {
-    return json({ ok: true, data: await adminPayload() });
+    return json({
+      ok: true,
+      data: isAdmin(user) ? await adminPayload() : {
+        students: await teacherStudents(user),
+        courses: courses.map((course) => ({
+          ...course,
+          lesson_count: (lessonsByCourse.get(course.id) || []).length,
+        })),
+      },
+    });
   }
   if (
     pathname === "/api/admin/enrollments" && request.method === "POST" &&
-    isTeacher(user)
+    isAdmin(user)
   ) {
     const body = await request.json();
     const studentId = Number(body.student_id);
@@ -2195,7 +2407,7 @@ async function api(request: Request, user: User | null, pathname: string) {
   }
   if (
     pathname === "/api/admin/students" && request.method === "POST" &&
-    isTeacher(user)
+    isAdmin(user)
   ) {
     const body = await request.json();
     const username = String(body.username || "").trim();
@@ -2230,7 +2442,7 @@ async function api(request: Request, user: User | null, pathname: string) {
     return json({ ok: true, data: userPayload(created) });
   }
   const studentMatch = pathname.match(/^\/api\/admin\/students\/(\d+)$/);
-  if (studentMatch && isTeacher(user)) {
+  if (studentMatch && isAdmin(user)) {
     const studentId = Number(studentMatch[1]);
     if (request.method === "PUT") {
       const existing = await loadUserById(studentId);
