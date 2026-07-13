@@ -7259,3 +7259,192 @@ body[data-page="course"] .lesson-inline-media figcaption {
   min-height: 140px;
   resize: vertical;
 }
+
+.growth-focus-report,
+.growth-empty-report {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.growth-report-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0 24px;
+  border-bottom: 1px solid #dbe3ee;
+}
+
+.growth-report-kicker {
+  margin: 0 0 8px;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.growth-report-hero h2,
+.growth-empty-report h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(24px, 4vw, 38px);
+  letter-spacing: 0;
+}
+
+.growth-report-hero p,
+.growth-empty-report p {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: #526079;
+  line-height: 1.8;
+}
+
+.growth-report-date {
+  flex: 0 0 auto;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.growth-focus-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid #dbe3ee;
+}
+
+.growth-focus-columns > section {
+  padding-right: 32px;
+}
+
+.growth-focus-columns > section + section {
+  padding-right: 0;
+  padding-left: 32px;
+  border-left: 1px solid #dbe3ee;
+}
+
+.growth-focus-report h3 {
+  margin: 0 0 14px;
+  color: #172033;
+  font-size: 17px;
+}
+
+.growth-focus-report ul,
+.growth-focus-report ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+  color: #344054;
+  line-height: 1.65;
+}
+
+.growth-next-plan {
+  padding: 24px 28px;
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+}
+
+.growth-teacher-history {
+  padding: 30px 0 0;
+}
+
+.growth-teacher-history .section-head {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #dbe3ee;
+}
+
+.growth-teacher-history .section-head h3,
+.growth-teacher-history .section-head p {
+  margin: 0;
+}
+
+.growth-teacher-history .section-head p {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.growth-record-timeline article {
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.growth-record-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.growth-record-meta span,
+.growth-record-timeline small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.growth-record-timeline p {
+  margin: 8px 0;
+  color: #475467;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.growth-empty-report {
+  padding: 44px 0;
+  border-top: 1px solid #dbe3ee;
+  border-bottom: 1px solid #dbe3ee;
+}
+
+.teacher-growth-panel {
+  margin-top: 28px;
+}
+
+.teacher-growth-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) auto minmax(220px, 1fr);
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.growth-analysis-buffer {
+  display: flex;
+  min-height: 220px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #344054;
+}
+
+.growth-analysis-buffer span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .growth-report-hero,
+  .growth-record-meta {
+    flex-direction: column;
+  }
+
+  .growth-focus-columns,
+  .teacher-growth-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .growth-focus-columns > section,
+  .growth-focus-columns > section + section {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .growth-focus-columns > section + section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #dbe3ee;
+  }
+
+  .growth-next-plan {
+    padding: 20px;
+  }
+}

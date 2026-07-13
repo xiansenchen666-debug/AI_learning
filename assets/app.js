@@ -4,6 +4,7 @@ const ROUTE_LOADING_LABEL_KEY = "stq-route-loading-label";
 const API_PREFETCH_CACHE_PREFIX = "stq-api-prefetch:";
 const API_PREFETCH_CACHE_TTL_MS = 10 * 60 * 1000;
 const API_COURSE_CACHE_TTL_MS = 30 * 60 * 1000;
+const API_INFLIGHT_REQUESTS = new Map();
 
 function readLastSubjectLocation() {
   try {
@@ -161,28 +162,40 @@ async function apiFetch(url, options = {}) {
   }
   const fetchOptions = { ...options };
   delete fetchOptions.cacheTtlMs;
-  const response = await fetch(url, {
-    headers: { "Content-Type": "application/json" },
-    credentials: "same-origin",
-    ...fetchOptions,
-  });
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    if (response.status === 401 && !String(url).includes("/api/login")) {
-      clearUserProfile();
-      if (
-        window.location.protocol !== "file:" &&
-        window.location.pathname !== "/login"
-      ) {
-        window.location.replace("/login");
+  const inflightKey = method === "GET" ? String(url) : "";
+  if (inflightKey && API_INFLIGHT_REQUESTS.has(inflightKey)) {
+    return await API_INFLIGHT_REQUESTS.get(inflightKey);
+  }
+  const request = (async () => {
+    const response = await fetch(url, {
+      headers: { "Content-Type": "application/json" },
+      credentials: "same-origin",
+      ...fetchOptions,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401 && !String(url).includes("/api/login")) {
+        clearUserProfile();
+        if (
+          window.location.protocol !== "file:" &&
+          window.location.pathname !== "/login"
+        ) {
+          window.location.replace("/login");
+        }
       }
+      throw new Error(data.message || "请求失败");
     }
-    throw new Error(data.message || "请求失败");
+    if (shouldUseCache) {
+      writeApiCache(cacheKey, data);
+    }
+    return data;
+  })();
+  if (inflightKey) API_INFLIGHT_REQUESTS.set(inflightKey, request);
+  try {
+    return await request;
+  } finally {
+    if (inflightKey) API_INFLIGHT_REQUESTS.delete(inflightKey);
   }
-  if (shouldUseCache) {
-    writeApiCache(cacheKey, data);
-  }
-  return data;
 }
 
 function defaultApiCacheTtl(url) {
@@ -192,7 +205,8 @@ function defaultApiCacheTtl(url) {
   }
   if (
     /^\/api\/course\/\d+/.test(path) ||
-    /^\/api\/lessons\/\d+\/question-bank/.test(path)
+    /^\/api\/lessons\/\d+\/question-bank/.test(path) ||
+    /^\/api\/teacher\/students\/\d+\/growth/.test(path)
   ) {
     return API_COURSE_CACHE_TTL_MS;
   }
@@ -866,52 +880,50 @@ function scheduleBackgroundTask(task, delayMs = 0) {
   }, delayMs);
 }
 
-function studentCourseIds(subjectsResult) {
-  return (subjectsResult?.data?.stages || []).flatMap((stage) => (stage.subjects || []).flatMap((subject) => (subject.courses || []).map((course) => course.id).filter(Boolean)));
-}
-
 function warmStudentApiCache(user) {
   if (!user || isTeacherUser(user)) {
     return;
   }
-  ["/api/dashboard", "/api/mistakes", "/api/growth"].forEach((url, index) => {
-    scheduleBackgroundTask(
-      () =>
-        apiFetch(url, { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(
-          () => {},
-        ),
-      150 + index * 180,
-    );
-  });
-  scheduleBackgroundTask(() => {
-    apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS })
-      .then((result) => {
-        studentCourseIds(result).forEach((courseId, index) => {
-          scheduleBackgroundTask(
-            () =>
-              apiFetch(`/api/course/${courseId}`, {
-                cacheTtlMs: API_COURSE_CACHE_TTL_MS,
-              }).catch(() => {}),
-            300 + Math.floor(index / 2) * 350,
-          );
+  ["/api/dashboard", "/api/mistakes", "/api/growth"]
+    .forEach((url) => {
+      apiFetch(url, { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {});
+    });
+  apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS })
+    .then((result) => {
+      const firstCourse = (result.data?.stages || [])
+        .flatMap((stage) => (stage.subjects || []).flatMap((subject) => subject.courses || []))
+        .find((course) => course.purchased !== false);
+      if (!firstCourse?.id) return;
+      return apiFetch(`/api/course/${firstCourse.id}`, {
+        cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+      }).then((courseResult) => {
+        const firstLesson = courseResult.data?.lessons?.[0];
+        if (!firstLesson?.id) return;
+        return apiFetch(`/api/lessons/${firstLesson.id}/question-bank`, {
+          cacheTtlMs: API_COURSE_CACHE_TTL_MS,
         });
-      })
-      .catch(() => {});
-  }, 250);
+      });
+    })
+    .catch(() => {});
 }
 
 function warmAllPageCache(user) {
-  const pages = ["/dashboard", "/subjects", "/mistakes", "/growth", "/question-bank"];
-  pages.forEach((path, index) => {
-    scheduleBackgroundTask(() => {
-      const url = new URL(path, window.location.origin);
-      prefetchPage(url);
-      prefetchApiForPage(url);
-    }, 120 + index * 120);
+  const pages = [
+    "/dashboard",
+    "/subjects",
+    "/grade",
+    "/course",
+    "/question-bank",
+    "/mistakes",
+    "/growth",
+    "/teacher",
+  ];
+  pages.forEach((path) => {
+    prefetchPage(new URL(path, window.location.origin));
   });
   warmStudentApiCache(user);
   if (isTeacherUser(user)) {
-    scheduleBackgroundTask(() => apiFetch(user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {}), 300);
+    apiFetch(user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS }).catch(() => {});
   }
 }
 
@@ -3573,6 +3585,7 @@ async function initTeacherPage() {
     initModelSettingsPanel(user),
     initTeacherEnrollmentPanel(user),
     initTeacherRecordPanel(user),
+    initTeacherGrowthPanel(user),
   ]);
 }
 
@@ -3625,15 +3638,89 @@ async function initTeacherRecordPanel(user) {
       if (status) status.textContent = "正在请求 AI 分析...";
       try {
         const studentId = Number(data.get("student_id"));
-        await apiFetch(`/api/teacher/students/${studentId}/records`, { method: "POST", body: JSON.stringify({ title: data.get("title"), notes: data.get("notes") }) });
+        const saved = await apiFetch(`/api/teacher/students/${studentId}/records`, { method: "POST", body: JSON.stringify({ title: data.get("title"), notes: data.get("notes") }) });
         form.reset();
-        if (status) status.textContent = "记录已保存，成长轨迹已更新";
+        if (status) {
+          status.textContent = saved.data?.growth_ready
+            ? "记录已保存，AI 成长规划已固定更新"
+            : "记录已保存，成长规划将在查看时继续生成";
+        }
+        window.dispatchEvent(new CustomEvent("teacher-growth-updated", {
+          detail: { studentId },
+        }));
       } catch (error) {
         if (status) status.textContent = error.message;
       } finally { button.disabled = false; }
     });
   } catch (error) {
     root.innerHTML = `<p class="muted">${escapeHtml(error.message)}</p>`;
+  }
+}
+
+async function initTeacherGrowthPanel(user) {
+  const panel = document.getElementById("teacher-growth-panel");
+  const root = document.getElementById("teacher-growth-root");
+  if (!panel || !root || user.role !== "teacher") return;
+  panel.classList.remove("is-hidden");
+  try {
+    const result = await apiFetch("/api/teacher/students");
+    const students = result.data?.students || [];
+    if (!students.length) {
+      root.innerHTML = '<section class="growth-empty-report"><h2>暂无学生</h2><p>超级管理员分配学生后，可在这里查看成长规划。</p></section>';
+      return;
+    }
+    root.innerHTML = `
+      <div class="teacher-growth-toolbar">
+        <label class="form-group form-group-compact">
+          <span class="form-label">选择学生</span>
+          <select class="form-input" data-growth-student-select>${students.map((student) => `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`).join("")}</select>
+        </label>
+        <button class="primary-btn" type="button" data-load-student-growth>查看成长规划</button>
+        <span class="save-feedback" data-growth-load-status aria-live="polite"></span>
+      </div>
+      <div data-teacher-growth-report></div>`;
+    const select = root.querySelector("[data-growth-student-select]");
+    const button = root.querySelector("[data-load-student-growth]");
+    const status = root.querySelector("[data-growth-load-status]");
+    const report = root.querySelector("[data-teacher-growth-report]");
+    if (!select || !button || !report) return;
+    const loadGrowth = async (studentId = select?.value) => {
+      if (!studentId || !report || button.disabled) return;
+      button.disabled = true;
+      button.classList.add("is-saving");
+      if (status) {
+        status.className = "save-feedback is-saving-text";
+        status.textContent = "AI 分析中...";
+      }
+      report.innerHTML = '<div class="growth-analysis-buffer"><div class="page-transition-mark"></div><strong>AI 分析中...</strong><span>正在读取教师课后记录</span></div>';
+      try {
+        const growth = await apiFetch(`/api/teacher/students/${studentId}/growth`, {
+          cacheTtlMs: 60 * 1000,
+        });
+        report.innerHTML = renderFocusedGrowth(growth.data || {});
+        if (status) {
+          status.className = "save-feedback is-success";
+          status.textContent = growth.data?.ai_cached ? "已读取固定成长规划" : "AI 成长规划已生成并固定";
+        }
+      } catch (error) {
+        report.innerHTML = `<section class="growth-empty-report"><h2>暂时无法读取</h2><p>${escapeHtml(error.message)}</p></section>`;
+        if (status) {
+          status.className = "save-feedback is-error";
+          status.textContent = error.message;
+        }
+      } finally {
+        button.disabled = false;
+        button.classList.remove("is-saving");
+      }
+    };
+    button.addEventListener("click", () => loadGrowth());
+    window.addEventListener("teacher-growth-updated", (event) => {
+      if (String(event.detail?.studentId || "") === String(select?.value || "")) {
+        loadGrowth(event.detail.studentId);
+      }
+    });
+  } catch (error) {
+    root.innerHTML = `<section class="growth-empty-report"><p>${escapeHtml(error.message)}</p></section>`;
   }
 }
 
@@ -3662,7 +3749,7 @@ async function initModelSettingsPanel(user) {
   const testButton = panel?.querySelector("[data-test-model-settings]");
   const saveButton = panel?.querySelector("[data-save-model-settings]");
   if (
-    !isTeacherUser(user) || !panel || !form || !baseUrlInput ||
+    user?.role !== "admin" || !panel || !form || !baseUrlInput ||
     !apiKeyInput || !modelInput || !testButton || !saveButton ||
     form.dataset.modelSettingsInitialized === "1"
   ) {
@@ -4329,8 +4416,56 @@ async function initTeacherEnrollmentPanel(user) {
   });
 }
 
+function renderFocusedGrowth(data) {
+  const records = data.teacher_records || [];
+  if (!data.has_teacher_records || !records.length) {
+    return `
+      <section class="growth-empty-report">
+        <p class="growth-report-kicker">成长规划</p>
+        <h2>等待教师课后记录</h2>
+        <p>教师完成辅导记录后，系统会自动生成一份简洁、固定的 AI 成长规划。</p>
+      </section>`;
+  }
+  return `
+    <section class="growth-focus-report">
+      <header class="growth-report-hero">
+        <div>
+          <p class="growth-report-kicker">AI 成长规划${data.ai_model ? ` · ${escapeHtml(data.ai_model)}` : ""}</p>
+          <h2>${escapeHtml(data.headline || "成长规划")}</h2>
+          <p>${escapeHtml(data.summary || "")}</p>
+        </div>
+        <span class="growth-report-date">${escapeHtml(data.ai_updated_at || "")}</span>
+      </header>
+      <div class="growth-focus-columns">
+        <section>
+          <h3>做得好的地方</h3>
+          <ul>${(data.strengths || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </section>
+        <section>
+          <h3>重点改进</h3>
+          <ul>${(data.improvements || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </section>
+      </div>
+      <section class="growth-next-plan">
+        <h3>下一步计划</h3>
+        <ol>${(data.next_steps || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+      </section>
+      <section class="growth-teacher-history">
+        <div class="section-head"><div><h3>教师课后记录</h3><p>成长规划仅依据以下记录生成。</p></div><span>${records.length} 次</span></div>
+        <div class="growth-record-timeline">
+          ${records.map((record) => `
+            <article>
+              <div class="growth-record-meta"><strong>${escapeHtml(record.title || "课后辅导")}</strong><span>${escapeHtml(record.created_at || "")}</span></div>
+              <p>${escapeHtml(record.notes || "")}</p>
+              <small>${escapeHtml(record.teacher_name || "教师")}</small>
+            </article>`).join("")}
+        </div>
+      </section>
+    </section>`;
+}
+
 async function initGrowthPage() {
-  setPageLoading(true);
+  setPageLoading(true, "AI 分析中...");
   const user = await requireSession();
   if (!user) {
     setPageLoading(false);
@@ -4355,6 +4490,10 @@ async function initGrowthPage() {
     setPageLoading(false);
     return;
   }
+
+  root.innerHTML = renderFocusedGrowth(data);
+  setPageLoading(false);
+  return;
 
   const studyHours = `${Math.floor((data.metrics.study_minutes || 0) / 60)}h ${String((data.metrics.study_minutes || 0) % 60).padStart(2, "0")}m`;
   const radarLabelMap = ["l1", "l2", "l3", "l4", "l5"];

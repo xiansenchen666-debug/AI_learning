@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260713-03" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-04" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -59,7 +59,7 @@
 <div class="page-scroll">
           <section class="page active" id="teacher-page">
             <div class="growth-header"><div><h1 class="section-title page-title-lg">老师管理</h1></div></div>
-            <section class="card mt-24" data-admin-only>
+            <section class="card mt-24 is-hidden" data-admin-only>
               <div class="section-head">
                 <h2 class="section-title">创建学生账号</h2>
               </div>
@@ -109,7 +109,7 @@
                 </div>
               </form>
             </section>
-            <section class="card mt-24" data-admin-only>
+            <section class="card mt-24 is-hidden" data-admin-only>
               <div class="section-head"><div><h2 class="section-title">创建教师账号</h2><p class="muted text-sm">超级管理员可以创建并管理教师账号。</p></div></div>
               <form id="teacher-create-form" class="student-create-form">
                 <label class="form-group form-group-compact"><span class="form-label">账号</span><input class="form-input" name="username" required /></label>
@@ -119,7 +119,7 @@
                 <div class="student-create-actions"><button class="primary-btn" type="submit">创建教师</button><span class="muted text-sm" id="teacher-create-status"></span></div>
               </form>
             </section>
-            <section class="card mt-24 model-settings-panel" data-model-settings-panel>
+            <section class="card mt-24 model-settings-panel is-hidden" data-model-settings-panel data-admin-only>
               <div class="section-head">
                 <div>
                   <h2 class="section-title">AI 模型配置</h2>
@@ -183,6 +183,10 @@
               <div class="section-head"><div><h2 class="section-title">课后辅导记录</h2><p class="muted text-sm">提交后系统会自动分析学生做得好的地方和下一步改进方向。</p></div></div>
               <div id="teacher-record-root"></div>
             </section>
+            <section class="teacher-growth-panel is-hidden" id="teacher-growth-panel">
+              <div class="growth-header"><div><h2 class="section-title">学生成长规划</h2><p class="muted page-header-subtitle">查看分配给你的学生的固定 AI 成长报告。</p></div></div>
+              <div id="teacher-growth-root"></div>
+            </section>
           </section>
         </div>
       </main>
@@ -207,11 +211,6 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260713-03"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        initTeacherPage().catch((error) => console.warn(error));
-      });
-    </script>
+    <script src="assets/app.js?v=20260713-04"></script>
   </body>
 </html>

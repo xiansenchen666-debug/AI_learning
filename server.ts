@@ -469,8 +469,12 @@ function gradeLock(course: Course) {
   };
 }
 
-async function learnerProfile(userId: number, courseId?: number) {
-  const attempts = await listAttempts(userId);
+async function learnerProfile(
+  userId: number,
+  courseId?: number,
+  existing?: { attempts: Dict[]; mistakes: Dict[]; study: Dict[] },
+) {
+  const attempts = existing?.attempts || await listAttempts(userId);
   const scopedAttempts = courseId
     ? attempts.filter((item) =>
       lessonById.get(Number(item.lesson_id))?.course_id === courseId
@@ -478,8 +482,8 @@ async function learnerProfile(userId: number, courseId?: number) {
     : attempts;
   const correctCount =
     scopedAttempts.filter((item) => Boolean(item.correct)).length;
-  const mistakes = await listMistakes(userId);
-  const study = await listStudyTime(userId);
+  const mistakes = existing?.mistakes || await listMistakes(userId);
+  const study = existing?.study || await listStudyTime(userId);
   const minutes = Math.round(
     study.reduce((sum, item) => sum + Number(item.seconds || 0), 0) / 60,
   );
@@ -719,19 +723,26 @@ async function dashboardPayload(user: User) {
 async function coursePayload(user: User, courseId: number) {
   const course = courseById.get(courseId);
   if (!course) return null;
-  const enrollments = new Set(await getEnrollments(user));
+  const [enrollmentRows, progressRows, attempts, mistakes, studyRows] =
+    await Promise.all([
+      getEnrollments(user),
+      listProgress(user.id),
+      listAttempts(user.id),
+      listMistakes(user.id),
+      listStudyTime(user.id),
+    ]);
+  const enrollments = new Set(enrollmentRows);
   if (!isTeacher(user) && !enrollments.has(courseId)) return null;
   const progress = new Map(
-    (await listProgress(user.id)).map((item) => [Number(item.lesson_id), item]),
+    progressRows.map((item) => [Number(item.lesson_id), item]),
   );
-  const attempts = await listAttempts(user.id);
   const attemptsByLesson = groupBy(attempts, (item) => Number(item.lesson_id));
   const mistakesByLesson = groupBy(
-    await listMistakes(user.id),
+    mistakes,
     (item) => Number(item.lesson_id),
   );
   const study = new Map(
-    (await listStudyTime(user.id)).map((
+    studyRows.map((
       item,
     ) => [Number(item.lesson_id), item]),
   );
@@ -778,7 +789,11 @@ async function coursePayload(user: User, courseId: number) {
       .filter((item) => Number(item.course_id) === courseId)
       .map((item) => ({ ...item, resource_key: item.file_path })),
     grade_lock: gradeLock(course),
-    learner_profile: await learnerProfile(user.id, courseId),
+    learner_profile: await learnerProfile(user.id, courseId, {
+      attempts,
+      mistakes,
+      study: studyRows,
+    }),
   };
 }
 
@@ -1010,7 +1025,7 @@ async function generateAiGrowthAnalysis(
   }
 }
 
-async function growthPayload(user: User) {
+async function legacyCachedGrowthPayload(user: User) {
   const snapshot = await loadDashboardData(user.id);
   const progress = snapshot.progress;
   const mistakes = snapshot.mistakes;
@@ -1145,6 +1160,204 @@ async function growthPayload(user: User) {
         teacher_records: teacherRecords,
         ai_model: cached.model,
         ai_updated_at: cached.updated_at,
+        ai_cached: true,
+        ai_stale: true,
+      };
+    }
+    throw error;
+  }
+}
+
+function parseTeacherGrowthPayload(answer: string) {
+  const unfenced = answer.replace(/^```(?:json)?\s*/i, "").replace(
+    /\s*```$/i,
+    "",
+  )
+    .trim();
+  const start = unfenced.indexOf("{");
+  const end = unfenced.lastIndexOf("}");
+  if (start < 0 || end <= start) {
+    throw new AiUpstreamError("AI 成长规划返回格式不正确，请稍后重试。", 502);
+  }
+  let raw: Dict;
+  try {
+    raw = JSON.parse(unfenced.slice(start, end + 1)) as Dict;
+  } catch {
+    throw new AiUpstreamError("AI 成长规划返回格式不正确，请稍后重试。", 502);
+  }
+  const strengths = growthStringList(raw.strengths);
+  const improvements = growthStringList(raw.improvements);
+  const nextSteps = growthStringList(raw.next_steps);
+  const headline = String(raw.headline || "").trim();
+  const summary = String(raw.summary || "").trim();
+  if (
+    !headline || !summary || !strengths.length || !improvements.length ||
+    !nextSteps.length
+  ) {
+    throw new AiUpstreamError("AI 成长规划内容不完整，请稍后重试。", 502);
+  }
+  return {
+    headline,
+    summary,
+    strengths: strengths.slice(0, 3),
+    improvements: improvements.slice(0, 3),
+    next_steps: nextSteps.slice(0, 4),
+    ai_generated: true,
+    has_teacher_records: true,
+    analysis_version: 3,
+  };
+}
+
+async function generateTeacherGrowthAnalysis(
+  user: User,
+  teacherRecords: Dict[],
+) {
+  const settings = await effectiveAiModelSettings();
+  const messages: AiChatMessage[] = [
+    {
+      role: "system",
+      content:
+        "你是学生成长规划分析师。只能依据教师课后记录进行判断，不得使用或推测答题数据，不得编造。请用中文输出严格 JSON，不要输出 Markdown。字段仅包含 headline、summary、strengths（最多3项）、improvements（最多3项）、next_steps（最多4项）。内容简洁、有重点、可执行，避免重复和空泛。",
+    },
+    {
+      role: "user",
+      content: JSON.stringify({
+        student: {
+          name: user.full_name || user.username,
+          stage: user.stage || "未填写",
+          grade: user.grade || "未填写",
+        },
+        teacher_records: teacherRecords.slice(0, 20).map((item) => ({
+          title: item.title,
+          notes: String(item.notes || "").slice(0, 2_000),
+          teacher: item.teacher_name,
+          time: item.created_at,
+        })),
+      }),
+    },
+  ];
+  const maxCompletionTokens = 900;
+  const reservation = await reserveAiDailyQuota(
+    user.id,
+    estimateAiTokenReservation(messages, maxCompletionTokens),
+  );
+  try {
+    const completion = await callAiChatCompletion(
+      settings,
+      messages,
+      maxCompletionTokens,
+    );
+    await finishAiQuotaReservation(reservation, user.id, completion.usage);
+    return {
+      analysis: parseTeacherGrowthPayload(completion.answer),
+      model: settings.model,
+    };
+  } catch (error) {
+    await finishAiQuotaReservation(reservation, user.id, null).catch(() =>
+      undefined
+    );
+    throw error;
+  }
+}
+
+async function growthPayload(user: User): Promise<Dict> {
+  const teacherRecords = await dbRows<Dict>(
+    `SELECT r.id, r.title, r.notes, r.ai_analysis,
+            TO_CHAR(r.created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at,
+            t.full_name AS teacher_name, t.username AS teacher_username
+     FROM ai_lesson_records AS r
+     JOIN ai_users AS t ON t.id = r.teacher_id
+     WHERE r.student_id = ?
+     ORDER BY r.created_at DESC
+     LIMIT 100`,
+    [user.id],
+  );
+  if (!teacherRecords.length) {
+    return {
+      user: userPayload(user),
+      has_teacher_records: false,
+      ai_generated: false,
+      teacher_records: [],
+    };
+  }
+  const settingsRow = await loadAiModelSettingsRow();
+  const model = String(settingsRow?.model || "").trim() ||
+    aiEnvironmentValue("AI_MODEL");
+  const sourceFacts = teacherRecords.map((item) => ({
+    id: item.id,
+    title: item.title,
+    notes: item.notes,
+    teacher: item.teacher_name,
+    time: item.created_at,
+  }));
+  const sourceHash = await hashPassword(
+    JSON.stringify({ version: 3, teacher_records: sourceFacts }),
+  );
+  const cachedRows = await dbRows<{
+    source_hash: string;
+    model: string;
+    payload: Dict | string;
+    updated_at: string;
+  }>(
+    `SELECT source_hash, model, payload,
+            TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS updated_at
+     FROM ai_growth_analyses WHERE student_id = ? LIMIT 1`,
+    [user.id],
+  );
+  const cached = cachedRows[0] || null;
+  let cachedPayload: Dict | null = null;
+  if (cached) {
+    try {
+      cachedPayload = typeof cached.payload === "string"
+        ? JSON.parse(cached.payload) as Dict
+        : cached.payload;
+    } catch {
+      cachedPayload = null;
+    }
+  }
+  if (cached?.source_hash === sourceHash && cachedPayload) {
+    return {
+      ...cachedPayload,
+      user: userPayload(user),
+      teacher_records: teacherRecords,
+      ai_model: cached.model,
+      ai_updated_at: cached.updated_at,
+      ai_cached: true,
+    };
+  }
+  try {
+    const generated = await generateTeacherGrowthAnalysis(user, teacherRecords);
+    await dbExec(
+      `INSERT INTO ai_growth_analyses (student_id, source_hash, model, payload, updated_at)
+       VALUES (?, ?, ?, ?::jsonb, NOW())
+       ON CONFLICT (student_id) DO UPDATE SET
+         source_hash = EXCLUDED.source_hash,
+         model = EXCLUDED.model,
+         payload = EXCLUDED.payload,
+         updated_at = NOW()`,
+      [
+        user.id,
+        sourceHash,
+        generated.model,
+        JSON.stringify(generated.analysis),
+      ],
+    );
+    return {
+      ...generated.analysis,
+      user: userPayload(user),
+      teacher_records: teacherRecords,
+      ai_model: generated.model,
+      ai_updated_at: now(),
+      ai_cached: false,
+    };
+  } catch (error) {
+    if (cachedPayload?.analysis_version === 3) {
+      return {
+        ...cachedPayload,
+        user: userPayload(user),
+        teacher_records: teacherRecords,
+        ai_model: cached?.model || model,
+        ai_updated_at: cached?.updated_at || "",
         ai_cached: true,
         ai_stale: true,
       };
@@ -2244,6 +2457,32 @@ async function api(request: Request, user: User | null, pathname: string) {
     return json({ ok: true, data: { students: await teacherStudents(user) } });
   }
 
+  const teacherGrowthMatch = pathname.match(
+    /^\/api\/teacher\/students\/(\d+)\/growth$/,
+  );
+  if (teacherGrowthMatch && request.method === "GET") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以查看学生成长规划" }, {
+        status: 403,
+      });
+    }
+    const studentId = Number(teacherGrowthMatch[1]);
+    if (!await teacherCanAccessStudent(user, studentId)) {
+      return json({ ok: false, message: "该学生不属于当前教师" }, {
+        status: 403,
+      });
+    }
+    const student = await loadUserById(studentId);
+    if (!student || student.role !== "student") {
+      return json({ ok: false, message: "未找到学生" }, { status: 404 });
+    }
+    try {
+      return json({ ok: true, data: await growthPayload(student) });
+    } catch (error) {
+      return aiErrorResponse(error, true);
+    }
+  }
+
   const recordMatch = pathname.match(
     /^\/api\/teacher\/students\/(\d+)\/records$/,
   );
@@ -2260,7 +2499,7 @@ async function api(request: Request, user: User | null, pathname: string) {
       });
     }
     const student = await loadUserById(studentId);
-    if (!student) {
+    if (!student || student.role !== "student") {
       return json({ ok: false, message: "未找到学生" }, { status: 404 });
     }
     const body = await readAiJsonBody(request);
@@ -2270,20 +2509,28 @@ async function api(request: Request, user: User | null, pathname: string) {
       return json({ ok: false, message: "请填写课程记录" }, { status: 400 });
     }
     try {
-      let analysis = "";
-      try {
-        analysis = await analyzeLessonRecord(student, title, notes);
-      } catch {
-        analysis = "AI 分析暂未生成，教师课堂记录已正常保存。";
-      }
       const result = await dbExec<Dict>(
         `INSERT INTO ai_lesson_records (teacher_id, student_id, title, notes, ai_analysis, created_at, updated_at)
          VALUES (?, ?, ?, ?, ?, NOW(), NOW())
          RETURNING id, title, notes, ai_analysis,
                    TO_CHAR(created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at`,
-        [user.id, studentId, title, notes, analysis],
+        [user.id, studentId, title, notes, ""],
       );
-      return json({ ok: true, data: result.rows[0] || null });
+      const created = result.rows[0] || null;
+      let growthReady = false;
+      if (created) {
+        try {
+          const growth = await growthPayload(student);
+          if (growth.ai_stale) throw new Error("Stale growth analysis");
+          growthReady = true;
+        } catch {
+          growthReady = false;
+        }
+      }
+      return json({
+        ok: true,
+        data: created ? { ...created, growth_ready: growthReady } : null,
+      });
     } catch (error) {
       return aiErrorResponse(error, true);
     }
@@ -2359,8 +2606,8 @@ async function api(request: Request, user: User | null, pathname: string) {
   }
 
   if (pathname === "/api/admin/model-settings") {
-    if (!isTeacher(user)) {
-      return json({ ok: false, message: "仅教师可以管理模型配置。" }, {
+    if (!isAdmin(user)) {
+      return json({ ok: false, message: "仅超级管理员可以管理模型配置。" }, {
         status: 403,
       });
     }
@@ -2439,8 +2686,8 @@ async function api(request: Request, user: User | null, pathname: string) {
   }
 
   if (pathname === "/api/admin/model-settings/test") {
-    if (!isTeacher(user)) {
-      return json({ ok: false, message: "仅教师可以测试模型配置。" }, {
+    if (!isAdmin(user)) {
+      return json({ ok: false, message: "仅超级管理员可以测试模型配置。" }, {
         status: 403,
       });
     }
