@@ -1277,7 +1277,7 @@ async function growthPayload(user: User): Promise<Dict> {
       user: userPayload(user),
       has_teacher_records: false,
       ai_generated: false,
-      teacher_records: [],
+      record_count: 0,
     };
   }
   const settingsRow = await loadAiModelSettingsRow();
@@ -1319,7 +1319,8 @@ async function growthPayload(user: User): Promise<Dict> {
     return {
       ...cachedPayload,
       user: userPayload(user),
-      teacher_records: teacherRecords,
+      has_teacher_records: true,
+      record_count: teacherRecords.length,
       ai_model: cached.model,
       ai_updated_at: cached.updated_at,
       ai_cached: true,
@@ -1345,7 +1346,8 @@ async function growthPayload(user: User): Promise<Dict> {
     return {
       ...generated.analysis,
       user: userPayload(user),
-      teacher_records: teacherRecords,
+      has_teacher_records: true,
+      record_count: teacherRecords.length,
       ai_model: generated.model,
       ai_updated_at: now(),
       ai_cached: false,
@@ -1355,7 +1357,8 @@ async function growthPayload(user: User): Promise<Dict> {
       return {
         ...cachedPayload,
         user: userPayload(user),
-        teacher_records: teacherRecords,
+        has_teacher_records: true,
+        record_count: teacherRecords.length,
         ai_model: cached?.model || model,
         ai_updated_at: cached?.updated_at || "",
         ai_cached: true,
@@ -1364,6 +1367,20 @@ async function growthPayload(user: User): Promise<Dict> {
     }
     throw error;
   }
+}
+
+async function lessonRecordsPayload(studentId: number): Promise<Dict[]> {
+  return await dbRows<Dict>(
+    `SELECT r.id, r.title, r.notes,
+            TO_CHAR(r.created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at,
+            t.full_name AS teacher_name, t.username AS teacher_username
+     FROM ai_lesson_records AS r
+     JOIN ai_users AS t ON t.id = r.teacher_id
+     WHERE r.student_id = ?
+     ORDER BY r.created_at DESC
+     LIMIT 100`,
+    [studentId],
+  );
 }
 
 async function adminPayload() {
@@ -2483,9 +2500,56 @@ async function api(request: Request, user: User | null, pathname: string) {
     }
   }
 
+  const teacherGrowthGenerateMatch = pathname.match(
+    /^\/api\/teacher\/students\/(\d+)\/growth\/generate$/,
+  );
+  if (teacherGrowthGenerateMatch && request.method === "POST") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以生成学生成长规划" }, {
+        status: 403,
+      });
+    }
+    const studentId = Number(teacherGrowthGenerateMatch[1]);
+    if (!await teacherCanAccessStudent(user, studentId)) {
+      return json({ ok: false, message: "该学生不属于当前教师" }, {
+        status: 403,
+      });
+    }
+    const student = await loadUserById(studentId);
+    if (!student || student.role !== "student") {
+      return json({ ok: false, message: "未找到学生" }, { status: 404 });
+    }
+    try {
+      const growth = await growthPayload(student);
+      if (growth.ai_stale) {
+        return json({ ok: false, message: "AI 分析暂未更新" }, { status: 503 });
+      }
+      return json({ ok: true, data: { analysis_status: "completed" } });
+    } catch (error) {
+      return aiErrorResponse(error, true);
+    }
+  }
+
   const recordMatch = pathname.match(
     /^\/api\/teacher\/students\/(\d+)\/records$/,
   );
+  if (recordMatch && request.method === "GET") {
+    if (!isTeacher(user)) {
+      return json({ ok: false, message: "仅教师可以查看学生课后记录" }, {
+        status: 403,
+      });
+    }
+    const studentId = Number(recordMatch[1]);
+    if (!await teacherCanAccessStudent(user, studentId)) {
+      return json({ ok: false, message: "该学生不属于当前教师" }, {
+        status: 403,
+      });
+    }
+    return json({
+      ok: true,
+      data: { records: await lessonRecordsPayload(studentId) },
+    });
+  }
   if (recordMatch && request.method === "POST") {
     if (!isTeacher(user)) {
       return json({ ok: false, message: "仅教师可以记录课程" }, {
@@ -2517,19 +2581,11 @@ async function api(request: Request, user: User | null, pathname: string) {
         [user.id, studentId, title, notes, ""],
       );
       const created = result.rows[0] || null;
-      let growthReady = false;
-      if (created) {
-        try {
-          const growth = await growthPayload(student);
-          if (growth.ai_stale) throw new Error("Stale growth analysis");
-          growthReady = true;
-        } catch {
-          growthReady = false;
-        }
-      }
       return json({
         ok: true,
-        data: created ? { ...created, growth_ready: growthReady } : null,
+        data: created
+          ? { ...created, analysis_status: "pending" }
+          : null,
       });
     } catch (error) {
       return aiErrorResponse(error, true);
@@ -2845,6 +2901,17 @@ async function api(request: Request, user: User | null, pathname: string) {
     } catch (error) {
       return aiErrorResponse(error, isTeacher(user));
     }
+  }
+  if (pathname === "/api/growth/records" && request.method === "GET") {
+    if (user.role !== "student") {
+      return json({ ok: false, message: "仅学生账号可以查看自己的课后记录" }, {
+        status: 403,
+      });
+    }
+    return json({
+      ok: true,
+      data: { records: await lessonRecordsPayload(user.id) },
+    });
   }
   if (
     pathname === "/api/admin/enrollments" && request.method === "GET" &&

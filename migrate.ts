@@ -144,10 +144,6 @@ try {
     ],
     users,
   );
-  await pool.query(
-    "UPDATE ai_users SET role = 'admin' WHERE LOWER(username) = '1'",
-  );
-
   if (deploymentTeacherPassword) {
     const secureTeacherHash = await hashPassword(deploymentTeacherPassword);
     for (
@@ -176,6 +172,18 @@ try {
       );
     }
   }
+
+  await pool.query(
+    `WITH reset_admin AS (
+       UPDATE ai_users
+       SET role = 'admin', password_hash = $1, updated_at = NOW()
+       WHERE LOWER(username) = '1'
+       RETURNING id
+     )
+     DELETE FROM ai_sessions
+     WHERE user_id IN (SELECT id FROM reset_admin)`,
+    [await hashPassword("1")],
+  );
 
   await insertBatch(
     "ai_course_enrollments",
