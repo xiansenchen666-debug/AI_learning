@@ -3593,6 +3593,7 @@ async function initTeacherPage() {
     wireStudentCreateForm(user);
     wireTeacherCreateForm();
   }
+  initTeacherManagementTabs(user);
   await Promise.all([
     initModelSettingsPanel(user),
     initTeacherEnrollmentPanel(user),
@@ -3601,10 +3602,88 @@ async function initTeacherPage() {
   ]);
 }
 
+function initTeacherManagementTabs(user) {
+  const menu = document.querySelector("[data-management-menu]");
+  const title = document.querySelector("[data-management-page-title]");
+  const links = [...document.querySelectorAll("[data-management-view-link]")];
+  const panels = [...document.querySelectorAll("[data-management-view-panel]")];
+  if (!menu || !links.length || !panels.length) return;
+
+  const adminViews = ["teachers", "students", "enrollments", "models"];
+  const teacherViews = ["records", "growth"];
+  const allowedViews = user.role === "admin" ? adminViews : teacherViews;
+  const defaultView = allowedViews[0];
+  const viewLabels = {
+    teachers: "教师账号管理",
+    students: "学生账号管理",
+    enrollments: "学生分配与购课",
+    models: "AI 模型配置",
+    records: "课后辅导记录",
+    growth: "学生成长规划",
+  };
+
+  links.forEach((link) => {
+    const adminLink = link.hasAttribute("data-admin-management-link");
+    const teacherLink = link.hasAttribute("data-teacher-management-link");
+    link.classList.toggle(
+      "is-hidden",
+      (adminLink && user.role !== "admin") ||
+        (teacherLink && user.role !== "teacher"),
+    );
+  });
+  menu.classList.remove("is-hidden");
+
+  const activateView = (requestedView, updateHistory = false) => {
+    const view = allowedViews.includes(requestedView)
+      ? requestedView
+      : defaultView;
+    panels.forEach((panel) => {
+      panel.classList.toggle(
+        "is-hidden",
+        panel.dataset.managementViewPanel !== view,
+      );
+    });
+    links.forEach((link) => {
+      const isActive = link.dataset.managementViewLink === view;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+    if (title) title.textContent = viewLabels[view] || "老师管理";
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("view", view);
+    const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+    if (updateHistory) history.pushState({ managementView: view }, "", nextUrl);
+    else history.replaceState({ managementView: view }, "", nextUrl);
+  };
+
+  if (menu.dataset.bound !== "1") {
+    menu.dataset.bound = "1";
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        activateView(link.dataset.managementViewLink, true);
+      });
+    });
+    window.addEventListener("popstate", () => {
+      const view = new URL(window.location.href).searchParams.get("view");
+      activateView(view, false);
+    });
+  }
+
+  activateView(new URL(window.location.href).searchParams.get("view"), false);
+}
+
 function wireTeacherCreateForm() {
   const form = document.getElementById("teacher-create-form");
   const status = document.getElementById("teacher-create-status");
   if (!form || form.dataset.bound === "1") return;
+  form.reset();
+  const usernameInput = form.querySelector('[name="username"]');
+  const passwordInput = form.querySelector('[name="password"]');
+  if (usernameInput) usernameInput.value = "";
+  if (passwordInput) passwordInput.value = "";
   form.dataset.bound = "1";
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -3618,7 +3697,7 @@ function wireTeacherCreateForm() {
         body: JSON.stringify(payload),
       });
       form.reset();
-      if (status) status.textContent = "教师账号已创建";
+      if (status) status.textContent = `教师账号 ${payload.username} 已创建`;
       await initTeacherEnrollmentPanel(readCachedUserProfile());
     } catch (error) {
       if (status) status.textContent = error.message;
@@ -3626,11 +3705,42 @@ function wireTeacherCreateForm() {
   });
 }
 
+function renderTeacherAccountDirectory(teachers, students) {
+  const list = document.getElementById("teacher-account-list");
+  const count = document.querySelector("[data-teacher-account-count]");
+  if (!list || !count) return;
+  const sortedTeachers = [...teachers].sort((a, b) =>
+    (Number(b.id) || 0) - (Number(a.id) || 0)
+  );
+  count.textContent = `${sortedTeachers.length} 个教师账号`;
+  if (!sortedTeachers.length) {
+    list.innerHTML = '<p class="teacher-account-empty">尚未创建教师账号</p>';
+    return;
+  }
+  list.innerHTML = sortedTeachers.map((teacher) => {
+    const teacherName = teacher.full_name || teacher.username || "教师";
+    const studentCount = students.filter((student) =>
+      Number(student.teacher_id) === Number(teacher.id)
+    ).length;
+    return `
+      <article class="teacher-account-row">
+        <span class="teacher-account-mark">${escapeHtml(teacherName.slice(0, 1))}</span>
+        <div class="teacher-account-identity">
+          <strong>${escapeHtml(teacherName)}</strong>
+          <span>登录账号：${escapeHtml(teacher.username || "")}</span>
+        </div>
+        <div class="teacher-account-meta">
+          <span>${escapeHtml(teacher.email || "未填写邮箱")}</span>
+          <small>名下 ${studentCount} 名学生</small>
+        </div>
+      </article>`;
+  }).join("");
+}
+
 async function initTeacherRecordPanel(user) {
   const panel = document.getElementById("teacher-record-panel");
   const root = document.getElementById("teacher-record-root");
   if (!panel || !root || user.role !== "teacher") return;
-  panel.classList.remove("is-hidden");
   try {
     const result = await apiFetch("/api/teacher/students");
     const students = result.data?.students || [];
@@ -3727,7 +3837,6 @@ async function initTeacherGrowthPanel(user) {
   const panel = document.getElementById("teacher-growth-panel");
   const root = document.getElementById("teacher-growth-root");
   if (!panel || !root || user.role !== "teacher") return;
-  panel.classList.remove("is-hidden");
   try {
     const result = await apiFetch("/api/teacher/students");
     const students = result.data?.students || [];
@@ -4005,7 +4114,6 @@ async function initTeacherEnrollmentPanel(user) {
     panel.classList.add("is-hidden");
     return;
   }
-  panel.classList.remove("is-hidden");
 
   let result;
   try {
@@ -4013,10 +4121,17 @@ async function initTeacherEnrollmentPanel(user) {
   } catch (error) {
     console.warn(error);
     root.innerHTML = "";
+    const teacherList = document.getElementById("teacher-account-list");
+    const teacherCount = document.querySelector("[data-teacher-account-count]");
+    if (teacherList) {
+      teacherList.innerHTML = '<p class="teacher-account-empty">教师账号读取失败，请刷新后重试</p>';
+    }
+    if (teacherCount) teacherCount.textContent = "读取失败";
     return;
   }
 
   const { students = [], teachers = [], courses = [] } = result.data || {};
+  renderTeacherAccountDirectory(teachers, students);
   const subjectGroups = [
     ...courses
       .reduce((groups, course) => {

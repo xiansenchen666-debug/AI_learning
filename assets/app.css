@@ -3497,6 +3497,141 @@ a.full-width-button {
   min-height: 54px;
 }
 
+.management-menu {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  display: flex;
+  gap: 26px;
+  overflow-x: auto;
+  margin-top: 16px;
+  padding: 0 2px;
+  border-bottom: 1px solid rgba(26, 54, 93, 0.12);
+  background: rgba(248, 250, 252, 0.96);
+  scrollbar-width: none;
+}
+
+.management-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.management-menu a {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 15px 1px 13px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.management-menu a::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: transparent;
+  content: "";
+}
+
+.management-menu a:hover,
+.management-menu a.is-active {
+  color: #1d4ed8;
+}
+
+.management-menu a.is-active::after {
+  background: #2563eb;
+}
+
+.teacher-account-directory {
+  grid-column: 1 / -1;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(26, 54, 93, 0.10);
+}
+
+.teacher-account-directory-head,
+.teacher-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.teacher-account-directory-head {
+  margin-bottom: 8px;
+}
+
+.teacher-account-directory-head h3 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 16px;
+}
+
+.teacher-account-directory-head span {
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.teacher-account-row {
+  min-height: 70px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(26, 54, 93, 0.08);
+}
+
+.teacher-account-mark {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 900;
+}
+
+.teacher-account-identity {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 4px;
+  min-width: 0;
+}
+
+.teacher-account-identity strong {
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.teacher-account-identity span,
+.teacher-account-meta span,
+.teacher-account-meta small,
+.teacher-account-empty {
+  color: var(--text-subtle);
+  font-size: 12px;
+}
+
+.teacher-account-identity span {
+  color: #334155;
+  font-weight: 700;
+}
+
+.teacher-account-meta {
+  display: grid;
+  flex: 0 0 min(300px, 34%);
+  gap: 4px;
+  text-align: right;
+}
+
+.teacher-account-empty {
+  margin: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(26, 54, 93, 0.08);
+}
+
 .teacher-admin-panel {
   margin-top: 24px;
 }
@@ -3858,6 +3993,25 @@ a.full-width-button {
 }
 
 @media (max-width: 720px) {
+  .management-menu {
+    gap: 20px;
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .teacher-account-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .teacher-account-meta {
+    flex: 1 0 100%;
+    padding-left: 56px;
+    text-align: left;
+  }
+
   .admin-student-toggle {
     align-items: flex-start;
   }
