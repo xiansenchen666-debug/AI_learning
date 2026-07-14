@@ -248,6 +248,26 @@ function clearApiPrefetchCache(includeStatic = true) {
   }
 }
 
+function clearQuestionProgressCache() {
+  try {
+    const keys = [];
+    for (let index = 0; index < sessionStorage.length; index += 1) {
+      const key = sessionStorage.key(index);
+      if (!key?.startsWith(API_PREFETCH_CACHE_PREFIX)) continue;
+      const apiPath = key.slice(API_PREFETCH_CACHE_PREFIX.length);
+      if (
+        /^\/api\/lessons\/\d+\/question-bank/.test(apiPath) ||
+        /^\/api\/course\/\d+/.test(apiPath)
+      ) {
+        keys.push(key);
+      }
+    }
+    keys.forEach((key) => sessionStorage.removeItem(key));
+  } catch {
+    // Ignore storage errors silently.
+  }
+}
+
 function readApiCache(cacheKey, ttlMs) {
   try {
     const cached = JSON.parse(sessionStorage.getItem(cacheKey) || "null");
@@ -277,6 +297,15 @@ function keepStaticPage(error) {
 
 function isTeacherUser(user) {
   return user && (user.role === "teacher" || user.role === "admin");
+}
+
+function redirectTeacherToPortal(user) {
+  if (!isTeacherUser(user) || window.location.protocol === "file:") {
+    return false;
+  }
+  setPageLoading(false);
+  window.location.replace("/teacher");
+  return true;
 }
 
 async function openResourcePath(key) {
@@ -349,7 +378,8 @@ function syncQuestionOptionState(card) {
     return;
   }
   const selected = card.querySelector("input[type='radio']:checked");
-  const selectedValue = selected?.value || "";
+  const responseInput = card.querySelector("[data-question-response]");
+  const selectedValue = selected?.value || responseInput?.value.trim() || "";
   const isLocked = card.dataset.submitted === "1" ||
     card.dataset.reviewed === "1";
   const correctAnswer = card.dataset.correctAnswer || "";
@@ -371,6 +401,9 @@ function syncQuestionOptionState(card) {
       input.disabled = isLocked;
     }
   });
+  if (responseInput) {
+    responseInput.disabled = isLocked;
+  }
   const submitButton = card.querySelector('[data-action="submit-question"]');
   if (submitButton && card.dataset.submitted !== "1") {
     submitButton.disabled = !selectedValue;
@@ -384,8 +417,13 @@ function updatePracticeSessionState(session) {
   const cards = [...session.querySelectorAll("[data-question-id]")];
   const total = cards.length;
   const submittedCards = cards.filter((card) => card.dataset.submitted === "1");
+  const assessedCards = submittedCards.filter((card) =>
+    card.dataset.correct === "1" || card.dataset.correct === "0"
+  );
   const reviewed = session.dataset.reviewed === "1";
-  const correctCount = submittedCards.filter((card) => card.dataset.correct === "1").length;
+  const correctCount = assessedCards.filter((card) =>
+    card.dataset.correct === "1"
+  ).length;
   const meter = session.querySelector("[data-practice-meter]");
   const fill = session.querySelector("[data-practice-progress-fill]");
   const reviewButton = session.querySelector('[data-action="review-answers"]');
@@ -401,20 +439,54 @@ function updatePracticeSessionState(session) {
     );
   }
   if (reviewButton) {
-    reviewButton.disabled = submittedCards.length === 0 || reviewed;
-    reviewButton.textContent = submittedCards.length >= total ? "对答案" : `对已提交 ${submittedCards.length} 题`;
+    reviewButton.disabled = submittedCards.length < total || reviewed;
+    reviewButton.textContent = submittedCards.length >= total
+      ? "对答案"
+      : `完成后对答案（${submittedCards.length}/${total}）`;
   }
   if (hint) {
     if (reviewed) {
-      hint.textContent = `已对答案：${correctCount}/${submittedCards.length || 0} 题正确。`;
+      const pendingCount = submittedCards.length - assessedCards.length;
+      hint.textContent = pendingCount
+        ? `还有 ${pendingCount} 道主观题需要核对参考答案并自评。`
+        : `已对答案：${correctCount}/${assessedCards.length || 0} 题正确。`;
     } else if (submittedCards.length === 0) {
-      hint.textContent = "先选择答案并提交，解析会在对答案后出现。";
+      hint.textContent = "先完成作答并提交，解析会在对答案后出现。";
     } else if (submittedCards.length < total) {
-      hint.textContent = `还有 ${total - submittedCards.length} 题未提交，可以继续做，也可以先对已提交题目。`;
+      hint.textContent = `还有 ${total - submittedCards.length} 题未提交，请完成全部题目后统一对答案。`;
     } else {
       hint.textContent = "本组题已提交完成，现在可以统一对答案。";
     }
   }
+}
+
+function updatePracticeReviewSummary(session) {
+  const cards = [...session.querySelectorAll("[data-question-id]")];
+  const submittedCards = cards.filter((card) => card.dataset.submitted === "1");
+  const assessedCards = submittedCards.filter((card) =>
+    card.dataset.correct === "1" || card.dataset.correct === "0"
+  );
+  const correctCount = assessedCards.filter((card) =>
+    card.dataset.correct === "1"
+  ).length;
+  const wrongCount = assessedCards.length - correctCount;
+  const pendingCount = submittedCards.length - assessedCards.length;
+  const accuracy = assessedCards.length
+    ? Math.round((correctCount / assessedCards.length) * 100)
+    : 0;
+  const summary = session.querySelector("[data-practice-summary]");
+  if (!summary) return;
+  let reviewAdvice = "本次已提交题目全部掌握，可以继续完成剩余题目。";
+  if (pendingCount) {
+    reviewAdvice = `还有 ${pendingCount} 道主观题需要自评。`;
+  } else if (wrongCount) {
+    reviewAdvice = `有 ${wrongCount} 题需要订正，先看标记题目，再回到正文补概念。`;
+  }
+  summary.classList.remove("is-hidden");
+  summary.innerHTML = `
+    <strong>${assessedCards.length ? `${accuracy}分` : "待自评"}</strong>
+    <span>已提交 ${submittedCards.length}/${cards.length} 题，已评 ${assessedCards.length} 题。${reviewAdvice}</span>
+  `;
 }
 
 function revealPracticeAnswers(session) {
@@ -423,8 +495,6 @@ function revealPracticeAnswers(session) {
   }
   session.dataset.reviewed = "1";
   const cards = [...session.querySelectorAll("[data-question-id]")];
-  const submittedCards = cards.filter((card) => card.dataset.submitted === "1");
-  const correctCount = submittedCards.filter((card) => card.dataset.correct === "1").length;
   cards.forEach((card) => {
     const resultNode = card.querySelector(".question-result");
     const reviewBox = card.querySelector("[data-answer-review]");
@@ -447,6 +517,14 @@ function revealPracticeAnswers(session) {
       return;
     }
     const selectedAnswer = card.dataset.submittedAnswer || "未记录";
+    if (
+      card.dataset.requiresSelfAssessment === "1" &&
+      card.dataset.correct !== "1" && card.dataset.correct !== "0"
+    ) {
+      resultNode.textContent = `你的答案：${selectedAnswer}。请核对参考答案后选择“已掌握”或“需复习”。`;
+      resultNode.className = "question-result is-info";
+      return;
+    }
     if (card.dataset.correct === "1") {
       resultNode.textContent = `答对了。你的答案：${selectedAnswer}`;
       resultNode.className = "question-result is-success";
@@ -455,20 +533,7 @@ function revealPracticeAnswers(session) {
       resultNode.className = "question-result is-error";
     }
   });
-
-  const summary = session.querySelector("[data-practice-summary]");
-  if (summary) {
-    const total = cards.length;
-    const submittedCount = submittedCards.length;
-    const accuracy = submittedCount ? Math.round((correctCount / submittedCount) * 100) : 0;
-    const wrongCount = Math.max(0, submittedCount - correctCount);
-    const reviewAdvice = wrongCount ? `有 ${wrongCount} 题需要订正，先看红色题目，再回到正文补概念。` : "本次提交题目全部正确，可以继续完成剩余题或进入本年级题库。";
-    summary.classList.remove("is-hidden");
-    summary.innerHTML = `
-      <strong>${accuracy}分</strong>
-      <span>已对 ${submittedCount}/${total} 题，正确 ${correctCount} 题。${reviewAdvice}</span>
-    `;
-  }
+  updatePracticeReviewSummary(session);
   updatePracticeSessionState(session);
 }
 
@@ -497,13 +562,79 @@ function wireQuestionSubmitButtons(root = document) {
       }
       syncQuestionOptionState(card);
     });
+    session.addEventListener("input", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLTextAreaElement) ||
+        !target.matches("[data-question-response]")) {
+        return;
+      }
+      const card = target.closest("[data-question-id]");
+      if (!card || card.dataset.submitted === "1") return;
+      const resultNode = card.querySelector(".question-result");
+      if (resultNode) {
+        resultNode.textContent = target.value.trim()
+          ? "已填写，点击“提交本题”后进入对答案队列。"
+          : "请填写你的答案。";
+        resultNode.className = "question-result is-info";
+      }
+      syncQuestionOptionState(card);
+    });
 
     session.addEventListener("click", async (event) => {
       const target = event.target instanceof Element ? event.target : event.target?.parentElement;
       const submitButton = target?.closest('[data-action="submit-question"]');
       const reviewButton = target?.closest('[data-action="review-answers"]');
+      const selfAssessButton = target?.closest('[data-action="self-assess"]');
       if (reviewButton && session.contains(reviewButton)) {
         revealPracticeAnswers(session);
+        return;
+      }
+      if (selfAssessButton && session.contains(selfAssessButton)) {
+        const card = selfAssessButton.closest("[data-question-id]");
+        const questionId = card?.dataset.questionId;
+        const statusNode = card?.querySelector("[data-self-assessment-status]");
+        const resultNode = card?.querySelector(".question-result");
+        const correct = selfAssessButton.dataset.selfAssessment === "1";
+        if (!card || !questionId || !card.dataset.submittedAnswer) return;
+        const buttons = [...card.querySelectorAll('[data-action="self-assess"]')];
+        buttons.forEach((button) => button.disabled = true);
+        if (statusNode) statusNode.textContent = "正在保存...";
+        try {
+          const result = await apiFetch(`/api/questions/${questionId}/submit`, {
+            method: "POST",
+            body: JSON.stringify({
+              answer: card.dataset.submittedAnswer,
+              self_assessed_correct: correct,
+            }),
+          });
+          clearQuestionProgressCache();
+          card.dataset.correct = result.data.correct ? "1" : "0";
+          selfAssessButton.classList.add("is-selected");
+          if (statusNode) {
+            statusNode.textContent = result.data.correct
+              ? "已记录为掌握"
+              : "已加入错题本";
+          }
+          if (resultNode) {
+            resultNode.textContent = result.data.correct
+              ? "已掌握，本题记录已保存。"
+              : "已标记为需复习，并加入错题本。";
+            resultNode.className = result.data.correct
+              ? "question-result is-success"
+              : "question-result is-error";
+          }
+          updatePracticeReviewSummary(session);
+          updatePracticeSessionState(session);
+          selfAssessButton.dispatchEvent(
+            new CustomEvent("question-submitted", {
+              bubbles: true,
+              detail: result.data,
+            }),
+          );
+        } catch (error) {
+          buttons.forEach((button) => button.disabled = false);
+          if (statusNode) statusNode.textContent = `保存失败：${error.message}`;
+        }
         return;
       }
       if (!submitButton || !session.contains(submitButton)) {
@@ -513,23 +644,39 @@ function wireQuestionSubmitButtons(root = document) {
       const resultNode = card?.querySelector(".question-result");
       const questionId = card?.dataset.questionId;
       const selected = card?.querySelector("input[type='radio']:checked");
+      const responseInput = card?.querySelector("[data-question-response]");
+      const submittedAnswer = selected?.value || responseInput?.value.trim() ||
+        "";
       if (!card || !questionId || !resultNode) {
         return;
       }
-      if (!selected) {
-        resultNode.textContent = "请先选择一个答案。";
+      if (!submittedAnswer) {
+        resultNode.textContent = responseInput
+          ? "请先填写你的答案。"
+          : "请先选择一个答案。";
         resultNode.className = "question-result is-error";
         return;
       }
       submitButton.disabled = true;
       submitButton.textContent = "提交中";
+      if (responseInput) {
+        card.dataset.submitted = "1";
+        card.dataset.submittedAnswer = submittedAnswer;
+        resultNode.textContent = "已提交。完成本组后点“对答案”，再核对参考答案并自评。";
+        resultNode.className = "question-result is-info";
+        submitButton.textContent = "已提交";
+        syncQuestionOptionState(card);
+        updatePracticeSessionState(session);
+        return;
+      }
       try {
         const result = await apiFetch(`/api/questions/${questionId}/submit`, {
           method: "POST",
-          body: JSON.stringify({ answer: selected.value }),
+          body: JSON.stringify({ answer: submittedAnswer }),
         });
+        clearQuestionProgressCache();
         card.dataset.submitted = "1";
-        card.dataset.submittedAnswer = selected.value;
+        card.dataset.submittedAnswer = submittedAnswer;
         card.dataset.correct = result.data.correct ? "1" : "0";
         card.dataset.correctAnswer = result.data.answer ||
           card.dataset.correctAnswer || "";
@@ -559,7 +706,7 @@ function wireQuestionSubmitButtons(root = document) {
         resultNode.textContent = error.message;
         resultNode.className = "question-result is-error";
         submitButton.textContent = "提交本题";
-        submitButton.disabled = !selected;
+        submitButton.disabled = !submittedAnswer;
       }
     });
   });
@@ -713,6 +860,14 @@ function applyUserProfile(user) {
   document.querySelectorAll("[data-user-name]").forEach((node) => {
     node.textContent = user.username;
   });
+  document.querySelectorAll("[data-user-display-name]").forEach((node) => {
+    const fullName = String(user.full_name || user.username || "").trim();
+    node.textContent = user.role === "admin"
+      ? "超级管理员"
+      : user.role === "teacher" && fullName && !fullName.endsWith("老师")
+      ? `${fullName}老师`
+      : fullName;
+  });
   document.querySelectorAll("[data-user-level]").forEach((node) => {
     const accessLabel = isTeacherUser(user) ? "" : user.access_expires_on ? `剩余 ${Number(user.access_remaining_days || 0)} 天` : "长期有效";
     node.textContent = [user.level_label, accessLabel].filter(Boolean).join(
@@ -754,6 +909,7 @@ function ensureStudentPortalTopbar(user) {
     "dashboard",
     "subjects",
     "grade",
+    "course",
     "mistakes",
     "growth",
     "question-bank",
@@ -765,6 +921,7 @@ function ensureStudentPortalTopbar(user) {
     dashboard: "学习中心",
     subjects: "全部课程",
     grade: "年级课程",
+    course: "课程学习",
     mistakes: "智能错题本",
     growth: "成长轨迹",
     "question-bank": "题库练习",
@@ -895,6 +1052,16 @@ function apiUrlForPage(url) {
     "/mistakes": "/api/mistakes",
     "/growth": "/api/growth",
   };
+  if (url.pathname === "/course") {
+    const courseId = url.searchParams.get("id") || url.searchParams.get("course");
+    return courseId ? `/api/course/${encodeURIComponent(courseId)}` : "";
+  }
+  if (url.pathname === "/question-bank") {
+    const lessonId = url.searchParams.get("lesson");
+    return lessonId
+      ? `/api/lessons/${encodeURIComponent(lessonId)}/question-bank`
+      : "";
+  }
   return map[url.pathname] || "";
 }
 
@@ -926,21 +1093,49 @@ function warmStudentApiCache(user) {
     });
   apiFetch("/api/subjects", { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS })
     .then((result) => {
-      const firstCourse = (result.data?.stages || [])
-        .flatMap((stage) => (stage.subjects || []).flatMap((subject) => subject.courses || []))
-        .find((course) => course.purchased !== false);
-      if (!firstCourse?.id) return;
-      return apiFetch(`/api/course/${firstCourse.id}`, {
-        cacheTtlMs: API_COURSE_CACHE_TTL_MS,
-      }).then((courseResult) => {
-        const firstLesson = courseResult.data?.lessons?.[0];
-        if (!firstLesson?.id) return;
-        return apiFetch(`/api/lessons/${firstLesson.id}/question-bank`, {
-          cacheTtlMs: API_COURSE_CACHE_TTL_MS,
-        });
+      const purchasedCourses = (result.data?.stages || [])
+        .flatMap((stage) =>
+          (stage.subjects || []).flatMap((subject) => subject.courses || [])
+        )
+        .filter((course) => course.purchased !== false && course.id);
+      purchasedCourses.forEach((course, index) => {
+        scheduleBackgroundTask(async () => {
+          try {
+            const courseResult = await apiFetch(`/api/course/${course.id}`, {
+              cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+            });
+            if (index === 0) {
+              prefetchCourseQuestionBanks(courseResult.data?.lessons || []);
+            }
+          } catch {
+            // A later page visit can retry an individual course.
+          }
+        }, 150 + index * 180);
       });
     })
     .catch(() => {});
+}
+
+function warmTeacherApiCache(user) {
+  if (!user || user.role !== "teacher") return;
+  apiFetch("/api/teacher/students", {
+    cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+  }).then((result) => {
+    const students = result.data?.students || [];
+    students.forEach((student, index) => {
+      if (!student?.id) return;
+      scheduleBackgroundTask(() => {
+        Promise.allSettled([
+          apiFetch(`/api/teacher/students/${student.id}/overview`, {
+            cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+          }),
+          apiFetch(`/api/teacher/students/${student.id}/growth`, {
+            cacheTtlMs: API_COURSE_CACHE_TTL_MS,
+          }),
+        ]);
+      }, 200 + index * 260);
+    });
+  }).catch(() => {});
 }
 
 function warmAllPageCache(user) {
@@ -958,17 +1153,20 @@ function warmAllPageCache(user) {
     prefetchPage(new URL(path, window.location.origin));
   });
   warmStudentApiCache(user);
-  if (isTeacherUser(user)) {
-    apiFetch(
-      user.role === "admin" ? "/api/admin/enrollments" : "/api/teacher/students",
-      { cacheTtlMs: API_PREFETCH_CACHE_TTL_MS },
-    ).catch(() => {});
+  if (user?.role === "teacher") {
+    warmTeacherApiCache(user);
+  } else if (user?.role === "admin") {
+    apiFetch("/api/admin/enrollments", {
+      cacheTtlMs: API_PREFETCH_CACHE_TTL_MS,
+    }).catch(() => {});
   }
 }
 
 function prefetchCourseQuestionBanks(lessons = []) {
-  lessons.forEach((lesson, index) => {
-    if (!lesson?.id) {
+  lessons.filter((lesson) =>
+    Number(lesson?.bank_question_count || lesson?.textbook_question_count) > 0
+  ).forEach((lesson, index) => {
+    if (!lesson.id) {
       return;
     }
     scheduleBackgroundTask(
@@ -1367,6 +1565,7 @@ async function initDashboardPage() {
     setPageLoading(false);
     return;
   }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -1832,14 +2031,31 @@ function renderPracticeQuestionCard(
 ) {
   const options = Array.isArray(question.options) ? question.options : [];
   const questionName = `${scopeId}-question-${question.id}`;
-  const sourceLabel = question.source_label ||
+  const sourceLabel = question.lesson_label || question.source_label ||
     `${sourcePrefix} ${index + 1} 题`;
+  const answerControl = options.length
+    ? `<div class="question-options" role="radiogroup" aria-label="${escapeHtml(sourceLabel)}">
+        ${
+      options.map((option, optionIndex) => `
+          <label class="question-option">
+            <input type="radio" name="${escapeHtml(questionName)}" value="${escapeHtml(option)}">
+            <span class="question-option-mark">${String.fromCharCode(65 + optionIndex)}</span>
+            <span class="question-option-text">${escapeHtml(option)}</span>
+          </label>
+        `).join("")
+    }
+      </div>`
+    : `<label class="question-free-response">
+        <span>你的作答</span>
+        <textarea data-question-response rows="3" maxlength="1000" placeholder="在这里填写答案"></textarea>
+      </label>`;
   return `
     <article
       class="practice-question-card ${cardClass}"
       data-question-id="${question.id}"
       data-correct-answer="${escapeHtml(question.answer || "")}"
       data-explanation="${escapeHtml(question.explanation || "暂无解析。")}"
+      data-requires-self-assessment="${options.length ? "0" : "1"}"
       data-submitted="0"
     >
       <div class="practice-question-topline">
@@ -1848,24 +2064,26 @@ function renderPracticeQuestionCard(
       </div>
       <h4 class="lesson-question-title">${escapeHtml(question.question)}</h4>
       ${renderQuestionSourceFigure(question)}
-      <div class="question-options" role="radiogroup" aria-label="${escapeHtml(sourceLabel)}">
-        ${
-    options.map((option, optionIndex) => `
-          <label class="question-option">
-            <input type="radio" name="${escapeHtml(questionName)}" value="${escapeHtml(option)}">
-            <span class="question-option-mark">${String.fromCharCode(65 + optionIndex)}</span>
-            <span class="question-option-text">${escapeHtml(option)}</span>
-          </label>
-        `).join("")
-  }
-      </div>
+      ${answerControl}
       <div class="lesson-question-actions">
         <button class="primary-button submit-question" type="button" data-action="submit-question" disabled>提交本题</button>
-        <span class="question-result is-info">请选择一个答案。</span>
+        <span class="question-result is-info">${options.length ? "请选择一个答案。" : "请填写你的答案。"}</span>
       </div>
       <div class="feedback-box lesson-answer-box answer-review-box is-hidden" data-answer-review>
         <p><strong>正确答案：</strong><span data-review-answer>${escapeHtml(question.answer || "暂无答案")}</span></p>
         <p><strong>解析：</strong><span data-review-explanation>${escapeHtml(question.explanation || "暂无解析。")}</span></p>
+        ${
+    options.length
+      ? ""
+      : `<div class="question-self-assessment">
+            <span>核对后自评</span>
+            <div>
+              <button type="button" data-action="self-assess" data-self-assessment="1">已掌握</button>
+              <button type="button" data-action="self-assess" data-self-assessment="0">需复习</button>
+            </div>
+            <small data-self-assessment-status aria-live="polite"></small>
+          </div>`
+  }
       </div>
     </article>
   `;
@@ -2210,19 +2428,6 @@ function renderLearningContent(lesson, course) {
   `;
 }
 
-function formatStudyDuration(secondsOrMinutes, unit = "seconds") {
-  const minutes = unit === "minutes" ? Math.max(0, Math.round(Number(secondsOrMinutes || 0))) : Math.max(0, Math.round(Number(secondsOrMinutes || 0) / 60));
-  if (minutes <= 0 && Number(secondsOrMinutes || 0) > 0) {
-    return "<1 分钟";
-  }
-  if (minutes < 60) {
-    return `${minutes} 分钟`;
-  }
-  const hours = Math.floor(minutes / 60);
-  const rest = minutes % 60;
-  return rest ? `${hours} 小时 ${rest} 分钟` : `${hours} 小时`;
-}
-
 function lessonBankCount(lesson) {
   if (typeof lesson?.bank_question_count === "number") {
     return lesson.bank_question_count || lessonTextbookCount(lesson);
@@ -2236,184 +2441,6 @@ function lessonTextbookCount(lesson) {
     return lesson.textbook_question_count;
   }
   return (lesson?.questions || []).filter((question) => question.kind !== "bank").length;
-}
-
-function buildLessonCoachAdvice(data, lesson) {
-  const profile = data.learner_profile || {};
-  const course = data.course || {};
-  const status = lessonStatus(lesson.status);
-  const bankCount = lessonBankCount(lesson);
-  const textbookCount = lessonTextbookCount(lesson);
-  const advice = [];
-
-  if ((lesson.mistake_count || 0) > 0 || lesson.status === "review_required") {
-    advice.push("本节已经出现错题或低分信号，先复盘错因，再做同类题。");
-  } else if ((lesson.score || 0) >= 85 && bankCount > 0) {
-    advice.push("本节掌握度较稳，可以进入本年级题库做变式训练。");
-  } else if ((lesson.attempted_count || 0) === 0 && textbookCount > 0) {
-    advice.push("先完成随堂选择题，再根据答题结果安排巩固练习。");
-  } else {
-    advice.push("按导学、正文、随堂题、题库的顺序推进，避免只看不练。");
-  }
-
-  if (
-    profile.weak_subject && profile.weak_subject !== "暂无" &&
-    profile.weak_subject === course.subject
-  ) {
-    advice.push(`${course.subject}是当前重点关注学科，本节要把过程写完整。`);
-  }
-  if (bankCount > 0) {
-    advice.push(
-      `题库已锁定${course.grade || "当前年级"}，只练本节对应年级的 ${bankCount} 道题。`,
-    );
-  } else {
-    advice.push("本节暂未导入主书题库，先把随堂题和教材正文吃透。");
-  }
-  if ((lesson.study_seconds || 0) < 600) {
-    advice.push("本节停留还偏短，建议至少完成一次完整阅读和一次独立作答。");
-  }
-
-  return uniqueLearningItems(advice).slice(0, 4).map((item) => ({
-    text: item,
-    active: item.includes("错题") || item.includes("低分") ||
-      item.includes("锁定"),
-  }));
-}
-
-function buildLessonPlanItems(lesson) {
-  const textbookCount = lessonTextbookCount(lesson);
-  const bankCount = lessonBankCount(lesson);
-  return [
-    {
-      label: "读目标",
-      detail: "先看本节标题、来源和核心材料，知道要解决什么问题。",
-      done: lesson.status !== "not_started",
-    },
-    {
-      label: "学正文",
-      detail: "把教材正文中的例题、图示和方法整理成自己的话。",
-      done: (lesson.study_seconds || 0) >= 300,
-    },
-    {
-      label: "选项作答",
-      detail: textbookCount ? `独立完成 ${textbookCount} 道随堂题，先选择再提交。` : "本节无随堂题，改为口头复述关键方法。",
-      done: (lesson.attempted_count || 0) >= Math.max(1, textbookCount),
-    },
-    {
-      label: "对答案",
-      detail: "提交后统一看正确答案、自己的答案和解析，先改错再进入题库。",
-      done: (lesson.attempted_count || 0) >= Math.max(1, textbookCount),
-    },
-    {
-      label: "进题库",
-      detail: bankCount ? `进入${bankCount}道本年级题库做巩固。` : "题库未导入时，先完成正文和随堂复盘。",
-      done: false,
-    },
-  ];
-}
-
-function renderCoachList(items) {
-  const cleanItems = (items || []).map((item) => typeof item === "string" ? { text: item } : item).filter((item) => item.text);
-  if (!cleanItems.length) {
-    return "<li>完成本节学习后，这里会刷新下一步建议。</li>";
-  }
-  return cleanItems.map((item) => `<li class="${item.active ? "is-active" : ""}">${escapeHtml(item.text)}</li>`).join("");
-}
-
-function renderLessonPlan(items) {
-  return items.map((item, index) => `
-    <li class="${item.done ? "is-done" : ""}">
-      <span>${index + 1}</span>
-      <div>
-        <strong>${escapeHtml(item.label)}</strong>
-        <p>${escapeHtml(item.detail)}</p>
-      </div>
-    </li>
-  `).join("");
-}
-
-function renderLearnerSignals(profile, lesson) {
-  const totalQuestions = Math.max(
-    lessonTextbookCount(lesson) + lessonBankCount(lesson),
-    lesson.attempted_count || 0,
-  );
-  const signals = [
-    { label: "本节掌握", value: `${Math.round(lesson.score || 0)}分` },
-    {
-      label: "已答题",
-      value: `${lesson.attempted_count || 0}/${totalQuestions || 0}`,
-    },
-    {
-      label: "本节停留",
-      value: formatStudyDuration(lesson.study_seconds || 0),
-    },
-    { label: "当前错题", value: `${lesson.mistake_count || 0}道` },
-    { label: "近期正确率", value: `${profile.accuracy || 0}%` },
-    {
-      label: "累计学习",
-      value: formatStudyDuration(profile.study_minutes || 0, "minutes"),
-    },
-  ];
-  return signals.map((item) => `
-    <div class="coach-signal">
-      <span>${escapeHtml(item.label)}</span>
-      <strong>${escapeHtml(item.value)}</strong>
-    </div>
-  `).join("");
-}
-
-function updateStudyCoachPanel(root, data, lesson, courseId) {
-  if (!root || !data || !lesson) {
-    return;
-  }
-  const profile = data.learner_profile || {};
-  const course = data.course || {};
-  const gradeLock = data.grade_lock || {};
-  const status = lessonStatus(lesson.status);
-  const bankCount = lessonBankCount(lesson);
-  const summary = profile.attempt_count ? `近期答题 ${profile.attempt_count} 次，正确率 ${profile.accuracy || 0}%。` : "先完成本节随堂题，再进入对答案和题库巩固。";
-  const taskLabel = bankCount > 0 ? "题库可练" : "先做随堂";
-
-  const setText = (selector, value) => {
-    const node = root.querySelector(selector);
-    if (node) {
-      node.textContent = value;
-    }
-  };
-  const setHtml = (selector, value) => {
-    const node = root.querySelector(selector);
-    if (node) {
-      node.innerHTML = value;
-    }
-  };
-
-  setText("[data-coach-task-label]", taskLabel);
-  setText("[data-coach-summary]", summary);
-  setText("[data-coach-status]", status.label);
-  setText(
-    "[data-coach-grade-lock-title]",
-    gradeLock.label || `${course.grade || "当前年级"}题库`,
-  );
-  setText(
-    "[data-coach-grade-lock-desc]",
-    gradeLock.message ||
-      `本节只调用${course.grade || "当前年级"}范围内的题目。`,
-  );
-  setText("[data-coach-bank-count]", `${bankCount} 道`);
-  setHtml(
-    "[data-coach-advice]",
-    renderCoachList(buildLessonCoachAdvice(data, lesson)),
-  );
-  setHtml("[data-coach-next-steps]", renderCoachList(profile.next_steps || []));
-  setHtml("[data-lesson-plan]", renderLessonPlan(buildLessonPlanItems(lesson)));
-  setHtml("[data-learner-signals]", renderLearnerSignals(profile, lesson));
-
-  const bankLink = root.querySelector("[data-coach-bank-link]");
-  if (bankLink) {
-    bankLink.href = `/question-bank?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
-    bankLink.classList.toggle("is-disabled", bankCount <= 0);
-    bankLink.setAttribute("aria-disabled", bankCount <= 0 ? "true" : "false");
-  }
 }
 
 const LESSON_STATUS_MAP = {
@@ -2445,197 +2472,6 @@ function pickLessonIndex(lessons, lessonId) {
   ].find((index) => index >= 0) ?? 0;
 }
 
-const TUTOR_HISTORY_LIMIT = 12;
-const TUTOR_HISTORY_CHARACTER_LIMIT = 8000;
-
-function recentTutorHistory(messages) {
-  const recent = messages.slice(-TUTOR_HISTORY_LIMIT);
-  let totalLength = recent.reduce(
-    (total, message) => total + String(message.content || "").length,
-    0,
-  );
-  while (recent.length > 1 && totalLength > TUTOR_HISTORY_CHARACTER_LIMIT) {
-    totalLength -= String(recent.shift()?.content || "").length;
-  }
-  const firstUserIndex = recent.findIndex((message) => message.role === "user");
-  return firstUserIndex > 0 ? recent.slice(firstUserIndex) : recent;
-}
-
-function createLessonTutor(root) {
-  const card = root?.querySelector("[data-tutor-card]");
-  const messagesRoot = card?.querySelector("[data-tutor-messages]");
-  const form = card?.querySelector("[data-tutor-form]");
-  const input = card?.querySelector("[data-tutor-input]");
-  const sendButton = card?.querySelector("[data-tutor-send]");
-  const status = card?.querySelector("[data-tutor-status]");
-  const quickButtons = [
-    ...(card?.querySelectorAll("[data-tutor-prompt]") || []),
-  ];
-  if (!card || !messagesRoot || !form || !input || !sendButton) {
-    return { reset() {} };
-  }
-
-  let history = [];
-  let activeLessonId = null;
-  let activeLessonTitle = "";
-  let requestSequence = 0;
-  let activeController = null;
-  const sendButtonLabel = sendButton.textContent || "发送";
-
-  const setStatus = (message, state = "idle") => {
-    if (!status) {
-      return;
-    }
-    status.textContent = message;
-    status.dataset.state = state;
-  };
-
-  const setBusy = (isBusy) => {
-    card.setAttribute("aria-busy", String(isBusy));
-    input.disabled = isBusy;
-    sendButton.disabled = isBusy;
-    sendButton.textContent = isBusy ? "思考中..." : sendButtonLabel;
-    quickButtons.forEach((button) => {
-      button.disabled = isBusy;
-    });
-  };
-
-  const appendMessageNode = (message) => {
-    const role = message.role === "user" ? "user" : "assistant";
-    const item = document.createElement("article");
-    item.className = `tutor-message tutor-message-${role}`;
-    item.dataset.tutorRole = role;
-
-    const label = document.createElement("strong");
-    label.className = "tutor-message-role";
-    label.textContent = role === "user" ? "你" : "AI 助手";
-
-    const content = document.createElement("p");
-    content.className = "tutor-message-content";
-    content.textContent = message.content;
-
-    item.append(label, content);
-    messagesRoot.append(item);
-  };
-
-  const renderMessages = () => {
-    messagesRoot.replaceChildren();
-    if (history.length === 0) {
-      appendMessageNode({
-        role: "assistant",
-        content: activeLessonTitle ? `你好！我会围绕“${activeLessonTitle}”回答问题。你可以让我讲解、提示或举例。` : "你好！你可以就本节内容向我提问。",
-      });
-    } else {
-      history.forEach(appendMessageNode);
-    }
-    messagesRoot.scrollTop = messagesRoot.scrollHeight;
-  };
-
-  const reset = (lesson) => {
-    requestSequence += 1;
-    activeController?.abort();
-    activeController = null;
-    activeLessonId = lesson?.id == null ? null : String(lesson.id);
-    activeLessonTitle = String(lesson?.title || "").trim();
-    history = [];
-    input.value = "";
-    card.dataset.tutorLessonId = activeLessonId || "";
-    setBusy(false);
-    setStatus("可围绕本节内容提问");
-    renderMessages();
-  };
-
-  const sendMessage = async (rawMessage) => {
-    const content = String(rawMessage || "").trim();
-    if (!content) {
-      setStatus("请输入问题后再发送", "error");
-      input.focus();
-      return;
-    }
-    if (!activeLessonId) {
-      setStatus("当前知识点不可用，请刷新页面后重试", "error");
-      return;
-    }
-    if (card.getAttribute("aria-busy") === "true") {
-      return;
-    }
-
-    history.push({ role: "user", content });
-    history = recentTutorHistory(history);
-    input.value = "";
-    renderMessages();
-
-    const requestLessonId = activeLessonId;
-    const controller = new AbortController();
-    const requestId = ++requestSequence;
-    activeController = controller;
-    setBusy(true);
-    setStatus("AI 正在思考...", "loading");
-
-    try {
-      const numericLessonId = Number(requestLessonId);
-      const result = await apiFetch("/api/ai/tutor", {
-        method: "POST",
-        signal: controller.signal,
-        body: JSON.stringify({
-          lesson_id: Number.isFinite(numericLessonId) ? numericLessonId : requestLessonId,
-          messages: recentTutorHistory(history).map((message) => ({
-            role: message.role,
-            content: message.content,
-          })),
-        }),
-      });
-      if (
-        controller.signal.aborted || requestId !== requestSequence ||
-        requestLessonId !== activeLessonId
-      ) {
-        return;
-      }
-      const answer = String(result.data?.answer || "").trim();
-      if (!answer) {
-        throw new Error("AI 暂时没有返回内容，请稍后再试");
-      }
-      history.push({ role: "assistant", content: answer });
-      history = recentTutorHistory(history);
-      renderMessages();
-      const model = String(result.data?.model || "").trim();
-      setStatus(model ? `回答完成 · ${model}` : "回答完成", "success");
-    } catch (error) {
-      if (controller.signal.aborted || requestId !== requestSequence) {
-        return;
-      }
-      setStatus(`发送失败：${error.message}`, "error");
-    } finally {
-      if (requestId === requestSequence) {
-        activeController = null;
-        setBusy(false);
-        input.focus();
-      }
-    }
-  };
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    sendMessage(input.value);
-  });
-  input.addEventListener("keydown", (event) => {
-    if (
-      event.key !== "Enter" || event.shiftKey || event.isComposing ||
-      event.defaultPrevented
-    ) {
-      return;
-    }
-    event.preventDefault();
-    form.requestSubmit();
-  });
-  quickButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      sendMessage(button.dataset.tutorPrompt || "");
-    });
-  });
-
-  return { reset };
-}
 
 async function initCoursePage() {
   setPageLoading(true, "正在加载知识点，请稍候");
@@ -2644,6 +2480,7 @@ async function initCoursePage() {
     setPageLoading(false);
     return;
   }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -2723,8 +2560,6 @@ async function initCoursePage() {
   };
 
   const studyTimer = createLessonStudyTimer();
-  const tutor = createLessonTutor(root);
-  tutor.reset(lesson);
 
   const renderTree = () =>
     data.lessons
@@ -2747,8 +2582,6 @@ async function initCoursePage() {
       })
       .join("");
 
-  const renderCoachPanel = () => updateStudyCoachPanel(root, data, lesson, courseId);
-
   const updateActiveLessonProgress = () => {
     const status = lessonStatus(lesson.status);
     const progressWidth = Math.min(100, Math.max(8, lesson.score || 0));
@@ -2770,7 +2603,6 @@ async function initCoursePage() {
       tree.innerHTML = renderTree();
     }
     renderCourseMeta();
-    renderCoachPanel();
   };
 
   const markLessonInProgress = () => {
@@ -2835,23 +2667,6 @@ async function initCoursePage() {
     lectureContent.addEventListener("question-submitted", (event) => {
       studyTimer.flush(false);
       const detail = event.detail || {};
-      if (detail.question_kind !== "textbook") {
-        return;
-      }
-      const questionCard = event.target instanceof Element ? event.target.closest("[data-question-id]") : null;
-      const questionKey = questionCard?.dataset.questionId ||
-        `${detail.lesson_id}-${Date.now()}`;
-      data.learner_profile = data.learner_profile || {};
-      data.learner_profile._answered_question_ids = data.learner_profile._answered_question_ids || {};
-      if (!data.learner_profile._answered_question_ids[questionKey]) {
-        data.learner_profile._answered_question_ids[questionKey] = true;
-        data.learner_profile.attempt_count = (data.learner_profile.attempt_count || 0) + 1;
-        data.learner_profile.correct_count = (data.learner_profile.correct_count || 0) + (detail.correct ? 1 : 0);
-        data.learner_profile.accuracy = Math.round(
-          (data.learner_profile.correct_count /
-            Math.max(1, data.learner_profile.attempt_count)) * 100,
-        );
-      }
       const targetLesson = data.lessons.find((item) => String(item.id) === String(detail.lesson_id));
       if (!targetLesson) {
         return;
@@ -2868,7 +2683,9 @@ async function initCoursePage() {
           detail.attempted_count,
         );
       }
-      if (
+      if (typeof detail.correct_count === "number") {
+        targetLesson.correct_count = detail.correct_count;
+      } else if (
         typeof detail.total_questions === "number" &&
         typeof detail.score === "number"
       ) {
@@ -2944,7 +2761,6 @@ async function initCoursePage() {
     if (bankLink) {
       bankLink.href = `/question-bank?course=${encodeURIComponent(courseId)}&lesson=${encodeURIComponent(lesson.id)}`;
     }
-    renderCoachPanel();
     if (scrollToTop) {
       root.querySelector(".lecture-pane")?.scrollTo({
         top: 0,
@@ -2972,7 +2788,6 @@ async function initCoursePage() {
     studyTimer.flush(true);
     activeIndex = nextIndex;
     lesson = nextLesson;
-    tutor.reset(lesson);
     renderCourseLesson({ contentHtml: nextContentHtml, scrollToTop: true });
     if (pushHistory && window.history?.pushState) {
       window.history.pushState(
@@ -3009,6 +2824,7 @@ async function initMistakesPage() {
     setPageLoading(false);
     return;
   }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -3064,6 +2880,7 @@ async function initQuestionBankPage() {
     setPageLoading(false);
     return;
   }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -3088,7 +2905,10 @@ async function initQuestionBankPage() {
         const courseResult = await apiFetch(`/api/course/${firstCourse.id}`, {
           cacheTtlMs: API_COURSE_CACHE_TTL_MS,
         });
-        const firstLesson = courseResult.data?.lessons?.[0];
+        const courseLessons = courseResult.data?.lessons || [];
+        const firstLesson = courseLessons.find((item) =>
+          Number(item.bank_question_count || item.textbook_question_count) > 0
+        ) || courseLessons[0];
         courseId = String(firstCourse.id);
         lessonId = firstLesson ? String(firstLesson.id) : "";
       }
@@ -3125,58 +2945,146 @@ async function initQuestionBankPage() {
   const subtitle = document.getElementById("question-bank-subtitle");
   const backLink = document.getElementById("question-bank-back-link");
   const summary = document.getElementById("question-bank-summary");
-  const gradeLockNode = document.querySelector(
-    "[data-question-bank-grade-lock]",
+  const modeTitle = root.querySelector("[data-question-bank-mode-title]");
+  const emptyTitle = root.querySelector("[data-question-bank-empty-title]");
+  const emptyCopy = root.querySelector("[data-question-bank-empty-copy]");
+  const gradeLockNode = root.querySelector("[data-question-bank-grade-lock]");
+  const modeButtons = [...document.querySelectorAll("[data-practice-mode]")];
+  const modeQuestions = {
+    chapter: data.practice_modes?.chapter || data.questions || [],
+    exam: data.practice_modes?.exam || data.questions || [],
+    focus: data.practice_modes?.focus || data.questions || [],
+  };
+  const courseTitle = cleanCourseDisplayTitle(data.course.title);
+  const lessonCount = Number(
+    data.practice_mode_meta?.course_lesson_count || 0,
   );
-  if (title) {
-    title.textContent = `${data.lesson.order}. ${data.lesson.title}`;
-  }
-  if (subtitle) {
-    subtitle.textContent = `${cleanCourseDisplayTitle(data.course.title)} / ${data.course.grade} / ${data.course.subject}`;
-  }
+  const chapterQuestionCount = Number(
+    data.practice_mode_meta?.chapter_question_count ||
+      modeQuestions.chapter.length,
+  );
+  const focusMistakeCount = Number(
+    data.practice_mode_meta?.focus_mistake_count || 0,
+  );
+  const modeConfigs = {
+    chapter: {
+      heading: `${data.lesson.order}. ${data.lesson.title}`,
+      subtitle: `${courseTitle} / ${data.course.grade} / ${data.course.subject}`,
+      panelTitle: "章节练习",
+      kicker: "CHAPTER PRACTICE",
+      description: chapterQuestionCount > modeQuestions.chapter.length
+        ? `当前知识点共 ${chapterQuestionCount} 道题，本次练习 ${modeQuestions.chapter.length} 道。`
+        : "练习当前知识点题目，逐题提交后再统一查看答案和解析。",
+      emptyTitle: "当前章节暂无题目",
+      emptyCopy: "可返回课程选择其他知识点，或切换到模拟考试。",
+    },
+    exam: {
+      heading: `${courseTitle} · 模拟考试`,
+      subtitle: `${data.course.grade} / ${data.course.subject} / ${lessonCount || 1} 个知识点综合组卷`,
+      panelTitle: "课程模拟考试",
+      kicker: "COURSE MOCK EXAM",
+      description: "从本课程不同知识点抽取题目，完成后统一核对结果。",
+      emptyTitle: "当前课程暂无可组卷题目",
+      emptyCopy: "可返回全部课程选择其他已开通课程。",
+    },
+    focus: {
+      heading: `${data.course.subject} · 专项练习`,
+      subtitle: focusMistakeCount
+        ? `优先安排 ${focusMistakeCount} 道历史薄弱题`
+        : "暂无历史错题，先从未练题目建立学习记录",
+      panelTitle: "薄弱点专项练习",
+      kicker: "FOCUSED PRACTICE",
+      description: focusMistakeCount
+        ? "历史错题排在前面，完成订正后再继续同课程练习。"
+        : "从尚未作答的题目开始，答错内容会自动进入错题本。",
+      emptyTitle: "暂无专项练习题目",
+      emptyCopy: "完成章节练习后，系统会根据作答记录更新专项内容。",
+    },
+  };
   if (backLink) {
-    backLink.href = buildLessonHref(courseId || data.course.id, data.lesson.id);
+    backLink.href = buildLessonHref(
+      courseId || data.course.id,
+      data.lesson.id,
+    );
   }
-  if (summary) {
-    summary.innerHTML = `
-      <span class="workspace-badge"><strong>${data.questions.length}</strong><span>题目</span></span>
-      <span class="workspace-badge"><strong>${escapeHtml(data.grade_lock?.grade || data.course.grade)}</strong><span>题库锁</span></span>
-      <span class="workspace-badge"><strong>${escapeHtml(data.course.subject)}</strong><span>学科</span></span>
-    `;
-  }
-  if (gradeLockNode) {
-    gradeLockNode.textContent = data.grade_lock?.message ||
-      `本页只展示${data.course.grade}范围内的题目。`;
-  }
-  if (countNode) {
-    countNode.textContent = `${data.questions.length} 道`;
-  }
+  const modeSessions = new Map();
+  let activeMode = "";
 
-  if (!data.questions.length) {
-    if (listRoot) {
-      listRoot.innerHTML = "";
+  const renderMode = (requestedMode, updateUrl = false) => {
+    const mode = Object.hasOwn(modeConfigs, requestedMode)
+      ? requestedMode
+      : "chapter";
+    const config = modeConfigs[mode];
+    const questions = modeQuestions[mode] || [];
+    if (title) title.textContent = config.heading;
+    if (subtitle) subtitle.textContent = config.subtitle;
+    if (modeTitle) modeTitle.textContent = config.panelTitle;
+    if (gradeLockNode) {
+      gradeLockNode.textContent = data.grade_lock?.message ||
+        `本页只展示${data.course.grade}范围内的题目。`;
     }
-    emptyRoot?.classList.remove("is-hidden");
-    root.classList.remove("is-hidden");
-    setPageLoading(false);
-    return;
-  }
-
-  emptyRoot?.classList.add("is-hidden");
-  if (listRoot) {
-    listRoot.innerHTML = renderPracticeSession({
-      questions: data.questions,
-      scopeId: `bank-${data.lesson.id}`,
-      title: "本年级题库练习",
-      kicker: "GRADE-LOCKED DRILL",
-      description: "题目已锁定当前年级。先逐题提交，最后统一对答案和看解析。",
-      className: "bank-practice-session",
-      sourcePrefix: "题库第",
-      cardClass: "bank-page-question",
+    if (countNode) countNode.textContent = `${questions.length} 道`;
+    if (summary) {
+      summary.innerHTML = `
+        <span class="workspace-badge"><strong>${questions.length}</strong><span>题目</span></span>
+        <span class="workspace-badge"><strong>${escapeHtml(data.grade_lock?.grade || data.course.grade)}</strong><span>题库锁</span></span>
+        <span class="workspace-badge"><strong>${escapeHtml(data.course.subject)}</strong><span>学科</span></span>
+      `;
+    }
+    modeButtons.forEach((button) => {
+      const active = button.dataset.practiceMode === mode;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
     });
-  }
-  root.classList.remove("is-hidden");
-  wireQuestionSubmitButtons(root);
+    if (listRoot) {
+      const currentSession = listRoot.querySelector(".practice-session");
+      if (activeMode && currentSession) {
+        modeSessions.set(activeMode, currentSession);
+      }
+      const savedSession = modeSessions.get(mode);
+      if (savedSession) {
+        listRoot.replaceChildren(savedSession);
+      } else {
+        listRoot.innerHTML = questions.length
+          ? renderPracticeSession({
+            questions,
+            scopeId: `bank-${mode}-${data.lesson.id}`,
+            title: config.panelTitle,
+            kicker: config.kicker,
+            description: config.description,
+            className: `bank-practice-session is-${mode}-mode`,
+            sourcePrefix: "题库第",
+            cardClass: "bank-page-question",
+          })
+          : "";
+        const createdSession = listRoot.querySelector(".practice-session");
+        if (createdSession) modeSessions.set(mode, createdSession);
+      }
+    }
+    activeMode = mode;
+    emptyRoot?.classList.toggle("is-hidden", questions.length > 0);
+    if (emptyTitle) emptyTitle.textContent = config.emptyTitle;
+    if (emptyCopy) emptyCopy.textContent = config.emptyCopy;
+    root.classList.remove("is-hidden");
+    wireQuestionSubmitButtons(root);
+    if (updateUrl && window.history?.replaceState) {
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.set("mode", mode);
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`,
+      );
+      root.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  modeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      renderMode(button.dataset.practiceMode || "chapter", true);
+    });
+  });
+  renderMode(params.get("mode") || "chapter");
   setPageLoading(false);
 }
 
@@ -3489,11 +3397,7 @@ async function initSubjectsPage() {
     setPageLoading(false);
     return;
   }
-  if (isTeacherUser(user) && window.location.protocol !== "file:") {
-    setPageLoading(false);
-    window.location.href = "/teacher";
-    return;
-  }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -3552,10 +3456,7 @@ async function initSubjectsPage() {
 async function initGradePage() {
   const user = await requireSession();
   if (!user) return;
-  if (isTeacherUser(user) && window.location.protocol !== "file:") {
-    window.location.href = "/teacher";
-    return;
-  }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -3636,9 +3537,11 @@ async function initTeacherPage() {
     node.classList.toggle("is-hidden", user.role !== "admin");
   });
   if (user.role === "admin") {
+    wireAdminReferenceDialogs();
     wireStudentCreateForm(user);
     wireTeacherCreateForm();
   }
+  wireTeacherPortalMenus(user);
   initTeacherManagementTabs(user);
   await Promise.all([
     initModelSettingsPanel(user),
@@ -3656,14 +3559,40 @@ async function initTeacherPage() {
   }));
 }
 
+function wireTeacherPortalMenus(user) {
+  if (user?.role !== "teacher") return;
+  const trigger = document.querySelector("[data-teacher-workspace-trigger]");
+  const dropdown = document.querySelector("[data-teacher-workspace-dropdown]");
+  if (!trigger || !dropdown || trigger.dataset.bound === "1") return;
+  trigger.dataset.bound = "1";
+  const closeMenu = () => {
+    dropdown.classList.add("is-hidden");
+    trigger.setAttribute("aria-expanded", "false");
+  };
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const shouldOpen = dropdown.classList.contains("is-hidden");
+    dropdown.classList.toggle("is-hidden", !shouldOpen);
+    trigger.setAttribute("aria-expanded", String(shouldOpen));
+  });
+  dropdown.addEventListener("click", (event) => {
+    if (event.target.closest("[data-management-view-link]")) closeMenu();
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".teacher-workspace-menu")) closeMenu();
+  });
+}
+
 function initTeacherManagementTabs(user) {
   const menu = document.querySelector("[data-management-menu]");
   const title = document.querySelector("[data-management-page-title]");
-  const links = [...document.querySelectorAll("[data-management-view-link]")];
+  const links = () => [
+    ...document.querySelectorAll("[data-management-view-link]"),
+  ];
   const panels = [...document.querySelectorAll("[data-management-view-panel]")];
-  if (!menu || !links.length || !panels.length) return;
+  if (!menu || !links().length || !panels.length) return;
 
-  const adminViews = ["teachers", "students", "enrollments", "models"];
+  const adminViews = ["teachers", "students", "enrollments", "data", "models"];
   const teacherViews = ["overview", "records", "growth"];
   const allowedViews = user.role === "admin" ? adminViews : teacherViews;
   const defaultView = allowedViews[0];
@@ -3672,12 +3601,13 @@ function initTeacherManagementTabs(user) {
     students: "学生账号管理",
     enrollments: "学生分配与购课",
     models: "AI 模型配置",
+    data: "数据中心",
     overview: "学生总览",
     records: "课后辅导记录",
     growth: "学生成长规划",
   };
 
-  links.forEach((link) => {
+  links().forEach((link) => {
     const adminLink = link.hasAttribute("data-admin-management-link");
     const teacherLink = link.hasAttribute("data-teacher-management-link");
     link.classList.toggle(
@@ -3698,8 +3628,11 @@ function initTeacherManagementTabs(user) {
         panel.dataset.managementViewPanel !== view,
       );
     });
-    links.forEach((link) => {
-      const isActive = link.dataset.managementViewLink === view;
+    links().forEach((link) => {
+      const activeView = user.role === "admin" && view === "enrollments"
+        ? "students"
+        : view;
+      const isActive = link.dataset.managementViewLink === activeView;
       link.classList.toggle("is-active", isActive);
       if (isActive) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
@@ -3716,13 +3649,25 @@ function initTeacherManagementTabs(user) {
     }));
   };
 
-  if (menu.dataset.bound !== "1") {
-    menu.dataset.bound = "1";
-    links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        activateView(link.dataset.managementViewLink, true);
-      });
+  if (document.body.dataset.managementTabsBound !== "1") {
+    document.body.dataset.managementTabsBound = "1";
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("[data-management-view-link]");
+      if (!link || link.classList.contains("is-hidden")) return;
+      const requestedView = link.dataset.managementViewLink;
+      if (!allowedViews.includes(requestedView)) return;
+      event.preventDefault();
+      const studentId = String(link.dataset.studentId || "");
+      if (studentId) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("student", studentId);
+        history.replaceState(
+          history.state,
+          "",
+          `${url.pathname}${url.search}${url.hash}`,
+        );
+      }
+      activateView(requestedView, true);
     });
     window.addEventListener("popstate", () => {
       const view = new URL(window.location.href).searchParams.get("view");
@@ -3774,9 +3719,13 @@ async function initTeacherStudentSwitcher(user) {
       select.disabled = true;
       return;
     }
-    select.innerHTML = students.map((student) =>
-      `<option value="${student.id}">${escapeHtml(student.full_name || student.username)}</option>`
-    ).join("");
+    select.innerHTML = students.map((student) => {
+      const name = student.full_name || student.username || "学生";
+      const account = student.username && student.username !== name
+        ? `（${student.username}）`
+        : "";
+      return `<option value="${student.id}">${escapeHtml(`${name}${account}`)}</option>`;
+    }).join("");
     select.disabled = false;
     const selectedId = syncTeacherStudentSelection();
     const url = new URL(window.location.href);
@@ -3805,9 +3754,107 @@ async function initTeacherStudentSwitcher(user) {
   }
 }
 
+function showAdminNotice(message, state = "success") {
+  let notice = document.querySelector("[data-admin-notice]");
+  if (!notice) {
+    notice = document.createElement("div");
+    notice.dataset.adminNotice = "";
+    notice.setAttribute("role", "status");
+    notice.setAttribute("aria-live", "polite");
+    document.body.appendChild(notice);
+  }
+  window.clearTimeout(Number(notice.dataset.timer || 0));
+  notice.className = `admin-reference-toast is-${state}`;
+  notice.textContent = message;
+  notice.classList.add("is-visible");
+  notice.dataset.timer = String(window.setTimeout(() => {
+    notice.classList.remove("is-visible");
+  }, 3200));
+}
+
+function closeAdminModal(modal) {
+  if (!modal) return;
+  modal.classList.add("is-hidden");
+  document.body.classList.remove("has-admin-modal");
+}
+
+function wireAdminReferenceDialogs() {
+  const definitions = [
+    {
+      modal: document.querySelector("[data-teacher-create-modal]"),
+      openSelector: "[data-open-teacher-create]",
+      closeSelector: "[data-close-teacher-create]",
+    },
+    {
+      modal: document.querySelector("[data-student-create-modal]"),
+      openSelector: "[data-open-student-create]",
+      closeSelector: "[data-close-student-create]",
+    },
+    {
+      modal: document.querySelector("[data-student-edit-modal]"),
+      openSelector: "[data-edit-student-account]",
+      closeSelector: "[data-close-student-edit]",
+    },
+  ];
+  definitions.forEach(({ modal, openSelector, closeSelector }) => {
+    if (!modal || modal.dataset.bound === "1") return;
+    modal.dataset.bound = "1";
+    const form = modal.querySelector("form");
+    const firstInput = form?.querySelector("input, select, textarea");
+    const open = () => {
+      form?.reset();
+      modal.querySelectorAll("[aria-live]").forEach((node) => {
+        node.textContent = "";
+        node.className = "admin-reference-form-status";
+      });
+      modal.classList.remove("is-hidden");
+      document.body.classList.add("has-admin-modal");
+      window.requestAnimationFrame(() => firstInput?.focus());
+    };
+    document.querySelectorAll(openSelector).forEach((button) => {
+      button.addEventListener("click", open);
+    });
+    modal.querySelectorAll(closeSelector).forEach((button) => {
+      button.addEventListener("click", () => closeAdminModal(modal));
+    });
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeAdminModal(modal);
+    });
+  });
+
+  const modelEditor = document.querySelector("[data-model-editor]");
+  if (modelEditor && modelEditor.dataset.bound !== "1") {
+    modelEditor.dataset.bound = "1";
+    document.querySelectorAll("[data-open-model-editor]").forEach((button) => {
+      button.addEventListener("click", () => {
+        modelEditor.classList.remove("is-hidden");
+        modelEditor.scrollIntoView({ behavior: "smooth", block: "start" });
+        modelEditor.querySelector("input")?.focus({ preventScroll: true });
+      });
+    });
+    modelEditor.querySelectorAll("[data-close-model-editor]").forEach(
+      (button) => {
+        button.addEventListener("click", () => {
+          modelEditor.classList.add("is-hidden");
+        });
+      },
+    );
+  }
+
+  if (document.body.dataset.adminDialogEscapeBound !== "1") {
+    document.body.dataset.adminDialogEscapeBound = "1";
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      document.querySelectorAll(".admin-reference-modal:not(.is-hidden)")
+        .forEach(closeAdminModal);
+    });
+  }
+}
+
 function wireTeacherCreateForm() {
   const form = document.getElementById("teacher-create-form");
   const status = document.getElementById("teacher-create-status");
+  const submit = form?.querySelector('button[type="submit"]');
   if (!form || form.dataset.bound === "1") return;
   form.reset();
   const usernameInput = form.querySelector('[name="username"]');
@@ -3821,6 +3868,11 @@ function wireTeacherCreateForm() {
     const payload = Object.fromEntries(
       [...data.entries()].map(([key, value]) => [key, String(value).trim()]),
     );
+    if (submit) submit.disabled = true;
+    if (status) {
+      status.className = "admin-reference-form-status is-saving-text";
+      status.textContent = "正在创建教师账号...";
+    }
     try {
       await apiFetch("/api/admin/teachers", {
         method: "POST",
@@ -3829,8 +3881,15 @@ function wireTeacherCreateForm() {
       form.reset();
       if (status) status.textContent = `教师账号 ${payload.username} 已创建`;
       await initTeacherEnrollmentPanel(readCachedUserProfile());
+      closeAdminModal(document.querySelector("[data-teacher-create-modal]"));
+      showAdminNotice(`教师账号 ${payload.username} 已创建`);
     } catch (error) {
-      if (status) status.textContent = error.message;
+      if (status) {
+        status.className = "admin-reference-form-status is-error";
+        status.textContent = error.message;
+      }
+    } finally {
+      if (submit) submit.disabled = false;
     }
   });
 }
@@ -3847,24 +3906,478 @@ function renderTeacherAccountDirectory(teachers, students) {
     list.innerHTML = '<p class="teacher-account-empty">尚未创建教师账号</p>';
     return;
   }
-  list.innerHTML = sortedTeachers.map((teacher) => {
+  list.innerHTML = `
+    <table class="admin-reference-table">
+      <thead><tr><th>教师账号</th><th>姓名</th><th>邮箱</th><th>所属阶段</th><th>名下学生数</th><th>状态</th><th>操作</th></tr></thead>
+      <tbody>${sortedTeachers.map((teacher) => {
     const teacherName = teacher.full_name || teacher.username || "教师";
     const studentCount = students.filter((student) =>
       Number(student.teacher_id) === Number(teacher.id)
     ).length;
     return `
-      <article class="teacher-account-row">
-        <span class="teacher-account-mark">${escapeHtml(teacherName.slice(0, 1))}</span>
-        <div class="teacher-account-identity">
-          <strong>${escapeHtml(teacherName)}</strong>
-          <span>登录账号：${escapeHtml(teacher.username || "")}</span>
-        </div>
-        <div class="teacher-account-meta">
-          <span>${escapeHtml(teacher.email || "未填写邮箱")}</span>
-          <small>名下 ${studentCount} 名学生</small>
-        </div>
-      </article>`;
+      <tr data-admin-search-row data-search-text="${escapeHtml(`${teacher.username || ""} ${teacherName} ${teacher.email || ""}`.toLowerCase())}">
+        <td><strong>${escapeHtml(teacher.username || "")}</strong></td>
+        <td><span class="admin-table-person"><i>${escapeHtml(teacherName.slice(0, 1))}</i>${escapeHtml(teacherName)}</span></td>
+        <td>${escapeHtml(teacher.email || "未填写")}</td>
+        <td>${escapeHtml(teacher.stage || "全部阶段")}</td>
+        <td>${studentCount} 名</td>
+        <td><span class="admin-status-pill">可用</span></td>
+        <td>—</td>
+      </tr>`;
+  }).join("")}</tbody>
+    </table>`;
+}
+
+function renderAdminStudentDirectory(students, teachers) {
+  const list = document.getElementById("student-account-list");
+  if (!list) return;
+  const sortedStudents = [...students].sort((a, b) =>
+    (Number(b.id) || 0) - (Number(a.id) || 0)
+  );
+  if (!sortedStudents.length) {
+    list.innerHTML = '<p class="teacher-account-empty">尚未创建学生账号</p>';
+    return;
+  }
+  list.innerHTML = `
+    <table class="admin-reference-table">
+      <thead><tr><th>学生账号</th><th>姓名</th><th>阶段</th><th>年级</th><th>负责教师</th><th>已购课程数</th><th>账号状态</th><th>有效期</th><th>操作</th></tr></thead>
+      <tbody>${sortedStudents.map((student) => {
+    const studentName = student.full_name || student.username || "学生";
+    const teacher = teachers.find((item) =>
+      Number(item.id) === Number(student.teacher_id)
+    );
+    const teacherName = teacher?.full_name || teacher?.username || "未分配";
+    const isExpired = Number(student.access_remaining_days) === 0 &&
+      Boolean(student.access_expires_on);
+    return `
+      <tr data-admin-search-row data-search-text="${escapeHtml(`${student.username || ""} ${studentName} ${teacherName}`.toLowerCase())}">
+        <td><strong>${escapeHtml(student.username || "")}</strong></td>
+        <td><span class="admin-table-person"><i>${escapeHtml(studentName.slice(0, 1))}</i>${escapeHtml(studentName)}</span></td>
+        <td>${escapeHtml(student.stage || "-")}</td>
+        <td>${escapeHtml(student.grade || "-")}</td>
+        <td><select class="admin-reference-row-select" data-admin-assignment-select data-student-id="${student.id}" aria-label="为 ${escapeHtml(studentName)} 分配教师"><option value="">未分配</option>${teachers.map((item) => `<option value="${item.id}" ${Number(item.id) === Number(student.teacher_id) ? "selected" : ""}>${escapeHtml(item.full_name || item.username || "教师")}</option>`).join("")}</select></td>
+        <td>${(student.course_ids || []).length}</td>
+        <td><span class="admin-status-pill ${isExpired ? "is-expired" : ""}">${isExpired ? "已到期" : "有效"}</span></td>
+        <td>${escapeHtml(student.access_expires_on || "长期有效")}</td>
+        <td><span class="admin-table-actions"><button class="admin-table-action" type="button" data-edit-student-account data-student-id="${student.id}">编辑</button><button class="admin-table-action" type="button" data-save-admin-assignment data-student-id="${student.id}">保存教师</button><button class="admin-table-action" type="button" data-management-view-link="enrollments" data-admin-management-link data-student-id="${student.id}">课程</button></span></td>
+      </tr>`;
+  }).join("")}</tbody>
+    </table>`;
+  wireAdminStudentAssignments(students);
+  wireAdminStudentEditor(students, teachers);
+}
+
+function wireAdminStudentAssignments(students) {
+  document.querySelectorAll("[data-save-admin-assignment]").forEach((button) => {
+    if (button.dataset.bound === "1") return;
+    button.dataset.bound = "1";
+    button.addEventListener("click", async () => {
+      const studentId = Number(button.dataset.studentId);
+      const select = document.querySelector(
+        `[data-admin-assignment-select][data-student-id="${studentId}"]`,
+      );
+      if (!studentId || !select) return;
+      const originalLabel = button.textContent || "保存教师";
+      button.disabled = true;
+      button.textContent = "保存中...";
+      try {
+        await apiFetch("/api/admin/assignments", {
+          method: "POST",
+          body: JSON.stringify({
+            student_id: studentId,
+            teacher_id: select.value || null,
+          }),
+        });
+        const student = students.find((item) => Number(item.id) === studentId);
+        if (student) student.teacher_id = select.value ? Number(select.value) : null;
+        const teacherName = select.selectedOptions[0]?.textContent?.trim() ||
+          "未分配";
+        button.textContent = "已保存";
+        showAdminNotice(`教师分配已保存：${teacherName}`);
+        window.dispatchEvent(new CustomEvent("admin-data-updated"));
+      } catch (error) {
+        button.textContent = "保存失败";
+        showAdminNotice(`教师分配失败：${error.message}`, "error");
+      } finally {
+        window.setTimeout(() => {
+          button.disabled = false;
+          button.textContent = originalLabel;
+        }, 900);
+      }
+    });
+  });
+}
+
+function wireAdminStudentEditor(students, teachers) {
+  const modal = document.querySelector("[data-student-edit-modal]");
+  const form = modal?.querySelector("[data-admin-student-edit-form]");
+  const status = modal?.querySelector("[data-student-edit-status]");
+  const deleteButton = modal?.querySelector("[data-delete-student-account]");
+  if (!modal || !form || !deleteButton) return;
+  modal.studentEditorContext = { students, teachers };
+
+  const setStatus = (message = "", state = "") => {
+    if (!status) return;
+    status.textContent = message;
+    status.className = `admin-reference-form-status${state ? ` is-${state}` : ""}`;
+  };
+  const fillForm = (student) => {
+    form.elements.student_id.value = String(student.id);
+    form.elements.username.value = student.username || "";
+    form.elements.password.value = "";
+    form.elements.full_name.value = student.full_name || "";
+    form.elements.stage.value = student.stage || "小学";
+    form.elements.grade.value = student.grade || "";
+    form.elements.email.value = student.email || "";
+    form.elements.access_unlimited.checked = !student.access_expires_on;
+    form.dataset.originalUnlimited = student.access_expires_on ? "0" : "1";
+    form.elements.access_duration_days.value = "";
+    form.elements.access_duration_days.disabled =
+      form.elements.access_unlimited.checked;
+    form.elements.access_duration_days.required = false;
+    setStatus();
+    modal.classList.remove("is-hidden");
+    document.body.classList.add("has-admin-modal");
+    window.requestAnimationFrame(() => form.elements.username.focus());
+  };
+
+  document.querySelectorAll("[data-edit-student-account]").forEach((button) => {
+    if (button.dataset.bound === "1") return;
+    button.dataset.bound = "1";
+    button.addEventListener("click", () => {
+      const context = modal.studentEditorContext;
+      const student = context?.students.find((item) =>
+        Number(item.id) === Number(button.dataset.studentId)
+      );
+      if (student) fillForm(student);
+    });
+  });
+
+  if (form.dataset.bound === "1") return;
+  form.dataset.bound = "1";
+  form.elements.access_unlimited.addEventListener("change", () => {
+    const isUnlimited = form.elements.access_unlimited.checked;
+    form.elements.access_duration_days.disabled = isUnlimited;
+    form.elements.access_duration_days.required = !isUnlimited &&
+      form.dataset.originalUnlimited === "1";
+    if (form.elements.access_unlimited.checked) {
+      form.elements.access_duration_days.value = "";
+    } else if (form.elements.access_duration_days.required) {
+      form.elements.access_duration_days.focus();
+    }
+  });
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const context = modal.studentEditorContext;
+    const studentId = Number(form.elements.student_id.value);
+    const student = context?.students.find((item) =>
+      Number(item.id) === studentId
+    );
+    if (!student) {
+      setStatus("未找到当前学生，请刷新后重试", "error");
+      return;
+    }
+    const submitButton = form.querySelector('button[type="submit"]');
+    const payload = {
+      username: form.elements.username.value.trim(),
+      password: form.elements.password.value.trim(),
+      full_name: form.elements.full_name.value.trim(),
+      stage: form.elements.stage.value,
+      grade: form.elements.grade.value.trim(),
+      email: form.elements.email.value.trim(),
+    };
+    const duration = form.elements.access_duration_days.value.trim();
+    if (form.elements.access_unlimited.checked) payload.access_expires_on = null;
+    else if (duration) payload.access_duration_days = duration;
+    else payload.access_expires_on = student.access_expires_on || null;
+    submitButton.disabled = true;
+    setStatus("正在保存学生资料...", "saving-text");
+    try {
+      const result = await apiFetch(`/api/admin/students/${studentId}`, {
+        method: "PUT",
+        body: JSON.stringify(payload),
+      });
+      Object.assign(student, result.data || payload);
+      form.elements.password.value = "";
+      closeAdminModal(modal);
+      window.dispatchEvent(new CustomEvent("admin-data-updated"));
+      showAdminNotice(`学生资料已保存：${student.full_name || student.username}`);
+    } catch (error) {
+      setStatus(`保存失败：${error.message}`, "error");
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+
+  deleteButton.addEventListener("click", async () => {
+    const context = modal.studentEditorContext;
+    const studentId = Number(form.elements.student_id.value);
+    const student = context?.students.find((item) =>
+      Number(item.id) === studentId
+    );
+    if (!student) return;
+    const studentName = student.full_name || student.username || "该学生";
+    if (!window.confirm(`确定删除 ${studentName} 吗？该学生的购课和学习记录也会被移除。`)) {
+      return;
+    }
+    deleteButton.disabled = true;
+    setStatus("正在删除学生...", "saving-text");
+    try {
+      await apiFetch(`/api/admin/students/${studentId}`, { method: "DELETE" });
+      closeAdminModal(modal);
+      showAdminNotice(`学生 ${studentName} 已删除`);
+      await initTeacherEnrollmentPanel(readCachedUserProfile());
+    } catch (error) {
+      setStatus(`删除失败：${error.message}`, "error");
+    } finally {
+      deleteButton.disabled = false;
+    }
+  });
+}
+
+function renderAdminMetricCards(targetId, metrics) {
+  const root = document.getElementById(targetId);
+  if (!root) return;
+  const tones = ["", "is-green", "is-orange", "is-purple"];
+  const icons = {
+    "师": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"></path></svg>',
+    "职": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"></path><path d="m9 14 2 2 4-4"></path></svg>',
+    "新": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M16 11h6"></path></svg>',
+    "生": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+    "课": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2Z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7Z"></path></svg>',
+    "配": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M9 3v4h6V3M8 13l2 2 4-4"></path></svg>',
+    "待": '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
+    "活": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"></path></svg>',
+  };
+  root.innerHTML = metrics.map((metric, index) => {
+    const value = metric.value === null || metric.value === undefined
+      ? "—"
+      : Number(metric.value || 0).toLocaleString("zh-CN");
+    return `
+    <article class="admin-reference-stat ${tones[index % tones.length]}">
+      <span class="admin-reference-stat-icon" aria-hidden="true">${icons[metric.icon] || icons["活"]}</span>
+      <div><p class="admin-reference-stat-label">${escapeHtml(metric.label || "")}</p><div class="admin-reference-stat-value-row"><strong class="admin-reference-stat-value">${value}</strong><span class="admin-reference-stat-unit">${escapeHtml(metric.unit || "")}</span></div><p class="admin-reference-stat-note">${escapeHtml(metric.note || "数据库实时统计")}</p></div>
+    </article>`;
   }).join("");
+}
+
+function wireAdminTableSearch(selector, containerId) {
+  const input = document.querySelector(selector);
+  const container = document.getElementById(containerId);
+  if (!input || !container || input.dataset.bound === "1") return;
+  input.dataset.bound = "1";
+  input.addEventListener("input", () => {
+    const query = input.value.trim().toLowerCase();
+    container.querySelectorAll("[data-admin-search-row]").forEach((row) => {
+      row.classList.toggle(
+        "is-hidden",
+        Boolean(query) && !String(row.dataset.searchText || "").includes(query),
+      );
+    });
+  });
+}
+
+function renderAdminDistribution(targetId, items) {
+  const root = document.getElementById(targetId);
+  if (!root) return;
+  const normalized = items.filter((item) => item.label);
+  const maximum = Math.max(1, ...normalized.map((item) => Number(item.value || 0)));
+  root.innerHTML = normalized.length
+    ? normalized.map((item) => `
+      <div class="admin-data-bar-row">
+        <span>${escapeHtml(item.label)}</span>
+        <div><i style="width:${Math.round((Number(item.value || 0) / maximum) * 100)}%"></i></div>
+        <strong>${Number(item.value || 0).toLocaleString("zh-CN")}</strong>
+      </div>`).join("")
+    : '<p class="admin-reference-empty">暂无数据</p>';
+}
+
+function renderAdminSubjectDonut(items) {
+  const root = document.getElementById("admin-subject-distribution");
+  if (!root) return;
+  const normalized = items.filter((item) => item.label && Number(item.value) > 0);
+  const total = normalized.reduce(
+    (sum, item) => sum + Number(item.value || 0),
+    0,
+  );
+  if (!total) {
+    root.innerHTML = '<p class="admin-reference-empty">暂无课程学科数据</p>';
+    return;
+  }
+  const colors = ["#1769f6", "#56a0f6", "#23b88a", "#f4ad45", "#7167e8", "#ef6b6f"];
+  let offset = 0;
+  const stops = normalized.map((item, index) => {
+    const start = offset;
+    offset += (Number(item.value || 0) / total) * 100;
+    return `${colors[index % colors.length]} ${start.toFixed(2)}% ${offset.toFixed(2)}%`;
+  });
+  root.innerHTML = `
+    <div class="admin-donut" style="--admin-donut:${escapeHtml(`conic-gradient(${stops.join(",")})`)}"><strong>${total.toLocaleString("zh-CN")}</strong><span>课程</span></div>
+    <div class="admin-donut-legend">${normalized.slice(0, 8).map((item, index) => `
+      <span><i style="background:${colors[index % colors.length]}"></i><b>${escapeHtml(item.label)}</b><em>${Number(item.value).toLocaleString("zh-CN")}</em></span>`).join("")}</div>`;
+}
+
+function renderAdminEmptyHeatmap() {
+  const root = document.getElementById("admin-time-heatmap");
+  if (!root) return;
+  const rows = ["00-04", "04-08", "08-12", "12-16", "16-20", "20-24"];
+  root.innerHTML = `
+    <div class="admin-heatmap-board">${rows.map((label) => `
+      <span class="admin-heatmap-label">${label}时</span><div>${Array.from({ length: 7 }, () => "<i></i>").join("")}</div>`).join("")}
+      <span></span><div class="admin-heatmap-days">${["周一", "周二", "周三", "周四", "周五", "周六", "周日"].map((day) => `<b>${day}</b>`).join("")}</div>
+    </div>
+    <p class="admin-heatmap-empty">暂无分时学习数据</p>`;
+}
+
+function renderAdminEmptyRankings() {
+  const activeRoot = document.getElementById("admin-active-students");
+  const classRoot = document.getElementById("admin-class-ranking");
+  if (activeRoot) {
+    activeRoot.innerHTML = '<p class="admin-reference-empty">暂无活跃度排行数据</p>';
+  }
+  if (classRoot) {
+    classRoot.innerHTML = '<p class="admin-reference-empty">当前学生资料未配置班级字段</p>';
+  }
+}
+
+function adminCsvCell(value) {
+  return `"${String(value ?? "").replaceAll('"', '""')}"`;
+}
+
+function wireAdminReportExport(students, teachers, courses) {
+  const button = document.querySelector("[data-export-admin-report]");
+  if (!button) return;
+  button.adminReportContext = { students, teachers, courses };
+  if (button.dataset.bound === "1") return;
+  button.dataset.bound = "1";
+  button.addEventListener("click", () => {
+    const context = button.adminReportContext || {};
+    const rows = [["类型", "账号/课程", "姓名/阶段", "教师/年级", "课程数/学科"]];
+    (context.students || []).forEach((student) => {
+      const teacher = (context.teachers || []).find((item) =>
+        Number(item.id) === Number(student.teacher_id)
+      );
+      rows.push([
+        "学生",
+        student.username,
+        student.full_name,
+        teacher?.full_name || teacher?.username || "未分配",
+        (student.course_ids || []).length,
+      ]);
+    });
+    (context.teachers || []).forEach((teacher) => {
+      rows.push([
+        "教师",
+        teacher.username,
+        teacher.full_name,
+        teacher.stage || "所有阶段",
+        "",
+      ]);
+    });
+    (context.courses || []).forEach((course) => {
+      rows.push([
+        "课程",
+        course.title,
+        course.stage,
+        course.grade,
+        course.subject,
+      ]);
+    });
+    const csv = `\uFEFF${rows.map((row) => row.map(adminCsvCell).join(",")).join("\r\n")}`;
+    const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `启航教育数据报表-${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+    showAdminNotice("数据报表已导出");
+  });
+}
+
+function renderAdminLoadError(message) {
+  const safeMessage = escapeHtml(message || "管理数据读取失败，请刷新后重试");
+  [
+    "teacher-account-list",
+    "student-account-list",
+    "teacher-admin-root",
+    "admin-subject-distribution",
+    "admin-learning-trend",
+    "admin-time-heatmap",
+    "admin-grade-distribution",
+    "admin-active-students",
+    "admin-class-ranking",
+  ].forEach((targetId) => {
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.innerHTML = `<p class="admin-reference-empty">${safeMessage}</p>`;
+    }
+  });
+  ["admin-teacher-stats", "admin-student-stats", "admin-course-stats", "admin-data-stats"]
+    .forEach((targetId) => {
+      const target = document.getElementById(targetId);
+      if (target) target.innerHTML = "";
+    });
+}
+
+function renderAdminDataViews(students, teachers, courses) {
+  const now = new Date();
+  const isCurrentMonth = (value) => {
+    const date = new Date(value);
+    return !Number.isNaN(date.getTime()) &&
+      date.getFullYear() === now.getFullYear() &&
+      date.getMonth() === now.getMonth();
+  };
+  const assignedStudentCount = students.filter((student) =>
+    Number(student.teacher_id) > 0
+  ).length;
+  const purchasedCourseCount = students.reduce(
+    (total, student) => total + (student.course_ids || []).length,
+    0,
+  );
+  renderAdminMetricCards("admin-teacher-stats", [
+    { icon: "师", label: "教师总数", value: teachers.length, unit: "人", note: "当前系统教师账号" },
+    { icon: "职", label: "在职教师", value: teachers.length, unit: "人", note: "可正常登录使用" },
+    { icon: "新", label: "本月新增", value: teachers.filter((teacher) => isCurrentMonth(teacher.created_at)).length, unit: "人", note: "本月创建账号" },
+    { icon: "待", label: "停用教师", value: null, unit: "人", note: "当前未配置停用状态" },
+  ]);
+  renderAdminMetricCards("admin-student-stats", [
+    { icon: "生", label: "学生总数", value: students.length, unit: "人", note: "当前有效学生账号" },
+    { icon: "课", label: "已购课程", value: purchasedCourseCount, unit: "门", note: "累计课程分配" },
+    { icon: "待", label: "待分配教师", value: students.filter((student) => !student.teacher_id).length, unit: "人", note: "尚未指定负责教师" },
+    { icon: "新", label: "本月新增", value: students.filter((student) => isCurrentMonth(student.created_at)).length, unit: "人", note: "本月创建账号" },
+  ]);
+  renderAdminMetricCards("admin-course-stats", [
+    { icon: "课", label: "课程总数", value: courses.length, unit: "门", note: "系统课程目录" },
+    { icon: "配", label: "已分配课程", value: purchasedCourseCount, unit: "次", note: "学生课程分配次数" },
+  ]);
+  renderAdminMetricCards("admin-data-stats", [
+    { icon: "生", label: "学生总数", value: students.length, unit: "人", note: "当前有效学生" },
+    { icon: "活", label: "今日活跃", value: null, unit: "人", note: "暂未接入日活统计" },
+    { icon: "课", label: "完成课程", value: null, unit: "节", note: "暂未接入全站完成量" },
+    { icon: "配", label: "平均正确率", value: null, unit: "%", note: "暂未接入全站正确率" },
+    { icon: "职", label: "学习时长", value: null, unit: "小时", note: "暂未接入分时统计" },
+  ]);
+  const countBy = (items, getLabel) =>
+    [...items.reduce((map, item) => {
+      const label = String(getLabel(item) || "未填写");
+      map.set(label, (map.get(label) || 0) + 1);
+      return map;
+    }, new Map()).entries()].map(([label, value]) => ({ label, value }));
+  renderAdminSubjectDonut(countBy(courses, (course) => course.subject));
+  renderAdminDistribution(
+    "admin-grade-distribution",
+    countBy(students, (student) => student.grade || student.stage),
+  );
+  renderAdminEmptyHeatmap();
+  renderAdminEmptyRankings();
+  wireAdminReportExport(students, teachers, courses);
+  renderTeacherAccountDirectory(teachers, students);
+  renderAdminStudentDirectory(students, teachers);
+  wireAdminTableSearch("[data-admin-teacher-search]", "teacher-account-list");
+  wireAdminTableSearch("[data-admin-student-search]", "student-account-list");
 }
 
 function formatTeacherOverviewDate(value, fallback = "") {
@@ -3970,6 +4483,29 @@ function teacherOverviewRadarSvg(radar = []) {
     </svg>`;
 }
 
+function teacherLucideIcon(paths) {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+}
+
+function teacherMetricIcon(index) {
+  const icons = [
+    '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"/>',
+    '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    '<rect width="14" height="18" x="5" y="3" rx="2"/><path d="M9 3V1h6v2M9 14l2 2 4-4"/>',
+    '<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 9h8M8 13h5"/>',
+  ];
+  return teacherLucideIcon(icons[index % icons.length]);
+}
+
+function teacherHeadingIcon(kind) {
+  const icons = {
+    summary: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+    observation: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    timeline: '<rect width="14" height="18" x="5" y="3" rx="2"/><path d="M9 3V1h6v2M9 12h6M9 16h6M9 8h2"/>',
+  };
+  return teacherLucideIcon(icons[kind] || icons.summary);
+}
+
 function renderTeacherOverview(data) {
   const student = data.student || {};
   const profile = data.profile || {};
@@ -3993,12 +4529,13 @@ function renderTeacherOverview(data) {
           <div class="teacher-profile-tags">${(profile.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
           <p>${escapeHtml(profile.summary || "暂无学生画像说明。")}</p>
         </div>
-        <div class="teacher-hero-signal" aria-hidden="true">
+        <div class="teacher-hero-signal has-image" aria-hidden="true">
           <span class="teacher-signal-bar bar-one"></span>
           <span class="teacher-signal-bar bar-two"></span>
           <span class="teacher-signal-bar bar-three"></span>
           <span class="teacher-signal-line"></span>
         </div>
+        <button class="teacher-student-switch" type="button" data-teacher-switch-student>${teacherLucideIcon('<path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/>')}<span>切换学生</span></button>
       </section>
 
       <div class="teacher-analytics-grid">
@@ -4008,16 +4545,16 @@ function renderTeacherOverview(data) {
           <p class="teacher-card-caption">综合课程得分与练习正确率</p>
         </section>
         <section class="teacher-dashboard-card teacher-radar-card">
-          <header><h3>综合能力雷达图</h3><span>当前画像</span></header>
+          <header><h3>学科能力雷达图</h3><span>当前画像</span></header>
           ${teacherOverviewRadarSvg(data.radar || [])}
           ${subjectSummary.length ? `<div class="teacher-subject-summary">${subjectSummary.map((item) => `<span><i></i>${escapeHtml(item.label)} ${Math.round(Number(item.value || 0))}</span>`).join("")}</div>` : '<p class="teacher-card-caption">暂无可用的学科练习数据</p>'}
         </section>
         <section class="teacher-dashboard-card teacher-metrics-card">
-          <header><h3>关键成长指标</h3><span>数据库实时汇总</span></header>
+          <header><h3>关键成长指标</h3></header>
           <div class="teacher-metric-grid">
-            ${metrics.map((metric) => `
+            ${metrics.map((metric, index) => `
               <div class="teacher-metric-item tone-${escapeHtml(metric.tone || "blue")}">
-                <span class="teacher-metric-icon" aria-hidden="true"></span>
+                <span class="teacher-metric-icon" aria-hidden="true">${teacherMetricIcon(index)}</span>
                 <div>
                   <span class="teacher-metric-label">${escapeHtml(metric.label || "")}</span>
                   <strong>${Math.round(Number(metric.value || 0))}<small>%</small></strong>
@@ -4030,7 +4567,7 @@ function renderTeacherOverview(data) {
 
       <div class="teacher-narrative-grid">
         <section class="teacher-dashboard-card teacher-summary-card">
-          <header><h3>${escapeHtml(summary.headline || "近期成长总结")}</h3><span>${escapeHtml(formatTeacherOverviewDate(summary.updated_at, "实时汇总"))}</span></header>
+          <header><h3 class="teacher-card-heading"><span class="teacher-card-heading-icon" aria-hidden="true">${teacherHeadingIcon("summary")}</span>${escapeHtml(summary.headline || "近期成长总结")}</h3><span>${escapeHtml(formatTeacherOverviewDate(summary.updated_at, "实时汇总"))}</span></header>
           <div class="teacher-summary-group is-strength">
             <strong>优势表现</strong>
             <ul>${(summary.strengths || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
@@ -4041,7 +4578,7 @@ function renderTeacherOverview(data) {
           </div>
         </section>
         <section class="teacher-dashboard-card teacher-observation-card">
-          <header><h3>教师观察</h3><span>${escapeHtml(observation ? formatTeacherOverviewDate(observation.date) : "暂无记录")}</span></header>
+          <header><h3 class="teacher-card-heading"><span class="teacher-card-heading-icon" aria-hidden="true">${teacherHeadingIcon("observation")}</span>教师观察</h3><span>${escapeHtml(observation ? formatTeacherOverviewDate(observation.date) : "暂无记录")}</span></header>
           ${observation ? `
             <h4>${escapeHtml(observation.title || "最新课后观察")}</h4>
             <p>${escapeHtml(observation.content || "")}</p>
@@ -4049,12 +4586,13 @@ function renderTeacherOverview(data) {
           ` : '<div class="teacher-panel-empty"><strong>还没有课后观察</strong><span>在“课后记录”中提交内容后会显示在这里。</span></div>'}
         </section>
         <section class="teacher-dashboard-card teacher-timeline-card">
-          <header><h3>成长轨迹</h3><span>${timeline.length} 条近期记录</span></header>
+          <header><h3 class="teacher-card-heading"><span class="teacher-card-heading-icon" aria-hidden="true">${teacherHeadingIcon("timeline")}</span>成长轨迹</h3><span>${timeline.length} 条近期记录</span></header>
           ${timeline.length ? `<ol class="teacher-timeline-list">${timeline.map((item) => `
             <li class="tone-${escapeHtml(item.tone || "progress")}">
               <time>${escapeHtml(formatTeacherOverviewDate(item.date, ""))}</time>
-              <div><strong>${escapeHtml(item.title || "成长记录")}</strong><p>${escapeHtml(item.description || "")}</p></div>
+              <div><strong>${escapeHtml(item.title || "成长记录")}</strong><p>${escapeHtml(item.description || "")}</p></div><span class="teacher-timeline-tag">${item.tone === "attention" ? "待提升" : item.tone === "teacher" ? "教师记录" : "进步"}</span>
             </li>`).join("")}</ol>` : '<div class="teacher-panel-empty"><strong>暂无成长轨迹</strong><span>课程学习和教师记录会按时间汇总在这里。</span></div>'}
+          <a class="teacher-timeline-more" href="/teacher?view=growth&student=${encodeURIComponent(student.id || "")}">查看更多成长记录 ›</a>
         </section>
       </div>
     </div>`;
@@ -4098,6 +4636,7 @@ async function initTeacherOverview(user) {
                 </button>`;
             }).join("")}
           </div>
+          <footer class="teacher-directory-footer"><button class="teacher-directory-all-button" type="button" data-teacher-directory-all>查看全部学生</button></footer>
         </aside>
         <div class="teacher-overview-report" data-teacher-overview-report></div>
       </div>`;
@@ -4123,6 +4662,18 @@ async function initTeacherOverview(user) {
         );
         if (thisRequest !== requestId) return;
         report.innerHTML = renderTeacherOverview(overview.data || {});
+        report.querySelector("[data-teacher-switch-student]")?.addEventListener(
+          "click",
+          () => {
+            const currentIndex = students.findIndex((student) =>
+              String(student.id) === String(currentStudentId)
+            );
+            const nextStudent = students[(currentIndex + 1) % students.length];
+            root.querySelector(
+              `[data-overview-student-id="${nextStudent?.id || ""}"]`,
+            )?.click();
+          },
+        );
       } catch (error) {
         if (thisRequest !== requestId) return;
         report.innerHTML = `<section class="teacher-overview-empty"><h2>暂时无法读取</h2><p>${escapeHtml(error.message)}</p></section>`;
@@ -4145,6 +4696,14 @@ async function initTeacherOverview(user) {
         }));
       });
     });
+    root.querySelector("[data-teacher-directory-all]")?.addEventListener(
+      "click",
+      () => {
+        const list = root.querySelector(".teacher-student-list");
+        if (list) list.scrollTop = 0;
+        root.querySelector("[data-overview-student-id]")?.focus();
+      },
+    );
     window.addEventListener("teacher-student-selected", (event) => {
       const studentId = String(event.detail?.studentId || "");
       if (!studentId || studentId === currentStudentId) return;
@@ -4316,8 +4875,25 @@ async function initTeacherGrowthPanel(user) {
         );
         wireGrowthRecordDisclosure(report);
         if (status) {
-          status.className = "save-feedback is-success";
-          status.textContent = growth.data?.ai_cached ? "已读取固定成长规划" : "AI 成长规划已生成并固定";
+          if (
+            growth.data?.ai_pending ||
+            growth.data?.analysis_status === "pending"
+          ) {
+            status.className = "save-feedback is-saving-text";
+            status.textContent = "AI 分析尚未完成，可点击重试";
+            button.dataset.growthPending = "1";
+            button.textContent = "重试 AI 分析";
+          } else if (!growth.data?.has_teacher_records) {
+            status.className = "save-feedback";
+            status.textContent = "等待教师课后记录";
+            delete button.dataset.growthPending;
+            button.textContent = "刷新成长规划";
+          } else {
+            status.className = "save-feedback is-success";
+            status.textContent = "已读取固定成长规划";
+            delete button.dataset.growthPending;
+            button.textContent = "刷新成长规划";
+          }
         }
       } catch (error) {
         if (String(select.value) !== requestedStudentId) return;
@@ -4336,7 +4912,38 @@ async function initTeacherGrowthPanel(user) {
         }
       }
     };
-    button.addEventListener("click", () => loadGrowth());
+    button.addEventListener("click", async () => {
+      if (button.dataset.growthPending !== "1") {
+        loadGrowth();
+        return;
+      }
+      const studentId = String(select.value || "");
+      if (!studentId) return;
+      button.disabled = true;
+      button.classList.add("is-saving");
+      if (status) {
+        status.className = "save-feedback is-saving-text";
+        status.textContent = "正在重新提交 AI 分析...";
+      }
+      try {
+        await apiFetch(
+          `/api/teacher/students/${studentId}/growth/generate`,
+          { method: "POST", body: "{}" },
+        );
+        delete button.dataset.growthPending;
+        button.disabled = false;
+        button.classList.remove("is-saving");
+        await loadGrowth(studentId);
+      } catch (error) {
+        if (status) {
+          status.className = "save-feedback is-error";
+          status.textContent = error.message;
+        }
+      } finally {
+        button.disabled = false;
+        button.classList.remove("is-saving");
+      }
+    });
     window.addEventListener("teacher-growth-updated", (event) => {
       if (
         String(event.detail?.studentId || "") === String(select?.value || "")
@@ -4360,8 +4967,8 @@ async function initTeacherGrowthPanel(user) {
 
 function modelSettingsSourceLabel(source) {
   const labels = {
-    database: "教师配置",
-    db: "教师配置",
+    database: "管理员配置",
+    db: "管理员配置",
     environment: "环境变量",
     env: "环境变量",
     mixed: "混合配置",
@@ -4380,6 +4987,12 @@ async function initModelSettingsPanel(user) {
   const modelInput = form?.querySelector('[name="model"]');
   const state = panel?.querySelector("[data-model-settings-state]");
   const status = panel?.querySelector("[data-model-settings-status]");
+  const modelName = panel?.querySelector("[data-model-name]");
+  const modelSource = panel?.querySelector("[data-model-source]");
+  const modelProvider = panel?.querySelector("[data-model-provider]");
+  const modelBaseUrl = panel?.querySelector("[data-model-base-url]");
+  const modelUpdatedAt = panel?.querySelector("[data-model-updated-at]");
+  const configRow = panel?.querySelector("[data-model-config-row]");
   const testButton = panel?.querySelector("[data-test-model-settings]");
   const saveButton = panel?.querySelector("[data-save-model-settings]");
   if (
@@ -4391,6 +5004,7 @@ async function initModelSettingsPanel(user) {
   }
   form.dataset.modelSettingsInitialized = "1";
 
+  let savedSettings = null;
   const testButtonLabel = testButton.textContent || "测试连接";
   const saveButtonLabel = saveButton.textContent || "保存配置";
   const setFeedback = (message, feedbackState = "") => {
@@ -4398,7 +5012,7 @@ async function initModelSettingsPanel(user) {
       return;
     }
     status.textContent = message;
-    status.className = `save-feedback${feedbackState ? ` is-${feedbackState}` : ""}`;
+    status.className = `admin-reference-form-status${feedbackState ? ` is-${feedbackState}` : ""}`;
     status.dataset.state = feedbackState;
   };
   const setBusy = (isBusy, action = "") => {
@@ -4409,6 +5023,7 @@ async function initModelSettingsPanel(user) {
     saveButton.textContent = isBusy && action === "save" ? "保存中..." : saveButtonLabel;
   };
   const renderConfiguredState = (settings = {}) => {
+    savedSettings = { ...settings };
     if (typeof settings.base_url === "string") {
       baseUrlInput.value = settings.base_url;
     }
@@ -4419,10 +5034,43 @@ async function initModelSettingsPanel(user) {
     const configured = Boolean(settings.api_key_configured);
     const sourceLabel = modelSettingsSourceLabel(settings.source);
     apiKeyInput.placeholder = configured ? "已配置，留空表示保留当前 API Key" : "请输入 API Key";
+    if (modelName) modelName.textContent = settings.model || "—";
+    if (modelSource) modelSource.textContent = sourceLabel || "—";
+    if (modelBaseUrl) modelBaseUrl.textContent = settings.base_url || "—";
+    if (modelUpdatedAt) {
+      modelUpdatedAt.textContent = formatTeacherOverviewDate(
+        settings.updated_at,
+        "—",
+      ) || "—";
+    }
+    if (modelProvider) {
+      try {
+        modelProvider.textContent = new URL(settings.base_url).hostname ||
+          "兼容 OpenAI 接口";
+      } catch {
+        modelProvider.textContent = "兼容 OpenAI 接口";
+      }
+    }
     if (state) {
-      state.className = `save-feedback ${configured ? "is-success" : "is-error"}`;
+      state.className = `admin-status-pill ${configured ? "" : "is-expired"}`;
       state.dataset.configured = configured ? "true" : "false";
-      state.textContent = configured ? `API Key 已配置${sourceLabel ? ` · ${sourceLabel}` : ""}` : "API Key 尚未配置";
+      state.textContent = configured ? "正常" : "未配置";
+    }
+    if (configRow) {
+      const updatedAt = formatTeacherOverviewDate(settings.updated_at, "—") ||
+        "—";
+      configRow.innerHTML = `
+        <tr>
+          <td><strong>默认配置</strong><small class="admin-config-updated">更新于 ${escapeHtml(updatedAt)}</small></td>
+          <td>${escapeHtml(settings.base_url || "—")}</td>
+          <td>${escapeHtml(settings.model || "—")}</td>
+          <td><span class="admin-status-pill ${configured ? "" : "is-expired"}">${configured ? `已启用 · ${escapeHtml(settings.api_key_hint || "已配置")}` : "未配置"}</span></td>
+          <td><button class="admin-table-action" type="button" data-open-model-editor-row>编辑</button></td>
+        </tr>`;
+      configRow.querySelector("[data-open-model-editor-row]")?.addEventListener(
+        "click",
+        () => document.querySelector("[data-open-model-editor]")?.click(),
+      );
     }
   };
   const readPayload = () => {
@@ -4436,6 +5084,18 @@ async function initModelSettingsPanel(user) {
     }
     return payload;
   };
+
+  panel.querySelectorAll("[data-open-model-editor]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (savedSettings) renderConfiguredState(savedSettings);
+    });
+  });
+  panel.querySelectorAll("[data-close-model-editor]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (savedSettings) renderConfiguredState(savedSettings);
+      setFeedback("", "");
+    });
+  });
 
   testButton.addEventListener("click", async () => {
     if (!form.reportValidity()) {
@@ -4452,6 +5112,9 @@ async function initModelSettingsPanel(user) {
       setFeedback(
         testedModel ? `连接成功，模型 ${testedModel} 可用` : "连接测试成功",
         "success",
+      );
+      showAdminNotice(
+        testedModel ? `连接成功：${testedModel}` : "模型连接测试成功",
       );
     } catch (error) {
       setFeedback(`连接失败：${error.message}`, "error");
@@ -4474,6 +5137,8 @@ async function initModelSettingsPanel(user) {
       });
       renderConfiguredState(result.data || {});
       setFeedback("模型配置已保存", "success");
+      showAdminNotice("AI 模型配置已保存");
+      document.querySelector("[data-model-editor]")?.classList.add("is-hidden");
     } catch (error) {
       setFeedback(`保存失败：${error.message}`, "error");
     } finally {
@@ -4489,7 +5154,7 @@ async function initModelSettingsPanel(user) {
     setFeedback("", "");
   } catch (error) {
     if (state) {
-      state.className = "save-feedback is-error";
+      state.className = "admin-status-pill is-expired";
       state.textContent = "配置状态读取失败";
     }
     setFeedback(`读取失败：${error.message}`, "error");
@@ -4542,8 +5207,11 @@ function wireStudentCreateForm(user) {
         status.textContent = `已创建学生账号 ${createdName}`;
       }
       await initTeacherEnrollmentPanel(user);
+      closeAdminModal(document.querySelector("[data-student-create-modal]"));
+      showAdminNotice(`学生账号 ${createdName} 已创建`);
     } catch (error) {
       if (status) {
+        status.className = "admin-reference-form-status is-error";
         status.textContent = error.message;
       }
     } finally {
@@ -4557,9 +5225,7 @@ function wireStudentCreateForm(user) {
 async function initTeacherEnrollmentPanel(user) {
   const panel = document.getElementById("teacher-admin-panel");
   const root = document.getElementById("teacher-admin-root");
-  if (!panel || !root) {
-    return;
-  }
+  if (!panel || !root) return;
   if (user?.role !== "admin") {
     panel.classList.add("is-hidden");
     return;
@@ -4570,489 +5236,330 @@ async function initTeacherEnrollmentPanel(user) {
     result = await apiFetch("/api/admin/enrollments");
   } catch (error) {
     console.warn(error);
-    root.innerHTML = "";
-    const teacherList = document.getElementById("teacher-account-list");
-    const teacherCount = document.querySelector("[data-teacher-account-count]");
-    if (teacherList) {
-      teacherList.innerHTML = '<p class="teacher-account-empty">教师账号读取失败，请刷新后重试</p>';
-    }
-    if (teacherCount) teacherCount.textContent = "读取失败";
+    renderAdminLoadError(error.message || "管理数据读取失败，请刷新后重试");
     return;
   }
 
   const { students = [], teachers = [], courses = [] } = result.data || {};
-  renderTeacherAccountDirectory(teachers, students);
-  const subjectGroups = [
-    ...courses
-      .reduce((groups, course) => {
-        const key = `${course.stage}||${course.subject}`;
-        if (!groups.has(key)) {
-          groups.set(key, {
-            key,
-            stage: course.stage || "",
-            subject: course.subject || "",
-            courseIds: [],
-          });
-        }
-        groups.get(key).courseIds.push(course.id);
-        return groups;
-      }, new Map())
-      .values(),
-  ];
-  const selectedSubjectCount = (courseIds) => {
-    const selected = new Set(courseIds || []);
-    return subjectGroups.filter((group) => group.courseIds.every((courseId) => selected.has(courseId))).length;
+  renderAdminDataViews(students, teachers, courses);
+
+  if (!students.length) {
+    root.innerHTML =
+      '<p class="admin-reference-empty">请先创建学生账号，再配置课程。</p>';
+    return;
+  }
+
+  root.innerHTML = `
+    <h2 class="admin-reference-assignment-title">配置学生课程</h2>
+    <div class="admin-reference-assignment-grid">
+      <section class="admin-reference-picker admin-reference-student-picker">
+        <h3>选择学生</h3>
+        <div class="admin-reference-picker-toolbar">
+          <label class="admin-reference-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <input class="admin-reference-field" type="search" placeholder="搜索学生姓名 / 学号" data-assignment-student-search>
+          </label>
+        </div>
+        <div class="admin-reference-picker-list" data-assignment-student-list></div>
+      </section>
+      <div class="admin-reference-assignment-actions">
+        <button class="admin-reference-primary" type="button" data-add-selected-courses>→ 添加</button>
+        <button class="admin-reference-secondary" type="button" data-remove-selected-courses>← 移除</button>
+      </div>
+      <section class="admin-reference-picker admin-reference-course-picker">
+        <h3>选择课程</h3>
+        <div class="admin-reference-picker-toolbar">
+          <label class="admin-reference-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <input class="admin-reference-field" type="search" placeholder="搜索课程名称 / 科目" data-assignment-course-search>
+          </label>
+        </div>
+        <div class="admin-reference-picker-list" data-assignment-course-list></div>
+      </section>
+      <section class="admin-reference-picker">
+        <h3>已分配课程</h3>
+        <div class="admin-reference-selected-list" data-assignment-selected-list></div>
+      </section>
+    </div>
+    <footer class="admin-reference-assignment-footer">
+      <button class="admin-reference-secondary" type="button" data-reset-assignment>取消</button>
+      <button class="admin-reference-primary" type="button" data-save-enrollment>保存配置</button>
+      <span class="admin-reference-form-status" data-save-status aria-live="polite"></span>
+    </footer>`;
+
+  root.assignmentController?.abort();
+  const controller = new AbortController();
+  root.assignmentController = controller;
+  const eventOptions = { signal: controller.signal };
+  const studentList = root.querySelector("[data-assignment-student-list]");
+  const courseList = root.querySelector("[data-assignment-course-list]");
+  const selectedList = root.querySelector("[data-assignment-selected-list]");
+  const studentSearch = root.querySelector("[data-assignment-student-search]");
+  const courseSearch = root.querySelector("[data-assignment-course-search]");
+  const saveStatus = root.querySelector("[data-save-status]");
+  const sortedStudents = [...students].sort((a, b) =>
+    (Number(b.id) || 0) - (Number(a.id) || 0)
+  );
+  const courseById = new Map(
+    courses.map((course) => [Number(course.id), course]),
+  );
+  const requestedStudentId = Number(
+    new URL(window.location.href).searchParams.get("student"),
+  );
+  let currentStudent = sortedStudents.find((student) =>
+    Number(student.id) === requestedStudentId
+  ) || sortedStudents[0];
+  let draftCourseIds = new Set(
+    (currentStudent.course_ids || []).map(Number),
+  );
+  let pendingCourseIds = new Set();
+
+  const setStatus = (message = "", state = "") => {
+    if (!saveStatus) return;
+    saveStatus.textContent = message;
+    saveStatus.className =
+      `admin-reference-form-status${
+        state ? ` is-${state}` : ""
+      }`;
   };
-  const sortedStudents = [...students].sort((a, b) => {
-    const aId = Number(a.id) || 0;
-    const bId = Number(b.id) || 0;
-    if (aId !== bId) {
-      return bId - aId;
-    }
-    const aName = a.full_name || a.username || "";
-    const bName = b.full_name || b.username || "";
-    return String(aName).localeCompare(String(bName), "zh-CN", {
-      numeric: true,
-      sensitivity: "base",
+  const studentSearchValue = () =>
+    String(studentSearch?.value || "").trim().toLowerCase();
+  const courseSearchValue = () =>
+    String(courseSearch?.value || "").trim().toLowerCase();
+
+  const renderStudentPicker = () => {
+    const query = studentSearchValue();
+    const visible = sortedStudents.filter((student) => {
+      const text = `${student.full_name || ""} ${
+        student.username || ""
+      } ${student.stage || ""} ${student.grade || ""}`
+        .toLowerCase();
+      return !query || text.includes(query);
     });
-  });
+    studentList.innerHTML = `
+      <div class="admin-reference-picker-head"><span></span><span>学生信息</span><span>年级</span></div>
+      ${
+        visible.length
+          ? visible.map((student) => {
+            const name = student.full_name || student.username || "学生";
+            const isSelected = Number(student.id) === Number(currentStudent.id);
+            return `
+              <label class="admin-reference-picker-row ${
+                isSelected ? "is-selected" : ""
+              }" data-assignment-student-row>
+                <input type="radio" name="assignment-student" value="${
+                  student.id
+                }" ${isSelected ? "checked" : ""}>
+                <span class="admin-reference-picker-copy"><strong>${
+                  escapeHtml(name)
+                }</strong><small>${
+                  escapeHtml(student.username || "")
+                }</small></span>
+                <span>${
+                  escapeHtml(
+                    [student.stage, student.grade].filter(Boolean).join(" · ") ||
+                      "未填写",
+                  )
+                }</span>
+              </label>`;
+          }).join("")
+          : '<p class="admin-reference-empty">没有匹配的学生</p>'
+      }`;
+  };
 
-  root.innerHTML = students.length === 0 ? "" : sortedStudents.map((student) => {
-    const selected = new Set(student.course_ids || []);
-    const subjectOptions = subjectGroups.map((group) => {
-      const selectedCount = group.courseIds.filter((courseId) => selected.has(courseId)).length;
-      const checked = group.courseIds.length > 0 &&
-        selectedCount === group.courseIds.length;
-      const partial = selectedCount > 0 &&
-        selectedCount < group.courseIds.length;
-      return `
-            <label class="subject-course-item admin-subject-option">
-              <input
-                type="checkbox"
-                data-subject-course-ids="${escapeHtml(group.courseIds.join(","))}"
-                data-subject-partial="${partial ? "true" : "false"}"
-                ${checked ? "checked" : ""}
-                class="admin-subject-checkbox"
-              >
-              <span class="subject-course-copy">
-                <span class="subject-course-name">${escapeHtml(group.stage)} / ${escapeHtml(group.subject)}</span>
-                <span class="subject-course-meta">${group.courseIds.length} 门课程</span>
-              </span>
-            </label>
-          `;
-    }).join("");
-    const studentName = student.full_name || student.username || "";
-    const assignedTeacher = teachers.find((teacher) => Number(student.teacher_id) === Number(teacher.id));
-    const assignedTeacherName = assignedTeacher?.full_name ||
-      assignedTeacher?.username || "未分配";
-    const teacherOptions = `
-      <section class="admin-student-section admin-assignment-section">
-        <div class="admin-section-heading">
-          <span class="admin-section-index">01</span>
-          <div>
-            <h3>所属教师</h3>
-            <p>选择负责这名学生的教师，保存后立即生效。</p>
-          </div>
-        </div>
-        <label class="form-group form-group-compact admin-assignment-field">
-          <span class="form-label">负责教师</span>
-          <select class="form-input" name="teacher_id" data-teacher-select>
-            <option value="">未分配</option>
-            ${
-      teachers.map((teacher) => `<option value="${teacher.id}" ${Number(student.teacher_id) === Number(teacher.id) ? "selected" : ""}>${escapeHtml(teacher.full_name || teacher.username)}</option>`)
-        .join("")
-    }
-          </select>
-        </label>
-        <div class="admin-actions assignment-save-actions">
-          <button class="primary-btn" type="button" data-save-assignment>保存教师分配</button>
-          <span class="save-feedback" data-assignment-status aria-live="polite"></span>
-        </div>
-      </section>`;
-    return `
-          <article class="subject-column subject-directory-card admin-student-card" data-admin-student-id="${student.id}">
-            <button class="subject-directory-head admin-student-toggle" type="button" data-toggle-student aria-expanded="false">
-              <span class="subject-mark">${escapeHtml(studentName.slice(0, 1))}</span>
-              <span class="subject-directory-copy">
-                <span class="subject-title admin-student-title">${escapeHtml(studentName)}（${escapeHtml(student.username || "")}）</span>
-                <span class="subject-course-meta admin-student-summary" data-student-enrollment-summary>${escapeHtml(student.stage || "")} · ${escapeHtml(student.grade || "")} · 已开通 ${selectedSubjectCount(student.course_ids)} 个科目</span>
-                <span class="subject-course-meta admin-student-summary" data-student-teacher-summary>负责教师：${escapeHtml(assignedTeacherName)}</span>
-              </span>
-              <span class="subject-enter-chip admin-student-toggle-chip" data-student-toggle-chip>
-                <span class="admin-toggle-icon" aria-hidden="true">⌄</span>
-                <span data-student-toggle-text>展开管理</span>
-              </span>
-            </button>
-            <div class="admin-student-body is-hidden" data-admin-student-body>
-              ${teacherOptions}
-              <section class="admin-student-section admin-profile-section">
-                <div class="admin-section-heading">
-                  <span class="admin-section-index">02</span>
-                  <div>
-                    <h3>学生资料</h3>
-                    <p>修改这个学生的账号、年级和可使用天数。</p>
-                  </div>
-                </div>
-                <form class="student-edit-form" data-student-edit-form>
-                <label class="form-group form-group-compact">
-                  <span class="form-label">账号</span>
-                  <input class="form-input" name="username" value="${escapeHtml(student.username || "")}" required>
-                </label>
-                <div class="form-group form-group-compact">
-                  <span class="form-label-row">
-                    <span class="form-label">重置密码</span>
-                    <span class="form-inline-help">旧密码不可反查，新密码可点眼睛查看</span>
-                  </span>
-                  <div class="password-field">
-                    <input class="form-input" name="password" type="password" autocomplete="new-password" placeholder="留空不修改，输入后可查看">
-                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
-                      <span aria-hidden="true">👁</span>
-                    </button>
-                  </div>
-                </div>
-                <label class="form-group form-group-compact">
-                  <span class="form-label">姓名</span>
-                  <input class="form-input" name="full_name" value="${escapeHtml(student.full_name || "")}" required>
-                </label>
-                <label class="form-group form-group-compact">
-                  <span class="form-label">阶段</span>
-                  <select class="form-input" name="stage">
-                    ${renderStudentStageOptions(student.stage)}
-                  </select>
-                </label>
-                <label class="form-group form-group-compact">
-                  <span class="form-label">年级</span>
-                  <input class="form-input" name="grade" value="${escapeHtml(student.grade || "")}">
-                </label>
-                <label class="form-group form-group-compact">
-                  <span class="form-label">邮箱</span>
-                  <input class="form-input" name="email" type="email" value="${escapeHtml(student.email || "")}">
-                </label>
-                <label class="form-group form-group-compact">
-                  <span class="form-label-row">
-                    <span class="form-label">可使用天数</span>
-                    <span class="form-inline-help">今天算第 1 天，留空=长期</span>
-                  </span>
-                  <input class="form-input" name="access_duration_days" type="number" min="1" max="36500" step="1" value="${student.access_expires_on ? Number(student.access_remaining_days || 0) : ""}" placeholder="留空表示长期有效">
-                </label>
-                <div class="student-edit-actions">
-                  <button class="secondary-btn" type="submit" data-save-student-info>保存资料</button>
-                  <button class="secondary-btn danger-soft-btn" type="button" data-delete-student>删除学生</button>
-                  <span class="save-feedback" data-profile-save-status aria-live="polite"></span>
-                </div>
-                </form>
-              </section>
-              <section class="admin-student-section admin-enrollment-section">
-                <div class="admin-section-heading">
-                  <span class="admin-section-index">03</span>
-                  <div>
-                    <h3>购课选择</h3>
-                    <p>下面所有课程都属于当前学生：${escapeHtml(studentName)}。</p>
-                  </div>
-                </div>
-                <div class="admin-enrollment-toolbar">
-                  <button class="ghost-btn" type="button" data-select-all-enrollments>全选课程</button>
-                  <button class="ghost-btn" type="button" data-clear-enrollments>清空选择</button>
-                </div>
-                <div class="admin-subject-grid">
-                  ${subjectOptions}
-                </div>
-                <div class="admin-actions">
-                  <button class="primary-btn" type="button" data-save-enrollment>保存购课</button>
-                  <span class="save-feedback" data-save-status aria-live="polite"></span>
-                </div>
-              </section>
-            </div>
-          </article>
-        `;
-  }).join("");
+  const renderCoursePicker = () => {
+    const query = courseSearchValue();
+    const visible = courses.filter((course) => {
+      const text = `${course.title || ""} ${
+        course.subject || ""
+      } ${course.stage || ""} ${course.grade || ""}`
+        .toLowerCase();
+      return !query || text.includes(query);
+    });
+    courseList.innerHTML = `
+      <div class="admin-reference-picker-head"><span></span><span>课程信息</span><span>课程类型</span></div>
+      ${
+        visible.length
+          ? visible.map((course) => `
+            <label class="admin-reference-picker-row">
+              <input type="checkbox" data-assignment-course-id="${
+                course.id
+              }" ${
+                pendingCourseIds.has(Number(course.id)) ? "checked" : ""
+              }>
+              <span class="admin-reference-picker-copy"><strong>${
+                escapeHtml(cleanCourseDisplayTitle(course.title) || course.title)
+              }</strong><small>${
+                escapeHtml(
+                  [course.stage, course.grade].filter(Boolean).join(" · "),
+                )
+              }</small></span>
+              <span>${escapeHtml(course.subject || "课程")}</span>
+            </label>`).join("")
+          : '<p class="admin-reference-empty">没有匹配的课程</p>'
+      }`;
+  };
 
-  root.querySelectorAll("[data-subject-partial='true']").forEach((input) => {
-    input.indeterminate = true;
-  });
-  wirePasswordToggles(root);
+  const renderSelectedCourses = () => {
+    const selectedCourses = [...draftCourseIds]
+      .map((courseId) => courseById.get(Number(courseId)))
+      .filter(Boolean);
+    selectedList.innerHTML = `
+      <div class="admin-reference-selected-head"><span>已分配课程（${
+        selectedCourses.length
+      } 门）</span><button class="admin-table-action" type="button" data-clear-draft>清空</button></div>
+      ${
+        selectedCourses.length
+          ? selectedCourses.map((course, index) => `
+            <div class="admin-reference-selected-row">
+              <span class="admin-reference-course-mark ${
+                index % 3 === 1 ? "is-green" : index % 3 === 2 ? "is-orange" : ""
+              }" aria-hidden="true">课</span>
+              <span class="admin-reference-picker-copy"><strong>${
+                escapeHtml(cleanCourseDisplayTitle(course.title) || course.title)
+              }</strong><small>${
+                escapeHtml(
+                  [course.stage, course.grade, course.subject].filter(Boolean)
+                    .join(" · "),
+                )
+              }</small></span>
+              <button class="admin-reference-icon-button" type="button" data-remove-draft-course="${
+                course.id
+              }" aria-label="移除 ${
+                escapeHtml(course.title || "课程")
+              }">×</button>
+            </div>`).join("")
+          : '<p class="admin-reference-empty">当前学生尚未分配课程</p>'
+      }`;
+  };
 
-  root.querySelectorAll("[data-select-all-enrollments]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest("[data-admin-student-id]");
-      card?.querySelectorAll("input[data-subject-course-ids]").forEach(
-        (input) => {
-          input.checked = true;
-          input.indeterminate = false;
-        },
+  const selectStudent = (studentId, updateUrl = true) => {
+    const nextStudent = sortedStudents.find((student) =>
+      Number(student.id) === Number(studentId)
+    );
+    if (!nextStudent) return;
+    currentStudent = nextStudent;
+    draftCourseIds = new Set((nextStudent.course_ids || []).map(Number));
+    pendingCourseIds = new Set();
+    setStatus();
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("student", String(nextStudent.id));
+      history.replaceState(
+        history.state,
+        "",
+        `${url.pathname}${url.search}${url.hash}`,
       );
-      const status = card?.querySelector("[data-save-status]");
-      if (status) {
-        status.textContent = "已全选，点击“保存购课”后生效";
-      }
-    });
-  });
+    }
+    renderStudentPicker();
+    renderCoursePicker();
+    renderSelectedCourses();
+  };
 
-  root.querySelectorAll("[data-clear-enrollments]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest("[data-admin-student-id]");
-      card?.querySelectorAll("input[data-subject-course-ids]").forEach(
-        (input) => {
-          input.checked = false;
-          input.indeterminate = false;
-        },
+  studentSearch?.addEventListener("input", renderStudentPicker, eventOptions);
+  courseSearch?.addEventListener("input", renderCoursePicker, eventOptions);
+  root.addEventListener("change", (event) => {
+    const studentInput = event.target.closest(
+      'input[name="assignment-student"]',
+    );
+    if (studentInput) {
+      selectStudent(studentInput.value);
+      return;
+    }
+    const courseInput = event.target.closest("[data-assignment-course-id]");
+    if (!courseInput) return;
+    const courseId = Number(courseInput.dataset.assignmentCourseId);
+    if (courseInput.checked) pendingCourseIds.add(courseId);
+    else pendingCourseIds.delete(courseId);
+  }, eventOptions);
+  root.addEventListener("click", async (event) => {
+    const addButton = event.target.closest("[data-add-selected-courses]");
+    if (addButton) {
+      pendingCourseIds.forEach((courseId) => draftCourseIds.add(courseId));
+      renderSelectedCourses();
+      setStatus("课程选择已更新，点击“保存配置”后生效");
+      return;
+    }
+    const removeButton = event.target.closest("[data-remove-selected-courses]");
+    if (removeButton) {
+      pendingCourseIds.forEach((courseId) => draftCourseIds.delete(courseId));
+      renderSelectedCourses();
+      setStatus("课程选择已更新，点击“保存配置”后生效");
+      return;
+    }
+    const removeCourseButton = event.target.closest(
+      "[data-remove-draft-course]",
+    );
+    if (removeCourseButton) {
+      draftCourseIds.delete(
+        Number(removeCourseButton.dataset.removeDraftCourse),
       );
-      const status = card?.querySelector("[data-save-status]");
-      if (status) {
-        status.textContent = "已清空，点击“保存购课”后生效";
-      }
-    });
-  });
+      renderSelectedCourses();
+      setStatus("课程选择已更新，点击“保存配置”后生效");
+      return;
+    }
+    if (event.target.closest("[data-clear-draft]")) {
+      draftCourseIds.clear();
+      renderSelectedCourses();
+      setStatus("已清空草稿，点击“保存配置”后生效");
+      return;
+    }
+    if (event.target.closest("[data-reset-assignment]")) {
+      draftCourseIds = new Set((currentStudent.course_ids || []).map(Number));
+      pendingCourseIds = new Set();
+      renderCoursePicker();
+      renderSelectedCourses();
+      setStatus("已恢复上次保存的配置");
+      return;
+    }
+    const saveButton = event.target.closest("[data-save-enrollment]");
+    if (!saveButton) return;
+    const courseIds = [...draftCourseIds].sort((a, b) => a - b);
+    const buttonLabel = saveButton.textContent || "保存配置";
+    saveButton.disabled = true;
+    saveButton.textContent = "正在保存...";
+    setStatus("正在保存当前学生的课程配置...", "saving-text");
+    try {
+      await apiFetch("/api/admin/enrollments", {
+        method: "POST",
+        body: JSON.stringify({
+          student_id: Number(currentStudent.id),
+          course_ids: courseIds,
+        }),
+      });
+      currentStudent.course_ids = courseIds;
+      window.dispatchEvent(new CustomEvent("admin-data-updated"));
+      setStatus(
+        `配置已保存，共 ${courseIds.length} 门课程`,
+        "success",
+      );
+      showAdminNotice(
+        `${
+          currentStudent.full_name || currentStudent.username
+        } 的课程配置已保存`,
+      );
+    } catch (error) {
+      setStatus(`保存失败：${error.message}`, "error");
+      showAdminNotice(`课程配置保存失败：${error.message}`, "error");
+    } finally {
+      saveButton.disabled = false;
+      saveButton.textContent = buttonLabel;
+    }
+  }, eventOptions);
+  window.addEventListener("teacher-management-view-changed", (event) => {
+    if (event.detail?.view !== "enrollments") return;
+    const studentId = Number(
+      new URL(window.location.href).searchParams.get("student"),
+    );
+    if (studentId && Number(currentStudent.id) !== studentId) {
+      selectStudent(studentId, false);
+    }
+  }, eventOptions);
+  window.addEventListener("admin-data-updated", () => {
+    renderAdminDataViews(students, teachers, courses);
+  }, eventOptions);
 
-  root.querySelectorAll("input[data-subject-course-ids]").forEach((input) => {
-    input.addEventListener("change", () => {
-      input.indeterminate = false;
-      const card = input.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-save-status]");
-      if (status) {
-        status.textContent = "购课选择已变更，记得保存";
-      }
-    });
-  });
-
-  root.querySelectorAll("[data-student-edit-form]").forEach((form) => {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const card = form.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-profile-save-status]");
-      const button = form.querySelector("[data-save-student-info]");
-      const buttonLabel = button?.textContent || "保存资料";
-      const title = card?.querySelector(".subject-title");
-      const summary = card?.querySelector("[data-student-enrollment-summary]");
-      const studentId = Number(card?.dataset.adminStudentId);
-      if (!card || !studentId) {
-        return;
-      }
-      const formData = new FormData(form);
-      const payload = {
-        username: String(formData.get("username") || "").trim(),
-        password: String(formData.get("password") || "").trim(),
-        full_name: String(formData.get("full_name") || "").trim(),
-        stage: String(formData.get("stage") || "").trim(),
-        grade: String(formData.get("grade") || "").trim(),
-        email: String(formData.get("email") || "").trim(),
-        access_duration_days: String(formData.get("access_duration_days") || "")
-          .trim(),
-      };
-      if (!payload.username || !payload.full_name) {
-        if (status) {
-          status.textContent = "账号、姓名必须填写";
-        }
-        return;
-      }
-      if (button) {
-        button.disabled = true;
-        button.classList.add("is-saving");
-        button.textContent = "正在保存资料...";
-      }
-      if (status) {
-        status.className = "save-feedback is-saving-text";
-        status.textContent = "正在保存学生资料，请稍候…";
-      }
-      try {
-        const result = await apiFetch(`/api/admin/students/${studentId}`, {
-          method: "PUT",
-          body: JSON.stringify(payload),
-        });
-        const saved = result.data || payload;
-        if (title) {
-          title.textContent = `${saved.full_name || payload.full_name}（${saved.username || payload.username}）`;
-        }
-        if (summary) {
-          const openText = summary.textContent.match(/已开通 \d+ 个科目$/)?.[0] ||
-            `已开通 ${selectedSubjectCount(student.course_ids)} 个科目`;
-          summary.textContent = `${saved.stage || payload.stage} · ${saved.grade || payload.grade} · ${openText}`;
-        }
-        const mark = card.querySelector(".subject-mark");
-        if (mark) {
-          mark.textContent = String(saved.full_name || payload.full_name).slice(
-            0,
-            1,
-          );
-        }
-        form.querySelector('input[name="password"]').value = "";
-        if (status) {
-          status.className = "save-feedback is-success";
-          status.textContent = "✓ 学生资料已保存";
-        }
-      } catch (error) {
-        if (status) {
-          status.className = "save-feedback is-error";
-          status.textContent = `保存失败：${error.message}`;
-        }
-      } finally {
-        if (button) {
-          button.disabled = false;
-          button.classList.remove("is-saving");
-          button.textContent = buttonLabel;
-        }
-      }
-    });
-  });
-
-  root.querySelectorAll("[data-toggle-student]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest("[data-admin-student-id]");
-      const body = card?.querySelector("[data-admin-student-body]");
-      const chip = card?.querySelector("[data-student-toggle-chip]");
-      const text = chip?.querySelector("[data-student-toggle-text]");
-      if (!body) {
-        return;
-      }
-      const shouldOpen = body.classList.contains("is-hidden");
-      body.classList.toggle("is-hidden", !shouldOpen);
-      card?.classList.toggle("is-open", shouldOpen);
-      button.setAttribute("aria-expanded", String(shouldOpen));
-      if (text) {
-        text.textContent = shouldOpen ? "收起管理" : "展开管理";
-      }
-    });
-  });
-
-  root.querySelectorAll("[data-save-enrollment]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const card = button.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-save-status]");
-      const buttonLabel = button.textContent || "保存购课";
-      const studentId = Number(card?.dataset.adminStudentId);
-      if (!card || !studentId) {
-        return;
-      }
-      const checkedSubjects = [
-        ...card.querySelectorAll("input[data-subject-course-ids]:checked"),
-      ];
-      const courseIds = [
-        ...new Set(
-          checkedSubjects.flatMap((input) =>
-            (input.dataset.subjectCourseIds || "")
-              .split(",")
-              .filter(Boolean)
-              .map((courseId) => Number(courseId))
-          ),
-        ),
-      ].sort((a, b) => a - b);
-      button.disabled = true;
-      button.classList.add("is-saving");
-      button.textContent = "正在保存购课...";
-      if (status) {
-        status.className = "save-feedback is-saving-text";
-        status.textContent = "正在保存当前学生的购课选择，请稍候…";
-      }
-      try {
-        await apiFetch("/api/admin/enrollments", {
-          method: "POST",
-          body: JSON.stringify({
-            student_id: studentId,
-            course_ids: courseIds,
-          }),
-        });
-        if (status) {
-          status.className = "save-feedback is-success";
-          status.textContent = `✓ 已保存 ${checkedSubjects.length} 个科目`;
-        }
-        const summary = card.querySelector("[data-student-enrollment-summary]");
-        if (summary) {
-          summary.textContent = summary.textContent.replace(
-            /已开通 \d+ 个科目$/,
-            `已开通 ${checkedSubjects.length} 个科目`,
-          );
-        }
-      } catch (error) {
-        if (status) {
-          status.className = "save-feedback is-error";
-          status.textContent = `保存失败：${error.message}`;
-        }
-      } finally {
-        button.disabled = false;
-        button.classList.remove("is-saving");
-        button.textContent = buttonLabel;
-      }
-    });
-  });
-
-  root.querySelectorAll("[data-delete-student]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const card = button.closest("[data-admin-student-id]");
-      const status = card?.querySelector("[data-profile-save-status]");
-      const studentId = Number(card?.dataset.adminStudentId);
-      const studentName = card?.querySelector(".subject-title")?.textContent?.trim() || "该学生";
-      if (!card || !studentId) {
-        return;
-      }
-      if (
-        !window.confirm(
-          `确定删除 ${studentName} 吗？删除后该学生账号、购课记录和学习记录都会被移除。`,
-        )
-      ) {
-        return;
-      }
-      button.disabled = true;
-      if (status) {
-        status.textContent = "删除中...";
-      }
-      try {
-        await apiFetch(`/api/admin/students/${studentId}`, {
-          method: "DELETE",
-        });
-        card.remove();
-      } catch (error) {
-        if (status) {
-          status.textContent = error.message;
-        }
-        button.disabled = false;
-      }
-    });
-  });
-
-  root.querySelectorAll("[data-save-assignment]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const card = button.closest("[data-admin-student-id]");
-      const studentId = Number(card?.dataset.adminStudentId);
-      const teacherSelect = card?.querySelector("[data-teacher-select]");
-      const teacherId = teacherSelect?.value || "";
-      const status = card?.querySelector("[data-assignment-status]");
-      const summary = card?.querySelector("[data-student-teacher-summary]");
-      const buttonLabel = button.textContent || "保存教师分配";
-      if (!studentId) return;
-      button.disabled = true;
-      button.classList.add("is-saving");
-      button.textContent = "正在保存教师分配...";
-      if (status) {
-        status.className = "save-feedback is-saving-text";
-        status.textContent = "正在保存，请稍候...";
-      }
-      try {
-        await apiFetch("/api/admin/assignments", {
-          method: "POST",
-          body: JSON.stringify({
-            student_id: studentId,
-            teacher_id: teacherId || null,
-          }),
-        });
-        const teacherName = teacherSelect?.selectedOptions?.[0]?.textContent
-          ?.trim() || "未分配";
-        if (summary) summary.textContent = `负责教师：${teacherName}`;
-        if (status) {
-          status.className = "save-feedback is-success";
-          status.textContent = `✓ 教师分配已保存：${teacherName}`;
-        }
-      } catch (error) {
-        if (status) {
-          status.className = "save-feedback is-error";
-          status.textContent = `保存失败：${error.message}`;
-        }
-      } finally {
-        button.disabled = false;
-        button.classList.remove("is-saving");
-        button.textContent = buttonLabel;
-      }
-    });
-  });
+  selectStudent(currentStudent.id, false);
 }
 
 function renderFocusedGrowth(data, recordsUrl = "/api/growth/records") {
@@ -5063,6 +5570,14 @@ function renderFocusedGrowth(data, recordsUrl = "/api/growth/records") {
         <p class="growth-report-kicker">成长规划</p>
         <h2>等待教师课后记录</h2>
         <p>教师完成辅导记录后，系统会自动生成一份简洁、固定的 AI 成长规划。</p>
+      </section>`;
+  }
+  if (data.ai_pending || data.analysis_status === "pending") {
+    return `
+      <section class="growth-empty-report growth-analysis-buffer" data-growth-record-count="${recordCount}" aria-live="polite">
+        <div class="page-transition-mark"></div>
+        <strong>AI 分析中...</strong>
+        <span>教师已保存 ${recordCount} 次课后记录，分析完成后会自动固化到成长轨迹。</span>
       </section>`;
   }
   return `
@@ -5100,7 +5615,7 @@ function renderFocusedGrowth(data, recordsUrl = "/api/growth/records") {
     )
   }</ol>
       </section>
-      <details class="growth-record-disclosure" data-growth-records data-records-url="${escapeHtml(recordsUrl)}">
+      <details class="growth-record-disclosure" data-growth-records data-growth-record-count="${recordCount}" data-records-url="${escapeHtml(recordsUrl)}">
         <summary><span>查看课后记录</span><small>${recordCount} 次</small></summary>
         <div class="growth-record-timeline" data-growth-record-list></div>
       </details>
@@ -5149,6 +5664,7 @@ async function initGrowthPage() {
     setPageLoading(false);
     return;
   }
+  if (redirectTeacherToPortal(user)) return;
   setUserProfile(user);
   wireLogoutButton();
 
@@ -5172,4 +5688,36 @@ async function initGrowthPage() {
   root.innerHTML = renderFocusedGrowth(data);
   wireGrowthRecordDisclosure(root);
   setPageLoading(false);
+  if (data.ai_pending || data.analysis_status === "pending") {
+    let attempts = 0;
+    const intervalId = window.setInterval(async () => {
+      attempts += 1;
+      try {
+        const refreshed = await apiFetch("/api/growth", { cacheTtlMs: 0 });
+        const nextData = refreshed.data || {};
+        if (!nextData.ai_pending && nextData.analysis_status !== "pending") {
+          window.clearInterval(intervalId);
+          writeApiCache(
+            `${API_PREFETCH_CACHE_PREFIX}/api/growth`,
+            refreshed,
+          );
+          root.innerHTML = renderFocusedGrowth(nextData);
+          wireGrowthRecordDisclosure(root);
+          return;
+        }
+      } catch (error) {
+        console.warn(error);
+      }
+      if (attempts >= 20) {
+        window.clearInterval(intervalId);
+        const status = root.querySelector(".growth-analysis-buffer span");
+        if (status) status.textContent = "分析仍在后台进行，可稍后回来查看。";
+      }
+    }, 3000);
+    window.addEventListener(
+      "pagehide",
+      () => window.clearInterval(intervalId),
+      { once: true },
+    );
+  }
 }

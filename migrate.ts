@@ -47,7 +47,104 @@ async function insertBatch(
   );
 }
 
+const USERNAME_MAX_LENGTH = 191;
+
+function normalizedUsername(value: unknown, userId: string) {
+  return String(value || "").trim().toLowerCase() || `user-${userId}`;
+}
+
+function usernameWithSuffix(base: string, suffix: string) {
+  const prefixLength = Math.max(1, USERNAME_MAX_LENGTH - suffix.length);
+  return `${base.slice(0, prefixLength)}${suffix}`;
+}
+
+async function aiUsersTableExists() {
+  const result = await pool.query<{ table_name: string | null }>(
+    "SELECT TO_REGCLASS('public.ai_users')::text AS table_name",
+  );
+  return Boolean(result.rows[0]?.table_name);
+}
+
+async function normalizeExistingUsernames() {
+  await pool.query("BEGIN");
+  try {
+    const result = await pool.query<{
+      id: string;
+      username: string;
+      deleted_at: string | Date | null;
+    }>(
+      `SELECT id::text AS id, username, deleted_at
+       FROM ai_users
+       ORDER BY (deleted_at IS NOT NULL), id
+       FOR UPDATE`,
+    );
+    const rows: Array<{
+      id: string;
+      username: string;
+      deleted_at: string | Date | null;
+    }> = result.rows;
+    const used = new Set<string>();
+    const finalNames = new Map<string, string>();
+
+    for (const row of rows) {
+      const base = normalizedUsername(row.username, row.id);
+      let candidate = base.slice(0, USERNAME_MAX_LENGTH);
+      let attempt = 0;
+      while (used.has(candidate)) {
+        attempt += 1;
+        const suffix = attempt === 1 ? `-${row.id}` : `-${row.id}-${attempt}`;
+        candidate = usernameWithSuffix(base, suffix);
+      }
+      used.add(candidate);
+      finalNames.set(row.id, candidate);
+    }
+
+    const occupiedNames = new Set(rows.map((row) => row.username));
+    const reservedLowerNames = new Set([
+      ...rows.map((row) => row.username.toLowerCase()),
+      ...finalNames.values(),
+    ]);
+    const staged: Array<{ id: string; finalName: string }> = [];
+    for (const row of rows) {
+      const finalName = finalNames.get(row.id) ||
+        normalizedUsername(row.username, row.id);
+      if (row.username === finalName) continue;
+      let temporaryName = `__username_migration_${row.id}__`;
+      while (
+        occupiedNames.has(temporaryName) ||
+        reservedLowerNames.has(temporaryName.toLowerCase())
+      ) temporaryName += "_";
+      await pool.query("UPDATE ai_users SET username = $1 WHERE id = $2", [
+        temporaryName,
+        row.id,
+      ]);
+      occupiedNames.delete(row.username);
+      occupiedNames.add(temporaryName);
+      reservedLowerNames.add(temporaryName.toLowerCase());
+      staged.push({ id: row.id, finalName });
+    }
+
+    for (const item of staged) {
+      await pool.query(
+        "UPDATE ai_users SET username = $1, updated_at = NOW() WHERE id = $2",
+        [item.finalName, item.id],
+      );
+    }
+
+    await pool.query(
+      "CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_users_username_lower_unique ON ai_users (LOWER(username))",
+    );
+    await pool.query("COMMIT");
+  } catch (error) {
+    await pool.query("ROLLBACK").catch(() => undefined);
+    throw error;
+  }
+}
+
 try {
+  if (await aiUsersTableExists()) {
+    await normalizeExistingUsernames();
+  }
   await pool.query(schema);
   await pool.query(
     "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
@@ -88,6 +185,40 @@ try {
   await pool.query(
     "CREATE INDEX IF NOT EXISTS idx_ai_growth_analyses_updated ON ai_growth_analyses (updated_at DESC)",
   );
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS ai_growth_jobs (
+      student_id BIGINT PRIMARY KEY REFERENCES ai_users (id) ON DELETE CASCADE,
+      requested_revision BIGINT NOT NULL DEFAULT 1 CHECK (requested_revision > 0),
+      requested_source_hash TEXT NOT NULL DEFAULT '',
+      claim_id UUID,
+      status VARCHAR(20) NOT NULL DEFAULT 'pending'
+        CHECK (status IN ('pending', 'running', 'failed', 'completed')),
+      attempt_count INTEGER NOT NULL DEFAULT 0 CHECK (attempt_count >= 0),
+      last_error TEXT NOT NULL DEFAULT '',
+      next_attempt_at TIMESTAMPTZ,
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+  await pool.query(
+    "ALTER TABLE ai_growth_jobs ADD COLUMN IF NOT EXISTS requested_revision BIGINT NOT NULL DEFAULT 1",
+  );
+  await pool.query(
+    "ALTER TABLE ai_growth_jobs ADD COLUMN IF NOT EXISTS claim_id UUID",
+  );
+  await pool.query(
+    "CREATE INDEX IF NOT EXISTS idx_ai_growth_jobs_ready ON ai_growth_jobs (status, next_attempt_at, updated_at)",
+  );
+  await pool.query(`
+    INSERT INTO ai_growth_jobs (
+      student_id, requested_revision, requested_source_hash, claim_id,
+      status, attempt_count, last_error, next_attempt_at, updated_at
+    )
+    SELECT DISTINCT r.student_id, 1, '', NULL, 'pending', 0, '', NULL, NOW()
+    FROM ai_lesson_records AS r
+    JOIN ai_users AS u ON u.id = r.student_id
+    WHERE u.deleted_at IS NULL AND u.role = 'student'
+    ON CONFLICT (student_id) DO NOTHING
+  `);
 
   const defaultPasswords: Record<string, string> = catalog.default_passwords ||
     {};
@@ -106,7 +237,10 @@ try {
   }
   const users = await Promise.all(
     (catalog.users || []).map(async (user: CatalogRow) => {
-      const username = String(user.username || "");
+      const username = normalizedUsername(
+        user.username,
+        String(user.id || "seed"),
+      );
       const catalogPassword = defaultPasswords[username.toLowerCase()] ||
         (user.role === "teacher" ? "1" : "123456");
       const password = user.role === "teacher" && deploymentTeacherPassword
@@ -144,6 +278,7 @@ try {
     ],
     users,
   );
+  await normalizeExistingUsernames();
   if (deploymentTeacherPassword) {
     const secureTeacherHash = await hashPassword(deploymentTeacherPassword);
     for (
@@ -174,15 +309,15 @@ try {
   }
 
   await pool.query(
-    `WITH reset_admin AS (
+    `WITH promoted_admin AS (
        UPDATE ai_users
-       SET role = 'admin', password_hash = $1, updated_at = NOW()
+       SET role = 'admin', deleted_at = NULL, updated_at = NOW()
        WHERE LOWER(username) = '1'
+         AND (role <> 'admin' OR deleted_at IS NOT NULL)
        RETURNING id
      )
      DELETE FROM ai_sessions
-     WHERE user_id IN (SELECT id FROM reset_admin)`,
-    [await hashPassword("1")],
+     WHERE user_id IN (SELECT id FROM promoted_admin)`,
   );
 
   await insertBatch(

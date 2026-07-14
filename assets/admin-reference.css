@@ -1,0 +1,2057 @@
+/*
+ * Super administrator visual contract.
+ * This file is intentionally scoped to body.is-admin-portal so it cannot
+ * change the teacher or student portals.
+ */
+
+body.is-admin-portal {
+  --admin-bg: #f4f7fc;
+  --admin-panel: #ffffff;
+  --admin-text: #142344;
+  --admin-muted: #76849e;
+  --admin-line: #dfe7f3;
+  --admin-line-soft: #edf1f7;
+  --admin-blue: #1468ee;
+  --admin-blue-strong: #0758dc;
+  --admin-green: #08ad78;
+  --admin-orange: #f59e0b;
+  --admin-purple: #7657f6;
+  --admin-red: #ef4444;
+  --admin-gold: #dca13b;
+  --admin-shadow: 0 8px 24px rgba(45, 78, 132, 0.07);
+  overflow: auto;
+  background:
+    linear-gradient(145deg, rgba(227, 237, 253, 0.84), rgba(244, 247, 252, 0) 36%),
+    var(--admin-bg);
+  color: var(--admin-text);
+  letter-spacing: 0;
+}
+
+body.is-admin-portal .ambient,
+body.is-admin-portal .sidebar,
+body.is-admin-portal #teacher-page > .growth-header,
+body.is-admin-portal #teacher-page > .management-menu {
+  display: none !important;
+}
+
+body.is-admin-portal .app-shell {
+  display: block;
+  min-height: 100vh;
+}
+
+body.is-admin-portal .content {
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 76px);
+  margin: 0;
+  overflow: visible;
+}
+
+body.is-admin-portal .page-scroll {
+  display: block;
+  min-height: calc(100vh - 76px);
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+body.is-admin-portal .page,
+body.is-admin-portal #teacher-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+
+body.is-admin-portal .admin-portal-topbar,
+body.is-admin-portal .admin-reference-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(250px, 1fr);
+  width: 100%;
+  min-height: 76px;
+  align-items: center;
+  padding: 0 34px;
+  border: 0;
+  border-bottom: 1px solid #e3eaf4;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(42, 72, 119, 0.04);
+}
+
+body.is-admin-portal .admin-portal-topbar.is-hidden,
+body.is-admin-portal .admin-reference-topbar.is-hidden {
+  display: none;
+}
+
+body.is-admin-portal .teacher-portal-brand,
+body.is-admin-portal .admin-reference-brand {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 10px;
+  color: #213554;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.is-admin-portal .teacher-brand-mark,
+body.is-admin-portal .admin-reference-brand-mark {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  color: var(--admin-gold);
+  font-size: 30px;
+  line-height: 1;
+}
+
+body.is-admin-portal .teacher-brand-mark svg,
+body.is-admin-portal .admin-reference-brand-mark svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+body.is-admin-portal .teacher-portal-tabs,
+body.is-admin-portal .admin-reference-nav {
+  display: flex;
+  height: 76px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+}
+
+body.is-admin-portal .teacher-portal-tabs button,
+body.is-admin-portal .teacher-portal-tabs a,
+body.is-admin-portal .admin-reference-nav-item {
+  position: relative;
+  display: inline-flex;
+  min-width: 92px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border: 0;
+  background: transparent;
+  color: #435271;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .teacher-portal-tabs button::after,
+body.is-admin-portal .teacher-portal-tabs a::after,
+body.is-admin-portal .admin-reference-nav-item::after {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  left: 8px;
+  height: 3px;
+  background: var(--admin-blue);
+  content: "";
+  opacity: 0;
+}
+
+body.is-admin-portal .teacher-portal-tabs button:hover,
+body.is-admin-portal .teacher-portal-tabs a:hover,
+body.is-admin-portal .teacher-portal-tabs .is-active,
+body.is-admin-portal .admin-reference-nav-item:hover,
+body.is-admin-portal .admin-reference-nav-item.is-active {
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .teacher-portal-tabs .is-active::after,
+body.is-admin-portal .admin-reference-nav-item.is-active::after {
+  opacity: 1;
+}
+
+body.is-admin-portal .teacher-portal-account,
+body.is-admin-portal .admin-reference-account {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+body.is-admin-portal .admin-reference-notifications {
+  position: relative;
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  border: 0;
+  background: transparent;
+  color: #3e4e6b;
+}
+
+body.is-admin-portal .admin-reference-notifications svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+body.is-admin-portal .admin-reference-notification-count {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: var(--admin-red);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 13px;
+  text-align: center;
+}
+
+body.is-admin-portal .teacher-topbar-avatar,
+body.is-admin-portal .admin-reference-avatar {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  border: 1px solid #e1e8f2;
+  border-radius: 50%;
+  background: #eef3fa;
+  color: #1c3a65;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+body.is-admin-portal .admin-reference-account-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+body.is-admin-portal .teacher-topbar-name,
+body.is-admin-portal .admin-reference-account-name {
+  overflow: hidden;
+  color: #263953;
+  font-size: 13px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-reference-account-role {
+  color: #93a0b6;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+body.is-admin-portal .teacher-topbar-logout,
+body.is-admin-portal .admin-reference-logout {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 6px;
+  color: #65748e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.is-admin-portal .teacher-topbar-logout:hover,
+body.is-admin-portal .admin-reference-logout:hover {
+  background: #f2f5fa;
+  color: var(--admin-blue);
+}
+
+/* Page scaffold */
+
+body.is-admin-portal [data-management-view-panel] {
+  width: 100%;
+  margin: 0 !important;
+}
+
+body.is-admin-portal .admin-reference-view {
+  min-height: calc(100vh - 76px);
+  padding: 46px 34px 42px;
+}
+
+body.is-admin-portal .admin-reference-container {
+  width: min(100%, 1374px);
+  margin: 0 auto;
+}
+
+body.is-admin-portal .admin-reference-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+body.is-admin-portal .admin-reference-breadcrumb {
+  margin: 0 0 12px;
+  color: #73829b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+body.is-admin-portal .admin-reference-title {
+  margin: 0;
+  color: #101827;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.is-admin-portal .admin-reference-page-head > div > h2 {
+  margin: 12px 0 0;
+  color: #213451;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+body.is-admin-portal .admin-reference-subtitle {
+  margin: 11px 0 0;
+  color: var(--admin-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+body.is-admin-portal .admin-reference-page-actions,
+body.is-admin-portal .admin-reference-toolbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons and fields */
+
+body.is-admin-portal .admin-reference-primary,
+body.is-admin-portal .admin-reference-secondary,
+body.is-admin-portal .admin-reference-ghost,
+body.is-admin-portal .admin-reference-danger {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-reference-primary {
+  border-color: var(--admin-blue);
+  background: var(--admin-blue);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(20, 104, 238, 0.18);
+}
+
+body.is-admin-portal .admin-reference-primary:hover {
+  border-color: var(--admin-blue-strong);
+  background: var(--admin-blue-strong);
+}
+
+body.is-admin-portal .admin-reference-secondary,
+body.is-admin-portal .admin-reference-ghost {
+  border-color: #dbe4f0;
+  background: #fff;
+  color: #3b4d6a;
+}
+
+body.is-admin-portal .admin-reference-secondary:hover,
+body.is-admin-portal .admin-reference-ghost:hover {
+  border-color: #b9cbe5;
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-danger {
+  border-color: #fecaca;
+  background: #fff;
+  color: #dc2626;
+}
+
+body.is-admin-portal .admin-reference-primary svg,
+body.is-admin-portal .admin-reference-secondary svg,
+body.is-admin-portal .admin-reference-ghost svg,
+body.is-admin-portal .admin-reference-danger svg {
+  width: 16px;
+  height: 16px;
+}
+
+body.is-admin-portal .admin-reference-primary:disabled,
+body.is-admin-portal .admin-reference-secondary:disabled,
+body.is-admin-portal .admin-reference-ghost:disabled,
+body.is-admin-portal .admin-reference-danger:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+body.is-admin-portal .admin-reference-field,
+body.is-admin-portal .admin-reference-select,
+body.is-admin-portal .admin-reference-textarea {
+  width: 100%;
+  border: 1px solid #dce5f1;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #213451;
+  font-size: 13px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+body.is-admin-portal .admin-reference-field,
+body.is-admin-portal .admin-reference-select {
+  height: 40px;
+  padding: 0 12px;
+}
+
+body.is-admin-portal .admin-reference-textarea {
+  min-height: 92px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+body.is-admin-portal .admin-reference-field:focus,
+body.is-admin-portal .admin-reference-select:focus,
+body.is-admin-portal .admin-reference-textarea:focus {
+  border-color: #75a7f5;
+  box-shadow: 0 0 0 3px rgba(20, 104, 238, 0.10);
+}
+
+body.is-admin-portal .admin-reference-search {
+  position: relative;
+  display: block;
+  width: min(310px, 100%);
+}
+
+body.is-admin-portal .admin-reference-search svg {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  color: #7b8aa4;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+body.is-admin-portal .admin-reference-search .admin-reference-field {
+  padding-right: 38px;
+}
+
+body.is-admin-portal .admin-reference-form-label {
+  display: grid;
+  gap: 8px;
+  color: #304361;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-form-check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #304361;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-form-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-required {
+  color: var(--admin-red);
+}
+
+body.is-admin-portal .admin-reference-help {
+  color: #8b98ad;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Metric cards */
+
+body.is-admin-portal .admin-reference-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+body.is-admin-portal .admin-reference-stat-grid.is-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.is-admin-portal .admin-reference-stat {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  min-height: 146px;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  border: 1px solid #e3eaf4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--admin-shadow);
+}
+
+body.is-admin-portal .admin-reference-stat-icon {
+  display: inline-flex;
+  width: 58px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf2ff;
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-stat-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+body.is-admin-portal .admin-reference-stat.is-green .admin-reference-stat-icon {
+  background: #e6f8f2;
+  color: var(--admin-green);
+}
+
+body.is-admin-portal .admin-reference-stat.is-orange .admin-reference-stat-icon {
+  background: #fff3df;
+  color: var(--admin-orange);
+}
+
+body.is-admin-portal .admin-reference-stat.is-purple .admin-reference-stat-icon {
+  background: #f0edff;
+  color: var(--admin-purple);
+}
+
+body.is-admin-portal .admin-reference-stat-label {
+  margin: 0;
+  color: #465674;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-stat-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+body.is-admin-portal .admin-reference-stat-value {
+  color: #101827;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.is-admin-portal .admin-reference-stat-unit {
+  color: #60708c;
+  font-size: 12px;
+}
+
+body.is-admin-portal .admin-reference-stat-note {
+  margin: 10px 0 0;
+  color: #77869e;
+  font-size: 11px;
+}
+
+body.is-admin-portal .admin-reference-stat-note strong {
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-stat-note .is-positive {
+  color: var(--admin-green);
+}
+
+body.is-admin-portal .admin-reference-stat-note .is-negative {
+  color: var(--admin-orange);
+}
+
+/* Main panels, toolbars, tabs */
+
+body.is-admin-portal .admin-reference-panel {
+  overflow: hidden;
+  border: 1px solid #e1e8f2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--admin-shadow);
+}
+
+body.is-admin-portal .admin-reference-panel-head {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--admin-line-soft);
+}
+
+body.is-admin-portal .admin-reference-panel-title {
+  margin: 0;
+  color: #172743;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+body.is-admin-portal .admin-reference-tabs {
+  display: flex;
+  min-height: 76px;
+  align-items: stretch;
+  gap: 30px;
+}
+
+body.is-admin-portal .admin-reference-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 3px;
+  border: 0;
+  background: transparent;
+  color: #435271;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-tab::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--admin-blue);
+  content: "";
+  opacity: 0;
+}
+
+body.is-admin-portal .admin-reference-tab:hover,
+body.is-admin-portal .admin-reference-tab.is-active {
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-tab.is-active::after {
+  opacity: 1;
+}
+
+body.is-admin-portal .admin-reference-filter-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr)) auto;
+  gap: 18px;
+  align-items: end;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--admin-line-soft);
+  background: #fff;
+}
+
+body.is-admin-portal .admin-reference-filter-label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  color: #60708a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Tables */
+
+body.is-admin-portal .admin-reference-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body.is-admin-portal .admin-reference-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+body.is-admin-portal .admin-reference-table th,
+body.is-admin-portal .admin-reference-table td {
+  height: 54px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--admin-line-soft);
+  color: #425271;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-reference-table th {
+  height: 46px;
+  background: #f7f9fc;
+  color: #43516a;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-table tbody tr:hover {
+  background: #f9fbfe;
+}
+
+body.is-admin-portal .admin-reference-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+body.is-admin-portal .admin-reference-table-primary {
+  color: #203451;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.is-admin-portal .admin-reference-person-avatar {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  border-radius: 50%;
+  background: #eaf2ff;
+  color: var(--admin-blue);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+body.is-admin-portal .admin-reference-status {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #e8f7f1;
+  color: #079466;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-status.is-warning {
+  background: #fff5df;
+  color: #e79000;
+}
+
+body.is-admin-portal .admin-reference-status.is-muted {
+  background: #eef1f5;
+  color: #6b778d;
+}
+
+body.is-admin-portal .admin-reference-status.is-danger {
+  background: #fff0f0;
+  color: #e34444;
+}
+
+body.is-admin-portal .admin-reference-row-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+body.is-admin-portal .admin-reference-row-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--admin-blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-row-action.is-danger {
+  color: var(--admin-red);
+}
+
+body.is-admin-portal .admin-reference-empty {
+  display: grid;
+  min-height: 240px;
+  place-items: center;
+  padding: 40px;
+  color: var(--admin-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+body.is-admin-portal .admin-reference-pagination {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 28px;
+  border-top: 1px solid var(--admin-line-soft);
+  color: #6f7d94;
+  font-size: 12px;
+}
+
+body.is-admin-portal .admin-reference-page-buttons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+body.is-admin-portal .admin-reference-page-button {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce5f0;
+  border-radius: 6px;
+  background: #fff;
+  color: #4b5b76;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-page-button.is-active {
+  border-color: var(--admin-blue);
+  background: var(--admin-blue);
+  color: #fff;
+}
+
+/* Account create/edit modal */
+
+body.is-admin-portal .admin-reference-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(15, 29, 53, 0.38);
+}
+
+body.is-admin-portal .admin-reference-modal.is-hidden {
+  display: none;
+}
+
+body.is-admin-portal .admin-reference-modal-dialog {
+  width: min(100%, 660px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border: 1px solid #e0e7f2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 26px 70px rgba(20, 40, 73, 0.22);
+}
+
+body.is-admin-portal .admin-reference-modal-head {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--admin-line-soft);
+}
+
+body.is-admin-portal .admin-reference-modal-head h2 {
+  margin: 0;
+  color: #172743;
+  font-size: 18px;
+}
+
+body.is-admin-portal .admin-reference-icon-button {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #64748b;
+}
+
+body.is-admin-portal .admin-reference-icon-button:hover {
+  background: #f1f5f9;
+  color: #1e3a5f;
+}
+
+body.is-admin-portal .admin-reference-icon-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+body.is-admin-portal .admin-reference-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  padding: 24px;
+}
+
+body.is-admin-portal .admin-reference-form-grid .is-full {
+  grid-column: 1 / -1;
+}
+
+body.is-admin-portal .admin-reference-form-actions {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px;
+  border-top: 1px solid var(--admin-line-soft);
+}
+
+body.is-admin-portal .admin-reference-form-status {
+  flex: 1 1 auto;
+  color: #66758e;
+  font-size: 12px;
+}
+
+body.is-admin-portal .admin-reference-form-status.is-success {
+  color: var(--admin-green);
+}
+
+body.is-admin-portal .admin-reference-form-status.is-error {
+  color: var(--admin-red);
+}
+
+body.is-admin-portal .admin-reference-form-status.is-saving-text {
+  color: var(--admin-blue);
+}
+
+/* Course assignment */
+
+body.is-admin-portal .admin-reference-assignment-panel {
+  padding: 22px;
+}
+
+body.is-admin-portal .admin-reference-assignment-title {
+  margin: 0 0 22px;
+  color: #172743;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+body.is-admin-portal .admin-reference-assignment-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) 72px minmax(320px, 1.15fr) minmax(260px, 0.85fr);
+  gap: 18px;
+  min-height: 430px;
+}
+
+body.is-admin-portal .admin-reference-picker {
+  min-width: 0;
+}
+
+body.is-admin-portal .admin-reference-picker h3 {
+  margin: 0 0 14px;
+  color: #273957;
+  font-size: 13px;
+}
+
+body.is-admin-portal .admin-reference-picker-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+body.is-admin-portal .admin-reference-picker-list,
+body.is-admin-portal .admin-reference-selected-list {
+  overflow: hidden;
+  min-height: 350px;
+  border: 1px solid #dfe7f2;
+  border-radius: 6px;
+  background: #fff;
+}
+
+body.is-admin-portal .admin-reference-picker-list {
+  overflow-y: auto;
+  max-height: 430px;
+}
+
+body.is-admin-portal .admin-reference-picker-head,
+body.is-admin-portal .admin-reference-picker-row,
+body.is-admin-portal .admin-reference-selected-head,
+body.is-admin-portal .admin-reference-selected-row {
+  display: grid;
+  min-height: 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border-bottom: 1px solid var(--admin-line-soft);
+  color: #40516f;
+  font-size: 12px;
+}
+
+body.is-admin-portal .admin-reference-picker-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  min-height: 42px;
+  background: #f7f9fc;
+  color: #43516a;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-picker-row {
+  cursor: pointer;
+}
+
+body.is-admin-portal .admin-reference-picker-row:hover,
+body.is-admin-portal .admin-reference-picker-row.is-selected {
+  background: #f2f7ff;
+}
+
+body.is-admin-portal .admin-reference-student-picker .admin-reference-picker-head,
+body.is-admin-portal .admin-reference-student-picker .admin-reference-picker-row {
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+}
+
+body.is-admin-portal .admin-reference-course-picker .admin-reference-picker-head,
+body.is-admin-portal .admin-reference-course-picker .admin-reference-picker-row {
+  grid-template-columns: 20px minmax(0, 1fr) 74px;
+}
+
+body.is-admin-portal .admin-reference-picker-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+body.is-admin-portal .admin-reference-picker-copy strong {
+  overflow: hidden;
+  color: #263a59;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-reference-picker-copy small {
+  color: #8794aa;
+  font-size: 10px;
+}
+
+body.is-admin-portal .admin-reference-assignment-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+}
+
+body.is-admin-portal .admin-reference-assignment-actions button {
+  min-width: 0;
+  padding: 0 10px;
+}
+
+body.is-admin-portal .admin-reference-selected-head {
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 50px;
+  background: #fff;
+  color: #263957;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-selected-row {
+  grid-template-columns: 34px minmax(0, 1fr) 26px;
+  min-height: 54px;
+}
+
+body.is-admin-portal .admin-reference-course-mark {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #eaf2ff;
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-course-mark.is-green {
+  background: #e7f8f2;
+  color: var(--admin-green);
+}
+
+body.is-admin-portal .admin-reference-course-mark.is-orange {
+  background: #fff3df;
+  color: var(--admin-orange);
+}
+
+body.is-admin-portal .admin-reference-course-mark svg {
+  width: 16px;
+  height: 16px;
+}
+
+body.is-admin-portal .admin-reference-assignment-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 24px;
+}
+
+body.is-admin-portal .admin-reference-assignment-footer button {
+  min-width: 164px;
+}
+
+body.is-admin-portal .admin-reference-assignment-footer
+  .admin-reference-form-status {
+  flex: 0 1 300px;
+  min-width: 0;
+}
+
+/* API settings */
+
+body.is-admin-portal .admin-reference-config-summary {
+  margin-bottom: 22px;
+}
+
+body.is-admin-portal .admin-reference-config-summary-head {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 26px;
+  border-bottom: 1px solid var(--admin-line-soft);
+}
+
+body.is-admin-portal .admin-reference-config-summary-head h2 {
+  margin: 0;
+  color: #1b2b48;
+  font-size: 17px;
+}
+
+body.is-admin-portal .admin-reference-config-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.65fr 1.2fr 0.75fr 0.9fr;
+  padding: 24px 26px;
+}
+
+body.is-admin-portal .admin-reference-config-item {
+  min-width: 0;
+  padding: 0 24px;
+  border-right: 1px solid #e6ebf3;
+}
+
+body.is-admin-portal .admin-reference-config-item:first-child {
+  padding-left: 0;
+}
+
+body.is-admin-portal .admin-reference-config-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+body.is-admin-portal .admin-reference-config-item span {
+  display: block;
+  margin-bottom: 10px;
+  color: #8390a6;
+  font-size: 11px;
+}
+
+body.is-admin-portal .admin-reference-config-item strong {
+  display: block;
+  overflow: hidden;
+  color: #2a3d5b;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-reference-config-form {
+  padding: 26px;
+}
+
+body.is-admin-portal .admin-reference-config-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 48px;
+}
+
+body.is-admin-portal .admin-reference-test-box {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 2px;
+  padding: 18px;
+  border: 1px solid #dfe7f2;
+  border-radius: 6px;
+}
+
+body.is-admin-portal .admin-reference-test-box strong,
+body.is-admin-portal .admin-reference-test-box p {
+  margin: 0;
+}
+
+body.is-admin-portal .admin-reference-test-box strong {
+  color: #273957;
+  font-size: 13px;
+}
+
+body.is-admin-portal .admin-reference-test-box p {
+  margin-top: 5px;
+  color: #8996aa;
+  font-size: 11px;
+}
+
+body.is-admin-portal .admin-reference-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 26px 24px;
+  padding: 15px 17px;
+  border: 1px solid #dce6f4;
+  border-radius: 6px;
+  background: #f8fbff;
+  color: #718199;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+body.is-admin-portal .admin-reference-security-note svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  color: var(--admin-blue);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+/* Data-center shells. Values must come from real APIs; missing series use empty states. */
+
+body.is-admin-portal .admin-reference-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.75fr 0.9fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+body.is-admin-portal .admin-reference-dashboard-card {
+  min-height: 260px;
+  padding: 20px;
+  border: 1px solid #e1e8f2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--admin-shadow);
+}
+
+body.is-admin-portal .admin-reference-dashboard-card h2 {
+  margin: 0;
+  color: #1c2d49;
+  font-size: 14px;
+}
+
+body.is-admin-portal .admin-reference-page-actions button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+body.is-admin-portal .admin-data-period {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid var(--admin-line);
+  border-radius: 6px;
+  background: #fff;
+  color: #4c5e7a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.is-admin-portal .admin-data-primary-grid {
+  grid-template-columns: 1.45fr 0.8fr 0.95fr;
+}
+
+body.is-admin-portal .admin-data-trend-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body.is-admin-portal .admin-data-trend-card header span {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: var(--admin-blue-soft);
+  color: var(--admin-blue);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-data-secondary-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.1fr 1.1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+body.is-admin-portal .admin-subject-donut {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  min-height: 210px;
+  padding-top: 14px;
+}
+
+body.is-admin-portal .admin-donut {
+  position: relative;
+  display: flex;
+  width: 132px;
+  height: 132px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  background: var(--admin-donut);
+}
+
+body.is-admin-portal .admin-donut::after {
+  position: absolute;
+  inset: 25px;
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+body.is-admin-portal .admin-donut strong,
+body.is-admin-portal .admin-donut span {
+  position: relative;
+  z-index: 1;
+}
+
+body.is-admin-portal .admin-donut strong {
+  color: #172743;
+  font-size: 22px;
+}
+
+body.is-admin-portal .admin-donut span {
+  margin-top: 3px;
+  color: #76849a;
+  font-size: 10px;
+}
+
+body.is-admin-portal .admin-donut-legend {
+  display: grid;
+  gap: 8px;
+}
+
+body.is-admin-portal .admin-donut-legend > span {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  color: #53637f;
+  font-size: 10px;
+}
+
+body.is-admin-portal .admin-donut-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+body.is-admin-portal .admin-donut-legend b,
+body.is-admin-portal .admin-donut-legend em {
+  overflow: hidden;
+  font-style: normal;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.is-admin-portal .admin-time-heatmap {
+  min-height: 210px;
+  padding-top: 20px;
+}
+
+body.is-admin-portal .admin-heatmap-board {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+body.is-admin-portal .admin-heatmap-label {
+  color: #728198;
+  font-size: 9px;
+}
+
+body.is-admin-portal .admin-heatmap-board > div {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(12px, 1fr));
+  gap: 4px;
+}
+
+body.is-admin-portal .admin-heatmap-board i {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: #edf3fb;
+}
+
+body.is-admin-portal .admin-heatmap-days b {
+  color: #8794a8;
+  font-size: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+body.is-admin-portal .admin-heatmap-empty {
+  margin: 16px 0 0;
+  color: #8a97ac;
+  font-size: 10px;
+  text-align: center;
+}
+
+body.is-admin-portal .admin-data-secondary-grid .admin-reference-empty {
+  display: grid;
+  min-height: 200px;
+  place-items: center;
+  color: #8a97ac;
+  font-size: 11px;
+  text-align: center;
+}
+
+body.is-admin-portal .admin-data-security-note {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body.is-admin-portal .admin-reference-chart-empty {
+  display: grid;
+  min-height: 200px;
+  place-items: center;
+  color: #8a97ac;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Loading and feedback */
+
+body.is-admin-portal .admin-reference-loading {
+  position: relative;
+  overflow: hidden;
+  color: transparent !important;
+  border-radius: 4px;
+  background: #edf2f8;
+}
+
+body.is-admin-portal .admin-reference-loading::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  content: "";
+  animation: admin-reference-shimmer 1.2s linear infinite;
+  transform: translateX(-100%);
+}
+
+/* Live application DOM compatibility */
+body.is-admin-portal .admin-reference-page > * {
+  width: min(100%, 1374px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body.is-admin-portal .admin-reference-heading h1,
+body.is-admin-portal .admin-reference-heading p {
+  letter-spacing: 0;
+}
+
+body.is-admin-portal .admin-reference-data-card {
+  position: relative;
+}
+
+body.is-admin-portal .admin-reference-toolbar .admin-reference-tabs > strong,
+body.is-admin-portal .admin-reference-toolbar .admin-reference-tabs > span,
+body.is-admin-portal .admin-reference-toolbar .admin-reference-tabs > button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 3px;
+  border: 0;
+  background: transparent;
+  color: #435271;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-reference-toolbar .admin-reference-tabs > strong {
+  color: var(--admin-blue);
+}
+
+body.is-admin-portal .admin-reference-toolbar .admin-reference-tabs > strong::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--admin-blue);
+  content: "";
+}
+
+body.is-admin-portal .admin-reference-toolbar .admin-reference-search {
+  margin-right: 142px;
+}
+
+body.is-admin-portal .admin-create-disclosure {
+  position: static;
+}
+
+body.is-admin-portal .admin-create-disclosure > summary {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  z-index: 2;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 17px;
+  border: 1px solid var(--admin-blue);
+  border-radius: 6px;
+  background: var(--admin-blue);
+  box-shadow: 0 6px 16px rgba(20, 104, 238, 0.18);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  list-style: none;
+}
+
+body.is-admin-portal .admin-create-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+body.is-admin-portal .admin-create-disclosure[open] > summary {
+  border-color: #dbe4f0;
+  background: #fff;
+  box-shadow: none;
+  color: #3b4d6a;
+}
+
+body.is-admin-portal .admin-create-form {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--admin-line-soft);
+  background: #f9fbfe;
+}
+
+body.is-admin-portal .admin-create-form .student-create-actions {
+  grid-column: 1 / -1;
+  min-height: 42px;
+}
+
+body.is-admin-portal .admin-table-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #263b5c;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-table-person i {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf3fc;
+  color: #245ea8;
+  font-size: 11px;
+  font-style: normal;
+}
+
+body.is-admin-portal .admin-status-pill {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: #e8f7f1;
+  color: #09845d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-status-pill.is-expired {
+  background: #fff0f0;
+  color: #d83d4c;
+}
+
+body.is-admin-portal .admin-table-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--admin-blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.is-admin-portal .admin-table-action:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+body.is-admin-portal .admin-table-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.is-admin-portal .admin-reference-row-select {
+  width: 130px;
+  height: 34px;
+  padding: 0 28px 0 9px;
+  border: 1px solid #dce5f1;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #344867;
+  font-size: 11px;
+}
+
+body.is-admin-portal .admin-reference-row-select:focus {
+  border-color: #75a7f5;
+  box-shadow: 0 0 0 3px rgba(20, 104, 238, 0.1);
+}
+
+body.is-admin-portal .admin-config-updated {
+  display: block;
+  margin-top: 3px;
+  color: #8b98ad;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+body.is-admin-portal #admin-course-stats {
+  grid-template-columns: repeat(2, minmax(0, 320px));
+}
+
+body.has-admin-modal {
+  overflow: hidden;
+}
+
+.admin-reference-toast {
+  position: fixed;
+  z-index: 180;
+  top: 94px;
+  right: 28px;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 13px 18px;
+  border: 1px solid #bfe8d8;
+  border-radius: 6px;
+  background: #edfaf5;
+  color: #087858;
+  box-shadow: 0 14px 38px rgba(29, 52, 87, 0.18);
+  font-size: 13px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.admin-reference-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.admin-reference-toast.is-error {
+  border-color: #fecaca;
+  background: #fff5f5;
+  color: #c92f3f;
+}
+
+body.is-admin-portal .admin-model-card-head {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--admin-line-soft);
+}
+
+body.is-admin-portal .admin-model-card-head h2 {
+  margin: 0;
+  color: #172743;
+  font-size: 18px;
+}
+
+body.is-admin-portal .admin-model-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  padding: 28px;
+}
+
+body.is-admin-portal .admin-model-form .model-settings-actions {
+  grid-column: 1 / -1;
+}
+
+body.is-admin-portal .admin-data-bars {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+body.is-admin-portal .admin-data-bar-row {
+  display: grid;
+  grid-template-columns: minmax(78px, 0.75fr) minmax(130px, 2fr) 44px;
+  align-items: center;
+  gap: 14px;
+  color: #53637f;
+  font-size: 12px;
+}
+
+body.is-admin-portal .admin-data-bar-row > div {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf2f8;
+}
+
+body.is-admin-portal .admin-data-bar-row i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1468ee, #5d96f5);
+}
+
+body.is-admin-portal .admin-data-bar-row strong {
+  color: #243a5e;
+  text-align: right;
+}
+
+body.is-admin-portal .admin-reference-stats-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  body.is-admin-portal .admin-reference-toolbar .admin-reference-search {
+    margin-right: 0;
+  }
+
+  body.is-admin-portal .admin-create-disclosure > summary {
+    position: static;
+    margin: 14px 18px;
+  }
+
+  body.is-admin-portal .admin-create-form,
+  body.is-admin-portal .admin-model-form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
+
+@keyframes admin-reference-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive behavior */
+
+@media (max-width: 1180px) {
+  body.is-admin-portal .admin-reference-stat-grid,
+  body.is-admin-portal .admin-reference-stat-grid.is-five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.is-admin-portal .admin-reference-assignment-grid {
+    grid-template-columns: minmax(230px, 0.85fr) 64px minmax(300px, 1.15fr);
+  }
+
+  body.is-admin-portal .admin-reference-assignment-grid >
+    .admin-reference-picker:last-child {
+    grid-column: 1 / -1;
+  }
+
+  body.is-admin-portal .admin-reference-selected-list {
+    min-height: 180px;
+  }
+
+  body.is-admin-portal .admin-reference-dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.is-admin-portal .admin-data-secondary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.is-admin-portal .admin-reference-dashboard-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  body.is-admin-portal .admin-data-secondary-grid >
+    .admin-reference-dashboard-card:first-child {
+    grid-column: auto;
+  }
+
+  body.is-admin-portal .admin-data-secondary-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  body.is-admin-portal .admin-portal-topbar,
+  body.is-admin-portal .admin-reference-topbar {
+    grid-template-columns: minmax(170px, 1fr) auto;
+    min-height: 124px;
+    padding: 12px 18px 0;
+  }
+
+  body.is-admin-portal .teacher-portal-tabs,
+  body.is-admin-portal .admin-reference-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    height: 60px;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  body.is-admin-portal .teacher-portal-tabs button,
+  body.is-admin-portal .teacher-portal-tabs a,
+  body.is-admin-portal .admin-reference-nav-item {
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  body.is-admin-portal .admin-reference-view {
+    min-height: calc(100vh - 124px);
+    padding: 28px 18px 32px;
+  }
+
+  body.is-admin-portal .admin-reference-page-head,
+  body.is-admin-portal .admin-reference-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.is-admin-portal .admin-reference-panel-head {
+    padding: 18px;
+  }
+
+  body.is-admin-portal .admin-reference-tabs {
+    width: 100%;
+    min-height: 44px;
+    overflow-x: auto;
+  }
+
+  body.is-admin-portal .admin-reference-toolbar-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  body.is-admin-portal .admin-reference-filter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 18px;
+  }
+
+  body.is-admin-portal .admin-reference-assignment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.is-admin-portal .admin-reference-assignment-actions {
+    flex-direction: row;
+  }
+
+  body.is-admin-portal .admin-reference-config-grid,
+  body.is-admin-portal .admin-reference-config-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.is-admin-portal .admin-reference-config-item:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  body.is-admin-portal .admin-portal-topbar,
+  body.is-admin-portal .admin-reference-topbar {
+    grid-template-columns: 1fr auto;
+    min-height: 118px;
+    padding: 10px 12px 0;
+  }
+
+  body.is-admin-portal .teacher-portal-brand,
+  body.is-admin-portal .admin-reference-brand {
+    font-size: 19px;
+  }
+
+  body.is-admin-portal .teacher-brand-mark,
+  body.is-admin-portal .admin-reference-brand-mark {
+    width: 28px;
+    height: 28px;
+    font-size: 24px;
+  }
+
+  body.is-admin-portal .admin-reference-account-copy,
+  body.is-admin-portal .teacher-topbar-name,
+  body.is-admin-portal .admin-reference-notifications {
+    display: none;
+  }
+
+  body.is-admin-portal .teacher-topbar-logout {
+    display: inline-flex;
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
+  body.is-admin-portal .admin-reference-nav,
+  body.is-admin-portal .teacher-portal-tabs {
+    height: 56px;
+  }
+
+  body.is-admin-portal .admin-reference-view {
+    min-height: calc(100vh - 118px);
+    padding: 22px 12px 28px;
+  }
+
+  body.is-admin-portal .admin-reference-title {
+    font-size: 28px;
+  }
+
+  body.is-admin-portal .admin-reference-stat-grid,
+  body.is-admin-portal .admin-reference-stat-grid.is-five,
+  body.is-admin-portal .admin-reference-filter-row,
+  body.is-admin-portal .admin-reference-form-grid,
+  body.is-admin-portal .admin-reference-config-grid,
+  body.is-admin-portal .admin-reference-config-form-grid,
+  body.is-admin-portal .admin-reference-dashboard-grid,
+  body.is-admin-portal .admin-data-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.is-admin-portal .admin-data-secondary-grid > :last-child {
+    grid-column: auto;
+  }
+
+  body.is-admin-portal .admin-subject-donut {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
+  body.is-admin-portal .admin-donut {
+    width: 110px;
+    height: 110px;
+  }
+
+  body.is-admin-portal .admin-reference-stat {
+    min-height: 118px;
+    padding: 18px;
+  }
+
+  body.is-admin-portal .admin-reference-search,
+  body.is-admin-portal .admin-reference-toolbar-actions,
+  body.is-admin-portal .admin-reference-page-actions,
+  body.is-admin-portal .admin-reference-toolbar-actions > * {
+    width: 100%;
+  }
+
+  body.is-admin-portal .admin-reference-page-actions {
+    justify-content: stretch;
+  }
+
+  body.is-admin-portal .admin-reference-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 18px;
+  }
+
+  body.is-admin-portal .admin-reference-form-grid .is-full,
+  body.is-admin-portal .admin-reference-test-box {
+    grid-column: auto;
+  }
+
+  body.is-admin-portal .admin-reference-test-box {
+    grid-template-columns: 1fr;
+  }
+
+  body.is-admin-portal .admin-reference-config-item {
+    padding: 14px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--admin-line-soft);
+  }
+
+  body.is-admin-portal .admin-reference-config-item:last-child {
+    border-bottom: 0;
+  }
+
+  body.is-admin-portal .admin-reference-modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  body.is-admin-portal .admin-reference-modal-dialog {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-admin-portal *,
+  body.is-admin-portal *::before,
+  body.is-admin-portal *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

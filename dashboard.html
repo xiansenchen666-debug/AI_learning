@@ -3,45 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260713-11" />
-</head>
-  <body class="profile-ready" data-page="dashboard">
-    <div class="ambient">
-      <div class="blob one"></div>
-      <div class="blob two"></div>
-      <div class="blob three"></div>
-    </div>
-
+    <title>学习中心 · 启航教育</title>
+    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
+    <link rel="stylesheet" href="assets/student-reference.css?v=20260714-03" />
+  </head>
+  <body class="profile-ready student-reference" data-page="dashboard">
     <div class="app-shell">
-      <aside class="sidebar">
-        <div class="brand">
-          <div>
-            <div class="brand-stack">
-              <div class="brand-lockup">
-                <span class="brand-kicker">星途</span>
-                <span class="brand-title">启航教育</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <aside class="sidebar" aria-label="学生端主导航">
+        <a
+          class="brand brand-home"
+          href="/dashboard"
+          aria-label="启航教育首页"
+        >
+          <span class="brand-emblem" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="img">
+              <path d="M8 6h22v7H15v18h15v7H8z" />
+              <path d="M22 20h15v7H22z" />
+              <path d="m29 27 8-8v13l-8 8z" />
+            </svg>
+          </span>
+          <span class="brand-title">启航教育</span>
+        </a>
 
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn active"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
-          <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
-          <a href="/question-bank" class="nav-btn question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
+          <a href="/dashboard" class="nav-btn active" aria-current="page"><svg
+              class="nav-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M3 10.5 12 5l9 5.5-9 5.5z" />
+              <path d="M6.5 13.5V18c2.8 2 8.2 2 11 0v-4.5" />
+            </svg><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn"><svg
+              class="nav-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22z"
+              />
+              <path
+                d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22z"
+              />
+            </svg><span class="nav-label">全部课程</span></a>
+          <a href="/mistakes" class="nav-btn"><svg
+              class="nav-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <rect x="4" y="3" width="16" height="18" rx="2" />
+              <path d="M8 8h8M8 12h3M15 11l2 2-2 2" />
+            </svg><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn"><svg
+              class="nav-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+              <path d="m4 10 6-5 6 7 5-5" />
+            </svg><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn question-bank-nav"><svg
+              class="nav-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
+              />
+              <path d="M8 8h8M8 12h5M8 16h3" />
+            </svg><span class="nav-label">题库练习</span></a>
         </nav>
 
         <div class="sidebar-footer">
-          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
-            <div>
+          <div
+            class="avatar-card avatar-trigger-card"
+            id="avatar-trigger"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="avatar-dropdown"
+            aria-haspopup="true"
+          >
+            <div class="avatar" data-avatar-text></div>
+            <div class="sidebar-account-copy">
               <p class="sidebar-user-name" data-user-name></p>
               <p class="muted sidebar-user-level" data-user-level></p>
             </div>
-            <div class="avatar" data-avatar-text></div>
-            <div class="avatar-dropdown" id="avatar-dropdown">
+            <span class="account-chevron" aria-hidden="true">›</span>
+            <div
+              class="avatar-dropdown"
+              id="avatar-dropdown"
+              aria-hidden="true"
+            >
               <div class="dropdown-header">
                 <div class="avatar avatar-sm" data-avatar-text></div>
                 <div>
@@ -50,76 +103,171 @@
                 </div>
               </div>
               <div class="dropdown-divider"></div>
-              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
-                <span class="dropdown-logout-icon">🚪</span> 退出登录
-              </a>
+              <a
+                href="/login"
+                data-action="logout"
+                class="dropdown-item dropdown-logout"
+              >退出登录</a>
             </div>
           </div>
         </div>
       </aside>
 
+      <header class="student-portal-topbar" data-student-portal-topbar>
+        <span class="topbar-spacer"></span>
+        <div class="student-portal-account">
+          <span
+            class="topbar-notice"
+            aria-hidden="true"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
+              />
+            </svg></span>
+          <span class="student-topbar-avatar" data-avatar-text></span>
+          <span class="student-topbar-name" data-user-name></span>
+          <a
+            href="/login"
+            data-action="logout"
+            class="teacher-topbar-logout student-topbar-exit"
+          >退出</a>
+        </div>
+      </header>
+
       <main class="content">
         <div class="page-scroll">
           <section class="page active" id="dashboard-page">
-            <div class="grid dashboard-grid-top">
+            <div class="dashboard-reference-hero">
               <div class="hero-card">
                 <div class="hero-body">
-                  <div>
+                  <div class="dashboard-hero-copy">
+                    <p class="dashboard-greeting">
+                      你好，<span data-user-name></span>
+                    </p>
                     <div class="hero-pill" id="dashboard-hero-pill"></div>
-                    <h1 class="hero-title" id="dashboard-hero-title">学习中心</h1>
-                    <p class="hero-desc" id="dashboard-hero-desc">这里只展示当前学生已经购买并由老师开通的课程，以及这些课程产生的学习记录。</p>
-                    <p class="account-access-status" id="dashboard-access-status"></p>
+                    <h1 class="hero-title" id="dashboard-hero-title">
+                      学习中心
+                    </h1>
+                    <p class="hero-desc" id="dashboard-hero-desc">
+                      查看已开通课程和当前学习进度。
+                    </p>
+                    <p
+                      class="account-access-status"
+                      id="dashboard-access-status"
+                    >
+                    </p>
+                    <div class="student-create-actions">
+                      <a href="/question-bank" class="primary-btn"
+                      >进入题库练习</a><a
+                        href="/subjects"
+                        class="secondary-btn"
+                      >查看全部课程</a>
+                    </div>
                   </div>
-                  <div class="student-create-actions"><a href="/question-bank" class="primary-btn">进入题库练习</a><a href="/subjects" class="secondary-btn">查看全部课程</a></div>
+                  <div class="dashboard-hero-visual has-image" aria-hidden="true">
+                    <img
+                      src="/assets/student-home-device-check.png?v=20260714-03"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
 
               <div class="card achievement">
-                <p class="muted achievement-kicker">学习成就</p>
-                <div class="achievement-mark"></div>
-                <div class="achievement-number" id="dashboard-study-days"></div>
-                <p class="achievement-label" id="dashboard-achievement-label"></p>
-                <div class="progress-track"><div class="progress-fill progress-fill-zero" id="dashboard-level-progress"></div></div>
+                <p class="achievement-kicker">学习概览</p>
+                <div class="achievement-overview">
+                  <div class="achievement-mark"></div>
+                  <div>
+                    <div class="achievement-number" id="dashboard-study-days">
+                    </div>
+                    <p
+                      class="achievement-label"
+                      id="dashboard-achievement-label"
+                    >
+                    </p>
+                  </div>
+                </div>
+                <div class="progress-track">
+                  <div
+                    class="progress-fill progress-fill-zero"
+                    id="dashboard-level-progress"
+                  >
+                  </div>
+                </div>
                 <p class="muted text-sm" id="dashboard-xp-summary"></p>
               </div>
             </div>
 
-            <div class="card mt-24">
+            <section class="card dashboard-course-panel">
               <div class="section-head">
-                <h2 class="section-title">我的已购课程</h2>
-                <span class="stat-chip stat-chip-primary"></span>
+                <h2 class="section-title">我的学习课程</h2><a
+                  href="/subjects"
+                  class="section-more"
+                >查看全部 <span aria-hidden="true">›</span></a>
               </div>
-              <div class="course-grid" id="dashboard-courses">
-                
-              </div>
-            </div>
+              <div class="course-grid" id="dashboard-courses"></div>
+            </section>
 
-            <div class="grid dashboard-grid-main mt-24">
-              <div class="grid gap-24">
-                <div class="card">
-                  <div class="section-head">
-                    <h2 class="section-title">智能刷题</h2>
-                    <span class="stat-chip stat-chip-emerald"></span>
-                  </div>
-                  <div class="timeline" id="dashboard-timeline"></div>
+            <div class="dashboard-secondary-panels">
+              <section class="card">
+                <div class="section-head">
+                  <h2 class="section-title">推荐复习</h2><span
+                    class="stat-chip stat-chip-emerald"
+                  ></span>
                 </div>
-              </div>
-
-              <div class="grid gap-24">
-                <div class="card">
-                  <div class="section-head">
-                    <h2 class="section-title">智能错题本</h2>
-                    <span class="stat-chip stat-chip-orange" id="dashboard-mistake-count"></span>
-                  </div>
-                  <div class="mistake-box" id="dashboard-mistake"></div>
+                <div class="timeline" id="dashboard-timeline"></div>
+              </section>
+              <section class="card">
+                <div class="section-head">
+                  <h2 class="section-title">近期错题</h2><span
+                    class="stat-chip stat-chip-orange"
+                    id="dashboard-mistake-count"
+                  ></span>
                 </div>
-              </div>
+                <div class="mistake-box" id="dashboard-mistake"></div>
+              </section>
             </div>
           </section>
         </div>
       </main>
     </div>
-
-    <script src="assets/app.js?v=20260713-11"></script>
+    <script>
+      (() => {
+        const trigger = document.getElementById("avatar-trigger");
+        const dropdown = document.getElementById("avatar-dropdown");
+        if (!trigger || !dropdown) return;
+        const setExpanded = (expanded) => {
+          trigger.setAttribute("aria-expanded", String(expanded));
+          dropdown.setAttribute("aria-hidden", String(!expanded));
+        };
+        trigger.addEventListener("click", (event) => {
+          if (
+            event.target instanceof Element &&
+            event.target.closest('[data-action="logout"]')
+          ) return;
+          setExpanded(!dropdown.classList.contains("active"));
+        }, { capture: true });
+        trigger.addEventListener("keydown", (event) => {
+          if (
+            event.target !== trigger ||
+            (event.key !== "Enter" && event.key !== " ")
+          ) return;
+          event.preventDefault();
+          trigger.click();
+        });
+        document.addEventListener("click", (event) => {
+          if (!trigger.contains(event.target)) setExpanded(false);
+        });
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key !== "Escape" || !dropdown.classList.contains("active")
+          ) return;
+          dropdown.classList.remove("active");
+          setExpanded(false);
+          trigger.focus();
+        });
+      })();
+    </script>
+    <script src="assets/app.js?v=20260714-03"></script>
   </body>
 </html>
