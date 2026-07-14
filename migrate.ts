@@ -120,7 +120,8 @@ try {
       student_id, requested_revision, requested_source_hash, claim_id,
       status, attempt_count, last_error, next_attempt_at, updated_at
     )
-    SELECT DISTINCT r.student_id, 1, '', NULL, 'pending', 0, '', NULL, NOW()
+    SELECT DISTINCT r.student_id, 1, '', NULL::UUID,
+           'pending', 0, '', NULL::TIMESTAMPTZ, NOW()
     FROM ai_lesson_records AS r
     JOIN ai_users AS u ON u.id = r.student_id
     WHERE u.deleted_at IS NULL AND u.role = 'student'

@@ -1898,6 +1898,10 @@ async function processGrowthJobQueue() {
   if (growthJobSweepRunning) return;
   growthJobSweepRunning = true;
   try {
+    const tableRows = await dbRows<{ table_name: string | null }>(
+      "SELECT TO_REGCLASS('public.ai_growth_jobs')::text AS table_name",
+    );
+    if (!tableRows[0]?.table_name) return;
     const students = await dbRows<User>(
       `SELECT u.id, u.username, u.password_hash, u.full_name, u.stage, u.grade,
               u.level_label, u.email, u.school, u.bio, u.role, u.teacher_id,
@@ -3678,8 +3682,8 @@ async function api(request: Request, user: User | null, pathname: string) {
                student_id, requested_revision, requested_source_hash, claim_id,
                status, attempt_count, last_error, next_attempt_at, updated_at
              )
-             SELECT DISTINCT student_id, 1, '', NULL,
-                    'pending', 0, '', NULL, NOW()
+             SELECT DISTINCT student_id, 1, '', NULL::UUID,
+                    'pending', 0, '', NULL::TIMESTAMPTZ, NOW()
              FROM ai_lesson_records
              ON CONFLICT (student_id) DO UPDATE SET
                requested_revision = ai_growth_jobs.requested_revision + 1,
