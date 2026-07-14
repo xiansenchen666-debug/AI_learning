@@ -16,9 +16,6 @@ CREATE TABLE IF NOT EXISTS ai_users (
   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_users_username_lower_unique
-  ON ai_users (LOWER(username));
-
 CREATE TABLE IF NOT EXISTS ai_model_settings (
   id SMALLINT PRIMARY KEY CHECK (id = 1),
   base_url TEXT NOT NULL,

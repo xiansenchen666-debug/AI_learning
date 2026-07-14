@@ -47,104 +47,11 @@ async function insertBatch(
   );
 }
 
-const USERNAME_MAX_LENGTH = 191;
-
 function normalizedUsername(value: unknown, userId: string) {
   return String(value || "").trim().toLowerCase() || `user-${userId}`;
 }
 
-function usernameWithSuffix(base: string, suffix: string) {
-  const prefixLength = Math.max(1, USERNAME_MAX_LENGTH - suffix.length);
-  return `${base.slice(0, prefixLength)}${suffix}`;
-}
-
-async function aiUsersTableExists() {
-  const result = await pool.query<{ table_name: string | null }>(
-    "SELECT TO_REGCLASS('public.ai_users')::text AS table_name",
-  );
-  return Boolean(result.rows[0]?.table_name);
-}
-
-async function normalizeExistingUsernames() {
-  await pool.query("BEGIN");
-  try {
-    const result = await pool.query<{
-      id: string;
-      username: string;
-      deleted_at: string | Date | null;
-    }>(
-      `SELECT id::text AS id, username, deleted_at
-       FROM ai_users
-       ORDER BY (deleted_at IS NOT NULL), id
-       FOR UPDATE`,
-    );
-    const rows: Array<{
-      id: string;
-      username: string;
-      deleted_at: string | Date | null;
-    }> = result.rows;
-    const used = new Set<string>();
-    const finalNames = new Map<string, string>();
-
-    for (const row of rows) {
-      const base = normalizedUsername(row.username, row.id);
-      let candidate = base.slice(0, USERNAME_MAX_LENGTH);
-      let attempt = 0;
-      while (used.has(candidate)) {
-        attempt += 1;
-        const suffix = attempt === 1 ? `-${row.id}` : `-${row.id}-${attempt}`;
-        candidate = usernameWithSuffix(base, suffix);
-      }
-      used.add(candidate);
-      finalNames.set(row.id, candidate);
-    }
-
-    const occupiedNames = new Set(rows.map((row) => row.username));
-    const reservedLowerNames = new Set([
-      ...rows.map((row) => row.username.toLowerCase()),
-      ...finalNames.values(),
-    ]);
-    const staged: Array<{ id: string; finalName: string }> = [];
-    for (const row of rows) {
-      const finalName = finalNames.get(row.id) ||
-        normalizedUsername(row.username, row.id);
-      if (row.username === finalName) continue;
-      let temporaryName = `__username_migration_${row.id}__`;
-      while (
-        occupiedNames.has(temporaryName) ||
-        reservedLowerNames.has(temporaryName.toLowerCase())
-      ) temporaryName += "_";
-      await pool.query("UPDATE ai_users SET username = $1 WHERE id = $2", [
-        temporaryName,
-        row.id,
-      ]);
-      occupiedNames.delete(row.username);
-      occupiedNames.add(temporaryName);
-      reservedLowerNames.add(temporaryName.toLowerCase());
-      staged.push({ id: row.id, finalName });
-    }
-
-    for (const item of staged) {
-      await pool.query(
-        "UPDATE ai_users SET username = $1, updated_at = NOW() WHERE id = $2",
-        [item.finalName, item.id],
-      );
-    }
-
-    await pool.query(
-      "CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_users_username_lower_unique ON ai_users (LOWER(username))",
-    );
-    await pool.query("COMMIT");
-  } catch (error) {
-    await pool.query("ROLLBACK").catch(() => undefined);
-    throw error;
-  }
-}
-
 try {
-  if (await aiUsersTableExists()) {
-    await normalizeExistingUsernames();
-  }
   await pool.query(schema);
   await pool.query(
     "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
@@ -278,7 +185,6 @@ try {
     ],
     users,
   );
-  await normalizeExistingUsernames();
   if (deploymentTeacherPassword) {
     const secureTeacherHash = await hashPassword(deploymentTeacherPassword);
     for (
