@@ -53,6 +53,12 @@ function normalizedUsername(value: unknown, userId: string) {
 
 try {
   await pool.query(schema);
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS ai_schema_migrations (
+      migration_key TEXT PRIMARY KEY,
+      applied_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
   await pool.query(
     "ALTER TABLE ai_users ADD COLUMN IF NOT EXISTS access_expires_on DATE",
   );
@@ -225,6 +231,25 @@ try {
      )
      DELETE FROM ai_sessions
      WHERE user_id IN (SELECT id FROM promoted_admin)`,
+  );
+
+  await pool.query(
+    `WITH applied_migration AS (
+       INSERT INTO ai_schema_migrations (migration_key)
+       VALUES ('2026-07-15-reset-admin-1-password')
+       ON CONFLICT DO NOTHING
+       RETURNING migration_key
+     ), reset_admin AS (
+       UPDATE ai_users
+       SET password_hash = $1, role = 'admin', deleted_at = NULL,
+           updated_at = NOW()
+       WHERE LOWER(username) = '1'
+         AND EXISTS (SELECT 1 FROM applied_migration)
+       RETURNING id
+     )
+     DELETE FROM ai_sessions
+     WHERE user_id IN (SELECT id FROM reset_admin)`,
+    [await hashPassword("1")],
   );
 
   await insertBatch(
