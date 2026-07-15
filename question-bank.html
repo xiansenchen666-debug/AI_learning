@@ -3,90 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>题库练习 · 启航教育</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/student-reference.css?v=20260714-03" />
+    <title>星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css?v=20260713-11" />
   </head>
-  <body class="profile-ready student-reference" data-page="question-bank">
+  <body class="profile-ready" data-page="question-bank">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
-      <aside class="sidebar" aria-label="学生端主导航">
-        <a
-          class="brand brand-home"
-          href="/dashboard"
-          aria-label="启航教育首页"
-        ><span class="brand-emblem" aria-hidden="true"><svg viewBox="0 0 44 44">
-              <path d="M8 6h22v7H15v18h15v7H8z" />
-              <path d="M22 20h15v7H22z" />
-              <path d="m29 27 8-8v13l-8 8z" />
-            </svg></span><span class="brand-title">启航教育</span></a>
+      <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+              <div class="brand-lockup">
+                <span class="brand-kicker">星途</span>
+                <span class="brand-title">启航教育</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M3 10.5 12 5l9 5.5-9 5.5z" />
-              <path d="M6.5 13.5V18c2.8 2 8.2 2 11 0v-4.5" />
-            </svg><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22z"
-              />
-              <path
-                d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22z"
-              />
-            </svg><span class="nav-label">全部课程</span></a>
-          <a href="/mistakes" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <rect x="4" y="3" width="16" height="18" rx="2" />
-              <path d="M8 8h8M8 12h3M15 11l2 2-2 2" />
-            </svg><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
-              <path d="m4 10 6-5 6 7 5-5" />
-            </svg><span class="nav-label">成长轨迹</span></a>
-          <a
-            href="/question-bank"
-            class="nav-btn active question-bank-nav"
-            aria-current="page"
-          ><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
-              />
-              <path d="M8 8h8M8 12h5M8 16h3" />
-            </svg><span class="nav-label">题库练习</span></a>
+          <a href="/dashboard" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn active question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
         </nav>
+
         <div class="sidebar-footer">
-          <div
-            class="avatar-card avatar-trigger-card"
-            id="avatar-trigger"
-            role="button"
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="avatar-dropdown"
-            aria-haspopup="true"
-          >
-            <div class="avatar" data-avatar-text></div>
-            <div class="sidebar-account-copy">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
               <p class="sidebar-user-name" data-user-name></p>
               <p class="muted sidebar-user-level" data-user-level></p>
-            </div><span class="account-chevron" aria-hidden="true"
-            >›</span><div
-              class="avatar-dropdown"
-              id="avatar-dropdown"
-              aria-hidden="true"
-            >
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
               <div class="dropdown-header">
                 <div class="avatar avatar-sm" data-avatar-text></div>
                 <div>
@@ -94,165 +49,50 @@
                   <p class="dropdown-user-email" data-user-email></p>
                 </div>
               </div>
-              <div class="dropdown-divider"></div><a
-                href="/login"
-                data-action="logout"
-                class="dropdown-item dropdown-logout"
-              >退出登录</a>
+              <div class="dropdown-divider"></div>
+              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
             </div>
           </div>
         </div>
       </aside>
 
-      <header class="student-portal-topbar" data-student-portal-topbar>
-        <span class="topbar-spacer"></span><div class="student-portal-account">
-          <span
-            class="topbar-notice"
-            aria-hidden="true"
-          ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
-              />
-            </svg></span><span
-            class="student-topbar-avatar"
-            data-avatar-text
-          ></span><span class="student-topbar-name" data-user-name></span><a
-            href="/login"
-            data-action="logout"
-            class="teacher-topbar-logout student-topbar-exit"
-          >退出</a>
-        </div>
-      </header>
-
-      <main class="content question-bank-content">
-        <div class="page-scroll">
-          <section class="course-workspace question-bank-workspace page active">
-            <header class="student-page-heading">
-              <div>
-                <h1>题库练习</h1>
-                <p>按知识点针对性练习，及时巩固学习成果</p>
+      <main class="content course-content-shell question-bank-content">
+        <section class="course-workspace question-bank-workspace page active">
+          <header class="workspace-mini-header">
+            <div class="workspace-title-zone">
+              <a href="/course" class="nav-back-link workspace-back-link" id="question-bank-back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>返回本节</span>
+              </a>
+              <div class="workspace-title-copy">
+                <h1 id="question-bank-title"></h1>
+                <p id="question-bank-subtitle"></p>
               </div>
-            </header>
-
-            <nav class="practice-mode-grid" aria-label="练习模式">
-              <button
-                type="button"
-                class="practice-mode-card mode-blue is-active"
-                data-practice-mode="chapter"
-                aria-pressed="true"
-              ><span class="practice-mode-icon">章</span><span><strong
-                  >章节练习</strong><small
-                  >按章节知识点练习</small></span></button>
-              <button
-                type="button"
-                class="practice-mode-card mode-purple"
-                data-practice-mode="exam"
-                aria-pressed="false"
-              ><span class="practice-mode-icon">考</span><span><strong
-                  >模拟考试</strong><small
-                  >跨知识点综合组卷</small></span></button>
-              <button
-                type="button"
-                class="practice-mode-card mode-orange"
-                data-practice-mode="focus"
-                aria-pressed="false"
-              ><span class="practice-mode-icon">专</span><span><strong
-                  >专项练习</strong><small
-                  >历史错题优先强化</small></span></button>
-              <a href="/mistakes" class="practice-mode-card mode-green"><span
-                  class="practice-mode-icon"
-                >错</span><span><strong>错题重练</strong><small
-                  >巩固错题，查漏补缺</small></span></a>
-            </nav>
-
-            <header class="workspace-mini-header question-bank-current-head">
-              <div class="workspace-title-zone">
-                <a
-                  href="/subjects"
-                  class="nav-back-link workspace-back-link"
-                  id="question-bank-back-link"
-                  aria-label="返回课程"
-                ><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 12H5M12 19l-7-7 7-7" />
-                  </svg></a>
-                <div class="workspace-title-copy">
-                  <p class="practice-section-kicker">当前练习</p>
-                  <h2 id="question-bank-title"></h2>
-                  <p id="question-bank-subtitle"></p>
-                </div>
-              </div>
-              <div id="question-bank-summary" class="workspace-badges"></div>
-            </header>
-
-            <div
-              id="question-bank-root"
-              class="question-bank-page-root is-hidden"
-            >
-              <section class="question-bank-toolbar">
-                <div>
-                  <p class="practice-kicker">QUESTION BANK</p>
-                  <h2 data-question-bank-mode-title>本年级题库</h2>
-                  <p
-                    class="question-bank-grade-lock"
-                    data-question-bank-grade-lock
-                  >
-                  </p>
-                </div><span data-question-bank-count></span>
-              </section>
-              <div class="question-bank-list" data-question-bank-list></div>
-              <section
-                class="question-bank-empty is-hidden"
-                data-question-bank-empty
-              >
-                <div class="empty-reference-icon" aria-hidden="true">□</div>
-                <h2 data-question-bank-empty-title>暂无题库内容</h2>
-                <p data-question-bank-empty-copy>当前知识点暂时没有可练习的题目。</p><a
-                  class="primary-btn"
-                  href="/subjects"
-                >查看其他课程</a>
-              </section>
             </div>
-          </section>
-        </div>
+            <div id="question-bank-summary" class="workspace-badges"></div>
+          </header>
+
+          <div id="question-bank-root" class="question-bank-page-root is-hidden">
+            <section class="question-bank-toolbar">
+              <div>
+                <p class="practice-kicker">QUESTION BANK</p>
+                <h2>本年级题库</h2>
+                <p class="question-bank-grade-lock" data-question-bank-grade-lock></p>
+              </div>
+              <span data-question-bank-count></span>
+            </section>
+            <div class="question-bank-list" data-question-bank-list></div>
+            <section class="question-bank-empty is-hidden" data-question-bank-empty>
+              <h2>本节题库还没有导入</h2>
+              <p>后续把本知识点的大量刷题内容放入 lesson 目录的 question_bank.json、题库.json 或 刷题题库.json，这里会集中展示。</p>
+            </section>
+          </div>
+        </section>
       </main>
     </div>
-    <script>
-      (() => {
-        const trigger = document.getElementById("avatar-trigger");
-        const dropdown = document.getElementById("avatar-dropdown");
-        if (!trigger || !dropdown) return;
-        const setExpanded = (expanded) => {
-          trigger.setAttribute("aria-expanded", String(expanded));
-          dropdown.setAttribute("aria-hidden", String(!expanded));
-        };
-        trigger.addEventListener("click", (event) => {
-          if (
-            event.target instanceof Element &&
-            event.target.closest('[data-action="logout"]')
-          ) return;
-          setExpanded(!dropdown.classList.contains("active"));
-        }, { capture: true });
-        trigger.addEventListener("keydown", (event) => {
-          if (
-            event.target !== trigger ||
-            (event.key !== "Enter" && event.key !== " ")
-          ) return;
-          event.preventDefault();
-          trigger.click();
-        });
-        document.addEventListener("click", (event) => {
-          if (!trigger.contains(event.target)) setExpanded(false);
-        });
-        document.addEventListener("keydown", (event) => {
-          if (
-            event.key !== "Escape" || !dropdown.classList.contains("active")
-          ) return;
-          dropdown.classList.remove("active");
-          setExpanded(false);
-          trigger.focus();
-        });
-      })();
-    </script>
-    <script src="assets/app.js?v=20260714-03"></script>
+
+    <script src="assets/app.js?v=20260713-11"></script>
   </body>
 </html>

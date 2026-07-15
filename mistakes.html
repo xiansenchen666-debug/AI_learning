@@ -3,90 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>智能错题本 · 启航教育</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/student-reference.css?v=20260714-03" />
-  </head>
-  <body class="profile-ready student-reference" data-page="mistakes">
+    <title>星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css?v=20260713-11" />
+</head>
+  <body class="profile-ready" data-page="mistakes">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
-      <aside class="sidebar" aria-label="学生端主导航">
-        <a
-          class="brand brand-home"
-          href="/dashboard"
-          aria-label="启航教育首页"
-        ><span class="brand-emblem" aria-hidden="true"><svg viewBox="0 0 44 44">
-              <path d="M8 6h22v7H15v18h15v7H8z" />
-              <path d="M22 20h15v7H22z" />
-              <path d="m29 27 8-8v13l-8 8z" />
-            </svg></span><span class="brand-title">启航教育</span></a>
+                  <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+            <div class="brand-lockup">
+  <span class="brand-kicker">星途</span>
+  <span class="brand-title">启航教育</span>
+</div>
+          </div>
+            
+          </div>
+        </div>
+
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M3 10.5 12 5l9 5.5-9 5.5z" />
-              <path d="M6.5 13.5V18c2.8 2 8.2 2 11 0v-4.5" />
-            </svg><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22z"
-              />
-              <path
-                d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22z"
-              />
-            </svg><span class="nav-label">全部课程</span></a>
-          <a href="/mistakes" class="nav-btn active" aria-current="page"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <rect x="4" y="3" width="16" height="18" rx="2" />
-              <path d="M8 8h8M8 12h3M15 11l2 2-2 2" />
-            </svg><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
-              <path d="m4 10 6-5 6 7 5-5" />
-            </svg><span class="nav-label">成长轨迹</span></a>
-          <a href="/question-bank" class="nav-btn question-bank-nav"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
-              />
-              <path d="M8 8h8M8 12h5M8 16h3" />
-            </svg><span class="nav-label">题库练习</span></a>
+          <a href="/dashboard" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="/mistakes" class="nav-btn active"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
         </nav>
+
         <div class="sidebar-footer">
-          <div
-            class="avatar-card avatar-trigger-card"
-            id="avatar-trigger"
-            role="button"
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="avatar-dropdown"
-            aria-haspopup="true"
-          >
-            <div class="avatar" data-avatar-text></div>
-            <div class="sidebar-account-copy">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
               <p class="sidebar-user-name" data-user-name></p>
               <p class="muted sidebar-user-level" data-user-level></p>
-            </div><span class="account-chevron" aria-hidden="true"
-            >›</span><div
-              class="avatar-dropdown"
-              id="avatar-dropdown"
-              aria-hidden="true"
-            >
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
               <div class="dropdown-header">
                 <div class="avatar avatar-sm" data-avatar-text></div>
                 <div>
@@ -94,188 +50,44 @@
                   <p class="dropdown-user-email" data-user-email></p>
                 </div>
               </div>
-              <div class="dropdown-divider"></div><a
-                href="/login"
-                data-action="logout"
-                class="dropdown-item dropdown-logout"
-              >退出登录</a>
+              <div class="dropdown-divider"></div>
+              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
             </div>
           </div>
         </div>
       </aside>
 
-      <header class="student-portal-topbar" data-student-portal-topbar>
-        <span class="topbar-spacer"></span><div class="student-portal-account">
-          <span
-            class="topbar-notice"
-            aria-hidden="true"
-          ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
-              />
-            </svg></span><span
-            class="student-topbar-avatar"
-            data-avatar-text
-          ></span><span class="student-topbar-name" data-user-name></span><a
-            href="/login"
-            data-action="logout"
-            class="teacher-topbar-logout student-topbar-exit"
-          >退出</a>
-        </div>
-      </header>
-
       <main class="content">
-        <div class="page-scroll">
+<div class="page-scroll">
           <section class="page active" id="mistakes-page">
-            <header class="student-page-heading mistakes-heading">
-              <div>
-                <h1>智能错题本</h1>
-                <p>
-                  自动收录错题，集中查看解析，精准攻克薄弱知识点
-                </p>
-              </div>
-              <button
-                class="primary-btn mistake-export-button"
-                type="button"
-                onclick="window.print()"
-              >
-                错题导出
-              </button>
-            </header>
-
-            <div class="mistakes-toolbar">
-              <div class="mistake-filter-group">
-                <label><span class="sr-only">筛选科目</span><select
-                    data-mistake-filter="subject"
-                  >
-                    <option value="">全部科目</option>
-                    <option value="语文">语文</option>
-                    <option value="数学">数学</option>
-                    <option value="英语">英语</option>
-                    <option value="物理">物理</option>
-                    <option value="化学">化学</option>
-                    <option value="生物">生物</option>
-                  </select></label>
-                <label><span class="sr-only">筛选年级</span><select
-                    data-mistake-filter="grade"
-                  >
-                    <option value="">全部年级</option>
-                    <option value="小学">小学</option>
-                    <option value="初中">初中</option>
-                    <option value="高中">高中</option>
-                  </select></label>
-                <label><span class="sr-only">筛选状态</span><select
-                    data-mistake-filter="status"
-                  >
-                    <option value="">全部状态</option>
-                    <option value="解析">显示解析</option>
-                  </select></label>
-              </div>
-              <label class="mistake-setting"><input
-                  type="checkbox"
-                  data-mistake-explanations
-                  checked
-                /><span>显示错题解析</span></label>
-            </div>
-
-            <section class="mistakes-list-panel">
-              <div class="mistakes-panel-heading">
-                <h2>错题列表</h2><span>按最近记录排序</span>
-              </div>
-              <div id="mistakes-root" class="grid gap-24"></div>
-            </section>
+            <div class="growth-header"><div><h1 class="section-title page-title-lg">智能错题本</h1><p class="muted page-header-subtitle"></p></div></div>
+            <div id="mistakes-root" class="grid gap-24"></div>
           </section>
         </div>
       </main>
     </div>
+
+    
     <script>
-      (() => {
-        const root = document.getElementById("mistakes-root");
-        const selects = [...document.querySelectorAll("[data-mistake-filter]")];
-        const applyFilters = () => {
-          const subject =
-            document.querySelector('[data-mistake-filter="subject"]')?.value ||
-            "";
-          const grade =
-            document.querySelector('[data-mistake-filter="grade"]')?.value ||
-            "";
-          const status =
-            document.querySelector('[data-mistake-filter="status"]')?.value ||
-            "";
-          root?.querySelectorAll(".card").forEach((card) => {
-            const content = card.textContent || "";
-            const explanation =
-              card.querySelector(".mistake-explanation-text")?.textContent
-                .replace(/^解析[：:]\s*/, "").trim() || "";
-            card.hidden = Boolean(
-              (subject && !content.includes(subject)) ||
-                (grade && !content.includes(grade)) ||
-                (status === "解析" && !explanation),
-            );
-          });
-          root?.querySelectorAll(":scope > .mistakes-more").forEach(
-            (details) => {
-              details.hidden = ![...details.querySelectorAll(":scope > .card")]
-                .some((card) => !card.hidden);
-            },
-          );
-        };
-        selects.forEach((select) =>
-          select.addEventListener("change", applyFilters)
-        );
-        document.querySelector("[data-mistake-explanations]")?.addEventListener(
-          "change",
-          (event) =>
-            document.body.classList.toggle(
-              "hide-mistake-explanations",
-              !event.currentTarget.checked,
-            ),
-        );
-        if (root) {
-          new MutationObserver(applyFilters).observe(root, {
-            childList: true,
-            subtree: true,
-          });
-        }
-      })();
+      // Dropdown toggle logic
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      
+      if (avatarTrigger && avatarDropdown) {
+        avatarTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!avatarTrigger.contains(e.target)) {
+            avatarDropdown.classList.remove('active');
+          }
+        });
+      }
     </script>
-    <script>
-      (() => {
-        const trigger = document.getElementById("avatar-trigger");
-        const dropdown = document.getElementById("avatar-dropdown");
-        if (!trigger || !dropdown) return;
-        const setExpanded = (expanded) => {
-          trigger.setAttribute("aria-expanded", String(expanded));
-          dropdown.setAttribute("aria-hidden", String(!expanded));
-        };
-        trigger.addEventListener("click", (event) => {
-          if (
-            event.target instanceof Element &&
-            event.target.closest('[data-action="logout"]')
-          ) return;
-          setExpanded(!dropdown.classList.contains("active"));
-        }, { capture: true });
-        trigger.addEventListener("keydown", (event) => {
-          if (
-            event.target !== trigger ||
-            (event.key !== "Enter" && event.key !== " ")
-          ) return;
-          event.preventDefault();
-          trigger.click();
-        });
-        document.addEventListener("click", (event) => {
-          if (!trigger.contains(event.target)) setExpanded(false);
-        });
-        document.addEventListener("keydown", (event) => {
-          if (
-            event.key !== "Escape" || !dropdown.classList.contains("active")
-          ) return;
-          dropdown.classList.remove("active");
-          setExpanded(false);
-          trigger.focus();
-        });
-      })();
-    </script>
-    <script src="assets/app.js?v=20260714-03"></script>
+    <script src="assets/app.js?v=20260713-11"></script>
   </body>
 </html>
