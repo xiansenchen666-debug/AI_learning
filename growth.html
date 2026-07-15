@@ -3,97 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>成长轨迹 · 启航教育</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/student-reference.css?v=20260714-03" />
-  </head>
-  <body class="profile-ready student-reference" data-page="growth">
+    <title>星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css?v=20260713-06" />
+</head>
+  <body class="profile-ready" data-page="growth">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
-      <aside class="sidebar" aria-label="学生端主导航">
-        <a
-          class="brand brand-home"
-          href="/dashboard"
-          aria-label="启航教育首页"
-        ><span class="brand-emblem" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
-              <defs>
-                <linearGradient id="gold-grad-student" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#D4AF37"/>
-                  <stop offset="50%" stop-color="#FFDF73"/>
-                  <stop offset="100%" stop-color="#AA7C11"/>
-                </linearGradient>
-              </defs>
-              <path d="M2.5 19.5C2.5 19.5 8 21.5 12 21.5C16 21.5 21.5 19.5 21.5 19.5C21.5 19.5 17 18 12 18C7 18 2.5 19.5 2.5 19.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M11.5 2.5C11.5 2.5 6 9 6 16.5C8 17.5 11.5 18 11.5 18V2.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M12.5 4.5C12.5 4.5 17 10 18 16.5C15 17.5 12.5 18 12.5 18V4.5Z" fill="url(#gold-grad-student)" opacity="0.8"/>
-            </svg></span><span class="brand-title" style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-left: 8px;">启航教育</span></a>
+                  <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+            <div class="brand-lockup">
+  <span class="brand-kicker">星途</span>
+  <span class="brand-title">启航教育</span>
+</div>
+          </div>
+            
+          </div>
+        </div>
+
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M3 10.5 12 5l9 5.5-9 5.5z" />
-              <path d="M6.5 13.5V18c2.8 2 8.2 2 11 0v-4.5" />
-            </svg><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22z"
-              />
-              <path
-                d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22z"
-              />
-            </svg><span class="nav-label">全部课程</span></a>
-          <a href="/mistakes" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <rect x="4" y="3" width="16" height="18" rx="2" />
-              <path d="M8 8h8M8 12h3M15 11l2 2-2 2" />
-            </svg><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn active" aria-current="page"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
-              <path d="m4 10 6-5 6 7 5-5" />
-            </svg><span class="nav-label">成长轨迹</span></a>
-          <a href="/question-bank" class="nav-btn question-bank-nav"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
-              />
-              <path d="M8 8h8M8 12h5M8 16h3" />
-            </svg><span class="nav-label">题库练习</span></a>
+          <a href="/dashboard" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn active"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
         </nav>
+
         <div class="sidebar-footer">
-          <div
-            class="avatar-card avatar-trigger-card"
-            id="avatar-trigger"
-            role="button"
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="avatar-dropdown"
-            aria-haspopup="true"
-          >
-            <div class="avatar" data-avatar-text></div>
-            <div class="sidebar-account-copy">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
               <p class="sidebar-user-name" data-user-name></p>
               <p class="muted sidebar-user-level" data-user-level></p>
-            </div><span class="account-chevron" aria-hidden="true"
-            >›</span><div
-              class="avatar-dropdown"
-              id="avatar-dropdown"
-              aria-hidden="true"
-            >
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
               <div class="dropdown-header">
                 <div class="avatar avatar-sm" data-avatar-text></div>
                 <div>
@@ -101,163 +50,44 @@
                   <p class="dropdown-user-email" data-user-email></p>
                 </div>
               </div>
-              <div class="dropdown-divider"></div><a
-                href="/login"
-                data-action="logout"
-                class="dropdown-item dropdown-logout"
-              >退出登录</a>
+              <div class="dropdown-divider"></div>
+              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
             </div>
           </div>
         </div>
       </aside>
 
-      <header class="student-portal-topbar" data-student-portal-topbar>
-        <span class="topbar-spacer"></span><div class="student-portal-account">
-          <span
-            class="topbar-notice"
-            aria-hidden="true"
-          ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
-              />
-            </svg></span><span
-            class="student-topbar-avatar"
-            data-avatar-text
-          ></span><span class="student-topbar-name" data-user-name></span><a
-            href="/login"
-            data-action="logout"
-            class="teacher-topbar-logout student-topbar-exit"
-          >退出</a>
-        </div>
-      </header>
-
       <main class="content">
-        <div class="page-scroll">
+<div class="page-scroll">
           <section class="page active" id="growth-page">
-            <header class="student-page-heading">
-              <div>
-                <h1>成长轨迹</h1>
-                <p>
-                  记录学习历程，查看老师课后记录生成的 AI
-                  成长分析
-                </p>
-              </div><span class="growth-period">全部记录</span>
-            </header>
-
-            <div
-              class="growth-reference-metrics"
-              aria-label="成长分析概览"
-            >
-              <article>
-                <span class="metric-icon metric-blue">记</span><div>
-                  <p>课后记录</p><strong data-growth-metric="records"
-                  >0</strong><small>老师已保存记录</small>
-                </div>
-              </article>
-              <article>
-                <span class="metric-icon metric-orange">优</span><div>
-                  <p>优势亮点</p><strong data-growth-metric="strengths"
-                  >0</strong><small>AI 提炼表现</small>
-                </div>
-              </article>
-              <article>
-                <span class="metric-icon metric-green">进</span><div>
-                  <p>重点改进</p><strong data-growth-metric="improvements"
-                  >0</strong><small>下一阶段重点</small>
-                </div>
-              </article>
-              <article>
-                <span class="metric-icon metric-purple">计</span><div>
-                  <p>学习计划</p><strong data-growth-metric="steps"
-                  >0</strong><small>可执行的下一步</small>
-                </div>
-              </article>
-            </div>
+            <div class="growth-header"><div><h1 class="section-title page-title-lg">成长轨迹</h1><p class="muted page-header-subtitle"></p></div></div>
             <div id="growth-root"></div>
           </section>
         </div>
       </main>
     </div>
+
+    
     <script>
-      (() => {
-        const root = document.getElementById("growth-root");
-        const setMetric = (name, value) => {
-          const node = document.querySelector(`[data-growth-metric="${name}"]`);
-          if (node) node.textContent = String(value || 0);
-        };
-        const updateMetrics = () => {
-          const sections =
-            root?.querySelectorAll(".growth-focus-columns > section") || [];
-          const explicitRecordCount = Number(
-            root?.querySelector("[data-growth-record-count]")?.dataset
-              .growthRecordCount || 0,
-          );
-          const recordText =
-            root?.querySelector(".growth-record-disclosure summary small")
-              ?.textContent || "";
-          setMetric(
-            "records",
-            explicitRecordCount || Number(recordText.match(/\d+/)?.[0] || 0),
-          );
-          setMetric(
-            "strengths",
-            sections[0]?.querySelectorAll("li").length || 0,
-          );
-          setMetric(
-            "improvements",
-            sections[1]?.querySelectorAll("li").length || 0,
-          );
-          setMetric(
-            "steps",
-            root?.querySelectorAll(".growth-next-plan li").length || 0,
-          );
-        };
-        if (root) {
-          new MutationObserver(updateMetrics).observe(root, {
-            childList: true,
-            subtree: true,
-          });
-        }
-        updateMetrics();
-      })();
+      // Dropdown toggle logic
+      const avatarTrigger = document.getElementById('avatar-trigger');
+      const avatarDropdown = document.getElementById('avatar-dropdown');
+      
+      if (avatarTrigger && avatarDropdown) {
+        avatarTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          avatarDropdown.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!avatarTrigger.contains(e.target)) {
+            avatarDropdown.classList.remove('active');
+          }
+        });
+      }
     </script>
-    <script>
-      (() => {
-        const trigger = document.getElementById("avatar-trigger");
-        const dropdown = document.getElementById("avatar-dropdown");
-        if (!trigger || !dropdown) return;
-        const setExpanded = (expanded) => {
-          trigger.setAttribute("aria-expanded", String(expanded));
-          dropdown.setAttribute("aria-hidden", String(!expanded));
-        };
-        trigger.addEventListener("click", (event) => {
-          if (
-            event.target instanceof Element &&
-            event.target.closest('[data-action="logout"]')
-          ) return;
-          setExpanded(!dropdown.classList.contains("active"));
-        }, { capture: true });
-        trigger.addEventListener("keydown", (event) => {
-          if (
-            event.target !== trigger ||
-            (event.key !== "Enter" && event.key !== " ")
-          ) return;
-          event.preventDefault();
-          trigger.click();
-        });
-        document.addEventListener("click", (event) => {
-          if (!trigger.contains(event.target)) setExpanded(false);
-        });
-        document.addEventListener("keydown", (event) => {
-          if (
-            event.key !== "Escape" || !dropdown.classList.contains("active")
-          ) return;
-          dropdown.classList.remove("active");
-          setExpanded(false);
-          trigger.focus();
-        });
-      })();
-    </script>
-    <script src="assets/app.js?v=20260714-03"></script>
+    <script src="assets/app.js?v=20260713-06"></script>
   </body>
 </html>

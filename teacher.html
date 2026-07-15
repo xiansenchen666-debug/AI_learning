@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>老师管理 - 星途启航 AI 自习室</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/admin-reference.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/teacher-reference.css?v=20260714-03" />
+    <link rel="stylesheet" href="assets/app.css?v=20260713-06" />
 </head>
   <body class="profile-ready" data-page="teacher">
     <div class="ambient">
@@ -15,83 +13,48 @@
       <div class="blob three"></div>
     </div>
 
-    <header class="teacher-portal-topbar is-hidden" data-teacher-portal-topbar>
-      <a class="teacher-portal-brand" href="/teacher?view=overview" aria-label="启航教育学生管理">
-        <span class="teacher-brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gold-grad-1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#D4AF37"/>
-                <stop offset="50%" stop-color="#FFDF73"/>
-                <stop offset="100%" stop-color="#AA7C11"/>
-              </linearGradient>
-            </defs>
-            <path d="M2.5 19.5C2.5 19.5 8 21.5 12 21.5C16 21.5 21.5 19.5 21.5 19.5C21.5 19.5 17 18 12 18C7 18 2.5 19.5 2.5 19.5Z" fill="url(#gold-grad-1)"/>
-            <path d="M11.5 2.5C11.5 2.5 6 9 6 16.5C8 17.5 11.5 18 11.5 18V2.5Z" fill="url(#gold-grad-1)"/>
-            <path d="M12.5 4.5C12.5 4.5 17 10 18 16.5C15 17.5 12.5 18 12.5 18V4.5Z" fill="url(#gold-grad-1)" opacity="0.8"/>
-          </svg>
-        </span>
-        <span class="brand-title-text" style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-left: 8px;">启航教育</span>
-      </a>
-      <nav class="teacher-portal-tabs" aria-label="教师工作台">
-        <div class="teacher-workspace-menu">
-          <button class="teacher-workspace-trigger is-active" type="button" data-teacher-workspace-trigger aria-expanded="false"><span class="teacher-users-symbol" aria-hidden="true"></span><span>学生管理</span><span aria-hidden="true">⌄</span></button>
-          <div class="teacher-workspace-dropdown is-hidden" data-teacher-workspace-dropdown>
-            <button type="button" data-management-view-link="overview" data-teacher-management-link>学生总览</button>
-            <button type="button" data-management-view-link="records" data-teacher-management-link>课后记录</button>
-            <button type="button" data-management-view-link="growth" data-teacher-management-link>成长规划</button>
+    <div class="app-shell">
+                  <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+            <div class="brand-lockup">
+  <span class="brand-kicker">星途</span>
+  <span class="brand-title">启航教育</span>
+</div>
+          </div>
+            
           </div>
         </div>
-        <label class="teacher-top-student-switcher is-hidden" data-teacher-student-switcher>
-          <span>学生</span>
-          <select data-teacher-student-select aria-label="选择学生" disabled>
-            <option value="">正在读取学生...</option>
-          </select>
-        </label>
-      </nav>
-      <div class="teacher-portal-account">
-        <span class="teacher-notification-button" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></span>
-        <span class="teacher-account-divider" aria-hidden="true"></span>
-        <details class="teacher-account-dropdown">
-          <summary><span class="teacher-topbar-avatar" data-avatar-text></span><span class="teacher-topbar-name" data-user-display-name></span><span aria-hidden="true">⌄</span></summary>
-          <div><a class="teacher-topbar-logout" href="/login" data-action="logout">退出登录</a></div>
-        </details>
-      </div>
-    </header>
 
-    <header class="teacher-portal-topbar admin-portal-topbar is-hidden" data-admin-portal-topbar>
-      <a class="teacher-portal-brand" href="/teacher?view=teachers" aria-label="启航教育超级管理员">
-        <span class="teacher-brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gold-grad-2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#D4AF37"/>
-                <stop offset="50%" stop-color="#FFDF73"/>
-                <stop offset="100%" stop-color="#AA7C11"/>
-              </linearGradient>
-            </defs>
-            <path d="M2.5 19.5C2.5 19.5 8 21.5 12 21.5C16 21.5 21.5 19.5 21.5 19.5C21.5 19.5 17 18 12 18C7 18 2.5 19.5 2.5 19.5Z" fill="url(#gold-grad-2)"/>
-            <path d="M11.5 2.5C11.5 2.5 6 9 6 16.5C8 17.5 11.5 18 11.5 18V2.5Z" fill="url(#gold-grad-2)"/>
-            <path d="M12.5 4.5C12.5 4.5 17 10 18 16.5C15 17.5 12.5 18 12.5 18V4.5Z" fill="url(#gold-grad-2)" opacity="0.8"/>
-          </svg>
-        </span>
-        <span class="brand-title-text" style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-left: 8px;">启航教育</span>
-      </a>
-      <nav class="teacher-portal-tabs" aria-label="超级管理员工作台">
-        <button type="button" data-management-view-link="teachers" data-admin-management-link>教师管理</button>
-        <button type="button" data-management-view-link="students" data-admin-management-link>学生管理</button>
-        <button type="button" data-management-view-link="data" data-admin-management-link>数据中心</button>
-        <button type="button" data-management-view-link="models" data-admin-management-link>系统设置</button>
-      </nav>
-      <div class="teacher-portal-account">
-        <span class="admin-reference-notifications" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></span>
-        <span class="teacher-topbar-avatar" data-avatar-text></span>
-        <span class="admin-reference-account-copy"><span class="teacher-topbar-name" data-user-display-name></span><small class="admin-reference-account-role">SUPER ADMIN</small></span>
-        <a class="teacher-topbar-logout" href="/login" data-action="logout">退出</a>
-      </div>
-    </header>
+        <nav class="nav">
+          <a href="/teacher" class="nav-btn active"><span class="icon-badge">管</span><span class="nav-label">老师管理</span></a>
+        </nav>
 
-    <div class="app-shell no-sidebar">
+        <div class="sidebar-footer">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
+              <p class="sidebar-user-name" data-user-name></p>
+              <p class="muted sidebar-user-level" data-user-level></p>
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
+              <div class="dropdown-header">
+                <div class="avatar avatar-sm" data-avatar-text></div>
+                <div>
+                  <p class="dropdown-user-name" data-user-name></p>
+                  <p class="dropdown-user-email" data-user-email></p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
       <main class="content">
 <div class="page-scroll">
           <section class="page active" id="teacher-page">
@@ -101,163 +64,141 @@
               <a href="/teacher?view=students" data-management-view-link="students" data-admin-management-link>学生账号</a>
               <a href="/teacher?view=enrollments" data-management-view-link="enrollments" data-admin-management-link>学生分配与购课</a>
               <a href="/teacher?view=models" data-management-view-link="models" data-admin-management-link>AI 模型</a>
-              <a href="/teacher?view=overview" data-management-view-link="overview" data-teacher-management-link>学生总览</a>
               <a href="/teacher?view=records" data-management-view-link="records" data-teacher-management-link>课后记录</a>
               <a href="/teacher?view=growth" data-management-view-link="growth" data-teacher-management-link>成长规划</a>
+              <label class="management-student-switcher is-hidden" data-teacher-student-switcher>
+                <span>当前学生</span>
+                <select data-teacher-student-select aria-label="选择学生" disabled>
+                  <option value="">正在读取学生...</option>
+                </select>
+              </label>
             </nav>
-            <section class="admin-reference-page admin-reference-view is-hidden" data-admin-only data-management-view-panel="students">
-              <header class="admin-reference-heading admin-reference-page-head">
-                <div><h1 class="admin-reference-title">学生管理</h1><p class="admin-reference-subtitle">管理学生账号信息、教师分配及课程购买，助力学生学习成长</p></div>
-                <div class="admin-reference-page-actions"><button class="admin-reference-primary" type="button" data-open-student-create><span aria-hidden="true">＋</span>创建学生</button></div>
-              </header>
-              <div class="admin-reference-stats admin-reference-stat-grid" id="admin-student-stats"></div>
-              <section class="admin-reference-data-card admin-reference-panel">
-                <div class="admin-reference-toolbar admin-reference-panel-head">
-                  <div class="admin-reference-tabs"><strong>学生列表</strong><button type="button" data-management-view-link="enrollments" data-admin-management-link>购课管理</button></div>
-                  <div class="admin-reference-toolbar-actions">
-                    <label class="admin-reference-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg><input class="admin-reference-field" type="search" placeholder="搜索学生账号 / 姓名" data-admin-student-search /></label>
-                    <button class="admin-reference-primary" type="button" data-open-student-create><span aria-hidden="true">＋</span>创建学生</button>
+            <section class="card mt-24 is-hidden" data-admin-only data-management-view-panel="students">
+              <div class="section-head">
+                <h2 class="section-title">创建学生账号</h2>
+              </div>
+              <form id="student-create-form" class="student-create-form">
+                <label class="form-group form-group-compact">
+                  <span class="form-label">账号</span>
+                  <input class="form-input" name="username" autocomplete="off" required />
+                </label>
+                <div class="form-group form-group-compact">
+                  <span class="form-label">密码</span>
+                  <div class="password-field">
+                    <input class="form-input" name="password" type="password" autocomplete="new-password" required />
+                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示密码">
+                      <span aria-hidden="true">👁</span>
+                    </button>
                   </div>
                 </div>
-                <div class="admin-reference-table-wrap" id="student-account-list"></div>
-              </section>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">姓名</span>
+                  <input class="form-input" name="full_name" autocomplete="off" required />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">阶段</span>
+                  <select class="form-input" name="stage">
+                    <option value="小学">小学</option>
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                    <option value="所有阶段">所有阶段</option>
+                  </select>
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">年级</span>
+                  <input class="form-input" name="grade" autocomplete="off" />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">邮箱</span>
+                  <input class="form-input" name="email" type="email" autocomplete="off" />
+                </label>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">可使用天数</span>
+                  <input class="form-input" name="access_duration_days" type="number" min="1" max="36500" step="1" placeholder="留空表示长期有效" />
+                  <span class="form-help">从创建当天开始按自然日计算，当天算第 1 天；留空表示长期有效。</span>
+                </label>
+                <div class="student-create-actions">
+                  <button class="primary-btn" type="submit" data-create-student>创建学生</button>
+                  <span class="muted text-sm" id="student-create-status"></span>
+                </div>
+              </form>
             </section>
-            <div class="admin-reference-modal is-hidden" data-student-create-modal role="dialog" aria-modal="true" aria-labelledby="student-create-title">
-              <div class="admin-reference-modal-dialog">
-                <header class="admin-reference-modal-head"><h2 id="student-create-title">创建学生账号</h2><button class="admin-reference-icon-button" type="button" data-close-student-create aria-label="关闭">×</button></header>
-                <form id="student-create-form" autocomplete="off">
-                  <div class="admin-reference-form-grid">
-                    <label class="admin-reference-form-label">账号<input class="admin-reference-field" name="username" value="" autocomplete="off" required /></label>
-                    <label class="admin-reference-form-label">密码<input class="admin-reference-field" name="password" value="" type="password" autocomplete="new-password" required /></label>
-                    <label class="admin-reference-form-label">姓名<input class="admin-reference-field" name="full_name" value="" autocomplete="off" required /></label>
-                    <label class="admin-reference-form-label">阶段<select class="admin-reference-select" name="stage"><option value="小学">小学</option><option value="初中">初中</option><option value="高中">高中</option><option value="所有阶段">所有阶段</option></select></label>
-                    <label class="admin-reference-form-label">年级<input class="admin-reference-field" name="grade" autocomplete="off" /></label>
-                    <label class="admin-reference-form-label">邮箱<input class="admin-reference-field" name="email" type="email" autocomplete="off" /></label>
-                    <label class="admin-reference-form-label is-full">可使用天数<input class="admin-reference-field" name="access_duration_days" type="number" min="1" max="36500" step="1" placeholder="留空表示长期有效" /></label>
-                  </div>
-                  <footer class="admin-reference-form-actions"><span class="admin-reference-form-status" id="student-create-status" aria-live="polite"></span><button class="admin-reference-secondary" type="button" data-close-student-create>取消</button><button class="admin-reference-primary" type="submit" data-create-student>创建学生</button></footer>
-                </form>
-              </div>
-            </div>
-            <div class="admin-reference-modal is-hidden" data-student-edit-modal role="dialog" aria-modal="true" aria-labelledby="student-edit-title">
-              <div class="admin-reference-modal-dialog">
-                <header class="admin-reference-modal-head"><h2 id="student-edit-title">编辑学生资料</h2><button class="admin-reference-icon-button" type="button" data-close-student-edit aria-label="关闭">×</button></header>
-                <form id="student-edit-form" data-admin-student-edit-form autocomplete="off">
-                  <input type="hidden" name="student_id" />
-                  <div class="admin-reference-form-grid">
-                    <label class="admin-reference-form-label">账号<input class="admin-reference-field" name="username" autocomplete="off" required /></label>
-                    <label class="admin-reference-form-label">重置密码<input class="admin-reference-field" name="password" type="password" autocomplete="new-password" placeholder="留空表示不修改" /></label>
-                    <label class="admin-reference-form-label">姓名<input class="admin-reference-field" name="full_name" required /></label>
-                    <label class="admin-reference-form-label">阶段<select class="admin-reference-select" name="stage"><option value="小学">小学</option><option value="初中">初中</option><option value="高中">高中</option><option value="所有阶段">所有阶段</option></select></label>
-                    <label class="admin-reference-form-label">年级<input class="admin-reference-field" name="grade" autocomplete="off" /></label>
-                    <label class="admin-reference-form-label">邮箱<input class="admin-reference-field" name="email" type="email" autocomplete="off" /></label>
-                    <label class="admin-reference-form-label is-full">续期天数<input class="admin-reference-field" name="access_duration_days" type="number" min="1" max="36500" step="1" placeholder="填写后从今天起重新计算；不填则保留原到期日" /></label>
-                    <label class="admin-reference-form-check is-full"><input name="access_unlimited" type="checkbox" />设为长期有效</label>
-                  </div>
-                  <footer class="admin-reference-form-actions"><button class="admin-reference-danger" type="button" data-delete-student-account>删除学生</button><span class="admin-reference-form-status" data-student-edit-status aria-live="polite"></span><button class="admin-reference-secondary" type="button" data-close-student-edit>取消</button><button class="admin-reference-primary" type="submit">保存资料</button></footer>
-                </form>
-              </div>
-            </div>
-            <section class="admin-reference-page admin-reference-view is-hidden" data-admin-only data-management-view-panel="teachers">
-              <header class="admin-reference-heading admin-reference-page-head">
-                <div><h1 class="admin-reference-title">教师管理</h1><p class="admin-reference-subtitle">管理和维护所有教师账号及信息</p></div>
-                <div class="admin-reference-page-actions"><button class="admin-reference-primary" type="button" data-open-teacher-create><span aria-hidden="true">＋</span>创建教师</button></div>
-              </header>
-              <div class="admin-reference-stats admin-reference-stat-grid" id="admin-teacher-stats"></div>
-              <section class="admin-reference-data-card admin-reference-panel">
-                <div class="admin-reference-toolbar admin-reference-panel-head">
-                  <div class="admin-reference-tabs"><strong>全部教师</strong><span>在职教师</span><span>停用教师</span></div>
-                  <div class="admin-reference-toolbar-actions">
-                    <label class="admin-reference-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg><input class="admin-reference-field" type="search" placeholder="搜索教师账号 / 姓名 / 邮箱" data-admin-teacher-search /></label>
-                    <button class="admin-reference-primary" type="button" data-open-teacher-create><span aria-hidden="true">＋</span>创建教师</button>
-                  </div>
+            <section class="card mt-24 is-hidden" data-admin-only data-management-view-panel="teachers">
+              <div class="section-head"><div><h2 class="section-title">教师账号管理</h2><p class="muted text-sm">创建教师账号，并查看当前系统中的全部教师登录账号。</p></div></div>
+              <form id="teacher-create-form" class="student-create-form" autocomplete="off">
+                <label class="form-group form-group-compact"><span class="form-label">账号</span><input class="form-input" name="username" value="" autocomplete="off" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">密码</span><input class="form-input" name="password" value="" type="password" autocomplete="new-password" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">姓名</span><input class="form-input" name="full_name" required /></label>
+                <label class="form-group form-group-compact"><span class="form-label">邮箱</span><input class="form-input" name="email" type="email" /></label>
+                <div class="student-create-actions"><button class="primary-btn" type="submit">创建教师</button><span class="muted text-sm" id="teacher-create-status"></span></div>
+              </form>
+              <div class="teacher-account-directory">
+                <div class="teacher-account-directory-head">
+                  <h3>现有教师账号</h3>
+                  <span data-teacher-account-count>正在读取...</span>
                 </div>
-              <div class="admin-reference-table-wrap">
-                <span class="is-hidden" data-teacher-account-count>正在读取...</span>
                 <div class="teacher-account-list" id="teacher-account-list"></div>
               </div>
-              </section>
             </section>
-            <div class="admin-reference-modal is-hidden" data-teacher-create-modal role="dialog" aria-modal="true" aria-labelledby="teacher-create-title">
-              <div class="admin-reference-modal-dialog">
-                <header class="admin-reference-modal-head"><h2 id="teacher-create-title">创建教师账号</h2><button class="admin-reference-icon-button" type="button" data-close-teacher-create aria-label="关闭">×</button></header>
-                <form id="teacher-create-form" autocomplete="off">
-                  <div class="admin-reference-form-grid">
-                    <label class="admin-reference-form-label">账号<input class="admin-reference-field" name="username" value="" autocomplete="off" required /></label>
-                    <label class="admin-reference-form-label">密码<input class="admin-reference-field" name="password" value="" type="password" autocomplete="new-password" required /></label>
-                    <label class="admin-reference-form-label">姓名<input class="admin-reference-field" name="full_name" value="" required /></label>
-                    <label class="admin-reference-form-label">邮箱<input class="admin-reference-field" name="email" value="" type="email" /></label>
-                  </div>
-                  <footer class="admin-reference-form-actions"><span class="admin-reference-form-status" id="teacher-create-status" aria-live="polite"></span><button class="admin-reference-secondary" type="button" data-close-teacher-create>取消</button><button class="admin-reference-primary" type="submit">创建教师</button></footer>
-                </form>
-              </div>
-            </div>
-            <section class="admin-reference-page admin-reference-view is-hidden" data-model-settings-panel data-admin-only data-management-view-panel="models">
-              <header class="admin-reference-heading admin-reference-page-head">
+            <section class="card mt-24 model-settings-panel is-hidden" data-model-settings-panel data-admin-only data-management-view-panel="models">
+              <div class="section-head">
                 <div>
-                  <h1 class="admin-reference-title">系统设置</h1>
-                  <h2>API Key 管理</h2>
-                  <p class="admin-reference-subtitle">管理和配置用于调用第三方 AI 服务的 API Key，保障系统稳定运行。</p>
+                  <h2 class="section-title">AI 模型配置</h2>
+                  <p class="muted text-sm">配置课后记录与成长轨迹自动分析使用的大模型服务。</p>
                 </div>
-              </header>
-              <section class="admin-reference-panel admin-reference-config-summary">
-                <header class="admin-reference-config-summary-head"><h2>当前 API 服务配置</h2><button class="admin-reference-secondary" type="button" data-open-model-editor>编辑配置</button></header>
-                <div class="admin-reference-config-grid">
-                  <div class="admin-reference-config-item"><span>服务提供商</span><strong data-model-provider>兼容 OpenAI 接口</strong></div>
-                  <div class="admin-reference-config-item"><span>当前使用模型</span><strong data-model-name>—</strong></div>
-                  <div class="admin-reference-config-item"><span>配置状态</span><strong data-model-settings-state aria-live="polite">正在读取...</strong></div>
-                  <div class="admin-reference-config-item"><span>接口 URL</span><strong data-model-base-url>—</strong></div>
-                  <div class="admin-reference-config-item"><span>配置来源</span><strong data-model-source>—</strong></div>
-                  <div class="admin-reference-config-item"><span>配置更新时间</span><strong data-model-updated-at>—</strong></div>
+                <span class="save-feedback" data-model-settings-state aria-live="polite">正在读取配置...</span>
+              </div>
+              <form id="model-settings-form" class="student-create-form model-settings-form" data-model-settings-form>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">接口 URL</span>
+                  <input
+                    class="form-input"
+                    name="base_url"
+                    type="url"
+                    inputmode="url"
+                    autocomplete="url"
+                    placeholder="https://example.com"
+                    required
+                  />
+                </label>
+                <div class="form-group form-group-compact">
+                  <span class="form-label">API Key</span>
+                  <div class="password-field">
+                    <input
+                      class="form-input"
+                      name="api_key"
+                      type="password"
+                      autocomplete="new-password"
+                      placeholder="留空表示保留当前 API Key"
+                    />
+                    <button class="password-toggle" type="button" data-toggle-password aria-label="显示 API Key">
+                      <span aria-hidden="true">👁</span>
+                    </button>
+                  </div>
+                  <span class="form-help">出于安全考虑，已保存的 API Key 不会在此显示。</span>
                 </div>
-              </section>
-              <section class="admin-reference-panel admin-reference-config-list">
-                <header class="admin-reference-panel-head"><h2 class="admin-reference-panel-title">API Key 列表</h2><button class="admin-reference-primary" type="button" data-open-model-editor>配置 API Key</button></header>
-                <div class="admin-reference-table-wrap"><table class="admin-reference-table"><thead><tr><th>配置名称</th><th>接口 URL</th><th>模型</th><th>状态</th><th>操作</th></tr></thead><tbody data-model-config-row><tr><td colspan="5">正在读取配置...</td></tr></tbody></table></div>
-                <div class="admin-reference-security-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg><span>API Key 仅保存在服务器端，页面不会返回完整密钥。</span></div>
-              </section>
-              <section class="admin-reference-panel is-hidden" data-model-editor>
-                <header class="admin-reference-config-summary-head"><h2>配置 AI 服务</h2><button class="admin-reference-icon-button" type="button" data-close-model-editor aria-label="关闭">×</button></header>
-                <form id="model-settings-form" data-model-settings-form>
-                  <div class="admin-reference-config-form"><div class="admin-reference-config-form-grid">
-                    <label class="admin-reference-form-label">接口 URL<input class="admin-reference-field" name="base_url" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com" required /></label>
-                    <label class="admin-reference-form-label">API Key<input class="admin-reference-field" name="api_key" type="password" autocomplete="new-password" placeholder="留空表示保留当前 API Key" /></label>
-                    <label class="admin-reference-form-label">默认模型<input class="admin-reference-field" name="model" autocomplete="off" placeholder="例如：gpt-5.4" required /></label>
-                    <div class="admin-reference-test-box"><div><strong>连接测试</strong><p>填写配置后，可测试接口是否正确和服务是否可用。</p></div><button class="admin-reference-secondary" type="button" data-test-model-settings>测试连接</button></div>
-                  </div></div>
-                  <footer class="admin-reference-form-actions"><span class="admin-reference-form-status" data-model-settings-status aria-live="polite"></span><button class="admin-reference-secondary" type="button" data-close-model-editor>取消</button><button class="admin-reference-primary" type="submit" data-save-model-settings>保存配置</button></footer>
-                </form>
-              </section>
+                <label class="form-group form-group-compact">
+                  <span class="form-label">模型</span>
+                  <input
+                    class="form-input"
+                    name="model"
+                    autocomplete="off"
+                    placeholder="例如：gpt-5.4"
+                    required
+                  />
+                </label>
+                <div class="student-create-actions model-settings-actions">
+                  <button class="secondary-btn" type="button" data-test-model-settings>测试连接</button>
+                  <button class="primary-btn" type="submit" data-save-model-settings>保存配置</button>
+                  <span class="save-feedback" data-model-settings-status aria-live="polite"></span>
+                </div>
+              </form>
             </section>
-            <section class="admin-reference-page admin-reference-view teacher-admin-panel is-hidden" id="teacher-admin-panel" data-management-view-panel="enrollments">
-              <header class="admin-reference-heading admin-reference-page-head admin-reference-heading-row">
-                <div><h1 class="admin-reference-title">课程管理</h1><p class="admin-reference-subtitle">为学生配置可学习的课程</p></div>
-              </header>
-              <div class="admin-reference-stats admin-reference-stat-grid" id="admin-course-stats"></div>
-              <section class="admin-reference-data-card admin-reference-panel admin-reference-assignment-panel">
+            <section class="card mt-24 teacher-admin-panel is-hidden" id="teacher-admin-panel" data-management-view-panel="enrollments">
+              <div class="section-head">
+                <h2 class="section-title">学生购课管理</h2>
+              </div>
               <div id="teacher-admin-root"></div>
-              </section>
-            </section>
-            <section class="admin-reference-page admin-reference-view is-hidden" data-admin-only data-management-view-panel="data">
-              <header class="admin-reference-heading admin-reference-page-head admin-reference-heading-row">
-                <div><h1 class="admin-reference-title">数据中心</h1><p class="admin-reference-subtitle">全部学生与课程数据总览</p></div>
-                <div class="admin-reference-page-actions"><span class="admin-data-period">全部时间</span><button class="admin-reference-secondary" type="button" data-export-admin-report><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>导出报表</button></div>
-              </header>
-              <div class="admin-reference-stats admin-reference-stat-grid is-five" id="admin-data-stats"></div>
-              <div class="admin-reference-dashboard-grid admin-data-primary-grid">
-                <section class="admin-reference-dashboard-card admin-data-trend-card"><header><h2>学习趋势</h2><span>学习时长</span></header><div class="admin-reference-chart-empty" id="admin-learning-trend">暂无学习趋势数据</div></section>
-                <section class="admin-reference-dashboard-card"><h2>学科覆盖 / 课程数</h2><div class="admin-subject-donut" id="admin-subject-distribution"></div></section>
-                <section class="admin-reference-dashboard-card"><h2>学习时段分布</h2><div class="admin-time-heatmap" id="admin-time-heatmap"></div></section>
-              </div>
-              <div class="admin-data-secondary-grid">
-                <section class="admin-reference-dashboard-card"><h2>年级分布</h2><div class="admin-data-bars" id="admin-grade-distribution"></div></section>
-                <section class="admin-reference-dashboard-card"><h2>活跃学生 TOP10</h2><div class="admin-reference-table-wrap" id="admin-active-students"></div></section>
-                <section class="admin-reference-dashboard-card"><h2>班级表现 TOP5</h2><div class="admin-reference-table-wrap" id="admin-class-ranking"></div></section>
-              </div>
-              <div class="admin-reference-security-note admin-data-security-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg><span>数据仅用于教学管理与学习分析。当前未接入的统计项显示为空，不使用示例数字填充。</span></div>
-            </section>
-            <section class="teacher-overview-panel is-hidden" id="teacher-overview-panel" data-management-view-panel="overview">
-              <div id="teacher-overview-root"></div>
             </section>
             <section class="card mt-24 teacher-record-panel is-hidden" id="teacher-record-panel" data-management-view-panel="records">
               <div class="section-head"><div><h2 class="section-title">课后辅导记录</h2><p class="muted text-sm">提交后系统会自动分析学生做得好的地方和下一步改进方向。</p></div></div>
@@ -291,6 +232,6 @@
         });
       }
     </script>
-    <script src="assets/app.js?v=20260714-03"></script>
+    <script src="assets/app.js?v=20260713-06"></script>
   </body>
 </html>

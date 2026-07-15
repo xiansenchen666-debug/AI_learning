@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS ai_users (
   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS ai_model_settings (
   id SMALLINT PRIMARY KEY CHECK (id = 1),
   base_url TEXT NOT NULL,
@@ -35,21 +36,6 @@ CREATE TABLE IF NOT EXISTS ai_growth_analyses (
 );
 CREATE INDEX IF NOT EXISTS idx_ai_growth_analyses_updated
   ON ai_growth_analyses (updated_at DESC);
-
-CREATE TABLE IF NOT EXISTS ai_growth_jobs (
-  student_id BIGINT PRIMARY KEY REFERENCES ai_users (id) ON DELETE CASCADE,
-  requested_revision BIGINT NOT NULL DEFAULT 1 CHECK (requested_revision > 0),
-  requested_source_hash TEXT NOT NULL DEFAULT '',
-  claim_id UUID,
-  status VARCHAR(20) NOT NULL DEFAULT 'pending'
-    CHECK (status IN ('pending', 'running', 'failed', 'completed')),
-  attempt_count INTEGER NOT NULL DEFAULT 0 CHECK (attempt_count >= 0),
-  last_error TEXT NOT NULL DEFAULT '',
-  next_attempt_at TIMESTAMPTZ,
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-CREATE INDEX IF NOT EXISTS idx_ai_growth_jobs_ready
-  ON ai_growth_jobs (status, next_attempt_at, updated_at);
 
 CREATE TABLE IF NOT EXISTS ai_model_usage_daily (
   usage_date DATE NOT NULL,

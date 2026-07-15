@@ -3,97 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>年级课程 · 启航教育</title>
-    <link rel="stylesheet" href="assets/app.css?v=20260714-03" />
-    <link rel="stylesheet" href="assets/student-reference.css?v=20260714-03" />
+    <title>星途启航 AI 自习室</title>
+    <link rel="stylesheet" href="assets/app.css?v=20260713-06" />
   </head>
-  <body class="profile-ready student-reference" data-page="grade">
+  <body class="profile-ready" data-page="grade">
+    <div class="ambient">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+    </div>
+
     <div class="app-shell">
-      <aside class="sidebar" aria-label="学生端主导航">
-        <a
-          class="brand brand-home"
-          href="/dashboard"
-          aria-label="启航教育首页"
-        ><span class="brand-emblem" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
-              <defs>
-                <linearGradient id="gold-grad-student" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#D4AF37"/>
-                  <stop offset="50%" stop-color="#FFDF73"/>
-                  <stop offset="100%" stop-color="#AA7C11"/>
-                </linearGradient>
-              </defs>
-              <path d="M2.5 19.5C2.5 19.5 8 21.5 12 21.5C16 21.5 21.5 19.5 21.5 19.5C21.5 19.5 17 18 12 18C7 18 2.5 19.5 2.5 19.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M11.5 2.5C11.5 2.5 6 9 6 16.5C8 17.5 11.5 18 11.5 18V2.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M12.5 4.5C12.5 4.5 17 10 18 16.5C15 17.5 12.5 18 12.5 18V4.5Z" fill="url(#gold-grad-student)" opacity="0.8"/>
-            </svg></span><span class="brand-title" style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-left: 8px;">启航教育</span></a>
+      <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <div class="brand-stack">
+              <div class="brand-lockup">
+                <span class="brand-kicker">星途</span>
+                <span class="brand-title">启航教育</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <nav class="nav">
-          <a href="/dashboard" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M3 10.5 12 5l9 5.5-9 5.5z" />
-              <path d="M6.5 13.5V18c2.8 2 8.2 2 11 0v-4.5" />
-            </svg><span class="nav-label">学习中心</span></a>
-          <a href="/subjects" class="nav-btn active" aria-current="page"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22z"
-              />
-              <path
-                d="M20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22z"
-              />
-            </svg><span class="nav-label">全部课程</span></a>
-          <a href="/mistakes" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <rect x="4" y="3" width="16" height="18" rx="2" />
-              <path d="M8 8h8M8 12h3M15 11l2 2-2 2" />
-            </svg><span class="nav-label">智能错题本</span></a>
-          <a href="/growth" class="nav-btn"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
-              <path d="m4 10 6-5 6 7 5-5" />
-            </svg><span class="nav-label">成长轨迹</span></a>
-          <a href="/question-bank" class="nav-btn question-bank-nav"><svg
-              class="nav-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
-              />
-              <path d="M8 8h8M8 12h5M8 16h3" />
-            </svg><span class="nav-label">题库练习</span></a>
+          <a href="/dashboard" class="nav-btn"><span class="icon-badge">学</span><span class="nav-label">学习中心</span></a>
+          <a href="/subjects" class="nav-btn active"><span class="icon-badge">课</span><span class="nav-label">全部课程</span></a>
+          <a href="/mistakes" class="nav-btn"><span class="icon-badge">错</span><span class="nav-label">智能错题本</span></a>
+          <a href="/growth" class="nav-btn"><span class="icon-badge">轨</span><span class="nav-label">成长轨迹</span></a>
+          <a href="/question-bank" class="nav-btn question-bank-nav"><span class="icon-badge">题</span><span class="nav-label">题库练习</span></a>
         </nav>
+
         <div class="sidebar-footer">
-          <div
-            class="avatar-card avatar-trigger-card"
-            id="avatar-trigger"
-            role="button"
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="avatar-dropdown"
-            aria-haspopup="true"
-          >
-            <div class="avatar" data-avatar-text></div>
-            <div class="sidebar-account-copy">
+          <div class="avatar-card avatar-trigger-card" id="avatar-trigger">
+            <div>
               <p class="sidebar-user-name" data-user-name></p>
               <p class="muted sidebar-user-level" data-user-level></p>
-            </div><span class="account-chevron" aria-hidden="true"
-            >›</span><div
-              class="avatar-dropdown"
-              id="avatar-dropdown"
-              aria-hidden="true"
-            >
+            </div>
+            <div class="avatar" data-avatar-text></div>
+            <div class="avatar-dropdown" id="avatar-dropdown">
               <div class="dropdown-header">
                 <div class="avatar avatar-sm" data-avatar-text></div>
                 <div>
@@ -101,48 +49,23 @@
                   <p class="dropdown-user-email" data-user-email></p>
                 </div>
               </div>
-              <div class="dropdown-divider"></div><a
-                href="/login"
-                data-action="logout"
-                class="dropdown-item dropdown-logout"
-              >退出登录</a>
+              <div class="dropdown-divider"></div>
+              <a href="/login" data-action="logout" class="dropdown-item dropdown-logout">
+                <span class="dropdown-logout-icon">🚪</span> 退出登录
+              </a>
             </div>
           </div>
         </div>
       </aside>
 
-      <header class="student-portal-topbar" data-student-portal-topbar>
-        <span class="topbar-spacer"></span><div class="student-portal-account">
-          <span
-            class="topbar-notice"
-            aria-hidden="true"
-          ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
-              />
-            </svg></span><span
-            class="student-topbar-avatar"
-            data-avatar-text
-          ></span><span class="student-topbar-name" data-user-name></span><a
-            href="/login"
-            data-action="logout"
-            class="teacher-topbar-logout student-topbar-exit"
-          >退出</a>
-        </div>
-      </header>
-
       <main class="content course-content-shell">
-        <section class="course-workspace page active grade-reference-workspace">
+        <section class="course-workspace page active">
           <header class="workspace-mini-header">
             <div class="workspace-title-zone">
-              <a
-                href="/subjects"
-                class="nav-back-link workspace-back-link"
-                data-subject-overview-link
-                aria-label="返回全部课程"
-              ><svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg></a>
+              <a href="/subjects" class="nav-back-link workspace-back-link" data-subject-overview-link>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>返回年级</span>
+              </a>
               <div class="workspace-title-copy">
                 <h1 id="grade-title-main"></h1>
                 <p id="grade-title-subtitle"></p>
@@ -150,53 +73,14 @@
             </div>
             <div id="grade-summary" class="workspace-badges"></div>
           </header>
+
           <div id="grade-root" class="grade-page-root is-hidden">
-            <div
-              class="subject-board grade-subject-board"
-              data-grade-subject-board
-            >
-            </div>
+            <div class="subject-board grade-subject-board" data-grade-subject-board></div>
           </div>
         </section>
       </main>
     </div>
-    <script>
-      (() => {
-        const trigger = document.getElementById("avatar-trigger");
-        const dropdown = document.getElementById("avatar-dropdown");
-        if (!trigger || !dropdown) return;
-        const setExpanded = (expanded) => {
-          trigger.setAttribute("aria-expanded", String(expanded));
-          dropdown.setAttribute("aria-hidden", String(!expanded));
-        };
-        trigger.addEventListener("click", (event) => {
-          if (
-            event.target instanceof Element &&
-            event.target.closest('[data-action="logout"]')
-          ) return;
-          setExpanded(!dropdown.classList.contains("active"));
-        }, { capture: true });
-        trigger.addEventListener("keydown", (event) => {
-          if (
-            event.target !== trigger ||
-            (event.key !== "Enter" && event.key !== " ")
-          ) return;
-          event.preventDefault();
-          trigger.click();
-        });
-        document.addEventListener("click", (event) => {
-          if (!trigger.contains(event.target)) setExpanded(false);
-        });
-        document.addEventListener("keydown", (event) => {
-          if (
-            event.key !== "Escape" || !dropdown.classList.contains("active")
-          ) return;
-          dropdown.classList.remove("active");
-          setExpanded(false);
-          trigger.focus();
-        });
-      })();
-    </script>
-    <script src="assets/app.js?v=20260714-03"></script>
+
+    <script src="assets/app.js?v=20260713-06"></script>
   </body>
 </html>

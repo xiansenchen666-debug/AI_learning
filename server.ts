@@ -114,8 +114,6 @@ const courseById = new Map(courses.map((item) => [Number(item.id), item]));
 const lessonById = new Map(lessons.map((item) => [Number(item.id), item]));
 const questionsByLesson = groupBy(questions, (item) => Number(item.lesson_id));
 const lessonsByCourse = groupBy(lessons, (item) => Number(item.course_id));
-const growthAnalysisInflight = new Map<string, Promise<Dict>>();
-const growthAnalysisRerunRequested = new Set<string>();
 
 const LOCAL_RESOURCE_ROOT = Deno.env.get("LOCAL_RESOURCE_ROOT") ||
   normalizeLocalPath(
@@ -143,20 +141,6 @@ function groupBy<T>(
     result.set(key, [...(result.get(key) || []), item]);
   }
   return result;
-}
-
-function runInBackground(task: Promise<unknown>) {
-  const handled = task.catch((error) => {
-    console.error("Background task failed", error);
-  });
-  const edgeRuntime = (globalThis as typeof globalThis & {
-    EdgeRuntime?: { waitUntil?: (promise: Promise<unknown>) => void };
-  }).EdgeRuntime;
-  try {
-    edgeRuntime?.waitUntil?.(handled);
-  } catch {
-    // Startup and timer sweeps can run outside an EdgeRuntime request context.
-  }
 }
 
 function json(data: unknown, init: ResponseInit = {}) {
@@ -246,12 +230,6 @@ function accessDateString(value: string | Date | null | undefined) {
   if (!value) return "";
   if (value instanceof Date) return value.toISOString().slice(0, 10);
   return String(value).slice(0, 10);
-}
-
-function timestampIsoString(value: string | Date | null | undefined) {
-  if (!value) return "";
-  const date = value instanceof Date ? value : new Date(value);
-  return Number.isNaN(date.getTime()) ? "" : date.toISOString();
 }
 
 function normalizeAccessDate(value: unknown) {
@@ -465,15 +443,8 @@ async function listStudyTime(userId: number) {
 }
 
 function questionPayload(question: Question, courseId?: number) {
-  const sourceLesson = lessonById.get(question.lesson_id);
   return {
     id: question.id,
-    lesson_id: question.lesson_id,
-    lesson_title: sourceLesson?.title || "",
-    lesson_order: sourceLesson?.lesson_order || null,
-    lesson_label: sourceLesson
-      ? `${sourceLesson.lesson_order}. ${sourceLesson.title}`
-      : "",
     question: question.question_text,
     options: question.options || [],
     answer: question.answer,
@@ -486,10 +457,6 @@ function questionPayload(question: Question, courseId?: number) {
       ? `/api/course/${courseId}/page/${question.source_page}/image`
       : null,
   };
-}
-
-function normalizedQuestionAnswer(value: unknown) {
-  return String(value || "").normalize("NFKC").trim().replace(/\s+/g, " ");
 }
 
 function gradeLock(course: Course) {
@@ -837,78 +804,10 @@ async function questionBankPayload(user: User, lessonId: number) {
   if (!course) return null;
   const enrollments = new Set(await getEnrollments(user));
   if (!isTeacher(user) && !enrollments.has(course.id)) return null;
-  const preferredQuestions = (items: Question[]) => {
-    const bankItems = items.filter((item) => item.question_kind === "bank");
-    return bankItems.length ? bankItems : items;
-  };
-  const lessonQuestions = preferredQuestions(
-    questionsByLesson.get(lessonId) || [],
+  const lessonQuestions = questionsByLesson.get(lessonId) || [];
+  const bankQuestions = lessonQuestions.filter((item) =>
+    item.question_kind === "bank"
   );
-  const courseQuestionPool = (lessonsByCourse.get(course.id) || []).flatMap(
-    (item) => preferredQuestions(questionsByLesson.get(item.id) || []),
-  );
-  const [attempts, mistakes, study] = await Promise.all([
-    listAttempts(user.id),
-    listMistakes(user.id),
-    listStudyTime(user.id),
-  ]);
-  const latestAttemptByQuestion = new Map<number, Dict>();
-  attempts.forEach((attempt) => {
-    const questionId = Number(attempt.question_id);
-    if (!latestAttemptByQuestion.has(questionId)) {
-      latestAttemptByQuestion.set(questionId, attempt);
-    }
-  });
-  const mistakeIds = new Set(
-    mistakes
-      .filter((item) => Number(item.course_id) === course.id)
-      .map((item) => Number(item.question_id)),
-  );
-  const isCorrectAttempt = (attempt?: Dict) =>
-    attempt?.correct === true || attempt?.correct === 1 ||
-    attempt?.correct === "true" || attempt?.correct === "t";
-  const chapterQuestions = [...lessonQuestions]
-    .sort((left, right) => {
-      const leftAttempt = latestAttemptByQuestion.get(left.id);
-      const rightAttempt = latestAttemptByQuestion.get(right.id);
-      const leftRank = !leftAttempt ? 0 : isCorrectAttempt(leftAttempt) ? 2 : 1;
-      const rightRank = !rightAttempt
-        ? 0
-        : isCorrectAttempt(rightAttempt)
-        ? 2
-        : 1;
-      return leftRank - rightRank || left.id - right.id;
-    })
-    .slice(0, 20);
-  const uniqueQuestions = (items: Question[]) => {
-    const seen = new Set<number>();
-    return items.filter((item) => {
-      if (seen.has(item.id)) return false;
-      seen.add(item.id);
-      return true;
-    });
-  };
-  const unresolvedQuestions = courseQuestionPool.filter((item) => {
-    const attempt = latestAttemptByQuestion.get(item.id);
-    return mistakeIds.has(item.id) || (attempt && !isCorrectAttempt(attempt));
-  });
-  const unattemptedQuestions = courseQuestionPool.filter((item) =>
-    !latestAttemptByQuestion.has(item.id)
-  );
-  const focusQuestions = uniqueQuestions([
-    ...unresolvedQuestions,
-    ...unattemptedQuestions,
-    ...chapterQuestions,
-  ]).slice(0, 10);
-  const examQuestions = [...courseQuestionPool]
-    .sort((left, right) => {
-      const leftKey = Math.imul(left.id ^ user.id, -1640531527) >>> 0;
-      const rightKey = Math.imul(right.id ^ user.id, -1640531527) >>> 0;
-      return leftKey - rightKey;
-    })
-    .slice(0, 10);
-  const toPayload = (items: Question[]) =>
-    items.map((question) => questionPayload(question, course.id));
   return {
     course: {
       id: course.id,
@@ -922,22 +821,11 @@ async function questionBankPayload(user: User, lessonId: number) {
       title: lesson.title,
       order: lesson.lesson_order,
     },
-    questions: toPayload(chapterQuestions),
-    practice_modes: {
-      exam: toPayload(examQuestions),
-      focus: toPayload(focusQuestions),
-    },
-    practice_mode_meta: {
-      course_lesson_count: (lessonsByCourse.get(course.id) || []).length,
-      chapter_question_count: lessonQuestions.length,
-      focus_mistake_count: unresolvedQuestions.length,
-    },
+    questions: (bankQuestions.length ? bankQuestions : lessonQuestions).map((
+      question,
+    ) => questionPayload(question, course.id)),
     grade_lock: gradeLock(course),
-    learner_profile: await learnerProfile(user.id, course.id, {
-      attempts,
-      mistakes,
-      study,
-    }),
+    learner_profile: await learnerProfile(user.id, course.id),
   };
 }
 
@@ -1372,20 +1260,7 @@ async function generateTeacherGrowthAnalysis(
   }
 }
 
-type GrowthSource = {
-  teacherRecords: Dict[];
-  model: string;
-  sourceHash: string;
-};
-
-type GrowthCache = {
-  source_hash: string;
-  model: string;
-  payload: Dict | string;
-  updated_at: string;
-};
-
-async function loadGrowthSource(user: User): Promise<GrowthSource> {
+async function growthPayload(user: User): Promise<Dict> {
   const teacherRecords = await dbRows<Dict>(
     `SELECT r.id, r.title, r.notes, r.ai_analysis,
             TO_CHAR(r.created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at,
@@ -1398,7 +1273,12 @@ async function loadGrowthSource(user: User): Promise<GrowthSource> {
     [user.id],
   );
   if (!teacherRecords.length) {
-    return { teacherRecords, model: "", sourceHash: "" };
+    return {
+      user: userPayload(user),
+      has_teacher_records: false,
+      ai_generated: false,
+      record_count: 0,
+    };
   }
   const settingsRow = await loadAiModelSettingsRow();
   const model = String(settingsRow?.model || "").trim() ||
@@ -1411,275 +1291,46 @@ async function loadGrowthSource(user: User): Promise<GrowthSource> {
     time: item.created_at,
   }));
   const sourceHash = await hashPassword(
-    JSON.stringify({
-      version: 3,
-      model,
-      student: {
-        name: user.full_name,
-        stage: user.stage,
-        grade: user.grade,
-      },
-      teacher_records: sourceFacts,
-    }),
+    JSON.stringify({ version: 3, teacher_records: sourceFacts }),
   );
-  return { teacherRecords, model, sourceHash };
-}
-
-async function loadGrowthCache(studentId: number) {
-  const rows = await dbRows<GrowthCache>(
+  const cachedRows = await dbRows<{
+    source_hash: string;
+    model: string;
+    payload: Dict | string;
+    updated_at: string;
+  }>(
     `SELECT source_hash, model, payload,
             TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS updated_at
      FROM ai_growth_analyses WHERE student_id = ? LIMIT 1`,
-    [studentId],
+    [user.id],
   );
-  const cached = rows[0] || null;
-  let payload: Dict | null = null;
+  const cached = cachedRows[0] || null;
+  let cachedPayload: Dict | null = null;
   if (cached) {
     try {
-      payload = typeof cached.payload === "string"
+      cachedPayload = typeof cached.payload === "string"
         ? JSON.parse(cached.payload) as Dict
         : cached.payload;
     } catch {
-      payload = null;
+      cachedPayload = null;
     }
   }
-  return { cached, payload };
-}
-
-function completedGrowthPayload(
-  user: User,
-  source: GrowthSource,
-  cached: GrowthCache,
-  payload: Dict,
-) {
-  return {
-    ...payload,
-    user: userPayload(user),
-    has_teacher_records: true,
-    record_count: source.teacherRecords.length,
-    ai_model: cached.model,
-    ai_updated_at: cached.updated_at,
-    ai_cached: true,
-    analysis_status: "completed",
-  };
-}
-
-function pendingGrowthPayload(
-  user: User,
-  source: GrowthSource,
-  cached: GrowthCache | null,
-  cachedPayload: Dict | null,
-) {
-  if (cachedPayload?.analysis_version === 3) {
+  if (cached?.source_hash === sourceHash && cachedPayload) {
     return {
       ...cachedPayload,
       user: userPayload(user),
       has_teacher_records: true,
-      record_count: source.teacherRecords.length,
-      ai_model: cached?.model || source.model,
-      ai_updated_at: cached?.updated_at || "",
+      record_count: teacherRecords.length,
+      ai_model: cached.model,
+      ai_updated_at: cached.updated_at,
       ai_cached: true,
-      ai_stale: true,
-      ai_pending: true,
-      analysis_status: "pending",
     };
   }
-  return {
-    user: userPayload(user),
-    has_teacher_records: true,
-    record_count: source.teacherRecords.length,
-    ai_generated: false,
-    ai_pending: true,
-    analysis_status: "pending",
-  };
-}
-
-type GrowthJobLease = {
-  revision: number;
-  sourceHash: string;
-  claimId: string;
-};
-
-async function ensureGrowthJob(studentId: number) {
-  const result = await dbExec<{ requested_revision: number }>(
-    `INSERT INTO ai_growth_jobs (
-       student_id, requested_revision, requested_source_hash, claim_id,
-       status, attempt_count, last_error, next_attempt_at, updated_at
-     ) VALUES (?, 1, '', NULL, 'pending', 0, '', NULL, NOW())
-     ON CONFLICT (student_id) DO UPDATE SET
-       student_id = EXCLUDED.student_id
-     RETURNING requested_revision`,
-    [studentId],
-  );
-  return Number(result.rows[0]?.requested_revision || 1);
-}
-
-async function publishGrowthJob(
-  studentId: number,
-  revision: number,
-  sourceHash: string,
-) {
-  const result = await dbExec<{ requested_revision: number }>(
-    `UPDATE ai_growth_jobs
-     SET requested_source_hash = ?,
-       status = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN 'pending'
-         ELSE status
-       END,
-       attempt_count = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN 0
-         ELSE attempt_count
-       END,
-       last_error = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN ''
-         ELSE last_error
-       END,
-       next_attempt_at = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN NULL
-         ELSE next_attempt_at
-       END,
-       claim_id = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN NULL
-         ELSE claim_id
-       END,
-       updated_at = CASE
-         WHEN requested_source_hash <> ? OR status = 'completed'
-         THEN NOW()
-         ELSE updated_at
-       END
-     WHERE student_id = ? AND requested_revision = ?
-     RETURNING requested_revision`,
-    [
-      sourceHash,
-      sourceHash,
-      sourceHash,
-      sourceHash,
-      sourceHash,
-      sourceHash,
-      sourceHash,
-      studentId,
-      revision,
-    ],
-  );
-  return Boolean(result.rows[0]);
-}
-
-async function claimGrowthJob(
-  studentId: number,
-  revision: number,
-  sourceHash: string,
-): Promise<GrowthJobLease | null> {
-  const claimId = crypto.randomUUID();
-  const result = await dbExec<{ student_id: number }>(
-    `UPDATE ai_growth_jobs
-     SET status = 'running', attempt_count = attempt_count + 1,
-         claim_id = ?, last_error = '', next_attempt_at = NULL,
-         updated_at = NOW()
-     WHERE student_id = ? AND requested_revision = ?
-       AND requested_source_hash = ?
-       AND (
-         status = 'pending'
-         OR (status = 'failed' AND (next_attempt_at IS NULL OR next_attempt_at <= NOW()))
-         OR (status = 'running' AND updated_at < NOW() - INTERVAL '45 seconds')
-       )
-     RETURNING student_id`,
-    [claimId, studentId, revision, sourceHash],
-  );
-  return result.rows[0] ? { revision, sourceHash, claimId } : null;
-}
-
-async function refreshGrowthJobLease(
-  studentId: number,
-  lease: GrowthJobLease,
-) {
-  await dbExec(
-    `UPDATE ai_growth_jobs
-     SET updated_at = NOW()
-     WHERE student_id = ? AND requested_revision = ?
-       AND requested_source_hash = ? AND claim_id = ? AND status = 'running'`,
-    [studentId, lease.revision, lease.sourceHash, lease.claimId],
-  );
-}
-
-async function markGrowthJobCompleted(
-  studentId: number,
-  revision: number,
-  sourceHash: string,
-) {
-  await dbExec(
-    `UPDATE ai_growth_jobs
-     SET status = 'completed', claim_id = NULL, last_error = '',
-         next_attempt_at = NULL, updated_at = NOW()
-     WHERE student_id = ? AND requested_revision = ?
-       AND requested_source_hash = ?`,
-    [studentId, revision, sourceHash],
-  );
-}
-
-async function markGrowthJobFailed(
-  studentId: number,
-  lease: GrowthJobLease,
-  error: unknown,
-) {
-  const message = error instanceof Error ? error.message : String(error || "");
-  await dbExec(
-    `UPDATE ai_growth_jobs
-     SET status = 'failed', claim_id = NULL, last_error = ?,
-         next_attempt_at = NOW() + CASE
-           WHEN attempt_count >= 5 THEN INTERVAL '5 minutes'
-           WHEN attempt_count >= 3 THEN INTERVAL '1 minute'
-           ELSE INTERVAL '15 seconds'
-         END,
-         updated_at = NOW()
-     WHERE student_id = ? AND requested_revision = ?
-       AND requested_source_hash = ? AND claim_id = ? AND status = 'running'`,
-    [
-      message.slice(0, 2_000),
-      studentId,
-      lease.revision,
-      lease.sourceHash,
-      lease.claimId,
-    ],
-  ).catch(() => undefined);
-}
-
-async function persistGrowthAnalysisIfCurrent(
-  user: User,
-  lease: GrowthJobLease,
-  generated: { analysis: Dict; model: string },
-) {
-  const client = await pgPool.connect();
   try {
-    await client.query("BEGIN");
-    const job = await client.query<{
-      requested_revision: number;
-      requested_source_hash: string;
-      claim_id: string | null;
-    }>(
-      `SELECT requested_revision, requested_source_hash, claim_id
-       FROM ai_growth_jobs
-       WHERE student_id = $1
-       FOR UPDATE`,
-      [user.id],
-    );
-    const currentJob = job.rows[0];
-    if (
-      Number(currentJob?.requested_revision) !== lease.revision ||
-      currentJob?.requested_source_hash !== lease.sourceHash ||
-      currentJob?.claim_id !== lease.claimId
-    ) {
-      await client.query("ROLLBACK");
-      return false;
-    }
-    await client.query(
-      `INSERT INTO ai_growth_analyses (
-         student_id, source_hash, model, payload, updated_at
-       ) VALUES ($1, $2, $3, $4::jsonb, NOW())
+    const generated = await generateTeacherGrowthAnalysis(user, teacherRecords);
+    await dbExec(
+      `INSERT INTO ai_growth_analyses (student_id, source_hash, model, payload, updated_at)
+       VALUES (?, ?, ?, ?::jsonb, NOW())
        ON CONFLICT (student_id) DO UPDATE SET
          source_hash = EXCLUDED.source_hash,
          model = EXCLUDED.model,
@@ -1687,250 +1338,34 @@ async function persistGrowthAnalysisIfCurrent(
          updated_at = NOW()`,
       [
         user.id,
-        lease.sourceHash,
+        sourceHash,
         generated.model,
         JSON.stringify(generated.analysis),
       ],
     );
-    await client.query(
-      `UPDATE ai_growth_jobs
-       SET status = 'completed', claim_id = NULL, last_error = '',
-           next_attempt_at = NULL, updated_at = NOW()
-       WHERE student_id = $1 AND requested_revision = $2
-         AND requested_source_hash = $3 AND claim_id = $4`,
-      [user.id, lease.revision, lease.sourceHash, lease.claimId],
-    );
-    await client.query("COMMIT");
-    return true;
-  } catch (error) {
-    await client.query("ROLLBACK").catch(() => undefined);
-    throw error;
-  } finally {
-    client.release();
-  }
-}
-
-async function buildGrowthPayload(
-  user: User,
-  { generate = false, retryCount = 0 }: {
-    generate?: boolean;
-    retryCount?: number;
-  } = {},
-): Promise<Dict> {
-  const requestedRevision = generate ? await ensureGrowthJob(user.id) : null;
-  const source = await loadGrowthSource(user);
-  if (!source.teacherRecords.length) {
-    if (requestedRevision !== null) {
-      if (await publishGrowthJob(user.id, requestedRevision, "")) {
-        await markGrowthJobCompleted(user.id, requestedRevision, "");
-      } else if (retryCount < 2) {
-        return await buildGrowthPayload(user, {
-          generate: true,
-          retryCount: retryCount + 1,
-        });
-      }
-    }
-    return {
-      user: userPayload(user),
-      has_teacher_records: false,
-      ai_generated: false,
-      record_count: 0,
-    };
-  }
-  const { cached, payload: cachedPayload } = await loadGrowthCache(user.id);
-  if (cached?.source_hash === source.sourceHash && cachedPayload) {
-    if (requestedRevision !== null) {
-      if (
-        await publishGrowthJob(user.id, requestedRevision, source.sourceHash)
-      ) {
-        await markGrowthJobCompleted(
-          user.id,
-          requestedRevision,
-          source.sourceHash,
-        );
-      } else if (retryCount < 2) {
-        return await buildGrowthPayload(user, {
-          generate: true,
-          retryCount: retryCount + 1,
-        });
-      }
-    }
-    return completedGrowthPayload(user, source, cached, cachedPayload);
-  }
-  if (!generate) {
-    runInBackground(growthPayload(user, { generate: true }));
-    return pendingGrowthPayload(user, source, cached, cachedPayload);
-  }
-
-  const revision = requestedRevision as number;
-  if (!await publishGrowthJob(user.id, revision, source.sourceHash)) {
-    if (retryCount < 2) {
-      return await buildGrowthPayload(user, {
-        generate: true,
-        retryCount: retryCount + 1,
-      });
-    }
-    const latestSource = await loadGrowthSource(user);
-    const latestCache = await loadGrowthCache(user.id);
-    return pendingGrowthPayload(
-      user,
-      latestSource,
-      latestCache.cached,
-      latestCache.payload,
-    );
-  }
-  const refreshedCache = await loadGrowthCache(user.id);
-  if (
-    refreshedCache.cached?.source_hash === source.sourceHash &&
-    refreshedCache.payload
-  ) {
-    await markGrowthJobCompleted(user.id, revision, source.sourceHash);
-    return completedGrowthPayload(
-      user,
-      source,
-      refreshedCache.cached,
-      refreshedCache.payload,
-    );
-  }
-  const lease = await claimGrowthJob(user.id, revision, source.sourceHash);
-  if (!lease) {
-    return pendingGrowthPayload(user, source, cached, cachedPayload);
-  }
-
-  const leaseHeartbeat = setInterval(
-    () => runInBackground(refreshGrowthJobLease(user.id, lease)),
-    12_000,
-  );
-  try {
-    const generated = await generateTeacherGrowthAnalysis(
-      user,
-      source.teacherRecords,
-    );
-    const latestSource = await loadGrowthSource(user);
-    if (latestSource.sourceHash !== source.sourceHash) {
-      if (retryCount < 2) {
-        return await buildGrowthPayload(user, {
-          generate: true,
-          retryCount: retryCount + 1,
-        });
-      }
-      const latestCache = await loadGrowthCache(user.id);
-      return pendingGrowthPayload(
-        user,
-        latestSource,
-        latestCache.cached,
-        latestCache.payload,
-      );
-    }
-    if (!await persistGrowthAnalysisIfCurrent(user, lease, generated)) {
-      if (retryCount < 2) {
-        return await buildGrowthPayload(user, {
-          generate: true,
-          retryCount: retryCount + 1,
-        });
-      }
-      const latestCache = await loadGrowthCache(user.id);
-      return pendingGrowthPayload(
-        user,
-        latestSource,
-        latestCache.cached,
-        latestCache.payload,
-      );
-    }
     return {
       ...generated.analysis,
       user: userPayload(user),
       has_teacher_records: true,
-      record_count: source.teacherRecords.length,
+      record_count: teacherRecords.length,
       ai_model: generated.model,
       ai_updated_at: now(),
       ai_cached: false,
-      analysis_status: "completed",
     };
   } catch (error) {
-    await markGrowthJobFailed(user.id, lease, error);
     if (cachedPayload?.analysis_version === 3) {
-      return pendingGrowthPayload(user, source, cached, cachedPayload);
+      return {
+        ...cachedPayload,
+        user: userPayload(user),
+        has_teacher_records: true,
+        record_count: teacherRecords.length,
+        ai_model: cached?.model || model,
+        ai_updated_at: cached?.updated_at || "",
+        ai_cached: true,
+        ai_stale: true,
+      };
     }
     throw error;
-  } finally {
-    clearInterval(leaseHeartbeat);
-  }
-}
-
-async function growthPayload(
-  user: User,
-  options: { generate?: boolean } = {},
-): Promise<Dict> {
-  if (!options.generate) {
-    return await buildGrowthPayload(user, options);
-  }
-  const inflightKey = String(user.id);
-  const inflight = growthAnalysisInflight.get(inflightKey);
-  if (inflight) {
-    growthAnalysisRerunRequested.add(inflightKey);
-    return await inflight;
-  }
-  const generation = (async () => {
-    let result: Dict;
-    do {
-      growthAnalysisRerunRequested.delete(inflightKey);
-      result = await buildGrowthPayload(user, options);
-    } while (growthAnalysisRerunRequested.has(inflightKey));
-    return result;
-  })();
-  growthAnalysisInflight.set(inflightKey, generation);
-  try {
-    return await generation;
-  } finally {
-    if (growthAnalysisInflight.get(inflightKey) === generation) {
-      growthAnalysisInflight.delete(inflightKey);
-    }
-    if (growthAnalysisRerunRequested.delete(inflightKey)) {
-      runInBackground(growthPayload(user, { generate: true }));
-    }
-  }
-}
-
-let growthJobSweepRunning = false;
-
-async function processGrowthJobQueue() {
-  if (growthJobSweepRunning) return;
-  growthJobSweepRunning = true;
-  try {
-    const tableRows = await dbRows<{ table_name: string | null }>(
-      "SELECT TO_REGCLASS('public.ai_growth_jobs')::text AS table_name",
-    );
-    if (!tableRows[0]?.table_name) return;
-    const students = await dbRows<User>(
-      `SELECT u.id, u.username, u.password_hash, u.full_name, u.stage, u.grade,
-              u.level_label, u.email, u.school, u.bio, u.role, u.teacher_id,
-              u.access_expires_on
-       FROM ai_growth_jobs AS j
-       JOIN ai_users AS u ON u.id = j.student_id
-       WHERE u.deleted_at IS NULL AND u.role = 'student'
-         AND (
-           j.status = 'pending'
-           OR (j.status = 'failed' AND (j.next_attempt_at IS NULL OR j.next_attempt_at <= NOW()))
-           OR (j.status = 'running' AND j.updated_at < NOW() - INTERVAL '45 seconds')
-         )
-       ORDER BY j.updated_at, j.student_id
-       LIMIT 12`,
-    );
-    for (let index = 0; index < students.length; index += 3) {
-      const results = await Promise.allSettled(
-        students.slice(index, index + 3).map((student) =>
-          growthPayload(student, { generate: true })
-        ),
-      );
-      results.forEach((result) => {
-        if (result.status === "rejected") {
-          console.error("Growth job failed", result.reason);
-        }
-      });
-    }
-  } finally {
-    growthJobSweepRunning = false;
   }
 }
 
@@ -1949,51 +1384,29 @@ async function lessonRecordsPayload(studentId: number): Promise<Dict[]> {
 }
 
 async function adminPayload() {
-  type AdminUserRow = User & { created_at: string | Date };
-  const [users, teachers, enrollmentRows] = await Promise.all([
-    dbRows<AdminUserRow>(
-      `
-      SELECT id, username, full_name, stage, grade, level_label, email, school, bio,
-             role, teacher_id, access_expires_on, created_at
-      FROM ai_users
-      WHERE deleted_at IS NULL AND role = 'student'
-      ORDER BY id
-      `,
-    ),
-    dbRows<AdminUserRow>(
-      `SELECT id, username, full_name, stage, grade, level_label, email, school, bio,
-              role, teacher_id, access_expires_on, created_at
-       FROM ai_users
-       WHERE deleted_at IS NULL AND role = 'teacher'
-       ORDER BY id`,
-    ),
-    dbRows<{ user_id: number; course_id: number }>(
-      `SELECT e.user_id, e.course_id
-       FROM ai_course_enrollments AS e
-       JOIN ai_users AS u ON u.id = e.user_id
-       WHERE u.deleted_at IS NULL AND u.role = 'student'
-       ORDER BY e.user_id, e.course_id`,
-    ),
-  ]);
-  const courseIdsByStudent = new Map<number, number[]>();
-  for (const enrollment of enrollmentRows) {
-    const studentId = Number(enrollment.user_id);
-    const courseId = Number(enrollment.course_id);
-    courseIdsByStudent.set(studentId, [
-      ...(courseIdsByStudent.get(studentId) || []),
-      courseId,
-    ]);
+  const users = await dbRows<User>(
+    `
+    SELECT id, username, full_name, stage, grade, level_label, email, school, bio, role,
+           teacher_id, access_expires_on
+    FROM ai_users
+    WHERE deleted_at IS NULL AND role = 'student'
+    ORDER BY id
+    `,
+  );
+  const students = [];
+  for (const item of users) {
+    students.push({
+      ...userPayload(item),
+      course_ids: await getEnrollments(item),
+    });
   }
-  const students = users.map((item) => ({
-    ...userPayload(item),
-    created_at: timestampIsoString(item.created_at),
-    course_ids: courseIdsByStudent.get(Number(item.id)) || [],
-  }));
+  const teachers = await dbRows<User>(
+    `SELECT id, username, full_name, stage, grade, level_label, email, school, bio,
+            role, teacher_id, access_expires_on
+     FROM ai_users WHERE deleted_at IS NULL AND role = 'teacher' ORDER BY id`,
+  );
   return {
-    teachers: teachers.map((teacher) => ({
-      ...userPayload(teacher),
-      created_at: timestampIsoString(teacher.created_at),
-    })),
+    teachers: teachers.map(userPayload),
     students,
     courses: courses.map((course) => ({
       ...course,
@@ -2023,297 +1436,6 @@ async function teacherStudents(user: User) {
     [user.role, user.id],
   );
   return rows.map(userPayload);
-}
-
-function overviewPercent(value: number) {
-  return Math.max(0, Math.min(100, Math.round(value || 0)));
-}
-
-function overviewDateValue(value: unknown) {
-  const timestamp = Date.parse(String(value || ""));
-  return Number.isFinite(timestamp) ? timestamp : 0;
-}
-
-async function teacherStudentOverviewPayload(student: User) {
-  const [progress, attempts, mistakes, study, teacherRecords, cachedRows] =
-    await Promise.all([
-      listProgress(student.id),
-      listAttempts(student.id),
-      listMistakes(student.id),
-      listStudyTime(student.id),
-      lessonRecordsPayload(student.id),
-      dbRows<{ payload: Dict | string; updated_at: string }>(
-        `SELECT payload,
-                TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS updated_at
-         FROM ai_growth_analyses
-         WHERE student_id = ?
-         LIMIT 1`,
-        [student.id],
-      ),
-    ]);
-
-  const completedCount = progress.filter((item) =>
-    item.status === "completed"
-  ).length;
-  const reviewCount = progress.filter((item) =>
-    item.status === "review_required"
-  ).length;
-  const avgScore = progress.length
-    ? Math.round(
-      progress.reduce((sum, item) => sum + Number(item.score || 0), 0) /
-        progress.length,
-    )
-    : 0;
-  const correctCount = attempts.filter((item) => Boolean(item.correct)).length;
-  const accuracy = attempts.length
-    ? Math.round((correctCount / attempts.length) * 100)
-    : 0;
-  const studyMinutes = Math.round(
-    study.reduce((sum, item) => sum + Number(item.seconds || 0), 0) / 60,
-  );
-  const activeDays = new Set(
-    [...progress, ...attempts]
-      .map((item) => String(item.updated_at || "").slice(0, 10))
-      .filter(Boolean),
-  ).size;
-  const completionRate = progress.length
-    ? Math.round((completedCount / progress.length) * 100)
-    : 0;
-  const activeScore = overviewPercent((activeDays / 12) * 100);
-  const focusScore = overviewPercent(
-    studyMinutes ? (studyMinutes / Math.max(activeDays, 1) / 45) * 100 : 0,
-  );
-  const participationScore = overviewPercent(
-    (teacherRecords.length / 8) * 100,
-  );
-  const knowledgeScore = overviewPercent(
-    progress.length && attempts.length
-      ? (avgScore + accuracy) / 2
-      : progress.length
-      ? avgScore
-      : accuracy,
-  );
-  const correctionScore = attempts.length
-    ? overviewPercent(accuracy)
-    : mistakes.length
-    ? overviewPercent(100 - mistakes.length * 10)
-    : 0;
-
-  const monthBuckets = Array.from({ length: 6 }, (_, index) => {
-    const date = new Date();
-    date.setDate(1);
-    date.setMonth(date.getMonth() - (5 - index));
-    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
-    return {
-      key,
-      label: `${date.getMonth() + 1}月`,
-      progressScores: [] as number[],
-      attemptCount: 0,
-      correctCount: 0,
-    };
-  });
-  const bucketByKey = new Map(monthBuckets.map((item) => [item.key, item]));
-  progress.forEach((item) => {
-    const bucket = bucketByKey.get(String(item.updated_at || "").slice(0, 7));
-    if (bucket) bucket.progressScores.push(Number(item.score || 0));
-  });
-  attempts.forEach((item) => {
-    const bucket = bucketByKey.get(String(item.updated_at || "").slice(0, 7));
-    if (!bucket) return;
-    bucket.attemptCount += 1;
-    if (item.correct) bucket.correctCount += 1;
-  });
-  const trend = monthBuckets.map((bucket) => {
-    const progressScore = bucket.progressScores.length
-      ? bucket.progressScores.reduce((sum, value) => sum + value, 0) /
-        bucket.progressScores.length
-      : null;
-    const attemptScore = bucket.attemptCount
-      ? (bucket.correctCount / bucket.attemptCount) * 100
-      : null;
-    const samples = bucket.progressScores.length + bucket.attemptCount;
-    const value = progressScore !== null && attemptScore !== null
-      ? Math.round((progressScore + attemptScore) / 2)
-      : Math.round(progressScore ?? attemptScore ?? 0);
-    return { key: bucket.key, label: bucket.label, value, samples };
-  });
-
-  const subjectStats = new Map<string, {
-    label: string;
-    scoreTotal: number;
-    scoreCount: number;
-    attemptCount: number;
-    correctCount: number;
-  }>();
-  const getSubjectStat = (lessonId: number) => {
-    const lesson = lessonById.get(lessonId);
-    const course = lesson ? courseById.get(lesson.course_id) : null;
-    const label = String(course?.subject || "综合");
-    const current = subjectStats.get(label) || {
-      label,
-      scoreTotal: 0,
-      scoreCount: 0,
-      attemptCount: 0,
-      correctCount: 0,
-    };
-    subjectStats.set(label, current);
-    return current;
-  };
-  progress.forEach((item) => {
-    const stat = getSubjectStat(Number(item.lesson_id));
-    stat.scoreTotal += Number(item.score || 0);
-    stat.scoreCount += 1;
-  });
-  attempts.forEach((item) => {
-    const stat = getSubjectStat(Number(item.lesson_id));
-    stat.attemptCount += 1;
-    if (item.correct) stat.correctCount += 1;
-  });
-  const subjects = [...subjectStats.values()].map((item) => {
-    const score = item.scoreCount ? item.scoreTotal / item.scoreCount : null;
-    const attemptScore = item.attemptCount
-      ? (item.correctCount / item.attemptCount) * 100
-      : null;
-    return {
-      label: item.label,
-      value: overviewPercent(
-        score !== null && attemptScore !== null
-          ? (score + attemptScore) / 2
-          : score ?? attemptScore ?? 0,
-      ),
-      samples: item.scoreCount + item.attemptCount,
-    };
-  }).sort((a, b) => b.samples - a.samples || b.value - a.value);
-
-  let cachedGrowth: Dict | null = null;
-  const cached = cachedRows[0] || null;
-  if (cached) {
-    try {
-      cachedGrowth = typeof cached.payload === "string"
-        ? JSON.parse(cached.payload) as Dict
-        : cached.payload;
-    } catch {
-      cachedGrowth = null;
-    }
-  }
-  const strongestSubject = subjects.find((item) => item.samples > 0);
-  const weakestSubject = [...subjects]
-    .filter((item) => item.samples > 0)
-    .sort((a, b) => a.value - b.value)[0];
-  const fallbackStrengths = [
-    strongestSubject
-      ? `${strongestSubject.label}当前综合表现 ${strongestSubject.value} 分`
-      : "继续积累学习数据后可识别优势学科",
-    completedCount
-      ? `已完成 ${completedCount} 个学习任务`
-      : "完成首个学习任务后可跟踪掌握情况",
-    studyMinutes
-      ? `已累计专注学习 ${studyMinutes} 分钟`
-      : "开始课程学习后可记录专注时长",
-  ];
-  const fallbackImprovements = [
-    reviewCount
-      ? `有 ${reviewCount} 个学习任务需要优先复习`
-      : "保持定期复习，巩固已学内容",
-    mistakes.length
-      ? `当前错题本有 ${mistakes.length} 道题待整理`
-      : "完成练习后及时回顾答题情况",
-    weakestSubject && weakestSubject !== strongestSubject
-      ? `${weakestSubject.label}可作为下一阶段重点`
-      : "持续完成练习以形成更准确的能力画像",
-  ];
-  const strengths = growthStringList(
-    cachedGrowth?.strengths,
-    fallbackStrengths,
-  ).slice(0, 3);
-  const improvements = growthStringList(
-    cachedGrowth?.improvements,
-    fallbackImprovements,
-  ).slice(0, 3);
-  const nextSteps = growthStringList(cachedGrowth?.next_steps, [
-    reviewCount ? "先完成待复习任务" : "按当前课程继续学习",
-    mistakes.length ? "复盘错题并完成同类练习" : "完成一次随堂练习",
-    "由教师补充最新课后观察",
-  ]).slice(0, 4);
-
-  const timeline = [
-    ...progress.slice(0, 5).map((item) => {
-      const lesson = lessonById.get(Number(item.lesson_id));
-      const course = lesson ? courseById.get(lesson.course_id) : null;
-      return {
-        date: String(item.updated_at || ""),
-        title: `${course?.subject || "课程"}学习记录`,
-        description: `${lesson?.title || "学习任务"}，得分 ${Math.round(Number(item.score || 0))} 分`,
-        tone: item.status === "review_required" ? "attention" : "progress",
-      };
-    }),
-    ...teacherRecords.slice(0, 4).map((item) => ({
-      date: String(item.created_at || ""),
-      title: String(item.title || "教师课后记录"),
-      description: String(item.notes || "").slice(0, 120),
-      tone: "teacher",
-    })),
-  ].sort((a, b) => overviewDateValue(b.date) - overviewDateValue(a.date)).slice(
-    0,
-    5,
-  );
-  const latestRecord = teacherRecords[0] || null;
-  const profileTags = [
-    activeDays >= 5 ? "学习持续" : activeDays ? "开始积累" : "等待开启",
-    knowledgeScore >= 80 ? "掌握扎实" : knowledgeScore >= 60
-      ? "表现稳定"
-      : "持续巩固",
-    reviewCount ? "复习优先" : "节奏平稳",
-  ];
-  const summary = String(cachedGrowth?.summary || student.bio || "").trim() ||
-    (progress.length
-      ? `已形成 ${progress.length} 条学习进度，当前综合得分 ${knowledgeScore} 分。`
-      : "当前还没有学习记录，完成课程与练习后会逐步形成学生画像。");
-
-  return {
-    student: userPayload(student),
-    profile: { summary, tags: profileTags },
-    trend,
-    radar: [
-      { label: "知识掌握", value: knowledgeScore },
-      { label: "学习习惯", value: activeScore },
-      { label: "专注投入", value: focusScore },
-      { label: "任务完成", value: completionRate },
-      { label: "纠错能力", value: correctionScore },
-    ],
-    subjects: subjects.slice(0, 6),
-    metrics: [
-      { label: "学习积极性", value: activeScore, note: `累计活跃 ${activeDays} 天`, tone: "blue" },
-      { label: "专注度", value: focusScore, note: `累计学习 ${studyMinutes} 分钟`, tone: "green" },
-      { label: "任务完成率", value: completionRate, note: `已完成 ${completedCount}/${progress.length}`, tone: "violet" },
-      { label: "课堂参与度", value: participationScore, note: `教师记录 ${teacherRecords.length} 次`, tone: "orange" },
-    ],
-    summary: {
-      headline: String(cachedGrowth?.headline || "近期成长总结"),
-      strengths,
-      improvements,
-      next_steps: nextSteps,
-      updated_at: cached?.updated_at || "",
-    },
-    observation: latestRecord
-      ? {
-        title: String(latestRecord.title || "最新教师观察"),
-        content: String(latestRecord.notes || ""),
-        teacher: String(latestRecord.teacher_name || "教师"),
-        date: String(latestRecord.created_at || ""),
-      }
-      : null,
-    timeline,
-    totals: {
-      progress_count: progress.length,
-      attempt_count: attempts.length,
-      mistake_count: mistakes.length,
-      review_count: reviewCount,
-      avg_score: avgScore,
-      accuracy,
-      study_minutes: studyMinutes,
-    },
-  };
 }
 
 async function analyzeLessonRecord(
@@ -3277,7 +2399,7 @@ async function api(request: Request, user: User | null, pathname: string) {
 
   if (pathname === "/api/login" && request.method === "POST") {
     const body = await parseBody(request);
-    const username = String(body.username || "").trim().toLowerCase();
+    const username = String(body.username || "").trim();
     const password = String(body.password || "").trim();
     const found = await loadUserByUsername(username);
     if (!found || found.password_hash !== await hashPassword(password)) {
@@ -3352,31 +2474,6 @@ async function api(request: Request, user: User | null, pathname: string) {
     return json({ ok: true, data: { students: await teacherStudents(user) } });
   }
 
-  const teacherOverviewMatch = pathname.match(
-    /^\/api\/teacher\/students\/(\d+)\/overview$/,
-  );
-  if (teacherOverviewMatch && request.method === "GET") {
-    if (!isTeacher(user)) {
-      return json({ ok: false, message: "仅教师可以查看学生总览" }, {
-        status: 403,
-      });
-    }
-    const studentId = Number(teacherOverviewMatch[1]);
-    if (!await teacherCanAccessStudent(user, studentId)) {
-      return json({ ok: false, message: "该学生不属于当前教师" }, {
-        status: 403,
-      });
-    }
-    const student = await loadUserById(studentId);
-    if (!student || student.role !== "student") {
-      return json({ ok: false, message: "未找到学生" }, { status: 404 });
-    }
-    return json({
-      ok: true,
-      data: await teacherStudentOverviewPayload(student),
-    });
-  }
-
   const teacherGrowthMatch = pathname.match(
     /^\/api\/teacher\/students\/(\d+)\/growth$/,
   );
@@ -3423,18 +2520,8 @@ async function api(request: Request, user: User | null, pathname: string) {
       return json({ ok: false, message: "未找到学生" }, { status: 404 });
     }
     try {
-      await dbExec(
-        `UPDATE ai_growth_jobs
-         SET status = 'pending', claim_id = NULL, last_error = '',
-             next_attempt_at = NULL, updated_at = NOW()
-         WHERE student_id = ? AND status = 'failed'`,
-        [studentId],
-      );
-      const growth = await growthPayload(student, { generate: true });
-      if (
-        growth.ai_stale || growth.ai_pending ||
-        growth.analysis_status === "pending"
-      ) {
+      const growth = await growthPayload(student);
+      if (growth.ai_stale) {
         return json({ ok: false, message: "AI 分析暂未更新" }, { status: 503 });
       }
       return json({ ok: true, data: { analysis_status: "completed" } });
@@ -3479,53 +2566,27 @@ async function api(request: Request, user: User | null, pathname: string) {
     if (!student || student.role !== "student") {
       return json({ ok: false, message: "未找到学生" }, { status: 404 });
     }
-    let body: Dict;
-    try {
-      body = await readAiJsonBody(request);
-    } catch (error) {
-      return aiErrorResponse(error, true);
-    }
+    const body = await readAiJsonBody(request);
     const title = String(body.title || "课后辅导记录").trim().slice(0, 255);
     const notes = String(body.notes || "").trim().slice(0, 20_000);
     if (!notes) {
       return json({ ok: false, message: "请填写课程记录" }, { status: 400 });
     }
-    const client = await pgPool.connect();
     try {
-      await client.query("BEGIN");
-      await client.query(
-        `INSERT INTO ai_growth_jobs (
-           student_id, requested_revision, requested_source_hash, claim_id,
-           status, attempt_count, last_error, next_attempt_at, updated_at
-         ) VALUES ($1, 1, '', NULL, 'pending', 0, '', NULL, NOW())
-         ON CONFLICT (student_id) DO UPDATE SET
-           requested_revision = ai_growth_jobs.requested_revision + 1,
-           requested_source_hash = '', claim_id = NULL, status = 'pending',
-           attempt_count = 0, last_error = '', next_attempt_at = NULL,
-           updated_at = NOW()`,
-        [studentId],
-      );
-      const result = await client.query<Dict>(
+      const result = await dbExec<Dict>(
         `INSERT INTO ai_lesson_records (teacher_id, student_id, title, notes, ai_analysis, created_at, updated_at)
-         VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
+         VALUES (?, ?, ?, ?, ?, NOW(), NOW())
          RETURNING id, title, notes, ai_analysis,
-                    TO_CHAR(created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at`,
+                   TO_CHAR(created_at, 'YYYY-MM-DD"T"HH24:MI:SS') AS created_at`,
         [user.id, studentId, title, notes, ""],
       );
-      await client.query("COMMIT");
       const created = result.rows[0] || null;
-      if (created) {
-        runInBackground(growthPayload(student, { generate: true }));
-      }
       return json({
         ok: true,
         data: created ? { ...created, analysis_status: "pending" } : null,
       });
     } catch (error) {
-      await client.query("ROLLBACK").catch(() => undefined);
       return aiErrorResponse(error, true);
-    } finally {
-      client.release();
     }
   }
 
@@ -3536,7 +2597,7 @@ async function api(request: Request, user: User | null, pathname: string) {
       });
     }
     const body = await request.json();
-    const username = String(body.username || "").trim().toLowerCase();
+    const username = String(body.username || "").trim();
     const password = String(body.password || "").trim();
     const fullName = String(body.full_name || username).trim();
     if (!username || !password || !fullName) {
@@ -3582,13 +2643,6 @@ async function api(request: Request, user: User | null, pathname: string) {
     if (!studentId) {
       return json({ ok: false, message: "学生不能为空" }, { status: 400 });
     }
-    const student = await dbRows<{ id: number }>(
-      "SELECT id FROM ai_users WHERE id = ? AND role = 'student' AND deleted_at IS NULL",
-      [studentId],
-    );
-    if (!student[0]) {
-      return json({ ok: false, message: "学生不存在" }, { status: 404 });
-    }
     if (teacherId) {
       const teacher = await dbRows<{ id: number }>(
         "SELECT id FROM ai_users WHERE id = ? AND role = 'teacher' AND deleted_at IS NULL",
@@ -3630,8 +2684,6 @@ async function api(request: Request, user: User | null, pathname: string) {
         });
       }
       const row = await loadAiModelSettingsRow();
-      const previousModel = String(row?.model || "").trim() ||
-        aiEnvironmentValue("AI_MODEL");
       const baseUrl = String(body.base_url || row?.base_url || "").trim() ||
         aiEnvironmentValue("AI_BASE_URL");
       const model = String(body.model || row?.model || "").trim() ||
@@ -3676,22 +2728,6 @@ async function api(request: Request, user: User | null, pathname: string) {
           `,
           [baseUrl, model, ciphertext, hint, user.id],
         );
-        if (model !== previousModel) {
-          await dbExec(
-            `INSERT INTO ai_growth_jobs (
-               student_id, requested_revision, requested_source_hash, claim_id,
-               status, attempt_count, last_error, next_attempt_at, updated_at
-             )
-             SELECT DISTINCT student_id, 1, '', NULL::UUID,
-                    'pending', 0, '', NULL::TIMESTAMPTZ, NOW()
-             FROM ai_lesson_records
-             ON CONFLICT (student_id) DO UPDATE SET
-               requested_revision = ai_growth_jobs.requested_revision + 1,
-               requested_source_hash = '', claim_id = NULL,
-               status = 'pending', attempt_count = 0, last_error = '',
-               next_attempt_at = NULL, updated_at = NOW()`,
-          );
-        }
         return json({
           ok: true,
           data: publicAiModelSettings(await loadAiModelSettingsRow()),
@@ -3894,54 +2930,18 @@ async function api(request: Request, user: User | null, pathname: string) {
     pathname === "/api/admin/enrollments" && request.method === "POST" &&
     isAdmin(user)
   ) {
-    let body: Dict;
-    try {
-      body = await readAiJsonBody(request);
-    } catch (error) {
-      if (error instanceof AiInputError) {
-        return json({ ok: false, message: error.message }, {
-          status: error.status,
-        });
-      }
-      return json({ ok: false, message: "请求内容格式不正确。" }, {
-        status: 400,
-      });
-    }
-    if (
-      typeof body.student_id !== "number" ||
-      !Number.isSafeInteger(body.student_id) || body.student_id <= 0
-    ) {
-      return json({ ok: false, message: "学生 ID 不正确。" }, { status: 400 });
-    }
-    const studentId = body.student_id;
-    if (!Array.isArray(body.course_ids)) {
-      return json({ ok: false, message: "课程列表格式不正确。" }, {
-        status: 400,
-      });
-    }
+    const body = await request.json();
+    const studentId = Number(body.student_id);
     const validCourseIds = new Set(courses.map((course) => Number(course.id)));
-    const requestedCourseIds: number[] = [];
-    for (const courseId of body.course_ids) {
-      if (
-        typeof courseId !== "number" || !Number.isSafeInteger(courseId) ||
-        courseId <= 0 || !validCourseIds.has(courseId)
-      ) {
-        return json({ ok: false, message: "课程列表包含无效课程。" }, {
-          status: 400,
-        });
-      }
-      requestedCourseIds.push(courseId);
-    }
-    const courseIds = [...new Set(requestedCourseIds)];
-    const students = await dbRows<{ id: number }>(
-      `SELECT id
-       FROM ai_users
-       WHERE id = ? AND role = 'student' AND deleted_at IS NULL
-       LIMIT 1`,
-      [studentId],
-    );
-    if (!students[0]) {
-      return json({ ok: false, message: "学生不存在。" }, { status: 404 });
+    const courseIds = [
+      ...new Set(
+        (body.course_ids || []).map(Number).filter((courseId: number) =>
+          validCourseIds.has(courseId)
+        ),
+      ),
+    ];
+    if (!studentId) {
+      return json({ ok: false, message: "学生不存在。" }, { status: 400 });
     }
 
     const result = await dbRows<{
@@ -3985,14 +2985,8 @@ async function api(request: Request, user: User | null, pathname: string) {
     isAdmin(user)
   ) {
     const body = await request.json();
-    const username = String(body.username || "").trim().toLowerCase();
+    const username = String(body.username || "").trim();
     const password = String(body.password || "").trim();
-    const fullName = String(body.full_name || "").trim();
-    if (!username || !password || !fullName) {
-      return json({ ok: false, message: "账号、密码和姓名不能为空" }, {
-        status: 400,
-      });
-    }
     const result = await dbExec<{ id: number }>(
       `
       INSERT INTO ai_users (
@@ -4004,7 +2998,7 @@ async function api(request: Request, user: User | null, pathname: string) {
       [
         username,
         await hashPassword(password),
-        fullName,
+        String(body.full_name || username).trim(),
         String(body.stage || ""),
         String(body.grade || ""),
         "Lv.1",
@@ -4027,7 +3021,7 @@ async function api(request: Request, user: User | null, pathname: string) {
     const studentId = Number(studentMatch[1]);
     if (request.method === "PUT") {
       const existing = await loadUserById(studentId);
-      if (!existing || existing.role !== "student") {
+      if (!existing) {
         return json({ ok: false, message: "未找到学生。" }, { status: 404 });
       }
       const body = await request.json();
@@ -4039,10 +3033,10 @@ async function api(request: Request, user: User | null, pathname: string) {
         UPDATE ai_users
         SET username = ?, password_hash = ?, full_name = ?, stage = ?, grade = ?,
             email = ?, access_expires_on = ?, updated_at = NOW()
-        WHERE id = ? AND role = 'student' AND deleted_at IS NULL
+        WHERE id = ? AND deleted_at IS NULL
         `,
         [
-          String(body.username || existing.username).trim().toLowerCase(),
+          String(body.username || existing.username).trim(),
           nextPasswordHash,
           String(body.full_name || existing.full_name).trim(),
           String(body.stage || existing.stage),
@@ -4050,9 +3044,7 @@ async function api(request: Request, user: User | null, pathname: string) {
           String(body.email || existing.email),
           body.access_duration_days !== undefined
             ? accessExpiryFromDuration(body.access_duration_days)
-            : body.access_expires_on !== undefined
-            ? normalizeAccessDate(body.access_expires_on)
-            : existing.access_expires_on,
+            : normalizeAccessDate(body.access_expires_on),
           studentId,
         ],
       );
@@ -4065,14 +3057,9 @@ async function api(request: Request, user: User | null, pathname: string) {
       return json({ ok: true, data: userPayload(updated) });
     }
     if (request.method === "DELETE") {
-      const existing = await loadUserById(studentId);
-      if (!existing || existing.role !== "student") {
-        return json({ ok: false, message: "未找到学生。" }, { status: 404 });
-      }
-      await dbExec(
-        "UPDATE ai_users SET deleted_at = NOW() WHERE id = ? AND role = 'student' AND deleted_at IS NULL",
-        [studentId],
-      );
+      await dbExec("UPDATE ai_users SET deleted_at = NOW() WHERE id = ?", [
+        studentId,
+      ]);
       await dbExec("DELETE FROM ai_course_enrollments WHERE user_id = ?", [
         studentId,
       ]);
@@ -4154,40 +3141,10 @@ async function api(request: Request, user: User | null, pathname: string) {
     if (!question) {
       return json({ ok: false, message: "未找到题目。" }, { status: 404 });
     }
+    const body = await request.json();
+    const answer = String(body.answer || "");
+    const correct = answer === question.answer;
     const lessonId = question.lesson_id;
-    const lesson = lessonById.get(lessonId);
-    const course = lesson ? courseById.get(lesson.course_id) : null;
-    const enrollments = new Set(await getEnrollments(user));
-    if (!course || (!isTeacher(user) && !enrollments.has(course.id))) {
-      return json({ ok: false, message: "未找到题目或课程尚未开通。" }, {
-        status: 404,
-      });
-    }
-    let body: Dict;
-    try {
-      body = await request.json();
-    } catch {
-      return json({ ok: false, message: "提交内容格式不正确。" }, {
-        status: 400,
-      });
-    }
-    const answer = String(body.answer || "").trim();
-    if (!answer || answer.length > 1_000) {
-      return json({ ok: false, message: "答案长度应为 1 至 1000 个字符。" }, {
-        status: 400,
-      });
-    }
-    const hasOptions = Array.isArray(question.options) &&
-      question.options.length > 0;
-    if (!hasOptions && typeof body.self_assessed_correct !== "boolean") {
-      return json({ ok: false, message: "请核对参考答案后完成自评。" }, {
-        status: 400,
-      });
-    }
-    const correct = hasOptions
-      ? normalizedQuestionAnswer(answer) ===
-        normalizedQuestionAnswer(question.answer)
-      : Boolean(body.self_assessed_correct);
     await dbExec(
       `
       INSERT INTO ai_question_attempts (user_id, question_id, lesson_id, answer, correct, updated_at)
@@ -4200,6 +3157,8 @@ async function api(request: Request, user: User | null, pathname: string) {
       [user.id, questionId, lessonId, answer, correct],
     );
     if (!correct) {
+      const lesson = lessonById.get(lessonId);
+      const course = lesson ? courseById.get(lesson.course_id) : null;
       await dbExec(
         `
         INSERT INTO ai_mistakes (
@@ -4236,25 +3195,18 @@ async function api(request: Request, user: User | null, pathname: string) {
         [user.id, questionId],
       );
     }
-    const lessonQuestions = questionsByLesson.get(lessonId) || [];
-    const lessonQuestionIds = new Set(
-      lessonQuestions.map((item) => Number(item.id)),
-    );
+    const lessonQuestions = (questionsByLesson.get(lessonId) || []).filter((
+      item,
+    ) => item.question_kind === question.question_kind);
     const attempts = (await listAttempts(user.id)).filter((item) =>
-      Number(item.lesson_id) === lessonId &&
-      lessonQuestionIds.has(Number(item.question_id))
+      Number(item.lesson_id) === lessonId
     );
     const correctCount = attempts.filter((item) =>
       Boolean(item.correct)
     ).length;
     const total = Math.max(lessonQuestions.length, 1);
-    const score = attempts.length
-      ? Math.round((correctCount / attempts.length) * 100)
-      : 0;
-    const minimumAttempts = Math.min(5, total);
-    const status = attempts.length >= minimumAttempts && score >= 80
-      ? "completed"
-      : "review_required";
+    const score = Math.round((correctCount / total) * 100);
+    const status = score >= 80 ? "completed" : "review_required";
     await dbExec(
       `
       INSERT INTO ai_progress (user_id, lesson_id, status, score, last_answer, updated_at)
@@ -4276,7 +3228,6 @@ async function api(request: Request, user: User | null, pathname: string) {
         lesson_id: lessonId,
         question_kind: question.question_kind,
         attempted_count: attempts.length,
-        correct_count: correctCount,
         total_questions: total,
         score,
         status,
@@ -4337,6 +3288,3 @@ Deno.serve({ port: Number(Deno.env.get("PORT") || 8000) }, async (request) => {
     return new Response("Not Found", { status: 404 });
   }
 });
-
-runInBackground(processGrowthJobQueue());
-setInterval(() => runInBackground(processGrowthJobQueue()), 30_000);
