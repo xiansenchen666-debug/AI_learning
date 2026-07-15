@@ -16,20 +16,13 @@
           aria-label="启航教育首页"
         >
           <span class="brand-emblem" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
-              <defs>
-                <linearGradient id="gold-grad-student" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#D4AF37"/>
-                  <stop offset="50%" stop-color="#FFDF73"/>
-                  <stop offset="100%" stop-color="#AA7C11"/>
-                </linearGradient>
-              </defs>
-              <path d="M2.5 19.5C2.5 19.5 8 21.5 12 21.5C16 21.5 21.5 19.5 21.5 19.5C21.5 19.5 17 18 12 18C7 18 2.5 19.5 2.5 19.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M11.5 2.5C11.5 2.5 6 9 6 16.5C8 17.5 11.5 18 11.5 18V2.5Z" fill="url(#gold-grad-student)"/>
-              <path d="M12.5 4.5C12.5 4.5 17 10 18 16.5C15 17.5 12.5 18 12.5 18V4.5Z" fill="url(#gold-grad-student)" opacity="0.8"/>
+            <svg viewBox="0 0 44 44" role="img">
+              <path d="M8 6h22v7H15v18h15v7H8z" />
+              <path d="M22 20h15v7H22z" />
+              <path d="m29 27 8-8v13l-8 8z" />
             </svg>
           </span>
-          <span class="brand-title" style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-left: 8px;">启航教育</span>
+          <span class="brand-title">启航教育</span>
         </a>
 
         <nav class="nav">
@@ -144,46 +137,64 @@
       <main class="content">
         <div class="page-scroll">
           <section class="page active" id="dashboard-page">
-            <div class="dashboard-reference-hero" style="display: flex; gap: 24px; margin-bottom: 32px;">
-              <div class="hero-card" style="flex: 1; padding: 40px; background: linear-gradient(135deg, #f8faff 0%, #edf2ff 100%); border-radius: 16px; position: relative; overflow: hidden;">
-                <div class="hero-body" style="position: relative; z-index: 2;">
+            <div class="dashboard-reference-hero">
+              <div class="hero-card">
+                <div class="hero-body">
                   <div class="dashboard-hero-copy">
-                    <p class="dashboard-greeting" style="font-size: 1.125rem; color: #475569; margin-bottom: 8px;">
+                    <p class="dashboard-greeting">
                       你好，<span data-user-name></span>
                     </p>
-                    <h1 class="hero-title" id="dashboard-hero-title" style="font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 12px;">
-                      今天有 0 个知识点已经掌握
+                    <div class="hero-pill" id="dashboard-hero-pill"></div>
+                    <h1 class="hero-title" id="dashboard-hero-title">
+                      学习中心
                     </h1>
-                    <p class="hero-desc" id="dashboard-hero-desc" style="font-size: 1rem; color: #64748b; margin-bottom: 32px;">
-                      当日学习时长 0 分钟，继续加油！
+                    <p class="hero-desc" id="dashboard-hero-desc">
+                      查看已开通课程和当前学习进度。
                     </p>
-                    <div class="student-create-actions" style="display: flex; gap: 16px;">
-                      <a href="/dashboard" class="primary-btn" style="background: #2563eb; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 500; text-decoration: none;">进入学习中心</a>
-                      <a href="/subjects" class="secondary-btn" style="background: white; color: #475569; border: 1px solid #cbd5e1; padding: 10px 24px; border-radius: 8px; font-weight: 500; text-decoration: none;">查看全部课程</a>
+                    <p
+                      class="account-access-status"
+                      id="dashboard-access-status"
+                    >
+                    </p>
+                    <div class="student-create-actions">
+                      <a href="/question-bank" class="primary-btn"
+                      >进入题库练习</a><a
+                        href="/subjects"
+                        class="secondary-btn"
+                      >查看全部课程</a>
                     </div>
+                  </div>
+                  <div class="dashboard-hero-visual has-image" aria-hidden="true">
+                    <img
+                      src="/assets/student-home-device-check.png?v=20260714-03"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
 
-              <div class="card achievement" style="width: 320px; padding: 32px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column; justify-content: center;">
-                <p class="achievement-kicker" style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 24px;">学习概览</p>
-                <div class="achievement-overview" style="display: flex; align-items: center; gap: 24px;">
-                  <div class="achievement-mark" style="width: 80px; height: 80px; border-radius: 50%; border: 8px solid #eff6ff; border-top-color: #3b82f6; border-right-color: #3b82f6;"></div>
+              <div class="card achievement">
+                <p class="achievement-kicker">学习概览</p>
+                <div class="achievement-overview">
+                  <div class="achievement-mark"></div>
                   <div>
-                    <div class="achievement-number" id="dashboard-study-days" style="font-size: 2rem; font-weight: 700; color: #1e293b;">
-                      6 <span style="font-size: 1rem; font-weight: 400; color: #64748b;">已掌握知识点</span>
+                    <div class="achievement-number" id="dashboard-study-days">
                     </div>
-                    <p class="achievement-label" id="dashboard-achievement-label" style="font-size: 0.875rem; color: #64748b; margin-top: 8px;">
-                      继续努力，稳步提升
+                    <p
+                      class="achievement-label"
+                      id="dashboard-achievement-label"
+                    >
                     </p>
                   </div>
                 </div>
-                <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #f1f5f9;">
-                  <p class="muted text-sm" id="dashboard-xp-summary" style="color: #64748b; font-size: 0.875rem; line-height: 1.6;">
-                    当前累计学习时长 2336 分钟<br>
-                    距离下一个等级还差 264 XP
-                  </p>
+                <div class="progress-track">
+                  <div
+                    class="progress-fill progress-fill-zero"
+                    id="dashboard-level-progress"
+                  >
+                  </div>
                 </div>
+                <p class="muted text-sm" id="dashboard-xp-summary"></p>
               </div>
             </div>
 
